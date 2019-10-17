@@ -3,18 +3,29 @@ title: AT Commands
 ---
 
 
-Ping (get motherboard ID)
-Command
+## Ping (get motherboard ID)
+### Command
+```
 AT+PNG?
-Response
+```
+
+### Response
+```
 +PNG: <motherboard-id>
-Description
+```
+
+### Description
 Ping the motherboard. The motherboard will respond with its motherboard ID This is a sixteen bit unsigned identifier. The ID is sent as a 4-digit hex string in ASCII format.
-Example
+
+
+### Example
+```
 Command>  AT+PNG?
 Response> +PNG: 474F
 The board has id 0x474F
-List sensors
+```
+
+## List sensors
 Command
 AT+LS?
 Response
