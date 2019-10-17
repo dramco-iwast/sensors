@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Ping
-parent: at-commands.md
+parent: AT Commands
 has_toc: true
 ---
 
