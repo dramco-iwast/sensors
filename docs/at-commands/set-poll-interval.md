@@ -3,7 +3,7 @@ layout: default
 title: Set poll interval
 parent: AT Commands
 has_toc: true
-nav_order: 4
+nav_order: 5
 ---
 
 ## Set poll interval
