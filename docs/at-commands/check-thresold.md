@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Set poll interval
+title: Check threshold
 parent: AT Commands
 has_toc: true
 nav_order: 4
 ---
 
-## Check the threshold settings
+## Check threshold
 
 ### Command
 ```
