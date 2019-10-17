@@ -3,6 +3,7 @@ layout: default
 title: List Sensors
 parent: AT Commands
 has_toc: true
+nav_order: 2
 ---
 
 ## List sensors
