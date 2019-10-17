@@ -1,7 +1,7 @@
 ---
 layout: default
 title: List Sensors
-parent: at-commands.md
+parent: AT Commands
 has_toc: true
 ---
 
