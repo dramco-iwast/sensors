@@ -1,6 +1,6 @@
-build/default/debug/Sensors/dummy.p1:  \
-Sensors/dummy.c  \
-Sensors/Dummy.h  \
+build/default/production/Sensors/sound_level.p1:  \
+Sensors/sound_level.c  \
+Sensors/sound_level.h  \
 Sensors/../mcc_generated_files/mcc.h  \
 Sensors/../mcc_generated_files/device_config.h  \
 Sensors/../mcc_generated_files/pin_manager.h  \

@@ -3,7 +3,7 @@
 [d edition pro ]
 [d chip 16F18446 ]
 [d frameptr 6 ]
-"144 C:\Users\u0133487\Documents\1Werk\IWAST\code\Nieuwe map\iwast01.X\mcc_generated_files/i2c1.c
+"144 C:\Users\geoffrey\Documents\GitHub\IWAST\sensors\firmware\MicrophoneModule\iwast01.X\mcc_generated_files/i2c1.c
 [e E10895 . `uc
 I2C1_SLAVE_WRITE_REQUEST 0
 I2C1_SLAVE_READ_REQUEST 1
@@ -15,7 +15,7 @@ I2C1_SLAVE_READ_COMPLETED 3
 SLAVE_COMMAND_DATA 0
 SLAVE_COMMAND 1
 ]
-"123 C:\Users\u0133487\Documents\1Werk\IWAST\code\Nieuwe map\iwast01.X\mcc_generated_files/adcc.c
+"123 C:\Users\geoffrey\Documents\GitHub\IWAST\sensors\firmware\MicrophoneModule\iwast01.X\mcc_generated_files/adcc.c
 [e E10896 . `uc
 channel_ANC1 17
 channel_Vss 59
@@ -24,8 +24,8 @@ channel_DAC1_Output 61
 channel_FVR_Buffer1 62
 channel_FVR_Buffer2 63
 ]
-"55 C:\Users\u0133487\Documents\1Werk\IWAST\code\Nieuwe map\iwast01.X\Sensors/dummy.c
-[e E10997 . `uc
+"68 C:\Users\geoffrey\Documents\GitHub\IWAST\sensors\firmware\MicrophoneModule\iwast01.X\Sensors/sound_level.c
+[e E10998 . `uc
 channel_ANC1 17
 channel_Vss 59
 channel_Temp_Sensor 60
@@ -41,9 +41,9 @@ channel_FVR_Buffer2 63
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"59 C:\Users\u0133487\Documents\1Werk\IWAST\code\Nieuwe map\iwast01.X\main.c
+"61 C:\Users\geoffrey\Documents\GitHub\IWAST\sensors\firmware\MicrophoneModule\iwast01.X\main.c
 [v _main main `(v  1 e 1 0 ]
-"66 C:\Users\u0133487\Documents\1Werk\IWAST\code\Nieuwe map\iwast01.X\mcc_generated_files/adcc.c
+"66 C:\Users\geoffrey\Documents\GitHub\IWAST\sensors\firmware\MicrophoneModule\iwast01.X\mcc_generated_files/adcc.c
 [v _ADCC_Initialize ADCC_Initialize `(v  1 e 1 0 ]
 "123
 [v _ADCC_StartConversion ADCC_StartConversion `(v  1 e 1 0 ]
@@ -61,7 +61,7 @@ channel_FVR_Buffer2 63
 [v _ADCC_SetADIInterruptHandler ADCC_SetADIInterruptHandler `(v  1 e 1 0 ]
 "323
 [v _ADCC_DefaultInterruptHandler ADCC_DefaultInterruptHandler `(v  1 e 1 0 ]
-"82 C:\Users\u0133487\Documents\1Werk\IWAST\code\Nieuwe map\iwast01.X\mcc_generated_files/eusart1.c
+"82 C:\Users\geoffrey\Documents\GitHub\IWAST\sensors\firmware\MicrophoneModule\iwast01.X\mcc_generated_files/eusart1.c
 [v _EUSART1_Initialize EUSART1_Initialize `(v  1 e 1 0 ]
 "179
 [v _EUSART1_Transmit_ISR EUSART1_Transmit_ISR `(v  1 e 1 0 ]
@@ -79,7 +79,7 @@ channel_FVR_Buffer2 63
 [v _EUSART1_SetErrorHandler EUSART1_SetErrorHandler `(v  1 e 1 0 ]
 "224
 [v _EUSART1_SetTxInterruptHandler EUSART1_SetTxInterruptHandler `(v  1 e 1 0 ]
-"100 C:\Users\u0133487\Documents\1Werk\IWAST\code\Nieuwe map\iwast01.X\mcc_generated_files/i2c1.c
+"100 C:\Users\geoffrey\Documents\GitHub\IWAST\sensors\firmware\MicrophoneModule\iwast01.X\mcc_generated_files/i2c1.c
 [v _I2C1_Initialize I2C1_Initialize `(v  1 e 1 0 ]
 "129
 [v _I2C1_ISR I2C1_ISR `(v  1 e 1 0 ]
@@ -91,15 +91,15 @@ channel_FVR_Buffer2 63
 [v _I2C1_SetTransmitData I2C1_SetTransmitData `(v  1 e 1 0 ]
 "194
 [v _I2C1_StatusCallback I2C1_StatusCallback `(v  1 e 1 0 ]
-"53 C:\Users\u0133487\Documents\1Werk\IWAST\code\Nieuwe map\iwast01.X\mcc_generated_files/interrupt_manager.c
+"53 C:\Users\geoffrey\Documents\GitHub\IWAST\sensors\firmware\MicrophoneModule\iwast01.X\mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
-"50 C:\Users\u0133487\Documents\1Werk\IWAST\code\Nieuwe map\iwast01.X\mcc_generated_files/mcc.c
+"50 C:\Users\geoffrey\Documents\GitHub\IWAST\sensors\firmware\MicrophoneModule\iwast01.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 "59
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
 "73
 [v _PMD_Initialize PMD_Initialize `(v  1 e 1 0 ]
-"58 C:\Users\u0133487\Documents\1Werk\IWAST\code\Nieuwe map\iwast01.X\mcc_generated_files/pin_manager.c
+"58 C:\Users\geoffrey\Documents\GitHub\IWAST\sensors\firmware\MicrophoneModule\iwast01.X\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
 "143
 [v _PIN_MANAGER_IOC PIN_MANAGER_IOC `(v  1 e 1 0 ]
@@ -115,24 +115,28 @@ channel_FVR_Buffer2 63
 [v _IOCCF2_SetInterruptHandler IOCCF2_SetInterruptHandler `(v  1 e 1 0 ]
 "213
 [v _IOCCF2_DefaultInterruptHandler IOCCF2_DefaultInterruptHandler `(v  1 e 1 0 ]
-"9 C:\Users\u0133487\Documents\1Werk\IWAST\code\Nieuwe map\iwast01.X\Sensors/dummy.c
+"14 C:\Users\geoffrey\Documents\GitHub\IWAST\sensors\firmware\MicrophoneModule\iwast01.X\Sensors/sound_level.c
+[v _dummy dummy `(v  1 e 1 0 ]
+"19
 [v _doMeasurement doMeasurement `(v  1 e 1 0 ]
-"15
+"28
 [v _prepTransmission prepTransmission `(v  1 e 1 0 ]
-"25
+"38
 [v _getValue getValue `(v  1 e 1 0 ]
-"51
+"64
 [v _initializeADC initializeADC `(v  1 e 1 0 ]
-"60
+"73
 [v _stopADC stopADC `(v  1 e 1 0 ]
-"67
+"80
 [v _generateInt generateInt `(v  1 e 1 0 ]
-"75
+"88
 [v _enableMic enableMic `(v  1 e 1 0 ]
-"81
+"94
 [v _disableMic disableMic `(v  1 e 1 0 ]
-"87
+"100
 [v _toggleInt toggleInt `(v  1 e 1 0 ]
+"108
+[v _setThreshold setThreshold `(v  1 e 1 0 ]
 [s S52 . 1 `uc 1 INTEDG 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 PEIE 1 0 :1:6 
@@ -153,7 +157,7 @@ channel_FVR_Buffer2 63
 [v _LATB LATB `VEuc  1 e 1 @25 ]
 "837
 [v _LATC LATC `VEuc  1 e 1 @26 ]
-[s S1571 . 1 `uc 1 LATC0 1 0 :1:0 
+[s S1597 . 1 `uc 1 LATC0 1 0 :1:0 
 `uc 1 LATC1 1 0 :1:1 
 `uc 1 LATC2 1 0 :1:2 
 `uc 1 LATC3 1 0 :1:3 
@@ -163,8 +167,8 @@ channel_FVR_Buffer2 63
 `uc 1 LATC7 1 0 :1:7 
 ]
 "854
-[u S1580 . 1 `S1571 1 . 1 0 ]
-[v _LATCbits LATCbits `VES1580  1 e 1 @26 ]
+[u S1606 . 1 `S1597 1 . 1 0 ]
+[v _LATCbits LATCbits `VES1606  1 e 1 @26 ]
 "906
 [v _ADLTHL ADLTHL `VEuc  1 e 1 @140 ]
 "1034
@@ -217,7 +221,7 @@ channel_FVR_Buffer2 63
 [v _ADPREH ADPREH `VEuc  1 e 1 @272 ]
 "4031
 [v _ADCON0 ADCON0 `VEuc  1 e 1 @273 ]
-[s S1091 . 1 `uc 1 GO 1 0 :1:0 
+[s S1087 . 1 `uc 1 GO 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 FM 1 0 :2:2 
 `uc 1 CS 1 0 :1:4 
@@ -226,7 +230,7 @@ channel_FVR_Buffer2 63
 `uc 1 ON 1 0 :1:7 
 ]
 "4072
-[s S1099 . 1 `uc 1 ADGO 1 0 :1:0 
+[s S1095 . 1 `uc 1 ADGO 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 ADFM 1 0 :2:2 
 `uc 1 ADCS 1 0 :1:4 
@@ -234,24 +238,24 @@ channel_FVR_Buffer2 63
 `uc 1 ADCONT 1 0 :1:6 
 `uc 1 ADON 1 0 :1:7 
 ]
-[s S1107 . 1 `uc 1 DONE 1 0 :1:0 
+[s S1103 . 1 `uc 1 DONE 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 FM0 1 0 :1:2 
 `uc 1 FM1 1 0 :1:3 
 ]
-[s S1112 . 1 `uc 1 GO_nDONE 1 0 :1:0 
+[s S1108 . 1 `uc 1 GO_nDONE 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 ADFM0 1 0 :1:2 
 `uc 1 ADFM1 1 0 :1:3 
 ]
-[s S1117 . 1 `uc 1 . 1 0 :7:0 
+[s S1113 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 ADCAL 1 0 :1:7 
 ]
-[u S1120 . 1 `S1091 1 . 1 0 `S1099 1 . 1 0 `S1107 1 . 1 0 `S1112 1 . 1 0 `S1117 1 . 1 0 ]
-[v _ADCON0bits ADCON0bits `VES1120  1 e 1 @273 ]
+[u S1116 . 1 `S1087 1 . 1 0 `S1095 1 . 1 0 `S1103 1 . 1 0 `S1108 1 . 1 0 `S1113 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES1116  1 e 1 @273 ]
 "4162
 [v _ADCON1 ADCON1 `VEuc  1 e 1 @274 ]
-[s S1352 . 1 `uc 1 DSEN 1 0 :1:0 
+[s S1348 . 1 `uc 1 DSEN 1 0 :1:0 
 `uc 1 . 1 0 :2:1 
 `uc 1 GBOE 1 0 :1:3 
 `uc 1 GAOE 1 0 :1:4 
@@ -260,7 +264,7 @@ channel_FVR_Buffer2 63
 `uc 1 PPOL 1 0 :1:7 
 ]
 "4193
-[s S1360 . 1 `uc 1 ADDSEN 1 0 :1:0 
+[s S1356 . 1 `uc 1 ADDSEN 1 0 :1:0 
 `uc 1 . 1 0 :2:1 
 `uc 1 ADGBOE 1 0 :1:3 
 `uc 1 ADGAOE 1 0 :1:4 
@@ -268,22 +272,22 @@ channel_FVR_Buffer2 63
 `uc 1 ADIPEN 1 0 :1:6 
 `uc 1 ADPPOL 1 0 :1:7 
 ]
-[s S1368 . 1 `uc 1 . 1 0 :3:0 
+[s S1364 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 CHSN3 1 0 :1:3 
 `uc 1 VCFG01 1 0 :1:4 
 `uc 1 VCFG11 1 0 :1:5 
 ]
-[u S1373 . 1 `S1352 1 . 1 0 `S1360 1 . 1 0 `S1368 1 . 1 0 ]
-[v _ADCON1bits ADCON1bits `VES1373  1 e 1 @274 ]
+[u S1369 . 1 `S1348 1 . 1 0 `S1356 1 . 1 0 `S1364 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES1369  1 e 1 @274 ]
 "4273
 [v _ADCON2 ADCON2 `VEuc  1 e 1 @275 ]
-[s S1213 . 1 `uc 1 MODE 1 0 :3:0 
+[s S1209 . 1 `uc 1 MODE 1 0 :3:0 
 `uc 1 ACLR 1 0 :1:3 
 `uc 1 CRS 1 0 :3:4 
 `uc 1 PSIS 1 0 :1:7 
 ]
 "4321
-[s S1218 . 1 `uc 1 ADMD0 1 0 :1:0 
+[s S1214 . 1 `uc 1 ADMD0 1 0 :1:0 
 `uc 1 ADMD1 1 0 :1:1 
 `uc 1 ADMD2 1 0 :1:2 
 `uc 1 ADACLR 1 0 :1:3 
@@ -292,11 +296,11 @@ channel_FVR_Buffer2 63
 `uc 1 ADCRS2 1 0 :1:6 
 `uc 1 ADPSIS 1 0 :1:7 
 ]
-[s S1227 . 1 `uc 1 ADMD 1 0 :3:0 
+[s S1223 . 1 `uc 1 ADMD 1 0 :3:0 
 `uc 1 . 1 0 :1:3 
 `uc 1 ADCRS 1 0 :3:4 
 ]
-[s S1231 . 1 `uc 1 MODE0 1 0 :1:0 
+[s S1227 . 1 `uc 1 MODE0 1 0 :1:0 
 `uc 1 MODE1 1 0 :1:1 
 `uc 1 MODE2 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -304,24 +308,24 @@ channel_FVR_Buffer2 63
 `uc 1 CRS1 1 0 :1:5 
 `uc 1 CRS2 1 0 :1:6 
 ]
-[s S1239 . 1 `uc 1 MD 1 0 :3:0 
+[s S1235 . 1 `uc 1 MD 1 0 :3:0 
 ]
-[s S1241 . 1 `uc 1 MD0 1 0 :1:0 
+[s S1237 . 1 `uc 1 MD0 1 0 :1:0 
 `uc 1 MD1 1 0 :1:1 
 `uc 1 MD2 1 0 :1:2 
 ]
-[s S1245 . 1 `uc 1 ADMODE 1 0 :3:0 
+[s S1241 . 1 `uc 1 ADMODE 1 0 :3:0 
 ]
-[u S1247 . 1 `S1213 1 . 1 0 `S1218 1 . 1 0 `S1227 1 . 1 0 `S1231 1 . 1 0 `S1239 1 . 1 0 `S1241 1 . 1 0 `S1245 1 . 1 0 ]
-[v _ADCON2bits ADCON2bits `VES1247  1 e 1 @275 ]
+[u S1243 . 1 `S1209 1 . 1 0 `S1214 1 . 1 0 `S1223 1 . 1 0 `S1227 1 . 1 0 `S1235 1 . 1 0 `S1237 1 . 1 0 `S1241 1 . 1 0 ]
+[v _ADCON2bits ADCON2bits `VES1243  1 e 1 @275 ]
 "4451
 [v _ADCON3 ADCON3 `VEuc  1 e 1 @276 ]
-[s S1158 . 1 `uc 1 TMD 1 0 :3:0 
+[s S1154 . 1 `uc 1 TMD 1 0 :3:0 
 `uc 1 SOI 1 0 :1:3 
 `uc 1 CALC 1 0 :3:4 
 ]
 "4486
-[s S1162 . 1 `uc 1 ADTMD0 1 0 :1:0 
+[s S1158 . 1 `uc 1 ADTMD0 1 0 :1:0 
 `uc 1 ADTMD1 1 0 :1:1 
 `uc 1 ADTMD2 1 0 :1:2 
 `uc 1 ADSOI 1 0 :1:3 
@@ -329,11 +333,11 @@ channel_FVR_Buffer2 63
 `uc 1 ADCALC1 1 0 :1:5 
 `uc 1 ADCALC2 1 0 :1:6 
 ]
-[s S1170 . 1 `uc 1 ADTMD 1 0 :3:0 
+[s S1166 . 1 `uc 1 ADTMD 1 0 :3:0 
 `uc 1 . 1 0 :1:3 
 `uc 1 ADCALC 1 0 :3:4 
 ]
-[s S1174 . 1 `uc 1 TMD0 1 0 :1:0 
+[s S1170 . 1 `uc 1 TMD0 1 0 :1:0 
 `uc 1 TMD1 1 0 :1:1 
 `uc 1 TMD2 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -341,11 +345,11 @@ channel_FVR_Buffer2 63
 `uc 1 CALC1 1 0 :1:5 
 `uc 1 CALC2 1 0 :1:6 
 ]
-[u S1182 . 1 `S1158 1 . 1 0 `S1162 1 . 1 0 `S1170 1 . 1 0 `S1174 1 . 1 0 ]
-[v _ADCON3bits ADCON3bits `VES1182  1 e 1 @276 ]
+[u S1178 . 1 `S1154 1 . 1 0 `S1158 1 . 1 0 `S1166 1 . 1 0 `S1170 1 . 1 0 ]
+[v _ADCON3bits ADCON3bits `VES1178  1 e 1 @276 ]
 "4581
 [v _ADSTAT ADSTAT `VEuc  1 e 1 @277 ]
-[s S1292 . 1 `uc 1 STAT 1 0 :3:0 
+[s S1288 . 1 `uc 1 STAT 1 0 :3:0 
 `uc 1 . 1 0 :1:3 
 `uc 1 MATH 1 0 :1:4 
 `uc 1 LTHR 1 0 :1:5 
@@ -353,7 +357,7 @@ channel_FVR_Buffer2 63
 `uc 1 OV 1 0 :1:7 
 ]
 "4616
-[s S1299 . 1 `uc 1 ADSTAT0 1 0 :1:0 
+[s S1295 . 1 `uc 1 ADSTAT0 1 0 :1:0 
 `uc 1 ADSTAT1 1 0 :1:1 
 `uc 1 ADSTAT2 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -362,16 +366,16 @@ channel_FVR_Buffer2 63
 `uc 1 ADUTHR 1 0 :1:6 
 `uc 1 ADAOV 1 0 :1:7 
 ]
-[s S1308 . 1 `uc 1 ADSTAT 1 0 :3:0 
+[s S1304 . 1 `uc 1 ADSTAT 1 0 :3:0 
 `uc 1 . 1 0 :4:3 
 `uc 1 ADOV 1 0 :1:7 
 ]
-[s S1312 . 1 `uc 1 STAT0 1 0 :1:0 
+[s S1308 . 1 `uc 1 STAT0 1 0 :1:0 
 `uc 1 STAT1 1 0 :1:1 
 `uc 1 STAT2 1 0 :1:2 
 ]
-[u S1316 . 1 `S1292 1 . 1 0 `S1299 1 . 1 0 `S1308 1 . 1 0 `S1312 1 . 1 0 ]
-[v _ADSTATbits ADSTATbits `VES1316  1 e 1 @277 ]
+[u S1312 . 1 `S1288 1 . 1 0 `S1295 1 . 1 0 `S1304 1 . 1 0 `S1308 1 . 1 0 ]
+[v _ADSTATbits ADSTATbits `VES1312  1 e 1 @277 ]
 "4706
 [v _ADREF ADREF `VEuc  1 e 1 @278 ]
 "4846
@@ -388,7 +392,7 @@ channel_FVR_Buffer2 63
 [v _SP1BRGH SP1BRGH `VEuc  1 e 1 @284 ]
 "5281
 [v _RC1STA RC1STA `VEuc  1 e 1 @285 ]
-[s S554 . 1 `uc 1 RX9D 1 0 :1:0 
+[s S550 . 1 `uc 1 RX9D 1 0 :1:0 
 `uc 1 OERR 1 0 :1:1 
 `uc 1 FERR 1 0 :1:2 
 `uc 1 ADDEN 1 0 :1:3 
@@ -398,11 +402,11 @@ channel_FVR_Buffer2 63
 `uc 1 SPEN 1 0 :1:7 
 ]
 "5307
-[u S563 . 1 `S554 1 . 1 0 ]
-[v _RC1STAbits RC1STAbits `VES563  1 e 1 @285 ]
+[u S559 . 1 `S550 1 . 1 0 ]
+[v _RC1STAbits RC1STAbits `VES559  1 e 1 @285 ]
 "5461
 [v _TX1STA TX1STA `VEuc  1 e 1 @286 ]
-[s S533 . 1 `uc 1 TX9D 1 0 :1:0 
+[s S529 . 1 `uc 1 TX9D 1 0 :1:0 
 `uc 1 TRMT 1 0 :1:1 
 `uc 1 BRGH 1 0 :1:2 
 `uc 1 SENDB 1 0 :1:3 
@@ -412,8 +416,8 @@ channel_FVR_Buffer2 63
 `uc 1 CSRC 1 0 :1:7 
 ]
 "5487
-[u S542 . 1 `S533 1 . 1 0 ]
-[v _TX1STAbits TX1STAbits `VES542  1 e 1 @286 ]
+[u S538 . 1 `S529 1 . 1 0 ]
+[v _TX1STAbits TX1STAbits `VES538  1 e 1 @286 ]
 "5641
 [v _BAUD1CON BAUD1CON `VEuc  1 e 1 @287 ]
 "5887
@@ -424,7 +428,7 @@ channel_FVR_Buffer2 63
 [v _SSP1MSK SSP1MSK `VEuc  1 e 1 @398 ]
 "6097
 [v _SSP1STAT SSP1STAT `VEuc  1 e 1 @399 ]
-[s S663 . 1 `uc 1 BF 1 0 :1:0 
+[s S659 . 1 `uc 1 BF 1 0 :1:0 
 `uc 1 UA 1 0 :1:1 
 `uc 1 R_nW 1 0 :1:2 
 `uc 1 S 1 0 :1:3 
@@ -434,33 +438,33 @@ channel_FVR_Buffer2 63
 `uc 1 SMP 1 0 :1:7 
 ]
 "6206
-[s S672 . 1 `uc 1 . 1 0 :2:0 
+[s S668 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_W 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D_A 1 0 :1:5 
 ]
-[s S677 . 1 `uc 1 . 1 0 :2:0 
+[s S673 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nW 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nA 1 0 :1:5 
 ]
-[s S682 . 1 `uc 1 . 1 0 :2:0 
+[s S678 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nWRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nADDRESS 1 0 :1:5 
 ]
-[s S687 . 1 `uc 1 . 1 0 :2:0 
+[s S683 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 READ_WRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 DATA_ADDRESS 1 0 :1:5 
 ]
-[s S692 . 1 `uc 1 . 1 0 :2:0 
+[s S688 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 I2C_READ 1 0 :1:2 
 `uc 1 I2C_START 1 0 :1:3 
 `uc 1 I2C_STOP 1 0 :1:4 
 `uc 1 I2C_DAT 1 0 :1:5 
 ]
-[s S698 . 1 `uc 1 BF1 1 0 :1:0 
+[s S694 . 1 `uc 1 BF1 1 0 :1:0 
 `uc 1 UA1 1 0 :1:1 
 `uc 1 R 1 0 :1:2 
 `uc 1 START 1 0 :1:3 
@@ -469,66 +473,66 @@ channel_FVR_Buffer2 63
 `uc 1 CKE1 1 0 :1:6 
 `uc 1 SMP1 1 0 :1:7 
 ]
-[s S707 . 1 `uc 1 . 1 0 :2:0 
+[s S703 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 RW 1 0 :1:2 
 `uc 1 START1 1 0 :1:3 
 `uc 1 STOP1 1 0 :1:4 
 `uc 1 DA 1 0 :1:5 
 ]
-[s S713 . 1 `uc 1 . 1 0 :2:0 
+[s S709 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 RW1 1 0 :1:2 
 `uc 1 I2C_START1 1 0 :1:3 
 `uc 1 I2C_STOP2 1 0 :1:4 
 `uc 1 DA1 1 0 :1:5 
 ]
-[s S719 . 1 `uc 1 . 1 0 :2:0 
+[s S715 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 I2C_READ1 1 0 :1:2 
 `uc 1 S2 1 0 :1:3 
 `uc 1 P2 1 0 :1:4 
 `uc 1 DATA_ADDRESS1 1 0 :1:5 
 ]
-[s S725 . 1 `uc 1 . 1 0 :2:0 
+[s S721 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 READ_WRITE1 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D_A1 1 0 :1:5 
 ]
-[s S730 . 1 `uc 1 . 1 0 :2:0 
+[s S726 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_W1 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D_nA1 1 0 :1:5 
 ]
-[s S735 . 1 `uc 1 . 1 0 :2:0 
+[s S731 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_nW1 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 I2C_DAT1 1 0 :1:5 
 ]
-[s S740 . 1 `uc 1 . 1 0 :2:0 
+[s S736 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nW2 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nA2 1 0 :1:5 
 ]
-[s S745 . 1 `uc 1 . 1 0 :2:0 
+[s S741 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nWRITE1 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nADDRESS1 1 0 :1:5 
 ]
-[u S750 . 1 `S663 1 . 1 0 `S672 1 . 1 0 `S677 1 . 1 0 `S682 1 . 1 0 `S687 1 . 1 0 `S692 1 . 1 0 `S698 1 . 1 0 `S707 1 . 1 0 `S713 1 . 1 0 `S719 1 . 1 0 `S725 1 . 1 0 `S730 1 . 1 0 `S735 1 . 1 0 `S740 1 . 1 0 `S745 1 . 1 0 ]
-[v _SSP1STATbits SSP1STATbits `VES750  1 e 1 @399 ]
+[u S746 . 1 `S659 1 . 1 0 `S668 1 . 1 0 `S673 1 . 1 0 `S678 1 . 1 0 `S683 1 . 1 0 `S688 1 . 1 0 `S694 1 . 1 0 `S703 1 . 1 0 `S709 1 . 1 0 `S715 1 . 1 0 `S721 1 . 1 0 `S726 1 . 1 0 `S731 1 . 1 0 `S736 1 . 1 0 `S741 1 . 1 0 ]
+[v _SSP1STATbits SSP1STATbits `VES746  1 e 1 @399 ]
 "6461
 [v _SSP1CON1 SSP1CON1 `VEuc  1 e 1 @400 ]
-[s S941 . 1 `uc 1 SSPM 1 0 :4:0 
+[s S937 . 1 `uc 1 SSPM 1 0 :4:0 
 `uc 1 CKP 1 0 :1:4 
 `uc 1 SSPEN 1 0 :1:5 
 `uc 1 SSPOV 1 0 :1:6 
 `uc 1 WCOL 1 0 :1:7 
 ]
 "6491
-[s S947 . 1 `uc 1 SSPM0 1 0 :1:0 
+[s S943 . 1 `uc 1 SSPM0 1 0 :1:0 
 `uc 1 SSPM1 1 0 :1:1 
 `uc 1 SSPM2 1 0 :1:2 
 `uc 1 SSPM3 1 0 :1:3 
 ]
-[s S952 . 1 `uc 1 SSPM01 1 0 :1:0 
+[s S948 . 1 `uc 1 SSPM01 1 0 :1:0 
 `uc 1 SSPM11 1 0 :1:1 
 `uc 1 SSPM21 1 0 :1:2 
 `uc 1 SSPM31 1 0 :1:3 
@@ -537,11 +541,11 @@ channel_FVR_Buffer2 63
 `uc 1 SSPOV1 1 0 :1:6 
 `uc 1 WCOL1 1 0 :1:7 
 ]
-[u S961 . 1 `S941 1 . 1 0 `S947 1 . 1 0 `S952 1 . 1 0 ]
-[v _SSP1CON1bits SSP1CON1bits `VES961  1 e 1 @400 ]
+[u S957 . 1 `S937 1 . 1 0 `S943 1 . 1 0 `S948 1 . 1 0 ]
+[v _SSP1CON1bits SSP1CON1bits `VES957  1 e 1 @400 ]
 "6581
 [v _SSP1CON2 SSP1CON2 `VEuc  1 e 1 @401 ]
-[s S854 . 1 `uc 1 SEN 1 0 :1:0 
+[s S850 . 1 `uc 1 SEN 1 0 :1:0 
 `uc 1 RSEN 1 0 :1:1 
 `uc 1 PEN 1 0 :1:2 
 `uc 1 RCEN 1 0 :1:3 
@@ -551,17 +555,17 @@ channel_FVR_Buffer2 63
 `uc 1 GCEN 1 0 :1:7 
 ]
 "6628
-[s S863 . 1 `uc 1 . 1 0 :1:0 
+[s S859 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 ADMSK 1 0 :5:1 
 ]
-[s S866 . 1 `uc 1 . 1 0 :1:0 
+[s S862 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 ADMSK1 1 0 :1:1 
 `uc 1 ADMSK2 1 0 :1:2 
 `uc 1 ADMSK3 1 0 :1:3 
 `uc 1 ADMSK4 1 0 :1:4 
 `uc 1 ADMSK5 1 0 :1:5 
 ]
-[s S873 . 1 `uc 1 SEN1 1 0 :1:0 
+[s S869 . 1 `uc 1 SEN1 1 0 :1:0 
 `uc 1 ADMSK11 1 0 :1:1 
 `uc 1 ADMSK21 1 0 :1:2 
 `uc 1 ADMSK31 1 0 :1:3 
@@ -570,15 +574,15 @@ channel_FVR_Buffer2 63
 `uc 1 ACKSTAT1 1 0 :1:6 
 `uc 1 GCEN1 1 0 :1:7 
 ]
-[s S882 . 1 `uc 1 . 1 0 :1:0 
+[s S878 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 RSEN1 1 0 :1:1 
 `uc 1 PEN1 1 0 :1:2 
 `uc 1 RCEN1 1 0 :1:3 
 `uc 1 ADMSK41 1 0 :1:4 
 `uc 1 ADMSK51 1 0 :1:5 
 ]
-[u S889 . 1 `S854 1 . 1 0 `S863 1 . 1 0 `S866 1 . 1 0 `S873 1 . 1 0 `S882 1 . 1 0 ]
-[v _SSP1CON2bits SSP1CON2bits `VES889  1 e 1 @401 ]
+[u S885 . 1 `S850 1 . 1 0 `S859 1 . 1 0 `S862 1 . 1 0 `S869 1 . 1 0 `S878 1 . 1 0 ]
+[v _SSP1CON2bits SSP1CON2bits `VES885  1 e 1 @401 ]
 "6768
 [v _SSP1CON3 SSP1CON3 `VEuc  1 e 1 @402 ]
 [s S35 . 1 `uc 1 INTF 1 0 :1:0 
@@ -764,9 +768,14 @@ channel_FVR_Buffer2 63
 "31797
 [u S294 . 1 `S285 1 . 1 0 ]
 [v _IOCCFbits IOCCFbits `VES294  1 e 1 @8021 ]
-"60 C:\Users\u0133487\Documents\1Werk\IWAST\code\Nieuwe map\iwast01.X\mcc_generated_files/adcc.c
+[s S1486 devApi 6 `*.37(v 1 Init 2 0 `*.37(v 1 Measure 2 2 `*.37(v 1 UpdateThreshold 2 4 ]
+"35 C:\Users\geoffrey\Documents\GitHub\IWAST\sensors\firmware\MicrophoneModule\iwast01.X\main.c
+[v _sensorAPI sensorAPI `S1486  1 e 6 0 ]
+"57
+[v _mDataLength mDataLength `uc  1 e 1 0 ]
+"60 C:\Users\geoffrey\Documents\GitHub\IWAST\sensors\firmware\MicrophoneModule\iwast01.X\mcc_generated_files/adcc.c
 [v _ADCC_ADI_InterruptHandler ADCC_ADI_InterruptHandler `*.37(v  1 e 2 0 ]
-"62 C:\Users\u0133487\Documents\1Werk\IWAST\code\Nieuwe map\iwast01.X\mcc_generated_files/eusart1.c
+"62 C:\Users\geoffrey\Documents\GitHub\IWAST\sensors\firmware\MicrophoneModule\iwast01.X\mcc_generated_files/eusart1.c
 [v _eusart1TxHead eusart1TxHead `VEuc  1 e 1 0 ]
 "63
 [v _eusart1TxTail eusart1TxTail `VEuc  1 e 1 0 ]
@@ -774,14 +783,14 @@ channel_FVR_Buffer2 63
 [v _eusart1TxBuffer eusart1TxBuffer `VE[32]uc  1 e 32 0 ]
 "65
 [v _eusart1TxBufferRemaining eusart1TxBufferRemaining `VEuc  1 e 1 0 ]
-[s S456 . 1 `uc 1 perr 1 0 :1:0 
+[s S452 . 1 `uc 1 perr 1 0 :1:0 
 `uc 1 ferr 1 0 :1:1 
 `uc 1 oerr 1 0 :1:2 
 `uc 1 reserved 1 0 :5:3 
 ]
 "67
-[u S461 . 1 `S456 1 . 1 0 `uc 1 status 1 0 ]
-[v _eusart1RxLastError eusart1RxLastError `VES461  1 e 1 0 ]
+[u S457 . 1 `S452 1 . 1 0 `uc 1 status 1 0 ]
+[v _eusart1RxLastError eusart1RxLastError `VES457  1 e 1 0 ]
 "72
 [v _EUSART1_TxDefaultInterruptHandler EUSART1_TxDefaultInterruptHandler `*.37(v  1 e 2 0 ]
 "74
@@ -790,7 +799,7 @@ channel_FVR_Buffer2 63
 [v _EUSART1_OverrunErrorHandler EUSART1_OverrunErrorHandler `*.37(v  1 e 2 0 ]
 "76
 [v _EUSART1_ErrorHandler EUSART1_ErrorHandler `*.37(v  1 e 2 0 ]
-"71 C:\Users\u0133487\Documents\1Werk\IWAST\code\Nieuwe map\iwast01.X\mcc_generated_files/i2c1.c
+"71 C:\Users\geoffrey\Documents\GitHub\IWAST\sensors\firmware\MicrophoneModule\iwast01.X\mcc_generated_files/i2c1.c
 [v _I2C1_slaveWriteData I2C1_slaveWriteData `VEuc  1 e 1 0 ]
 "75
 [v _i2c1_rx_buffer i2c1_rx_buffer `[32]uc  1 s 32 i2c1_rx_buffer ]
@@ -806,55 +815,60 @@ channel_FVR_Buffer2 63
 [v _txLen txLen `uc  1 s 1 txLen ]
 "82
 [v _txCnt txCnt `uc  1 s 1 txCnt ]
-"54 C:\Users\u0133487\Documents\1Werk\IWAST\code\Nieuwe map\iwast01.X\mcc_generated_files/pin_manager.c
+"54 C:\Users\geoffrey\Documents\GitHub\IWAST\sensors\firmware\MicrophoneModule\iwast01.X\mcc_generated_files/pin_manager.c
 [v _IOCBF7_InterruptHandler IOCBF7_InterruptHandler `*.37(v  1 e 2 0 ]
 "55
 [v _IOCCF2_InterruptHandler IOCCF2_InterruptHandler `*.37(v  1 e 2 0 ]
-"24 C:\Users\u0133487\Documents\1Werk\IWAST\code\Nieuwe map\iwast01.X\Sensors/Dummy.h
-[v _measurementData measurementData `[2]uc  1 e 2 0 ]
-"25
+"8 C:\Users\geoffrey\Documents\GitHub\IWAST\sensors\firmware\MicrophoneModule\iwast01.X\Sensors/sound_level.c
 [v _reset reset `a  1 e 1 0 ]
-"26
+"9
 [v _x x `us  1 e 2 0 ]
-"27
+"10
 [v _maxValue maxValue `us  1 e 2 0 ]
-"59 C:\Users\u0133487\Documents\1Werk\IWAST\code\Nieuwe map\iwast01.X\main.c
+"12
+[v _measurementData measurementData `[2]uc  1 e 2 0 ]
+"61 C:\Users\geoffrey\Documents\GitHub\IWAST\sensors\firmware\MicrophoneModule\iwast01.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"129
-[v main@ack_1531 ack `uc  1 a 1 31 ]
+"127
+[v main@ack_1557 ack `uc  1 a 1 37 ]
 "115
-[v main@ack_1530 ack `uc  1 a 1 30 ]
-"109
-[v main@dlen dlen `uc  1 a 1 29 ]
-"103
-[v main@type type `uc  1 a 1 28 ]
-"96
-[v main@ack ack `uc  1 a 1 27 ]
-"90
-[v main@data data `[20]uc  1 a 20 6 ]
-"88
-[v main@cmd cmd `uc  1 a 1 32 ]
-"89
-[v main@len len `uc  1 a 1 26 ]
-"144
+[v main@ack_1556 ack `uc  1 a 1 36 ]
+"114
+[v main@metric metric `uc  1 a 1 31 ]
+"107
+[v main@mnr mnr `uc  1 a 1 35 ]
+"100
+[v main@type type `uc  1 a 1 34 ]
+"93
+[v main@ack ack `uc  1 a 1 33 ]
+"87
+[v main@data data `[20]uc  1 a 20 11 ]
+"85
+[v main@cmd cmd `uc  1 a 1 38 ]
+"86
+[v main@len len `uc  1 a 1 32 ]
+"142
 } 0
-"87 C:\Users\u0133487\Documents\1Werk\IWAST\code\Nieuwe map\iwast01.X\Sensors/dummy.c
+"100 C:\Users\geoffrey\Documents\GitHub\IWAST\sensors\firmware\MicrophoneModule\iwast01.X\Sensors/sound_level.c
 [v _toggleInt toggleInt `(v  1 e 1 0 ]
 {
-"91
+"104
 } 0
-"9
+"19
 [v _doMeasurement doMeasurement `(v  1 e 1 0 ]
 {
-"12
+[v doMeasurement@metric metric `uc  1 p 1 4 ]
+[v doMeasurement@data data `*.4uc  1 p 1 5 ]
+[v doMeasurement@length length `*.4uc  1 p 1 6 ]
+"25
 } 0
-"51
+"64
 [v _initializeADC initializeADC `(v  1 e 1 0 ]
 {
-"56
+"69
 } 0
-"123 C:\Users\u0133487\Documents\1Werk\IWAST\code\Nieuwe map\iwast01.X\mcc_generated_files/adcc.c
+"123 C:\Users\geoffrey\Documents\GitHub\IWAST\sensors\firmware\MicrophoneModule\iwast01.X\mcc_generated_files/adcc.c
 [v _ADCC_StartConversion ADCC_StartConversion `(v  1 e 1 0 ]
 {
 [v ADCC_StartConversion@channel channel `E10896  1 a 1 wreg ]
@@ -879,12 +893,12 @@ channel_FVR_Buffer2 63
 {
 "283
 } 0
-"75 C:\Users\u0133487\Documents\1Werk\IWAST\code\Nieuwe map\iwast01.X\Sensors/dummy.c
+"88 C:\Users\geoffrey\Documents\GitHub\IWAST\sensors\firmware\MicrophoneModule\iwast01.X\Sensors/sound_level.c
 [v _enableMic enableMic `(v  1 e 1 0 ]
 {
-"77
+"90
 } 0
-"50 C:\Users\u0133487\Documents\1Werk\IWAST\code\Nieuwe map\iwast01.X\mcc_generated_files/mcc.c
+"50 C:\Users\geoffrey\Documents\GitHub\IWAST\sensors\firmware\MicrophoneModule\iwast01.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 {
 [v SYSTEM_Initialize@slave_address slave_address `uc  1 a 1 wreg ]
@@ -898,7 +912,7 @@ channel_FVR_Buffer2 63
 {
 "91
 } 0
-"58 C:\Users\u0133487\Documents\1Werk\IWAST\code\Nieuwe map\iwast01.X\mcc_generated_files/pin_manager.c
+"58 C:\Users\geoffrey\Documents\GitHub\IWAST\sensors\firmware\MicrophoneModule\iwast01.X\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
 {
 "141
@@ -915,12 +929,12 @@ channel_FVR_Buffer2 63
 [v IOCBF7_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
 "177
 } 0
-"59 C:\Users\u0133487\Documents\1Werk\IWAST\code\Nieuwe map\iwast01.X\mcc_generated_files/mcc.c
+"59 C:\Users\geoffrey\Documents\GitHub\IWAST\sensors\firmware\MicrophoneModule\iwast01.X\mcc_generated_files/mcc.c
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
 {
 "71
 } 0
-"100 C:\Users\u0133487\Documents\1Werk\IWAST\code\Nieuwe map\iwast01.X\mcc_generated_files/i2c1.c
+"100 C:\Users\geoffrey\Documents\GitHub\IWAST\sensors\firmware\MicrophoneModule\iwast01.X\mcc_generated_files/i2c1.c
 [v _I2C1_Initialize I2C1_Initialize `(v  1 e 1 0 ]
 {
 [v I2C1_Initialize@slave_address slave_address `uc  1 a 1 wreg ]
@@ -929,7 +943,7 @@ channel_FVR_Buffer2 63
 [v I2C1_Initialize@slave_address slave_address `uc  1 a 1 0 ]
 "127
 } 0
-"82 C:\Users\u0133487\Documents\1Werk\IWAST\code\Nieuwe map\iwast01.X\mcc_generated_files/eusart1.c
+"82 C:\Users\geoffrey\Documents\GitHub\IWAST\sensors\firmware\MicrophoneModule\iwast01.X\mcc_generated_files/eusart1.c
 [v _EUSART1_Initialize EUSART1_Initialize `(v  1 e 1 0 ]
 {
 "115
@@ -958,7 +972,7 @@ channel_FVR_Buffer2 63
 [v EUSART1_SetErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 0 ]
 "222
 } 0
-"182 C:\Users\u0133487\Documents\1Werk\IWAST\code\Nieuwe map\iwast01.X\mcc_generated_files/i2c1.c
+"182 C:\Users\geoffrey\Documents\GitHub\IWAST\sensors\firmware\MicrophoneModule\iwast01.X\mcc_generated_files/i2c1.c
 [v _I2C1_SetTransmitData I2C1_SetTransmitData `(v  1 e 1 0 ]
 {
 [v I2C1_SetTransmitData@data data `*.4uc  1 a 1 wreg ]
@@ -982,12 +996,12 @@ channel_FVR_Buffer2 63
 {
 "173
 } 0
-"53 C:\Users\u0133487\Documents\1Werk\IWAST\code\Nieuwe map\iwast01.X\mcc_generated_files/interrupt_manager.c
+"53 C:\Users\geoffrey\Documents\GitHub\IWAST\sensors\firmware\MicrophoneModule\iwast01.X\mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
 {
 "83
 } 0
-"143 C:\Users\u0133487\Documents\1Werk\IWAST\code\Nieuwe map\iwast01.X\mcc_generated_files/pin_manager.c
+"143 C:\Users\geoffrey\Documents\GitHub\IWAST\sensors\firmware\MicrophoneModule\iwast01.X\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_IOC PIN_MANAGER_IOC `(v  1 e 1 0 ]
 {
 "155
@@ -1012,7 +1026,7 @@ channel_FVR_Buffer2 63
 {
 "186
 } 0
-"129 C:\Users\u0133487\Documents\1Werk\IWAST\code\Nieuwe map\iwast01.X\mcc_generated_files/i2c1.c
+"129 C:\Users\geoffrey\Documents\GitHub\IWAST\sensors\firmware\MicrophoneModule\iwast01.X\mcc_generated_files/i2c1.c
 [v _I2C1_ISR I2C1_ISR `(v  1 e 1 0 ]
 {
 "131
@@ -1030,35 +1044,35 @@ channel_FVR_Buffer2 63
 [v I2C1_StatusCallback@i2c_bus_state i2c_bus_state `E10895  1 a 1 2 ]
 "243
 } 0
-"179 C:\Users\u0133487\Documents\1Werk\IWAST\code\Nieuwe map\iwast01.X\mcc_generated_files/eusart1.c
+"179 C:\Users\geoffrey\Documents\GitHub\IWAST\sensors\firmware\MicrophoneModule\iwast01.X\mcc_generated_files/eusart1.c
 [v _EUSART1_Transmit_ISR EUSART1_Transmit_ISR `(v  1 e 1 0 ]
 {
 "196
 } 0
-"309 C:\Users\u0133487\Documents\1Werk\IWAST\code\Nieuwe map\iwast01.X\mcc_generated_files/adcc.c
+"309 C:\Users\geoffrey\Documents\GitHub\IWAST\sensors\firmware\MicrophoneModule\iwast01.X\mcc_generated_files/adcc.c
 [v _ADCC_ISR ADCC_ISR `(v  1 e 1 0 ]
 {
 "317
 } 0
-"25 C:\Users\u0133487\Documents\1Werk\IWAST\code\Nieuwe map\iwast01.X\Sensors/dummy.c
+"38 C:\Users\geoffrey\Documents\GitHub\IWAST\sensors\firmware\MicrophoneModule\iwast01.X\Sensors/sound_level.c
 [v _getValue getValue `(v  1 e 1 0 ]
 {
-"27
+"40
 [v getValue@sample sample `us  1 a 2 4 ]
-"48
+"61
 } 0
-"15
+"28
 [v _prepTransmission prepTransmission `(v  1 e 1 0 ]
 {
 [v prepTransmission@maxiValue maxiValue `us  1 p 2 1 ]
-"22
+"35
 } 0
-"60
+"73
 [v _stopADC stopADC `(v  1 e 1 0 ]
 {
-"63
+"76
 } 0
-"172 C:\Users\u0133487\Documents\1Werk\IWAST\code\Nieuwe map\iwast01.X\mcc_generated_files/adcc.c
+"172 C:\Users\geoffrey\Documents\GitHub\IWAST\sensors\firmware\MicrophoneModule\iwast01.X\mcc_generated_files/adcc.c
 [v _ADCC_StopConversion ADCC_StopConversion `(v  1 e 1 0 ]
 {
 "176
@@ -1068,17 +1082,17 @@ channel_FVR_Buffer2 63
 {
 "289
 } 0
-"67 C:\Users\u0133487\Documents\1Werk\IWAST\code\Nieuwe map\iwast01.X\Sensors/dummy.c
+"80 C:\Users\geoffrey\Documents\GitHub\IWAST\sensors\firmware\MicrophoneModule\iwast01.X\Sensors/sound_level.c
 [v _generateInt generateInt `(v  1 e 1 0 ]
 {
-"71
+"84
 } 0
-"81
+"94
 [v _disableMic disableMic `(v  1 e 1 0 ]
 {
-"83
+"96
 } 0
-"141 C:\Users\u0133487\Documents\1Werk\IWAST\code\Nieuwe map\iwast01.X\mcc_generated_files/adcc.c
+"141 C:\Users\geoffrey\Documents\GitHub\IWAST\sensors\firmware\MicrophoneModule\iwast01.X\mcc_generated_files/adcc.c
 [v _ADCC_GetConversionResult ADCC_GetConversionResult `(us  1 e 2 0 ]
 {
 "145

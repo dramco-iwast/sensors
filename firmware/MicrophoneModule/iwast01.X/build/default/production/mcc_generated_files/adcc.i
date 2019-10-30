@@ -18383,22 +18383,17 @@ void OSCILLATOR_Initialize(void);
 void PMD_Initialize(void);
 # 53 "mcc_generated_files/adcc.c" 2
 
-# 1 "mcc_generated_files/../Sensors/Dummy.h" 1
-# 24 "mcc_generated_files/../Sensors/Dummy.h"
-extern uint8_t measurementData[0x02] = {0x00, 0x00};
-_Bool reset = 0;
-uint16_t x = 0;
-uint16_t maxValue = 0;
+# 1 "mcc_generated_files/../Sensors/sound_level.h" 1
+# 27 "mcc_generated_files/../Sensors/sound_level.h"
+void dummy(void);
 
-
-
-void doMeasurement(void);
+void doMeasurement(uint8_t metric, uint8_t * data, uint8_t * length);
 void prepTransmission(uint16_t);
 void getValue(void);
 void initializeADC(void);
 void stopADC(void);
 void generateInt(void);
-void setThreshold(uint16_t);
+void setThreshold(uint8_t metric, uint8_t * thresholds);
 void translateData(uint8_t enable,uint8_t MSBLT,uint8_t LSBLT,uint8_t MSBUP,uint8_t LSBUT);
 void enableMic(void);
 void disableMic(void);

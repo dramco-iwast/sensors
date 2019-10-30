@@ -18114,8 +18114,8 @@ extern void (*IOCCF2_InterruptHandler)(void);
 void IOCCF2_DefaultInterruptHandler(void);
 # 49 "mcc_generated_files/pin_manager.c" 2
 
-# 1 "mcc_generated_files/../Sensors/Dummy.h" 1
-# 12 "mcc_generated_files/../Sensors/Dummy.h"
+# 1 "mcc_generated_files/../Sensors/sound_level.h" 1
+# 12 "mcc_generated_files/../Sensors/sound_level.h"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 1 3
 # 22 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 3
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -18199,25 +18199,20 @@ typedef int32_t int_fast32_t;
 typedef uint32_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 139 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 2 3
-# 12 "mcc_generated_files/../Sensors/Dummy.h" 2
+# 12 "mcc_generated_files/../Sensors/sound_level.h" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdbool.h" 1 3
-# 13 "mcc_generated_files/../Sensors/Dummy.h" 2
-# 24 "mcc_generated_files/../Sensors/Dummy.h"
-extern uint8_t measurementData[0x02] = {0x00, 0x00};
-_Bool reset = 0;
-uint16_t x = 0;
-uint16_t maxValue = 0;
+# 13 "mcc_generated_files/../Sensors/sound_level.h" 2
+# 27 "mcc_generated_files/../Sensors/sound_level.h"
+void dummy(void);
 
-
-
-void doMeasurement(void);
+void doMeasurement(uint8_t metric, uint8_t * data, uint8_t * length);
 void prepTransmission(uint16_t);
 void getValue(void);
 void initializeADC(void);
 void stopADC(void);
 void generateInt(void);
-void setThreshold(uint16_t);
+void setThreshold(uint8_t metric, uint8_t * thresholds);
 void translateData(uint8_t enable,uint8_t MSBLT,uint8_t LSBLT,uint8_t MSBUP,uint8_t LSBUT);
 void enableMic(void);
 void disableMic(void);

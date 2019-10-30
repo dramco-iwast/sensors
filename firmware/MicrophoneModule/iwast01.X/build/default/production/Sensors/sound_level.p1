@@ -1,96 +1,56 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[t ~ __interrupt . k ]
-[t T1 __interrupt ]
-"19384 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 19384:     struct {
-[s S903 :1 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S903 . INTE . IOCIE TMR0IE ]
-"19383
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 19383: typedef union {
-[u S902 `S903 1 ]
-[n S902 . . ]
-"19391
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 19391: extern volatile PIE0bits_t PIE0bits __attribute__((address(0x716)));
-[v _PIE0bits `VS902 ~T0 @X0 0 e@1814 ]
-"19013
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 19013:     struct {
-[s S885 :1 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S885 . INTF . IOCIF TMR0IF ]
-"19012
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 19012: typedef union {
-[u S884 `S885 1 ]
-[n S884 . . ]
-"19020
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 19020: extern volatile PIR0bits_t PIR0bits __attribute__((address(0x70C)));
-[v _PIR0bits `VS884 ~T0 @X0 0 e@1804 ]
-"234 mcc_generated_files/pin_manager.h
-[; ;mcc_generated_files/pin_manager.h: 234: void PIN_MANAGER_IOC(void);
-[v _PIN_MANAGER_IOC `(v ~T0 @X0 0 ef ]
-"419 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 419:     struct {
-[s S31 :1 `uc 1 :5 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S31 . INTEDG . PEIE GIE ]
-"418
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 418: typedef union {
-[u S30 `S31 1 ]
-[n S30 . . ]
-"426
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 426: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
-[v _INTCONbits `VS30 ~T0 @X0 0 e@11 ]
-"19489
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 19489:     struct {
-[s S909 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S909 . SSP1IE BCL1IE SSP2IE BCL2IE TX1IE RC1IE ]
-"19488
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 19488: typedef union {
-[u S908 `S909 1 ]
-[n S908 . . ]
-"19498
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 19498: extern volatile PIE3bits_t PIE3bits __attribute__((address(0x719)));
-[v _PIE3bits `VS908 ~T0 @X0 0 e@1817 ]
-"19118
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 19118:     struct {
-[s S891 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S891 . SSP1IF BCL1IF SSP2IF BCL2IF TX1IF RC1IF ]
-"19117
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 19117: typedef union {
-[u S890 `S891 1 ]
-[n S890 . . ]
-"19127
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 19127: extern volatile PIR3bits_t PIR3bits __attribute__((address(0x70F)));
-[v _PIR3bits `VS890 ~T0 @X0 0 e@1807 ]
-"136 mcc_generated_files/i2c1.h
-[; ;mcc_generated_files/i2c1.h: 136: void I2C1_ISR ( void );
-[v _I2C1_ISR `(v ~T0 @X0 0 ef ]
-[v F10935 `(v ~T0 @X0 0 tf ]
-"94 mcc_generated_files/eusart1.h
-[; ;mcc_generated_files/eusart1.h: 94: extern void (*EUSART1_TxDefaultInterruptHandler)(void);
-[v _EUSART1_TxDefaultInterruptHandler `*F10935 ~T0 @X0 0 e ]
-"19417 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 19417:     struct {
-[s S905 :1 `uc 1 :1 `uc 1 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S905 . ADIE ADTIE . CSWIE OSFIE ]
-"19416
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 19416: typedef union {
-[u S904 `S905 1 ]
-[n S904 . . ]
-"19425
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 19425: extern volatile PIE1bits_t PIE1bits __attribute__((address(0x717)));
-[v _PIE1bits `VS904 ~T0 @X0 0 e@1815 ]
-"19046
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 19046:     struct {
-[s S887 :1 `uc 1 :1 `uc 1 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S887 . ADIF ADTIF . CSWIF OSFIF ]
-"19045
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 19045: typedef union {
-[u S886 `S887 1 ]
-[n S886 . . ]
-"19054
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 19054: extern volatile PIR1bits_t PIR1bits __attribute__((address(0x70D)));
-[v _PIR1bits `VS886 ~T0 @X0 0 e@1805 ]
-"861 mcc_generated_files/adcc.h
-[; ;mcc_generated_files/adcc.h: 861: void ADCC_ISR(void);
-[v _ADCC_ISR `(v ~T0 @X0 0 ef ]
+"37 Sensors/sound_level.h
+[; ;Sensors/sound_level.h: 37: void enableMic(void);
+[v _enableMic `(v ~T0 @X0 0 ef ]
+"32
+[; ;Sensors/sound_level.h: 32: void initializeADC(void);
+[v _initializeADC `(v ~T0 @X0 0 ef ]
+"33
+[; ;Sensors/sound_level.h: 33: void stopADC(void);
+[v _stopADC `(v ~T0 @X0 0 ef ]
+"38
+[; ;Sensors/sound_level.h: 38: void disableMic(void);
+[v _disableMic `(v ~T0 @X0 0 ef ]
+"34
+[; ;Sensors/sound_level.h: 34: void generateInt(void);
+[v _generateInt `(v ~T0 @X0 0 ef ]
+"222 Sensors/../mcc_generated_files/adcc.h
+[; ;Sensors/../mcc_generated_files/adcc.h: 222: adc_result_t ADCC_GetConversionResult(void);
+[v _ADCC_GetConversionResult `(us ~T0 @X0 0 ef ]
+[v F10853 `(v ~T0 @X0 1 tf1`ul ]
+"92 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic.h
+[v __delay `JF10853 ~T0 @X0 0 e ]
+[p i __delay ]
+"131 Sensors/../mcc_generated_files/adcc.h
+[; ;Sensors/../mcc_generated_files/adcc.h: 131: void ADCC_Initialize(void);
+[v _ADCC_Initialize `(v ~T0 @X0 0 ef ]
+"721
+[; ;Sensors/../mcc_generated_files/adcc.h: 721: void ADCC_EnableContinuousConversion(void);
+[v _ADCC_EnableContinuousConversion `(v ~T0 @X0 0 ef ]
+"68 Sensors/sound_level.c
+[; ;Sensors/sound_level.c: 68:     ADCC_StartConversion(channel_ANC1);
+[c E10998 17 59 60 61 62 63 .. ]
+[n E10998 . channel_ANC1 channel_Vss channel_Temp_Sensor channel_DAC1_Output channel_FVR_Buffer1 channel_FVR_Buffer2  ]
+"160 Sensors/../mcc_generated_files/adcc.h
+[; ;Sensors/../mcc_generated_files/adcc.h: 160: void ADCC_StartConversion(adcc_channel_t channel);
+[v _ADCC_StartConversion `(v ~T0 @X0 0 ef1`E10998 ]
+"278
+[; ;Sensors/../mcc_generated_files/adcc.h: 278: void ADCC_StopConversion(void);
+[v _ADCC_StopConversion `(v ~T0 @X0 0 ef ]
+"745
+[; ;Sensors/../mcc_generated_files/adcc.h: 745: void ADCC_DisableContinuousConversion(void);
+[v _ADCC_DisableContinuousConversion `(v ~T0 @X0 0 ef ]
+"843 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 843:     struct {
+[s S49 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S49 . LATC0 LATC1 LATC2 LATC3 LATC4 LATC5 LATC6 LATC7 ]
+"842
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 842: typedef union {
+[u S48 `S49 1 ]
+[n S48 . . ]
+"854
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 854: extern volatile LATCbits_t LATCbits __attribute__((address(0x01A)));
+[v _LATCbits `VS48 ~T0 @X0 0 e@26 ]
 "110 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 110: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -1453,104 +1413,291 @@ Version 4.0 HI-TECH Software Intermediate Code
 "32125
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 32125: __asm("TOSH equ 01FEFh");
 [; <" TOSH equ 01FEFh ;# ">
-[v $root$_INTERRUPT_InterruptManager `(v ~T0 @X0 0 e ]
-"53 mcc_generated_files/interrupt_manager.c
-[; ;mcc_generated_files/interrupt_manager.c: 53: void __attribute__((picinterrupt(("")))) INTERRUPT_InterruptManager (void)
-[v _INTERRUPT_InterruptManager `(v ~T1 @X0 1 ef ]
-"54
-[; ;mcc_generated_files/interrupt_manager.c: 54: {
+"8 Sensors/sound_level.c
+[; ;Sensors/sound_level.c: 8: _Bool reset = 0;
+[v _reset `a ~T0 @X0 1 e ]
+[i _reset
+-> -> 0 `i `a
+]
+"9
+[; ;Sensors/sound_level.c: 9: uint16_t x = 0;
+[v _x `us ~T0 @X0 1 e ]
+[i _x
+-> -> 0 `i `us
+]
+"10
+[; ;Sensors/sound_level.c: 10: uint16_t maxValue = 0;
+[v _maxValue `us ~T0 @X0 1 e ]
+[i _maxValue
+-> -> 0 `i `us
+]
+"12
+[; ;Sensors/sound_level.c: 12: uint8_t measurementData[2];
+[v _measurementData `uc ~T0 @X0 -> 2 `i e ]
+"14
+[; ;Sensors/sound_level.c: 14: void dummy(void){
+[v _dummy `(v ~T0 @X0 1 ef ]
 {
-[e :U _INTERRUPT_InterruptManager ]
+[e :U _dummy ]
 [f ]
-"56
-[; ;mcc_generated_files/interrupt_manager.c: 56:     if(PIE0bits.IOCIE == 1 && PIR0bits.IOCIF == 1)
-[e $ ! && == -> . . _PIE0bits 0 2 `i -> 1 `i == -> . . _PIR0bits 0 2 `i -> 1 `i 1520  ]
-"57
-[; ;mcc_generated_files/interrupt_manager.c: 57:     {
-{
-"58
-[; ;mcc_generated_files/interrupt_manager.c: 58:         PIN_MANAGER_IOC();
-[e ( _PIN_MANAGER_IOC ..  ]
-"59
-[; ;mcc_generated_files/interrupt_manager.c: 59:     }
-}
-[e $U 1521  ]
-"60
-[; ;mcc_generated_files/interrupt_manager.c: 60:     else if(INTCONbits.PEIE == 1)
-[e :U 1520 ]
-[e $ ! == -> . . _INTCONbits 0 2 `i -> 1 `i 1522  ]
-"61
-[; ;mcc_generated_files/interrupt_manager.c: 61:     {
-{
-"62
-[; ;mcc_generated_files/interrupt_manager.c: 62:         if(PIE3bits.SSP1IE == 1 && PIR3bits.SSP1IF == 1)
-[e $ ! && == -> . . _PIE3bits 0 0 `i -> 1 `i == -> . . _PIR3bits 0 0 `i -> 1 `i 1523  ]
-"63
-[; ;mcc_generated_files/interrupt_manager.c: 63:         {
-{
-"64
-[; ;mcc_generated_files/interrupt_manager.c: 64:             I2C1_ISR();
-[e ( _I2C1_ISR ..  ]
-"65
-[; ;mcc_generated_files/interrupt_manager.c: 65:         }
-}
-[e $U 1524  ]
-"66
-[; ;mcc_generated_files/interrupt_manager.c: 66:         else if(PIE3bits.TX1IE == 1 && PIR3bits.TX1IF == 1)
-[e :U 1523 ]
-[e $ ! && == -> . . _PIE3bits 0 4 `i -> 1 `i == -> . . _PIR3bits 0 4 `i -> 1 `i 1525  ]
-"67
-[; ;mcc_generated_files/interrupt_manager.c: 67:         {
-{
-"68
-[; ;mcc_generated_files/interrupt_manager.c: 68:             EUSART1_TxDefaultInterruptHandler();
-[e ( *U _EUSART1_TxDefaultInterruptHandler ..  ]
-"69
-[; ;mcc_generated_files/interrupt_manager.c: 69:         }
-}
-[e $U 1526  ]
-"70
-[; ;mcc_generated_files/interrupt_manager.c: 70:         else if(PIE1bits.ADIE == 1 && PIR1bits.ADIF == 1)
-[e :U 1525 ]
-[e $ ! && == -> . . _PIE1bits 0 0 `i -> 1 `i == -> . . _PIR1bits 0 0 `i -> 1 `i 1527  ]
-"71
-[; ;mcc_generated_files/interrupt_manager.c: 71:         {
-{
-"72
-[; ;mcc_generated_files/interrupt_manager.c: 72:             ADCC_ISR();
-[e ( _ADCC_ISR ..  ]
-"73
-[; ;mcc_generated_files/interrupt_manager.c: 73:         }
-}
-[e $U 1528  ]
-"74
-[; ;mcc_generated_files/interrupt_manager.c: 74:         else
-[e :U 1527 ]
-"75
-[; ;mcc_generated_files/interrupt_manager.c: 75:         {
-{
-"77
-[; ;mcc_generated_files/interrupt_manager.c: 77:         }
-}
-[e :U 1528 ]
-[e :U 1526 ]
-[e :U 1524 ]
-"78
-[; ;mcc_generated_files/interrupt_manager.c: 78:     }
-}
-[e $U 1529  ]
-"79
-[; ;mcc_generated_files/interrupt_manager.c: 79:     else
-[e :U 1522 ]
-"80
-[; ;mcc_generated_files/interrupt_manager.c: 80:     {
-{
-"82
-[; ;mcc_generated_files/interrupt_manager.c: 82:     }
-}
-[e :U 1529 ]
-[e :U 1521 ]
-"83
-[; ;mcc_generated_files/interrupt_manager.c: 83: }
+"15
+[; ;Sensors/sound_level.c: 15:     return;
+[e $UE 1519  ]
+"16
+[; ;Sensors/sound_level.c: 16: }
 [e :UE 1519 ]
+}
+"19
+[; ;Sensors/sound_level.c: 19: void doMeasurement(uint8_t metric, uint8_t * data, uint8_t * length){
+[v _doMeasurement `(v ~T0 @X0 1 ef3`uc`*uc`*uc ]
+{
+[e :U _doMeasurement ]
+[v _metric `uc ~T0 @X0 1 r1 ]
+[v _data `*uc ~T0 @X0 1 r2 ]
+[v _length `*uc ~T0 @X0 1 r3 ]
+[f ]
+"21
+[; ;Sensors/sound_level.c: 21:     *length = 2;
+[e = *U _length -> -> 2 `i `uc ]
+"22
+[; ;Sensors/sound_level.c: 22:     data = measurementData;
+[e = _data &U _measurementData ]
+"23
+[; ;Sensors/sound_level.c: 23:     enableMic();
+[e ( _enableMic ..  ]
+"24
+[; ;Sensors/sound_level.c: 24:     initializeADC();
+[e ( _initializeADC ..  ]
+"25
+[; ;Sensors/sound_level.c: 25: }
+[e :UE 1520 ]
+}
+"28
+[; ;Sensors/sound_level.c: 28: void prepTransmission(uint16_t maxiValue){
+[v _prepTransmission `(v ~T0 @X0 1 ef1`us ]
+{
+[e :U _prepTransmission ]
+[v _maxiValue `us ~T0 @X0 1 r1 ]
+[f ]
+"29
+[; ;Sensors/sound_level.c: 29:     stopADC();
+[e ( _stopADC ..  ]
+"30
+[; ;Sensors/sound_level.c: 30:     disableMic();
+[e ( _disableMic ..  ]
+"31
+[; ;Sensors/sound_level.c: 31:     measurementData[0] = maxiValue>>8;
+[e = *U + &U _measurementData * -> -> -> 0 `i `ui `ux -> -> # *U &U _measurementData `ui `ux -> >> -> _maxiValue `ui -> 8 `i `uc ]
+"32
+[; ;Sensors/sound_level.c: 32:     measurementData[1] = maxiValue;
+[e = *U + &U _measurementData * -> -> -> 1 `i `ui `ux -> -> # *U &U _measurementData `ui `ux -> _maxiValue `uc ]
+"33
+[; ;Sensors/sound_level.c: 33:     generateInt();
+[e ( _generateInt ..  ]
+"34
+[; ;Sensors/sound_level.c: 34:     __asm("sleep");
+[; <" sleep ;# ">
+"35
+[; ;Sensors/sound_level.c: 35: }
+[e :UE 1521 ]
+}
+"38
+[; ;Sensors/sound_level.c: 38: void getValue(){
+[v _getValue `(v ~T0 @X0 1 ef ]
+{
+[e :U _getValue ]
+[f ]
+"40
+[; ;Sensors/sound_level.c: 40:     uint16_t sample = ADCC_GetConversionResult();
+[v _sample `us ~T0 @X0 1 a ]
+[e = _sample ( _ADCC_GetConversionResult ..  ]
+"43
+[; ;Sensors/sound_level.c: 43:         if(sample > maxValue){
+[e $ ! > -> _sample `ui -> _maxValue `ui 1523  ]
+{
+"44
+[; ;Sensors/sound_level.c: 44:             maxValue = sample;
+[e = _maxValue _sample ]
+"45
+[; ;Sensors/sound_level.c: 45:         }
+}
+[e :U 1523 ]
+"47
+[; ;Sensors/sound_level.c: 47:         if(x >= 400 -1){
+[e $ ! >= -> _x `ui -> - -> 400 `i -> 1 `i `ui 1524  ]
+{
+"48
+[; ;Sensors/sound_level.c: 48:             reset = 1;
+[e = _reset -> -> 1 `i `a ]
+"49
+[; ;Sensors/sound_level.c: 49:             prepTransmission(maxValue);
+[e ( _prepTransmission (1 _maxValue ]
+"50
+[; ;Sensors/sound_level.c: 50:         }
+}
+[e :U 1524 ]
+"51
+[; ;Sensors/sound_level.c: 51:     x++;
+[e ++ _x -> -> 1 `i `us ]
+"53
+[; ;Sensors/sound_level.c: 53:     if(reset){
+[e $ ! != -> _reset `i -> 0 `i 1525  ]
+{
+"54
+[; ;Sensors/sound_level.c: 54:             reset = 0;
+[e = _reset -> -> 0 `i `a ]
+"55
+[; ;Sensors/sound_level.c: 55:             maxValue = 0;
+[e = _maxValue -> -> 0 `i `us ]
+"56
+[; ;Sensors/sound_level.c: 56:             sample = 0;
+[e = _sample -> -> 0 `i `us ]
+"57
+[; ;Sensors/sound_level.c: 57:             x=0;
+[e = _x -> -> 0 `i `us ]
+"58
+[; ;Sensors/sound_level.c: 58:         }
+}
+[e :U 1525 ]
+"61
+[; ;Sensors/sound_level.c: 61: }
+[e :UE 1522 ]
+}
+"64
+[; ;Sensors/sound_level.c: 64: void initializeADC(){
+[v _initializeADC `(v ~T0 @X0 1 ef ]
+{
+[e :U _initializeADC ]
+[f ]
+"65
+[; ;Sensors/sound_level.c: 65:     _delay((unsigned long)((50)*(32000000/4000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
+"66
+[; ;Sensors/sound_level.c: 66:     ADCC_Initialize();
+[e ( _ADCC_Initialize ..  ]
+"67
+[; ;Sensors/sound_level.c: 67:     ADCC_EnableContinuousConversion();
+[e ( _ADCC_EnableContinuousConversion ..  ]
+"68
+[; ;Sensors/sound_level.c: 68:     ADCC_StartConversion(channel_ANC1);
+[e ( _ADCC_StartConversion (1 . `E10998 0 ]
+"69
+[; ;Sensors/sound_level.c: 69: }
+[e :UE 1526 ]
+}
+"73
+[; ;Sensors/sound_level.c: 73: void stopADC(){
+[v _stopADC `(v ~T0 @X0 1 ef ]
+{
+[e :U _stopADC ]
+[f ]
+"74
+[; ;Sensors/sound_level.c: 74:     ADCC_StopConversion();
+[e ( _ADCC_StopConversion ..  ]
+"75
+[; ;Sensors/sound_level.c: 75:     ADCC_DisableContinuousConversion();
+[e ( _ADCC_DisableContinuousConversion ..  ]
+"76
+[; ;Sensors/sound_level.c: 76: }
+[e :UE 1527 ]
+}
+"80
+[; ;Sensors/sound_level.c: 80: void generateInt(){
+[v _generateInt `(v ~T0 @X0 1 ef ]
+{
+[e :U _generateInt ]
+[f ]
+"81
+[; ;Sensors/sound_level.c: 81:     do { LATCbits.LATC7 = 0; } while(0);
+[e :U 1531 ]
+{
+[e = . . _LATCbits 0 7 -> -> 0 `i `uc ]
+}
+[e :U 1530 ]
+"82
+[; ;Sensors/sound_level.c: 82:     _delay((unsigned long)((1)*(32000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
+"83
+[; ;Sensors/sound_level.c: 83:     do { LATCbits.LATC7 = 1; } while(0);
+[e :U 1534 ]
+{
+[e = . . _LATCbits 0 7 -> -> 1 `i `uc ]
+}
+[e :U 1533 ]
+"84
+[; ;Sensors/sound_level.c: 84: }
+[e :UE 1528 ]
+}
+"88
+[; ;Sensors/sound_level.c: 88: void enableMic(){
+[v _enableMic `(v ~T0 @X0 1 ef ]
+{
+[e :U _enableMic ]
+[f ]
+"89
+[; ;Sensors/sound_level.c: 89:     do { LATCbits.LATC0 = 1; } while(0);
+[e :U 1538 ]
+{
+[e = . . _LATCbits 0 0 -> -> 1 `i `uc ]
+}
+[e :U 1537 ]
+"90
+[; ;Sensors/sound_level.c: 90: }
+[e :UE 1535 ]
+}
+"94
+[; ;Sensors/sound_level.c: 94: void disableMic(){
+[v _disableMic `(v ~T0 @X0 1 ef ]
+{
+[e :U _disableMic ]
+[f ]
+"95
+[; ;Sensors/sound_level.c: 95:     do { LATCbits.LATC0 = 0; } while(0);
+[e :U 1542 ]
+{
+[e = . . _LATCbits 0 0 -> -> 0 `i `uc ]
+}
+[e :U 1541 ]
+"96
+[; ;Sensors/sound_level.c: 96: }
+[e :UE 1539 ]
+}
+"100
+[; ;Sensors/sound_level.c: 100: void toggleInt(){
+[v _toggleInt `(v ~T0 @X0 1 ef ]
+{
+[e :U _toggleInt ]
+[f ]
+"101
+[; ;Sensors/sound_level.c: 101:     do { LATCbits.LATC7 = 0; } while(0);
+[e :U 1546 ]
+{
+[e = . . _LATCbits 0 7 -> -> 0 `i `uc ]
+}
+[e :U 1545 ]
+"102
+[; ;Sensors/sound_level.c: 102:     _delay((unsigned long)((1)*(32000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
+"103
+[; ;Sensors/sound_level.c: 103:     do { LATCbits.LATC7 = 1; } while(0);
+[e :U 1549 ]
+{
+[e = . . _LATCbits 0 7 -> -> 1 `i `uc ]
+}
+[e :U 1548 ]
+"104
+[; ;Sensors/sound_level.c: 104: }
+[e :UE 1543 ]
+}
+"108
+[; ;Sensors/sound_level.c: 108: void setThreshold(uint8_t metric, uint8_t * thresholds){
+[v _setThreshold `(v ~T0 @X0 1 ef2`uc`*uc ]
+{
+[e :U _setThreshold ]
+[v _metric `uc ~T0 @X0 1 r1 ]
+[v _thresholds `*uc ~T0 @X0 1 r2 ]
+[f ]
+"110
+[; ;Sensors/sound_level.c: 110: }
+[e :UE 1550 ]
 }

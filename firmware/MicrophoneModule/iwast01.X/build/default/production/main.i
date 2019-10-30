@@ -18304,6 +18304,15 @@ void OSCILLATOR_Initialize(void);
 void PMD_Initialize(void);
 # 24 "main.c" 2
 
+# 1 "./global.h" 1
+# 28 "./global.h"
+typedef struct devApi{
+    void (* Init)(void);
+    void (* Measure)(uint8_t, uint8_t *, uint8_t *);
+    void (* UpdateThreshold)(uint8_t, uint8_t *);
+} Device_API_t;
+# 25 "main.c" 2
+
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdio.h" 1 3
 # 24 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdio.h" 3
@@ -18443,7 +18452,7 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 26 "main.c" 2
+# 27 "main.c" 2
 
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\string.h" 1 3
@@ -18501,32 +18510,36 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 28 "main.c" 2
+# 29 "main.c" 2
 
 
 
-# 1 "./Sensors/Dummy.h" 1
-# 24 "./Sensors/Dummy.h"
-extern uint8_t measurementData[0x02] = {0x00, 0x00};
-_Bool reset = 0;
-uint16_t x = 0;
-uint16_t maxValue = 0;
 
+# 1 "./Sensors/sound_level.h" 1
+# 27 "./Sensors/sound_level.h"
+void dummy(void);
 
-
-void doMeasurement(void);
+void doMeasurement(uint8_t metric, uint8_t * data, uint8_t * length);
 void prepTransmission(uint16_t);
 void getValue(void);
 void initializeADC(void);
 void stopADC(void);
 void generateInt(void);
-void setThreshold(uint16_t);
+void setThreshold(uint8_t metric, uint8_t * thresholds);
 void translateData(uint8_t enable,uint8_t MSBLT,uint8_t LSBLT,uint8_t MSBUP,uint8_t LSBUT);
 void enableMic(void);
 void disableMic(void);
 void toggleInt(void);
-# 31 "main.c" 2
-# 59 "main.c"
+# 33 "main.c" 2
+
+
+Device_API_t sensorAPI = { dummy, doMeasurement, setThreshold };
+# 56 "main.c"
+uint8_t measurementData[2 * 0x01];
+uint8_t mDataLength;
+
+
+
 void main(void)
 {
 
@@ -18540,11 +18553,15 @@ void main(void)
 
 
     (INTCONbits.PEIE = 1);
-# 82 "main.c"
-    while (1)
+
+
+
+
+
+
+
+    while(1)
     {
-
-
 
         if(I2C1_CommandReceived()){
             uint8_t cmd;
@@ -18567,26 +18584,27 @@ void main(void)
                     __asm("sleep");
                 } break;
 
-                case 0x12:{
-                    uint8_t dlen = 0x02;
-                    I2C1_SetTransmitData(&dlen, 1);
+
+                case 0x23:{
+                    uint8_t mnr = 0x01;
+                    I2C1_SetTransmitData(&mnr, 1);
                     __asm("sleep");
                 } break;
 
+
                 case 0x13:{
+                    uint8_t metric = data[0];
                     uint8_t ack = 0xAA;
                     I2C1_SetTransmitData(&ack, 1);
-                    doMeasurement();
+                    sensorAPI.Measure(metric, measurementData, &mDataLength);
 
                 } break;
 
                 case 0x14:{
-                    I2C1_SetTransmitData(measurementData, 0x02);
+                    I2C1_SetTransmitData(measurementData, mDataLength);
 
                     __asm("sleep");
                 } break;
-
-
                 case 0x15:{
                     uint8_t ack = 0xAA;
                     I2C1_SetTransmitData(&ack, 1);

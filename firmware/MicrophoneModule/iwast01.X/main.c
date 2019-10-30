@@ -13,7 +13,7 @@
  *         File: main.c
  *      Created: 2019-09-11
  *       Author: Geoffrey Ottoy
- *      Version: major.minor
+ *      Version: 0.2
  *
  *  Description: Generic I2C sensor interface for 
  *                  "IoT with a SOFT touch"
@@ -22,13 +22,17 @@
  */
 
 #include "mcc_generated_files/mcc.h"
+#include "global.h"
 
 #include <stdio.h>
 #include <stdint.h>
 #include <string.h>
 #include "mcc_generated_files/pin_manager.h"
+
 // include sensor
-#include "Sensors/Dummy.h"
+#include "Sensors/sound_level.h"
+
+Device_API_t sensorAPI = SENSOR_API;
 
 #ifndef TYPE_BYTE
     #error "TYPE_BYTE is not defined"
@@ -36,10 +40,10 @@
     #error "TYPE_BYTE is defined, but has no value"
 #endif
 
-#ifndef LENGTH_BYTE
-    #error "LENGTH_BYTE is not defined"
-#elif (~(~LENGTH_BYTE + 0) == 0 && ~(~LENGTH_BYTE + 1) == 1)
-    #error "LENGTH_BYTE is defined, but has no value"
+#ifndef M_NR
+    #error "M_NR is not defined"
+#elif (~(~M_NR + 0) == 0 && ~(~M_NR + 1) == 1)
+    #error "M_NR is defined, but has no value"
 #endif
 
 #ifndef SLAVE_ADDRESS
@@ -48,13 +52,12 @@
     #error "SLAVE_ADDRESS is defined, but has no value"
 #endif
 
+void toggleInt(void);
 
+uint8_t measurementData[2 * M_NR];
+uint8_t mDataLength;
 
-
-
-
-/*
-                         Main application
+/* Main application
  */
 void main(void)
 {
@@ -76,7 +79,7 @@ void main(void)
     // Disable the Peripheral Interrupts
     //INTERRUPT_PeripheralInterruptDisable();
 
-    while (1)
+    while(1)
     {
         // I2C Slave operation (respond to commands)
         if(I2C1_CommandReceived()){
@@ -87,54 +90,66 @@ void main(void)
             
             switch(cmd){
                 // POLL
-                case 0x10:{ // master polls address -> respond with ack
-                    uint8_t ack = 0xAA;
+                case CMD_POLL:{ // master polls address -> respond with ack
+                    uint8_t ack = DEFAULT_ACK;
                     I2C1_SetTransmitData(&ack, 1);
                     SLEEP();
 
                 } break;
+                
                 // TYPE
-                case 0x11:{ // master requests sensor type -> respond with type
+                case CMD_DEVICE_TYPE:{ // master requests sensor type -> respond with type
                     uint8_t type = TYPE_BYTE;
                     I2C1_SetTransmitData(&type, 1);
                     SLEEP();
                 } break;
-                // LENGTH
-                case 0x12:{ // master requests measurement data length -> respond with length
-                    uint8_t dlen = LENGTH_BYTE;
-                    I2C1_SetTransmitData(&dlen, 1);
+
+                // NR OF METRICS
+                case CMD_GET_M_NR:{ // master requests measurement data length -> respond with length
+                    uint8_t mnr = M_NR;
+                    I2C1_SetTransmitData(&mnr, 1);
                     SLEEP();
                 } break;
+
                 // MEASURE
-                case 0x13:{ // master forces measurement -> respond with ack
-                    uint8_t ack = 0xAA;
+                case CMD_START_MEASUREMENT:{ // master forces measurement -> respond with ack
+                    uint8_t metric = data[0];
+                    uint8_t ack = DEFAULT_ACK;
                     I2C1_SetTransmitData(&ack, 1);
-                    doMeasurement();
+                    sensorAPI.Measure(metric, measurementData, &mDataLength);
                     /*for (int i=0; i<600; i++){}*/
                 } break;
+                
                 // GET DATA
-                case 0x14:{ // master requests measurement data -> send data 
-                    I2C1_SetTransmitData(measurementData, LENGTH_BYTE);
+                case CMD_GET_M_DATA:{ // master requests measurement data -> send data
+                    I2C1_SetTransmitData(measurementData, mDataLength);
                     //for (int i=0; i<600; i++){}
                     SLEEP();     
                 } break;
-                case 0x15:{ //toggle the INT line      
+                
+                // INT TOGGLE
+                case CMD_INT_TOGGLE:{ //toggle the INT line      
                     uint8_t ack = 0xAA;
                     I2C1_SetTransmitData(&ack, 1); 
                     toggleInt();
                     SLEEP();
                 } break;
+                
+                // DO NOTHING
                 default:{
                 } break;
             }
         }
-        
-        
-        
-        
-        
     }
 }
+
+//----------------------Toggle the interrupt line -----------------------------
+void toggleInt(){
+    READY_SetLow();
+    __delay_ms(1);                          
+    READY_SetHigh();
+}
+
 /**
  End of File
 */

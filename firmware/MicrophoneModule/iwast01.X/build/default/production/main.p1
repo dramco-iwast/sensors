@@ -1,4 +1,20 @@
 Version 4.0 HI-TECH Software Intermediate Code
+[v F10975 `(v ~T0 @X0 0 tf ]
+[v F10977 `(v ~T0 @X0 0 tf3`uc`*uc`*uc ]
+[v F10982 `(v ~T0 @X0 0 tf2`uc`*uc ]
+"28 ./global.h
+[; ;./global.h: 28: typedef struct devApi{
+[s S1519 `*F10975 1 `*F10977 1 `*F10982 1 ]
+[n S1519 devApi Init Measure UpdateThreshold ]
+"27 ./Sensors/sound_level.h
+[; ;./Sensors/sound_level.h: 27: void dummy(void);
+[v _dummy `(v ~T0 @X0 0 ef ]
+"29
+[; ;./Sensors/sound_level.h: 29: void doMeasurement(uint8_t metric, uint8_t * data, uint8_t * length);
+[v _doMeasurement `(v ~T0 @X0 0 ef3`uc`*uc`*uc ]
+"35
+[; ;./Sensors/sound_level.h: 35: void setThreshold(uint8_t metric, uint8_t * thresholds);
+[v _setThreshold `(v ~T0 @X0 0 ef2`uc`*uc ]
 [p mainexit ]
 "71 ./mcc_generated_files/mcc.h
 [; ;./mcc_generated_files/mcc.h: 71: void SYSTEM_Initialize(uint8_t slave_address);
@@ -23,11 +39,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "152
 [; ;./mcc_generated_files/i2c1.h: 152: void I2C1_SetTransmitData(uint8_t * data, uint8_t len);
 [v _I2C1_SetTransmitData `(v ~T0 @X0 0 ef2`*uc`uc ]
-"31 ./Sensors/Dummy.h
-[; ;./Sensors/Dummy.h: 31: void doMeasurement(void);
-[v _doMeasurement `(v ~T0 @X0 0 ef ]
-"41
-[; ;./Sensors/Dummy.h: 41: void toggleInt(void);
+"39 ./Sensors/sound_level.h
+[; ;./Sensors/sound_level.h: 39: void toggleInt(void);
 [v _toggleInt `(v ~T0 @X0 0 ef ]
 "110 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 110: __asm("INDF0 equ 00h");
@@ -1391,135 +1404,130 @@ Version 4.0 HI-TECH Software Intermediate Code
 "32125
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 32125: __asm("TOSH equ 01FEFh");
 [; <" TOSH equ 01FEFh ;# ">
-"24 ./Sensors/Dummy.h
-[; ;./Sensors/Dummy.h: 24: extern uint8_t measurementData[0x02] = {0x00, 0x00};
-[v _measurementData `uc ~T0 @X0 -> 2 `i e ]
-[i _measurementData
+"35 main.c
+[; ;main.c: 35: Device_API_t sensorAPI = { dummy, doMeasurement, setThreshold };
+[v _sensorAPI `S1519 ~T0 @X0 1 e ]
+[i _sensorAPI
 :U ..
--> -> 0 `i `uc
--> -> 0 `i `uc
+:U ..
+&U _dummy
+&U _doMeasurement
+&U _setThreshold
+..
 ..
 ]
-"25
-[; ;./Sensors/Dummy.h: 25: _Bool reset = 0;
-[v _reset `a ~T0 @X0 1 e ]
-[i _reset
--> -> 0 `i `a
-]
-"26
-[; ;./Sensors/Dummy.h: 26: uint16_t x = 0;
-[v _x `us ~T0 @X0 1 e ]
-[i _x
--> -> 0 `i `us
-]
-"27
-[; ;./Sensors/Dummy.h: 27: uint16_t maxValue = 0;
-[v _maxValue `us ~T0 @X0 1 e ]
-[i _maxValue
--> -> 0 `i `us
-]
+"56
+[; ;main.c: 56: uint8_t measurementData[2 * 0x01];
+[v _measurementData `uc ~T0 @X0 -> 2 `i e ]
+"57
+[; ;main.c: 57: uint8_t mDataLength;
+[v _mDataLength `uc ~T0 @X0 1 e ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"59 main.c
-[; ;main.c: 59: void main(void)
+"61
+[; ;main.c: 61: void main(void)
 [v _main `(v ~T0 @X0 1 ef ]
-"60
-[; ;main.c: 60: {
+"62
+[; ;main.c: 62: {
 {
 [e :U _main ]
 [f ]
-"62
-[; ;main.c: 62:     SYSTEM_Initialize(0x65);
+"64
+[; ;main.c: 64:     SYSTEM_Initialize(0x65);
 [e ( _SYSTEM_Initialize (1 -> -> 101 `i `uc ]
-"68
-[; ;main.c: 68:     (INTCONbits.GIE = 1);
+"70
+[; ;main.c: 70:     (INTCONbits.GIE = 1);
 [e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
-"71
-[; ;main.c: 71:     (INTCONbits.PEIE = 1);
+"73
+[; ;main.c: 73:     (INTCONbits.PEIE = 1);
 [e = . . _INTCONbits 0 2 -> -> 1 `i `uc ]
+"81
+[; ;main.c: 81:     while(1)
+[e :U 1525 ]
 "82
-[; ;main.c: 82:     while (1)
-[e :U 1524 ]
-"83
-[; ;main.c: 83:     {
+[; ;main.c: 82:     {
 {
-"87
-[; ;main.c: 87:         if(I2C1_CommandReceived()){
-[e $ ! != -> ( _I2C1_CommandReceived ..  `i -> 0 `i 1526  ]
+"84
+[; ;main.c: 84:         if(I2C1_CommandReceived()){
+[e $ ! != -> ( _I2C1_CommandReceived ..  `i -> 0 `i 1527  ]
 {
-"88
-[; ;main.c: 88:             uint8_t cmd;
+"85
+[; ;main.c: 85:             uint8_t cmd;
 [v _cmd `uc ~T0 @X0 1 a ]
-"89
-[; ;main.c: 89:             uint8_t len;
+"86
+[; ;main.c: 86:             uint8_t len;
 [v _len `uc ~T0 @X0 1 a ]
-"90
-[; ;main.c: 90:             uint8_t data[20];
+"87
+[; ;main.c: 87:             uint8_t data[20];
 [v _data `uc ~T0 @X0 -> 20 `i a ]
-"91
-[; ;main.c: 91:             I2C1_GetCommand(&cmd, data, &len);
+"88
+[; ;main.c: 88:             I2C1_GetCommand(&cmd, data, &len);
 [e ( _I2C1_GetCommand (3 , , &U _cmd &U _data &U _len ]
-"93
-[; ;main.c: 93:             switch(cmd){
-[e $U 1528  ]
+"90
+[; ;main.c: 90:             switch(cmd){
+[e $U 1529  ]
 {
-"95
-[; ;main.c: 95:                 case 0x10:{
-[e :U 1529 ]
-{
-"96
-[; ;main.c: 96:                     uint8_t ack = 0xAA;
-[v _ack `uc ~T0 @X0 1 a ]
-[e = _ack -> -> 170 `i `uc ]
-"97
-[; ;main.c: 97:                     I2C1_SetTransmitData(&ack, 1);
-[e ( _I2C1_SetTransmitData (2 , &U _ack -> -> 1 `i `uc ]
-"98
-[; ;main.c: 98:                     __asm("sleep");
-[; <" sleep ;# ">
-"100
-[; ;main.c: 100:                 } break;
-}
-[e $U 1527  ]
-"102
-[; ;main.c: 102:                 case 0x11:{
+"92
+[; ;main.c: 92:                 case 0x10:{
 [e :U 1530 ]
 {
-"103
-[; ;main.c: 103:                     uint8_t type = 0x21;
-[v _type `uc ~T0 @X0 1 a ]
-[e = _type -> -> 33 `i `uc ]
-"104
-[; ;main.c: 104:                     I2C1_SetTransmitData(&type, 1);
-[e ( _I2C1_SetTransmitData (2 , &U _type -> -> 1 `i `uc ]
-"105
-[; ;main.c: 105:                     __asm("sleep");
+"93
+[; ;main.c: 93:                     uint8_t ack = 0xAA;
+[v _ack `uc ~T0 @X0 1 a ]
+[e = _ack -> -> 170 `i `uc ]
+"94
+[; ;main.c: 94:                     I2C1_SetTransmitData(&ack, 1);
+[e ( _I2C1_SetTransmitData (2 , &U _ack -> -> 1 `i `uc ]
+"95
+[; ;main.c: 95:                     __asm("sleep");
 [; <" sleep ;# ">
-"106
-[; ;main.c: 106:                 } break;
+"97
+[; ;main.c: 97:                 } break;
 }
-[e $U 1527  ]
-"108
-[; ;main.c: 108:                 case 0x12:{
+[e $U 1528  ]
+"99
+[; ;main.c: 99:                 case 0x11:{
 [e :U 1531 ]
 {
-"109
-[; ;main.c: 109:                     uint8_t dlen = 0x02;
-[v _dlen `uc ~T0 @X0 1 a ]
-[e = _dlen -> -> 2 `i `uc ]
-"110
-[; ;main.c: 110:                     I2C1_SetTransmitData(&dlen, 1);
-[e ( _I2C1_SetTransmitData (2 , &U _dlen -> -> 1 `i `uc ]
-"111
-[; ;main.c: 111:                     __asm("sleep");
+"100
+[; ;main.c: 100:                     uint8_t type = 0x21;
+[v _type `uc ~T0 @X0 1 a ]
+[e = _type -> -> 33 `i `uc ]
+"101
+[; ;main.c: 101:                     I2C1_SetTransmitData(&type, 1);
+[e ( _I2C1_SetTransmitData (2 , &U _type -> -> 1 `i `uc ]
+"102
+[; ;main.c: 102:                     __asm("sleep");
 [; <" sleep ;# ">
-"112
-[; ;main.c: 112:                 } break;
+"103
+[; ;main.c: 103:                 } break;
 }
-[e $U 1527  ]
-"114
-[; ;main.c: 114:                 case 0x13:{
+[e $U 1528  ]
+"106
+[; ;main.c: 106:                 case 0x23:{
 [e :U 1532 ]
 {
+"107
+[; ;main.c: 107:                     uint8_t mnr = 0x01;
+[v _mnr `uc ~T0 @X0 1 a ]
+[e = _mnr -> -> 1 `i `uc ]
+"108
+[; ;main.c: 108:                     I2C1_SetTransmitData(&mnr, 1);
+[e ( _I2C1_SetTransmitData (2 , &U _mnr -> -> 1 `i `uc ]
+"109
+[; ;main.c: 109:                     __asm("sleep");
+[; <" sleep ;# ">
+"110
+[; ;main.c: 110:                 } break;
+}
+[e $U 1528  ]
+"113
+[; ;main.c: 113:                 case 0x13:{
+[e :U 1533 ]
+{
+"114
+[; ;main.c: 114:                     uint8_t metric = data[0];
+[v _metric `uc ~T0 @X0 1 a ]
+[e = _metric *U + &U _data * -> -> -> 0 `i `ui `ux -> -> # *U &U _data `ui `ux ]
 "115
 [; ;main.c: 115:                     uint8_t ack = 0xAA;
 [v _ack `uc ~T0 @X0 1 a ]
@@ -1528,79 +1536,79 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 116:                     I2C1_SetTransmitData(&ack, 1);
 [e ( _I2C1_SetTransmitData (2 , &U _ack -> -> 1 `i `uc ]
 "117
-[; ;main.c: 117:                     doMeasurement();
-[e ( _doMeasurement ..  ]
+[; ;main.c: 117:                     sensorAPI.Measure(metric, measurementData, &mDataLength);
+[e ( *U . _sensorAPI 1 (3 , , _metric &U _measurementData &U _mDataLength ]
 "119
 [; ;main.c: 119:                 } break;
 }
-[e $U 1527  ]
+[e $U 1528  ]
 "121
 [; ;main.c: 121:                 case 0x14:{
-[e :U 1533 ]
+[e :U 1534 ]
 {
 "122
-[; ;main.c: 122:                     I2C1_SetTransmitData(measurementData, 0x02);
-[e ( _I2C1_SetTransmitData (2 , &U _measurementData -> -> 2 `i `uc ]
+[; ;main.c: 122:                     I2C1_SetTransmitData(measurementData, mDataLength);
+[e ( _I2C1_SetTransmitData (2 , &U _measurementData _mDataLength ]
 "124
 [; ;main.c: 124:                     __asm("sleep");
 [; <" sleep ;# ">
 "125
 [; ;main.c: 125:                 } break;
 }
-[e $U 1527  ]
-"128
-[; ;main.c: 128:                 case 0x15:{
-[e :U 1534 ]
+[e $U 1528  ]
+"126
+[; ;main.c: 126:                 case 0x15:{
+[e :U 1535 ]
 {
-"129
-[; ;main.c: 129:                     uint8_t ack = 0xAA;
+"127
+[; ;main.c: 127:                     uint8_t ack = 0xAA;
 [v _ack `uc ~T0 @X0 1 a ]
 [e = _ack -> -> 170 `i `uc ]
-"130
-[; ;main.c: 130:                     I2C1_SetTransmitData(&ack, 1);
+"128
+[; ;main.c: 128:                     I2C1_SetTransmitData(&ack, 1);
 [e ( _I2C1_SetTransmitData (2 , &U _ack -> -> 1 `i `uc ]
-"131
-[; ;main.c: 131:                     toggleInt();
+"129
+[; ;main.c: 129:                     toggleInt();
 [e ( _toggleInt ..  ]
-"132
-[; ;main.c: 132:                     __asm("sleep");
+"130
+[; ;main.c: 130:                     __asm("sleep");
 [; <" sleep ;# ">
+"131
+[; ;main.c: 131:                 } break;
+}
+[e $U 1528  ]
+"132
+[; ;main.c: 132:                 default:{
+[e :U 1536 ]
+{
 "133
 [; ;main.c: 133:                 } break;
 }
-[e $U 1527  ]
+[e $U 1528  ]
 "134
-[; ;main.c: 134:                 default:{
-[e :U 1535 ]
-{
-"135
-[; ;main.c: 135:                 } break;
+[; ;main.c: 134:             }
 }
-[e $U 1527  ]
-"136
-[; ;main.c: 136:             }
-}
-[e $U 1527  ]
+[e $U 1528  ]
+[e :U 1529 ]
+[e [\ -> _cmd `i , $ -> 16 `i 1530
+ , $ -> 17 `i 1531
+ , $ -> 35 `i 1532
+ , $ -> 19 `i 1533
+ , $ -> 20 `i 1534
+ , $ -> 21 `i 1535
+ 1536 ]
 [e :U 1528 ]
-[e [\ -> _cmd `i , $ -> 16 `i 1529
- , $ -> 17 `i 1530
- , $ -> 18 `i 1531
- , $ -> 19 `i 1532
- , $ -> 20 `i 1533
- , $ -> 21 `i 1534
- 1535 ]
+"135
+[; ;main.c: 135:         }
+}
 [e :U 1527 ]
-"137
-[; ;main.c: 137:         }
+"141
+[; ;main.c: 141:     }
 }
+[e :U 1524 ]
+[e $U 1525  ]
 [e :U 1526 ]
-"143
-[; ;main.c: 143:     }
-}
-[e :U 1523 ]
-[e $U 1524  ]
-[e :U 1525 ]
-"144
-[; ;main.c: 144: }
-[e :UE 1522 ]
+"142
+[; ;main.c: 142: }
+[e :UE 1523 ]
 }

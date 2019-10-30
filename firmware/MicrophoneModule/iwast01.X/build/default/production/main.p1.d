@@ -6,4 +6,5 @@ mcc_generated_files/pin_manager.h  \
 mcc_generated_files/interrupt_manager.h  \
 mcc_generated_files/i2c1.h  \
 mcc_generated_files/eusart1.h  \
-Sensors/Dummy.h 
+global.h  \
+Sensors/sound_level.h 

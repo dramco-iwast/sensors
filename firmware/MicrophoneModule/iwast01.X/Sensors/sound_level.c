@@ -1,12 +1,47 @@
-#include "Dummy.h"
+/*  ____  ____      _    __  __  ____ ___
+ * |  _ \|  _ \    / \  |  \/  |/ ___/ _ \
+ * | | | | |_) |  / _ \ | |\/| | |  | | | |
+ * | |_| |  _ <  / ___ \| |  | | |__| |_| |
+ * |____/|_| \_\/_/   \_\_|  |_|\____\___/
+ *                           research group
+ *                             dramco.be/
+ *
+ *  KU Leuven - Technology Campus Gent,
+ *  Gebroeders De Smetstraat 1,
+ *  B-9000 Gent, Belgium
+ *
+ *         File: sound_level.c
+ *      Created: 2019-09-11
+ *       Author: Matthias Alleman
+ *      Version: 0.1
+ *
+ *  Description: Sound Level Sensor
+ *
+ */
+
+
+#include "sound_level.h"
 #include "../mcc_generated_files/mcc.h"
 #include "../mcc_generated_files/adcc.h"
 
 
+#define SAMPLES 400 // amount of samples
 
+bool reset = false;                                             // when true, the value of "value"
+uint16_t x = 0;         
+uint16_t maxValue = 0;
+
+uint8_t measurementData[2];
+
+void dummy(void){
+    return;
+}
 
 //------------------------------------ initialize the ADC ---------------------------------------
-void doMeasurement(void){
+void doMeasurement(uint8_t metric, uint8_t * data, uint8_t * length){
+    // this is fixed
+    *length = 2;
+    data = measurementData;
     enableMic();
     initializeADC();  
 }
@@ -31,7 +66,7 @@ void getValue(){
             maxValue = sample;
         }
     
-        if(x >= samples-1){                 // Check whether the ADC has finished
+        if(x >= SAMPLES-1){                 // Check whether the ADC has finished
             reset = true;              // The resetboolean is set to true make sure all the variables are reset to 0
             prepTransmission(maxValue);
         }
@@ -83,11 +118,10 @@ void disableMic(){
 }
 
 
-//----------------------Toggle the interrupt line -----------------------------
-void toggleInt(){
-    READY_SetLow();
-    __delay_ms(1);                          
-    READY_SetHigh();
+
+
+
+
+void setThreshold(uint8_t metric, uint8_t * thresholds){
+    
 }
-
-

@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "Sensors/sound_level.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,10 +6,9 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
-# 24 "main.c"
-# 1 "./mcc_generated_files/mcc.h" 1
-# 49 "./mcc_generated_files/mcc.h"
+# 1 "Sensors/sound_level.c" 2
+# 1 "Sensors/sound_level.h" 1
+# 11 "Sensors/sound_level.h"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -18091,25 +18090,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
-# 49 "./mcc_generated_files/mcc.h" 2
-
-# 1 "./mcc_generated_files/device_config.h" 1
-# 50 "./mcc_generated_files/mcc.h" 2
-
-# 1 "./mcc_generated_files/pin_manager.h" 1
-# 222 "./mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_Initialize (void);
-# 234 "./mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_IOC(void);
-# 247 "./mcc_generated_files/pin_manager.h"
-void IOCCF2_ISR(void);
-# 270 "./mcc_generated_files/pin_manager.h"
-void IOCCF2_SetInterruptHandler(void (* InterruptHandler)(void));
-# 294 "./mcc_generated_files/pin_manager.h"
-extern void (*IOCCF2_InterruptHandler)(void);
-# 318 "./mcc_generated_files/pin_manager.h"
-void IOCCF2_DefaultInterruptHandler(void);
-# 51 "./mcc_generated_files/mcc.h" 2
+# 11 "Sensors/sound_level.h" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 1 3
 # 22 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 3
@@ -18194,24 +18175,69 @@ typedef int32_t int_fast32_t;
 typedef uint32_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 139 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 2 3
-# 52 "./mcc_generated_files/mcc.h" 2
+# 12 "Sensors/sound_level.h" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdbool.h" 1 3
-# 53 "./mcc_generated_files/mcc.h" 2
+# 13 "Sensors/sound_level.h" 2
+# 27 "Sensors/sound_level.h"
+void dummy(void);
 
-# 1 "./mcc_generated_files/interrupt_manager.h" 1
-# 54 "./mcc_generated_files/mcc.h" 2
+void doMeasurement(uint8_t metric, uint8_t * data, uint8_t * length);
+void prepTransmission(uint16_t);
+void getValue(void);
+void initializeADC(void);
+void stopADC(void);
+void generateInt(void);
+void setThreshold(uint8_t metric, uint8_t * thresholds);
+void translateData(uint8_t enable,uint8_t MSBLT,uint8_t LSBLT,uint8_t MSBUP,uint8_t LSBUT);
+void enableMic(void);
+void disableMic(void);
+void toggleInt(void);
+# 1 "Sensors/sound_level.c" 2
 
-# 1 "./mcc_generated_files/i2c1.h" 1
-# 52 "./mcc_generated_files/i2c1.h"
+# 1 "Sensors/../mcc_generated_files/mcc.h" 1
+# 50 "Sensors/../mcc_generated_files/mcc.h"
+# 1 "Sensors/../mcc_generated_files/device_config.h" 1
+# 50 "Sensors/../mcc_generated_files/mcc.h" 2
+
+# 1 "Sensors/../mcc_generated_files/pin_manager.h" 1
+# 250 "Sensors/../mcc_generated_files/pin_manager.h"
+void PIN_MANAGER_Initialize (void);
+# 262 "Sensors/../mcc_generated_files/pin_manager.h"
+void PIN_MANAGER_IOC(void);
+# 275 "Sensors/../mcc_generated_files/pin_manager.h"
+void IOCBF7_ISR(void);
+# 298 "Sensors/../mcc_generated_files/pin_manager.h"
+void IOCBF7_SetInterruptHandler(void (* InterruptHandler)(void));
+# 322 "Sensors/../mcc_generated_files/pin_manager.h"
+extern void (*IOCBF7_InterruptHandler)(void);
+# 346 "Sensors/../mcc_generated_files/pin_manager.h"
+void IOCBF7_DefaultInterruptHandler(void);
+# 359 "Sensors/../mcc_generated_files/pin_manager.h"
+void IOCCF2_ISR(void);
+# 382 "Sensors/../mcc_generated_files/pin_manager.h"
+void IOCCF2_SetInterruptHandler(void (* InterruptHandler)(void));
+# 406 "Sensors/../mcc_generated_files/pin_manager.h"
+extern void (*IOCCF2_InterruptHandler)(void);
+# 430 "Sensors/../mcc_generated_files/pin_manager.h"
+void IOCCF2_DefaultInterruptHandler(void);
+# 51 "Sensors/../mcc_generated_files/mcc.h" 2
+
+
+
+# 1 "Sensors/../mcc_generated_files/interrupt_manager.h" 1
+# 54 "Sensors/../mcc_generated_files/mcc.h" 2
+
+# 1 "Sensors/../mcc_generated_files/i2c1.h" 1
+# 52 "Sensors/../mcc_generated_files/i2c1.h"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stddef.h" 1 3
 # 19 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stddef.h" 3
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 1 3
 # 132 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef long ptrdiff_t;
 # 19 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stddef.h" 2 3
-# 52 "./mcc_generated_files/i2c1.h" 2
-# 81 "./mcc_generated_files/i2c1.h"
+# 52 "Sensors/../mcc_generated_files/i2c1.h" 2
+# 81 "Sensors/../mcc_generated_files/i2c1.h"
 typedef enum
 {
     I2C1_SLAVE_WRITE_REQUEST,
@@ -18219,9 +18245,9 @@ typedef enum
     I2C1_SLAVE_WRITE_COMPLETED,
     I2C1_SLAVE_READ_COMPLETED,
 } I2C1_SLAVE_DRIVER_STATUS;
-# 116 "./mcc_generated_files/i2c1.h"
+# 116 "Sensors/../mcc_generated_files/i2c1.h"
 void I2C1_Initialize(uint8_t slave_address);
-# 136 "./mcc_generated_files/i2c1.h"
+# 136 "Sensors/../mcc_generated_files/i2c1.h"
 void I2C1_ISR ( void );
 
 
@@ -18239,10 +18265,10 @@ extern volatile uint8_t I2C1_slaveWriteData;
 _Bool I2C1_CommandReceived(void);
 void I2C1_GetCommand(uint8_t * cmd, uint8_t * data, uint8_t * len);
 void I2C1_SetTransmitData(uint8_t * data, uint8_t len);
-# 55 "./mcc_generated_files/mcc.h" 2
+# 55 "Sensors/../mcc_generated_files/mcc.h" 2
 
-# 1 "./mcc_generated_files/eusart1.h" 1
-# 75 "./mcc_generated_files/eusart1.h"
+# 1 "Sensors/../mcc_generated_files/eusart1.h" 1
+# 75 "Sensors/../mcc_generated_files/eusart1.h"
 typedef union {
     struct {
         unsigned perr : 1;
@@ -18263,340 +18289,220 @@ extern volatile uint8_t eusart1RxCount;
 
 
 extern void (*EUSART1_TxDefaultInterruptHandler)(void);
-# 116 "./mcc_generated_files/eusart1.h"
+# 116 "Sensors/../mcc_generated_files/eusart1.h"
 void EUSART1_Initialize(void);
-# 164 "./mcc_generated_files/eusart1.h"
+# 164 "Sensors/../mcc_generated_files/eusart1.h"
 _Bool EUSART1_is_tx_ready(void);
-# 212 "./mcc_generated_files/eusart1.h"
+# 212 "Sensors/../mcc_generated_files/eusart1.h"
 _Bool EUSART1_is_rx_ready(void);
-# 259 "./mcc_generated_files/eusart1.h"
+# 259 "Sensors/../mcc_generated_files/eusart1.h"
 _Bool EUSART1_is_tx_done(void);
-# 307 "./mcc_generated_files/eusart1.h"
+# 307 "Sensors/../mcc_generated_files/eusart1.h"
 eusart1_status_t EUSART1_get_last_status(void);
-# 327 "./mcc_generated_files/eusart1.h"
+# 327 "Sensors/../mcc_generated_files/eusart1.h"
 uint8_t EUSART1_Read(void);
-# 347 "./mcc_generated_files/eusart1.h"
+# 347 "Sensors/../mcc_generated_files/eusart1.h"
 void EUSART1_Write(uint8_t txData);
-# 368 "./mcc_generated_files/eusart1.h"
+# 368 "Sensors/../mcc_generated_files/eusart1.h"
 void EUSART1_Transmit_ISR(void);
-# 387 "./mcc_generated_files/eusart1.h"
+# 387 "Sensors/../mcc_generated_files/eusart1.h"
 void EUSART1_SetFramingErrorHandler(void (* interruptHandler)(void));
-# 405 "./mcc_generated_files/eusart1.h"
+# 405 "Sensors/../mcc_generated_files/eusart1.h"
 void EUSART1_SetOverrunErrorHandler(void (* interruptHandler)(void));
-# 423 "./mcc_generated_files/eusart1.h"
+# 423 "Sensors/../mcc_generated_files/eusart1.h"
 void EUSART1_SetErrorHandler(void (* interruptHandler)(void));
-# 443 "./mcc_generated_files/eusart1.h"
+# 443 "Sensors/../mcc_generated_files/eusart1.h"
 void EUSART1_SetTxInterruptHandler(void (* interruptHandler)(void));
-# 56 "./mcc_generated_files/mcc.h" 2
-# 71 "./mcc_generated_files/mcc.h"
+# 56 "Sensors/../mcc_generated_files/mcc.h" 2
+# 71 "Sensors/../mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(uint8_t slave_address);
-# 84 "./mcc_generated_files/mcc.h"
+# 84 "Sensors/../mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
-# 97 "./mcc_generated_files/mcc.h"
+# 97 "Sensors/../mcc_generated_files/mcc.h"
 void PMD_Initialize(void);
-# 24 "main.c" 2
+# 2 "Sensors/sound_level.c" 2
+
+# 1 "Sensors/../mcc_generated_files/adcc.h" 1
+# 72 "Sensors/../mcc_generated_files/adcc.h"
+typedef uint16_t adc_result_t;
+
+typedef __uint24 uint24_t;
+# 89 "Sensors/../mcc_generated_files/adcc.h"
+typedef enum
+{
+    channel_ANC1 = 0x11,
+    channel_Vss = 0x3B,
+    channel_Temp_Sensor = 0x3C,
+    channel_DAC1_Output = 0x3D,
+    channel_FVR_Buffer1 = 0x3E,
+    channel_FVR_Buffer2 = 0x3F
+} adcc_channel_t;
+# 131 "Sensors/../mcc_generated_files/adcc.h"
+void ADCC_Initialize(void);
+# 160 "Sensors/../mcc_generated_files/adcc.h"
+void ADCC_StartConversion(adcc_channel_t channel);
+# 190 "Sensors/../mcc_generated_files/adcc.h"
+_Bool ADCC_IsConversionDone();
+# 222 "Sensors/../mcc_generated_files/adcc.h"
+adc_result_t ADCC_GetConversionResult(void);
+# 253 "Sensors/../mcc_generated_files/adcc.h"
+adc_result_t ADCC_GetSingleConversion(adcc_channel_t channel);
+# 278 "Sensors/../mcc_generated_files/adcc.h"
+void ADCC_StopConversion(void);
+# 305 "Sensors/../mcc_generated_files/adcc.h"
+void ADCC_SetStopOnInterrupt(void);
+# 330 "Sensors/../mcc_generated_files/adcc.h"
+void ADCC_DischargeSampleCapacitor(void);
+# 356 "Sensors/../mcc_generated_files/adcc.h"
+void ADCC_LoadAcquisitionRegister(uint16_t);
+# 382 "Sensors/../mcc_generated_files/adcc.h"
+void ADCC_SetPrechargeTime(uint16_t);
+# 407 "Sensors/../mcc_generated_files/adcc.h"
+void ADCC_SetRepeatCount(uint8_t);
+# 435 "Sensors/../mcc_generated_files/adcc.h"
+uint8_t ADCC_GetCurrentCountofConversions(void);
+# 459 "Sensors/../mcc_generated_files/adcc.h"
+void ADCC_ClearAccumulator(void);
+# 484 "Sensors/../mcc_generated_files/adcc.h"
+uint24_t ADCC_GetAccumulatorValue(void);
+# 512 "Sensors/../mcc_generated_files/adcc.h"
+_Bool ADCC_HasAccumulatorOverflowed(void);
+# 537 "Sensors/../mcc_generated_files/adcc.h"
+uint16_t ADCC_GetFilterValue(void);
+# 565 "Sensors/../mcc_generated_files/adcc.h"
+uint16_t ADCC_GetPreviousResult(void);
+# 591 "Sensors/../mcc_generated_files/adcc.h"
+void ADCC_DefineSetPoint(uint16_t);
+# 617 "Sensors/../mcc_generated_files/adcc.h"
+void ADCC_SetUpperThreshold(uint16_t);
+# 643 "Sensors/../mcc_generated_files/adcc.h"
+void ADCC_SetLowerThreshold(uint16_t);
+# 670 "Sensors/../mcc_generated_files/adcc.h"
+uint16_t ADCC_GetErrorCalculation(void);
+# 697 "Sensors/../mcc_generated_files/adcc.h"
+void ADCC_EnableDoubleSampling(void);
+# 721 "Sensors/../mcc_generated_files/adcc.h"
+void ADCC_EnableContinuousConversion(void);
+# 745 "Sensors/../mcc_generated_files/adcc.h"
+void ADCC_DisableContinuousConversion(void);
+# 773 "Sensors/../mcc_generated_files/adcc.h"
+_Bool ADCC_HasErrorCrossedUpperThreshold(void);
+# 801 "Sensors/../mcc_generated_files/adcc.h"
+_Bool ADCC_HasErrorCrossedLowerThreshold(void);
+# 828 "Sensors/../mcc_generated_files/adcc.h"
+uint8_t ADCC_GetConversionStageStatus(void);
+# 845 "Sensors/../mcc_generated_files/adcc.h"
+void ADCC_SetADIInterruptHandler(void (* InterruptHandler)(void));
+# 861 "Sensors/../mcc_generated_files/adcc.h"
+void ADCC_ISR(void);
+# 880 "Sensors/../mcc_generated_files/adcc.h"
+void ADCC_DefaultInterruptHandler(void);
+# 3 "Sensors/sound_level.c" 2
+
+
+
+
+
+_Bool reset = 0;
+uint16_t x = 0;
+uint16_t maxValue = 0;
+
+uint8_t measurementData[2];
+
+void dummy(void){
+    return;
+}
+
+
+void doMeasurement(uint8_t metric, uint8_t * data, uint8_t * length){
+
+    *length = 2;
+    data = measurementData;
+    enableMic();
+    initializeADC();
+}
 
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdio.h" 1 3
-# 24 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdio.h" 3
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 1 3
 
+void prepTransmission(uint16_t maxiValue){
+    stopADC();
+    disableMic();
+    measurementData[0] = maxiValue>>8;
+    measurementData[1] = maxiValue;
+    generateInt();
+    __asm("sleep");
+}
 
 
+void getValue(){
 
+    uint16_t sample = ADCC_GetConversionResult();
 
-typedef void * va_list[1];
 
+        if(sample > maxValue){
+            maxValue = sample;
+        }
 
+        if(x >= 400 -1){
+            reset = 1;
+            prepTransmission(maxValue);
+        }
+    x++;
 
+    if(reset){
+            reset = 0;
+            maxValue = 0;
+            sample = 0;
+            x=0;
+        }
 
-typedef void * __isoc_va_list[1];
-# 137 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long ssize_t;
-# 246 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long long off_t;
-# 399 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef struct _IO_FILE FILE;
-# 24 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdio.h" 2 3
-# 52 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdio.h" 3
-typedef union _G_fpos64_t {
- char __opaque[16];
- double __align;
-} fpos_t;
 
-extern FILE *const stdin;
-extern FILE *const stdout;
-extern FILE *const stderr;
+}
 
 
-
-
-
-FILE *fopen(const char *restrict, const char *restrict);
-FILE *freopen(const char *restrict, const char *restrict, FILE *restrict);
-int fclose(FILE *);
-
-int remove(const char *);
-int rename(const char *, const char *);
-
-int feof(FILE *);
-int ferror(FILE *);
-int fflush(FILE *);
-void clearerr(FILE *);
-
-int fseek(FILE *, long, int);
-long ftell(FILE *);
-void rewind(FILE *);
-
-int fgetpos(FILE *restrict, fpos_t *restrict);
-int fsetpos(FILE *, const fpos_t *);
-
-size_t fread(void *restrict, size_t, size_t, FILE *restrict);
-size_t fwrite(const void *restrict, size_t, size_t, FILE *restrict);
-
-int fgetc(FILE *);
-int getc(FILE *);
-int getchar(void);
-int ungetc(int, FILE *);
-
-int fputc(int, FILE *);
-int putc(int, FILE *);
-int putchar(int);
-
-char *fgets(char *restrict, int, FILE *restrict);
-
-char *gets(char *);
-
-
-int fputs(const char *restrict, FILE *restrict);
-int puts(const char *);
-
-#pragma printf_check(printf) const
-#pragma printf_check(vprintf) const
-#pragma printf_check(sprintf) const
-#pragma printf_check(snprintf) const
-#pragma printf_check(vsprintf) const
-#pragma printf_check(vsnprintf) const
-
-int printf(const char *restrict, ...);
-int fprintf(FILE *restrict, const char *restrict, ...);
-int sprintf(char *restrict, const char *restrict, ...);
-int snprintf(char *restrict, size_t, const char *restrict, ...);
-
-int vprintf(const char *restrict, __isoc_va_list);
-int vfprintf(FILE *restrict, const char *restrict, __isoc_va_list);
-int vsprintf(char *restrict, const char *restrict, __isoc_va_list);
-int vsnprintf(char *restrict, size_t, const char *restrict, __isoc_va_list);
-
-int scanf(const char *restrict, ...);
-int fscanf(FILE *restrict, const char *restrict, ...);
-int sscanf(const char *restrict, const char *restrict, ...);
-int vscanf(const char *restrict, __isoc_va_list);
-int vfscanf(FILE *restrict, const char *restrict, __isoc_va_list);
-int vsscanf(const char *restrict, const char *restrict, __isoc_va_list);
-
-void perror(const char *);
-
-int setvbuf(FILE *restrict, char *restrict, int, size_t);
-void setbuf(FILE *restrict, char *restrict);
-
-char *tmpnam(char *);
-FILE *tmpfile(void);
-
-
-
-
-FILE *fmemopen(void *restrict, size_t, const char *restrict);
-FILE *open_memstream(char **, size_t *);
-FILE *fdopen(int, const char *);
-FILE *popen(const char *, const char *);
-int pclose(FILE *);
-int fileno(FILE *);
-int fseeko(FILE *, off_t, int);
-off_t ftello(FILE *);
-int dprintf(int, const char *restrict, ...);
-int vdprintf(int, const char *restrict, __isoc_va_list);
-void flockfile(FILE *);
-int ftrylockfile(FILE *);
-void funlockfile(FILE *);
-int getc_unlocked(FILE *);
-int getchar_unlocked(void);
-int putc_unlocked(int, FILE *);
-int putchar_unlocked(int);
-ssize_t getdelim(char **restrict, size_t *restrict, int, FILE *restrict);
-ssize_t getline(char **restrict, size_t *restrict, FILE *restrict);
-int renameat(int, const char *, int, const char *);
-char *ctermid(char *);
-
-
-
-
-
-
-
-char *tempnam(const char *, const char *);
-# 25 "main.c" 2
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\string.h" 1 3
-# 25 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\string.h" 3
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 411 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef struct __locale_struct * locale_t;
-# 25 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\string.h" 2 3
-
-
-void *memcpy (void *restrict, const void *restrict, size_t);
-void *memmove (void *, const void *, size_t);
-void *memset (void *, int, size_t);
-int memcmp (const void *, const void *, size_t);
-void *memchr (const void *, int, size_t);
-
-char *strcpy (char *restrict, const char *restrict);
-char *strncpy (char *restrict, const char *restrict, size_t);
-
-char *strcat (char *restrict, const char *restrict);
-char *strncat (char *restrict, const char *restrict, size_t);
-
-int strcmp (const char *, const char *);
-int strncmp (const char *, const char *, size_t);
-
-int strcoll (const char *, const char *);
-size_t strxfrm (char *restrict, const char *restrict, size_t);
-
-char *strchr (const char *, int);
-char *strrchr (const char *, int);
-
-size_t strcspn (const char *, const char *);
-size_t strspn (const char *, const char *);
-char *strpbrk (const char *, const char *);
-char *strstr (const char *, const char *);
-char *strtok (char *restrict, const char *restrict);
-
-size_t strlen (const char *);
-
-char *strerror (int);
-# 65 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\string.h" 3
-char *strtok_r (char *restrict, const char *restrict, char **restrict);
-int strerror_r (int, char *, size_t);
-char *stpcpy(char *restrict, const char *restrict);
-char *stpncpy(char *restrict, const char *restrict, size_t);
-size_t strnlen (const char *, size_t);
-char *strdup (const char *);
-char *strndup (const char *, size_t);
-char *strsignal(int);
-char *strerror_l (int, locale_t);
-int strcoll_l (const char *, const char *, locale_t);
-size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
-
-
-
-
-void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 26 "main.c" 2
-
-
-
-# 1 "./Sensors/Dummy.h" 1
-# 21 "./Sensors/Dummy.h"
-void doMeasurement(void);
-void measurementsDone(uint16_t);
-# 29 "main.c" 2
-# 49 "main.c"
-extern uint8_t measurementData[];
-
-_Bool ledState = 0;
-_Bool startMeasurement = 0;
-
-
-void ToggleLed(void){
-    if(ledState){
-        LATAbits.LATA2 = 0;
-    }
-    else{
-        LATAbits.LATA2 = 1;
-    }
-    ledState = (_Bool)!ledState;
-    printf("led toggled\n\0");
+void initializeADC(){
+    _delay((unsigned long)((50)*(32000000/4000.0)));
+    ADCC_Initialize();
+    ADCC_EnableContinuousConversion();
+    ADCC_StartConversion(channel_ANC1);
 }
 
 
 
+void stopADC(){
+    ADCC_StopConversion();
+    ADCC_DisableContinuousConversion();
+}
 
 
 
-void main(void)
-{
-
-    SYSTEM_Initialize(0x65);
-
-
-
-
-
-    (INTCONbits.GIE = 1);
-
-
-    (INTCONbits.PEIE = 1);
-# 92 "main.c"
-    IOCCF2_SetInterruptHandler(ToggleLed);
-
-
+void generateInt(){
+    do { LATCbits.LATC7 = 0; } while(0);
+    _delay((unsigned long)((1)*(32000000/4000.0)));
     do { LATCbits.LATC7 = 1; } while(0);
+}
 
 
 
-
-    while (1)
-    {
-
-        if(I2C1_CommandReceived()){
-            uint8_t cmd;
-            uint8_t len;
-            uint8_t data[20];
-            I2C1_GetCommand(&cmd, data, &len);
-
-            switch(cmd){
-
-                case 0x10:{
-                    uint8_t ack = 0xAA;
-                    I2C1_SetTransmitData(&ack, 1);
-                } break;
-
-                case 0x11:{
-                    uint8_t type = 0x21;
-                    I2C1_SetTransmitData(&type, 1);
-                } break;
-
-                case 0x12:{
-                    uint8_t dlen = 0x04;
-                    I2C1_SetTransmitData(&dlen, 1);
-                } break;
-
-                case 0x13:{
-                    uint8_t ack = 0xAA;
-                    I2C1_SetTransmitData(&ack, 1);
-                    startMeasurement = 1;
-                } break;
-
-                case 0x14:{
+void enableMic(){
+    do { LATCbits.LATC0 = 1; } while(0);
+}
 
 
 
-
-                         I2C1_SetTransmitData(measurementData, 0x04);
-                         for (int i=0; i<600; i++){}
-
-
+void disableMic(){
+    do { LATCbits.LATC0 = 0; } while(0);
+}
 
 
-                } break;
-                default:{
-                } break;
-            }
-        }
 
-        if(startMeasurement){
-            doMeasurement();
-            startMeasurement = 0;
-        }
-    }
+void toggleInt(){
+    do { LATCbits.LATC7 = 0; } while(0);
+    _delay((unsigned long)((1)*(32000000/4000.0)));
+    do { LATCbits.LATC7 = 1; } while(0);
+}
+
+
+
+void setThreshold(uint8_t metric, uint8_t * thresholds){
+
 }

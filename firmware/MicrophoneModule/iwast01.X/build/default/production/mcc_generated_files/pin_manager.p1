@@ -1,6 +1,6 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[v F10935 `(v ~T0 @X0 0 tf ]
-[v F10937 `(v ~T0 @X0 0 tf ]
+[v F10936 `(v ~T0 @X0 0 tf ]
+[v F10938 `(v ~T0 @X0 0 tf ]
 "748 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 748: extern volatile unsigned char LATA __attribute__((address(0x018)));
 [v _LATA `Vuc ~T0 @X0 0 e@24 ]
@@ -176,12 +176,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "359
 [; ;mcc_generated_files/pin_manager.h: 359: void IOCCF2_ISR(void);
 [v _IOCCF2_ISR `(v ~T0 @X0 0 ef ]
-[v F10943 `(v ~T0 @X0 0 tf ]
-[v F10945 `(v ~T0 @X0 0 tf ]
-[v F10947 `(v ~T0 @X0 0 tf ]
-[v F10951 `(v ~T0 @X0 0 tf ]
-[v F10953 `(v ~T0 @X0 0 tf ]
-[v F10955 `(v ~T0 @X0 0 tf ]
+[v F10944 `(v ~T0 @X0 0 tf ]
+[v F10946 `(v ~T0 @X0 0 tf ]
+[v F10948 `(v ~T0 @X0 0 tf ]
+[v F10952 `(v ~T0 @X0 0 tf ]
+[v F10954 `(v ~T0 @X0 0 tf ]
+[v F10956 `(v ~T0 @X0 0 tf ]
 "110 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 110: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -1544,39 +1544,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "32125
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 32125: __asm("TOSH equ 01FEFh");
 [; <" TOSH equ 01FEFh ;# ">
-"24 mcc_generated_files/../Sensors/Dummy.h
-[; ;mcc_generated_files/../Sensors/Dummy.h: 24: extern uint8_t measurementData[0x02] = {0x00, 0x00};
-[v _measurementData `uc ~T0 @X0 -> 2 `i e ]
-[i _measurementData
-:U ..
--> -> 0 `i `uc
--> -> 0 `i `uc
-..
-]
-"25
-[; ;mcc_generated_files/../Sensors/Dummy.h: 25: _Bool reset = 0;
-[v _reset `a ~T0 @X0 1 e ]
-[i _reset
--> -> 0 `i `a
-]
-"26
-[; ;mcc_generated_files/../Sensors/Dummy.h: 26: uint16_t x = 0;
-[v _x `us ~T0 @X0 1 e ]
-[i _x
--> -> 0 `i `us
-]
-"27
-[; ;mcc_generated_files/../Sensors/Dummy.h: 27: uint16_t maxValue = 0;
-[v _maxValue `us ~T0 @X0 1 e ]
-[i _maxValue
--> -> 0 `i `us
-]
 "54 mcc_generated_files/pin_manager.c
 [; ;mcc_generated_files/pin_manager.c: 54: void (*IOCBF7_InterruptHandler)(void);
-[v _IOCBF7_InterruptHandler `*F10935 ~T0 @X0 1 e ]
+[v _IOCBF7_InterruptHandler `*F10936 ~T0 @X0 1 e ]
 "55
 [; ;mcc_generated_files/pin_manager.c: 55: void (*IOCCF2_InterruptHandler)(void);
-[v _IOCCF2_InterruptHandler `*F10937 ~T0 @X0 1 e ]
+[v _IOCCF2_InterruptHandler `*F10938 ~T0 @X0 1 e ]
 "58
 [; ;mcc_generated_files/pin_manager.c: 58: void PIN_MANAGER_Initialize(void)
 [v _PIN_MANAGER_Initialize `(v ~T0 @X0 1 ef ]
@@ -1740,7 +1713,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "165
 [; ;mcc_generated_files/pin_manager.c: 165:     if(IOCBF7_InterruptHandler)
-[e $ ! != _IOCBF7_InterruptHandler -> -> 0 `i `*F10943 1522  ]
+[e $ ! != _IOCBF7_InterruptHandler -> -> 0 `i `*F10944 1522  ]
 "166
 [; ;mcc_generated_files/pin_manager.c: 166:     {
 {
@@ -1760,10 +1733,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 "175
 [; ;mcc_generated_files/pin_manager.c: 175: void IOCBF7_SetInterruptHandler(void (* InterruptHandler)(void)){
-[v _IOCBF7_SetInterruptHandler `(v ~T0 @X0 1 ef1`*F10945 ]
+[v _IOCBF7_SetInterruptHandler `(v ~T0 @X0 1 ef1`*F10946 ]
 {
 [e :U _IOCBF7_SetInterruptHandler ]
-[v _InterruptHandler `*F10947 ~T0 @X0 1 r1 ]
+[v _InterruptHandler `*F10948 ~T0 @X0 1 r1 ]
 [f ]
 "176
 [; ;mcc_generated_files/pin_manager.c: 176:     IOCBF7_InterruptHandler = InterruptHandler;
@@ -1790,7 +1763,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "196
 [; ;mcc_generated_files/pin_manager.c: 196:     if(IOCCF2_InterruptHandler)
-[e $ ! != _IOCCF2_InterruptHandler -> -> 0 `i `*F10951 1526  ]
+[e $ ! != _IOCCF2_InterruptHandler -> -> 0 `i `*F10952 1526  ]
 "197
 [; ;mcc_generated_files/pin_manager.c: 197:     {
 {
@@ -1810,10 +1783,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 "206
 [; ;mcc_generated_files/pin_manager.c: 206: void IOCCF2_SetInterruptHandler(void (* InterruptHandler)(void)){
-[v _IOCCF2_SetInterruptHandler `(v ~T0 @X0 1 ef1`*F10953 ]
+[v _IOCCF2_SetInterruptHandler `(v ~T0 @X0 1 ef1`*F10954 ]
 {
 [e :U _IOCCF2_SetInterruptHandler ]
-[v _InterruptHandler `*F10955 ~T0 @X0 1 r1 ]
+[v _InterruptHandler `*F10956 ~T0 @X0 1 r1 ]
 [f ]
 "207
 [; ;mcc_generated_files/pin_manager.c: 207:     IOCCF2_InterruptHandler = InterruptHandler;
