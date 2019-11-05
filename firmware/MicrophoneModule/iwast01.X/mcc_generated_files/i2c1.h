@@ -148,7 +148,8 @@ extern volatile uint8_t    I2C1_slaveWriteData;
 /* Returns true when a command has been received (address match)
  */
 bool I2C1_CommandReceived(void);
-void I2C1_GetCommand(uint8_t * cmd, uint8_t * data, uint8_t * len);
+void I2C1_GetCommand(uint8_t * cmd);
+void I2C1_GetCommandData(uint8_t * data, uint8_t * len);
 void I2C1_SetTransmitData(uint8_t * data, uint8_t len);
 
 #ifdef __cplusplus  // Provide C++ Compatibility

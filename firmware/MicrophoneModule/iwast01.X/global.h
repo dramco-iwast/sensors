@@ -38,10 +38,11 @@ extern "C" {
 #define CMD_GET_M_NR                0x23 // get nr. of metrics
 #define CMD_GET_M_DATA              0x14 // get measurement
 #define CMD_START_MEASUREMENT       0x13 // get/start a measurement
+#define CMD_SET_THRESHOLDS          0x24 // set thresholds
     
 typedef struct devApi{
     void (* Init)(void);
-    void (* Measure)(uint8_t, uint8_t *, uint8_t *);
+    void (* Measure)(uint8_t *, uint8_t *);
     void (* UpdateThreshold)(uint8_t, uint8_t *);
 } Device_API_t;
 

@@ -33,12 +33,15 @@ uint16_t maxValue = 0;
 
 uint8_t measurementData[2];
 
+uint8_t thresholdEnabled = 0;
+uint16_t thresholdLevel = 0;
+
 void dummy(void){
     return;
 }
 
 //------------------------------------ initialize the ADC ---------------------------------------
-void doMeasurement(uint8_t metric, uint8_t * data, uint8_t * length){
+void doMeasurement(uint8_t * data, uint8_t * length){
     // this is fixed
     *length = 2;
     data = measurementData;
@@ -122,6 +125,9 @@ void disableMic(){
 
 
 
-void setThreshold(uint8_t metric, uint8_t * thresholds){
-    
+void setThreshold(uint8_t metric, uint8_t * thresholdData){
+    if(metric == 0){
+        thresholdEnabled = thresholdData[0];
+        thresholdLevel = (uint16_t)((thresholdData[3]<<8) | thresholdData[4]);
+    }
 }

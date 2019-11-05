@@ -44,7 +44,7 @@
     OF FEES, IF ANY, THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS 
     SOFTWARE.
 */
-
+#include <string.h>
 #include "i2c1.h"
 
 #define I2C1_SLAVE_ADDRESS 0x08 
@@ -172,11 +172,14 @@ bool I2C1_CommandReceived(void){
     return cmdReceived;
 }
 
-void I2C1_GetCommand(uint8_t * cmd, uint8_t * data, uint8_t * len){
+void I2C1_GetCommand(uint8_t * cmd){
     *cmd = cmdByte;
-    data = i2c1_rx_buffer;
-    *len = rxLen;
     cmdReceived = false;
+}
+
+void I2C1_GetCommandData(uint8_t * data, uint8_t * len){
+    memcpy(data, i2c1_rx_buffer, rxLen);
+    *len = rxLen;
 }
 
 void I2C1_SetTransmitData(uint8_t * data, uint8_t len){

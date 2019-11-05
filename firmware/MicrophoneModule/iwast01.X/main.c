@@ -84,9 +84,7 @@ void main(void)
         // I2C Slave operation (respond to commands)
         if(I2C1_CommandReceived()){
             uint8_t cmd;
-            uint8_t len;
-            uint8_t data[20];
-            I2C1_GetCommand(&cmd, data, &len);
+            I2C1_GetCommand(&cmd);
             
             switch(cmd){
                 // POLL
@@ -94,7 +92,6 @@ void main(void)
                     uint8_t ack = DEFAULT_ACK;
                     I2C1_SetTransmitData(&ack, 1);
                     SLEEP();
-
                 } break;
                 
                 // TYPE
@@ -113,10 +110,10 @@ void main(void)
 
                 // MEASURE
                 case CMD_START_MEASUREMENT:{ // master forces measurement -> respond with ack
-                    uint8_t metric = data[0];
-                    uint8_t ack = DEFAULT_ACK;
-                    I2C1_SetTransmitData(&ack, 1);
-                    sensorAPI.Measure(metric, measurementData, &mDataLength);
+                   /* uint8_t ack = DEFAULT_ACK;
+                    I2C1_SetTransmitData(&ack, 1);*/
+                   
+                    sensorAPI.Measure(measurementData, &mDataLength);
                     /*for (int i=0; i<600; i++){}*/
                 } break;
                 
@@ -129,9 +126,21 @@ void main(void)
                 
                 // INT TOGGLE
                 case CMD_INT_TOGGLE:{ //toggle the INT line      
-                    uint8_t ack = 0xAA;
-                    I2C1_SetTransmitData(&ack, 1); 
+                    /*uint8_t ack = 0xAA;
+                    I2C1_SetTransmitData(&ack, 1); */
                     toggleInt();
+                    SLEEP();
+                } break;
+                
+                // INT TOGGLE
+                case CMD_SET_THRESHOLDS:{ //read thresholds
+                    __delay_ms(1);
+                    uint8_t len;
+                    uint8_t data[20];
+                    I2C1_GetCommandData(data, &len);
+                    if(len == 6){
+                        sensorAPI.UpdateThreshold(data[0], data+1);
+                    }
                     SLEEP();
                 } break;
                 
