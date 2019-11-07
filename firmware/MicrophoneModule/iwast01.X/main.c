@@ -54,7 +54,7 @@ Device_API_t sensorAPI = SENSOR_API;
 
 void toggleInt(void);
 
-uint8_t measurementData[2 * M_NR];
+uint8_t mData[2 * M_NR];
 uint8_t mDataLength;
 
 /* Main application
@@ -79,8 +79,11 @@ void main(void)
     // Disable the Peripheral Interrupts
     //INTERRUPT_PeripheralInterruptDisable();
 
-    while(1)
-    {
+    sensorAPI.Init();
+    
+    while(1){
+        sensorAPI.Loop();
+        
         // I2C Slave operation (respond to commands)
         if(I2C1_CommandReceived()){
             uint8_t cmd;
@@ -88,48 +91,41 @@ void main(void)
             
             switch(cmd){
                 // POLL
-                case CMD_POLL:{ // master polls address -> respond with ack
+                case CMD_POLL:{
+                    // master polls address -> respond with ack
                     uint8_t ack = DEFAULT_ACK;
                     I2C1_SetTransmitData(&ack, 1);
-                    SLEEP();
                 } break;
                 
                 // TYPE
-                case CMD_DEVICE_TYPE:{ // master requests sensor type -> respond with type
+                case CMD_DEVICE_TYPE:{
+                    // master requests sensor type -> respond with type
                     uint8_t type = TYPE_BYTE;
                     I2C1_SetTransmitData(&type, 1);
-                    SLEEP();
                 } break;
 
                 // NR OF METRICS
-                case CMD_GET_M_NR:{ // master requests measurement data length -> respond with length
+                case CMD_GET_M_NR:{
+                    // master requests measurement data length -> respond with length
                     uint8_t mnr = M_NR;
                     I2C1_SetTransmitData(&mnr, 1);
-                    SLEEP();
                 } break;
 
                 // MEASURE
-                case CMD_START_MEASUREMENT:{ // master forces measurement -> respond with ack
-                   /* uint8_t ack = DEFAULT_ACK;
-                    I2C1_SetTransmitData(&ack, 1);*/
-                   
-                    sensorAPI.Measure(measurementData, &mDataLength);
-                    /*for (int i=0; i<600; i++){}*/
+                case CMD_START_MEASUREMENT:{
+                    // master forces measurement -> respond with ack
+                    sensorAPI.Measure();
                 } break;
                 
                 // GET DATA
                 case CMD_GET_M_DATA:{ // master requests measurement data -> send data
-                    I2C1_SetTransmitData(measurementData, mDataLength);
-                    //for (int i=0; i<600; i++){}
-                    SLEEP();     
+                    sensorAPI.GetData(mData, &mDataLength);
+                    I2C1_SetTransmitData(mData, mDataLength);
                 } break;
                 
                 // INT TOGGLE
                 case CMD_INT_TOGGLE:{ //toggle the INT line      
-                    /*uint8_t ack = 0xAA;
-                    I2C1_SetTransmitData(&ack, 1); */
                     toggleInt();
-                    SLEEP();
                 } break;
                 
                 // INT TOGGLE
@@ -141,7 +137,6 @@ void main(void)
                     if(len == 6){
                         sensorAPI.UpdateThreshold(data[0], data+1);
                     }
-                    SLEEP();
                 } break;
                 
                 // DO NOTHING

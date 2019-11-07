@@ -18329,6 +18329,7 @@ void I2C1_GetCommandData(uint8_t * data, uint8_t * len);
 void I2C1_SetTransmitData(uint8_t * data, uint8_t len);
 # 55 "mcc_generated_files/mcc.h" 2
 
+
 # 1 "mcc_generated_files/eusart1.h" 1
 # 75 "mcc_generated_files/eusart1.h"
 typedef union {
@@ -18375,30 +18376,207 @@ void EUSART1_SetOverrunErrorHandler(void (* interruptHandler)(void));
 void EUSART1_SetErrorHandler(void (* interruptHandler)(void));
 # 443 "mcc_generated_files/eusart1.h"
 void EUSART1_SetTxInterruptHandler(void (* interruptHandler)(void));
-# 56 "mcc_generated_files/mcc.h" 2
-# 71 "mcc_generated_files/mcc.h"
+# 57 "mcc_generated_files/mcc.h" 2
+
+# 1 "mcc_generated_files/tmr4.h" 1
+# 79 "mcc_generated_files/tmr4.h"
+typedef enum
+{
+# 89 "mcc_generated_files/tmr4.h"
+   TMR4_ROP_STARTS_TMRON,
+
+
+
+
+   TMR4_ROP_STARTS_TMRON_ERSHIGH,
+
+
+
+
+   TMR4_ROP_STARTS_TMRON_ERSLOW,
+
+
+
+
+   TMR4_ROP_RESETS_ERSBOTHEDGE,
+
+
+
+
+   TMR4_ROP_RESETS_ERSRISINGEDGE,
+
+
+
+
+   TMR4_ROP_RESETS_ERSFALLINGEDGE,
+
+
+
+
+   TMR4_ROP_RESETS_ERSLOW,
+
+
+
+
+   TMR4_ROP_RESETS_ERSHIGH,
+# 135 "mcc_generated_files/tmr4.h"
+   TMR4_OS_STARTS_TMRON,
+
+
+
+
+   TMR4_OS_STARTS_ERSRISINGEDGE ,
+
+
+
+
+   TMR4_OS_STARTS_ERSFALLINGEDGE ,
+
+
+
+
+   TMR4_OS_STARTS_ERSBOTHEDGE,
+
+
+
+
+
+   TMR4_OS_STARTS_ERSFIRSTRISINGEDGE,
+
+
+
+
+
+   TMR4_OS_STARTS_ERSFIRSTFALLINGEDGE,
+
+
+
+
+
+   TMR4_OS_STARTS_ERSRISINGEDGEDETECT,
+
+} TMR4_HLT_MODE;
+# 185 "mcc_generated_files/tmr4.h"
+typedef enum
+{
+
+
+    TMR4_T4INPPS,
+
+
+
+    TMR4_T2POSTSCALED,
+
+
+
+    TMR4_RESERVED,
+
+
+
+    TMR4_T6POSTSCALED,
+
+
+
+    TMR4_CCP1_OUT,
+
+
+
+    TMR4_CCP2_OUT,
+
+
+
+    TMR4_CCP3_OUT,
+
+
+
+    TMR4_CCP4_OUT,
+
+
+
+    TMR4_PWM6_OUT,
+
+
+
+    TMR4_PWM7_OUT,
+
+
+
+    TMR4_CMP1_OUT,
+
+
+
+    TMR4_CMP2_OUT,
+
+
+
+    TMR4_ZCD_OUTPUT,
+
+
+
+    TMR4_CLC1_OUT,
+
+
+
+    TMR4_CLC2_OUT,
+
+
+
+    TMR4_CLC3_OUT,
+
+
+
+    TMR4_CLC4_OUT,
+
+
+
+    TMR4_RESERVED_2,
+
+} TMR4_HLT_EXT_RESET_SOURCE;
+# 302 "mcc_generated_files/tmr4.h"
+void TMR4_Initialize(void);
+# 338 "mcc_generated_files/tmr4.h"
+void TMR4_ModeSet(TMR4_HLT_MODE mode);
+# 373 "mcc_generated_files/tmr4.h"
+void TMR4_ExtResetSourceSet(TMR4_HLT_EXT_RESET_SOURCE reset);
+# 402 "mcc_generated_files/tmr4.h"
+void TMR4_Start(void);
+# 431 "mcc_generated_files/tmr4.h"
+void TMR4_StartTimer(void);
+# 463 "mcc_generated_files/tmr4.h"
+void TMR4_Stop(void);
+# 495 "mcc_generated_files/tmr4.h"
+void TMR4_StopTimer(void);
+# 530 "mcc_generated_files/tmr4.h"
+uint8_t TMR4_Counter8BitGet(void);
+# 565 "mcc_generated_files/tmr4.h"
+uint8_t TMR4_ReadTimer(void);
+# 604 "mcc_generated_files/tmr4.h"
+void TMR4_Counter8BitSet(uint8_t timerVal);
+# 643 "mcc_generated_files/tmr4.h"
+void TMR4_WriteTimer(uint8_t timerVal);
+# 695 "mcc_generated_files/tmr4.h"
+void TMR4_Period8BitSet(uint8_t periodVal);
+# 747 "mcc_generated_files/tmr4.h"
+void TMR4_LoadPeriodRegister(uint8_t periodVal);
+# 765 "mcc_generated_files/tmr4.h"
+void TMR4_ISR(void);
+# 783 "mcc_generated_files/tmr4.h"
+ void TMR4_CallBack(void);
+# 800 "mcc_generated_files/tmr4.h"
+ void TMR4_SetInterruptHandler(void (* InterruptHandler)(void));
+# 818 "mcc_generated_files/tmr4.h"
+extern void (*TMR4_InterruptHandler)(void);
+# 836 "mcc_generated_files/tmr4.h"
+void TMR4_DefaultInterruptHandler(void);
+# 58 "mcc_generated_files/mcc.h" 2
+# 72 "mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(uint8_t slave_address);
-# 84 "mcc_generated_files/mcc.h"
+# 85 "mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
-# 97 "mcc_generated_files/mcc.h"
+# 98 "mcc_generated_files/mcc.h"
 void PMD_Initialize(void);
 # 53 "mcc_generated_files/adcc.c" 2
 
-# 1 "mcc_generated_files/../Sensors/sound_level.h" 1
-# 42 "mcc_generated_files/../Sensors/sound_level.h"
-void dummy(void);
-
-void doMeasurement(uint8_t * data, uint8_t * length);
-void prepTransmission(uint16_t);
-void getValue(void);
-void initializeADC(void);
-void stopADC(void);
-void generateInt(void);
-void setThreshold(uint8_t metric, uint8_t * thresholdData);
-void translateData(uint8_t enable,uint8_t MSBLT,uint8_t LSBLT,uint8_t MSBUP,uint8_t LSBUT);
-void enableMic(void);
-void disableMic(void);
-# 54 "mcc_generated_files/adcc.c" 2
 
 
 
@@ -18654,9 +18832,8 @@ uint8_t ADCC_GetConversionStageStatus(void)
     return ADSTATbits.ADSTAT;
 }
 
-void ADCC_ISR(void)
-{
-    getValue();
+void ADCC_ISR(void){
+
 
     PIR1bits.ADIF = 0;
 

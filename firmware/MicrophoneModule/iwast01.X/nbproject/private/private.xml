@@ -5,10 +5,7 @@
         <group>
             <file>file:/C:/Users/geoffrey/Documents/GitHub/IWAST/sensors/firmware/MicrophoneModule/iwast01.X/Sensors/sound_level.c</file>
             <file>file:/C:/Users/geoffrey/Documents/GitHub/IWAST/sensors/firmware/MicrophoneModule/iwast01.X/main.c</file>
-            <file>file:/C:/Users/geoffrey/Documents/GitHub/IWAST/sensors/firmware/MicrophoneModule/iwast01.X/mcc_generated_files/i2c1.c</file>
-            <file>file:/C:/Users/geoffrey/Documents/GitHub/IWAST/sensors/firmware/MicrophoneModule/iwast01.X/mcc_generated_files/interrupt_manager.c</file>
             <file>file:/C:/Users/geoffrey/Documents/GitHub/IWAST/sensors/firmware/MicrophoneModule/iwast01.X/global.h</file>
-            <file>file:/C:/Users/geoffrey/Documents/GitHub/IWAST/sensors/firmware/MicrophoneModule/iwast01.X/mcc_generated_files/i2c1.h</file>
             <file>file:/C:/Users/geoffrey/Documents/GitHub/IWAST/sensors/firmware/MicrophoneModule/iwast01.X/Sensors/sound_level.h</file>
         </group>
     </open-files>

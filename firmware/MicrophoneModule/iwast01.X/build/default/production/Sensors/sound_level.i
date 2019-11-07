@@ -7,7 +7,7 @@
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "Sensors/sound_level.c" 2
-# 23 "Sensors/sound_level.c"
+# 22 "Sensors/sound_level.c"
 # 1 "Sensors/sound_level.h" 1
 # 26 "Sensors/sound_level.h"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 1 3
@@ -18180,20 +18180,13 @@ typedef uint32_t uint_fast32_t;
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdbool.h" 1 3
 # 28 "Sensors/sound_level.h" 2
-# 42 "Sensors/sound_level.h"
-void dummy(void);
-
-void doMeasurement(uint8_t * data, uint8_t * length);
-void prepTransmission(uint16_t);
-void getValue(void);
-void initializeADC(void);
-void stopADC(void);
-void generateInt(void);
+# 49 "Sensors/sound_level.h"
+void init(void);
+void measure(void);
+void loop(void);
+void getData(uint8_t * data, uint8_t * length);
 void setThreshold(uint8_t metric, uint8_t * thresholdData);
-void translateData(uint8_t enable,uint8_t MSBLT,uint8_t LSBLT,uint8_t MSBUP,uint8_t LSBUT);
-void enableMic(void);
-void disableMic(void);
-# 23 "Sensors/sound_level.c" 2
+# 22 "Sensors/sound_level.c" 2
 
 # 1 "Sensors/../mcc_generated_files/mcc.h" 1
 # 50 "Sensors/../mcc_generated_files/mcc.h"
@@ -18267,61 +18260,6 @@ void I2C1_GetCommand(uint8_t * cmd);
 void I2C1_GetCommandData(uint8_t * data, uint8_t * len);
 void I2C1_SetTransmitData(uint8_t * data, uint8_t len);
 # 55 "Sensors/../mcc_generated_files/mcc.h" 2
-
-# 1 "Sensors/../mcc_generated_files/eusart1.h" 1
-# 75 "Sensors/../mcc_generated_files/eusart1.h"
-typedef union {
-    struct {
-        unsigned perr : 1;
-        unsigned ferr : 1;
-        unsigned oerr : 1;
-        unsigned reserved : 5;
-    };
-    uint8_t status;
-}eusart1_status_t;
-
-
-
-
-extern volatile uint8_t eusart1TxBufferRemaining;
-extern volatile uint8_t eusart1RxCount;
-
-
-
-
-extern void (*EUSART1_TxDefaultInterruptHandler)(void);
-# 116 "Sensors/../mcc_generated_files/eusart1.h"
-void EUSART1_Initialize(void);
-# 164 "Sensors/../mcc_generated_files/eusart1.h"
-_Bool EUSART1_is_tx_ready(void);
-# 212 "Sensors/../mcc_generated_files/eusart1.h"
-_Bool EUSART1_is_rx_ready(void);
-# 259 "Sensors/../mcc_generated_files/eusart1.h"
-_Bool EUSART1_is_tx_done(void);
-# 307 "Sensors/../mcc_generated_files/eusart1.h"
-eusart1_status_t EUSART1_get_last_status(void);
-# 327 "Sensors/../mcc_generated_files/eusart1.h"
-uint8_t EUSART1_Read(void);
-# 347 "Sensors/../mcc_generated_files/eusart1.h"
-void EUSART1_Write(uint8_t txData);
-# 368 "Sensors/../mcc_generated_files/eusart1.h"
-void EUSART1_Transmit_ISR(void);
-# 387 "Sensors/../mcc_generated_files/eusart1.h"
-void EUSART1_SetFramingErrorHandler(void (* interruptHandler)(void));
-# 405 "Sensors/../mcc_generated_files/eusart1.h"
-void EUSART1_SetOverrunErrorHandler(void (* interruptHandler)(void));
-# 423 "Sensors/../mcc_generated_files/eusart1.h"
-void EUSART1_SetErrorHandler(void (* interruptHandler)(void));
-# 443 "Sensors/../mcc_generated_files/eusart1.h"
-void EUSART1_SetTxInterruptHandler(void (* interruptHandler)(void));
-# 56 "Sensors/../mcc_generated_files/mcc.h" 2
-# 71 "Sensors/../mcc_generated_files/mcc.h"
-void SYSTEM_Initialize(uint8_t slave_address);
-# 84 "Sensors/../mcc_generated_files/mcc.h"
-void OSCILLATOR_Initialize(void);
-# 97 "Sensors/../mcc_generated_files/mcc.h"
-void PMD_Initialize(void);
-# 24 "Sensors/sound_level.c" 2
 
 # 1 "Sensors/../mcc_generated_files/adcc.h" 1
 # 72 "Sensors/../mcc_generated_files/adcc.h"
@@ -18398,74 +18336,425 @@ void ADCC_SetADIInterruptHandler(void (* InterruptHandler)(void));
 void ADCC_ISR(void);
 # 880 "Sensors/../mcc_generated_files/adcc.h"
 void ADCC_DefaultInterruptHandler(void);
-# 25 "Sensors/sound_level.c" 2
+# 56 "Sensors/../mcc_generated_files/mcc.h" 2
+
+# 1 "Sensors/../mcc_generated_files/eusart1.h" 1
+# 75 "Sensors/../mcc_generated_files/eusart1.h"
+typedef union {
+    struct {
+        unsigned perr : 1;
+        unsigned ferr : 1;
+        unsigned oerr : 1;
+        unsigned reserved : 5;
+    };
+    uint8_t status;
+}eusart1_status_t;
+
+
+
+
+extern volatile uint8_t eusart1TxBufferRemaining;
+extern volatile uint8_t eusart1RxCount;
+
+
+
+
+extern void (*EUSART1_TxDefaultInterruptHandler)(void);
+# 116 "Sensors/../mcc_generated_files/eusart1.h"
+void EUSART1_Initialize(void);
+# 164 "Sensors/../mcc_generated_files/eusart1.h"
+_Bool EUSART1_is_tx_ready(void);
+# 212 "Sensors/../mcc_generated_files/eusart1.h"
+_Bool EUSART1_is_rx_ready(void);
+# 259 "Sensors/../mcc_generated_files/eusart1.h"
+_Bool EUSART1_is_tx_done(void);
+# 307 "Sensors/../mcc_generated_files/eusart1.h"
+eusart1_status_t EUSART1_get_last_status(void);
+# 327 "Sensors/../mcc_generated_files/eusart1.h"
+uint8_t EUSART1_Read(void);
+# 347 "Sensors/../mcc_generated_files/eusart1.h"
+void EUSART1_Write(uint8_t txData);
+# 368 "Sensors/../mcc_generated_files/eusart1.h"
+void EUSART1_Transmit_ISR(void);
+# 387 "Sensors/../mcc_generated_files/eusart1.h"
+void EUSART1_SetFramingErrorHandler(void (* interruptHandler)(void));
+# 405 "Sensors/../mcc_generated_files/eusart1.h"
+void EUSART1_SetOverrunErrorHandler(void (* interruptHandler)(void));
+# 423 "Sensors/../mcc_generated_files/eusart1.h"
+void EUSART1_SetErrorHandler(void (* interruptHandler)(void));
+# 443 "Sensors/../mcc_generated_files/eusart1.h"
+void EUSART1_SetTxInterruptHandler(void (* interruptHandler)(void));
+# 57 "Sensors/../mcc_generated_files/mcc.h" 2
+
+# 1 "Sensors/../mcc_generated_files/tmr4.h" 1
+# 79 "Sensors/../mcc_generated_files/tmr4.h"
+typedef enum
+{
+# 89 "Sensors/../mcc_generated_files/tmr4.h"
+   TMR4_ROP_STARTS_TMRON,
+
+
+
+
+   TMR4_ROP_STARTS_TMRON_ERSHIGH,
+
+
+
+
+   TMR4_ROP_STARTS_TMRON_ERSLOW,
+
+
+
+
+   TMR4_ROP_RESETS_ERSBOTHEDGE,
+
+
+
+
+   TMR4_ROP_RESETS_ERSRISINGEDGE,
+
+
+
+
+   TMR4_ROP_RESETS_ERSFALLINGEDGE,
+
+
+
+
+   TMR4_ROP_RESETS_ERSLOW,
+
+
+
+
+   TMR4_ROP_RESETS_ERSHIGH,
+# 135 "Sensors/../mcc_generated_files/tmr4.h"
+   TMR4_OS_STARTS_TMRON,
+
+
+
+
+   TMR4_OS_STARTS_ERSRISINGEDGE ,
+
+
+
+
+   TMR4_OS_STARTS_ERSFALLINGEDGE ,
+
+
+
+
+   TMR4_OS_STARTS_ERSBOTHEDGE,
 
 
 
 
 
-_Bool reset = 0;
-uint16_t x = 0;
-uint16_t maxValue = 0;
+   TMR4_OS_STARTS_ERSFIRSTRISINGEDGE,
 
-uint8_t measurementData[2];
 
-uint8_t thresholdEnabled = 0;
-uint16_t thresholdLevel = 0;
 
-void dummy(void){
-    return;
+
+
+   TMR4_OS_STARTS_ERSFIRSTFALLINGEDGE,
+
+
+
+
+
+   TMR4_OS_STARTS_ERSRISINGEDGEDETECT,
+
+} TMR4_HLT_MODE;
+# 185 "Sensors/../mcc_generated_files/tmr4.h"
+typedef enum
+{
+
+
+    TMR4_T4INPPS,
+
+
+
+    TMR4_T2POSTSCALED,
+
+
+
+    TMR4_RESERVED,
+
+
+
+    TMR4_T6POSTSCALED,
+
+
+
+    TMR4_CCP1_OUT,
+
+
+
+    TMR4_CCP2_OUT,
+
+
+
+    TMR4_CCP3_OUT,
+
+
+
+    TMR4_CCP4_OUT,
+
+
+
+    TMR4_PWM6_OUT,
+
+
+
+    TMR4_PWM7_OUT,
+
+
+
+    TMR4_CMP1_OUT,
+
+
+
+    TMR4_CMP2_OUT,
+
+
+
+    TMR4_ZCD_OUTPUT,
+
+
+
+    TMR4_CLC1_OUT,
+
+
+
+    TMR4_CLC2_OUT,
+
+
+
+    TMR4_CLC3_OUT,
+
+
+
+    TMR4_CLC4_OUT,
+
+
+
+    TMR4_RESERVED_2,
+
+} TMR4_HLT_EXT_RESET_SOURCE;
+# 302 "Sensors/../mcc_generated_files/tmr4.h"
+void TMR4_Initialize(void);
+# 338 "Sensors/../mcc_generated_files/tmr4.h"
+void TMR4_ModeSet(TMR4_HLT_MODE mode);
+# 373 "Sensors/../mcc_generated_files/tmr4.h"
+void TMR4_ExtResetSourceSet(TMR4_HLT_EXT_RESET_SOURCE reset);
+# 402 "Sensors/../mcc_generated_files/tmr4.h"
+void TMR4_Start(void);
+# 431 "Sensors/../mcc_generated_files/tmr4.h"
+void TMR4_StartTimer(void);
+# 463 "Sensors/../mcc_generated_files/tmr4.h"
+void TMR4_Stop(void);
+# 495 "Sensors/../mcc_generated_files/tmr4.h"
+void TMR4_StopTimer(void);
+# 530 "Sensors/../mcc_generated_files/tmr4.h"
+uint8_t TMR4_Counter8BitGet(void);
+# 565 "Sensors/../mcc_generated_files/tmr4.h"
+uint8_t TMR4_ReadTimer(void);
+# 604 "Sensors/../mcc_generated_files/tmr4.h"
+void TMR4_Counter8BitSet(uint8_t timerVal);
+# 643 "Sensors/../mcc_generated_files/tmr4.h"
+void TMR4_WriteTimer(uint8_t timerVal);
+# 695 "Sensors/../mcc_generated_files/tmr4.h"
+void TMR4_Period8BitSet(uint8_t periodVal);
+# 747 "Sensors/../mcc_generated_files/tmr4.h"
+void TMR4_LoadPeriodRegister(uint8_t periodVal);
+# 765 "Sensors/../mcc_generated_files/tmr4.h"
+void TMR4_ISR(void);
+# 783 "Sensors/../mcc_generated_files/tmr4.h"
+ void TMR4_CallBack(void);
+# 800 "Sensors/../mcc_generated_files/tmr4.h"
+ void TMR4_SetInterruptHandler(void (* InterruptHandler)(void));
+# 818 "Sensors/../mcc_generated_files/tmr4.h"
+extern void (*TMR4_InterruptHandler)(void);
+# 836 "Sensors/../mcc_generated_files/tmr4.h"
+void TMR4_DefaultInterruptHandler(void);
+# 58 "Sensors/../mcc_generated_files/mcc.h" 2
+# 72 "Sensors/../mcc_generated_files/mcc.h"
+void SYSTEM_Initialize(uint8_t slave_address);
+# 85 "Sensors/../mcc_generated_files/mcc.h"
+void OSCILLATOR_Initialize(void);
+# 98 "Sensors/../mcc_generated_files/mcc.h"
+void PMD_Initialize(void);
+# 23 "Sensors/sound_level.c" 2
+# 33 "Sensors/sound_level.c"
+void prepTransmission(void);
+
+
+void startADC(void);
+
+
+void stopADC(void);
+
+
+void getSample(void);
+
+
+void generateInt(void);
+
+
+void enableMic(void);
+
+
+void disableMic(void);
+
+
+void ledOn(void);
+
+
+void ledOff(void);
+
+
+void ledToggle(void);
+
+
+
+
+_Bool measurementRunning = 0;
+uint16_t sampleCounter = 0;
+__persistent uint16_t maxValue = 0;
+_Bool autoStart = 0;
+
+
+__persistent uint8_t measurementData[2];
+
+
+
+__persistent uint8_t thresholdEnabled = 0;
+__persistent uint16_t thresholdLevel = 0;
+
+
+
+
+void init(void){
+
+    TRISB &= 0xBF;
+
+
+    ADCC_Initialize();
+    ADCC_SetADIInterruptHandler(getSample);
+
+
+
+    WDTCON0 = 0x14;
+    WDTCON1 = 0x07;
+
+
+    if(STATUSbits.nTO == 0){
+        WDTCON0bits.SWDTEN = 1;
+        autoStart = 1;
+        measure();
+    }
+    else{
+        thresholdEnabled = 0;
+        WDTCON0bits.SWDTEN = 0;
+    }
 }
 
+void measure(){
+    __asm("clrwdt");
+    ledOn();
 
-void doMeasurement(uint8_t * data, uint8_t * length){
+    measurementRunning = 1;
+    sampleCounter = 0;
+    maxValue = 0;
 
-    *length = 2;
-    data = measurementData;
     enableMic();
-    initializeADC();
-}
+    _delay((unsigned long)((50)*(32000000/4000.0)));
+    startADC();
 
 
-void prepTransmission(uint16_t maxiValue){
+    while(measurementRunning);
+
     stopADC();
     disableMic();
-    measurementData[0] = maxiValue>>8;
-    measurementData[1] = maxiValue;
-    generateInt();
-    __asm("sleep");
+
+    prepTransmission();
 }
 
 
-void getValue(){
 
+void loop(void){
+
+
+
+
+
+    __asm("sleep");
+    __nop();
+
+
+    if(STATUSbits.nTO == 0){
+        WDTCON0bits.SWDTEN = 1;
+        autoStart = 1;
+        measure();
+    }
+}
+
+
+
+void getData(uint8_t * data, uint8_t * length){
+
+    *length = 2;
+    data[0] = measurementData[0];
+    data[1] = measurementData[1];
+}
+
+void setThreshold(uint8_t metric, uint8_t * thresholdData){
+    if(metric == 0){
+        thresholdEnabled = thresholdData[0];
+        thresholdLevel = (uint16_t)((thresholdData[3]<<8) | thresholdData[4]);
+
+        if(thresholdEnabled){
+            WDTCON0bits.SWDTEN = 1;
+        }
+    }
+}
+
+
+void prepTransmission(){
+    measurementData[0] = maxValue>>8;
+    measurementData[1] = maxValue;
+
+    if(autoStart){
+        autoStart = 0;
+
+        if(maxValue > thresholdLevel){
+            generateInt();
+        }
+    }
+    else{
+
+        generateInt();
+    }
+
+    ledOff();
+}
+
+
+void getSample(){
     uint16_t sample = ADCC_GetConversionResult();
 
 
-        if(sample > maxValue){
-            maxValue = sample;
-        }
+    if(sample > maxValue){
+        maxValue = sample;
+    }
 
-        if(x >= 400 -1){
-            reset = 1;
-            prepTransmission(maxValue);
-        }
-    x++;
-
-    if(reset){
-            reset = 0;
-            maxValue = 0;
-            sample = 0;
-            x=0;
-        }
-
-
+    sampleCounter++;
+    if(sampleCounter>400 -1){
+        measurementRunning = 0;
+    }
 }
 
 
-void initializeADC(){
-    _delay((unsigned long)((50)*(32000000/4000.0)));
-    ADCC_Initialize();
+void startADC(){
     ADCC_EnableContinuousConversion();
     ADCC_StartConversion(channel_ANC1);
 }
@@ -18498,13 +18787,16 @@ void disableMic(){
 }
 
 
+void ledOn(void){
+    LATB |= 0x40;
+}
 
 
+void ledOff(void){
+    LATB &= 0xBF;
+}
 
 
-void setThreshold(uint8_t metric, uint8_t * thresholdData){
-    if(metric == 0){
-        thresholdEnabled = thresholdData[0];
-        thresholdLevel = (uint16_t)((thresholdData[3]<<8) | thresholdData[4]);
-    }
+void ledToggle(void){
+    LATB ^= 0x40;
 }

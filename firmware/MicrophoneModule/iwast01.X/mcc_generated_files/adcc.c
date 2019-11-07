@@ -51,7 +51,7 @@
 #include <xc.h>
 #include "adcc.h"
 #include "mcc.h"
-#include "../Sensors/sound_level.h"
+//#include "../Sensors/sound_level.h"
 //Dummy.h"
 
 /**
@@ -306,9 +306,8 @@ uint8_t ADCC_GetConversionStageStatus(void)
     return ADSTATbits.ADSTAT;
 }
 
-void ADCC_ISR(void)
-{   
-    getValue();
+void ADCC_ISR(void){   
+    //getValue();
     // Clear the ADCC interrupt flag
     PIR1bits.ADIF = 0;
 

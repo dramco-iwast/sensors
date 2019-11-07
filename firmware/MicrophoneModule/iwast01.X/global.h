@@ -42,7 +42,9 @@ extern "C" {
     
 typedef struct devApi{
     void (* Init)(void);
-    void (* Measure)(uint8_t *, uint8_t *);
+    void (* Measure)(void);
+    void (* Loop)(void);
+    void (* GetData)(uint8_t *, uint8_t *);
     void (* UpdateThreshold)(uint8_t, uint8_t *);
 } Device_API_t;
 

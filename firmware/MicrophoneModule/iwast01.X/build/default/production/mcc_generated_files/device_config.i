@@ -25,8 +25,9 @@
 #pragma config STVREN = ON
 
 
-#pragma config WDTCPS = WDTCPS_31
-#pragma config WDTE = OFF
+#pragma config WDTCPS = WDTCPS_10
+#pragma config WDTE = SWDTEN
+
 #pragma config WDTCWS = WDTCWS_7
 #pragma config WDTCCS = SC
 
@@ -43,5 +44,5 @@
 
 
 #pragma config CP = OFF
-# 84 "mcc_generated_files/device_config.c"
+# 85 "mcc_generated_files/device_config.c"
 

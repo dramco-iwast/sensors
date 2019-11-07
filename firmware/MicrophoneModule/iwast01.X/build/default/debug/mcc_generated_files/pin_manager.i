@@ -18203,19 +18203,11 @@ typedef uint32_t uint_fast32_t;
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdbool.h" 1 3
 # 28 "mcc_generated_files/../Sensors/sound_level.h" 2
-# 42 "mcc_generated_files/../Sensors/sound_level.h"
-void dummy(void);
-
-void doMeasurement(uint8_t * data, uint8_t * length);
-void prepTransmission(uint16_t);
-void getValue(void);
-void initializeADC(void);
-void stopADC(void);
-void generateInt(void);
+# 48 "mcc_generated_files/../Sensors/sound_level.h"
+void init(void);
+void measure(void);
+void getData(uint8_t * data, uint8_t * length);
 void setThreshold(uint8_t metric, uint8_t * thresholdData);
-void translateData(uint8_t enable,uint8_t MSBLT,uint8_t LSBLT,uint8_t MSBUP,uint8_t LSBUT);
-void enableMic(void);
-void disableMic(void);
 # 50 "mcc_generated_files/pin_manager.c" 2
 
 

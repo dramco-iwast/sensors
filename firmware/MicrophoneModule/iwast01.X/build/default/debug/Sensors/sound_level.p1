@@ -1,39 +1,93 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"52 Sensors/sound_level.h
-[; ;Sensors/sound_level.h: 52: void enableMic(void);
-[v _enableMic `(v ~T0 @X0 0 ef ]
-"47
-[; ;Sensors/sound_level.h: 47: void initializeADC(void);
-[v _initializeADC `(v ~T0 @X0 0 ef ]
+"647 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 647: extern volatile unsigned char TRISB __attribute__((address(0x013)));
+[v _TRISB `Vuc ~T0 @X0 0 e@19 ]
+"131 Sensors/../mcc_generated_files/adcc.h
+[; ;Sensors/../mcc_generated_files/adcc.h: 131: void ADCC_Initialize(void);
+[v _ADCC_Initialize `(v ~T0 @X0 0 ef ]
+[v F10986 `(v ~T0 @X0 0 tf ]
+"845
+[; ;Sensors/../mcc_generated_files/adcc.h: 845: void ADCC_SetADIInterruptHandler(void (* InterruptHandler)(void));
+[v _ADCC_SetADIInterruptHandler `(v ~T0 @X0 0 ef1`*F10986 ]
+"42 Sensors/sound_level.c
+[; ;Sensors/sound_level.c: 42: void getSample(void);
+[v _getSample `(v ~T0 @X0 0 ef ]
+"20086 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 20086: extern volatile unsigned char WDTCON0 __attribute__((address(0x80C)));
+[v _WDTCON0 `Vuc ~T0 @X0 0 e@2060 ]
+"20161
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 20161: extern volatile unsigned char WDTCON1 __attribute__((address(0x80D)));
+[v _WDTCON1 `Vuc ~T0 @X0 0 e@2061 ]
+"139 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic.h: 139: extern __bank0 __bit __timeout;
+[v ___timeout `Pb ~T0 @X0 0 e ]
+"20092 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 20092:     struct {
+[s S938 :1 `uc 1 :5 `uc 1 ]
+[n S938 . SEN WDTPS ]
+"20096
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 20096:     struct {
+[s S939 :1 `uc 1 ]
+[n S939 . SWDTEN ]
+"20099
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 20099:     struct {
+[s S940 :1 `uc 1 ]
+[n S940 . WDTSEN ]
+"20102
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 20102:     struct {
+[s S941 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S941 . . WDTPS0 WDTPS1 WDTPS2 WDTPS3 WDTPS4 ]
+"20091
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 20091: typedef union {
+[u S937 `S938 1 `S939 1 `S940 1 `S941 1 ]
+[n S937 . . . . . ]
+"20111
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 20111: extern volatile WDTCON0bits_t WDTCON0bits __attribute__((address(0x80C)));
+[v _WDTCON0bits `VS937 ~T0 @X0 0 e@2060 ]
+"49 Sensors/sound_level.h
+[; ;Sensors/sound_level.h: 49: void measure(void);
+[v _measure `(v ~T0 @X0 0 ef ]
+"54 Sensors/sound_level.c
+[; ;Sensors/sound_level.c: 54: void ledOn(void);
+[v _ledOn `(v ~T0 @X0 0 ef ]
 "48
-[; ;Sensors/sound_level.h: 48: void stopADC(void);
-[v _stopADC `(v ~T0 @X0 0 ef ]
-"53
-[; ;Sensors/sound_level.h: 53: void disableMic(void);
-[v _disableMic `(v ~T0 @X0 0 ef ]
-"49
-[; ;Sensors/sound_level.h: 49: void generateInt(void);
-[v _generateInt `(v ~T0 @X0 0 ef ]
-"222 Sensors/../mcc_generated_files/adcc.h
-[; ;Sensors/../mcc_generated_files/adcc.h: 222: adc_result_t ADCC_GetConversionResult(void);
-[v _ADCC_GetConversionResult `(us ~T0 @X0 0 ef ]
+[; ;Sensors/sound_level.c: 48: void enableMic(void);
+[v _enableMic `(v ~T0 @X0 0 ef ]
 [v F10853 `(v ~T0 @X0 1 tf1`ul ]
 "92 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic.h
 [v __delay `JF10853 ~T0 @X0 0 e ]
 [p i __delay ]
-"131 Sensors/../mcc_generated_files/adcc.h
-[; ;Sensors/../mcc_generated_files/adcc.h: 131: void ADCC_Initialize(void);
-[v _ADCC_Initialize `(v ~T0 @X0 0 ef ]
+"36 Sensors/sound_level.c
+[; ;Sensors/sound_level.c: 36: void startADC(void);
+[v _startADC `(v ~T0 @X0 0 ef ]
+"39
+[; ;Sensors/sound_level.c: 39: void stopADC(void);
+[v _stopADC `(v ~T0 @X0 0 ef ]
+"51
+[; ;Sensors/sound_level.c: 51: void disableMic(void);
+[v _disableMic `(v ~T0 @X0 0 ef ]
+"33
+[; ;Sensors/sound_level.c: 33: void prepTransmission(void);
+[v _prepTransmission `(v ~T0 @X0 0 ef ]
+"45
+[; ;Sensors/sound_level.c: 45: void generateInt(void);
+[v _generateInt `(v ~T0 @X0 0 ef ]
+"57
+[; ;Sensors/sound_level.c: 57: void ledOff(void);
+[v _ledOff `(v ~T0 @X0 0 ef ]
+"222 Sensors/../mcc_generated_files/adcc.h
+[; ;Sensors/../mcc_generated_files/adcc.h: 222: adc_result_t ADCC_GetConversionResult(void);
+[v _ADCC_GetConversionResult `(us ~T0 @X0 0 ef ]
 "721
 [; ;Sensors/../mcc_generated_files/adcc.h: 721: void ADCC_EnableContinuousConversion(void);
 [v _ADCC_EnableContinuousConversion `(v ~T0 @X0 0 ef ]
-"93 Sensors/sound_level.c
-[; ;Sensors/sound_level.c: 93:     ADCC_StartConversion(channel_ANC1);
-[c E10997 17 59 60 61 62 63 .. ]
-[n E10997 . channel_ANC1 channel_Vss channel_Temp_Sensor channel_DAC1_Output channel_FVR_Buffer1 channel_FVR_Buffer2  ]
+"190 Sensors/sound_level.c
+[; ;Sensors/sound_level.c: 190:     ADCC_StartConversion(channel_ANC1);
+[c E10942 17 59 60 61 62 63 .. ]
+[n E10942 . channel_ANC1 channel_Vss channel_Temp_Sensor channel_DAC1_Output channel_FVR_Buffer1 channel_FVR_Buffer2  ]
 "160 Sensors/../mcc_generated_files/adcc.h
 [; ;Sensors/../mcc_generated_files/adcc.h: 160: void ADCC_StartConversion(adcc_channel_t channel);
-[v _ADCC_StartConversion `(v ~T0 @X0 0 ef1`E10997 ]
+[v _ADCC_StartConversion `(v ~T0 @X0 0 ef1`E10942 ]
 "278
 [; ;Sensors/../mcc_generated_files/adcc.h: 278: void ADCC_StopConversion(void);
 [v _ADCC_StopConversion `(v ~T0 @X0 0 ef ]
@@ -51,6 +105,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "854
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 854: extern volatile LATCbits_t LATCbits __attribute__((address(0x01A)));
 [v _LATCbits `VS48 ~T0 @X0 0 e@26 ]
+"798
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 798: extern volatile unsigned char LATB __attribute__((address(0x019)));
+[v _LATB `Vuc ~T0 @X0 0 e@25 ]
 "110 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 110: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -1413,289 +1470,414 @@ Version 4.0 HI-TECH Software Intermediate Code
 "32125
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 32125: __asm("TOSH equ 01FEFh");
 [; <" TOSH equ 01FEFh ;# ">
-"30 Sensors/sound_level.c
-[; ;Sensors/sound_level.c: 30: _Bool reset = 0;
-[v _reset `a ~T0 @X0 1 e ]
-[i _reset
+"65 Sensors/sound_level.c
+[; ;Sensors/sound_level.c: 65: _Bool measurementRunning = 0;
+[v _measurementRunning `a ~T0 @X0 1 e ]
+[i _measurementRunning
 -> -> 0 `i `a
 ]
-"31
-[; ;Sensors/sound_level.c: 31: uint16_t x = 0;
-[v _x `us ~T0 @X0 1 e ]
-[i _x
+"66
+[; ;Sensors/sound_level.c: 66: uint16_t sampleCounter = 0;
+[v _sampleCounter `us ~T0 @X0 1 e ]
+[i _sampleCounter
 -> -> 0 `i `us
 ]
-"32
-[; ;Sensors/sound_level.c: 32: uint16_t maxValue = 0;
-[v _maxValue `us ~T0 @X0 1 e ]
+"67
+[; ;Sensors/sound_level.c: 67: __persistent uint16_t maxValue = 0;
+[v _maxValue `Sus ~T0 @X0 1 e ]
 [i _maxValue
 -> -> 0 `i `us
 ]
-"34
-[; ;Sensors/sound_level.c: 34: uint8_t measurementData[2];
-[v _measurementData `uc ~T0 @X0 -> 2 `i e ]
-"36
-[; ;Sensors/sound_level.c: 36: uint8_t thresholdEnabled = 0;
-[v _thresholdEnabled `uc ~T0 @X0 1 e ]
+"71
+[; ;Sensors/sound_level.c: 71: __persistent uint8_t measurementData[2];
+[v _measurementData `Suc ~T0 @X0 -> 2 `i e ]
+"75
+[; ;Sensors/sound_level.c: 75: __persistent uint8_t thresholdEnabled = 0;
+[v _thresholdEnabled `Suc ~T0 @X0 1 e ]
 [i _thresholdEnabled
 -> -> 0 `i `uc
 ]
-"37
-[; ;Sensors/sound_level.c: 37: uint16_t thresholdLevel = 0;
-[v _thresholdLevel `us ~T0 @X0 1 e ]
+"76
+[; ;Sensors/sound_level.c: 76: __persistent uint16_t thresholdLevel = 0;
+[v _thresholdLevel `Sus ~T0 @X0 1 e ]
 [i _thresholdLevel
 -> -> 0 `i `us
 ]
-"39
-[; ;Sensors/sound_level.c: 39: void dummy(void){
-[v _dummy `(v ~T0 @X0 1 ef ]
+"81
+[; ;Sensors/sound_level.c: 81: void init(void){
+[v _init `(v ~T0 @X0 1 ef ]
 {
-[e :U _dummy ]
+[e :U _init ]
 [f ]
-"40
-[; ;Sensors/sound_level.c: 40:     return;
-[e $UE 1519  ]
-"41
-[; ;Sensors/sound_level.c: 41: }
+"83
+[; ;Sensors/sound_level.c: 83:     TRISB &= 0xBF;
+[e =& _TRISB -> -> 191 `i `Vuc ]
+"86
+[; ;Sensors/sound_level.c: 86:     ADCC_Initialize();
+[e ( _ADCC_Initialize ..  ]
+"87
+[; ;Sensors/sound_level.c: 87:     ADCC_SetADIInterruptHandler(getSample);
+[e ( _ADCC_SetADIInterruptHandler (1 &U _getSample ]
+"96
+[; ;Sensors/sound_level.c: 96:     WDTCON0 = 0x14;
+[e = _WDTCON0 -> -> 20 `i `uc ]
+"97
+[; ;Sensors/sound_level.c: 97:     WDTCON1 = 0x17;
+[e = _WDTCON1 -> -> 23 `i `uc ]
+"100
+[; ;Sensors/sound_level.c: 100:     if(__timeout == 0){
+[e $ ! == -> ___timeout `i -> 0 `i 1520  ]
+{
+"101
+[; ;Sensors/sound_level.c: 101:         WDTCON0bits.SWDTEN = 1;
+[e = . . _WDTCON0bits 1 0 -> -> 1 `i `uc ]
+"104
+[; ;Sensors/sound_level.c: 104:         measure();
+[e ( _measure ..  ]
+"105
+[; ;Sensors/sound_level.c: 105:     }
+}
+[e $U 1521  ]
+"106
+[; ;Sensors/sound_level.c: 106:     else{
+[e :U 1520 ]
+{
+"107
+[; ;Sensors/sound_level.c: 107:         thresholdEnabled = 0;
+[e = _thresholdEnabled -> -> 0 `i `uc ]
+"108
+[; ;Sensors/sound_level.c: 108:         WDTCON0bits.SWDTEN = 0;
+[e = . . _WDTCON0bits 1 0 -> -> 0 `i `uc ]
+"110
+[; ;Sensors/sound_level.c: 110:     }
+}
+[e :U 1521 ]
+"111
+[; ;Sensors/sound_level.c: 111: }
 [e :UE 1519 ]
 }
-"44
-[; ;Sensors/sound_level.c: 44: void doMeasurement(uint8_t * data, uint8_t * length){
-[v _doMeasurement `(v ~T0 @X0 1 ef2`*uc`*uc ]
+"113
+[; ;Sensors/sound_level.c: 113: void measure(){
+[v _measure `(v ~T0 @X0 1 ef ]
 {
-[e :U _doMeasurement ]
+[e :U _measure ]
+[f ]
+"115
+[; ;Sensors/sound_level.c: 115:     ledOn();
+[e ( _ledOn ..  ]
+"117
+[; ;Sensors/sound_level.c: 117:     measurementRunning = 1;
+[e = _measurementRunning -> -> 1 `i `a ]
+"118
+[; ;Sensors/sound_level.c: 118:     sampleCounter = 0;
+[e = _sampleCounter -> -> 0 `i `us ]
+"119
+[; ;Sensors/sound_level.c: 119:     maxValue = 0;
+[e = _maxValue -> -> 0 `i `us ]
+"121
+[; ;Sensors/sound_level.c: 121:     enableMic();
+[e ( _enableMic ..  ]
+"122
+[; ;Sensors/sound_level.c: 122:     _delay((unsigned long)((50)*(32000000/4000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
+"123
+[; ;Sensors/sound_level.c: 123:     startADC();
+[e ( _startADC ..  ]
+"126
+[; ;Sensors/sound_level.c: 126:     while(measurementRunning);
+[e $U 1523  ]
+[e :U 1524 ]
+[e :U 1523 ]
+[e $ != -> _measurementRunning `i -> 0 `i 1524  ]
+[e :U 1525 ]
+"128
+[; ;Sensors/sound_level.c: 128:     stopADC();
+[e ( _stopADC ..  ]
+"129
+[; ;Sensors/sound_level.c: 129:     disableMic();
+[e ( _disableMic ..  ]
+"131
+[; ;Sensors/sound_level.c: 131:     prepTransmission();
+[e ( _prepTransmission ..  ]
+"132
+[; ;Sensors/sound_level.c: 132: }
+[e :UE 1522 ]
+}
+"134
+[; ;Sensors/sound_level.c: 134: void getData(uint8_t * data, uint8_t * length){
+[v _getData `(v ~T0 @X0 1 ef2`*uc`*uc ]
+{
+[e :U _getData ]
 [v _data `*uc ~T0 @X0 1 r1 ]
 [v _length `*uc ~T0 @X0 1 r2 ]
 [f ]
-"46
-[; ;Sensors/sound_level.c: 46:     *length = 2;
+"136
+[; ;Sensors/sound_level.c: 136:     *length = 2;
 [e = *U _length -> -> 2 `i `uc ]
-"47
-[; ;Sensors/sound_level.c: 47:     data = measurementData;
-[e = _data &U _measurementData ]
-"48
-[; ;Sensors/sound_level.c: 48:     enableMic();
-[e ( _enableMic ..  ]
-"49
-[; ;Sensors/sound_level.c: 49:     initializeADC();
-[e ( _initializeADC ..  ]
-"50
-[; ;Sensors/sound_level.c: 50: }
-[e :UE 1520 ]
-}
-"53
-[; ;Sensors/sound_level.c: 53: void prepTransmission(uint16_t maxiValue){
-[v _prepTransmission `(v ~T0 @X0 1 ef1`us ]
-{
-[e :U _prepTransmission ]
-[v _maxiValue `us ~T0 @X0 1 r1 ]
-[f ]
-"54
-[; ;Sensors/sound_level.c: 54:     stopADC();
-[e ( _stopADC ..  ]
-"55
-[; ;Sensors/sound_level.c: 55:     disableMic();
-[e ( _disableMic ..  ]
-"56
-[; ;Sensors/sound_level.c: 56:     measurementData[0] = maxiValue>>8;
-[e = *U + &U _measurementData * -> -> -> 0 `i `ui `ux -> -> # *U &U _measurementData `ui `ux -> >> -> _maxiValue `ui -> 8 `i `uc ]
-"57
-[; ;Sensors/sound_level.c: 57:     measurementData[1] = maxiValue;
-[e = *U + &U _measurementData * -> -> -> 1 `i `ui `ux -> -> # *U &U _measurementData `ui `ux -> _maxiValue `uc ]
-"58
-[; ;Sensors/sound_level.c: 58:     generateInt();
-[e ( _generateInt ..  ]
-"59
-[; ;Sensors/sound_level.c: 59:     __asm("sleep");
-[; <" sleep ;# ">
-"60
-[; ;Sensors/sound_level.c: 60: }
-[e :UE 1521 ]
-}
-"63
-[; ;Sensors/sound_level.c: 63: void getValue(){
-[v _getValue `(v ~T0 @X0 1 ef ]
-{
-[e :U _getValue ]
-[f ]
-"65
-[; ;Sensors/sound_level.c: 65:     uint16_t sample = ADCC_GetConversionResult();
-[v _sample `us ~T0 @X0 1 a ]
-[e = _sample ( _ADCC_GetConversionResult ..  ]
-"68
-[; ;Sensors/sound_level.c: 68:         if(sample > maxValue){
-[e $ ! > -> _sample `ui -> _maxValue `ui 1523  ]
-{
-"69
-[; ;Sensors/sound_level.c: 69:             maxValue = sample;
-[e = _maxValue _sample ]
-"70
-[; ;Sensors/sound_level.c: 70:         }
-}
-[e :U 1523 ]
-"72
-[; ;Sensors/sound_level.c: 72:         if(x >= 400 -1){
-[e $ ! >= -> _x `ui -> - -> 400 `i -> 1 `i `ui 1524  ]
-{
-"73
-[; ;Sensors/sound_level.c: 73:             reset = 1;
-[e = _reset -> -> 1 `i `a ]
-"74
-[; ;Sensors/sound_level.c: 74:             prepTransmission(maxValue);
-[e ( _prepTransmission (1 _maxValue ]
-"75
-[; ;Sensors/sound_level.c: 75:         }
-}
-[e :U 1524 ]
-"76
-[; ;Sensors/sound_level.c: 76:     x++;
-[e ++ _x -> -> 1 `i `us ]
-"78
-[; ;Sensors/sound_level.c: 78:     if(reset){
-[e $ ! != -> _reset `i -> 0 `i 1525  ]
-{
-"79
-[; ;Sensors/sound_level.c: 79:             reset = 0;
-[e = _reset -> -> 0 `i `a ]
-"80
-[; ;Sensors/sound_level.c: 80:             maxValue = 0;
-[e = _maxValue -> -> 0 `i `us ]
-"81
-[; ;Sensors/sound_level.c: 81:             sample = 0;
-[e = _sample -> -> 0 `i `us ]
-"82
-[; ;Sensors/sound_level.c: 82:             x=0;
-[e = _x -> -> 0 `i `us ]
-"83
-[; ;Sensors/sound_level.c: 83:         }
-}
-[e :U 1525 ]
-"86
-[; ;Sensors/sound_level.c: 86: }
-[e :UE 1522 ]
-}
-"89
-[; ;Sensors/sound_level.c: 89: void initializeADC(){
-[v _initializeADC `(v ~T0 @X0 1 ef ]
-{
-[e :U _initializeADC ]
-[f ]
-"90
-[; ;Sensors/sound_level.c: 90:     _delay((unsigned long)((50)*(32000000/4000.0)));
-[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-"91
-[; ;Sensors/sound_level.c: 91:     ADCC_Initialize();
-[e ( _ADCC_Initialize ..  ]
-"92
-[; ;Sensors/sound_level.c: 92:     ADCC_EnableContinuousConversion();
-[e ( _ADCC_EnableContinuousConversion ..  ]
-"93
-[; ;Sensors/sound_level.c: 93:     ADCC_StartConversion(channel_ANC1);
-[e ( _ADCC_StartConversion (1 . `E10997 0 ]
-"94
-[; ;Sensors/sound_level.c: 94: }
+"137
+[; ;Sensors/sound_level.c: 137:     data[0] = measurementData[0];
+[e = *U + _data * -> -> 0 `i `x -> -> # *U _data `i `x *U + &U _measurementData * -> -> -> 0 `i `ui `ux -> -> # *U &U _measurementData `ui `ux ]
+"138
+[; ;Sensors/sound_level.c: 138:     data[1] = measurementData[1];
+[e = *U + _data * -> -> 1 `i `x -> -> # *U _data `i `x *U + &U _measurementData * -> -> -> 1 `i `ui `ux -> -> # *U &U _measurementData `ui `ux ]
+"139
+[; ;Sensors/sound_level.c: 139: }
 [e :UE 1526 ]
 }
-"98
-[; ;Sensors/sound_level.c: 98: void stopADC(){
-[v _stopADC `(v ~T0 @X0 1 ef ]
-{
-[e :U _stopADC ]
-[f ]
-"99
-[; ;Sensors/sound_level.c: 99:     ADCC_StopConversion();
-[e ( _ADCC_StopConversion ..  ]
-"100
-[; ;Sensors/sound_level.c: 100:     ADCC_DisableContinuousConversion();
-[e ( _ADCC_DisableContinuousConversion ..  ]
-"101
-[; ;Sensors/sound_level.c: 101: }
-[e :UE 1527 ]
-}
-"105
-[; ;Sensors/sound_level.c: 105: void generateInt(){
-[v _generateInt `(v ~T0 @X0 1 ef ]
-{
-[e :U _generateInt ]
-[f ]
-"106
-[; ;Sensors/sound_level.c: 106:     do { LATCbits.LATC7 = 0; } while(0);
-[e :U 1531 ]
-{
-[e = . . _LATCbits 0 7 -> -> 0 `i `uc ]
-}
-[e :U 1530 ]
-"107
-[; ;Sensors/sound_level.c: 107:     _delay((unsigned long)((1)*(32000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-"108
-[; ;Sensors/sound_level.c: 108:     do { LATCbits.LATC7 = 1; } while(0);
-[e :U 1534 ]
-{
-[e = . . _LATCbits 0 7 -> -> 1 `i `uc ]
-}
-[e :U 1533 ]
-"109
-[; ;Sensors/sound_level.c: 109: }
-[e :UE 1528 ]
-}
-"113
-[; ;Sensors/sound_level.c: 113: void enableMic(){
-[v _enableMic `(v ~T0 @X0 1 ef ]
-{
-[e :U _enableMic ]
-[f ]
-"114
-[; ;Sensors/sound_level.c: 114:     do { LATCbits.LATC0 = 1; } while(0);
-[e :U 1538 ]
-{
-[e = . . _LATCbits 0 0 -> -> 1 `i `uc ]
-}
-[e :U 1537 ]
-"115
-[; ;Sensors/sound_level.c: 115: }
-[e :UE 1535 ]
-}
-"119
-[; ;Sensors/sound_level.c: 119: void disableMic(){
-[v _disableMic `(v ~T0 @X0 1 ef ]
-{
-[e :U _disableMic ]
-[f ]
-"120
-[; ;Sensors/sound_level.c: 120:     do { LATCbits.LATC0 = 0; } while(0);
-[e :U 1542 ]
-{
-[e = . . _LATCbits 0 0 -> -> 0 `i `uc ]
-}
-[e :U 1541 ]
-"121
-[; ;Sensors/sound_level.c: 121: }
-[e :UE 1539 ]
-}
-"128
-[; ;Sensors/sound_level.c: 128: void setThreshold(uint8_t metric, uint8_t * thresholdData){
+"141
+[; ;Sensors/sound_level.c: 141: void setThreshold(uint8_t metric, uint8_t * thresholdData){
 [v _setThreshold `(v ~T0 @X0 1 ef2`uc`*uc ]
 {
 [e :U _setThreshold ]
 [v _metric `uc ~T0 @X0 1 r1 ]
 [v _thresholdData `*uc ~T0 @X0 1 r2 ]
 [f ]
-"129
-[; ;Sensors/sound_level.c: 129:     if(metric == 0){
-[e $ ! == -> _metric `i -> 0 `i 1544  ]
+"142
+[; ;Sensors/sound_level.c: 142:     if(metric == 0){
+[e $ ! == -> _metric `i -> 0 `i 1528  ]
 {
-"130
-[; ;Sensors/sound_level.c: 130:         thresholdEnabled = thresholdData[0];
+"143
+[; ;Sensors/sound_level.c: 143:         thresholdEnabled = thresholdData[0];
 [e = _thresholdEnabled *U + _thresholdData * -> -> 0 `i `x -> -> # *U _thresholdData `i `x ]
-"131
-[; ;Sensors/sound_level.c: 131:         thresholdLevel = (uint16_t)((thresholdData[3]<<8) | thresholdData[4]);
+"144
+[; ;Sensors/sound_level.c: 144:         thresholdLevel = (uint16_t)((thresholdData[3]<<8) | thresholdData[4]);
 [e = _thresholdLevel -> | << -> *U + _thresholdData * -> -> 3 `i `x -> -> # *U _thresholdData `i `x `i -> 8 `i -> *U + _thresholdData * -> -> 4 `i `x -> -> # *U _thresholdData `i `x `i `us ]
-"132
-[; ;Sensors/sound_level.c: 132:     }
+"146
+[; ;Sensors/sound_level.c: 146:         if(thresholdEnabled){
+[e $ ! != -> _thresholdEnabled `i -> 0 `i 1529  ]
+{
+"147
+[; ;Sensors/sound_level.c: 147:             WDTCON0bits.SWDTEN = 1;
+[e = . . _WDTCON0bits 1 0 -> -> 1 `i `uc ]
+"149
+[; ;Sensors/sound_level.c: 149:         }
+}
+[e :U 1529 ]
+"150
+[; ;Sensors/sound_level.c: 150:     }
+}
+[e :U 1528 ]
+"151
+[; ;Sensors/sound_level.c: 151: }
+[e :UE 1527 ]
+}
+"154
+[; ;Sensors/sound_level.c: 154: void prepTransmission(){
+[v _prepTransmission `(v ~T0 @X0 1 ef ]
+{
+[e :U _prepTransmission ]
+[f ]
+"155
+[; ;Sensors/sound_level.c: 155:     measurementData[0] = maxValue>>8;
+[e = *U + &U _measurementData * -> -> -> 0 `i `ui `ux -> -> # *U &U _measurementData `ui `ux -> >> -> _maxValue `ui -> 8 `i `uc ]
+"156
+[; ;Sensors/sound_level.c: 156:     measurementData[1] = maxValue;
+[e = *U + &U _measurementData * -> -> -> 1 `i `ui `ux -> -> # *U &U _measurementData `ui `ux -> _maxValue `uc ]
+"158
+[; ;Sensors/sound_level.c: 158:     if(thresholdEnabled){
+[e $ ! != -> _thresholdEnabled `i -> 0 `i 1531  ]
+{
+"160
+[; ;Sensors/sound_level.c: 160:         if(maxValue > thresholdLevel){
+[e $ ! > -> _maxValue `ui -> _thresholdLevel `ui 1532  ]
+{
+"161
+[; ;Sensors/sound_level.c: 161:             generateInt();
+[e ( _generateInt ..  ]
+"162
+[; ;Sensors/sound_level.c: 162:         }
+}
+[e :U 1532 ]
+"163
+[; ;Sensors/sound_level.c: 163:     }
+}
+[e $U 1533  ]
+"164
+[; ;Sensors/sound_level.c: 164:     else{
+[e :U 1531 ]
+{
+"166
+[; ;Sensors/sound_level.c: 166:         generateInt();
+[e ( _generateInt ..  ]
+"167
+[; ;Sensors/sound_level.c: 167:     }
+}
+[e :U 1533 ]
+"169
+[; ;Sensors/sound_level.c: 169:     ledOff();
+[e ( _ledOff ..  ]
+"170
+[; ;Sensors/sound_level.c: 170: }
+[e :UE 1530 ]
+}
+"173
+[; ;Sensors/sound_level.c: 173: void getSample(){
+[v _getSample `(v ~T0 @X0 1 ef ]
+{
+[e :U _getSample ]
+[f ]
+"174
+[; ;Sensors/sound_level.c: 174:     uint16_t sample = ADCC_GetConversionResult();
+[v _sample `us ~T0 @X0 1 a ]
+[e = _sample ( _ADCC_GetConversionResult ..  ]
+"177
+[; ;Sensors/sound_level.c: 177:     if(sample > maxValue){
+[e $ ! > -> _sample `ui -> _maxValue `ui 1535  ]
+{
+"178
+[; ;Sensors/sound_level.c: 178:         maxValue = sample;
+[e = _maxValue _sample ]
+"179
+[; ;Sensors/sound_level.c: 179:     }
+}
+[e :U 1535 ]
+"181
+[; ;Sensors/sound_level.c: 181:     sampleCounter++;
+[e ++ _sampleCounter -> -> 1 `i `us ]
+"182
+[; ;Sensors/sound_level.c: 182:     if(sampleCounter>400 -1){
+[e $ ! > -> _sampleCounter `ui -> - -> 400 `i -> 1 `i `ui 1536  ]
+{
+"183
+[; ;Sensors/sound_level.c: 183:         measurementRunning = 0;
+[e = _measurementRunning -> -> 0 `i `a ]
+"184
+[; ;Sensors/sound_level.c: 184:     }
+}
+[e :U 1536 ]
+"185
+[; ;Sensors/sound_level.c: 185: }
+[e :UE 1534 ]
+}
+"188
+[; ;Sensors/sound_level.c: 188: void startADC(){
+[v _startADC `(v ~T0 @X0 1 ef ]
+{
+[e :U _startADC ]
+[f ]
+"189
+[; ;Sensors/sound_level.c: 189:     ADCC_EnableContinuousConversion();
+[e ( _ADCC_EnableContinuousConversion ..  ]
+"190
+[; ;Sensors/sound_level.c: 190:     ADCC_StartConversion(channel_ANC1);
+[e ( _ADCC_StartConversion (1 . `E10942 0 ]
+"191
+[; ;Sensors/sound_level.c: 191: }
+[e :UE 1537 ]
+}
+"195
+[; ;Sensors/sound_level.c: 195: void stopADC(){
+[v _stopADC `(v ~T0 @X0 1 ef ]
+{
+[e :U _stopADC ]
+[f ]
+"196
+[; ;Sensors/sound_level.c: 196:     ADCC_StopConversion();
+[e ( _ADCC_StopConversion ..  ]
+"197
+[; ;Sensors/sound_level.c: 197:     ADCC_DisableContinuousConversion();
+[e ( _ADCC_DisableContinuousConversion ..  ]
+"198
+[; ;Sensors/sound_level.c: 198: }
+[e :UE 1538 ]
+}
+"202
+[; ;Sensors/sound_level.c: 202: void generateInt(){
+[v _generateInt `(v ~T0 @X0 1 ef ]
+{
+[e :U _generateInt ]
+[f ]
+"203
+[; ;Sensors/sound_level.c: 203:     do { LATCbits.LATC7 = 0; } while(0);
+[e :U 1542 ]
+{
+[e = . . _LATCbits 0 7 -> -> 0 `i `uc ]
+}
+[e :U 1541 ]
+"204
+[; ;Sensors/sound_level.c: 204:     _delay((unsigned long)((1)*(32000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
+"205
+[; ;Sensors/sound_level.c: 205:     do { LATCbits.LATC7 = 1; } while(0);
+[e :U 1545 ]
+{
+[e = . . _LATCbits 0 7 -> -> 1 `i `uc ]
 }
 [e :U 1544 ]
-"133
-[; ;Sensors/sound_level.c: 133: }
-[e :UE 1543 ]
+"206
+[; ;Sensors/sound_level.c: 206: }
+[e :UE 1539 ]
+}
+"210
+[; ;Sensors/sound_level.c: 210: void enableMic(){
+[v _enableMic `(v ~T0 @X0 1 ef ]
+{
+[e :U _enableMic ]
+[f ]
+"211
+[; ;Sensors/sound_level.c: 211:     do { LATCbits.LATC0 = 1; } while(0);
+[e :U 1549 ]
+{
+[e = . . _LATCbits 0 0 -> -> 1 `i `uc ]
+}
+[e :U 1548 ]
+"212
+[; ;Sensors/sound_level.c: 212: }
+[e :UE 1546 ]
+}
+"216
+[; ;Sensors/sound_level.c: 216: void disableMic(){
+[v _disableMic `(v ~T0 @X0 1 ef ]
+{
+[e :U _disableMic ]
+[f ]
+"217
+[; ;Sensors/sound_level.c: 217:     do { LATCbits.LATC0 = 0; } while(0);
+[e :U 1553 ]
+{
+[e = . . _LATCbits 0 0 -> -> 0 `i `uc ]
+}
+[e :U 1552 ]
+"218
+[; ;Sensors/sound_level.c: 218: }
+[e :UE 1550 ]
+}
+"221
+[; ;Sensors/sound_level.c: 221: void ledOn(void){
+[v _ledOn `(v ~T0 @X0 1 ef ]
+{
+[e :U _ledOn ]
+[f ]
+"222
+[; ;Sensors/sound_level.c: 222:     LATB |= 0x40;
+[e =| _LATB -> -> 64 `i `Vuc ]
+"223
+[; ;Sensors/sound_level.c: 223: }
+[e :UE 1554 ]
+}
+"226
+[; ;Sensors/sound_level.c: 226: void ledOff(void){
+[v _ledOff `(v ~T0 @X0 1 ef ]
+{
+[e :U _ledOff ]
+[f ]
+"227
+[; ;Sensors/sound_level.c: 227:     LATB &= 0xBF;
+[e =& _LATB -> -> 191 `i `Vuc ]
+"228
+[; ;Sensors/sound_level.c: 228: }
+[e :UE 1555 ]
+}
+"231
+[; ;Sensors/sound_level.c: 231: void ledToggle(void){
+[v _ledToggle `(v ~T0 @X0 1 ef ]
+{
+[e :U _ledToggle ]
+[f ]
+"232
+[; ;Sensors/sound_level.c: 232:     LATB ^= 0x40;
+[e =^ _LATB -> -> 64 `i `Vuc ]
+"233
+[; ;Sensors/sound_level.c: 233: }
+[e :UE 1556 ]
 }

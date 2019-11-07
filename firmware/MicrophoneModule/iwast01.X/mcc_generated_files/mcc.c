@@ -66,6 +66,8 @@ void OSCILLATOR_Initialize(void)
     OSCEN = 0x00;
     // HFFRQ 32_MHz; 
     OSCFRQ = 0x06;
+    // HFFRQ 1_MHz; 
+    //OSCFRQ = 0x00;
     // HFTUN 0; 
     OSCTUNE = 0x00;
 }

@@ -32,26 +32,25 @@
 
 #define SLAVE_ADDRESS 0x65
 
-
+/* general sensor API providing methods for
+ *  - initializing sensor operation
+ *  - starting a new measurement
+ *  - retrieving measurement data
+ *  - setting thresholds
+ */
 #define SENSOR_API { \
-    dummy, \
-    doMeasurement, \
+    init, \
+    measure, \
+    loop, \
+    getData, \
     setThreshold \
 }  
 
-void dummy(void);
-
-void doMeasurement(uint8_t * data, uint8_t  * length);
-void prepTransmission(uint16_t);
-void getValue(void);
-void initializeADC(void);
-void stopADC(void);
-void generateInt(void);
+void init(void);
+void measure(void);
+void loop(void);
+void getData(uint8_t * data, uint8_t  * length);
 void setThreshold(uint8_t metric, uint8_t * thresholdData);
-void translateData(uint8_t enable,uint8_t MSBLT,uint8_t LSBLT,uint8_t MSBUP,uint8_t LSBUT);
-void enableMic(void);
-void disableMic(void);
-
 
 #endif	/* __SOUND_LEVEL_H__ */
 

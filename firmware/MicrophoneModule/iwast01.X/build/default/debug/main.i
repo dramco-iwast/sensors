@@ -18250,6 +18250,83 @@ void I2C1_GetCommandData(uint8_t * data, uint8_t * len);
 void I2C1_SetTransmitData(uint8_t * data, uint8_t len);
 # 55 "./mcc_generated_files/mcc.h" 2
 
+# 1 "./mcc_generated_files/adcc.h" 1
+# 72 "./mcc_generated_files/adcc.h"
+typedef uint16_t adc_result_t;
+
+typedef __uint24 uint24_t;
+# 89 "./mcc_generated_files/adcc.h"
+typedef enum
+{
+    channel_ANC1 = 0x11,
+    channel_Vss = 0x3B,
+    channel_Temp_Sensor = 0x3C,
+    channel_DAC1_Output = 0x3D,
+    channel_FVR_Buffer1 = 0x3E,
+    channel_FVR_Buffer2 = 0x3F
+} adcc_channel_t;
+# 131 "./mcc_generated_files/adcc.h"
+void ADCC_Initialize(void);
+# 160 "./mcc_generated_files/adcc.h"
+void ADCC_StartConversion(adcc_channel_t channel);
+# 190 "./mcc_generated_files/adcc.h"
+_Bool ADCC_IsConversionDone();
+# 222 "./mcc_generated_files/adcc.h"
+adc_result_t ADCC_GetConversionResult(void);
+# 253 "./mcc_generated_files/adcc.h"
+adc_result_t ADCC_GetSingleConversion(adcc_channel_t channel);
+# 278 "./mcc_generated_files/adcc.h"
+void ADCC_StopConversion(void);
+# 305 "./mcc_generated_files/adcc.h"
+void ADCC_SetStopOnInterrupt(void);
+# 330 "./mcc_generated_files/adcc.h"
+void ADCC_DischargeSampleCapacitor(void);
+# 356 "./mcc_generated_files/adcc.h"
+void ADCC_LoadAcquisitionRegister(uint16_t);
+# 382 "./mcc_generated_files/adcc.h"
+void ADCC_SetPrechargeTime(uint16_t);
+# 407 "./mcc_generated_files/adcc.h"
+void ADCC_SetRepeatCount(uint8_t);
+# 435 "./mcc_generated_files/adcc.h"
+uint8_t ADCC_GetCurrentCountofConversions(void);
+# 459 "./mcc_generated_files/adcc.h"
+void ADCC_ClearAccumulator(void);
+# 484 "./mcc_generated_files/adcc.h"
+uint24_t ADCC_GetAccumulatorValue(void);
+# 512 "./mcc_generated_files/adcc.h"
+_Bool ADCC_HasAccumulatorOverflowed(void);
+# 537 "./mcc_generated_files/adcc.h"
+uint16_t ADCC_GetFilterValue(void);
+# 565 "./mcc_generated_files/adcc.h"
+uint16_t ADCC_GetPreviousResult(void);
+# 591 "./mcc_generated_files/adcc.h"
+void ADCC_DefineSetPoint(uint16_t);
+# 617 "./mcc_generated_files/adcc.h"
+void ADCC_SetUpperThreshold(uint16_t);
+# 643 "./mcc_generated_files/adcc.h"
+void ADCC_SetLowerThreshold(uint16_t);
+# 670 "./mcc_generated_files/adcc.h"
+uint16_t ADCC_GetErrorCalculation(void);
+# 697 "./mcc_generated_files/adcc.h"
+void ADCC_EnableDoubleSampling(void);
+# 721 "./mcc_generated_files/adcc.h"
+void ADCC_EnableContinuousConversion(void);
+# 745 "./mcc_generated_files/adcc.h"
+void ADCC_DisableContinuousConversion(void);
+# 773 "./mcc_generated_files/adcc.h"
+_Bool ADCC_HasErrorCrossedUpperThreshold(void);
+# 801 "./mcc_generated_files/adcc.h"
+_Bool ADCC_HasErrorCrossedLowerThreshold(void);
+# 828 "./mcc_generated_files/adcc.h"
+uint8_t ADCC_GetConversionStageStatus(void);
+# 845 "./mcc_generated_files/adcc.h"
+void ADCC_SetADIInterruptHandler(void (* InterruptHandler)(void));
+# 861 "./mcc_generated_files/adcc.h"
+void ADCC_ISR(void);
+# 880 "./mcc_generated_files/adcc.h"
+void ADCC_DefaultInterruptHandler(void);
+# 56 "./mcc_generated_files/mcc.h" 2
+
 # 1 "./mcc_generated_files/eusart1.h" 1
 # 75 "./mcc_generated_files/eusart1.h"
 typedef union {
@@ -18296,12 +18373,204 @@ void EUSART1_SetOverrunErrorHandler(void (* interruptHandler)(void));
 void EUSART1_SetErrorHandler(void (* interruptHandler)(void));
 # 443 "./mcc_generated_files/eusart1.h"
 void EUSART1_SetTxInterruptHandler(void (* interruptHandler)(void));
-# 56 "./mcc_generated_files/mcc.h" 2
-# 71 "./mcc_generated_files/mcc.h"
+# 57 "./mcc_generated_files/mcc.h" 2
+
+# 1 "./mcc_generated_files/tmr4.h" 1
+# 79 "./mcc_generated_files/tmr4.h"
+typedef enum
+{
+# 89 "./mcc_generated_files/tmr4.h"
+   TMR4_ROP_STARTS_TMRON,
+
+
+
+
+   TMR4_ROP_STARTS_TMRON_ERSHIGH,
+
+
+
+
+   TMR4_ROP_STARTS_TMRON_ERSLOW,
+
+
+
+
+   TMR4_ROP_RESETS_ERSBOTHEDGE,
+
+
+
+
+   TMR4_ROP_RESETS_ERSRISINGEDGE,
+
+
+
+
+   TMR4_ROP_RESETS_ERSFALLINGEDGE,
+
+
+
+
+   TMR4_ROP_RESETS_ERSLOW,
+
+
+
+
+   TMR4_ROP_RESETS_ERSHIGH,
+# 135 "./mcc_generated_files/tmr4.h"
+   TMR4_OS_STARTS_TMRON,
+
+
+
+
+   TMR4_OS_STARTS_ERSRISINGEDGE ,
+
+
+
+
+   TMR4_OS_STARTS_ERSFALLINGEDGE ,
+
+
+
+
+   TMR4_OS_STARTS_ERSBOTHEDGE,
+
+
+
+
+
+   TMR4_OS_STARTS_ERSFIRSTRISINGEDGE,
+
+
+
+
+
+   TMR4_OS_STARTS_ERSFIRSTFALLINGEDGE,
+
+
+
+
+
+   TMR4_OS_STARTS_ERSRISINGEDGEDETECT,
+
+} TMR4_HLT_MODE;
+# 185 "./mcc_generated_files/tmr4.h"
+typedef enum
+{
+
+
+    TMR4_T4INPPS,
+
+
+
+    TMR4_T2POSTSCALED,
+
+
+
+    TMR4_RESERVED,
+
+
+
+    TMR4_T6POSTSCALED,
+
+
+
+    TMR4_CCP1_OUT,
+
+
+
+    TMR4_CCP2_OUT,
+
+
+
+    TMR4_CCP3_OUT,
+
+
+
+    TMR4_CCP4_OUT,
+
+
+
+    TMR4_PWM6_OUT,
+
+
+
+    TMR4_PWM7_OUT,
+
+
+
+    TMR4_CMP1_OUT,
+
+
+
+    TMR4_CMP2_OUT,
+
+
+
+    TMR4_ZCD_OUTPUT,
+
+
+
+    TMR4_CLC1_OUT,
+
+
+
+    TMR4_CLC2_OUT,
+
+
+
+    TMR4_CLC3_OUT,
+
+
+
+    TMR4_CLC4_OUT,
+
+
+
+    TMR4_RESERVED_2,
+
+} TMR4_HLT_EXT_RESET_SOURCE;
+# 302 "./mcc_generated_files/tmr4.h"
+void TMR4_Initialize(void);
+# 338 "./mcc_generated_files/tmr4.h"
+void TMR4_ModeSet(TMR4_HLT_MODE mode);
+# 373 "./mcc_generated_files/tmr4.h"
+void TMR4_ExtResetSourceSet(TMR4_HLT_EXT_RESET_SOURCE reset);
+# 402 "./mcc_generated_files/tmr4.h"
+void TMR4_Start(void);
+# 431 "./mcc_generated_files/tmr4.h"
+void TMR4_StartTimer(void);
+# 463 "./mcc_generated_files/tmr4.h"
+void TMR4_Stop(void);
+# 495 "./mcc_generated_files/tmr4.h"
+void TMR4_StopTimer(void);
+# 530 "./mcc_generated_files/tmr4.h"
+uint8_t TMR4_Counter8BitGet(void);
+# 565 "./mcc_generated_files/tmr4.h"
+uint8_t TMR4_ReadTimer(void);
+# 604 "./mcc_generated_files/tmr4.h"
+void TMR4_Counter8BitSet(uint8_t timerVal);
+# 643 "./mcc_generated_files/tmr4.h"
+void TMR4_WriteTimer(uint8_t timerVal);
+# 695 "./mcc_generated_files/tmr4.h"
+void TMR4_Period8BitSet(uint8_t periodVal);
+# 747 "./mcc_generated_files/tmr4.h"
+void TMR4_LoadPeriodRegister(uint8_t periodVal);
+# 765 "./mcc_generated_files/tmr4.h"
+void TMR4_ISR(void);
+# 783 "./mcc_generated_files/tmr4.h"
+ void TMR4_CallBack(void);
+# 800 "./mcc_generated_files/tmr4.h"
+ void TMR4_SetInterruptHandler(void (* InterruptHandler)(void));
+# 818 "./mcc_generated_files/tmr4.h"
+extern void (*TMR4_InterruptHandler)(void);
+# 836 "./mcc_generated_files/tmr4.h"
+void TMR4_DefaultInterruptHandler(void);
+# 58 "./mcc_generated_files/mcc.h" 2
+# 72 "./mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(uint8_t slave_address);
-# 84 "./mcc_generated_files/mcc.h"
+# 85 "./mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
-# 97 "./mcc_generated_files/mcc.h"
+# 98 "./mcc_generated_files/mcc.h"
 void PMD_Initialize(void);
 # 24 "main.c" 2
 
@@ -18309,7 +18578,8 @@ void PMD_Initialize(void);
 # 43 "./global.h"
 typedef struct devApi{
     void (* Init)(void);
-    void (* Measure)(uint8_t *, uint8_t *);
+    void (* Measure)(void);
+    void (* GetData)(uint8_t *, uint8_t *);
     void (* UpdateThreshold)(uint8_t, uint8_t *);
 } Device_API_t;
 # 25 "main.c" 2
@@ -18517,27 +18787,19 @@ void *memccpy (void *restrict, const void *restrict, int, size_t);
 
 
 # 1 "./Sensors/sound_level.h" 1
-# 42 "./Sensors/sound_level.h"
-void dummy(void);
-
-void doMeasurement(uint8_t * data, uint8_t * length);
-void prepTransmission(uint16_t);
-void getValue(void);
-void initializeADC(void);
-void stopADC(void);
-void generateInt(void);
+# 48 "./Sensors/sound_level.h"
+void init(void);
+void measure(void);
+void getData(uint8_t * data, uint8_t * length);
 void setThreshold(uint8_t metric, uint8_t * thresholdData);
-void translateData(uint8_t enable,uint8_t MSBLT,uint8_t LSBLT,uint8_t MSBUP,uint8_t LSBUT);
-void enableMic(void);
-void disableMic(void);
 # 33 "main.c" 2
 
 
-Device_API_t sensorAPI = { dummy, doMeasurement, setThreshold };
+Device_API_t sensorAPI = { init, measure, getData, setThreshold };
 # 55 "main.c"
 void toggleInt(void);
 
-uint8_t measurementData[2 * 0x01];
+uint8_t mData[2 * 0x01];
 uint8_t mDataLength;
 
 
@@ -18562,8 +18824,12 @@ void main(void)
 
 
 
-    while(1)
-    {
+    sensorAPI.Init();
+
+    while(1){
+        __asm("sleep");
+        __nop();
+
 
         if(I2C1_CommandReceived()){
             uint8_t cmd;
@@ -18574,37 +18840,37 @@ void main(void)
                 case 0x10:{
                     uint8_t ack = 0xAA;
                     I2C1_SetTransmitData(&ack, 1);
-                    __asm("sleep");
+
                 } break;
 
 
                 case 0x11:{
                     uint8_t type = 0x21;
                     I2C1_SetTransmitData(&type, 1);
-                    __asm("sleep");
+
                 } break;
 
 
                 case 0x23:{
                     uint8_t mnr = 0x01;
                     I2C1_SetTransmitData(&mnr, 1);
-                    __asm("sleep");
+
                 } break;
 
 
                 case 0x13:{
 
 
-
-                    sensorAPI.Measure(measurementData, &mDataLength);
+                    sensorAPI.Measure();
 
                 } break;
 
 
                 case 0x14:{
-                    I2C1_SetTransmitData(measurementData, mDataLength);
+                    sensorAPI.GetData(mData, &mDataLength);
+                    I2C1_SetTransmitData(mData, mDataLength);
 
-                    __asm("sleep");
+
                 } break;
 
 
@@ -18612,7 +18878,7 @@ void main(void)
 
 
                     toggleInt();
-                    __asm("sleep");
+
                 } break;
 
 
@@ -18624,7 +18890,7 @@ void main(void)
                     if(len == 6){
                         sensorAPI.UpdateThreshold(data[0], data+1);
                     }
-                    __asm("sleep");
+
                 } break;
 
 

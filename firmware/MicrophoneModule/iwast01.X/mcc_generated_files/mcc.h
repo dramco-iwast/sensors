@@ -53,8 +53,9 @@
 #include <stdbool.h>
 #include "interrupt_manager.h"
 #include "i2c1.h"
+#include "adcc.h"
 #include "eusart1.h"
-
+#include "tmr4.h"
 
 
 /**
