@@ -18806,18 +18806,18 @@ void *memccpy (void *restrict, const void *restrict, int, size_t);
 
 
 
-# 1 "./Sensors/sound_level.h" 1
-# 97 "./Sensors/sound_level.h"
-void SoundLevel_Init(void);
-void SoundLevel_Measure(void);
-void SoundLevel_Loop(void);
-void SoundLevel_GetData(uint8_t * data, uint8_t * length);
-void SoundLevel_SetThreshold(uint8_t metric, uint8_t * thresholdData);
-# 33 "main.c" 2
+
+# 1 "./Sensors/buttons.h" 1
+# 238 "./Sensors/buttons.h"
+void Buttons_Init(void);
+void Buttons_ReadButtons(void);
+void Buttons_Loop(void);
+void Buttons_GetData(uint8_t * data, uint8_t * length);
+void Buttons_SetThreshold(uint8_t metric, uint8_t * thresholds);
+# 34 "main.c" 2
 
 
-
-Device_API_t sensorAPI = { SoundLevel_Init, SoundLevel_Measure, SoundLevel_Loop, SoundLevel_GetData, SoundLevel_SetThreshold };
+Device_API_t sensorAPI = { Buttons_Init, Buttons_ReadButtons, Buttons_Loop, Buttons_GetData, Buttons_SetThreshold };
 # 56 "main.c"
 uint8_t mData[2 * 0x01];
 uint8_t mDataLength;
@@ -18829,7 +18829,7 @@ void toggleInt(void);
 void main(void)
 {
 
-    SYSTEM_Initialize(0x65);
+    SYSTEM_Initialize(0x62);
 
 
 
@@ -18846,7 +18846,7 @@ void main(void)
 
 
 
-    do { LATCbits.LATC7 = 1; } while(0);
+    do { LATAbits.LATA4 = 1; } while(0);
 
     sensorAPI.Init();
 
@@ -18869,7 +18869,7 @@ void main(void)
 
                 case 0x11:{
 
-                    uint8_t type = 0x21;
+                    uint8_t type = 0x10;
                     I2C1_SetTransmitData(&type, 1);
                 } break;
 
@@ -18917,12 +18917,12 @@ void main(void)
 }
 
 void toggleInt(void){
-    do { LATCbits.LATC7 = ~LATCbits.LATC7; } while(0);
+    do { LATAbits.LATA4 = ~LATAbits.LATA4; } while(0);
 }
 
 
 void generateInt(void){
-    do { LATCbits.LATC7 = 0; } while(0);
+    do { LATAbits.LATA4 = 0; } while(0);
     _delay((unsigned long)((1)*(32000000/4000.0)));
-    do { LATCbits.LATC7 = 1; } while(0);
+    do { LATAbits.LATA4 = 1; } while(0);
 }

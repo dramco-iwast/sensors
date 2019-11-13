@@ -7,21 +7,21 @@ Version 4.0 HI-TECH Software Intermediate Code
 "50 ./Sensors/../global.h
 [s S1519 `*F11108 1 `*F11110 1 `*F11112 1 `*F11114 1 `*F11118 1 ]
 [n S1519 devApi Init Measure Loop GetData UpdateThreshold ]
-"97 ./Sensors/sound_level.h
-[; ;./Sensors/sound_level.h: 97: void SoundLevel_Init(void);
-[v _SoundLevel_Init `(v ~T0 @X0 0 ef ]
-"98
-[; ;./Sensors/sound_level.h: 98: void SoundLevel_Measure(void);
-[v _SoundLevel_Measure `(v ~T0 @X0 0 ef ]
-"99
-[; ;./Sensors/sound_level.h: 99: void SoundLevel_Loop(void);
-[v _SoundLevel_Loop `(v ~T0 @X0 0 ef ]
-"100
-[; ;./Sensors/sound_level.h: 100: void SoundLevel_GetData(uint8_t * data, uint8_t * length);
-[v _SoundLevel_GetData `(v ~T0 @X0 0 ef2`*uc`*uc ]
-"101
-[; ;./Sensors/sound_level.h: 101: void SoundLevel_SetThreshold(uint8_t metric, uint8_t * thresholdData);
-[v _SoundLevel_SetThreshold `(v ~T0 @X0 0 ef2`uc`*uc ]
+"238 ./Sensors/buttons.h
+[; ;./Sensors/buttons.h: 238: void Buttons_Init(void);
+[v _Buttons_Init `(v ~T0 @X0 0 ef ]
+"239
+[; ;./Sensors/buttons.h: 239: void Buttons_ReadButtons(void);
+[v _Buttons_ReadButtons `(v ~T0 @X0 0 ef ]
+"240
+[; ;./Sensors/buttons.h: 240: void Buttons_Loop(void);
+[v _Buttons_Loop `(v ~T0 @X0 0 ef ]
+"241
+[; ;./Sensors/buttons.h: 241: void Buttons_GetData(uint8_t * data, uint8_t * length);
+[v _Buttons_GetData `(v ~T0 @X0 0 ef2`*uc`*uc ]
+"242
+[; ;./Sensors/buttons.h: 242: void Buttons_SetThreshold(uint8_t metric, uint8_t * thresholds);
+[v _Buttons_SetThreshold `(v ~T0 @X0 0 ef2`uc`*uc ]
 [p mainexit ]
 "72 ./mcc_generated_files/mcc.h
 [; ;./mcc_generated_files/mcc.h: 72: void SYSTEM_Initialize(uint8_t slave_address);
@@ -37,17 +37,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 "426
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 426: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
 [v _INTCONbits `VS30 ~T0 @X0 0 e@11 ]
-"843
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 843:     struct {
-[s S49 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S49 . LATC0 LATC1 LATC2 LATC3 LATC4 LATC5 LATC6 LATC7 ]
-"842
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 842: typedef union {
-[u S48 `S49 1 ]
-[n S48 . . ]
-"854
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 854: extern volatile LATCbits_t LATCbits __attribute__((address(0x01A)));
-[v _LATCbits `VS48 ~T0 @X0 0 e@26 ]
+"754
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 754:     struct {
+[s S45 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S45 . LATA0 LATA1 LATA2 LATA3 LATA4 LATA5 ]
+"753
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 753: typedef union {
+[u S44 `S45 1 ]
+[n S44 . . ]
+"763
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 763: extern volatile LATAbits_t LATAbits __attribute__((address(0x018)));
+[v _LATAbits `VS44 ~T0 @X0 0 e@24 ]
 "150 ./mcc_generated_files/i2c1.h
 [; ;./mcc_generated_files/i2c1.h: 150: _Bool I2C1_CommandReceived(void);
 [v _I2C1_CommandReceived `(a ~T0 @X0 0 ef ]
@@ -1430,16 +1430,16 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 32125: __asm("TOSH equ 01FEFh");
 [; <" TOSH equ 01FEFh ;# ">
 "36 main.c
-[; ;main.c: 36: Device_API_t sensorAPI = { SoundLevel_Init, SoundLevel_Measure, SoundLevel_Loop, SoundLevel_GetData, SoundLevel_SetThreshold };
+[; ;main.c: 36: Device_API_t sensorAPI = { Buttons_Init, Buttons_ReadButtons, Buttons_Loop, Buttons_GetData, Buttons_SetThreshold };
 [v _sensorAPI `S1519 ~T0 @X0 1 e ]
 [i _sensorAPI
 :U ..
 :U ..
-&U _SoundLevel_Init
-&U _SoundLevel_Measure
-&U _SoundLevel_Loop
-&U _SoundLevel_GetData
-&U _SoundLevel_SetThreshold
+&U _Buttons_Init
+&U _Buttons_ReadButtons
+&U _Buttons_Loop
+&U _Buttons_GetData
+&U _Buttons_SetThreshold
 ..
 ..
 ]
@@ -1459,8 +1459,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _main ]
 [f ]
 "66
-[; ;main.c: 66:     SYSTEM_Initialize(0x65);
-[e ( _SYSTEM_Initialize (1 -> -> 101 `i `uc ]
+[; ;main.c: 66:     SYSTEM_Initialize(0x62);
+[e ( _SYSTEM_Initialize (1 -> -> 98 `i `uc ]
 "72
 [; ;main.c: 72:     (INTCONbits.GIE = 1);
 [e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
@@ -1468,10 +1468,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 75:     (INTCONbits.PEIE = 1);
 [e = . . _INTCONbits 0 2 -> -> 1 `i `uc ]
 "83
-[; ;main.c: 83:     do { LATCbits.LATC7 = 1; } while(0);
+[; ;main.c: 83:     do { LATAbits.LATA4 = 1; } while(0);
 [e :U 1526 ]
 {
-[e = . . _LATCbits 0 7 -> -> 1 `i `uc ]
+[e = . . _LATAbits 0 4 -> -> 1 `i `uc ]
 }
 [e :U 1525 ]
 "85
@@ -1518,9 +1518,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 1534 ]
 {
 "106
-[; ;main.c: 106:                     uint8_t type = 0x21;
+[; ;main.c: 106:                     uint8_t type = 0x10;
 [v _type `uc ~T0 @X0 1 a ]
-[e = _type -> -> 33 `i `uc ]
+[e = _type -> -> 16 `i `uc ]
 "107
 [; ;main.c: 107:                     I2C1_SetTransmitData(&type, 1);
 [e ( _I2C1_SetTransmitData (2 , &U _type -> -> 1 `i `uc ]
@@ -1653,10 +1653,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _toggleInt ]
 [f ]
 "154
-[; ;main.c: 154:     do { LATCbits.LATC7 = ~LATCbits.LATC7; } while(0);
+[; ;main.c: 154:     do { LATAbits.LATA4 = ~LATAbits.LATA4; } while(0);
 [e :U 1545 ]
 {
-[e = . . _LATCbits 0 7 -> ~ -> . . _LATCbits 0 7 `i `uc ]
+[e = . . _LATAbits 0 4 -> ~ -> . . _LATAbits 0 4 `i `uc ]
 }
 [e :U 1544 ]
 "155
@@ -1670,20 +1670,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _generateInt ]
 [f ]
 "159
-[; ;main.c: 159:     do { LATCbits.LATC7 = 0; } while(0);
+[; ;main.c: 159:     do { LATAbits.LATA4 = 0; } while(0);
 [e :U 1549 ]
 {
-[e = . . _LATCbits 0 7 -> -> 0 `i `uc ]
+[e = . . _LATAbits 0 4 -> -> 0 `i `uc ]
 }
 [e :U 1548 ]
 "160
 [; ;main.c: 160:     _delay((unsigned long)((1)*(32000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
 "161
-[; ;main.c: 161:     do { LATCbits.LATC7 = 1; } while(0);
+[; ;main.c: 161:     do { LATAbits.LATA4 = 1; } while(0);
 [e :U 1552 ]
 {
-[e = . . _LATCbits 0 7 -> -> 1 `i `uc ]
+[e = . . _LATAbits 0 4 -> -> 1 `i `uc ]
 }
 [e :U 1551 ]
 "162

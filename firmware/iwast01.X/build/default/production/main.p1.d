@@ -9,4 +9,4 @@ mcc_generated_files/adcc.h  \
 mcc_generated_files/eusart1.h  \
 mcc_generated_files/tmr4.h  \
 global.h  \
-Sensors/sound_level.h 
+Sensors/buttons.h 

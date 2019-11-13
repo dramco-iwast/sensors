@@ -18705,6 +18705,9 @@ void Buttons_ReadButtons(void){
 
 void Buttons_ProcessButtonPress(void){
 
+    PIE0bits.IOCIE = 0;
+
+
     if(swState1){
        buttonsMeasurementData |= 0x01;
     }
@@ -18730,7 +18733,7 @@ void Buttons_Loop(void){
         do { LATCbits.LATC3 = 0; } while(0);
         do { LATCbits.LATC7 = 0; } while(0);
 
-        _delay((unsigned long)((50)*(32000000/4000.0)));
+        _delay((unsigned long)((500)*(32000000/4000.0)));
 
         do { LATAbits.LATA2 = 1; } while(0);
         do { LATCbits.LATC5 = 1; } while(0);
@@ -18770,6 +18773,8 @@ void Buttons_Loop(void){
         swState3 = 0;
         swState4 = 0;
     }
+
+    PIE0bits.IOCIE = 1;
 
     __asm("sleep");
     __nop();

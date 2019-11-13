@@ -30,8 +30,8 @@
 #include "mcc_generated_files/pin_manager.h"
 
 // include sensor
-#include "Sensors/sound_level.h"
-//#include "Sensors/buttons.h"
+//#include "Sensors/sound_level.h"
+#include "Sensors/buttons.h"
 
 Device_API_t sensorAPI = SENSOR_API;
 

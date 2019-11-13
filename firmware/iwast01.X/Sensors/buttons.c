@@ -99,6 +99,9 @@ void Buttons_ReadButtons(void){
 }
 
 void Buttons_ProcessButtonPress(void){
+    // Disable interrupts
+    PIE0bits.IOCIE = 0; 
+    
     //buttonsMeasurementData= 0x00;
     if(swState1){
        buttonsMeasurementData |= 0x01;
@@ -125,7 +128,7 @@ void Buttons_Loop(void){
         LSW_3_SetLow(); // LED ON
         LSW_4_SetLow(); // LED ON
         
-        __delay_ms(50);
+        __delay_ms(500);
         
         LSW_1_SetHigh(); // LED OFF
         LSW_2_SetHigh(); // LED OFF
@@ -165,6 +168,8 @@ void Buttons_Loop(void){
         swState3 = false;
         swState4 = false;
     }
+    // Enable interrupts
+    PIE0bits.IOCIE = 1;  
     
     SLEEP();
     NOP();

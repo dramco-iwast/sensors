@@ -1696,135 +1696,138 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _Buttons_ProcessButtonPress ]
 [f ]
 "103
-[; ;Sensors/buttons.c: 103:     if(swState1){
+[; ;Sensors/buttons.c: 103:     PIE0bits.IOCIE = 0;
+[e = . . _PIE0bits 0 2 -> -> 0 `i `uc ]
+"106
+[; ;Sensors/buttons.c: 106:     if(swState1){
 [e $ ! != -> _swState1 `i -> 0 `i 1565  ]
 {
-"104
-[; ;Sensors/buttons.c: 104:        buttonsMeasurementData |= 0x01;
-[e =| _buttonsMeasurementData -> -> 1 `i `Suc ]
-"105
-[; ;Sensors/buttons.c: 105:     }
-}
-[e :U 1565 ]
-"106
-[; ;Sensors/buttons.c: 106:     if(swState2){
-[e $ ! != -> _swState2 `i -> 0 `i 1566  ]
-{
 "107
-[; ;Sensors/buttons.c: 107:        buttonsMeasurementData |= 0x02;
-[e =| _buttonsMeasurementData -> -> 2 `i `Suc ]
+[; ;Sensors/buttons.c: 107:        buttonsMeasurementData |= 0x01;
+[e =| _buttonsMeasurementData -> -> 1 `i `Suc ]
 "108
 [; ;Sensors/buttons.c: 108:     }
 }
-[e :U 1566 ]
+[e :U 1565 ]
 "109
-[; ;Sensors/buttons.c: 109:     if(swState3){
-[e $ ! != -> _swState3 `i -> 0 `i 1567  ]
+[; ;Sensors/buttons.c: 109:     if(swState2){
+[e $ ! != -> _swState2 `i -> 0 `i 1566  ]
 {
 "110
-[; ;Sensors/buttons.c: 110:        buttonsMeasurementData |= 0x04;
-[e =| _buttonsMeasurementData -> -> 4 `i `Suc ]
+[; ;Sensors/buttons.c: 110:        buttonsMeasurementData |= 0x02;
+[e =| _buttonsMeasurementData -> -> 2 `i `Suc ]
 "111
 [; ;Sensors/buttons.c: 111:     }
 }
-[e :U 1567 ]
+[e :U 1566 ]
 "112
-[; ;Sensors/buttons.c: 112:     if(swState4){
-[e $ ! != -> _swState4 `i -> 0 `i 1568  ]
+[; ;Sensors/buttons.c: 112:     if(swState3){
+[e $ ! != -> _swState3 `i -> 0 `i 1567  ]
 {
 "113
-[; ;Sensors/buttons.c: 113:        buttonsMeasurementData |= 0x08;
-[e =| _buttonsMeasurementData -> -> 8 `i `Suc ]
+[; ;Sensors/buttons.c: 113:        buttonsMeasurementData |= 0x04;
+[e =| _buttonsMeasurementData -> -> 4 `i `Suc ]
 "114
 [; ;Sensors/buttons.c: 114:     }
 }
-[e :U 1568 ]
+[e :U 1567 ]
 "115
-[; ;Sensors/buttons.c: 115:     if(buttonsMeasurementData){
-[e $ ! != -> _buttonsMeasurementData `i -> 0 `i 1569  ]
+[; ;Sensors/buttons.c: 115:     if(swState4){
+[e $ ! != -> _swState4 `i -> 0 `i 1568  ]
 {
 "116
-[; ;Sensors/buttons.c: 116:         generateInt();
-[e ( _generateInt ..  ]
+[; ;Sensors/buttons.c: 116:        buttonsMeasurementData |= 0x08;
+[e =| _buttonsMeasurementData -> -> 8 `i `Suc ]
 "117
 [; ;Sensors/buttons.c: 117:     }
 }
-[e :U 1569 ]
+[e :U 1568 ]
 "118
-[; ;Sensors/buttons.c: 118: }
+[; ;Sensors/buttons.c: 118:     if(buttonsMeasurementData){
+[e $ ! != -> _buttonsMeasurementData `i -> 0 `i 1569  ]
+{
+"119
+[; ;Sensors/buttons.c: 119:         generateInt();
+[e ( _generateInt ..  ]
+"120
+[; ;Sensors/buttons.c: 120:     }
+}
+[e :U 1569 ]
+"121
+[; ;Sensors/buttons.c: 121: }
 [e :UE 1564 ]
 }
-"120
-[; ;Sensors/buttons.c: 120: void Buttons_Loop(void){
+"123
+[; ;Sensors/buttons.c: 123: void Buttons_Loop(void){
 [v _Buttons_Loop `(v ~T0 @X0 1 ef ]
 {
 [e :U _Buttons_Loop ]
 [f ]
-"122
-[; ;Sensors/buttons.c: 122:     if(swState1 | swState2 | swState3 | swState4){
+"125
+[; ;Sensors/buttons.c: 125:     if(swState1 | swState2 | swState3 | swState4){
 [e $ ! != | | | -> _swState1 `i -> _swState2 `i -> _swState3 `i -> _swState4 `i -> 0 `i 1571  ]
 {
-"123
-[; ;Sensors/buttons.c: 123:         do { LATAbits.LATA2 = 0; } while(0);
+"126
+[; ;Sensors/buttons.c: 126:         do { LATAbits.LATA2 = 0; } while(0);
 [e :U 1574 ]
 {
 [e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
 }
 [e :U 1573 ]
-"124
-[; ;Sensors/buttons.c: 124:         do { LATCbits.LATC5 = 0; } while(0);
+"127
+[; ;Sensors/buttons.c: 127:         do { LATCbits.LATC5 = 0; } while(0);
 [e :U 1577 ]
 {
 [e = . . _LATCbits 0 5 -> -> 0 `i `uc ]
 }
 [e :U 1576 ]
-"125
-[; ;Sensors/buttons.c: 125:         do { LATCbits.LATC3 = 0; } while(0);
+"128
+[; ;Sensors/buttons.c: 128:         do { LATCbits.LATC3 = 0; } while(0);
 [e :U 1580 ]
 {
 [e = . . _LATCbits 0 3 -> -> 0 `i `uc ]
 }
 [e :U 1579 ]
-"126
-[; ;Sensors/buttons.c: 126:         do { LATCbits.LATC7 = 0; } while(0);
+"129
+[; ;Sensors/buttons.c: 129:         do { LATCbits.LATC7 = 0; } while(0);
 [e :U 1583 ]
 {
 [e = . . _LATCbits 0 7 -> -> 0 `i `uc ]
 }
 [e :U 1582 ]
-"128
-[; ;Sensors/buttons.c: 128:         _delay((unsigned long)((50)*(32000000/4000.0)));
-[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-"130
-[; ;Sensors/buttons.c: 130:         do { LATAbits.LATA2 = 1; } while(0);
+"131
+[; ;Sensors/buttons.c: 131:         _delay((unsigned long)((500)*(32000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
+"133
+[; ;Sensors/buttons.c: 133:         do { LATAbits.LATA2 = 1; } while(0);
 [e :U 1586 ]
 {
 [e = . . _LATAbits 0 2 -> -> 1 `i `uc ]
 }
 [e :U 1585 ]
-"131
-[; ;Sensors/buttons.c: 131:         do { LATCbits.LATC5 = 1; } while(0);
+"134
+[; ;Sensors/buttons.c: 134:         do { LATCbits.LATC5 = 1; } while(0);
 [e :U 1589 ]
 {
 [e = . . _LATCbits 0 5 -> -> 1 `i `uc ]
 }
 [e :U 1588 ]
-"132
-[; ;Sensors/buttons.c: 132:         do { LATCbits.LATC3 = 1; } while(0);
+"135
+[; ;Sensors/buttons.c: 135:         do { LATCbits.LATC3 = 1; } while(0);
 [e :U 1592 ]
 {
 [e = . . _LATCbits 0 3 -> -> 1 `i `uc ]
 }
 [e :U 1591 ]
-"133
-[; ;Sensors/buttons.c: 133:         do { LATCbits.LATC7 = 1; } while(0);
+"136
+[; ;Sensors/buttons.c: 136:         do { LATCbits.LATC7 = 1; } while(0);
 [e :U 1595 ]
 {
 [e = . . _LATCbits 0 7 -> -> 1 `i `uc ]
 }
 [e :U 1594 ]
-"136
-[; ;Sensors/buttons.c: 136:         for(uint8_t i=0; i<255; i++){
+"139
+[; ;Sensors/buttons.c: 139:         for(uint8_t i=0; i<255; i++){
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
@@ -1832,273 +1835,276 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 1597  ]
 [e :U 1596 ]
 {
-"137
-[; ;Sensors/buttons.c: 137:             uint8_t onTime = 255-i;
+"140
+[; ;Sensors/buttons.c: 140:             uint8_t onTime = 255-i;
 [v _onTime `uc ~T0 @X0 1 a ]
 [e = _onTime -> - -> 255 `i -> _i `i `uc ]
-"138
-[; ;Sensors/buttons.c: 138:             uint8_t offTime = i;
+"141
+[; ;Sensors/buttons.c: 141:             uint8_t offTime = i;
 [v _offTime `uc ~T0 @X0 1 a ]
 [e = _offTime _i ]
-"139
-[; ;Sensors/buttons.c: 139:             if(swState1){
+"142
+[; ;Sensors/buttons.c: 142:             if(swState1){
 [e $ ! != -> _swState1 `i -> 0 `i 1599  ]
 {
-"140
-[; ;Sensors/buttons.c: 140:                 do { LATAbits.LATA2 = 0; } while(0);
+"143
+[; ;Sensors/buttons.c: 143:                 do { LATAbits.LATA2 = 0; } while(0);
 [e :U 1602 ]
 {
 [e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
 }
 [e :U 1601 ]
-"141
-[; ;Sensors/buttons.c: 141:             }
+"144
+[; ;Sensors/buttons.c: 144:             }
 }
 [e :U 1599 ]
-"142
-[; ;Sensors/buttons.c: 142:             if(swState2){
+"145
+[; ;Sensors/buttons.c: 145:             if(swState2){
 [e $ ! != -> _swState2 `i -> 0 `i 1603  ]
 {
-"143
-[; ;Sensors/buttons.c: 143:                 do { LATCbits.LATC5 = 0; } while(0);
+"146
+[; ;Sensors/buttons.c: 146:                 do { LATCbits.LATC5 = 0; } while(0);
 [e :U 1606 ]
 {
 [e = . . _LATCbits 0 5 -> -> 0 `i `uc ]
 }
 [e :U 1605 ]
-"144
-[; ;Sensors/buttons.c: 144:             }
+"147
+[; ;Sensors/buttons.c: 147:             }
 }
 [e :U 1603 ]
-"145
-[; ;Sensors/buttons.c: 145:             if(swState3){
+"148
+[; ;Sensors/buttons.c: 148:             if(swState3){
 [e $ ! != -> _swState3 `i -> 0 `i 1607  ]
 {
-"146
-[; ;Sensors/buttons.c: 146:                 do { LATCbits.LATC3 = 0; } while(0);
+"149
+[; ;Sensors/buttons.c: 149:                 do { LATCbits.LATC3 = 0; } while(0);
 [e :U 1610 ]
 {
 [e = . . _LATCbits 0 3 -> -> 0 `i `uc ]
 }
 [e :U 1609 ]
-"147
-[; ;Sensors/buttons.c: 147:             }
+"150
+[; ;Sensors/buttons.c: 150:             }
 }
 [e :U 1607 ]
-"148
-[; ;Sensors/buttons.c: 148:             if(swState4){
+"151
+[; ;Sensors/buttons.c: 151:             if(swState4){
 [e $ ! != -> _swState4 `i -> 0 `i 1611  ]
 {
-"149
-[; ;Sensors/buttons.c: 149:                 do { LATCbits.LATC7 = 0; } while(0);
+"152
+[; ;Sensors/buttons.c: 152:                 do { LATCbits.LATC7 = 0; } while(0);
 [e :U 1614 ]
 {
 [e = . . _LATCbits 0 7 -> -> 0 `i `uc ]
 }
 [e :U 1613 ]
-"150
-[; ;Sensors/buttons.c: 150:             }
+"153
+[; ;Sensors/buttons.c: 153:             }
 }
 [e :U 1611 ]
-"151
-[; ;Sensors/buttons.c: 151:             for(uint8_t j=0; j<onTime; j++){
+"154
+[; ;Sensors/buttons.c: 154:             for(uint8_t j=0; j<onTime; j++){
 {
 [v _j `uc ~T0 @X0 1 a ]
 [e = _j -> -> 0 `i `uc ]
 [e $U 1618  ]
 [e :U 1615 ]
 {
-"152
-[; ;Sensors/buttons.c: 152:                 _delay((unsigned long)((20)*(32000000/4000000.0)));
+"155
+[; ;Sensors/buttons.c: 155:                 _delay((unsigned long)((20)*(32000000/4000000.0)));
 [e ( __delay (1 -> * -> -> 20 `i `d / -> -> 32000000 `l `d .4000000.0 `ul ]
-"153
-[; ;Sensors/buttons.c: 153:             }
+"156
+[; ;Sensors/buttons.c: 156:             }
 }
 [e ++ _j -> -> 1 `i `uc ]
 [e :U 1618 ]
 [e $ < -> _j `i -> _onTime `i 1615  ]
 [e :U 1616 ]
 }
-"154
-[; ;Sensors/buttons.c: 154:             do { LATAbits.LATA2 = 1; } while(0);
+"157
+[; ;Sensors/buttons.c: 157:             do { LATAbits.LATA2 = 1; } while(0);
 [e :U 1621 ]
 {
 [e = . . _LATAbits 0 2 -> -> 1 `i `uc ]
 }
 [e :U 1620 ]
-"155
-[; ;Sensors/buttons.c: 155:             do { LATCbits.LATC5 = 1; } while(0);
+"158
+[; ;Sensors/buttons.c: 158:             do { LATCbits.LATC5 = 1; } while(0);
 [e :U 1624 ]
 {
 [e = . . _LATCbits 0 5 -> -> 1 `i `uc ]
 }
 [e :U 1623 ]
-"156
-[; ;Sensors/buttons.c: 156:             do { LATCbits.LATC3 = 1; } while(0);
+"159
+[; ;Sensors/buttons.c: 159:             do { LATCbits.LATC3 = 1; } while(0);
 [e :U 1627 ]
 {
 [e = . . _LATCbits 0 3 -> -> 1 `i `uc ]
 }
 [e :U 1626 ]
-"157
-[; ;Sensors/buttons.c: 157:             do { LATCbits.LATC7 = 1; } while(0);
+"160
+[; ;Sensors/buttons.c: 160:             do { LATCbits.LATC7 = 1; } while(0);
 [e :U 1630 ]
 {
 [e = . . _LATCbits 0 7 -> -> 1 `i `uc ]
 }
 [e :U 1629 ]
-"158
-[; ;Sensors/buttons.c: 158:             for(uint8_t j=0; j<offTime; j++){
+"161
+[; ;Sensors/buttons.c: 161:             for(uint8_t j=0; j<offTime; j++){
 {
 [v _j `uc ~T0 @X0 1 a ]
 [e = _j -> -> 0 `i `uc ]
 [e $U 1634  ]
 [e :U 1631 ]
 {
-"159
-[; ;Sensors/buttons.c: 159:                 _delay((unsigned long)((20)*(32000000/4000000.0)));
+"162
+[; ;Sensors/buttons.c: 162:                 _delay((unsigned long)((20)*(32000000/4000000.0)));
 [e ( __delay (1 -> * -> -> 20 `i `d / -> -> 32000000 `l `d .4000000.0 `ul ]
-"160
-[; ;Sensors/buttons.c: 160:             }
+"163
+[; ;Sensors/buttons.c: 163:             }
 }
 [e ++ _j -> -> 1 `i `uc ]
 [e :U 1634 ]
 [e $ < -> _j `i -> _offTime `i 1631  ]
 [e :U 1632 ]
 }
-"161
-[; ;Sensors/buttons.c: 161:         }
+"164
+[; ;Sensors/buttons.c: 164:         }
 }
 [e ++ _i -> -> 1 `i `uc ]
 [e $ < -> _i `i -> 255 `i 1596  ]
 [e :U 1597 ]
 }
-"163
-[; ;Sensors/buttons.c: 163:         swState1 = 0;
-[e = _swState1 -> -> 0 `i `a ]
-"164
-[; ;Sensors/buttons.c: 164:         swState2 = 0;
-[e = _swState2 -> -> 0 `i `a ]
-"165
-[; ;Sensors/buttons.c: 165:         swState3 = 0;
-[e = _swState3 -> -> 0 `i `a ]
 "166
-[; ;Sensors/buttons.c: 166:         swState4 = 0;
-[e = _swState4 -> -> 0 `i `a ]
+[; ;Sensors/buttons.c: 166:         swState1 = 0;
+[e = _swState1 -> -> 0 `i `a ]
 "167
-[; ;Sensors/buttons.c: 167:     }
+[; ;Sensors/buttons.c: 167:         swState2 = 0;
+[e = _swState2 -> -> 0 `i `a ]
+"168
+[; ;Sensors/buttons.c: 168:         swState3 = 0;
+[e = _swState3 -> -> 0 `i `a ]
+"169
+[; ;Sensors/buttons.c: 169:         swState4 = 0;
+[e = _swState4 -> -> 0 `i `a ]
+"170
+[; ;Sensors/buttons.c: 170:     }
 }
 [e :U 1571 ]
-"169
-[; ;Sensors/buttons.c: 169:     __asm("sleep");
+"172
+[; ;Sensors/buttons.c: 172:     PIE0bits.IOCIE = 1;
+[e = . . _PIE0bits 0 2 -> -> 1 `i `uc ]
+"174
+[; ;Sensors/buttons.c: 174:     __asm("sleep");
 [; <" sleep ;# ">
-"170
-[; ;Sensors/buttons.c: 170:     __nop();
+"175
+[; ;Sensors/buttons.c: 175:     __nop();
 [e ( ___nop ..  ]
-"171
-[; ;Sensors/buttons.c: 171: }
+"176
+[; ;Sensors/buttons.c: 176: }
 [e :UE 1570 ]
 }
-"173
-[; ;Sensors/buttons.c: 173: void Buttons_GetData(uint8_t * data, uint8_t * length){
+"178
+[; ;Sensors/buttons.c: 178: void Buttons_GetData(uint8_t * data, uint8_t * length){
 [v _Buttons_GetData `(v ~T0 @X0 1 ef2`*uc`*uc ]
 {
 [e :U _Buttons_GetData ]
 [v _data `*uc ~T0 @X0 1 r1 ]
 [v _length `*uc ~T0 @X0 1 r2 ]
 [f ]
-"174
-[; ;Sensors/buttons.c: 174:     *length = 2;
+"179
+[; ;Sensors/buttons.c: 179:     *length = 2;
 [e = *U _length -> -> 2 `i `uc ]
-"175
-[; ;Sensors/buttons.c: 175:     data[0] = 0x00;
+"180
+[; ;Sensors/buttons.c: 180:     data[0] = 0x00;
 [e = *U + _data * -> -> 0 `i `x -> -> # *U _data `i `x -> -> 0 `i `uc ]
-"176
-[; ;Sensors/buttons.c: 176:     data[1] = buttonsMeasurementData;
+"181
+[; ;Sensors/buttons.c: 181:     data[1] = buttonsMeasurementData;
 [e = *U + _data * -> -> 1 `i `x -> -> # *U _data `i `x _buttonsMeasurementData ]
-"177
-[; ;Sensors/buttons.c: 177:     buttonsMeasurementData = 0x00;
+"182
+[; ;Sensors/buttons.c: 182:     buttonsMeasurementData = 0x00;
 [e = _buttonsMeasurementData -> -> 0 `i `uc ]
-"178
-[; ;Sensors/buttons.c: 178: }
+"183
+[; ;Sensors/buttons.c: 183: }
 [e :UE 1635 ]
 }
-"180
-[; ;Sensors/buttons.c: 180: void Buttons_SetThreshold(uint8_t metric, uint8_t * thresholds){
+"185
+[; ;Sensors/buttons.c: 185: void Buttons_SetThreshold(uint8_t metric, uint8_t * thresholds){
 [v _Buttons_SetThreshold `(v ~T0 @X0 1 ef2`uc`*uc ]
 {
 [e :U _Buttons_SetThreshold ]
 [v _metric `uc ~T0 @X0 1 r1 ]
 [v _thresholds `*uc ~T0 @X0 1 r2 ]
 [f ]
-"181
-[; ;Sensors/buttons.c: 181:     return;
+"186
+[; ;Sensors/buttons.c: 186:     return;
 [e $UE 1636  ]
-"182
-[; ;Sensors/buttons.c: 182: }
+"187
+[; ;Sensors/buttons.c: 187: }
 [e :UE 1636 ]
 }
-"185
-[; ;Sensors/buttons.c: 185: void LSW1_Pressed(void){
+"190
+[; ;Sensors/buttons.c: 190: void LSW1_Pressed(void){
 [v _LSW1_Pressed `(v ~T0 @X0 1 ef ]
 {
 [e :U _LSW1_Pressed ]
 [f ]
-"186
-[; ;Sensors/buttons.c: 186:     swState1 = 1;
-[e = _swState1 -> -> 1 `i `a ]
-"187
-[; ;Sensors/buttons.c: 187:     Buttons_ProcessButtonPress();
-[e ( _Buttons_ProcessButtonPress ..  ]
-"188
-[; ;Sensors/buttons.c: 188: }
-[e :UE 1637 ]
-}
-"190
-[; ;Sensors/buttons.c: 190: void LSW2_Pressed(void){
-[v _LSW2_Pressed `(v ~T0 @X0 1 ef ]
-{
-[e :U _LSW2_Pressed ]
-[f ]
 "191
-[; ;Sensors/buttons.c: 191:     swState2 = 1;
-[e = _swState2 -> -> 1 `i `a ]
+[; ;Sensors/buttons.c: 191:     swState1 = 1;
+[e = _swState1 -> -> 1 `i `a ]
 "192
 [; ;Sensors/buttons.c: 192:     Buttons_ProcessButtonPress();
 [e ( _Buttons_ProcessButtonPress ..  ]
 "193
 [; ;Sensors/buttons.c: 193: }
-[e :UE 1638 ]
+[e :UE 1637 ]
 }
 "195
-[; ;Sensors/buttons.c: 195: void LSW3_Pressed(void){
-[v _LSW3_Pressed `(v ~T0 @X0 1 ef ]
+[; ;Sensors/buttons.c: 195: void LSW2_Pressed(void){
+[v _LSW2_Pressed `(v ~T0 @X0 1 ef ]
 {
-[e :U _LSW3_Pressed ]
+[e :U _LSW2_Pressed ]
 [f ]
 "196
-[; ;Sensors/buttons.c: 196:     swState3 = 1;
-[e = _swState3 -> -> 1 `i `a ]
+[; ;Sensors/buttons.c: 196:     swState2 = 1;
+[e = _swState2 -> -> 1 `i `a ]
 "197
 [; ;Sensors/buttons.c: 197:     Buttons_ProcessButtonPress();
 [e ( _Buttons_ProcessButtonPress ..  ]
 "198
 [; ;Sensors/buttons.c: 198: }
-[e :UE 1639 ]
+[e :UE 1638 ]
 }
 "200
-[; ;Sensors/buttons.c: 200: void LSW4_Pressed(void){
-[v _LSW4_Pressed `(v ~T0 @X0 1 ef ]
+[; ;Sensors/buttons.c: 200: void LSW3_Pressed(void){
+[v _LSW3_Pressed `(v ~T0 @X0 1 ef ]
 {
-[e :U _LSW4_Pressed ]
+[e :U _LSW3_Pressed ]
 [f ]
 "201
-[; ;Sensors/buttons.c: 201:     swState4 = 1;
-[e = _swState4 -> -> 1 `i `a ]
+[; ;Sensors/buttons.c: 201:     swState3 = 1;
+[e = _swState3 -> -> 1 `i `a ]
 "202
 [; ;Sensors/buttons.c: 202:     Buttons_ProcessButtonPress();
 [e ( _Buttons_ProcessButtonPress ..  ]
 "203
 [; ;Sensors/buttons.c: 203: }
+[e :UE 1639 ]
+}
+"205
+[; ;Sensors/buttons.c: 205: void LSW4_Pressed(void){
+[v _LSW4_Pressed `(v ~T0 @X0 1 ef ]
+{
+[e :U _LSW4_Pressed ]
+[f ]
+"206
+[; ;Sensors/buttons.c: 206:     swState4 = 1;
+[e = _swState4 -> -> 1 `i `a ]
+"207
+[; ;Sensors/buttons.c: 207:     Buttons_ProcessButtonPress();
+[e ( _Buttons_ProcessButtonPress ..  ]
+"208
+[; ;Sensors/buttons.c: 208: }
 [e :UE 1640 ]
 }
