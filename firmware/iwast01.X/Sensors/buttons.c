@@ -169,6 +169,7 @@ void Buttons_Loop(void){
         swState4 = false;
     }
     // Enable interrupts
+    IOCCF = 0x00; // clear all interrupts that might have occurred during animation
     PIE0bits.IOCIE = 1;  
     
     SLEEP();

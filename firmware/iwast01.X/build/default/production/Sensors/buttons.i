@@ -18774,6 +18774,7 @@ void Buttons_Loop(void){
         swState4 = 0;
     }
 
+    IOCCF = 0x00;
     PIE0bits.IOCIE = 1;
 
     __asm("sleep");
