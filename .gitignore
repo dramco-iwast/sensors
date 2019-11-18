@@ -1,7 +1,3 @@
-firmware/soft-iot-v2.X/build/*
-firmware/soft-iot-v2.X/debug/*
-firmware/soft-iot-v2.X/dist/*
-firmware/soft-iot-v2.X/nbproject/*
-firmware/soft-iot-v2.X/device_config.mc3
-firmware/soft-iot-v2.X/Makefile
+firmware/ButtonsModule/IWAST_STEM.X/build/*
+firmware/MicrophoneModule/iwast01.X/build/*
 
