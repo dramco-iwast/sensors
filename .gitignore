@@ -1,3 +1,6 @@
 firmware/ButtonsModule/IWAST_STEM.X/build/*
+firmware/ButtonsModule/IWAST_STEM.X/dist/*
 firmware/MicrophoneModule/iwast01.X/build/*
+firmware/MicrophoneModule/iwast01.X/dist/*
 firmware/iwast01.X/build/*
+firmware/iwast01.X/dist/*
