@@ -53,7 +53,7 @@ void SYSTEM_Initialize(uint8_t slave_address) //MODIFIED (was void))
     PIN_MANAGER_Initialize();
     OSCILLATOR_Initialize();
     I2C1_Initialize(slave_address);
-    EUSART1_Initialize();
+    //EUSART1_Initialize();
 }
 
 void OSCILLATOR_Initialize(void)

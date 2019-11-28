@@ -19,13 +19,21 @@
  *
  */
 
+#include <math.h>
 #include "sound_level.h"
 #include "../mcc_generated_files/mcc.h"
 #include "../mcc_generated_files/adcc.h"
 
 /* local constants ************************************************************/
 
-#define SAMPLES 400 // amount of samples
+#define SAMPLES         400 // amount of samples
+#define AMP_FACTOR      44
+#define SENSITIVITY     0.01258925
+#define V_SUPPLY        3.3
+#define ADC_SCALE       4095
+#define REF_PRESSURE    20e-6
+#define DBZ_MAX         106
+#define SCALE_FACTOR    600
 
 /* 'local' function prototypes ************************************************/
 
@@ -52,13 +60,14 @@ void SoundLevel_LedToggle(void);
 
 /* local variables ************************************************************/
 
-// variables that control the sampling
+// variables used during the sampling
+__persistent float presSumSquared;
 bool measurementRunning = false;
 uint16_t sampleCounter = 0;         
-__persistent uint16_t maxValue = 0;
 bool autoStart = false;
 
 // buffer that holds the maxValue ( msb | lsb)
+__persistent float presSumSquared;
 __persistent uint8_t measurementData[2];
 
 // variables for threshold-based operation
@@ -105,7 +114,7 @@ void SoundLevel_Measure(){
     // initialize control variables
     measurementRunning = true;
     sampleCounter = 0;
-    maxValue = 0;
+    presSumSquared = 0;
     
     // power-on microphone and amplifier circuit
     powerMic_SetHigh();
@@ -169,15 +178,24 @@ void SoundLevel_SetThreshold(uint8_t metric, uint8_t * thresholdData){
 /* Prepare data for transmission 
  */
 void SoundLevel_PrepareData(){
-    measurementData[0] = maxValue>>8;
-    measurementData[1] = maxValue;
+    float presAvgSquared = presSumSquared/SAMPLES;
+    float dBZ = 10*log10(presAvgSquared/(REF_PRESSURE * REF_PRESSURE));
+    
+    if(dBZ > DBZ_MAX){
+        dBZ = DBZ_MAX;
+    }
+
+    uint16_t dataToSend = (uint16_t) round(SCALE_FACTOR * dBZ);
+    
+    measurementData[0] = dataToSend>>8;
+    measurementData[1] = dataToSend;
     
     // auto start will be true when threshold-based detection is enabled
     // (needs periodic measurements)
     if(autoStart){ 
         autoStart = false;
         // only generate interrupt when maxiValue exceeds thresholdLevel
-        if(maxValue > thresholdLevel){
+        if(dataToSend > thresholdLevel){
             generateInt();
         }
     }
@@ -196,9 +214,9 @@ void SoundLevel_GetSample(){
     uint16_t sample = ADCC_GetConversionResult();
     
     // Check whether the new value is bigger than the previous maximum value
-    if(sample > maxValue){
-        maxValue = sample;
-    }
+    float sampleToVoltage = (V_SUPPLY * sample)/(ADC_SCALE);
+    float voltageToPressure = sampleToVoltage/(SENSITIVITY * AMP_FACTOR);
+    presSumSquared = presSumSquared + (voltageToPressure*voltageToPressure);
     
     sampleCounter++;
     if(sampleCounter>SAMPLES-1){ // we've taken enough samples

@@ -62,14 +62,6 @@ void __interrupt() INTERRUPT_InterruptManager (void)
         {
             I2C1_ISR();
         } 
-        else if(PIE4bits.TMR4IE == 1 && PIR4bits.TMR4IF == 1)
-        {
-            TMR4_ISR();
-        }
-        else if(PIE3bits.TX1IE == 1 && PIR3bits.TX1IF == 1)
-        {
-            EUSART1_TxDefaultInterruptHandler();
-        } 
         else if(PIE1bits.ADIE == 1 && PIR1bits.ADIF == 1)
         {
             ADCC_ISR();
