@@ -27,6 +27,13 @@ extern "C" {
 #endif
 
 /******************************************************************************
+ * Build settings -> modify to your needs                                     *
+ ******************************************************************************/   
+
+#define I2C_ADDRESS                 0x50
+#define SENSOR_TYPE                 SOUND_LEVEL
+
+/******************************************************************************
  * Definitions and types                                                      *
  ******************************************************************************/
 #define DEFAULT_ACK                 0xAA
@@ -40,6 +47,11 @@ extern "C" {
 #define CMD_START_MEASUREMENT       0x13 // get/start a measurement
 #define CMD_SET_THRESHOLDS          0x24 // set thresholds
 
+ // supported sensor types
+#define SOUND_LEVEL                 0x01
+#define BUTTONS                     0x02
+#define BME680                      0x03
+    
 /* general sensor API providing methods for
  *  - initializing sensor operation
  *  - starting a new measurement
@@ -55,8 +67,8 @@ typedef struct devApi{
     void (* UpdateThreshold)(uint8_t, uint8_t *);
 } Device_API_t;
 
-// toggle interrupt line to motherboard
-void generateInt(void);
+
+#define _XTAL_FREQ 32000000
 
 #ifdef	__cplusplus
 }

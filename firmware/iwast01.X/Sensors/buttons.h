@@ -13,10 +13,10 @@
 #include <stdbool.h>
 #include "../global.h"
 
-#define TYPE_BYTE   0x10
+#define TYPE_BYTE   BUTTONS
 #define M_NR        0x01
 
-#define SLAVE_ADDRESS 0x62
+#define SLAVE_ADDRESS I2C_ADDRESS
 
 // get/set Led0 aliases
 #define Led0_TRIS                 TRISCbits.TRISC1

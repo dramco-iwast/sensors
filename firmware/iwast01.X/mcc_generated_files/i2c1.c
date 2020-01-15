@@ -122,6 +122,7 @@ void I2C1_Initialize(uint8_t slave_address) //MODIFIED (was void)
     // enable the master interrupt
     PIE3bits.SSP1IE = 1;
     
+    txCnt = 0;
     rxLen = 0;                  // MODIFIED
     cmdReceived = false;        // MODIFIED
     
@@ -182,6 +183,10 @@ bool I2C1_CommandReceived(void){
     return cmdReceived;
 }
 
+bool I2C1_TxBufferEmpty(void){
+    return (txCnt != 0);
+}
+
 void I2C1_GetCommand(uint8_t * cmd){
     *cmd = cmdByte;
     cmdReceived = false;
@@ -193,7 +198,7 @@ void I2C1_GetCommandData(uint8_t * data, uint8_t * len){
 }
 
 void I2C1_SetTransmitData(uint8_t * data, uint8_t len){
-    txCnt = 0;
+    //txCnt = 0;
     while((txCnt < len) && (txCnt < I2C1_TX_BUF_SIZE)){
         i2c1_tx_buffer[txCnt] = data[txCnt]; //MODIFIED
         txCnt++;

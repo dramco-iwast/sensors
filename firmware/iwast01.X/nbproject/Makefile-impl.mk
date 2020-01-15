@@ -27,11 +27,11 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 PROJECTNAME=iwast01.X
 
 # Active Configuration
-DEFAULTCONF=default
+DEFAULTCONF=soundlevel
 CONF=${DEFAULTCONF}
 
 # All Configurations
-ALLCONFS=default sound_level 
+ALLCONFS=default soundlevel 
 
 
 # build
@@ -46,14 +46,14 @@ ALLCONFS=default sound_level
 # clobber
 .clobber-impl: .clobber-pre .depcheck-impl
 	    ${MAKE} SUBPROJECTS=${SUBPROJECTS} CONF=default clean
-	    ${MAKE} SUBPROJECTS=${SUBPROJECTS} CONF=sound_level clean
+	    ${MAKE} SUBPROJECTS=${SUBPROJECTS} CONF=soundlevel clean
 
 
 
 # all
 .all-impl: .all-pre .depcheck-impl
 	    ${MAKE} SUBPROJECTS=${SUBPROJECTS} CONF=default build
-	    ${MAKE} SUBPROJECTS=${SUBPROJECTS} CONF=sound_level build
+	    ${MAKE} SUBPROJECTS=${SUBPROJECTS} CONF=soundlevel build
 
 
 

@@ -22,7 +22,7 @@
                     <type>2</type>
                 </confElem>
                 <confElem>
-                    <name>sound_level</name>
+                    <name>soundlevel</name>
                     <type>2</type>
                 </confElem>
             </confList>

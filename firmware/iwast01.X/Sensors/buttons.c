@@ -2,10 +2,15 @@
 #include "../mcc_generated_files/mcc.h"
 #include "../mcc_generated_files/pin_manager.h"
 
+#ifdef SENSOR_TYPE
+#if (SENSOR_TYPE == BUTTONS)
+#warning "Compiling for buttons"
 
 /* local constants ************************************************************/
 
 //
+
+void generateInt(void);
 
 /* function prototypes ********************************************************/
 
@@ -18,7 +23,7 @@ void LSW4_Pressed(void);
 /* local variables ************************************************************/
 
 // variables that control the sampling
-__persistent uint8_t buttonsMeasurementData;
+__persistent uint8_t buttonsMeasurementData[3 * M_NR];
 
 bool swState1 = false;
 bool swState2 = false;
@@ -28,7 +33,9 @@ bool swState4 = false;
 /* functions ******************************************************************/
 // Interrupt handler switches 
 void Buttons_Init(void){
-    buttonsMeasurementData = 0x00;
+    buttonsMeasurementData[0] = 0x01;
+    buttonsMeasurementData[1] = 0x00;
+    buttonsMeasurementData[2] = 0x00;
     
     Led0_SetDigitalOutput();
     Led0_SetHigh(); // LED OFF
@@ -104,18 +111,18 @@ void Buttons_ProcessButtonPress(void){
     
     //buttonsMeasurementData= 0x00;
     if(swState1){
-       buttonsMeasurementData |= 0x01;
+       buttonsMeasurementData[2] |= 0x01;
     }
     if(swState2){
-       buttonsMeasurementData |= 0x02;
+       buttonsMeasurementData[2] |= 0x02;
     }
     if(swState3){
-       buttonsMeasurementData |= 0x04;
+       buttonsMeasurementData[2] |= 0x04;
     }
     if(swState4){
-       buttonsMeasurementData |= 0x08;
+       buttonsMeasurementData[2] |= 0x08;
     }
-    if(buttonsMeasurementData){
+    if(buttonsMeasurementData[2]){
         generateInt();
     }
 }
@@ -177,10 +184,11 @@ void Buttons_Loop(void){
 }
 
 void Buttons_GetData(uint8_t * data, uint8_t  * length){
-    *length = 2;
-    data[0] = 0x00;
-    data[1] = buttonsMeasurementData;
-    buttonsMeasurementData = 0x00;
+    *length = M_NR*3;
+    data[0] = buttonsMeasurementData[0];
+    data[1] = buttonsMeasurementData[1];
+    data[2] = buttonsMeasurementData[2];
+    buttonsMeasurementData[2] = 0x00;
 }
 
 void Buttons_SetThreshold(uint8_t metric, uint8_t * thresholds){
@@ -207,3 +215,13 @@ void LSW4_Pressed(void){
     swState4 = true;
     Buttons_ProcessButtonPress();
 }
+
+// Toggle the interrupt line
+void generateInt(void){
+    READY_SetLow();
+    __delay_ms(1);                          
+    READY_SetHigh();
+}
+
+#endif
+#endif

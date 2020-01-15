@@ -30,10 +30,10 @@
 
 #define BLINK_ACTIVE_LED
 
-#define TYPE_BYTE   0x21
+#define TYPE_BYTE   SOUND_LEVEL
 #define M_NR        0x01
 
-#define SLAVE_ADDRESS 0x65
+#define SLAVE_ADDRESS I2C_ADDRESS
 
 // get/set powerMic aliases
 #define powerMic_TRIS                 TRISCbits.TRISC0
@@ -54,6 +54,26 @@
 #define powerMic_SetOpenDrain()       do { ODCONCbits.ODCC0 = 1; } while(0)
 #define powerMic_SetAnalogMode()      do { ANSELCbits.ANSC0 = 1; } while(0)
 #define powerMic_SetDigitalMode()     do { ANSELCbits.ANSC0 = 0; } while(0)
+
+// get/set powerMic aliases
+#define nWakeMic_TRIS                 TRISCbits.TRISC3
+#define nWakeMic_LAT                  LATCbits.LATC3
+#define nWakeMic_PORT                 PORTCbits.RC3
+#define nWakeMic_WPU                  WPUCbits.WPUC3
+#define nWakeMic_OD                   ODCONCbits.ODCC3
+#define nWakeMic_ANS                  ANSELCbits.ANSC3
+#define nWakeMic_SetHigh()            do { LATCbits.LATC3 = 1; } while(0)
+#define nWakeMic_SetLow()             do { LATCbits.LATC3 = 0; } while(0)
+#define nWakeMic_Toggle()             do { LATCbits.LATC3 = ~LATCbits.LATC3; } while(0)
+#define nWakeMic_GetValue()           PORTCbits.RC3
+#define nWakeMic_SetDigitalInput()    do { TRISCbits.TRISC3 = 1; } while(0)
+#define nWakeMic_SetDigitalOutput()   do { TRISCbits.TRISC3 = 0; } while(0)
+#define nWakeMic_SetPullup()          do { WPUCbits.WPUC3 = 1; } while(0)
+#define nWakeMic_ResetPullup()        do { WPUCbits.WPUC3 = 0; } while(0)
+#define nWakeMic_SetPushPull()        do { ODCONCbits.ODCC3 = 0; } while(0)
+#define nWakeMic_SetOpenDrain()       do { ODCONCbits.ODCC3 = 1; } while(0)
+#define nWakeMic_SetAnalogMode()      do { ANSELCbits.ANSC3 = 1; } while(0)
+#define nWakeMic_SetDigitalMode()     do { ANSELCbits.ANSC3 = 0; } while(0)
 
 // get/set READY aliases
 #define READY_TRIS                 TRISCbits.TRISC7

@@ -24,6 +24,10 @@
 #include "../mcc_generated_files/mcc.h"
 #include "../mcc_generated_files/adcc.h"
 
+#ifdef SENSOR_TYPE
+#if (SENSOR_TYPE == SOUND_LEVEL)
+#warning "Compiling for Sound_level sensor"
+
 /* local constants ************************************************************/
 
 #define SAMPLES         400 // amount of samples
@@ -58,21 +62,26 @@ void SoundLevel_LedOff(void);
 // 'active' led toggle
 void SoundLevel_LedToggle(void);
 
+void generateInt(void);
+void measure(void);
+
 /* local variables ************************************************************/
 
 // variables used during the sampling
-__persistent float presSumSquared;
+float presSumSquared;
+float adcScaler;
 bool measurementRunning = false;
-uint16_t sampleCounter = 0;         
-bool autoStart = false;
+uint16_t sampleCounter = 0;   
+
+volatile uint8_t measurementData[3];
+uint8_t dLen = 0;
 
 // buffer that holds the maxValue ( msb | lsb)
-__persistent float presSumSquared;
-__persistent uint8_t measurementData[2];
+uint8_t thresholdEnabled = 0;
+uint16_t thresholdLevel = 0;
 
-// variables for threshold-based operation
-__persistent uint8_t thresholdEnabled = 0;
-__persistent uint16_t thresholdLevel = 0;
+bool polledMeasurement = false;
+bool overThreshold = false;
 
 /* Sensor API functions *******************************************************/
 
@@ -83,6 +92,11 @@ void SoundLevel_Init(void){
     // enable led output
     TRISB &= 0xBF; // RB6 = output
 #endif
+       
+    nWakeMic_SetDigitalOutput();
+    powerMic_SetDigitalOutput();
+    
+    adcScaler = V_SUPPLY / (ADC_SCALE * SENSITIVITY * AMP_FACTOR);
     
     // initialize ADC
     ADCC_Initialize();
@@ -94,7 +108,7 @@ void SoundLevel_Init(void){
     WDTCON1 = 0x07; // LFINTOSC, window 100%
     
     // WWDT reset (while awake)
-    if(STATUSbits.nTO == 0){
+    /*if(STATUSbits.nTO == 0){
         WDTCON0bits.SWDTEN = 1; //start watchdog -> results in reset after 1 s
         autoStart = true;
         SoundLevel_Measure();
@@ -102,62 +116,47 @@ void SoundLevel_Init(void){
     else{
         thresholdEnabled = 0;
         WDTCON0bits.SWDTEN = 0;
-    }
+    }*/
 }
 
 /* Measure the sound level (MCU remains active)
  */
 void SoundLevel_Measure(){
-    CLRWDT();               // feed the dog
-    SoundLevel_LedOn();     // show 'active'
-    
-    // initialize control variables
-    measurementRunning = true;
-    sampleCounter = 0;
-    presSumSquared = 0;
-    
-    // power-on microphone and amplifier circuit
-    powerMic_SetHigh();
-    __delay_ms(100);         // wait until stable
-    SoundLevel_StartADC();  // ADC conversion will be handled by 
-                            // SoundLevel_GetSample callback
-    
-    // wait until measurement is complete
-    while(measurementRunning);
-    
-    // stop conversions and power-down analog circuitry
-    SoundLevel_StopADC();
-    powerMic_SetLow();
-    
-    // prepare measurement for transmission
-    SoundLevel_PrepareData();
+    polledMeasurement = true;
 }
 
 /* does sensor loop stuff
  */
 void SoundLevel_Loop(void){
-    /* go to sleep
-     * possible wake-up sources in this case:
-     *  - i2c clock line goes active
-     *  - watchdog timer overflow
-     */
-    SLEEP();
-    NOP();
-
+    bool startMeasurement = false;
     // watchdog timer overflow has occurred while sleeping
     if(STATUSbits.nTO == 0){
         WDTCON0bits.SWDTEN = 1; //start watchdog -> results in reset after 1 s
-        autoStart = true;
-        SoundLevel_Measure();
+        startMeasurement = true;
+    }
+    
+    if(startMeasurement || polledMeasurement){
+        measure();
+    }
+    else{
+        /* go to sleep
+         * possible wake-up sources in this case:
+         *  - i2c clock line goes active
+         *  - watchdog timer overflow
+         */
+        SLEEP();
+        NOP();
     }
 }
 
 /* copy data to buffer
  */
 void SoundLevel_GetData(uint8_t * data, uint8_t * length){
-    *length = 2; // this is fixed
+    *length = 3; // this is fixed (M_NR = 1)
     data[0] = measurementData[0];
     data[1] = measurementData[1]; 
+    data[2] = measurementData[2];
+    //data = measurementData;
 }
 
 /* Sensor 'local' functions ***************************************************/
@@ -179,31 +178,38 @@ void SoundLevel_SetThreshold(uint8_t metric, uint8_t * thresholdData){
  */
 void SoundLevel_PrepareData(){
     float presAvgSquared = presSumSquared/SAMPLES;
-    float dBZ = 10*log10(presAvgSquared/(REF_PRESSURE * REF_PRESSURE));
+    float dBZ = 10 * log10(presAvgSquared/(REF_PRESSURE * REF_PRESSURE));
     
     if(dBZ > DBZ_MAX){
         dBZ = DBZ_MAX;
     }
 
-    uint16_t dataToSend = (uint16_t) round(SCALE_FACTOR * dBZ);
+    uint16_t dataToSend = (uint16_t)(round(dBZ * SCALE_FACTOR));
+    //uint16_t dataToSend = 0x1234;
     
-    measurementData[0] = dataToSend>>8;
-    measurementData[1] = dataToSend;
+    measurementData[0] = 0x01;
+    measurementData[1] = (uint8_t)(dataToSend>>8);
+    measurementData[2] = (uint8_t)(dataToSend);
+    dLen = 3 * M_NR;
     
-    // auto start will be true when threshold-based detection is enabled
-    // (needs periodic measurements)
-    if(autoStart){ 
-        autoStart = false;
-        // only generate interrupt when maxiValue exceeds thresholdLevel
-        if(dataToSend > thresholdLevel){
-            generateInt();
-        }
-    }
-    // always generate interrupt because measurement has been started on
-    // the motherboard's request
-    else{
+    // notify motherboard
+    if(polledMeasurement){
+        polledMeasurement = false;
         generateInt();
     }
+    else{
+        // only generate interrupt when maxiValue exceeds thresholdLevel
+        if(dataToSend > thresholdLevel){
+            if(!overThreshold){
+                overThreshold = true;
+                generateInt();
+            }
+        }
+        overThreshold = false;
+        // make sure watchdog is running again
+        WDTCON0bits.SWDTEN = 1;
+    }
+
     
     // show not 'active'
     SoundLevel_LedOff();
@@ -211,12 +217,14 @@ void SoundLevel_PrepareData(){
 
 // This function is called when an ADC-conversion has completed
 void SoundLevel_GetSample(){
-    uint16_t sample = ADCC_GetConversionResult();
+    uint16_t sample = ADCC_GetConversionResult();    
     
-    // Check whether the new value is bigger than the previous maximum value
-    float sampleToVoltage = (V_SUPPLY * sample)/(ADC_SCALE);
-    float voltageToPressure = sampleToVoltage/(SENSITIVITY * AMP_FACTOR);
-    presSumSquared = presSumSquared + (voltageToPressure*voltageToPressure);
+    //float voltageToPressure = sample * adcScaler;
+    float sampleToVoltage = (3.3*sample)/(4095);                                      //Calculate the equivalent voltage value at output of mic
+    float voltageToPressure = sampleToVoltage/(0.01258925 * 44);
+    
+    presSumSquared = presSumSquared + (voltageToPressure * voltageToPressure);
+    //presSumSquared = presSumSquared + (sample*sample)
     
     sampleCounter++;
     if(sampleCounter>SAMPLES-1){ // we've taken enough samples
@@ -256,3 +264,42 @@ void SoundLevel_LedToggle(void){
     LATB ^= 0x40;
 #endif
 }
+
+// Toggle the interrupt line
+void generateInt(void){
+    READY_SetLow();
+    __delay_ms(1);                          
+    READY_SetHigh();
+}
+
+void measure(void){
+    CLRWDT();               // feed the dog
+    SoundLevel_LedOn();     // show 'active'
+    
+    // initialize control variables
+    measurementRunning = true;
+    sampleCounter = 0;
+    presSumSquared = 0;
+    
+    // power-on microphone and amplifier circuit
+    powerMic_SetHigh();
+    nWakeMic_SetLow();
+    __delay_ms(100);         // wait until stable
+    SoundLevel_StartADC();  // ADC conversion will be handled by 
+                            // SoundLevel_GetSample callback
+    
+    // wait until measurement is complete
+    while(measurementRunning);
+    
+    // stop conversions and power-down analog circuitry
+    SoundLevel_StopADC();
+    nWakeMic_SetHigh();
+    powerMic_SetLow();
+    
+    
+    // prepare measurement for transmission
+    SoundLevel_PrepareData();
+}
+
+#endif
+#endif

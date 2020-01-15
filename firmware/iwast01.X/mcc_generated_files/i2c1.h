@@ -151,6 +151,7 @@ bool I2C1_CommandReceived(void);
 void I2C1_GetCommand(uint8_t * cmd);
 void I2C1_GetCommandData(uint8_t * data, uint8_t * len);
 void I2C1_SetTransmitData(uint8_t * data, uint8_t len);
+bool I2C1_TxBufferEmpty(void);
 
 #ifdef __cplusplus  // Provide C++ Compatibility
 

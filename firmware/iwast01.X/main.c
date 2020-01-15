@@ -30,8 +30,21 @@
 #include "mcc_generated_files/pin_manager.h"
 
 // include sensor
-#include "Sensors/sound_level.h"
-//#include "Sensors/buttons.h"
+#ifdef SENSOR_TYPE
+    #if (SENSOR_TYPE == BUTTONS)
+        #include "Sensors/buttons.h"
+    #elif (SENSOR_TYPE == SOUND_LEVEL)
+        #include "Sensors/sound_level.h"
+    #elif (SENSOR_TYPE == BME680)
+        #include "Sensors/bme680_air_quality.h"
+    #else
+        #warning "Make sure your build settings in global.h are correct."
+        #error "Unsupported sensor type."
+    #endif
+#else
+    #warning "Make sure your build settings in global.h are correct."
+    #error "Sensor type is undefined."
+#endif
 
 Device_API_t sensorAPI = SENSOR_API;
 
@@ -54,6 +67,7 @@ Device_API_t sensorAPI = SENSOR_API;
 #endif
 
 uint8_t mData[2 * M_NR];
+//uint8_t * mData;
 uint8_t mDataLength;
 
 void toggleInt(void);
@@ -86,6 +100,8 @@ void main(void)
     
     while(1){
         sensorAPI.Loop();
+        sensorAPI.GetData(mData, &mDataLength);
+        I2C1_SetTransmitData(mData, mDataLength);
         
         // I2C Slave operation (respond to commands)
         if(I2C1_CommandReceived()){
@@ -122,8 +138,9 @@ void main(void)
                 
                 // GET DATA
                 case CMD_GET_M_DATA:{ // master requests measurement data -> send data
-                    sensorAPI.GetData(mData, &mDataLength);
-                    I2C1_SetTransmitData(mData, mDataLength);
+                    // wait until data are sent
+                    while(!I2C1_TxBufferEmpty());
+                    __delay_ms(1);
                 } break;
                 
                 // INT TOGGLE
@@ -152,13 +169,6 @@ void main(void)
 
 void toggleInt(void){
     READY_Toggle();
-}
-
-// Toggle the interrupt line
-void generateInt(void){
-    READY_SetLow();
-    __delay_ms(1);                          
-    READY_SetHigh();
 }
 
 /**
