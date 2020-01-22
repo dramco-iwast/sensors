@@ -23,7 +23,7 @@ void LSW4_Pressed(void);
 /* local variables ************************************************************/
 
 // variables that control the sampling
-__persistent uint8_t buttonsMeasurementData[3 * M_NR];
+uint8_t buttonsMeasurementData[2 * M_NR];
 
 bool swState1 = false;
 bool swState2 = false;
@@ -33,9 +33,8 @@ bool swState4 = false;
 /* functions ******************************************************************/
 // Interrupt handler switches 
 void Buttons_Init(void){
-    buttonsMeasurementData[0] = 0x01;
+    buttonsMeasurementData[0] = 0x00;
     buttonsMeasurementData[1] = 0x00;
-    buttonsMeasurementData[2] = 0x00;
     
     Led0_SetDigitalOutput();
     Led0_SetHigh(); // LED OFF
@@ -109,21 +108,18 @@ void Buttons_ProcessButtonPress(void){
     // Disable interrupts
     PIE0bits.IOCIE = 0; 
     
-    //buttonsMeasurementData= 0x00;
+    buttonsMeasurementData[1]= 0x00;
     if(swState1){
-       buttonsMeasurementData[2] |= 0x01;
+       buttonsMeasurementData[1] |= 0x01;
     }
     if(swState2){
-       buttonsMeasurementData[2] |= 0x02;
+       buttonsMeasurementData[1] |= 0x02;
     }
     if(swState3){
-       buttonsMeasurementData[2] |= 0x04;
+       buttonsMeasurementData[1] |= 0x04;
     }
     if(swState4){
-       buttonsMeasurementData[2] |= 0x08;
-    }
-    if(buttonsMeasurementData[2]){
-        generateInt();
+       buttonsMeasurementData[1] |= 0x08;
     }
 }
 
@@ -174,6 +170,8 @@ void Buttons_Loop(void){
         swState2 = false;
         swState3 = false;
         swState4 = false;
+        
+        generateInt();
     }
     // Enable interrupts
     IOCCF = 0x00; // clear all interrupts that might have occurred during animation
@@ -184,11 +182,9 @@ void Buttons_Loop(void){
 }
 
 void Buttons_GetData(uint8_t * data, uint8_t  * length){
-    *length = M_NR*3;
+    *length = 2;
     data[0] = buttonsMeasurementData[0];
     data[1] = buttonsMeasurementData[1];
-    data[2] = buttonsMeasurementData[2];
-    buttonsMeasurementData[2] = 0x00;
 }
 
 void Buttons_SetThreshold(uint8_t metric, uint8_t * thresholds){

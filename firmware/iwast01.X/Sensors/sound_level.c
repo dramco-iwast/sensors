@@ -70,14 +70,15 @@ void measure(void);
 // variables used during the sampling
 float presSumSquared;
 float adcScaler;
-bool measurementRunning = false;
+bool measurementRunning;
+bool sampling = false;
 uint16_t sampleCounter = 0;   
 
-volatile uint8_t measurementData[3];
+volatile uint8_t measurementData[2];
 uint8_t dLen = 0;
 
 // buffer that holds the maxValue ( msb | lsb)
-uint8_t thresholdEnabled = 0;
+__persistent uint8_t thresholdEnabled;
 uint16_t thresholdLevel = 0;
 
 bool polledMeasurement = false;
@@ -95,6 +96,8 @@ void SoundLevel_Init(void){
        
     nWakeMic_SetDigitalOutput();
     powerMic_SetDigitalOutput();
+    powerMic_SetLow();
+    nWakeMic_SetLow();
     
     adcScaler = V_SUPPLY / (ADC_SCALE * SENSITIVITY * AMP_FACTOR);
     
@@ -107,16 +110,16 @@ void SoundLevel_Init(void){
     WDTCON0 = 0x14; // 1 second period
     WDTCON1 = 0x07; // LFINTOSC, window 100%
     
-    // WWDT reset (while awake)
-    /*if(STATUSbits.nTO == 0){
-        WDTCON0bits.SWDTEN = 1; //start watchdog -> results in reset after 1 s
-        autoStart = true;
-        SoundLevel_Measure();
-    }
-    else{
+    // No WWDT reset
+    if(STATUSbits.nTO){ // we assume this occurs only once
         thresholdEnabled = 0;
-        WDTCON0bits.SWDTEN = 0;
-    }*/
+    }
+    // else
+    // thresholdEnbled is a persistent variable and will keep it's previous value
+    
+    // start watchdog
+    CLRWDT();
+    WDTCON0bits.SWDTEN = 1;
 }
 
 /* Measure the sound level (MCU remains active)
@@ -132,11 +135,14 @@ void SoundLevel_Loop(void){
     // watchdog timer overflow has occurred while sleeping
     if(STATUSbits.nTO == 0){
         WDTCON0bits.SWDTEN = 1; //start watchdog -> results in reset after 1 s
-        startMeasurement = true;
+        if(!measurementRunning && thresholdEnabled) startMeasurement = true;
     }
-    
+    CLRWDT();
     if(startMeasurement || polledMeasurement){
+        measurementRunning = true;
         measure();
+        polledMeasurement = false;
+        measurementRunning = false;
     }
     else{
         /* go to sleep
@@ -152,10 +158,9 @@ void SoundLevel_Loop(void){
 /* copy data to buffer
  */
 void SoundLevel_GetData(uint8_t * data, uint8_t * length){
-    *length = 3; // this is fixed (M_NR = 1)
+    *length = 2; // this is fixed (M_NR = 1)
     data[0] = measurementData[0];
-    data[1] = measurementData[1]; 
-    data[2] = measurementData[2];
+    data[1] = measurementData[1];
     //data = measurementData;
 }
 
@@ -187,14 +192,11 @@ void SoundLevel_PrepareData(){
     uint16_t dataToSend = (uint16_t)(round(dBZ * SCALE_FACTOR));
     //uint16_t dataToSend = 0x1234;
     
-    measurementData[0] = 0x01;
-    measurementData[1] = (uint8_t)(dataToSend>>8);
-    measurementData[2] = (uint8_t)(dataToSend);
-    dLen = 3 * M_NR;
+    measurementData[0] = (uint8_t)(dataToSend>>8);
+    measurementData[1] = (uint8_t)(dataToSend);
     
     // notify motherboard
     if(polledMeasurement){
-        polledMeasurement = false;
         generateInt();
     }
     else{
@@ -228,7 +230,7 @@ void SoundLevel_GetSample(){
     
     sampleCounter++;
     if(sampleCounter>SAMPLES-1){ // we've taken enough samples
-        measurementRunning = false;
+        sampling = false;
     }   
 }
 
@@ -268,7 +270,7 @@ void SoundLevel_LedToggle(void){
 // Toggle the interrupt line
 void generateInt(void){
     READY_SetLow();
-    __delay_ms(1);                          
+    __delay_ms(5);                          
     READY_SetHigh();
 }
 
@@ -277,23 +279,21 @@ void measure(void){
     SoundLevel_LedOn();     // show 'active'
     
     // initialize control variables
-    measurementRunning = true;
+    sampling = true;
     sampleCounter = 0;
     presSumSquared = 0;
     
     // power-on microphone and amplifier circuit
     powerMic_SetHigh();
-    nWakeMic_SetLow();
     __delay_ms(100);         // wait until stable
     SoundLevel_StartADC();  // ADC conversion will be handled by 
                             // SoundLevel_GetSample callback
     
     // wait until measurement is complete
-    while(measurementRunning);
+    while(sampling) CLRWDT();
     
     // stop conversions and power-down analog circuitry
     SoundLevel_StopADC();
-    nWakeMic_SetHigh();
     powerMic_SetLow();
     
     

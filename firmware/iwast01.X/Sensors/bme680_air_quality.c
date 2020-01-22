@@ -23,22 +23,30 @@ uint8_t measurementData[D_LEN] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
 #define METRIC_HUMIDITY     3
 // threshold settings for each metric
 // temperature
-__persistent uint8_t tempTreshEnabled = 0;
-__persistent uint16_t tempTLH = 0;
-__persistent uint16_t tempTLL = 0;
+ uint8_t tempTreshEnabled = 0;
+ uint16_t tempTLH = 0;
+ uint16_t tempTLL = 0;
+ bool tempTLHExceeded = false;
+ bool tempTLLExceeded = false;
 // atm. pressure
-__persistent uint8_t presTreshEnabled = 0;
-__persistent uint16_t presTLH = 0;
-__persistent uint16_t presTLL = 0;
+ uint8_t presTreshEnabled = 0;
+ uint16_t presTLH = 0;
+ uint16_t presTLL = 0;
+ bool presTLHExceeded = false;
+ bool presTLLExceeded = false;
 // air quality index
-__persistent uint8_t iaqTreshEnabled = 0;
-__persistent uint16_t iaqTLH = 0;
-__persistent uint16_t iaqTLL = 0;
+ uint8_t iaqTreshEnabled = 0;
+ uint16_t iaqTLH = 0;
+ uint16_t iaqTLL = 0;
+ bool iaqTLHExceeded = false;
+ bool iaqTLLExceeded = false;
 // humidity
-__persistent uint8_t humiTreshEnabled = 0;
-__persistent uint16_t humiTLH = 0;
-__persistent uint16_t humiTLL = 0;
-
+ uint8_t humiTreshEnabled = 0;
+ uint16_t humiTLH = 0;
+ uint16_t humiTLL = 0;
+ bool humiTLHExceeded = false;
+ bool humiTLLExceeded = false;
+ 
 uint8_t rslt;
 BME680_t gas_sensor;
 
@@ -445,40 +453,88 @@ void measure(void){
         // check temperature thresholds
         if(tempTreshEnabled){
             if(temp16 < tempTLL){
-                thresholdExceeded = true;
+                if(!tempTLLExceeded){
+                    thresholdExceeded = true;
+                    tempTLLExceeded = true;
+                }
+            }
+            else{
+                tempTLLExceeded = false;
             }
             if(temp16 > tempTLH){
-                thresholdExceeded = true;
+                if(!tempTLHExceeded){
+                    thresholdExceeded = true;
+                    tempTLHExceeded = true;
+                }
+            }
+            else{
+                tempTLHExceeded = false;
             }
         }
         
         // check pressure thresholds
         if(presTreshEnabled){
             if(pres16 < presTLL){
-                thresholdExceeded = true;
+                if(!presTLLExceeded){
+                    thresholdExceeded = true;
+                    presTLLExceeded = true;
+                }
+            }
+            else{
+                presTLLExceeded = false;
             }
             if(pres16 > presTLH){
-                thresholdExceeded = true;
+                if(!presTLHExceeded){
+                    thresholdExceeded = true;
+                    presTLHExceeded = true;
+                }
+            }
+            else{
+                presTLHExceeded = false;
             }
         }
         
         // check iaq thresholds
         if(iaqTreshEnabled){
             if(iaq16 < iaqTLL){
-                thresholdExceeded = true;
+                if(!iaqTLLExceeded){
+                    thresholdExceeded = true;
+                    iaqTLLExceeded = true;
+                }
+            }
+            else{
+                iaqTLLExceeded = false;
             }
             if(iaq16 > iaqTLH){
-                thresholdExceeded = true;
+                if(!iaqTLHExceeded){
+                    thresholdExceeded = true;
+                    iaqTLHExceeded = true;
+                }
+            }
+            else{
+                iaqTLHExceeded = false;
             }
         }
         
         // check humidity thresholds
         if(humiTreshEnabled){
             if(humi16 < humiTLL){
-                thresholdExceeded = true;
+                if(!humiTLLExceeded){
+                    thresholdExceeded = true;
+                    humiTLLExceeded = true;
+                }
+            }
+            else{
+                humiTLLExceeded = false;
             }
             if(humi16 > humiTLH){
-                thresholdExceeded = true;
+                if(!humiTLHExceeded){
+                    thresholdExceeded = true;
+                    humiTLHExceeded = true;
+                }
+            }
+            else{
+                humiTLHExceeded = false;
             }
         }
         

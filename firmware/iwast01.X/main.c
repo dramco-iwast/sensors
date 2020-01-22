@@ -139,8 +139,9 @@ void main(void)
                 // GET DATA
                 case CMD_GET_M_DATA:{ // master requests measurement data -> send data
                     // wait until data are sent
-                    while(!I2C1_TxBufferEmpty());
-                    __delay_ms(1);
+                    while(!I2C1_TxBufferEmpty()){
+                        __delay_ms(1);
+                    }
                 } break;
                 
                 // INT TOGGLE
