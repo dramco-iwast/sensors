@@ -207,7 +207,9 @@ void SoundLevel_PrepareData(){
                 generateInt();
             }
         }
-        overThreshold = false;
+        else{
+            overThreshold = false;
+        }
         // make sure watchdog is running again
         WDTCON0bits.SWDTEN = 1;
     }
