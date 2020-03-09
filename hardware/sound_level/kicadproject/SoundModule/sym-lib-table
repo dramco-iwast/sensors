@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name SoundModule-rescue)(type Legacy)(uri ${KIPRJMOD}/SoundModule-rescue.lib)(options "")(descr ""))
+)
