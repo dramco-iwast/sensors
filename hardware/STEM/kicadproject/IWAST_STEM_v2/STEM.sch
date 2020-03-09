@@ -1,0 +1,830 @@
+EESchema Schematic File Version 4
+LIBS:STEM-cache
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title "IWAST - STEM"
+Date "2019-10-12"
+Rev ""
+Comp "DRAMCO"
+Comment1 "Sarah Goossens"
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L PIC16f18446:PIC16F18446-I_SS IC1
+U 1 1 5D99A1C8
+P 3600 3450
+F 0 "IC1" H 4550 3715 50  0000 C CNN
+F 1 "PIC16F18446-I_SS" H 4550 3624 50  0000 C CNN
+F 2 "PIC16f18446:SOP65P780X200-20N" H 5350 3550 50  0001 L CNN
+F 3 "https://componentsearchengine.com/Datasheets/1/PIC16F18446-I_SS.pdf" H 5350 3450 50  0001 L CNN
+F 4 "14/20 PIN PULL FEATURED, LOW PIN COUNT MICROCONTROLLERS WITH XLP" H 5350 3350 50  0001 L CNN "Description"
+F 5 "2" H 5350 3250 50  0001 L CNN "Height"
+F 6 "579-PIC16F18446-I/SS" H 5350 3150 50  0001 L CNN "Mouser Part Number"
+F 7 "https://www.mouser.com/Search/Refine.aspx?Keyword=579-PIC16F18446-I%2FSS" H 5350 3050 50  0001 L CNN "Mouser Price/Stock"
+F 8 "Microchip" H 5350 2950 50  0001 L CNN "Manufacturer_Name"
+F 9 "PIC16F18446-I/SS" H 5350 2850 50  0001 L CNN "Manufacturer_Part_Number"
+	1    3600 3450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C1
+U 1 1 5D9A019C
+P 4500 2900
+F 0 "C1" V 4752 2900 50  0000 C CNN
+F 1 "100n" V 4661 2900 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 4538 2750 50  0001 C CNN
+F 3 "~" H 4500 2900 50  0001 C CNN
+	1    4500 2900
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	3600 3450 3600 2900
+Wire Wire Line
+	3600 2900 4350 2900
+Wire Wire Line
+	4650 2900 5500 2900
+Wire Wire Line
+	5500 2900 5500 3450
+$Comp
+L power:GND #PWR0105
+U 1 1 5D9A2095
+P 5750 2900
+F 0 "#PWR0105" H 5750 2650 50  0001 C CNN
+F 1 "GND" H 5755 2727 50  0000 C CNN
+F 2 "" H 5750 2900 50  0001 C CNN
+F 3 "" H 5750 2900 50  0001 C CNN
+	1    5750 2900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5500 2900 5750 2900
+Connection ~ 5500 2900
+$Comp
+L power:+3.3V #PWR0106
+U 1 1 5D9A293E
+P 3350 2900
+F 0 "#PWR0106" H 3350 2750 50  0001 C CNN
+F 1 "+3.3V" H 3365 3073 50  0000 C CNN
+F 2 "" H 3350 2900 50  0001 C CNN
+F 3 "" H 3350 2900 50  0001 C CNN
+	1    3350 2900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3350 2900 3600 2900
+Connection ~ 3600 2900
+$Comp
+L Device:R R1
+U 1 1 5D9A2F97
+P 3350 3350
+F 0 "R1" H 3420 3396 50  0000 L CNN
+F 1 "10k" H 3420 3305 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 3280 3350 50  0001 C CNN
+F 3 "~" H 3350 3350 50  0001 C CNN
+	1    3350 3350
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR0107
+U 1 1 5D9A3F6F
+P 3350 3150
+F 0 "#PWR0107" H 3350 3000 50  0001 C CNN
+F 1 "+3.3V" H 3365 3323 50  0000 C CNN
+F 2 "" H 3350 3150 50  0001 C CNN
+F 3 "" H 3350 3150 50  0001 C CNN
+	1    3350 3150
+	1    0    0    -1  
+$EndComp
+Entry Wire Line
+	2850 3550 2950 3650
+Entry Wire Line
+	2850 3650 2950 3750
+Entry Wire Line
+	2850 3750 2950 3850
+Entry Wire Line
+	2850 3850 2950 3950
+Entry Wire Line
+	2850 3950 2950 4050
+Entry Wire Line
+	2850 4050 2950 4150
+Entry Wire Line
+	2850 4150 2950 4250
+Entry Wire Line
+	2850 4250 2950 4350
+Text Label 2950 3750 0    50   ~ 0
+MCLR
+Text Label 2950 4250 0    50   ~ 0
+LSW4
+Text Label 2950 4350 0    50   ~ 0
+SCL
+Entry Wire Line
+	6200 3550 6300 3450
+Entry Wire Line
+	6200 3650 6300 3550
+Entry Wire Line
+	6200 3750 6300 3650
+Entry Wire Line
+	6200 3850 6300 3750
+Entry Wire Line
+	6200 3950 6300 3850
+Entry Wire Line
+	6200 4050 6300 3950
+Entry Wire Line
+	6200 4250 6300 4150
+Wire Wire Line
+	5500 3550 6200 3550
+Wire Wire Line
+	5500 3650 6200 3650
+Wire Wire Line
+	5500 3750 6200 3750
+Wire Wire Line
+	5500 3850 6200 3850
+Wire Wire Line
+	5500 3950 6200 3950
+Wire Wire Line
+	5500 4050 6200 4050
+Wire Wire Line
+	5500 4250 6200 4250
+Text Label 5500 3550 0    50   ~ 0
+ICSPDAT
+Text Label 5500 3650 0    50   ~ 0
+ICSPCLK
+Text Label 5500 3750 0    50   ~ 0
+LSW1
+Text Label 5500 4050 0    50   ~ 0
+SW1
+Text Label 5500 4250 0    50   ~ 0
+SDA
+Wire Wire Line
+	3350 3150 3350 3200
+Wire Wire Line
+	2950 3650 3600 3650
+Wire Wire Line
+	2950 3750 3350 3750
+Wire Wire Line
+	2950 4150 3600 4150
+Wire Wire Line
+	2950 4250 3600 4250
+Wire Wire Line
+	2950 4350 3600 4350
+Wire Wire Line
+	3350 3500 3350 3750
+Connection ~ 3350 3750
+Wire Wire Line
+	3350 3750 3600 3750
+Text Label 5500 3950 0    50   ~ 0
+RC1
+$Comp
+L power:+3.3V #PWR0108
+U 1 1 5D9C7D38
+P 7150 2700
+F 0 "#PWR0108" H 7150 2550 50  0001 C CNN
+F 1 "+3.3V" H 7165 2873 50  0000 C CNN
+F 2 "" H 7150 2700 50  0001 C CNN
+F 3 "" H 7150 2700 50  0001 C CNN
+	1    7150 2700
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0109
+U 1 1 5D9C82C4
+P 7150 3450
+F 0 "#PWR0109" H 7150 3200 50  0001 C CNN
+F 1 "GND" H 7155 3277 50  0000 C CNN
+F 2 "" H 7150 3450 50  0001 C CNN
+F 3 "" H 7150 3450 50  0001 C CNN
+	1    7150 3450
+	1    0    0    -1  
+$EndComp
+Entry Wire Line
+	6300 3050 6400 3150
+Entry Wire Line
+	6300 3150 6400 3250
+Entry Wire Line
+	6300 3250 6400 3350
+Text Label 6400 3150 0    50   ~ 0
+INT
+Text Label 6400 3250 0    50   ~ 0
+SDA
+Text Label 6400 3350 0    50   ~ 0
+SCL
+Entry Wire Line
+	2750 3800 2850 3700
+Entry Wire Line
+	2750 4100 2850 4000
+Entry Wire Line
+	2750 4200 2850 4100
+Wire Wire Line
+	2100 3800 2750 3800
+Wire Wire Line
+	2100 4100 2750 4100
+Wire Wire Line
+	2100 4200 2750 4200
+NoConn ~ 2100 4300
+Text Label 2100 3800 0    50   ~ 0
+MCLR
+Wire Wire Line
+	2100 3900 2550 3900
+Wire Wire Line
+	2550 3900 2550 3700
+$Comp
+L power:GND #PWR0110
+U 1 1 5D9E42C6
+P 2550 4300
+F 0 "#PWR0110" H 2550 4050 50  0001 C CNN
+F 1 "GND" H 2555 4127 50  0000 C CNN
+F 2 "" H 2550 4300 50  0001 C CNN
+F 3 "" H 2550 4300 50  0001 C CNN
+	1    2550 4300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2100 4000 2550 4000
+Wire Wire Line
+	2550 4000 2550 4300
+Text Label 2100 4100 0    50   ~ 0
+ICSPDAT
+Text Label 2100 4200 0    50   ~ 0
+ICSPCLK
+Wire Wire Line
+	2950 3850 3600 3850
+Wire Wire Line
+	2950 3950 3600 3950
+Wire Wire Line
+	2950 4050 3600 4050
+Text Label 2950 3850 0    50   ~ 0
+LSW2
+Text Label 2950 3950 0    50   ~ 0
+SW3
+Text Label 2950 4150 0    50   ~ 0
+SW4
+Text Label 2950 3650 0    50   ~ 0
+INT
+Text Label 2950 4050 0    50   ~ 0
+LSW3
+Text Label 5500 3850 0    50   ~ 0
+SW2
+$Comp
+L power:+3.3V #PWR0115
+U 1 1 5DA21E38
+P 2550 3700
+F 0 "#PWR0115" H 2550 3550 50  0001 C CNN
+F 1 "+3.3V" H 2565 3873 50  0000 C CNN
+F 2 "" H 2550 3700 50  0001 C CNN
+F 3 "" H 2550 3700 50  0001 C CNN
+	1    2550 3700
+	1    0    0    -1  
+$EndComp
+Text Label 5500 4150 0    50   ~ 0
+RB4
+Text Label 5500 4350 0    50   ~ 0
+RB6
+$Comp
+L Device:R R3
+U 1 1 5DA1E5C2
+P 3500 5100
+F 0 "R3" H 3570 5146 50  0000 L CNN
+F 1 "1k" H 3570 5055 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 3430 5100 50  0001 C CNN
+F 3 "~" H 3500 5100 50  0001 C CNN
+	1    3500 5100
+	1    0    0    -1  
+$EndComp
+Entry Wire Line
+	3400 4650 3500 4750
+$Comp
+L Device:R R2
+U 1 1 5DA316B0
+P 3150 5100
+F 0 "R2" H 3080 5146 50  0000 R CNN
+F 1 "100k" H 3080 5055 50  0000 R CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 3080 5100 50  0001 C CNN
+F 3 "~" H 3150 5100 50  0001 C CNN
+	1    3150 5100
+	1    0    0    -1  
+$EndComp
+Text Label 6400 4300 0    50   ~ 0
+RC1
+$Comp
+L Connector:Conn_01x06_Male J2
+U 1 1 5DA497CF
+P 7600 3150
+F 0 "J2" H 7572 3124 50  0000 R CNN
+F 1 "MASTER" H 7572 3033 50  0000 R CNN
+F 2 "ConnectorHorizontalPcb:ConnectorHorizontalPcb" H 7600 3150 50  0001 C CNN
+F 3 "~" H 7600 3150 50  0001 C CNN
+	1    7600 3150
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	7400 2950 7150 2950
+Wire Wire Line
+	7150 2950 7150 2700
+Wire Wire Line
+	7400 3050 7150 3050
+Wire Wire Line
+	7150 3050 7150 3450
+Wire Wire Line
+	6400 3150 7400 3150
+Wire Wire Line
+	6400 3250 7400 3250
+Wire Wire Line
+	6400 3350 7400 3350
+NoConn ~ 7400 3450
+$Comp
+L Connector:Conn_01x06_Male J1
+U 1 1 5DA5F15D
+P 1900 4000
+F 0 "J1" H 2008 4381 50  0000 C CNN
+F 1 "PICKit3" H 2008 4290 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical" H 1900 4000 50  0001 C CNN
+F 3 "~" H 1900 4000 50  0001 C CNN
+	1    1900 4000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3500 4750 3500 4950
+Wire Wire Line
+	3150 5250 3150 6250
+Wire Wire Line
+	3150 6250 3400 6250
+$Comp
+L TactileSwitchLed_3006.2114:3006.2114 S1
+U 1 1 5DA1BD27
+P 3400 6250
+F 0 "S1" V 3946 6022 50  0000 R CNN
+F 1 "3006.2114" V 3855 6022 50  0000 R CNN
+F 2 "TactileSwitchLed_30062114_footprint:30062114" H 4250 6350 50  0001 L CNN
+F 3 "https://www.mouser.de/datasheet/2/467/Marquardt_007102018_Specifcation3006_Series-1379934.pdf" H 4250 6250 50  0001 L CNN
+F 4 "Tactile Switches TACTILE" H 4250 6150 50  0001 L CNN "Description"
+F 5 "4.15" H 4250 6050 50  0001 L CNN "Height"
+F 6 "MARQUARDT" H 4250 5950 50  0001 L CNN "Manufacturer_Name"
+F 7 "3006.2114" H 4250 5850 50  0001 L CNN "Manufacturer_Part_Number"
+F 8 "979-3006.2114" H 4250 5750 50  0001 L CNN "Mouser Part Number"
+F 9 "" H 4250 5650 50  0001 L CNN "Mouser Price/Stock"
+F 10 "" H 4250 5550 50  0001 L CNN "RS Part Number"
+F 11 "" H 4250 5450 50  0001 L CNN "RS Price/Stock"
+	1    3400 6250
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	3300 5250 3400 5250
+$Comp
+L Device:R R5
+U 1 1 5DA74259
+P 4400 5100
+F 0 "R5" H 4470 5146 50  0000 L CNN
+F 1 "1k" H 4470 5055 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 4330 5100 50  0001 C CNN
+F 3 "~" H 4400 5100 50  0001 C CNN
+	1    4400 5100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR0101
+U 1 1 5DA74263
+P 4050 4900
+F 0 "#PWR0101" H 4050 4750 50  0001 C CNN
+F 1 "+3.3V" H 4050 5050 50  0000 C CNN
+F 2 "" H 4050 4900 50  0001 C CNN
+F 3 "" H 4050 4900 50  0001 C CNN
+	1    4050 4900
+	1    0    0    -1  
+$EndComp
+Entry Wire Line
+	4300 4650 4400 4750
+$Comp
+L Device:R R4
+U 1 1 5DA7426E
+P 4050 5100
+F 0 "R4" H 3980 5146 50  0000 R CNN
+F 1 "100k" H 3980 5055 50  0000 R CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 3980 5100 50  0001 C CNN
+F 3 "~" H 4050 5100 50  0001 C CNN
+	1    4050 5100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0102
+U 1 1 5DA74279
+P 4400 6800
+F 0 "#PWR0102" H 4400 6550 50  0001 C CNN
+F 1 "GND" H 4405 6627 50  0000 C CNN
+F 2 "" H 4400 6800 50  0001 C CNN
+F 3 "" H 4400 6800 50  0001 C CNN
+	1    4400 6800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4400 4750 4400 4950
+Wire Wire Line
+	4050 5250 4050 6250
+Wire Wire Line
+	4050 6250 4300 6250
+$Comp
+L TactileSwitchLed_3006.2114:3006.2114 S2
+U 1 1 5DA7428F
+P 4300 6250
+F 0 "S2" V 4846 6022 50  0000 R CNN
+F 1 "3006.2114" V 4755 6022 50  0000 R CNN
+F 2 "TactileSwitchLed_30062114_footprint:30062114" H 5150 6350 50  0001 L CNN
+F 3 "https://www.mouser.de/datasheet/2/467/Marquardt_007102018_Specifcation3006_Series-1379934.pdf" H 5150 6250 50  0001 L CNN
+F 4 "Tactile Switches TACTILE" H 5150 6150 50  0001 L CNN "Description"
+F 5 "4.15" H 5150 6050 50  0001 L CNN "Height"
+F 6 "MARQUARDT" H 5150 5950 50  0001 L CNN "Manufacturer_Name"
+F 7 "3006.2114" H 5150 5850 50  0001 L CNN "Manufacturer_Part_Number"
+F 8 "979-3006.2114" H 5150 5750 50  0001 L CNN "Mouser Part Number"
+F 9 "" H 5150 5650 50  0001 L CNN "Mouser Price/Stock"
+F 10 "" H 5150 5550 50  0001 L CNN "RS Part Number"
+F 11 "" H 5150 5450 50  0001 L CNN "RS Price/Stock"
+	1    4300 6250
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	4200 5250 4300 5250
+$Comp
+L Device:R R7
+U 1 1 5DA78031
+P 5300 5100
+F 0 "R7" H 5370 5146 50  0000 L CNN
+F 1 "1k" H 5370 5055 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 5230 5100 50  0001 C CNN
+F 3 "~" H 5300 5100 50  0001 C CNN
+	1    5300 5100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR0103
+U 1 1 5DA7803B
+P 4950 4900
+F 0 "#PWR0103" H 4950 4750 50  0001 C CNN
+F 1 "+3.3V" H 4965 5073 50  0000 C CNN
+F 2 "" H 4950 4900 50  0001 C CNN
+F 3 "" H 4950 4900 50  0001 C CNN
+	1    4950 4900
+	1    0    0    -1  
+$EndComp
+Entry Wire Line
+	5200 4650 5300 4750
+$Comp
+L Device:R R6
+U 1 1 5DA78046
+P 4950 5100
+F 0 "R6" H 4880 5146 50  0000 R CNN
+F 1 "100k" H 4880 5055 50  0000 R CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 4880 5100 50  0001 C CNN
+F 3 "~" H 4950 5100 50  0001 C CNN
+	1    4950 5100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0104
+U 1 1 5DA78051
+P 5300 6800
+F 0 "#PWR0104" H 5300 6550 50  0001 C CNN
+F 1 "GND" H 5305 6627 50  0000 C CNN
+F 2 "" H 5300 6800 50  0001 C CNN
+F 3 "" H 5300 6800 50  0001 C CNN
+	1    5300 6800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5300 4750 5300 4950
+Wire Wire Line
+	4950 5250 4950 6250
+Wire Wire Line
+	4950 6250 5200 6250
+$Comp
+L TactileSwitchLed_3006.2114:3006.2114 S3
+U 1 1 5DA78067
+P 5200 6250
+F 0 "S3" V 5746 6022 50  0000 R CNN
+F 1 "3006.2114" V 5655 6022 50  0000 R CNN
+F 2 "TactileSwitchLed_30062114_footprint:30062114" H 6050 6350 50  0001 L CNN
+F 3 "https://www.mouser.de/datasheet/2/467/Marquardt_007102018_Specifcation3006_Series-1379934.pdf" H 6050 6250 50  0001 L CNN
+F 4 "Tactile Switches TACTILE" H 6050 6150 50  0001 L CNN "Description"
+F 5 "4.15" H 6050 6050 50  0001 L CNN "Height"
+F 6 "MARQUARDT" H 6050 5950 50  0001 L CNN "Manufacturer_Name"
+F 7 "3006.2114" H 6050 5850 50  0001 L CNN "Manufacturer_Part_Number"
+F 8 "979-3006.2114" H 6050 5750 50  0001 L CNN "Mouser Part Number"
+F 9 "" H 6050 5650 50  0001 L CNN "Mouser Price/Stock"
+F 10 "" H 6050 5550 50  0001 L CNN "RS Part Number"
+F 11 "" H 6050 5450 50  0001 L CNN "RS Price/Stock"
+	1    5200 6250
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	5100 5250 5200 5250
+$Comp
+L Device:R R9
+U 1 1 5DA78073
+P 6200 5100
+F 0 "R9" H 6270 5146 50  0000 L CNN
+F 1 "1k" H 6270 5055 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 6130 5100 50  0001 C CNN
+F 3 "~" H 6200 5100 50  0001 C CNN
+	1    6200 5100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR0111
+U 1 1 5DA7807D
+P 5850 4900
+F 0 "#PWR0111" H 5850 4750 50  0001 C CNN
+F 1 "+3.3V" H 5865 5073 50  0000 C CNN
+F 2 "" H 5850 4900 50  0001 C CNN
+F 3 "" H 5850 4900 50  0001 C CNN
+	1    5850 4900
+	1    0    0    -1  
+$EndComp
+Entry Wire Line
+	6100 4650 6200 4750
+$Comp
+L Device:R R8
+U 1 1 5DA78088
+P 5850 5100
+F 0 "R8" H 5780 5146 50  0000 R CNN
+F 1 "100k" H 5780 5055 50  0000 R CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 5780 5100 50  0001 C CNN
+F 3 "~" H 5850 5100 50  0001 C CNN
+	1    5850 5100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0112
+U 1 1 5DA78093
+P 6200 6800
+F 0 "#PWR0112" H 6200 6550 50  0001 C CNN
+F 1 "GND" H 6205 6627 50  0000 C CNN
+F 2 "" H 6200 6800 50  0001 C CNN
+F 3 "" H 6200 6800 50  0001 C CNN
+	1    6200 6800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6200 4750 6200 4950
+Wire Wire Line
+	5850 5250 5850 6250
+Wire Wire Line
+	5850 6250 6100 6250
+$Comp
+L TactileSwitchLed_3006.2114:3006.2114 S4
+U 1 1 5DA780A9
+P 6100 6250
+F 0 "S4" V 6646 6022 50  0000 R CNN
+F 1 "3006.2114" V 6555 6022 50  0000 R CNN
+F 2 "TactileSwitchLed_30062114_footprint:30062114" H 6950 6350 50  0001 L CNN
+F 3 "https://www.mouser.de/datasheet/2/467/Marquardt_007102018_Specifcation3006_Series-1379934.pdf" H 6950 6250 50  0001 L CNN
+F 4 "Tactile Switches TACTILE" H 6950 6150 50  0001 L CNN "Description"
+F 5 "4.15" H 6950 6050 50  0001 L CNN "Height"
+F 6 "MARQUARDT" H 6950 5950 50  0001 L CNN "Manufacturer_Name"
+F 7 "3006.2114" H 6950 5850 50  0001 L CNN "Manufacturer_Part_Number"
+F 8 "979-3006.2114" H 6950 5750 50  0001 L CNN "Mouser Part Number"
+F 9 "" H 6950 5650 50  0001 L CNN "Mouser Price/Stock"
+F 10 "" H 6950 5550 50  0001 L CNN "RS Part Number"
+F 11 "" H 6950 5450 50  0001 L CNN "RS Price/Stock"
+	1    6100 6250
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	6000 5250 6100 5250
+Text Label 3500 4750 0    50   ~ 0
+LSW1
+Text Label 4400 4750 0    50   ~ 0
+LSW2
+Text Label 5300 4750 0    50   ~ 0
+LSW3
+Text Label 6200 4750 0    50   ~ 0
+LSW4
+Entry Wire Line
+	6300 4200 6400 4300
+Wire Wire Line
+	6400 4300 6600 4300
+$Comp
+L LED_SML-D12Y1WT86:SML-D12Y1WT86 LED1
+U 1 1 5DA70651
+P 7000 4300
+F 0 "LED1" H 7300 4667 50  0000 C CNN
+F 1 "SML-D12Y1WT86" H 7300 4576 50  0000 C CNN
+F 2 "LED_SMD:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 7500 4450 50  0001 L BNN
+F 3 "https://componentsearchengine.com/Datasheets/1/SML-D12Y1WT86.pdf" H 7500 4350 50  0001 L BNN
+F 4 "LED Yellow 100mcd SMT 1608(0603)" H 7500 4250 50  0001 L BNN "Description"
+F 5 "0.55" H 7500 4150 50  0001 L BNN "Height"
+F 6 "755-SML-D12Y1WT86" H 7500 4050 50  0001 L BNN "Mouser Part Number"
+F 7 "https://www.mouser.com/Search/Refine.aspx?Keyword=755-SML-D12Y1WT86" H 7500 3950 50  0001 L BNN "Mouser Price/Stock"
+F 8 "ROHM Semiconductor" H 7500 3850 50  0001 L BNN "Manufacturer_Name"
+F 9 "SML-D12Y1WT86" H 7500 3750 50  0001 L BNN "Manufacturer_Part_Number"
+	1    7000 4300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R10
+U 1 1 5DA71D1F
+P 6750 4300
+F 0 "R10" H 6820 4346 50  0000 L CNN
+F 1 "1k" H 6820 4255 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 6680 4300 50  0001 C CNN
+F 3 "~" H 6750 4300 50  0001 C CNN
+	1    6750 4300
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:+3.3V #PWR0118
+U 1 1 5DA72F1F
+P 7750 4200
+F 0 "#PWR0118" H 7750 4050 50  0001 C CNN
+F 1 "+3.3V" H 7765 4373 50  0000 C CNN
+F 2 "" H 7750 4200 50  0001 C CNN
+F 3 "" H 7750 4200 50  0001 C CNN
+	1    7750 4200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6900 4300 7000 4300
+Wire Wire Line
+	7600 4300 7750 4300
+Wire Wire Line
+	7750 4300 7750 4200
+$Comp
+L Device:C C2
+U 1 1 5DA5F534
+P 3350 6600
+F 0 "C2" V 3098 6600 50  0000 C CNN
+F 1 "100n" V 3189 6600 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 3388 6450 50  0001 C CNN
+F 3 "~" H 3350 6600 50  0001 C CNN
+	1    3350 6600
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3500 6250 3500 6600
+$Comp
+L power:GND #PWR0116
+U 1 1 5DA62BCA
+P 3500 6800
+F 0 "#PWR0116" H 3500 6550 50  0001 C CNN
+F 1 "GND" H 3505 6627 50  0000 C CNN
+F 2 "" H 3500 6800 50  0001 C CNN
+F 3 "" H 3500 6800 50  0001 C CNN
+	1    3500 6800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3500 6600 3500 6800
+Connection ~ 3500 6600
+Entry Wire Line
+	2850 4650 2950 4750
+Text Label 2950 4750 0    50   ~ 0
+SW1
+$Comp
+L power:+3.3V #PWR0117
+U 1 1 5DA68299
+P 3150 4900
+F 0 "#PWR0117" H 3150 4750 50  0001 C CNN
+F 1 "+3.3V" H 3250 5050 50  0000 C CNN
+F 2 "" H 3150 4900 50  0001 C CNN
+F 3 "" H 3150 4900 50  0001 C CNN
+	1    3150 4900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3150 4900 3150 4950
+Wire Wire Line
+	3150 6250 3150 6600
+Connection ~ 3150 6250
+Wire Wire Line
+	3150 6600 3200 6600
+Wire Wire Line
+	2950 4750 2950 6250
+Wire Wire Line
+	2950 6250 3150 6250
+Wire Wire Line
+	3150 4900 3300 4900
+Wire Wire Line
+	3300 4900 3300 5250
+Connection ~ 3150 4900
+Entry Wire Line
+	3750 4650 3850 4750
+Wire Wire Line
+	3850 4750 3850 6250
+Wire Wire Line
+	3850 6250 4050 6250
+Connection ~ 4050 6250
+Text Label 3850 4750 0    50   ~ 0
+SW2
+Wire Wire Line
+	4200 4900 4050 4900
+Wire Wire Line
+	4200 4900 4200 5250
+Wire Wire Line
+	4050 4900 4050 4950
+Connection ~ 4050 4900
+$Comp
+L Device:C C3
+U 1 1 5DA79A74
+P 4250 6600
+F 0 "C3" V 3998 6600 50  0000 C CNN
+F 1 "100n" V 4089 6600 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 4288 6450 50  0001 C CNN
+F 3 "~" H 4250 6600 50  0001 C CNN
+	1    4250 6600
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4400 6250 4400 6600
+Connection ~ 4400 6600
+Wire Wire Line
+	4400 6600 4400 6800
+Wire Wire Line
+	4050 6250 4050 6600
+Wire Wire Line
+	4050 6600 4100 6600
+Entry Wire Line
+	4650 4650 4750 4750
+Wire Wire Line
+	4750 4750 4750 6250
+Wire Wire Line
+	4750 6250 4950 6250
+Connection ~ 4950 6250
+$Comp
+L Device:C C4
+U 1 1 5DA82BC1
+P 5150 6600
+F 0 "C4" V 4898 6600 50  0000 C CNN
+F 1 "100n" V 4989 6600 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 5188 6450 50  0001 C CNN
+F 3 "~" H 5150 6600 50  0001 C CNN
+	1    5150 6600
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5300 6250 5300 6600
+Connection ~ 5300 6600
+Wire Wire Line
+	5300 6600 5300 6800
+Wire Wire Line
+	5000 6600 4950 6600
+Wire Wire Line
+	4950 6600 4950 6250
+Entry Wire Line
+	5550 4650 5650 4750
+Wire Wire Line
+	5650 4750 5650 6250
+Wire Wire Line
+	5650 6250 5850 6250
+Connection ~ 5850 6250
+$Comp
+L Device:C C5
+U 1 1 5DA8C5BC
+P 6050 6600
+F 0 "C5" V 5798 6600 50  0000 C CNN
+F 1 "100n" V 5889 6600 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 6088 6450 50  0001 C CNN
+F 3 "~" H 6050 6600 50  0001 C CNN
+	1    6050 6600
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5850 6250 5850 6600
+Wire Wire Line
+	5850 6600 5900 6600
+Wire Wire Line
+	6200 6250 6200 6600
+Connection ~ 6200 6600
+Wire Wire Line
+	6200 6600 6200 6800
+Text Label 4750 4750 0    50   ~ 0
+SW3
+Wire Wire Line
+	4950 4900 4950 4950
+Wire Wire Line
+	4950 4900 5100 4900
+Wire Wire Line
+	5100 4900 5100 5250
+Connection ~ 4950 4900
+Text Label 5650 4750 0    50   ~ 0
+SW4
+Wire Wire Line
+	5850 4900 5850 4950
+Wire Wire Line
+	5850 4900 6000 4900
+Wire Wire Line
+	6000 4900 6000 5250
+Connection ~ 5850 4900
+NoConn ~ 3600 3550
+NoConn ~ 5500 4150
+NoConn ~ 5500 4350
+Text Label 7400 3450 2    50   ~ 0
+VBAT
+Wire Bus Line
+	2850 4650 6300 4650
+Wire Bus Line
+	2850 3450 2850 4650
+Wire Bus Line
+	6300 2950 6300 4650
+$EndSCHEMATC
