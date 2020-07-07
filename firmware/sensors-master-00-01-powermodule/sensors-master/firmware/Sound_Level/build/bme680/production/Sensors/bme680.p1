@@ -1,0 +1,3798 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"287 Sensors/bme680.c
+[; ;Sensors/bme680.c: 287: int8_t bme680_init(struct bme680_dev *dev)
+[c E10904 0 1 .. ]
+[n E10904 bme680_intf BME680_SPI_INTF BME680_I2C_INTF  ]
+"410 Sensors/bme680_defs.h
+[; ;Sensors/bme680_defs.h: 410: struct bme680_calib_data {
+[s S1518 `us 1 `us 1 `c 1 `c 1 `c 1 `uc 1 `c 1 `c 1 `s 1 `c 1 `us 1 `s 1 `c 1 `us 1 `s 1 `c 1 `s 1 `s 1 `c 1 `c 1 `s 1 `s 1 `uc 1 `l 1 `uc 1 `c 1 `c 1 ]
+[n S1518 bme680_calib_data par_h1 par_h2 par_h3 par_h4 par_h5 par_h6 par_h7 par_gh1 par_gh2 par_gh3 par_t1 par_t2 par_t3 par_p1 par_p2 par_p3 par_p4 par_p5 par_p6 par_p7 par_p8 par_p9 par_p10 t_fine res_heat_range res_heat_val range_sw_err ]
+"477
+[; ;Sensors/bme680_defs.h: 477: struct bme680_tph_sett {
+[s S1519 `uc 1 `uc 1 `uc 1 `uc 1 ]
+[n S1519 bme680_tph_sett os_hum os_temp os_pres filter ]
+"492
+[; ;Sensors/bme680_defs.h: 492: struct bme680_gas_sett {
+[s S1520 `uc 1 `uc 1 `uc 1 `us 1 `us 1 ]
+[n S1520 bme680_gas_sett nb_conv heatr_ctrl run_gas heatr_temp heatr_dur ]
+[v F10967 `(c ~T0 @X0 0 tf4`uc`uc`*uc`us ]
+[v F10973 `(c ~T0 @X0 0 tf4`uc`uc`*uc`us ]
+[v F10979 `(v ~T0 @X0 0 tf1`ul ]
+"508
+[; ;Sensors/bme680_defs.h: 508: struct bme680_dev {
+[s S1521 `uc 1 `uc 1 `E10904 1 `uc 1 `c 1 `S1518 1 `S1519 1 `S1520 1 `uc 1 `uc 1 `uc 1 `*F10967 1 `*F10973 1 `*F10979 1 `c 1 ]
+[n S1521 bme680_dev chip_id dev_id intf mem_page amb_temp calib tph_sett gas_sett power_mode new_fields info_msg read write delay_ms com_rslt ]
+"266 Sensors/bme680.c
+[; ;Sensors/bme680.c: 266: static int8_t null_ptr_check(const struct bme680_dev *dev);
+[v _null_ptr_check `(c ~T0 @X0 0 sf1`*CS1521 ]
+"117 Sensors/bme680.h
+[; ;Sensors/bme680.h: 117: int8_t bme680_soft_reset(struct bme680_dev *dev);
+[v _bme680_soft_reset `(c ~T0 @X0 0 ef1`*S1521 ]
+"107
+[; ;Sensors/bme680.h: 107: int8_t bme680_get_regs(uint8_t reg_addr, uint8_t *reg_data, uint16_t len, struct bme680_dev *dev);
+[v _bme680_get_regs `(c ~T0 @X0 0 ef4`uc`*uc`us`*S1521 ]
+"67 Sensors/bme680.c
+[; ;Sensors/bme680.c: 67: static int8_t get_calib_data(struct bme680_dev *dev);
+[v _get_calib_data `(c ~T0 @X0 0 sf1`*S1521 ]
+"238
+[; ;Sensors/bme680.c: 238: static int8_t set_mem_page(uint8_t reg_addr, struct bme680_dev *dev);
+[v _set_mem_page `(c ~T0 @X0 0 sf2`uc`*S1521 ]
+"255
+[; ;Sensors/bme680.c: 255: static int8_t get_mem_page(struct bme680_dev *dev);
+[v _get_mem_page `(c ~T0 @X0 0 sf1`*S1521 ]
+"77
+[; ;Sensors/bme680.c: 77: static int8_t set_gas_config(struct bme680_dev *dev);
+[v _set_gas_config `(c ~T0 @X0 0 sf1`*S1521 ]
+"133 Sensors/bme680.h
+[; ;Sensors/bme680.h: 133: int8_t bme680_set_sensor_mode(struct bme680_dev *dev);
+[v _bme680_set_sensor_mode `(c ~T0 @X0 0 ef1`*S1521 ]
+"280 Sensors/bme680.c
+[; ;Sensors/bme680.c: 280: static int8_t boundary_check(uint8_t *value, uint8_t min, uint8_t max, struct bme680_dev *dev);
+[v _boundary_check `(c ~T0 @X0 0 sf4`*uc`uc`uc`*S1521 ]
+"89
+[; ;Sensors/bme680.c: 89: static int8_t get_gas_config(struct bme680_dev *dev);
+[v _get_gas_config `(c ~T0 @X0 0 sf1`*S1521 ]
+"376 Sensors/bme680_defs.h
+[; ;Sensors/bme680_defs.h: 376: struct bme680_field_data {
+[s S1517 `uc 1 `uc 1 `uc 1 `s 1 `ul 1 `ul 1 `ul 1 ]
+[n S1517 bme680_field_data status gas_index meas_index temperature pressure humidity gas_resistance ]
+"220 Sensors/bme680.c
+[; ;Sensors/bme680.c: 220: static int8_t read_field_data(struct bme680_field_data *data, struct bme680_dev *dev);
+[v _read_field_data `(c ~T0 @X0 0 sf2`*S1517`*S1521 ]
+"151
+[; ;Sensors/bme680.c: 151: static uint8_t calc_heater_res(uint16_t temp, const struct bme680_dev *dev);
+[v _calc_heater_res `(uc ~T0 @X0 0 sf2`us`*CS1521 ]
+"98
+[; ;Sensors/bme680.c: 98: static uint8_t calc_heater_dur(uint16_t dur);
+[v _calc_heater_dur `(uc ~T0 @X0 0 sf1`us ]
+[v F11262 `(c ~T0 @X0 0 tf4`uc`uc`*uc`us ]
+[v F11273 `(c ~T0 @X0 0 tf4`uc`uc`*uc`us ]
+[v F11281 `(v ~T0 @X0 0 tf1`ul ]
+"110 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 110: __asm("INDF0 equ 00h");
+[; <" INDF0 equ 00h ;# ">
+"130
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 130: __asm("INDF1 equ 01h");
+[; <" INDF1 equ 01h ;# ">
+"150
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 150: __asm("PCL equ 02h");
+[; <" PCL equ 02h ;# ">
+"170
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 170: __asm("STATUS equ 03h");
+[; <" STATUS equ 03h ;# ">
+"233
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 233: __asm("FSR0L equ 04h");
+[; <" FSR0L equ 04h ;# ">
+"253
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 253: __asm("FSR0H equ 05h");
+[; <" FSR0H equ 05h ;# ">
+"277
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 277: __asm("FSR1L equ 06h");
+[; <" FSR1L equ 06h ;# ">
+"297
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 297: __asm("FSR1H equ 07h");
+[; <" FSR1H equ 07h ;# ">
+"317
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 317: __asm("BSR equ 08h");
+[; <" BSR equ 08h ;# ">
+"375
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 375: __asm("WREG equ 09h");
+[; <" WREG equ 09h ;# ">
+"395
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 395: __asm("PCLATH equ 0Ah");
+[; <" PCLATH equ 0Ah ;# ">
+"415
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 415: __asm("INTCON equ 0Bh");
+[; <" INTCON equ 0Bh ;# ">
+"448
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 448: __asm("PORTA equ 0Ch");
+[; <" PORTA equ 0Ch ;# ">
+"498
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 498: __asm("PORTB equ 0Dh");
+[; <" PORTB equ 0Dh ;# ">
+"537
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 537: __asm("PORTC equ 0Eh");
+[; <" PORTC equ 0Eh ;# ">
+"599
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 599: __asm("TRISA equ 012h");
+[; <" TRISA equ 012h ;# ">
+"649
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 649: __asm("TRISB equ 013h");
+[; <" TRISB equ 013h ;# ">
+"688
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 688: __asm("TRISC equ 014h");
+[; <" TRISC equ 014h ;# ">
+"750
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 750: __asm("LATA equ 018h");
+[; <" LATA equ 018h ;# ">
+"800
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 800: __asm("LATB equ 019h");
+[; <" LATB equ 019h ;# ">
+"839
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 839: __asm("LATC equ 01Ah");
+[; <" LATC equ 01Ah ;# ">
+"901
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 901: __asm("ADLTH equ 08Ch");
+[; <" ADLTH equ 08Ch ;# ">
+"908
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 908: __asm("ADLTHL equ 08Ch");
+[; <" ADLTHL equ 08Ch ;# ">
+"1036
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 1036: __asm("ADLTHH equ 08Dh");
+[; <" ADLTHH equ 08Dh ;# ">
+"1164
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 1164: __asm("ADUTH equ 08Eh");
+[; <" ADUTH equ 08Eh ;# ">
+"1171
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 1171: __asm("ADUTHL equ 08Eh");
+[; <" ADUTHL equ 08Eh ;# ">
+"1299
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 1299: __asm("ADUTHH equ 08Fh");
+[; <" ADUTHH equ 08Fh ;# ">
+"1427
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 1427: __asm("ADERR equ 090h");
+[; <" ADERR equ 090h ;# ">
+"1434
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 1434: __asm("ADERRL equ 090h");
+[; <" ADERRL equ 090h ;# ">
+"1562
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 1562: __asm("ADERRH equ 091h");
+[; <" ADERRH equ 091h ;# ">
+"1690
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 1690: __asm("ADSTPT equ 092h");
+[; <" ADSTPT equ 092h ;# ">
+"1697
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 1697: __asm("ADSTPTL equ 092h");
+[; <" ADSTPTL equ 092h ;# ">
+"1825
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 1825: __asm("ADSTPTH equ 093h");
+[; <" ADSTPTH equ 093h ;# ">
+"1953
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 1953: __asm("ADFLTR equ 094h");
+[; <" ADFLTR equ 094h ;# ">
+"1960
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 1960: __asm("ADFLTRL equ 094h");
+[; <" ADFLTRL equ 094h ;# ">
+"2088
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 2088: __asm("ADFLTRH equ 095h");
+[; <" ADFLTRH equ 095h ;# ">
+"2218
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 2218: __asm("ADACC equ 096h");
+[; <" ADACC equ 096h ;# ">
+"2225
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 2225: __asm("ADACCL equ 096h");
+[; <" ADACCL equ 096h ;# ">
+"2353
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 2353: __asm("ADACCH equ 097h");
+[; <" ADACCH equ 097h ;# ">
+"2481
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 2481: __asm("ADACCU equ 098h");
+[; <" ADACCU equ 098h ;# ">
+"2609
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 2609: __asm("ADCNT equ 099h");
+[; <" ADCNT equ 099h ;# ">
+"2737
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 2737: __asm("ADRPT equ 09Ah");
+[; <" ADRPT equ 09Ah ;# ">
+"2865
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 2865: __asm("ADPREV equ 09Bh");
+[; <" ADPREV equ 09Bh ;# ">
+"2872
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 2872: __asm("ADPREVL equ 09Bh");
+[; <" ADPREVL equ 09Bh ;# ">
+"3000
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 3000: __asm("ADPREVH equ 09Ch");
+[; <" ADPREVH equ 09Ch ;# ">
+"3128
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 3128: __asm("ADRES equ 09Dh");
+[; <" ADRES equ 09Dh ;# ">
+"3135
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 3135: __asm("ADRESL equ 09Dh");
+[; <" ADRESL equ 09Dh ;# ">
+"3263
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 3263: __asm("ADRESH equ 09Eh");
+[; <" ADRESH equ 09Eh ;# ">
+"3383
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 3383: __asm("ADPCH equ 09Fh");
+[; <" ADPCH equ 09Fh ;# ">
+"3487
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 3487: __asm("ADACQ equ 010Ch");
+[; <" ADACQ equ 010Ch ;# ">
+"3494
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 3494: __asm("ADACQL equ 010Ch");
+[; <" ADACQL equ 010Ch ;# ">
+"3622
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 3622: __asm("ADACQH equ 010Dh");
+[; <" ADACQH equ 010Dh ;# ">
+"3714
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 3714: __asm("ADCAP equ 010Eh");
+[; <" ADCAP equ 010Eh ;# ">
+"3806
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 3806: __asm("ADPRE equ 010Fh");
+[; <" ADPRE equ 010Fh ;# ">
+"3813
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 3813: __asm("ADPREL equ 010Fh");
+[; <" ADPREL equ 010Fh ;# ">
+"3941
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 3941: __asm("ADPREH equ 0110h");
+[; <" ADPREH equ 0110h ;# ">
+"4033
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 4033: __asm("ADCON0 equ 0111h");
+[; <" ADCON0 equ 0111h ;# ">
+"4164
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 4164: __asm("ADCON1 equ 0112h");
+[; <" ADCON1 equ 0112h ;# ">
+"4275
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 4275: __asm("ADCON2 equ 0113h");
+[; <" ADCON2 equ 0113h ;# ">
+"4453
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 4453: __asm("ADCON3 equ 0114h");
+[; <" ADCON3 equ 0114h ;# ">
+"4583
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 4583: __asm("ADSTAT equ 0115h");
+[; <" ADSTAT equ 0115h ;# ">
+"4708
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 4708: __asm("ADREF equ 0116h");
+[; <" ADREF equ 0116h ;# ">
+"4848
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 4848: __asm("ADACT equ 0117h");
+[; <" ADACT equ 0117h ;# ">
+"4940
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 4940: __asm("ADCLK equ 0118h");
+[; <" ADCLK equ 0118h ;# ">
+"5044
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 5044: __asm("RC1REG equ 0119h");
+[; <" RC1REG equ 0119h ;# ">
+"5049
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 5049: __asm("RCREG equ 0119h");
+[; <" RCREG equ 0119h ;# ">
+"5053
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 5053: __asm("RCREG1 equ 0119h");
+[; <" RCREG1 equ 0119h ;# ">
+"5098
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 5098: __asm("TX1REG equ 011Ah");
+[; <" TX1REG equ 011Ah ;# ">
+"5103
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 5103: __asm("TXREG1 equ 011Ah");
+[; <" TXREG1 equ 011Ah ;# ">
+"5107
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 5107: __asm("TXREG equ 011Ah");
+[; <" TXREG equ 011Ah ;# ">
+"5152
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 5152: __asm("SP1BRG equ 011Bh");
+[; <" SP1BRG equ 011Bh ;# ">
+"5159
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 5159: __asm("SP1BRGL equ 011Bh");
+[; <" SP1BRGL equ 011Bh ;# ">
+"5164
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 5164: __asm("SPBRG equ 011Bh");
+[; <" SPBRG equ 011Bh ;# ">
+"5168
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 5168: __asm("SPBRG1 equ 011Bh");
+[; <" SPBRG1 equ 011Bh ;# ">
+"5172
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 5172: __asm("SPBRGL equ 011Bh");
+[; <" SPBRGL equ 011Bh ;# ">
+"5229
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 5229: __asm("SP1BRGH equ 011Ch");
+[; <" SP1BRGH equ 011Ch ;# ">
+"5234
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 5234: __asm("SPBRGH equ 011Ch");
+[; <" SPBRGH equ 011Ch ;# ">
+"5238
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 5238: __asm("SPBRGH1 equ 011Ch");
+[; <" SPBRGH1 equ 011Ch ;# ">
+"5283
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 5283: __asm("RC1STA equ 011Dh");
+[; <" RC1STA equ 011Dh ;# ">
+"5288
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 5288: __asm("RCSTA1 equ 011Dh");
+[; <" RCSTA1 equ 011Dh ;# ">
+"5292
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 5292: __asm("RCSTA equ 011Dh");
+[; <" RCSTA equ 011Dh ;# ">
+"5463
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 5463: __asm("TX1STA equ 011Eh");
+[; <" TX1STA equ 011Eh ;# ">
+"5468
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 5468: __asm("TXSTA1 equ 011Eh");
+[; <" TXSTA1 equ 011Eh ;# ">
+"5472
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 5472: __asm("TXSTA equ 011Eh");
+[; <" TXSTA equ 011Eh ;# ">
+"5643
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 5643: __asm("BAUD1CON equ 011Fh");
+[; <" BAUD1CON equ 011Fh ;# ">
+"5648
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 5648: __asm("BAUDCON1 equ 011Fh");
+[; <" BAUDCON1 equ 011Fh ;# ">
+"5652
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 5652: __asm("BAUDCTL1 equ 011Fh");
+[; <" BAUDCTL1 equ 011Fh ;# ">
+"5656
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 5656: __asm("BAUDCON equ 011Fh");
+[; <" BAUDCON equ 011Fh ;# ">
+"5660
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 5660: __asm("BAUDCTL equ 011Fh");
+[; <" BAUDCTL equ 011Fh ;# ">
+"5889
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 5889: __asm("SSP1BUF equ 018Ch");
+[; <" SSP1BUF equ 018Ch ;# ">
+"5909
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 5909: __asm("SSP1ADD equ 018Dh");
+[; <" SSP1ADD equ 018Dh ;# ">
+"6029
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 6029: __asm("SSP1MSK equ 018Eh");
+[; <" SSP1MSK equ 018Eh ;# ">
+"6099
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 6099: __asm("SSP1STAT equ 018Fh");
+[; <" SSP1STAT equ 018Fh ;# ">
+"6463
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 6463: __asm("SSP1CON1 equ 0190h");
+[; <" SSP1CON1 equ 0190h ;# ">
+"6583
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 6583: __asm("SSP1CON2 equ 0191h");
+[; <" SSP1CON2 equ 0191h ;# ">
+"6770
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 6770: __asm("SSP1CON3 equ 0192h");
+[; <" SSP1CON3 equ 0192h ;# ">
+"6832
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 6832: __asm("SSP2BUF equ 0196h");
+[; <" SSP2BUF equ 0196h ;# ">
+"6852
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 6852: __asm("SSP2ADD equ 0197h");
+[; <" SSP2ADD equ 0197h ;# ">
+"6972
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 6972: __asm("SSP2MSK equ 0198h");
+[; <" SSP2MSK equ 0198h ;# ">
+"7042
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 7042: __asm("SSP2STAT equ 0199h");
+[; <" SSP2STAT equ 0199h ;# ">
+"7406
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 7406: __asm("SSP2CON1 equ 019Ah");
+[; <" SSP2CON1 equ 019Ah ;# ">
+"7526
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 7526: __asm("SSP2CON2 equ 019Bh");
+[; <" SSP2CON2 equ 019Bh ;# ">
+"7713
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 7713: __asm("SSP2CON3 equ 019Ch");
+[; <" SSP2CON3 equ 019Ch ;# ">
+"7775
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 7775: __asm("TMR1L equ 020Ch");
+[; <" TMR1L equ 020Ch ;# ">
+"7845
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 7845: __asm("TMR1H equ 020Dh");
+[; <" TMR1H equ 020Dh ;# ">
+"7915
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 7915: __asm("T1CON equ 020Eh");
+[; <" T1CON equ 020Eh ;# ">
+"7920
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 7920: __asm("TMR1CON equ 020Eh");
+[; <" TMR1CON equ 020Eh ;# ">
+"8105
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 8105: __asm("T1GCON equ 020Fh");
+[; <" T1GCON equ 020Fh ;# ">
+"8110
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 8110: __asm("TMR1GCON equ 020Fh");
+[; <" TMR1GCON equ 020Fh ;# ">
+"8319
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 8319: __asm("T1GATE equ 0210h");
+[; <" T1GATE equ 0210h ;# ">
+"8324
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 8324: __asm("TMR1GATE equ 0210h");
+[; <" TMR1GATE equ 0210h ;# ">
+"8485
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 8485: __asm("T1CLK equ 0211h");
+[; <" T1CLK equ 0211h ;# ">
+"8490
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 8490: __asm("TMR1CLK equ 0211h");
+[; <" TMR1CLK equ 0211h ;# ">
+"8651
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 8651: __asm("TMR3L equ 0212h");
+[; <" TMR3L equ 0212h ;# ">
+"8721
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 8721: __asm("TMR3H equ 0213h");
+[; <" TMR3H equ 0213h ;# ">
+"8791
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 8791: __asm("T3CON equ 0214h");
+[; <" T3CON equ 0214h ;# ">
+"8796
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 8796: __asm("TMR3CON equ 0214h");
+[; <" TMR3CON equ 0214h ;# ">
+"8981
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 8981: __asm("T3GCON equ 0215h");
+[; <" T3GCON equ 0215h ;# ">
+"8986
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 8986: __asm("TMR3GCON equ 0215h");
+[; <" TMR3GCON equ 0215h ;# ">
+"9195
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 9195: __asm("T3GATE equ 0216h");
+[; <" T3GATE equ 0216h ;# ">
+"9200
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 9200: __asm("TMR3GATE equ 0216h");
+[; <" TMR3GATE equ 0216h ;# ">
+"9361
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 9361: __asm("T3CLK equ 0217h");
+[; <" T3CLK equ 0217h ;# ">
+"9366
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 9366: __asm("TMR3CLK equ 0217h");
+[; <" TMR3CLK equ 0217h ;# ">
+"9527
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 9527: __asm("TMR5L equ 0218h");
+[; <" TMR5L equ 0218h ;# ">
+"9597
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 9597: __asm("TMR5H equ 0219h");
+[; <" TMR5H equ 0219h ;# ">
+"9667
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 9667: __asm("T5CON equ 021Ah");
+[; <" T5CON equ 021Ah ;# ">
+"9672
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 9672: __asm("TMR5CON equ 021Ah");
+[; <" TMR5CON equ 021Ah ;# ">
+"9857
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 9857: __asm("T5GCON equ 021Bh");
+[; <" T5GCON equ 021Bh ;# ">
+"9862
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 9862: __asm("TMR5GCON equ 021Bh");
+[; <" TMR5GCON equ 021Bh ;# ">
+"10071
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 10071: __asm("T5GATE equ 021Ch");
+[; <" T5GATE equ 021Ch ;# ">
+"10076
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 10076: __asm("TMR5GATE equ 021Ch");
+[; <" TMR5GATE equ 021Ch ;# ">
+"10237
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 10237: __asm("T5CLK equ 021Dh");
+[; <" T5CLK equ 021Dh ;# ">
+"10242
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 10242: __asm("TMR5CLK equ 021Dh");
+[; <" TMR5CLK equ 021Dh ;# ">
+"10403
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 10403: __asm("CCPTMRS0 equ 021Eh");
+[; <" CCPTMRS0 equ 021Eh ;# ">
+"10441
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 10441: __asm("CCPTMRS1 equ 021Fh");
+[; <" CCPTMRS1 equ 021Fh ;# ">
+"10473
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 10473: __asm("T2TMR equ 028Ch");
+[; <" T2TMR equ 028Ch ;# ">
+"10478
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 10478: __asm("TMR2 equ 028Ch");
+[; <" TMR2 equ 028Ch ;# ">
+"10527
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 10527: __asm("T2PR equ 028Dh");
+[; <" T2PR equ 028Dh ;# ">
+"10532
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 10532: __asm("PR2 equ 028Dh");
+[; <" PR2 equ 028Dh ;# ">
+"10581
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 10581: __asm("T2CON equ 028Eh");
+[; <" T2CON equ 028Eh ;# ">
+"10727
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 10727: __asm("T2HLT equ 028Fh");
+[; <" T2HLT equ 028Fh ;# ">
+"10855
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 10855: __asm("T2CLKCON equ 0290h");
+[; <" T2CLKCON equ 0290h ;# ">
+"10935
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 10935: __asm("T2RST equ 0291h");
+[; <" T2RST equ 0291h ;# ">
+"11027
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 11027: __asm("T4TMR equ 0292h");
+[; <" T4TMR equ 0292h ;# ">
+"11032
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 11032: __asm("TMR4 equ 0292h");
+[; <" TMR4 equ 0292h ;# ">
+"11081
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 11081: __asm("T4PR equ 0293h");
+[; <" T4PR equ 0293h ;# ">
+"11086
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 11086: __asm("PR4 equ 0293h");
+[; <" PR4 equ 0293h ;# ">
+"11135
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 11135: __asm("T4CON equ 0294h");
+[; <" T4CON equ 0294h ;# ">
+"11281
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 11281: __asm("T4HLT equ 0295h");
+[; <" T4HLT equ 0295h ;# ">
+"11409
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 11409: __asm("T4CLKCON equ 0296h");
+[; <" T4CLKCON equ 0296h ;# ">
+"11489
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 11489: __asm("T4RST equ 0297h");
+[; <" T4RST equ 0297h ;# ">
+"11581
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 11581: __asm("T6TMR equ 0298h");
+[; <" T6TMR equ 0298h ;# ">
+"11586
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 11586: __asm("TMR6 equ 0298h");
+[; <" TMR6 equ 0298h ;# ">
+"11635
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 11635: __asm("T6PR equ 0299h");
+[; <" T6PR equ 0299h ;# ">
+"11640
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 11640: __asm("PR6 equ 0299h");
+[; <" PR6 equ 0299h ;# ">
+"11689
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 11689: __asm("T6CON equ 029Ah");
+[; <" T6CON equ 029Ah ;# ">
+"11835
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 11835: __asm("T6HLT equ 029Bh");
+[; <" T6HLT equ 029Bh ;# ">
+"11963
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 11963: __asm("T6CLKCON equ 029Ch");
+[; <" T6CLKCON equ 029Ch ;# ">
+"12043
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 12043: __asm("T6RST equ 029Dh");
+[; <" T6RST equ 029Dh ;# ">
+"12135
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 12135: __asm("ADCPCON0 equ 029Fh");
+[; <" ADCPCON0 equ 029Fh ;# ">
+"12162
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 12162: __asm("CCPR1 equ 030Ch");
+[; <" CCPR1 equ 030Ch ;# ">
+"12169
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 12169: __asm("CCPR1L equ 030Ch");
+[; <" CCPR1L equ 030Ch ;# ">
+"12189
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 12189: __asm("CCPR1H equ 030Dh");
+[; <" CCPR1H equ 030Dh ;# ">
+"12209
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 12209: __asm("CCP1CON equ 030Eh");
+[; <" CCP1CON equ 030Eh ;# ">
+"12336
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 12336: __asm("CCP1CAP equ 030Fh");
+[; <" CCP1CAP equ 030Fh ;# ">
+"12404
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 12404: __asm("CCPR2 equ 0310h");
+[; <" CCPR2 equ 0310h ;# ">
+"12411
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 12411: __asm("CCPR2L equ 0310h");
+[; <" CCPR2L equ 0310h ;# ">
+"12431
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 12431: __asm("CCPR2H equ 0311h");
+[; <" CCPR2H equ 0311h ;# ">
+"12451
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 12451: __asm("CCP2CON equ 0312h");
+[; <" CCP2CON equ 0312h ;# ">
+"12578
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 12578: __asm("CCP2CAP equ 0313h");
+[; <" CCP2CAP equ 0313h ;# ">
+"12646
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 12646: __asm("CCPR3 equ 0314h");
+[; <" CCPR3 equ 0314h ;# ">
+"12653
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 12653: __asm("CCPR3L equ 0314h");
+[; <" CCPR3L equ 0314h ;# ">
+"12673
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 12673: __asm("CCPR3H equ 0315h");
+[; <" CCPR3H equ 0315h ;# ">
+"12693
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 12693: __asm("CCP3CON equ 0316h");
+[; <" CCP3CON equ 0316h ;# ">
+"12820
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 12820: __asm("CCP3CAP equ 0317h");
+[; <" CCP3CAP equ 0317h ;# ">
+"12888
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 12888: __asm("CCPR4 equ 0318h");
+[; <" CCPR4 equ 0318h ;# ">
+"12895
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 12895: __asm("CCPR4L equ 0318h");
+[; <" CCPR4L equ 0318h ;# ">
+"12915
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 12915: __asm("CCPR4H equ 0319h");
+[; <" CCPR4H equ 0319h ;# ">
+"12935
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 12935: __asm("CCP4CON equ 031Ah");
+[; <" CCP4CON equ 031Ah ;# ">
+"13062
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 13062: __asm("CCP4CAP equ 031Bh");
+[; <" CCP4CAP equ 031Bh ;# ">
+"13130
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 13130: __asm("PWM6DC equ 038Ch");
+[; <" PWM6DC equ 038Ch ;# ">
+"13137
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 13137: __asm("PWM6DCL equ 038Ch");
+[; <" PWM6DCL equ 038Ch ;# ">
+"13203
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 13203: __asm("PWM6DCH equ 038Dh");
+[; <" PWM6DCH equ 038Dh ;# ">
+"13373
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 13373: __asm("PWM6CON equ 038Eh");
+[; <" PWM6CON equ 038Eh ;# ">
+"13429
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 13429: __asm("PWM7DC equ 0390h");
+[; <" PWM7DC equ 0390h ;# ">
+"13436
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 13436: __asm("PWM7DCL equ 0390h");
+[; <" PWM7DCL equ 0390h ;# ">
+"13502
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 13502: __asm("PWM7DCH equ 0391h");
+[; <" PWM7DCH equ 0391h ;# ">
+"13672
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 13672: __asm("PWM7CON equ 0392h");
+[; <" PWM7CON equ 0392h ;# ">
+"13730
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 13730: __asm("SMT1TMR equ 048Ch");
+[; <" SMT1TMR equ 048Ch ;# ">
+"13737
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 13737: __asm("SMT1TMRL equ 048Ch");
+[; <" SMT1TMRL equ 048Ch ;# ">
+"13865
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 13865: __asm("SMT1TMRH equ 048Dh");
+[; <" SMT1TMRH equ 048Dh ;# ">
+"13993
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 13993: __asm("SMT1TMRU equ 048Eh");
+[; <" SMT1TMRU equ 048Eh ;# ">
+"14123
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 14123: __asm("SMT1CPR equ 048Fh");
+[; <" SMT1CPR equ 048Fh ;# ">
+"14130
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 14130: __asm("SMT1CPRL equ 048Fh");
+[; <" SMT1CPRL equ 048Fh ;# ">
+"14258
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 14258: __asm("SMT1CPRH equ 0490h");
+[; <" SMT1CPRH equ 0490h ;# ">
+"14386
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 14386: __asm("SMT1CPRU equ 0491h");
+[; <" SMT1CPRU equ 0491h ;# ">
+"14516
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 14516: __asm("SMT1CPW equ 0492h");
+[; <" SMT1CPW equ 0492h ;# ">
+"14523
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 14523: __asm("SMT1CPWL equ 0492h");
+[; <" SMT1CPWL equ 0492h ;# ">
+"14651
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 14651: __asm("SMT1CPWH equ 0493h");
+[; <" SMT1CPWH equ 0493h ;# ">
+"14779
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 14779: __asm("SMT1CPWU equ 0494h");
+[; <" SMT1CPWU equ 0494h ;# ">
+"14909
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 14909: __asm("SMT1PR equ 0495h");
+[; <" SMT1PR equ 0495h ;# ">
+"14916
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 14916: __asm("SMT1PRL equ 0495h");
+[; <" SMT1PRL equ 0495h ;# ">
+"15044
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 15044: __asm("SMT1PRH equ 0496h");
+[; <" SMT1PRH equ 0496h ;# ">
+"15172
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 15172: __asm("SMT1PRU equ 0497h");
+[; <" SMT1PRU equ 0497h ;# ">
+"15300
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 15300: __asm("SMT1CON0 equ 0498h");
+[; <" SMT1CON0 equ 0498h ;# ">
+"15418
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 15418: __asm("SMT1CON1 equ 0499h");
+[; <" SMT1CON1 equ 0499h ;# ">
+"15498
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 15498: __asm("SMT1STAT equ 049Ah");
+[; <" SMT1STAT equ 049Ah ;# ">
+"15597
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 15597: __asm("SMT1CLK equ 049Bh");
+[; <" SMT1CLK equ 049Bh ;# ">
+"15665
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 15665: __asm("SMT1SIG equ 049Ch");
+[; <" SMT1SIG equ 049Ch ;# ">
+"15757
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 15757: __asm("SMT1WIN equ 049Dh");
+[; <" SMT1WIN equ 049Dh ;# ">
+"15851
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 15851: __asm("NCO1ACC equ 058Ch");
+[; <" NCO1ACC equ 058Ch ;# ">
+"15858
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 15858: __asm("NCO1ACCL equ 058Ch");
+[; <" NCO1ACCL equ 058Ch ;# ">
+"15986
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 15986: __asm("NCO1ACCH equ 058Dh");
+[; <" NCO1ACCH equ 058Dh ;# ">
+"16114
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 16114: __asm("NCO1ACCU equ 058Eh");
+[; <" NCO1ACCU equ 058Eh ;# ">
+"16196
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 16196: __asm("NCO1INC equ 058Fh");
+[; <" NCO1INC equ 058Fh ;# ">
+"16203
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 16203: __asm("NCO1INCL equ 058Fh");
+[; <" NCO1INCL equ 058Fh ;# ">
+"16331
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 16331: __asm("NCO1INCH equ 0590h");
+[; <" NCO1INCH equ 0590h ;# ">
+"16459
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 16459: __asm("NCO1INCU equ 0591h");
+[; <" NCO1INCU equ 0591h ;# ">
+"16539
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 16539: __asm("NCO1CON equ 0592h");
+[; <" NCO1CON equ 0592h ;# ">
+"16607
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 16607: __asm("NCO1CLK equ 0593h");
+[; <" NCO1CLK equ 0593h ;# ">
+"16739
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 16739: __asm("TMR0L equ 059Ch");
+[; <" TMR0L equ 059Ch ;# ">
+"16744
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 16744: __asm("TMR0 equ 059Ch");
+[; <" TMR0 equ 059Ch ;# ">
+"16877
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 16877: __asm("TMR0H equ 059Dh");
+[; <" TMR0H equ 059Dh ;# ">
+"16882
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 16882: __asm("PR0 equ 059Dh");
+[; <" PR0 equ 059Dh ;# ">
+"17131
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 17131: __asm("T0CON0 equ 059Eh");
+[; <" T0CON0 equ 059Eh ;# ">
+"17229
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 17229: __asm("T0CON1 equ 059Fh");
+[; <" T0CON1 equ 059Fh ;# ">
+"17371
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 17371: __asm("CWG1CLK equ 060Ch");
+[; <" CWG1CLK equ 060Ch ;# ">
+"17376
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 17376: __asm("CWG1CLKCON equ 060Ch");
+[; <" CWG1CLKCON equ 060Ch ;# ">
+"17425
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 17425: __asm("CWG1ISM equ 060Dh");
+[; <" CWG1ISM equ 060Dh ;# ">
+"17430
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 17430: __asm("CWG1DAT equ 060Dh");
+[; <" CWG1DAT equ 060Dh ;# ">
+"17515
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 17515: __asm("CWG1DBR equ 060Eh");
+[; <" CWG1DBR equ 060Eh ;# ">
+"17619
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 17619: __asm("CWG1DBF equ 060Fh");
+[; <" CWG1DBF equ 060Fh ;# ">
+"17723
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 17723: __asm("CWG1CON0 equ 0610h");
+[; <" CWG1CON0 equ 0610h ;# ">
+"17824
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 17824: __asm("CWG1CON1 equ 0611h");
+[; <" CWG1CON1 equ 0611h ;# ">
+"17902
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 17902: __asm("CWG1AS0 equ 0612h");
+[; <" CWG1AS0 equ 0612h ;# ">
+"18022
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 18022: __asm("CWG1AS1 equ 0613h");
+[; <" CWG1AS1 equ 0613h ;# ">
+"18078
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 18078: __asm("CWG1STR equ 0614h");
+[; <" CWG1STR equ 0614h ;# ">
+"18190
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 18190: __asm("CWG2CLK equ 0616h");
+[; <" CWG2CLK equ 0616h ;# ">
+"18195
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 18195: __asm("CWG2CLKCON equ 0616h");
+[; <" CWG2CLKCON equ 0616h ;# ">
+"18244
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 18244: __asm("CWG2ISM equ 0617h");
+[; <" CWG2ISM equ 0617h ;# ">
+"18249
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 18249: __asm("CWG2DAT equ 0617h");
+[; <" CWG2DAT equ 0617h ;# ">
+"18334
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 18334: __asm("CWG2DBR equ 0618h");
+[; <" CWG2DBR equ 0618h ;# ">
+"18438
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 18438: __asm("CWG2DBF equ 0619h");
+[; <" CWG2DBF equ 0619h ;# ">
+"18542
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 18542: __asm("CWG2CON0 equ 061Ah");
+[; <" CWG2CON0 equ 061Ah ;# ">
+"18643
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 18643: __asm("CWG2CON1 equ 061Bh");
+[; <" CWG2CON1 equ 061Bh ;# ">
+"18721
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 18721: __asm("CWG2AS0 equ 061Ch");
+[; <" CWG2AS0 equ 061Ch ;# ">
+"18841
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 18841: __asm("CWG2AS1 equ 061Dh");
+[; <" CWG2AS1 equ 061Dh ;# ">
+"18897
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 18897: __asm("CWG2STR equ 061Eh");
+[; <" CWG2STR equ 061Eh ;# ">
+"19009
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 19009: __asm("PIR0 equ 070Ch");
+[; <" PIR0 equ 070Ch ;# ">
+"19042
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 19042: __asm("PIR1 equ 070Dh");
+[; <" PIR1 equ 070Dh ;# ">
+"19081
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 19081: __asm("PIR2 equ 070Eh");
+[; <" PIR2 equ 070Eh ;# ">
+"19114
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 19114: __asm("PIR3 equ 070Fh");
+[; <" PIR3 equ 070Fh ;# ">
+"19164
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 19164: __asm("PIR4 equ 0710h");
+[; <" PIR4 equ 0710h ;# ">
+"19214
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 19214: __asm("PIR5 equ 0711h");
+[; <" PIR5 equ 0711h ;# ">
+"19271
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 19271: __asm("PIR6 equ 0712h");
+[; <" PIR6 equ 0712h ;# ">
+"19309
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 19309: __asm("PIR7 equ 0713h");
+[; <" PIR7 equ 0713h ;# ">
+"19348
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 19348: __asm("PIR8 equ 0714h");
+[; <" PIR8 equ 0714h ;# ">
+"19380
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 19380: __asm("PIE0 equ 0716h");
+[; <" PIE0 equ 0716h ;# ">
+"19413
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 19413: __asm("PIE1 equ 0717h");
+[; <" PIE1 equ 0717h ;# ">
+"19452
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 19452: __asm("PIE2 equ 0718h");
+[; <" PIE2 equ 0718h ;# ">
+"19485
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 19485: __asm("PIE3 equ 0719h");
+[; <" PIE3 equ 0719h ;# ">
+"19535
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 19535: __asm("PIE4 equ 071Ah");
+[; <" PIE4 equ 071Ah ;# ">
+"19585
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 19585: __asm("PIE5 equ 071Bh");
+[; <" PIE5 equ 071Bh ;# ">
+"19642
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 19642: __asm("PIE6 equ 071Ch");
+[; <" PIE6 equ 071Ch ;# ">
+"19680
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 19680: __asm("PIE7 equ 071Dh");
+[; <" PIE7 equ 071Dh ;# ">
+"19728
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 19728: __asm("PIE8 equ 071Eh");
+[; <" PIE8 equ 071Eh ;# ">
+"19760
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 19760: __asm("PMD0 equ 0796h");
+[; <" PMD0 equ 0796h ;# ">
+"19805
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 19805: __asm("PMD1 equ 0797h");
+[; <" PMD1 equ 0797h ;# ">
+"19861
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 19861: __asm("PMD2 equ 0798h");
+[; <" PMD2 equ 0798h ;# ">
+"19882
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 19882: __asm("PMD3 equ 0799h");
+[; <" PMD3 equ 0799h ;# ">
+"19927
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 19927: __asm("PMD4 equ 079Ah");
+[; <" PMD4 equ 079Ah ;# ">
+"19978
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 19978: __asm("PMD5 equ 079Bh");
+[; <" PMD5 equ 079Bh ;# ">
+"20005
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 20005: __asm("PMD6 equ 079Ch");
+[; <" PMD6 equ 079Ch ;# ">
+"20038
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 20038: __asm("PMD7 equ 079Dh");
+[; <" PMD7 equ 079Dh ;# ">
+"20088
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 20088: __asm("WDTCON0 equ 080Ch");
+[; <" WDTCON0 equ 080Ch ;# ">
+"20163
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 20163: __asm("WDTCON1 equ 080Dh");
+[; <" WDTCON1 equ 080Dh ;# ">
+"20257
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 20257: __asm("WDTPSL equ 080Eh");
+[; <" WDTPSL equ 080Eh ;# ">
+"20385
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 20385: __asm("WDTPSH equ 080Fh");
+[; <" WDTPSH equ 080Fh ;# ">
+"20513
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 20513: __asm("WDTTMR equ 0810h");
+[; <" WDTTMR equ 0810h ;# ">
+"20595
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 20595: __asm("BORCON equ 0811h");
+[; <" BORCON equ 0811h ;# ">
+"20622
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 20622: __asm("VREGCON equ 0812h");
+[; <" VREGCON equ 0812h ;# ">
+"20643
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 20643: __asm("PCON0 equ 0813h");
+[; <" PCON0 equ 0813h ;# ">
+"20705
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 20705: __asm("PCON1 equ 0814h");
+[; <" PCON1 equ 0814h ;# ">
+"20726
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 20726: __asm("NVMADR equ 081Ah");
+[; <" NVMADR equ 081Ah ;# ">
+"20733
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 20733: __asm("NVMADRL equ 081Ah");
+[; <" NVMADRL equ 081Ah ;# ">
+"20795
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 20795: __asm("NVMADRH equ 081Bh");
+[; <" NVMADRH equ 081Bh ;# ">
+"20851
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 20851: __asm("NVMDAT equ 081Ch");
+[; <" NVMDAT equ 081Ch ;# ">
+"20858
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 20858: __asm("NVMDATL equ 081Ch");
+[; <" NVMDATL equ 081Ch ;# ">
+"20920
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 20920: __asm("NVMDATH equ 081Dh");
+[; <" NVMDATH equ 081Dh ;# ">
+"20970
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 20970: __asm("NVMCON1 equ 081Eh");
+[; <" NVMCON1 equ 081Eh ;# ">
+"21026
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 21026: __asm("NVMCON2 equ 081Fh");
+[; <" NVMCON2 equ 081Fh ;# ">
+"21046
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 21046: __asm("CPUDOZE equ 088Ch");
+[; <" CPUDOZE equ 088Ch ;# ">
+"21111
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 21111: __asm("OSCCON1 equ 088Dh");
+[; <" OSCCON1 equ 088Dh ;# ">
+"21181
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 21181: __asm("OSCCON2 equ 088Eh");
+[; <" OSCCON2 equ 088Eh ;# ">
+"21251
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 21251: __asm("OSCCON3 equ 088Fh");
+[; <" OSCCON3 equ 088Fh ;# ">
+"21291
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 21291: __asm("OSCSTAT equ 0890h");
+[; <" OSCSTAT equ 0890h ;# ">
+"21348
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 21348: __asm("OSCEN equ 0891h");
+[; <" OSCEN equ 0891h ;# ">
+"21399
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 21399: __asm("OSCTUNE equ 0892h");
+[; <" OSCTUNE equ 0892h ;# ">
+"21457
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 21457: __asm("OSCFRQ equ 0893h");
+[; <" OSCFRQ equ 0893h ;# ">
+"21497
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 21497: __asm("CLKRCON equ 0895h");
+[; <" CLKRCON equ 0895h ;# ">
+"21562
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 21562: __asm("CLKRCLK equ 0896h");
+[; <" CLKRCLK equ 0896h ;# ">
+"21608
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 21608: __asm("MD1CON0 equ 0897h");
+[; <" MD1CON0 equ 0897h ;# ">
+"21676
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 21676: __asm("MD1CON1 equ 0898h");
+[; <" MD1CON1 equ 0898h ;# ">
+"21742
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 21742: __asm("MD1SRC equ 0899h");
+[; <" MD1SRC equ 0899h ;# ">
+"21834
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 21834: __asm("MD1CARL equ 089Ah");
+[; <" MD1CARL equ 089Ah ;# ">
+"21914
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 21914: __asm("MD1CARH equ 089Bh");
+[; <" MD1CARH equ 089Bh ;# ">
+"21994
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 21994: __asm("FVRCON equ 090Ch");
+[; <" FVRCON equ 090Ch ;# ">
+"22070
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 22070: __asm("DAC1CON0 equ 090Eh");
+[; <" DAC1CON0 equ 090Eh ;# ">
+"22161
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 22161: __asm("DAC1CON1 equ 090Fh");
+[; <" DAC1CON1 equ 090Fh ;# ">
+"22213
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 22213: __asm("ZCDCON equ 091Fh");
+[; <" ZCDCON equ 091Fh ;# ">
+"22259
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 22259: __asm("CMOUT equ 098Fh");
+[; <" CMOUT equ 098Fh ;# ">
+"22264
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 22264: __asm("CMSTAT equ 098Fh");
+[; <" CMSTAT equ 098Fh ;# ">
+"22337
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 22337: __asm("CM1CON0 equ 0990h");
+[; <" CM1CON0 equ 0990h ;# ">
+"22417
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 22417: __asm("CM1CON1 equ 0991h");
+[; <" CM1CON1 equ 0991h ;# ">
+"22457
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 22457: __asm("CM1NCH equ 0992h");
+[; <" CM1NCH equ 0992h ;# ">
+"22517
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 22517: __asm("CM1PCH equ 0993h");
+[; <" CM1PCH equ 0993h ;# ">
+"22577
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 22577: __asm("CM2CON0 equ 0994h");
+[; <" CM2CON0 equ 0994h ;# ">
+"22657
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 22657: __asm("CM2CON1 equ 0995h");
+[; <" CM2CON1 equ 0995h ;# ">
+"22697
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 22697: __asm("CM2NCH equ 0996h");
+[; <" CM2NCH equ 0996h ;# ">
+"22757
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 22757: __asm("CM2PCH equ 0997h");
+[; <" CM2PCH equ 0997h ;# ">
+"22817
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 22817: __asm("CLCDATA equ 01E0Fh");
+[; <" CLCDATA equ 01E0Fh ;# ">
+"22855
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 22855: __asm("CLC1CON equ 01E10h");
+[; <" CLC1CON equ 01E10h ;# ">
+"22973
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 22973: __asm("CLC1POL equ 01E11h");
+[; <" CLC1POL equ 01E11h ;# ">
+"23051
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 23051: __asm("CLC1SEL0 equ 01E12h");
+[; <" CLC1SEL0 equ 01E12h ;# ">
+"23155
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 23155: __asm("CLC1SEL1 equ 01E13h");
+[; <" CLC1SEL1 equ 01E13h ;# ">
+"23259
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 23259: __asm("CLC1SEL2 equ 01E14h");
+[; <" CLC1SEL2 equ 01E14h ;# ">
+"23363
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 23363: __asm("CLC1SEL3 equ 01E15h");
+[; <" CLC1SEL3 equ 01E15h ;# ">
+"23467
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 23467: __asm("CLC1GLS0 equ 01E16h");
+[; <" CLC1GLS0 equ 01E16h ;# ">
+"23579
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 23579: __asm("CLC1GLS1 equ 01E17h");
+[; <" CLC1GLS1 equ 01E17h ;# ">
+"23691
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 23691: __asm("CLC1GLS2 equ 01E18h");
+[; <" CLC1GLS2 equ 01E18h ;# ">
+"23803
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 23803: __asm("CLC1GLS3 equ 01E19h");
+[; <" CLC1GLS3 equ 01E19h ;# ">
+"23915
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 23915: __asm("CLC2CON equ 01E1Ah");
+[; <" CLC2CON equ 01E1Ah ;# ">
+"24033
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 24033: __asm("CLC2POL equ 01E1Bh");
+[; <" CLC2POL equ 01E1Bh ;# ">
+"24111
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 24111: __asm("CLC2SEL0 equ 01E1Ch");
+[; <" CLC2SEL0 equ 01E1Ch ;# ">
+"24215
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 24215: __asm("CLC2SEL1 equ 01E1Dh");
+[; <" CLC2SEL1 equ 01E1Dh ;# ">
+"24319
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 24319: __asm("CLC2SEL2 equ 01E1Eh");
+[; <" CLC2SEL2 equ 01E1Eh ;# ">
+"24423
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 24423: __asm("CLC2SEL3 equ 01E1Fh");
+[; <" CLC2SEL3 equ 01E1Fh ;# ">
+"24527
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 24527: __asm("CLC2GLS0 equ 01E20h");
+[; <" CLC2GLS0 equ 01E20h ;# ">
+"24639
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 24639: __asm("CLC2GLS1 equ 01E21h");
+[; <" CLC2GLS1 equ 01E21h ;# ">
+"24751
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 24751: __asm("CLC2GLS2 equ 01E22h");
+[; <" CLC2GLS2 equ 01E22h ;# ">
+"24863
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 24863: __asm("CLC2GLS3 equ 01E23h");
+[; <" CLC2GLS3 equ 01E23h ;# ">
+"24975
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 24975: __asm("CLC3CON equ 01E24h");
+[; <" CLC3CON equ 01E24h ;# ">
+"25093
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 25093: __asm("CLC3POL equ 01E25h");
+[; <" CLC3POL equ 01E25h ;# ">
+"25171
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 25171: __asm("CLC3SEL0 equ 01E26h");
+[; <" CLC3SEL0 equ 01E26h ;# ">
+"25275
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 25275: __asm("CLC3SEL1 equ 01E27h");
+[; <" CLC3SEL1 equ 01E27h ;# ">
+"25379
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 25379: __asm("CLC3SEL2 equ 01E28h");
+[; <" CLC3SEL2 equ 01E28h ;# ">
+"25483
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 25483: __asm("CLC3SEL3 equ 01E29h");
+[; <" CLC3SEL3 equ 01E29h ;# ">
+"25587
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 25587: __asm("CLC3GLS0 equ 01E2Ah");
+[; <" CLC3GLS0 equ 01E2Ah ;# ">
+"25699
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 25699: __asm("CLC3GLS1 equ 01E2Bh");
+[; <" CLC3GLS1 equ 01E2Bh ;# ">
+"25811
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 25811: __asm("CLC3GLS2 equ 01E2Ch");
+[; <" CLC3GLS2 equ 01E2Ch ;# ">
+"25923
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 25923: __asm("CLC3GLS3 equ 01E2Dh");
+[; <" CLC3GLS3 equ 01E2Dh ;# ">
+"26035
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 26035: __asm("CLC4CON equ 01E2Eh");
+[; <" CLC4CON equ 01E2Eh ;# ">
+"26153
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 26153: __asm("CLC4POL equ 01E2Fh");
+[; <" CLC4POL equ 01E2Fh ;# ">
+"26231
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 26231: __asm("CLC4SEL0 equ 01E30h");
+[; <" CLC4SEL0 equ 01E30h ;# ">
+"26335
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 26335: __asm("CLC4SEL1 equ 01E31h");
+[; <" CLC4SEL1 equ 01E31h ;# ">
+"26439
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 26439: __asm("CLC4SEL2 equ 01E32h");
+[; <" CLC4SEL2 equ 01E32h ;# ">
+"26543
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 26543: __asm("CLC4SEL3 equ 01E33h");
+[; <" CLC4SEL3 equ 01E33h ;# ">
+"26647
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 26647: __asm("CLC4GLS0 equ 01E34h");
+[; <" CLC4GLS0 equ 01E34h ;# ">
+"26759
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 26759: __asm("CLC4GLS1 equ 01E35h");
+[; <" CLC4GLS1 equ 01E35h ;# ">
+"26871
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 26871: __asm("CLC4GLS2 equ 01E36h");
+[; <" CLC4GLS2 equ 01E36h ;# ">
+"26983
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 26983: __asm("CLC4GLS3 equ 01E37h");
+[; <" CLC4GLS3 equ 01E37h ;# ">
+"27095
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 27095: __asm("PPSLOCK equ 01E8Fh");
+[; <" PPSLOCK equ 01E8Fh ;# ">
+"27115
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 27115: __asm("INTPPS equ 01E90h");
+[; <" INTPPS equ 01E90h ;# ">
+"27175
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 27175: __asm("T0CKIPPS equ 01E91h");
+[; <" T0CKIPPS equ 01E91h ;# ">
+"27235
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 27235: __asm("T1CKIPPS equ 01E92h");
+[; <" T1CKIPPS equ 01E92h ;# ">
+"27301
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 27301: __asm("T1GPPS equ 01E93h");
+[; <" T1GPPS equ 01E93h ;# ">
+"27367
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 27367: __asm("T3CKIPPS equ 01E94h");
+[; <" T3CKIPPS equ 01E94h ;# ">
+"27433
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 27433: __asm("T3GPPS equ 01E95h");
+[; <" T3GPPS equ 01E95h ;# ">
+"27499
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 27499: __asm("T5CKIPPS equ 01E96h");
+[; <" T5CKIPPS equ 01E96h ;# ">
+"27565
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 27565: __asm("T5GPPS equ 01E97h");
+[; <" T5GPPS equ 01E97h ;# ">
+"27631
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 27631: __asm("T2INPPS equ 01E9Ch");
+[; <" T2INPPS equ 01E9Ch ;# ">
+"27697
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 27697: __asm("T4INPPS equ 01E9Dh");
+[; <" T4INPPS equ 01E9Dh ;# ">
+"27763
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 27763: __asm("T6INPPS equ 01E9Eh");
+[; <" T6INPPS equ 01E9Eh ;# ">
+"27829
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 27829: __asm("CCP1PPS equ 01EA1h");
+[; <" CCP1PPS equ 01EA1h ;# ">
+"27895
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 27895: __asm("CCP2PPS equ 01EA2h");
+[; <" CCP2PPS equ 01EA2h ;# ">
+"27961
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 27961: __asm("CCP3PPS equ 01EA3h");
+[; <" CCP3PPS equ 01EA3h ;# ">
+"28027
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 28027: __asm("CCP4PPS equ 01EA4h");
+[; <" CCP4PPS equ 01EA4h ;# ">
+"28093
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 28093: __asm("SMT1WINPPS equ 01EA9h");
+[; <" SMT1WINPPS equ 01EA9h ;# ">
+"28159
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 28159: __asm("SMT1SIGPPS equ 01EAAh");
+[; <" SMT1SIGPPS equ 01EAAh ;# ">
+"28225
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 28225: __asm("CWG1PPS equ 01EB1h");
+[; <" CWG1PPS equ 01EB1h ;# ">
+"28291
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 28291: __asm("CWG2PPS equ 01EB2h");
+[; <" CWG2PPS equ 01EB2h ;# ">
+"28357
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 28357: __asm("MDCARLPPS equ 01EB8h");
+[; <" MDCARLPPS equ 01EB8h ;# ">
+"28423
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 28423: __asm("MDCARHPPS equ 01EB9h");
+[; <" MDCARHPPS equ 01EB9h ;# ">
+"28489
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 28489: __asm("MDSRCPPS equ 01EBAh");
+[; <" MDSRCPPS equ 01EBAh ;# ">
+"28555
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 28555: __asm("CLCIN0PPS equ 01EBBh");
+[; <" CLCIN0PPS equ 01EBBh ;# ">
+"28621
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 28621: __asm("CLCIN1PPS equ 01EBCh");
+[; <" CLCIN1PPS equ 01EBCh ;# ">
+"28687
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 28687: __asm("CLCIN2PPS equ 01EBDh");
+[; <" CLCIN2PPS equ 01EBDh ;# ">
+"28753
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 28753: __asm("CLCIN3PPS equ 01EBEh");
+[; <" CLCIN3PPS equ 01EBEh ;# ">
+"28819
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 28819: __asm("ADACTPPS equ 01EC3h");
+[; <" ADACTPPS equ 01EC3h ;# ">
+"28885
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 28885: __asm("SSP1CLKPPS equ 01EC5h");
+[; <" SSP1CLKPPS equ 01EC5h ;# ">
+"28951
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 28951: __asm("SSP1DATPPS equ 01EC6h");
+[; <" SSP1DATPPS equ 01EC6h ;# ">
+"29017
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 29017: __asm("SSP1SSPPS equ 01EC7h");
+[; <" SSP1SSPPS equ 01EC7h ;# ">
+"29083
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 29083: __asm("SSP2CLKPPS equ 01EC8h");
+[; <" SSP2CLKPPS equ 01EC8h ;# ">
+"29149
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 29149: __asm("SSP2DATPPS equ 01EC9h");
+[; <" SSP2DATPPS equ 01EC9h ;# ">
+"29215
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 29215: __asm("SSP2SSPPS equ 01ECAh");
+[; <" SSP2SSPPS equ 01ECAh ;# ">
+"29281
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 29281: __asm("RX1PPS equ 01ECBh");
+[; <" RX1PPS equ 01ECBh ;# ">
+"29286
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 29286: __asm("RX1DTPPS equ 01ECBh");
+[; <" RX1DTPPS equ 01ECBh ;# ">
+"29290
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 29290: __asm("RXPPS equ 01ECBh");
+[; <" RXPPS equ 01ECBh ;# ">
+"29473
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 29473: __asm("CK1PPS equ 01ECCh");
+[; <" CK1PPS equ 01ECCh ;# ">
+"29478
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 29478: __asm("TX1CKPPS equ 01ECCh");
+[; <" TX1CKPPS equ 01ECCh ;# ">
+"29482
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 29482: __asm("CKPPS equ 01ECCh");
+[; <" CKPPS equ 01ECCh ;# ">
+"29665
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 29665: __asm("RA0PPS equ 01F10h");
+[; <" RA0PPS equ 01F10h ;# ">
+"29723
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 29723: __asm("RA1PPS equ 01F11h");
+[; <" RA1PPS equ 01F11h ;# ">
+"29781
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 29781: __asm("RA2PPS equ 01F12h");
+[; <" RA2PPS equ 01F12h ;# ">
+"29839
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 29839: __asm("RA4PPS equ 01F14h");
+[; <" RA4PPS equ 01F14h ;# ">
+"29897
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 29897: __asm("RA5PPS equ 01F15h");
+[; <" RA5PPS equ 01F15h ;# ">
+"29955
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 29955: __asm("RB4PPS equ 01F1Ch");
+[; <" RB4PPS equ 01F1Ch ;# ">
+"30013
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 30013: __asm("RB5PPS equ 01F1Dh");
+[; <" RB5PPS equ 01F1Dh ;# ">
+"30071
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 30071: __asm("RB6PPS equ 01F1Eh");
+[; <" RB6PPS equ 01F1Eh ;# ">
+"30129
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 30129: __asm("RB7PPS equ 01F1Fh");
+[; <" RB7PPS equ 01F1Fh ;# ">
+"30187
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 30187: __asm("RC0PPS equ 01F20h");
+[; <" RC0PPS equ 01F20h ;# ">
+"30245
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 30245: __asm("RC1PPS equ 01F21h");
+[; <" RC1PPS equ 01F21h ;# ">
+"30303
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 30303: __asm("RC2PPS equ 01F22h");
+[; <" RC2PPS equ 01F22h ;# ">
+"30361
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 30361: __asm("RC3PPS equ 01F23h");
+[; <" RC3PPS equ 01F23h ;# ">
+"30419
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 30419: __asm("RC4PPS equ 01F24h");
+[; <" RC4PPS equ 01F24h ;# ">
+"30477
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 30477: __asm("RC5PPS equ 01F25h");
+[; <" RC5PPS equ 01F25h ;# ">
+"30535
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 30535: __asm("RC6PPS equ 01F26h");
+[; <" RC6PPS equ 01F26h ;# ">
+"30593
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 30593: __asm("RC7PPS equ 01F27h");
+[; <" RC7PPS equ 01F27h ;# ">
+"30651
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 30651: __asm("ANSELA equ 01F38h");
+[; <" ANSELA equ 01F38h ;# ">
+"30696
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 30696: __asm("WPUA equ 01F39h");
+[; <" WPUA equ 01F39h ;# ">
+"30746
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 30746: __asm("ODCONA equ 01F3Ah");
+[; <" ODCONA equ 01F3Ah ;# ">
+"30791
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 30791: __asm("SLRCONA equ 01F3Bh");
+[; <" SLRCONA equ 01F3Bh ;# ">
+"30836
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 30836: __asm("INLVLA equ 01F3Ch");
+[; <" INLVLA equ 01F3Ch ;# ">
+"30886
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 30886: __asm("IOCAP equ 01F3Dh");
+[; <" IOCAP equ 01F3Dh ;# ">
+"30936
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 30936: __asm("IOCAN equ 01F3Eh");
+[; <" IOCAN equ 01F3Eh ;# ">
+"30986
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 30986: __asm("IOCAF equ 01F3Fh");
+[; <" IOCAF equ 01F3Fh ;# ">
+"31036
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 31036: __asm("ANSELB equ 01F43h");
+[; <" ANSELB equ 01F43h ;# ">
+"31075
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 31075: __asm("WPUB equ 01F44h");
+[; <" WPUB equ 01F44h ;# ">
+"31114
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 31114: __asm("ODCONB equ 01F45h");
+[; <" ODCONB equ 01F45h ;# ">
+"31153
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 31153: __asm("SLRCONB equ 01F46h");
+[; <" SLRCONB equ 01F46h ;# ">
+"31192
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 31192: __asm("INLVLB equ 01F47h");
+[; <" INLVLB equ 01F47h ;# ">
+"31231
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 31231: __asm("IOCBP equ 01F48h");
+[; <" IOCBP equ 01F48h ;# ">
+"31270
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 31270: __asm("IOCBN equ 01F49h");
+[; <" IOCBN equ 01F49h ;# ">
+"31309
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 31309: __asm("IOCBF equ 01F4Ah");
+[; <" IOCBF equ 01F4Ah ;# ">
+"31348
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 31348: __asm("ANSELC equ 01F4Eh");
+[; <" ANSELC equ 01F4Eh ;# ">
+"31410
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 31410: __asm("WPUC equ 01F4Fh");
+[; <" WPUC equ 01F4Fh ;# ">
+"31472
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 31472: __asm("ODCONC equ 01F50h");
+[; <" ODCONC equ 01F50h ;# ">
+"31534
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 31534: __asm("SLRCONC equ 01F51h");
+[; <" SLRCONC equ 01F51h ;# ">
+"31596
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 31596: __asm("INLVLC equ 01F52h");
+[; <" INLVLC equ 01F52h ;# ">
+"31658
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 31658: __asm("IOCCP equ 01F53h");
+[; <" IOCCP equ 01F53h ;# ">
+"31720
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 31720: __asm("IOCCN equ 01F54h");
+[; <" IOCCN equ 01F54h ;# ">
+"31782
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 31782: __asm("IOCCF equ 01F55h");
+[; <" IOCCF equ 01F55h ;# ">
+"31844
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 31844: __asm("STATUS_SHAD equ 01FE4h");
+[; <" STATUS_SHAD equ 01FE4h ;# ">
+"31864
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 31864: __asm("WREG_SHAD equ 01FE5h");
+[; <" WREG_SHAD equ 01FE5h ;# ">
+"31884
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 31884: __asm("BSR_SHAD equ 01FE6h");
+[; <" BSR_SHAD equ 01FE6h ;# ">
+"31904
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 31904: __asm("PCLATH_SHAD equ 01FE7h");
+[; <" PCLATH_SHAD equ 01FE7h ;# ">
+"31924
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 31924: __asm("FSR0_SHAD equ 01FE8h");
+[; <" FSR0_SHAD equ 01FE8h ;# ">
+"31931
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 31931: __asm("FSR0L_SHAD equ 01FE8h");
+[; <" FSR0L_SHAD equ 01FE8h ;# ">
+"31951
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 31951: __asm("FSR0H_SHAD equ 01FE9h");
+[; <" FSR0H_SHAD equ 01FE9h ;# ">
+"31971
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 31971: __asm("FSR1L_SHAD equ 01FEAh");
+[; <" FSR1L_SHAD equ 01FEAh ;# ">
+"31991
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 31991: __asm("FSR1H_SHAD equ 01FEBh");
+[; <" FSR1H_SHAD equ 01FEBh ;# ">
+"32011
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 32011: __asm("STKPTR equ 01FEDh");
+[; <" STKPTR equ 01FEDh ;# ">
+"32055
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 32055: __asm("TOSL equ 01FEEh");
+[; <" TOSL equ 01FEEh ;# ">
+"32125
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18446.h: 32125: __asm("TOSH equ 01FEFh");
+[; <" TOSH equ 01FEFh ;# ">
+"287 Sensors/bme680.c
+[; ;Sensors/bme680.c: 287: int8_t bme680_init(struct bme680_dev *dev)
+[v _bme680_init `(c ~T0 @X0 1 ef1`*S1521 ]
+"288
+[; ;Sensors/bme680.c: 288: {
+{
+[e :U _bme680_init ]
+"287
+[; ;Sensors/bme680.c: 287: int8_t bme680_init(struct bme680_dev *dev)
+[v _dev `*S1521 ~T0 @X0 1 r1 ]
+"288
+[; ;Sensors/bme680.c: 288: {
+[f ]
+"289
+[; ;Sensors/bme680.c: 289:  int8_t rslt;
+[v _rslt `c ~T0 @X0 1 a ]
+"292
+[; ;Sensors/bme680.c: 292:  rslt = null_ptr_check(dev);
+[e = _rslt ( _null_ptr_check (1 -> _dev `*CS1521 ]
+"293
+[; ;Sensors/bme680.c: 293:  if (rslt == 0) {
+[e $ ! == -> _rslt `i -> 0 `i 1523  ]
+{
+"295
+[; ;Sensors/bme680.c: 295:   rslt = bme680_soft_reset(dev);
+[e = _rslt ( _bme680_soft_reset (1 _dev ]
+"296
+[; ;Sensors/bme680.c: 296:   if (rslt == 0) {
+[e $ ! == -> _rslt `i -> 0 `i 1524  ]
+{
+"297
+[; ;Sensors/bme680.c: 297:    rslt = bme680_get_regs(0xd0, &dev->chip_id, 1, dev);
+[e = _rslt ( _bme680_get_regs (4 , , , -> -> 208 `i `uc &U . *U _dev 0 -> -> 1 `i `us _dev ]
+"298
+[; ;Sensors/bme680.c: 298:    if (rslt == 0) {
+[e $ ! == -> _rslt `i -> 0 `i 1525  ]
+{
+"299
+[; ;Sensors/bme680.c: 299:     if (dev->chip_id == 0x61) {
+[e $ ! == -> . *U _dev 0 `i -> 97 `i 1526  ]
+{
+"301
+[; ;Sensors/bme680.c: 301:      rslt = get_calib_data(dev);
+[e = _rslt ( _get_calib_data (1 _dev ]
+"302
+[; ;Sensors/bme680.c: 302:     } else {
+}
+[e $U 1527  ]
+[e :U 1526 ]
+{
+"303
+[; ;Sensors/bme680.c: 303:      rslt = -3;
+[e = _rslt -> -U -> 3 `i `c ]
+"304
+[; ;Sensors/bme680.c: 304:     }
+}
+[e :U 1527 ]
+"305
+[; ;Sensors/bme680.c: 305:    }
+}
+[e :U 1525 ]
+"306
+[; ;Sensors/bme680.c: 306:   }
+}
+[e :U 1524 ]
+"307
+[; ;Sensors/bme680.c: 307:  }
+}
+[e :U 1523 ]
+"309
+[; ;Sensors/bme680.c: 309:  return rslt;
+[e ) _rslt ]
+[e $UE 1522  ]
+"310
+[; ;Sensors/bme680.c: 310: }
+[e :UE 1522 ]
+}
+"315
+[; ;Sensors/bme680.c: 315: int8_t bme680_get_regs(uint8_t reg_addr, uint8_t *reg_data, uint16_t len, struct bme680_dev *dev)
+[v _bme680_get_regs `(c ~T0 @X0 1 ef4`uc`*uc`us`*S1521 ]
+"316
+[; ;Sensors/bme680.c: 316: {
+{
+[e :U _bme680_get_regs ]
+"315
+[; ;Sensors/bme680.c: 315: int8_t bme680_get_regs(uint8_t reg_addr, uint8_t *reg_data, uint16_t len, struct bme680_dev *dev)
+[v _reg_addr `uc ~T0 @X0 1 r1 ]
+[v _reg_data `*uc ~T0 @X0 1 r2 ]
+[v _len `us ~T0 @X0 1 r3 ]
+[v _dev `*S1521 ~T0 @X0 1 r4 ]
+"316
+[; ;Sensors/bme680.c: 316: {
+[f ]
+"317
+[; ;Sensors/bme680.c: 317:  int8_t rslt;
+[v _rslt `c ~T0 @X0 1 a ]
+"320
+[; ;Sensors/bme680.c: 320:  rslt = null_ptr_check(dev);
+[e = _rslt ( _null_ptr_check (1 -> _dev `*CS1521 ]
+"321
+[; ;Sensors/bme680.c: 321:  if (rslt == 0) {
+[e $ ! == -> _rslt `i -> 0 `i 1529  ]
+{
+"322
+[; ;Sensors/bme680.c: 322:   if (dev->intf == BME680_SPI_INTF) {
+[e $ ! == -> . *U _dev 2 `ui -> . `E10904 0 `ui 1530  ]
+{
+"324
+[; ;Sensors/bme680.c: 324:    rslt = set_mem_page(reg_addr, dev);
+[e = _rslt ( _set_mem_page (2 , _reg_addr _dev ]
+"325
+[; ;Sensors/bme680.c: 325:    if (rslt == 0)
+[e $ ! == -> _rslt `i -> 0 `i 1531  ]
+"326
+[; ;Sensors/bme680.c: 326:     reg_addr = reg_addr | 0x80;
+[e = _reg_addr -> | -> _reg_addr `i -> 128 `i `uc ]
+[e :U 1531 ]
+"327
+[; ;Sensors/bme680.c: 327:   }
+}
+[e :U 1530 ]
+"328
+[; ;Sensors/bme680.c: 328:   dev->com_rslt = dev->read(dev->dev_id, reg_addr, reg_data, len);
+[e = . *U _dev 14 ( *U . *U _dev 11 (4 , , , . *U _dev 1 _reg_addr _reg_data _len ]
+"329
+[; ;Sensors/bme680.c: 329:   if (dev->com_rslt != 0)
+[e $ ! != -> . *U _dev 14 `i -> 0 `i 1532  ]
+"330
+[; ;Sensors/bme680.c: 330:    rslt = -2;
+[e = _rslt -> -U -> 2 `i `c ]
+[e :U 1532 ]
+"331
+[; ;Sensors/bme680.c: 331:  }
+}
+[e :U 1529 ]
+"333
+[; ;Sensors/bme680.c: 333:  return rslt;
+[e ) _rslt ]
+[e $UE 1528  ]
+"334
+[; ;Sensors/bme680.c: 334: }
+[e :UE 1528 ]
+}
+"340
+[; ;Sensors/bme680.c: 340: int8_t bme680_set_regs(const uint8_t *reg_addr, const uint8_t *reg_data, uint8_t len, struct bme680_dev *dev)
+[v _bme680_set_regs `(c ~T0 @X0 1 ef4`*Cuc`*Cuc`uc`*S1521 ]
+"341
+[; ;Sensors/bme680.c: 341: {
+{
+[e :U _bme680_set_regs ]
+"340
+[; ;Sensors/bme680.c: 340: int8_t bme680_set_regs(const uint8_t *reg_addr, const uint8_t *reg_data, uint8_t len, struct bme680_dev *dev)
+[v _reg_addr `*Cuc ~T0 @X0 1 r1 ]
+[v _reg_data `*Cuc ~T0 @X0 1 r2 ]
+[v _len `uc ~T0 @X0 1 r3 ]
+[v _dev `*S1521 ~T0 @X0 1 r4 ]
+"341
+[; ;Sensors/bme680.c: 341: {
+[f ]
+"342
+[; ;Sensors/bme680.c: 342:  int8_t rslt;
+[v _rslt `c ~T0 @X0 1 a ]
+[v F11074 `uc ~T0 @X0 -> 40 `i s ]
+[i F11074
+:U ..
+"344
+[; ;Sensors/bme680.c: 344:  uint8_t tmp_buff[40] = { 0 };
+-> -> 0 `i `uc
+..
+]
+[v _tmp_buff `uc ~T0 @X0 -> 40 `i a ]
+[e = _tmp_buff F11074 ]
+"345
+[; ;Sensors/bme680.c: 345:  uint16_t index;
+[v _index `us ~T0 @X0 1 a ]
+"348
+[; ;Sensors/bme680.c: 348:  rslt = null_ptr_check(dev);
+[e = _rslt ( _null_ptr_check (1 -> _dev `*CS1521 ]
+"349
+[; ;Sensors/bme680.c: 349:  if (rslt == 0) {
+[e $ ! == -> _rslt `i -> 0 `i 1534  ]
+{
+"350
+[; ;Sensors/bme680.c: 350:   if ((len > 0) && (len < 40 / 2)) {
+[e $ ! && > -> _len `i -> 0 `i < -> _len `i / -> 40 `i -> 2 `i 1535  ]
+{
+"352
+[; ;Sensors/bme680.c: 352:    for (index = 0; index < len; index++) {
+{
+[e = _index -> -> 0 `i `us ]
+[e $U 1539  ]
+[e :U 1536 ]
+{
+"353
+[; ;Sensors/bme680.c: 353:     if (dev->intf == BME680_SPI_INTF) {
+[e $ ! == -> . *U _dev 2 `ui -> . `E10904 0 `ui 1540  ]
+{
+"355
+[; ;Sensors/bme680.c: 355:      rslt = set_mem_page(reg_addr[index], dev);
+[e = _rslt ( _set_mem_page (2 , *U + _reg_addr * -> _index `ux -> -> # *U _reg_addr `ui `ux _dev ]
+"356
+[; ;Sensors/bme680.c: 356:      tmp_buff[(2 * index)] = reg_addr[index] & 0x7f;
+[e = *U + &U _tmp_buff * -> * -> -> 2 `i `ui -> _index `ui `ux -> -> # *U &U _tmp_buff `ui `ux -> & -> *U + _reg_addr * -> _index `ux -> -> # *U _reg_addr `ui `ux `i -> 127 `i `uc ]
+"357
+[; ;Sensors/bme680.c: 357:     } else {
+}
+[e $U 1541  ]
+[e :U 1540 ]
+{
+"358
+[; ;Sensors/bme680.c: 358:      tmp_buff[(2 * index)] = reg_addr[index];
+[e = *U + &U _tmp_buff * -> * -> -> 2 `i `ui -> _index `ui `ux -> -> # *U &U _tmp_buff `ui `ux *U + _reg_addr * -> _index `ux -> -> # *U _reg_addr `ui `ux ]
+"359
+[; ;Sensors/bme680.c: 359:     }
+}
+[e :U 1541 ]
+"360
+[; ;Sensors/bme680.c: 360:     tmp_buff[(2 * index) + 1] = reg_data[index];
+[e = *U + &U _tmp_buff * -> + * -> -> 2 `i `ui -> _index `ui -> -> 1 `i `ui `ux -> -> # *U &U _tmp_buff `ui `ux *U + _reg_data * -> _index `ux -> -> # *U _reg_data `ui `ux ]
+"361
+[; ;Sensors/bme680.c: 361:    }
+}
+[e ++ _index -> -> 1 `i `us ]
+[e :U 1539 ]
+[e $ < -> _index `ui -> _len `ui 1536  ]
+[e :U 1537 ]
+}
+"363
+[; ;Sensors/bme680.c: 363:    if (rslt == 0) {
+[e $ ! == -> _rslt `i -> 0 `i 1542  ]
+{
+"364
+[; ;Sensors/bme680.c: 364:     dev->com_rslt = dev->write(dev->dev_id, tmp_buff[0], &tmp_buff[1], (2 * len) - 1);
+[e = . *U _dev 14 ( *U . *U _dev 12 (4 , , , . *U _dev 1 *U + &U _tmp_buff * -> -> -> 0 `i `ui `ux -> -> # *U &U _tmp_buff `ui `ux &U *U + &U _tmp_buff * -> -> -> 1 `i `ui `ux -> -> # *U &U _tmp_buff `ui `ux -> - * -> 2 `i -> _len `i -> 1 `i `us ]
+"365
+[; ;Sensors/bme680.c: 365:     if (dev->com_rslt != 0)
+[e $ ! != -> . *U _dev 14 `i -> 0 `i 1543  ]
+"366
+[; ;Sensors/bme680.c: 366:      rslt = -2;
+[e = _rslt -> -U -> 2 `i `c ]
+[e :U 1543 ]
+"367
+[; ;Sensors/bme680.c: 367:    }
+}
+[e :U 1542 ]
+"368
+[; ;Sensors/bme680.c: 368:   } else {
+}
+[e $U 1544  ]
+[e :U 1535 ]
+{
+"369
+[; ;Sensors/bme680.c: 369:    rslt = -4;
+[e = _rslt -> -U -> 4 `i `c ]
+"370
+[; ;Sensors/bme680.c: 370:   }
+}
+[e :U 1544 ]
+"371
+[; ;Sensors/bme680.c: 371:  }
+}
+[e :U 1534 ]
+"373
+[; ;Sensors/bme680.c: 373:  return rslt;
+[e ) _rslt ]
+[e $UE 1533  ]
+"374
+[; ;Sensors/bme680.c: 374: }
+[e :UE 1533 ]
+}
+"379
+[; ;Sensors/bme680.c: 379: int8_t bme680_soft_reset(struct bme680_dev *dev)
+[v _bme680_soft_reset `(c ~T0 @X0 1 ef1`*S1521 ]
+"380
+[; ;Sensors/bme680.c: 380: {
+{
+[e :U _bme680_soft_reset ]
+"379
+[; ;Sensors/bme680.c: 379: int8_t bme680_soft_reset(struct bme680_dev *dev)
+[v _dev `*S1521 ~T0 @X0 1 r1 ]
+"380
+[; ;Sensors/bme680.c: 380: {
+[f ]
+"381
+[; ;Sensors/bme680.c: 381:  int8_t rslt;
+[v _rslt `c ~T0 @X0 1 a ]
+"382
+[; ;Sensors/bme680.c: 382:  uint8_t reg_addr = 0xe0;
+[v _reg_addr `uc ~T0 @X0 1 a ]
+[e = _reg_addr -> -> 224 `i `uc ]
+"384
+[; ;Sensors/bme680.c: 384:  uint8_t soft_rst_cmd = 0xb6;
+[v _soft_rst_cmd `uc ~T0 @X0 1 a ]
+[e = _soft_rst_cmd -> -> 182 `i `uc ]
+"387
+[; ;Sensors/bme680.c: 387:  rslt = null_ptr_check(dev);
+[e = _rslt ( _null_ptr_check (1 -> _dev `*CS1521 ]
+"388
+[; ;Sensors/bme680.c: 388:  if (rslt == 0) {
+[e $ ! == -> _rslt `i -> 0 `i 1546  ]
+{
+"389
+[; ;Sensors/bme680.c: 389:   if (dev->intf == BME680_SPI_INTF)
+[e $ ! == -> . *U _dev 2 `ui -> . `E10904 0 `ui 1547  ]
+"390
+[; ;Sensors/bme680.c: 390:    rslt = get_mem_page(dev);
+[e = _rslt ( _get_mem_page (1 _dev ]
+[e :U 1547 ]
+"393
+[; ;Sensors/bme680.c: 393:   if (rslt == 0) {
+[e $ ! == -> _rslt `i -> 0 `i 1548  ]
+{
+"394
+[; ;Sensors/bme680.c: 394:    rslt = bme680_set_regs(&reg_addr, &soft_rst_cmd, 1, dev);
+[e = _rslt ( _bme680_set_regs (4 , , , -> &U _reg_addr `*Cuc -> &U _soft_rst_cmd `*Cuc -> -> 1 `i `uc _dev ]
+"396
+[; ;Sensors/bme680.c: 396:    dev->delay_ms(10UL);
+[e ( *U . *U _dev 13 (1 -> 10 `ul ]
+"398
+[; ;Sensors/bme680.c: 398:    if (rslt == 0) {
+[e $ ! == -> _rslt `i -> 0 `i 1549  ]
+{
+"400
+[; ;Sensors/bme680.c: 400:     if (dev->intf == BME680_SPI_INTF)
+[e $ ! == -> . *U _dev 2 `ui -> . `E10904 0 `ui 1550  ]
+"401
+[; ;Sensors/bme680.c: 401:      rslt = get_mem_page(dev);
+[e = _rslt ( _get_mem_page (1 _dev ]
+[e :U 1550 ]
+"402
+[; ;Sensors/bme680.c: 402:    }
+}
+[e :U 1549 ]
+"403
+[; ;Sensors/bme680.c: 403:   }
+}
+[e :U 1548 ]
+"404
+[; ;Sensors/bme680.c: 404:  }
+}
+[e :U 1546 ]
+"406
+[; ;Sensors/bme680.c: 406:  return rslt;
+[e ) _rslt ]
+[e $UE 1545  ]
+"407
+[; ;Sensors/bme680.c: 407: }
+[e :UE 1545 ]
+}
+"413
+[; ;Sensors/bme680.c: 413: int8_t bme680_set_sensor_settings(uint16_t desired_settings, struct bme680_dev *dev)
+[v _bme680_set_sensor_settings `(c ~T0 @X0 1 ef2`us`*S1521 ]
+"414
+[; ;Sensors/bme680.c: 414: {
+{
+[e :U _bme680_set_sensor_settings ]
+"413
+[; ;Sensors/bme680.c: 413: int8_t bme680_set_sensor_settings(uint16_t desired_settings, struct bme680_dev *dev)
+[v _desired_settings `us ~T0 @X0 1 r1 ]
+[v _dev `*S1521 ~T0 @X0 1 r2 ]
+"414
+[; ;Sensors/bme680.c: 414: {
+[f ]
+"415
+[; ;Sensors/bme680.c: 415:  int8_t rslt;
+[v _rslt `c ~T0 @X0 1 a ]
+"416
+[; ;Sensors/bme680.c: 416:  uint8_t reg_addr;
+[v _reg_addr `uc ~T0 @X0 1 a ]
+"417
+[; ;Sensors/bme680.c: 417:  uint8_t data = 0;
+[v _data `uc ~T0 @X0 1 a ]
+[e = _data -> -> 0 `i `uc ]
+"418
+[; ;Sensors/bme680.c: 418:  uint8_t count = 0;
+[v _count `uc ~T0 @X0 1 a ]
+[e = _count -> -> 0 `i `uc ]
+[v F11096 `uc ~T0 @X0 -> 6 `i s ]
+[i F11096
+:U ..
+"419
+[; ;Sensors/bme680.c: 419:  uint8_t reg_array[6] = { 0 };
+-> -> 0 `i `uc
+..
+]
+[v _reg_array `uc ~T0 @X0 -> 6 `i a ]
+[e = _reg_array F11096 ]
+[v F11098 `uc ~T0 @X0 -> 6 `i s ]
+[i F11098
+:U ..
+"420
+[; ;Sensors/bme680.c: 420:  uint8_t data_array[6] = { 0 };
+-> -> 0 `i `uc
+..
+]
+[v _data_array `uc ~T0 @X0 -> 6 `i a ]
+[e = _data_array F11098 ]
+"421
+[; ;Sensors/bme680.c: 421:  uint8_t intended_power_mode = dev->power_mode;
+[v _intended_power_mode `uc ~T0 @X0 1 a ]
+[e = _intended_power_mode . *U _dev 8 ]
+"424
+[; ;Sensors/bme680.c: 424:  rslt = null_ptr_check(dev);
+[e = _rslt ( _null_ptr_check (1 -> _dev `*CS1521 ]
+"425
+[; ;Sensors/bme680.c: 425:  if (rslt == 0) {
+[e $ ! == -> _rslt `i -> 0 `i 1552  ]
+{
+"426
+[; ;Sensors/bme680.c: 426:   if (desired_settings & 8)
+[e $ ! != & -> _desired_settings `ui -> -> 8 `i `ui -> -> 0 `i `ui 1553  ]
+"427
+[; ;Sensors/bme680.c: 427:    rslt = set_gas_config(dev);
+[e = _rslt ( _set_gas_config (1 _dev ]
+[e :U 1553 ]
+"429
+[; ;Sensors/bme680.c: 429:   dev->power_mode = 0;
+[e = . *U _dev 8 -> -> 0 `i `uc ]
+"430
+[; ;Sensors/bme680.c: 430:   if (rslt == 0)
+[e $ ! == -> _rslt `i -> 0 `i 1554  ]
+"431
+[; ;Sensors/bme680.c: 431:    rslt = bme680_set_sensor_mode(dev);
+[e = _rslt ( _bme680_set_sensor_mode (1 _dev ]
+[e :U 1554 ]
+"434
+[; ;Sensors/bme680.c: 434:   if (desired_settings & 16) {
+[e $ ! != & -> _desired_settings `ui -> -> 16 `i `ui -> -> 0 `i `ui 1555  ]
+{
+"435
+[; ;Sensors/bme680.c: 435:    rslt = boundary_check(&dev->tph_sett.filter, 0, 7, dev);
+[e = _rslt ( _boundary_check (4 , , , &U . . *U _dev 6 3 -> -> 0 `i `uc -> -> 7 `i `uc _dev ]
+"436
+[; ;Sensors/bme680.c: 436:    reg_addr = 0x75;
+[e = _reg_addr -> -> 117 `i `uc ]
+"438
+[; ;Sensors/bme680.c: 438:    if (rslt == 0)
+[e $ ! == -> _rslt `i -> 0 `i 1556  ]
+"439
+[; ;Sensors/bme680.c: 439:     rslt = bme680_get_regs(reg_addr, &data, 1, dev);
+[e = _rslt ( _bme680_get_regs (4 , , , _reg_addr &U _data -> -> 1 `i `us _dev ]
+[e :U 1556 ]
+"441
+[; ;Sensors/bme680.c: 441:    if (desired_settings & 16)
+[e $ ! != & -> _desired_settings `ui -> -> 16 `i `ui -> -> 0 `i `ui 1557  ]
+"442
+[; ;Sensors/bme680.c: 442:     data = ((data & ~( 0X1C)) | ((dev->tph_sett.filter << 2) & 0X1C));
+[e = _data -> | & -> _data `i ~ -> 28 `i & << -> . . *U _dev 6 3 `i -> 2 `i -> 28 `i `uc ]
+[e :U 1557 ]
+"444
+[; ;Sensors/bme680.c: 444:    reg_array[count] = reg_addr;
+[e = *U + &U _reg_array * -> _count `ux -> -> # *U &U _reg_array `ui `ux _reg_addr ]
+"445
+[; ;Sensors/bme680.c: 445:    data_array[count] = data;
+[e = *U + &U _data_array * -> _count `ux -> -> # *U &U _data_array `ui `ux _data ]
+"446
+[; ;Sensors/bme680.c: 446:    count++;
+[e ++ _count -> -> 1 `i `uc ]
+"447
+[; ;Sensors/bme680.c: 447:   }
+}
+[e :U 1555 ]
+"450
+[; ;Sensors/bme680.c: 450:   if (desired_settings & 32) {
+[e $ ! != & -> _desired_settings `ui -> -> 32 `i `ui -> -> 0 `i `ui 1558  ]
+{
+"451
+[; ;Sensors/bme680.c: 451:    rslt = boundary_check(&dev->gas_sett.heatr_ctrl, 0x00,
+[e = _rslt ( _boundary_check (4 , , , &U . . *U _dev 7 1 -> -> 0 `i `uc -> -> 8 `i `uc _dev ]
+"453
+[; ;Sensors/bme680.c: 453:    reg_addr = 0x70;
+[e = _reg_addr -> -> 112 `i `uc ]
+"455
+[; ;Sensors/bme680.c: 455:    if (rslt == 0)
+[e $ ! == -> _rslt `i -> 0 `i 1559  ]
+"456
+[; ;Sensors/bme680.c: 456:     rslt = bme680_get_regs(reg_addr, &data, 1, dev);
+[e = _rslt ( _bme680_get_regs (4 , , , _reg_addr &U _data -> -> 1 `i `us _dev ]
+[e :U 1559 ]
+"457
+[; ;Sensors/bme680.c: 457:    data = ((data & ~( 0x08)) | (dev->gas_sett.heatr_ctrl & 0x08));
+[e = _data -> | & -> _data `i ~ -> 8 `i & -> . . *U _dev 7 1 `i -> 8 `i `uc ]
+"459
+[; ;Sensors/bme680.c: 459:    reg_array[count] = reg_addr;
+[e = *U + &U _reg_array * -> _count `ux -> -> # *U &U _reg_array `ui `ux _reg_addr ]
+"460
+[; ;Sensors/bme680.c: 460:    data_array[count] = data;
+[e = *U + &U _data_array * -> _count `ux -> -> # *U &U _data_array `ui `ux _data ]
+"461
+[; ;Sensors/bme680.c: 461:    count++;
+[e ++ _count -> -> 1 `i `uc ]
+"462
+[; ;Sensors/bme680.c: 462:   }
+}
+[e :U 1558 ]
+"465
+[; ;Sensors/bme680.c: 465:   if (desired_settings & (1 | 2)) {
+[e $ ! != & -> _desired_settings `ui -> | -> 1 `i -> 2 `i `ui -> -> 0 `i `ui 1560  ]
+{
+"466
+[; ;Sensors/bme680.c: 466:    rslt = boundary_check(&dev->tph_sett.os_temp, 0, 5, dev);
+[e = _rslt ( _boundary_check (4 , , , &U . . *U _dev 6 1 -> -> 0 `i `uc -> -> 5 `i `uc _dev ]
+"467
+[; ;Sensors/bme680.c: 467:    reg_addr = 0x74;
+[e = _reg_addr -> -> 116 `i `uc ]
+"469
+[; ;Sensors/bme680.c: 469:    if (rslt == 0)
+[e $ ! == -> _rslt `i -> 0 `i 1561  ]
+"470
+[; ;Sensors/bme680.c: 470:     rslt = bme680_get_regs(reg_addr, &data, 1, dev);
+[e = _rslt ( _bme680_get_regs (4 , , , _reg_addr &U _data -> -> 1 `i `us _dev ]
+[e :U 1561 ]
+"472
+[; ;Sensors/bme680.c: 472:    if (desired_settings & 1)
+[e $ ! != & -> _desired_settings `ui -> -> 1 `i `ui -> -> 0 `i `ui 1562  ]
+"473
+[; ;Sensors/bme680.c: 473:     data = ((data & ~( 0XE0)) | ((dev->tph_sett.os_temp << 5) & 0XE0));
+[e = _data -> | & -> _data `i ~ -> 224 `i & << -> . . *U _dev 6 1 `i -> 5 `i -> 224 `i `uc ]
+[e :U 1562 ]
+"475
+[; ;Sensors/bme680.c: 475:    if (desired_settings & 2)
+[e $ ! != & -> _desired_settings `ui -> -> 2 `i `ui -> -> 0 `i `ui 1563  ]
+"476
+[; ;Sensors/bme680.c: 476:     data = ((data & ~( 0X1C)) | ((dev->tph_sett.os_pres << 2) & 0X1C));
+[e = _data -> | & -> _data `i ~ -> 28 `i & << -> . . *U _dev 6 2 `i -> 2 `i -> 28 `i `uc ]
+[e :U 1563 ]
+"478
+[; ;Sensors/bme680.c: 478:    reg_array[count] = reg_addr;
+[e = *U + &U _reg_array * -> _count `ux -> -> # *U &U _reg_array `ui `ux _reg_addr ]
+"479
+[; ;Sensors/bme680.c: 479:    data_array[count] = data;
+[e = *U + &U _data_array * -> _count `ux -> -> # *U &U _data_array `ui `ux _data ]
+"480
+[; ;Sensors/bme680.c: 480:    count++;
+[e ++ _count -> -> 1 `i `uc ]
+"481
+[; ;Sensors/bme680.c: 481:   }
+}
+[e :U 1560 ]
+"484
+[; ;Sensors/bme680.c: 484:   if (desired_settings & 4) {
+[e $ ! != & -> _desired_settings `ui -> -> 4 `i `ui -> -> 0 `i `ui 1564  ]
+{
+"485
+[; ;Sensors/bme680.c: 485:    rslt = boundary_check(&dev->tph_sett.os_hum, 0, 5, dev);
+[e = _rslt ( _boundary_check (4 , , , &U . . *U _dev 6 0 -> -> 0 `i `uc -> -> 5 `i `uc _dev ]
+"486
+[; ;Sensors/bme680.c: 486:    reg_addr = 0x72;
+[e = _reg_addr -> -> 114 `i `uc ]
+"488
+[; ;Sensors/bme680.c: 488:    if (rslt == 0)
+[e $ ! == -> _rslt `i -> 0 `i 1565  ]
+"489
+[; ;Sensors/bme680.c: 489:     rslt = bme680_get_regs(reg_addr, &data, 1, dev);
+[e = _rslt ( _bme680_get_regs (4 , , , _reg_addr &U _data -> -> 1 `i `us _dev ]
+[e :U 1565 ]
+"490
+[; ;Sensors/bme680.c: 490:    data = ((data & ~( 0X07)) | (dev->tph_sett.os_hum & 0X07));
+[e = _data -> | & -> _data `i ~ -> 7 `i & -> . . *U _dev 6 0 `i -> 7 `i `uc ]
+"492
+[; ;Sensors/bme680.c: 492:    reg_array[count] = reg_addr;
+[e = *U + &U _reg_array * -> _count `ux -> -> # *U &U _reg_array `ui `ux _reg_addr ]
+"493
+[; ;Sensors/bme680.c: 493:    data_array[count] = data;
+[e = *U + &U _data_array * -> _count `ux -> -> # *U &U _data_array `ui `ux _data ]
+"494
+[; ;Sensors/bme680.c: 494:    count++;
+[e ++ _count -> -> 1 `i `uc ]
+"495
+[; ;Sensors/bme680.c: 495:   }
+}
+[e :U 1564 ]
+"498
+[; ;Sensors/bme680.c: 498:   if (desired_settings & (64 | 128)) {
+[e $ ! != & -> _desired_settings `ui -> | -> 64 `i -> 128 `i `ui -> -> 0 `i `ui 1566  ]
+{
+"499
+[; ;Sensors/bme680.c: 499:    rslt = boundary_check(&dev->gas_sett.run_gas, 0,
+[e = _rslt ( _boundary_check (4 , , , &U . . *U _dev 7 2 -> -> 0 `i `uc -> -> 1 `i `uc _dev ]
+"501
+[; ;Sensors/bme680.c: 501:    if (rslt == 0) {
+[e $ ! == -> _rslt `i -> 0 `i 1567  ]
+{
+"503
+[; ;Sensors/bme680.c: 503:     rslt = boundary_check(&dev->gas_sett.nb_conv, 0,
+[e = _rslt ( _boundary_check (4 , , , &U . . *U _dev 7 0 -> -> 0 `i `uc -> -> 10 `i `uc _dev ]
+"505
+[; ;Sensors/bme680.c: 505:    }
+}
+[e :U 1567 ]
+"507
+[; ;Sensors/bme680.c: 507:    reg_addr = 0x71;
+[e = _reg_addr -> -> 113 `i `uc ]
+"509
+[; ;Sensors/bme680.c: 509:    if (rslt == 0)
+[e $ ! == -> _rslt `i -> 0 `i 1568  ]
+"510
+[; ;Sensors/bme680.c: 510:     rslt = bme680_get_regs(reg_addr, &data, 1, dev);
+[e = _rslt ( _bme680_get_regs (4 , , , _reg_addr &U _data -> -> 1 `i `us _dev ]
+[e :U 1568 ]
+"512
+[; ;Sensors/bme680.c: 512:    if (desired_settings & 64)
+[e $ ! != & -> _desired_settings `ui -> -> 64 `i `ui -> -> 0 `i `ui 1569  ]
+"513
+[; ;Sensors/bme680.c: 513:     data = ((data & ~( 0x10)) | ((dev->gas_sett.run_gas << 4) & 0x10));
+[e = _data -> | & -> _data `i ~ -> 16 `i & << -> . . *U _dev 7 2 `i -> 4 `i -> 16 `i `uc ]
+[e :U 1569 ]
+"515
+[; ;Sensors/bme680.c: 515:    if (desired_settings & 128)
+[e $ ! != & -> _desired_settings `ui -> -> 128 `i `ui -> -> 0 `i `ui 1570  ]
+"516
+[; ;Sensors/bme680.c: 516:     data = ((data & ~( 0X0F)) | (dev->gas_sett.nb_conv & 0X0F));
+[e = _data -> | & -> _data `i ~ -> 15 `i & -> . . *U _dev 7 0 `i -> 15 `i `uc ]
+[e :U 1570 ]
+"518
+[; ;Sensors/bme680.c: 518:    reg_array[count] = reg_addr;
+[e = *U + &U _reg_array * -> _count `ux -> -> # *U &U _reg_array `ui `ux _reg_addr ]
+"519
+[; ;Sensors/bme680.c: 519:    data_array[count] = data;
+[e = *U + &U _data_array * -> _count `ux -> -> # *U &U _data_array `ui `ux _data ]
+"520
+[; ;Sensors/bme680.c: 520:    count++;
+[e ++ _count -> -> 1 `i `uc ]
+"521
+[; ;Sensors/bme680.c: 521:   }
+}
+[e :U 1566 ]
+"523
+[; ;Sensors/bme680.c: 523:   if (rslt == 0)
+[e $ ! == -> _rslt `i -> 0 `i 1571  ]
+"524
+[; ;Sensors/bme680.c: 524:    rslt = bme680_set_regs(reg_array, data_array, count, dev);
+[e = _rslt ( _bme680_set_regs (4 , , , -> &U _reg_array `*Cuc -> &U _data_array `*Cuc _count _dev ]
+[e :U 1571 ]
+"527
+[; ;Sensors/bme680.c: 527:   dev->power_mode = intended_power_mode;
+[e = . *U _dev 8 _intended_power_mode ]
+"528
+[; ;Sensors/bme680.c: 528:  }
+}
+[e :U 1552 ]
+"530
+[; ;Sensors/bme680.c: 530:  return rslt;
+[e ) _rslt ]
+[e $UE 1551  ]
+"531
+[; ;Sensors/bme680.c: 531: }
+[e :UE 1551 ]
+}
+"537
+[; ;Sensors/bme680.c: 537: int8_t bme680_get_sensor_settings(uint16_t desired_settings, struct bme680_dev *dev)
+[v _bme680_get_sensor_settings `(c ~T0 @X0 1 ef2`us`*S1521 ]
+"538
+[; ;Sensors/bme680.c: 538: {
+{
+[e :U _bme680_get_sensor_settings ]
+"537
+[; ;Sensors/bme680.c: 537: int8_t bme680_get_sensor_settings(uint16_t desired_settings, struct bme680_dev *dev)
+[v _desired_settings `us ~T0 @X0 1 r1 ]
+[v _dev `*S1521 ~T0 @X0 1 r2 ]
+"538
+[; ;Sensors/bme680.c: 538: {
+[f ]
+"539
+[; ;Sensors/bme680.c: 539:  int8_t rslt;
+[v _rslt `c ~T0 @X0 1 a ]
+"541
+[; ;Sensors/bme680.c: 541:  uint8_t reg_addr = 0x70;
+[v _reg_addr `uc ~T0 @X0 1 a ]
+[e = _reg_addr -> -> 112 `i `uc ]
+[v F11106 `uc ~T0 @X0 -> 6 `i s ]
+[i F11106
+:U ..
+"542
+[; ;Sensors/bme680.c: 542:  uint8_t data_array[6] = { 0 };
+-> -> 0 `i `uc
+..
+]
+[v _data_array `uc ~T0 @X0 -> 6 `i a ]
+[e = _data_array F11106 ]
+"545
+[; ;Sensors/bme680.c: 545:  rslt = null_ptr_check(dev);
+[e = _rslt ( _null_ptr_check (1 -> _dev `*CS1521 ]
+"546
+[; ;Sensors/bme680.c: 546:  if (rslt == 0) {
+[e $ ! == -> _rslt `i -> 0 `i 1573  ]
+{
+"547
+[; ;Sensors/bme680.c: 547:   rslt = bme680_get_regs(reg_addr, data_array, 6, dev);
+[e = _rslt ( _bme680_get_regs (4 , , , _reg_addr &U _data_array -> -> 6 `i `us _dev ]
+"549
+[; ;Sensors/bme680.c: 549:   if (rslt == 0) {
+[e $ ! == -> _rslt `i -> 0 `i 1574  ]
+{
+"550
+[; ;Sensors/bme680.c: 550:    if (desired_settings & 8)
+[e $ ! != & -> _desired_settings `ui -> -> 8 `i `ui -> -> 0 `i `ui 1575  ]
+"551
+[; ;Sensors/bme680.c: 551:     rslt = get_gas_config(dev);
+[e = _rslt ( _get_gas_config (1 _dev ]
+[e :U 1575 ]
+"554
+[; ;Sensors/bme680.c: 554:    if (desired_settings & 16)
+[e $ ! != & -> _desired_settings `ui -> -> 16 `i `ui -> -> 0 `i `ui 1576  ]
+"555
+[; ;Sensors/bme680.c: 555:     dev->tph_sett.filter = ((data_array[5] & ( 0X1C)) >> ( 2));
+[e = . . *U _dev 6 3 -> >> & -> *U + &U _data_array * -> -> -> 5 `i `ui `ux -> -> # *U &U _data_array `ui `ux `i -> 28 `i -> 2 `i `uc ]
+[e :U 1576 ]
+"558
+[; ;Sensors/bme680.c: 558:    if (desired_settings & (1 | 2)) {
+[e $ ! != & -> _desired_settings `ui -> | -> 1 `i -> 2 `i `ui -> -> 0 `i `ui 1577  ]
+{
+"559
+[; ;Sensors/bme680.c: 559:     dev->tph_sett.os_temp = ((data_array[4] & ( 0XE0)) >> ( 5));
+[e = . . *U _dev 6 1 -> >> & -> *U + &U _data_array * -> -> -> 4 `i `ui `ux -> -> # *U &U _data_array `ui `ux `i -> 224 `i -> 5 `i `uc ]
+"560
+[; ;Sensors/bme680.c: 560:     dev->tph_sett.os_pres = ((data_array[4] & ( 0X1C)) >> ( 2));
+[e = . . *U _dev 6 2 -> >> & -> *U + &U _data_array * -> -> -> 4 `i `ui `ux -> -> # *U &U _data_array `ui `ux `i -> 28 `i -> 2 `i `uc ]
+"561
+[; ;Sensors/bme680.c: 561:    }
+}
+[e :U 1577 ]
+"563
+[; ;Sensors/bme680.c: 563:    if (desired_settings & 4)
+[e $ ! != & -> _desired_settings `ui -> -> 4 `i `ui -> -> 0 `i `ui 1578  ]
+"564
+[; ;Sensors/bme680.c: 564:     dev->tph_sett.os_hum = (data_array[2] & ( 0X07));
+[e = . . *U _dev 6 0 -> & -> *U + &U _data_array * -> -> -> 2 `i `ui `ux -> -> # *U &U _data_array `ui `ux `i -> 7 `i `uc ]
+[e :U 1578 ]
+"568
+[; ;Sensors/bme680.c: 568:    if (desired_settings & 32)
+[e $ ! != & -> _desired_settings `ui -> -> 32 `i `ui -> -> 0 `i `ui 1579  ]
+"569
+[; ;Sensors/bme680.c: 569:     dev->gas_sett.heatr_ctrl = (data_array[0] & ( 0x08));
+[e = . . *U _dev 7 1 -> & -> *U + &U _data_array * -> -> -> 0 `i `ui `ux -> -> # *U &U _data_array `ui `ux `i -> 8 `i `uc ]
+[e :U 1579 ]
+"572
+[; ;Sensors/bme680.c: 572:    if (desired_settings & (64 | 128)) {
+[e $ ! != & -> _desired_settings `ui -> | -> 64 `i -> 128 `i `ui -> -> 0 `i `ui 1580  ]
+{
+"573
+[; ;Sensors/bme680.c: 573:     dev->gas_sett.nb_conv = (data_array[1] & ( 0X0F));
+[e = . . *U _dev 7 0 -> & -> *U + &U _data_array * -> -> -> 1 `i `ui `ux -> -> # *U &U _data_array `ui `ux `i -> 15 `i `uc ]
+"575
+[; ;Sensors/bme680.c: 575:     dev->gas_sett.run_gas = ((data_array[1] & ( 0x10)) >> ( 4));
+[e = . . *U _dev 7 2 -> >> & -> *U + &U _data_array * -> -> -> 1 `i `ui `ux -> -> # *U &U _data_array `ui `ux `i -> 16 `i -> 4 `i `uc ]
+"577
+[; ;Sensors/bme680.c: 577:    }
+}
+[e :U 1580 ]
+"578
+[; ;Sensors/bme680.c: 578:   }
+}
+[e :U 1574 ]
+"579
+[; ;Sensors/bme680.c: 579:  } else {
+}
+[e $U 1581  ]
+[e :U 1573 ]
+{
+"580
+[; ;Sensors/bme680.c: 580:   rslt = -1;
+[e = _rslt -> -U -> 1 `i `c ]
+"581
+[; ;Sensors/bme680.c: 581:  }
+}
+[e :U 1581 ]
+"583
+[; ;Sensors/bme680.c: 583:  return rslt;
+[e ) _rslt ]
+[e $UE 1572  ]
+"584
+[; ;Sensors/bme680.c: 584: }
+[e :UE 1572 ]
+}
+"589
+[; ;Sensors/bme680.c: 589: int8_t bme680_set_sensor_mode(struct bme680_dev *dev)
+[v _bme680_set_sensor_mode `(c ~T0 @X0 1 ef1`*S1521 ]
+"590
+[; ;Sensors/bme680.c: 590: {
+{
+[e :U _bme680_set_sensor_mode ]
+"589
+[; ;Sensors/bme680.c: 589: int8_t bme680_set_sensor_mode(struct bme680_dev *dev)
+[v _dev `*S1521 ~T0 @X0 1 r1 ]
+"590
+[; ;Sensors/bme680.c: 590: {
+[f ]
+"591
+[; ;Sensors/bme680.c: 591:  int8_t rslt;
+[v _rslt `c ~T0 @X0 1 a ]
+"592
+[; ;Sensors/bme680.c: 592:  uint8_t tmp_pow_mode;
+[v _tmp_pow_mode `uc ~T0 @X0 1 a ]
+"593
+[; ;Sensors/bme680.c: 593:  uint8_t pow_mode = 0;
+[v _pow_mode `uc ~T0 @X0 1 a ]
+[e = _pow_mode -> -> 0 `i `uc ]
+"594
+[; ;Sensors/bme680.c: 594:  uint8_t reg_addr = 0x74;
+[v _reg_addr `uc ~T0 @X0 1 a ]
+[e = _reg_addr -> -> 116 `i `uc ]
+"597
+[; ;Sensors/bme680.c: 597:  rslt = null_ptr_check(dev);
+[e = _rslt ( _null_ptr_check (1 -> _dev `*CS1521 ]
+"598
+[; ;Sensors/bme680.c: 598:  if (rslt == 0) {
+[e $ ! == -> _rslt `i -> 0 `i 1583  ]
+{
+"600
+[; ;Sensors/bme680.c: 600:   do {
+[e :U 1586 ]
+{
+"601
+[; ;Sensors/bme680.c: 601:    rslt = bme680_get_regs(0x74, &tmp_pow_mode, 1, dev);
+[e = _rslt ( _bme680_get_regs (4 , , , -> -> 116 `i `uc &U _tmp_pow_mode -> -> 1 `i `us _dev ]
+"602
+[; ;Sensors/bme680.c: 602:    if (rslt == 0) {
+[e $ ! == -> _rslt `i -> 0 `i 1587  ]
+{
+"604
+[; ;Sensors/bme680.c: 604:     pow_mode = (tmp_pow_mode & 0x03);
+[e = _pow_mode -> & -> _tmp_pow_mode `i -> 3 `i `uc ]
+"606
+[; ;Sensors/bme680.c: 606:     if (pow_mode != 0) {
+[e $ ! != -> _pow_mode `i -> 0 `i 1588  ]
+{
+"607
+[; ;Sensors/bme680.c: 607:      tmp_pow_mode = tmp_pow_mode & (~0x03);
+[e = _tmp_pow_mode -> & -> _tmp_pow_mode `i ~ -> 3 `i `uc ]
+"608
+[; ;Sensors/bme680.c: 608:      rslt = bme680_set_regs(&reg_addr, &tmp_pow_mode, 1, dev);
+[e = _rslt ( _bme680_set_regs (4 , , , -> &U _reg_addr `*Cuc -> &U _tmp_pow_mode `*Cuc -> -> 1 `i `uc _dev ]
+"609
+[; ;Sensors/bme680.c: 609:      dev->delay_ms(10);
+[e ( *U . *U _dev 13 (1 -> -> -> 10 `i `l `ul ]
+"610
+[; ;Sensors/bme680.c: 610:     }
+}
+[e :U 1588 ]
+"611
+[; ;Sensors/bme680.c: 611:    }
+}
+[e :U 1587 ]
+"612
+[; ;Sensors/bme680.c: 612:   } while (pow_mode != 0);
+}
+[e $ != -> _pow_mode `i -> 0 `i 1586  ]
+[e :U 1585 ]
+"615
+[; ;Sensors/bme680.c: 615:   if (dev->power_mode != 0) {
+[e $ ! != -> . *U _dev 8 `i -> 0 `i 1589  ]
+{
+"616
+[; ;Sensors/bme680.c: 616:    tmp_pow_mode = (tmp_pow_mode & ~0x03) | (dev->power_mode & 0x03);
+[e = _tmp_pow_mode -> | & -> _tmp_pow_mode `i ~ -> 3 `i & -> . *U _dev 8 `i -> 3 `i `uc ]
+"617
+[; ;Sensors/bme680.c: 617:    if (rslt == 0)
+[e $ ! == -> _rslt `i -> 0 `i 1590  ]
+"618
+[; ;Sensors/bme680.c: 618:     rslt = bme680_set_regs(&reg_addr, &tmp_pow_mode, 1, dev);
+[e = _rslt ( _bme680_set_regs (4 , , , -> &U _reg_addr `*Cuc -> &U _tmp_pow_mode `*Cuc -> -> 1 `i `uc _dev ]
+[e :U 1590 ]
+"619
+[; ;Sensors/bme680.c: 619:   }
+}
+[e :U 1589 ]
+"620
+[; ;Sensors/bme680.c: 620:  }
+}
+[e :U 1583 ]
+"622
+[; ;Sensors/bme680.c: 622:  return rslt;
+[e ) _rslt ]
+[e $UE 1582  ]
+"623
+[; ;Sensors/bme680.c: 623: }
+[e :UE 1582 ]
+}
+"628
+[; ;Sensors/bme680.c: 628: int8_t bme680_get_sensor_mode(struct bme680_dev *dev)
+[v _bme680_get_sensor_mode `(c ~T0 @X0 1 ef1`*S1521 ]
+"629
+[; ;Sensors/bme680.c: 629: {
+{
+[e :U _bme680_get_sensor_mode ]
+"628
+[; ;Sensors/bme680.c: 628: int8_t bme680_get_sensor_mode(struct bme680_dev *dev)
+[v _dev `*S1521 ~T0 @X0 1 r1 ]
+"629
+[; ;Sensors/bme680.c: 629: {
+[f ]
+"630
+[; ;Sensors/bme680.c: 630:  int8_t rslt;
+[v _rslt `c ~T0 @X0 1 a ]
+"631
+[; ;Sensors/bme680.c: 631:  uint8_t mode;
+[v _mode `uc ~T0 @X0 1 a ]
+"634
+[; ;Sensors/bme680.c: 634:  rslt = null_ptr_check(dev);
+[e = _rslt ( _null_ptr_check (1 -> _dev `*CS1521 ]
+"635
+[; ;Sensors/bme680.c: 635:  if (rslt == 0) {
+[e $ ! == -> _rslt `i -> 0 `i 1592  ]
+{
+"636
+[; ;Sensors/bme680.c: 636:   rslt = bme680_get_regs(0x74, &mode, 1, dev);
+[e = _rslt ( _bme680_get_regs (4 , , , -> -> 116 `i `uc &U _mode -> -> 1 `i `us _dev ]
+"638
+[; ;Sensors/bme680.c: 638:   dev->power_mode = mode & 0x03;
+[e = . *U _dev 8 -> & -> _mode `i -> 3 `i `uc ]
+"639
+[; ;Sensors/bme680.c: 639:  }
+}
+[e :U 1592 ]
+"641
+[; ;Sensors/bme680.c: 641:  return rslt;
+[e ) _rslt ]
+[e $UE 1591  ]
+"642
+[; ;Sensors/bme680.c: 642: }
+[e :UE 1591 ]
+}
+"647
+[; ;Sensors/bme680.c: 647: void bme680_set_profile_dur(uint16_t duration, struct bme680_dev *dev)
+[v _bme680_set_profile_dur `(v ~T0 @X0 1 ef2`us`*S1521 ]
+"648
+[; ;Sensors/bme680.c: 648: {
+{
+[e :U _bme680_set_profile_dur ]
+"647
+[; ;Sensors/bme680.c: 647: void bme680_set_profile_dur(uint16_t duration, struct bme680_dev *dev)
+[v _duration `us ~T0 @X0 1 r1 ]
+[v _dev `*S1521 ~T0 @X0 1 r2 ]
+"648
+[; ;Sensors/bme680.c: 648: {
+[f ]
+"649
+[; ;Sensors/bme680.c: 649:  uint32_t tph_dur;
+[v _tph_dur `ul ~T0 @X0 1 a ]
+"650
+[; ;Sensors/bme680.c: 650:  uint32_t meas_cycles;
+[v _meas_cycles `ul ~T0 @X0 1 a ]
+[v F11125 `uc ~T0 @X0 -> 6 `i s ]
+[i F11125
+:U ..
+"651
+[; ;Sensors/bme680.c: 651:  uint8_t os_to_meas_cycles[6] = {0, 1, 2, 4, 8, 16};
+-> -> 0 `i `uc
+-> -> 1 `i `uc
+-> -> 2 `i `uc
+-> -> 4 `i `uc
+-> -> 8 `i `uc
+-> -> 16 `i `uc
+..
+]
+[v _os_to_meas_cycles `uc ~T0 @X0 -> 6 `i a ]
+[e = _os_to_meas_cycles F11125 ]
+"653
+[; ;Sensors/bme680.c: 653:  meas_cycles = os_to_meas_cycles[dev->tph_sett.os_temp];
+[e = _meas_cycles -> *U + &U _os_to_meas_cycles * -> . . *U _dev 6 1 `ux -> -> # *U &U _os_to_meas_cycles `ui `ux `ul ]
+"654
+[; ;Sensors/bme680.c: 654:  meas_cycles += os_to_meas_cycles[dev->tph_sett.os_pres];
+[e =+ _meas_cycles -> *U + &U _os_to_meas_cycles * -> . . *U _dev 6 2 `ux -> -> # *U &U _os_to_meas_cycles `ui `ux `ul ]
+"655
+[; ;Sensors/bme680.c: 655:  meas_cycles += os_to_meas_cycles[dev->tph_sett.os_hum];
+[e =+ _meas_cycles -> *U + &U _os_to_meas_cycles * -> . . *U _dev 6 0 `ux -> -> # *U &U _os_to_meas_cycles `ui `ux `ul ]
+"658
+[; ;Sensors/bme680.c: 658:  tph_dur = meas_cycles * 1963UL;
+[e = _tph_dur * _meas_cycles -> 1963 `ul ]
+"659
+[; ;Sensors/bme680.c: 659:  tph_dur += 477 * 4UL;
+[e =+ _tph_dur * -> -> -> 477 `i `l `ul -> 4 `ul ]
+"660
+[; ;Sensors/bme680.c: 660:  tph_dur += 477 * 5UL;
+[e =+ _tph_dur * -> -> -> 477 `i `l `ul -> 5 `ul ]
+"661
+[; ;Sensors/bme680.c: 661:  tph_dur += 500UL;
+[e =+ _tph_dur -> 500 `ul ]
+"662
+[; ;Sensors/bme680.c: 662:  tph_dur /= 1000UL;
+[e =/ _tph_dur -> 1000 `ul ]
+"664
+[; ;Sensors/bme680.c: 664:  tph_dur += 1UL;
+[e =+ _tph_dur -> 1 `ul ]
+"666
+[; ;Sensors/bme680.c: 666:  dev->gas_sett.heatr_dur = duration - (uint16_t) tph_dur;
+[e = . . *U _dev 7 4 -> - -> _duration `ui -> -> _tph_dur `us `ui `us ]
+"667
+[; ;Sensors/bme680.c: 667: }
+[e :UE 1593 ]
+}
+"672
+[; ;Sensors/bme680.c: 672: void bme680_get_profile_dur(uint16_t *duration, const struct bme680_dev *dev)
+[v _bme680_get_profile_dur `(v ~T0 @X0 1 ef2`*us`*CS1521 ]
+"673
+[; ;Sensors/bme680.c: 673: {
+{
+[e :U _bme680_get_profile_dur ]
+"672
+[; ;Sensors/bme680.c: 672: void bme680_get_profile_dur(uint16_t *duration, const struct bme680_dev *dev)
+[v _duration `*us ~T0 @X0 1 r1 ]
+[v _dev `*CS1521 ~T0 @X0 1 r2 ]
+"673
+[; ;Sensors/bme680.c: 673: {
+[f ]
+"674
+[; ;Sensors/bme680.c: 674:  uint32_t tph_dur;
+[v _tph_dur `ul ~T0 @X0 1 a ]
+"675
+[; ;Sensors/bme680.c: 675:  uint32_t meas_cycles;
+[v _meas_cycles `ul ~T0 @X0 1 a ]
+[v F11132 `uc ~T0 @X0 -> 6 `i s ]
+[i F11132
+:U ..
+"676
+[; ;Sensors/bme680.c: 676:  uint8_t os_to_meas_cycles[6] = {0, 1, 2, 4, 8, 16};
+-> -> 0 `i `uc
+-> -> 1 `i `uc
+-> -> 2 `i `uc
+-> -> 4 `i `uc
+-> -> 8 `i `uc
+-> -> 16 `i `uc
+..
+]
+[v _os_to_meas_cycles `uc ~T0 @X0 -> 6 `i a ]
+[e = _os_to_meas_cycles F11132 ]
+"678
+[; ;Sensors/bme680.c: 678:  meas_cycles = os_to_meas_cycles[dev->tph_sett.os_temp];
+[e = _meas_cycles -> *U + &U _os_to_meas_cycles * -> . . *U _dev 6 1 `ux -> -> # *U &U _os_to_meas_cycles `ui `ux `ul ]
+"679
+[; ;Sensors/bme680.c: 679:  meas_cycles += os_to_meas_cycles[dev->tph_sett.os_pres];
+[e =+ _meas_cycles -> *U + &U _os_to_meas_cycles * -> . . *U _dev 6 2 `ux -> -> # *U &U _os_to_meas_cycles `ui `ux `ul ]
+"680
+[; ;Sensors/bme680.c: 680:  meas_cycles += os_to_meas_cycles[dev->tph_sett.os_hum];
+[e =+ _meas_cycles -> *U + &U _os_to_meas_cycles * -> . . *U _dev 6 0 `ux -> -> # *U &U _os_to_meas_cycles `ui `ux `ul ]
+"683
+[; ;Sensors/bme680.c: 683:  tph_dur = meas_cycles * 1963UL;
+[e = _tph_dur * _meas_cycles -> 1963 `ul ]
+"684
+[; ;Sensors/bme680.c: 684:  tph_dur += 477 * 4UL;
+[e =+ _tph_dur * -> -> -> 477 `i `l `ul -> 4 `ul ]
+"685
+[; ;Sensors/bme680.c: 685:  tph_dur += 477 * 5UL;
+[e =+ _tph_dur * -> -> -> 477 `i `l `ul -> 5 `ul ]
+"686
+[; ;Sensors/bme680.c: 686:  tph_dur += 500UL;
+[e =+ _tph_dur -> 500 `ul ]
+"687
+[; ;Sensors/bme680.c: 687:  tph_dur /= 1000UL;
+[e =/ _tph_dur -> 1000 `ul ]
+"689
+[; ;Sensors/bme680.c: 689:  tph_dur += 1UL;
+[e =+ _tph_dur -> 1 `ul ]
+"691
+[; ;Sensors/bme680.c: 691:  *duration = (uint16_t) tph_dur;
+[e = *U _duration -> _tph_dur `us ]
+"694
+[; ;Sensors/bme680.c: 694:  if (dev->gas_sett.run_gas) {
+[e $ ! != -> . . *U _dev 7 2 `i -> 0 `i 1595  ]
+{
+"696
+[; ;Sensors/bme680.c: 696:   *duration += dev->gas_sett.heatr_dur;
+[e =+ *U _duration -> . . *U _dev 7 4 `us ]
+"697
+[; ;Sensors/bme680.c: 697:  }
+}
+[e :U 1595 ]
+"698
+[; ;Sensors/bme680.c: 698: }
+[e :UE 1594 ]
+}
+"707
+[; ;Sensors/bme680.c: 707: int8_t bme680_get_sensor_data(struct bme680_field_data *data, struct bme680_dev *dev)
+[v _bme680_get_sensor_data `(c ~T0 @X0 1 ef2`*S1517`*S1521 ]
+"708
+[; ;Sensors/bme680.c: 708: {
+{
+[e :U _bme680_get_sensor_data ]
+"707
+[; ;Sensors/bme680.c: 707: int8_t bme680_get_sensor_data(struct bme680_field_data *data, struct bme680_dev *dev)
+[v _data `*S1517 ~T0 @X0 1 r1 ]
+[v _dev `*S1521 ~T0 @X0 1 r2 ]
+"708
+[; ;Sensors/bme680.c: 708: {
+[f ]
+"709
+[; ;Sensors/bme680.c: 709:  int8_t rslt;
+[v _rslt `c ~T0 @X0 1 a ]
+"712
+[; ;Sensors/bme680.c: 712:  rslt = null_ptr_check(dev);
+[e = _rslt ( _null_ptr_check (1 -> _dev `*CS1521 ]
+"713
+[; ;Sensors/bme680.c: 713:  if (rslt == 0) {
+[e $ ! == -> _rslt `i -> 0 `i 1597  ]
+{
+"715
+[; ;Sensors/bme680.c: 715:   rslt = read_field_data(data, dev);
+[e = _rslt ( _read_field_data (2 , _data _dev ]
+"716
+[; ;Sensors/bme680.c: 716:   if (rslt == 0) {
+[e $ ! == -> _rslt `i -> 0 `i 1598  ]
+{
+"717
+[; ;Sensors/bme680.c: 717:    if (data->status & 0x80)
+[e $ ! != & -> . *U _data 0 `i -> 128 `i -> 0 `i 1599  ]
+"718
+[; ;Sensors/bme680.c: 718:     dev->new_fields = 1;
+[e = . *U _dev 9 -> -> 1 `i `uc ]
+[e $U 1600  ]
+"719
+[; ;Sensors/bme680.c: 719:    else
+[e :U 1599 ]
+"720
+[; ;Sensors/bme680.c: 720:     dev->new_fields = 0;
+[e = . *U _dev 9 -> -> 0 `i `uc ]
+[e :U 1600 ]
+"721
+[; ;Sensors/bme680.c: 721:   }
+}
+[e :U 1598 ]
+"722
+[; ;Sensors/bme680.c: 722:  }
+}
+[e :U 1597 ]
+"724
+[; ;Sensors/bme680.c: 724:  return rslt;
+[e ) _rslt ]
+[e $UE 1596  ]
+"725
+[; ;Sensors/bme680.c: 725: }
+[e :UE 1596 ]
+}
+"730
+[; ;Sensors/bme680.c: 730: static int8_t get_calib_data(struct bme680_dev *dev)
+[v _get_calib_data `(c ~T0 @X0 1 sf1`*S1521 ]
+"731
+[; ;Sensors/bme680.c: 731: {
+{
+[e :U _get_calib_data ]
+"730
+[; ;Sensors/bme680.c: 730: static int8_t get_calib_data(struct bme680_dev *dev)
+[v _dev `*S1521 ~T0 @X0 1 r1 ]
+"731
+[; ;Sensors/bme680.c: 731: {
+[f ]
+"732
+[; ;Sensors/bme680.c: 732:  int8_t rslt;
+[v _rslt `c ~T0 @X0 1 a ]
+[v F11141 `uc ~T0 @X0 -> 41 `i s ]
+[i F11141
+:U ..
+"733
+[; ;Sensors/bme680.c: 733:  uint8_t coeff_array[41] = { 0 };
+-> -> 0 `i `uc
+..
+]
+[v _coeff_array `uc ~T0 @X0 -> 41 `i a ]
+[e = _coeff_array F11141 ]
+"734
+[; ;Sensors/bme680.c: 734:  uint8_t temp_var = 0;
+[v _temp_var `uc ~T0 @X0 1 a ]
+[e = _temp_var -> -> 0 `i `uc ]
+"737
+[; ;Sensors/bme680.c: 737:  rslt = null_ptr_check(dev);
+[e = _rslt ( _null_ptr_check (1 -> _dev `*CS1521 ]
+"738
+[; ;Sensors/bme680.c: 738:  if (rslt == 0) {
+[e $ ! == -> _rslt `i -> 0 `i 1602  ]
+{
+"739
+[; ;Sensors/bme680.c: 739:   rslt = bme680_get_regs(0x89, coeff_array, 25, dev);
+[e = _rslt ( _bme680_get_regs (4 , , , -> -> 137 `i `uc &U _coeff_array -> -> 25 `i `us _dev ]
+"741
+[; ;Sensors/bme680.c: 741:   if (rslt == 0)
+[e $ ! == -> _rslt `i -> 0 `i 1603  ]
+"742
+[; ;Sensors/bme680.c: 742:    rslt = bme680_get_regs(0xe1, &coeff_array[25]
+[e = _rslt ( _bme680_get_regs (4 , , , -> -> 225 `i `uc &U *U + &U _coeff_array * -> -> -> 25 `i `ui `ux -> -> # *U &U _coeff_array `ui `ux -> -> 16 `i `us _dev ]
+[e :U 1603 ]
+"746
+[; ;Sensors/bme680.c: 746:   dev->calib.par_t1 = (uint16_t) ((((uint16_t)coeff_array[(34)] << 8) | (uint16_t)coeff_array[(33)]));
+[e = . . *U _dev 5 10 -> | << -> -> *U + &U _coeff_array * -> -> -> 34 `i `ui `ux -> -> # *U &U _coeff_array `ui `ux `us `ui -> 8 `i -> -> *U + &U _coeff_array * -> -> -> 33 `i `ui `ux -> -> # *U &U _coeff_array `ui `ux `us `ui `us ]
+"748
+[; ;Sensors/bme680.c: 748:   dev->calib.par_t2 = (int16_t) ((((uint16_t)coeff_array[(2)] << 8) | (uint16_t)coeff_array[(1)]));
+[e = . . *U _dev 5 11 -> | << -> -> *U + &U _coeff_array * -> -> -> 2 `i `ui `ux -> -> # *U &U _coeff_array `ui `ux `us `ui -> 8 `i -> -> *U + &U _coeff_array * -> -> -> 1 `i `ui `ux -> -> # *U &U _coeff_array `ui `ux `us `ui `s ]
+"750
+[; ;Sensors/bme680.c: 750:   dev->calib.par_t3 = (int8_t) (coeff_array[(3)]);
+[e = . . *U _dev 5 12 -> *U + &U _coeff_array * -> -> -> 3 `i `ui `ux -> -> # *U &U _coeff_array `ui `ux `c ]
+"753
+[; ;Sensors/bme680.c: 753:   dev->calib.par_p1 = (uint16_t) ((((uint16_t)coeff_array[(6)] << 8) | (uint16_t)coeff_array[(5)]));
+[e = . . *U _dev 5 13 -> | << -> -> *U + &U _coeff_array * -> -> -> 6 `i `ui `ux -> -> # *U &U _coeff_array `ui `ux `us `ui -> 8 `i -> -> *U + &U _coeff_array * -> -> -> 5 `i `ui `ux -> -> # *U &U _coeff_array `ui `ux `us `ui `us ]
+"755
+[; ;Sensors/bme680.c: 755:   dev->calib.par_p2 = (int16_t) ((((uint16_t)coeff_array[(8)] << 8) | (uint16_t)coeff_array[(7)]));
+[e = . . *U _dev 5 14 -> | << -> -> *U + &U _coeff_array * -> -> -> 8 `i `ui `ux -> -> # *U &U _coeff_array `ui `ux `us `ui -> 8 `i -> -> *U + &U _coeff_array * -> -> -> 7 `i `ui `ux -> -> # *U &U _coeff_array `ui `ux `us `ui `s ]
+"757
+[; ;Sensors/bme680.c: 757:   dev->calib.par_p3 = (int8_t) coeff_array[(9)];
+[e = . . *U _dev 5 15 -> *U + &U _coeff_array * -> -> -> 9 `i `ui `ux -> -> # *U &U _coeff_array `ui `ux `c ]
+"758
+[; ;Sensors/bme680.c: 758:   dev->calib.par_p4 = (int16_t) ((((uint16_t)coeff_array[(12)] << 8) | (uint16_t)coeff_array[(11)]));
+[e = . . *U _dev 5 16 -> | << -> -> *U + &U _coeff_array * -> -> -> 12 `i `ui `ux -> -> # *U &U _coeff_array `ui `ux `us `ui -> 8 `i -> -> *U + &U _coeff_array * -> -> -> 11 `i `ui `ux -> -> # *U &U _coeff_array `ui `ux `us `ui `s ]
+"760
+[; ;Sensors/bme680.c: 760:   dev->calib.par_p5 = (int16_t) ((((uint16_t)coeff_array[(14)] << 8) | (uint16_t)coeff_array[(13)]));
+[e = . . *U _dev 5 17 -> | << -> -> *U + &U _coeff_array * -> -> -> 14 `i `ui `ux -> -> # *U &U _coeff_array `ui `ux `us `ui -> 8 `i -> -> *U + &U _coeff_array * -> -> -> 13 `i `ui `ux -> -> # *U &U _coeff_array `ui `ux `us `ui `s ]
+"762
+[; ;Sensors/bme680.c: 762:   dev->calib.par_p6 = (int8_t) (coeff_array[(16)]);
+[e = . . *U _dev 5 18 -> *U + &U _coeff_array * -> -> -> 16 `i `ui `ux -> -> # *U &U _coeff_array `ui `ux `c ]
+"763
+[; ;Sensors/bme680.c: 763:   dev->calib.par_p7 = (int8_t) (coeff_array[(15)]);
+[e = . . *U _dev 5 19 -> *U + &U _coeff_array * -> -> -> 15 `i `ui `ux -> -> # *U &U _coeff_array `ui `ux `c ]
+"764
+[; ;Sensors/bme680.c: 764:   dev->calib.par_p8 = (int16_t) ((((uint16_t)coeff_array[(20)] << 8) | (uint16_t)coeff_array[(19)]));
+[e = . . *U _dev 5 20 -> | << -> -> *U + &U _coeff_array * -> -> -> 20 `i `ui `ux -> -> # *U &U _coeff_array `ui `ux `us `ui -> 8 `i -> -> *U + &U _coeff_array * -> -> -> 19 `i `ui `ux -> -> # *U &U _coeff_array `ui `ux `us `ui `s ]
+"766
+[; ;Sensors/bme680.c: 766:   dev->calib.par_p9 = (int16_t) ((((uint16_t)coeff_array[(22)] << 8) | (uint16_t)coeff_array[(21)]));
+[e = . . *U _dev 5 21 -> | << -> -> *U + &U _coeff_array * -> -> -> 22 `i `ui `ux -> -> # *U &U _coeff_array `ui `ux `us `ui -> 8 `i -> -> *U + &U _coeff_array * -> -> -> 21 `i `ui `ux -> -> # *U &U _coeff_array `ui `ux `us `ui `s ]
+"768
+[; ;Sensors/bme680.c: 768:   dev->calib.par_p10 = (uint8_t) (coeff_array[(23)]);
+[e = . . *U _dev 5 22 *U + &U _coeff_array * -> -> -> 23 `i `ui `ux -> -> # *U &U _coeff_array `ui `ux ]
+"771
+[; ;Sensors/bme680.c: 771:   dev->calib.par_h1 = (uint16_t) (((uint16_t) coeff_array[(27)] << 4)
+[e = . . *U _dev 5 0 -> | << -> -> *U + &U _coeff_array * -> -> -> 27 `i `ui `ux -> -> # *U &U _coeff_array `ui `ux `us `ui -> 4 `i -> & -> *U + &U _coeff_array * -> -> -> 26 `i `ui `ux -> -> # *U &U _coeff_array `ui `ux `i -> 15 `i `ui `us ]
+"773
+[; ;Sensors/bme680.c: 773:   dev->calib.par_h2 = (uint16_t) (((uint16_t) coeff_array[(25)] << 4)
+[e = . . *U _dev 5 1 -> | << -> -> *U + &U _coeff_array * -> -> -> 25 `i `ui `ux -> -> # *U &U _coeff_array `ui `ux `us `ui -> 4 `i -> >> -> *U + &U _coeff_array * -> -> -> 26 `i `ui `ux -> -> # *U &U _coeff_array `ui `ux `i -> 4 `i `ui `us ]
+"775
+[; ;Sensors/bme680.c: 775:   dev->calib.par_h3 = (int8_t) coeff_array[(28)];
+[e = . . *U _dev 5 2 -> *U + &U _coeff_array * -> -> -> 28 `i `ui `ux -> -> # *U &U _coeff_array `ui `ux `c ]
+"776
+[; ;Sensors/bme680.c: 776:   dev->calib.par_h4 = (int8_t) coeff_array[(29)];
+[e = . . *U _dev 5 3 -> *U + &U _coeff_array * -> -> -> 29 `i `ui `ux -> -> # *U &U _coeff_array `ui `ux `c ]
+"777
+[; ;Sensors/bme680.c: 777:   dev->calib.par_h5 = (int8_t) coeff_array[(30)];
+[e = . . *U _dev 5 4 -> *U + &U _coeff_array * -> -> -> 30 `i `ui `ux -> -> # *U &U _coeff_array `ui `ux `c ]
+"778
+[; ;Sensors/bme680.c: 778:   dev->calib.par_h6 = (uint8_t) coeff_array[(31)];
+[e = . . *U _dev 5 5 *U + &U _coeff_array * -> -> -> 31 `i `ui `ux -> -> # *U &U _coeff_array `ui `ux ]
+"779
+[; ;Sensors/bme680.c: 779:   dev->calib.par_h7 = (int8_t) coeff_array[(32)];
+[e = . . *U _dev 5 6 -> *U + &U _coeff_array * -> -> -> 32 `i `ui `ux -> -> # *U &U _coeff_array `ui `ux `c ]
+"782
+[; ;Sensors/bme680.c: 782:   dev->calib.par_gh1 = (int8_t) coeff_array[(37)];
+[e = . . *U _dev 5 7 -> *U + &U _coeff_array * -> -> -> 37 `i `ui `ux -> -> # *U &U _coeff_array `ui `ux `c ]
+"783
+[; ;Sensors/bme680.c: 783:   dev->calib.par_gh2 = (int16_t) ((((uint16_t)coeff_array[(36)] << 8) | (uint16_t)coeff_array[(35)]));
+[e = . . *U _dev 5 8 -> | << -> -> *U + &U _coeff_array * -> -> -> 36 `i `ui `ux -> -> # *U &U _coeff_array `ui `ux `us `ui -> 8 `i -> -> *U + &U _coeff_array * -> -> -> 35 `i `ui `ux -> -> # *U &U _coeff_array `ui `ux `us `ui `s ]
+"785
+[; ;Sensors/bme680.c: 785:   dev->calib.par_gh3 = (int8_t) coeff_array[(38)];
+[e = . . *U _dev 5 9 -> *U + &U _coeff_array * -> -> -> 38 `i `ui `ux -> -> # *U &U _coeff_array `ui `ux `c ]
+"788
+[; ;Sensors/bme680.c: 788:   if (rslt == 0) {
+[e $ ! == -> _rslt `i -> 0 `i 1604  ]
+{
+"789
+[; ;Sensors/bme680.c: 789:    rslt = bme680_get_regs(0x02, &temp_var, 1, dev);
+[e = _rslt ( _bme680_get_regs (4 , , , -> -> 2 `i `uc &U _temp_var -> -> 1 `i `us _dev ]
+"791
+[; ;Sensors/bme680.c: 791:    dev->calib.res_heat_range = ((temp_var & 0x30) / 16);
+[e = . . *U _dev 5 24 -> / & -> _temp_var `i -> 48 `i -> 16 `i `uc ]
+"792
+[; ;Sensors/bme680.c: 792:    if (rslt == 0) {
+[e $ ! == -> _rslt `i -> 0 `i 1605  ]
+{
+"793
+[; ;Sensors/bme680.c: 793:     rslt = bme680_get_regs(0x00, &temp_var, 1, dev);
+[e = _rslt ( _bme680_get_regs (4 , , , -> -> 0 `i `uc &U _temp_var -> -> 1 `i `us _dev ]
+"795
+[; ;Sensors/bme680.c: 795:     dev->calib.res_heat_val = (int8_t) temp_var;
+[e = . . *U _dev 5 25 -> _temp_var `c ]
+"796
+[; ;Sensors/bme680.c: 796:     if (rslt == 0)
+[e $ ! == -> _rslt `i -> 0 `i 1606  ]
+"797
+[; ;Sensors/bme680.c: 797:      rslt = bme680_get_regs(0x04, &temp_var, 1, dev);
+[e = _rslt ( _bme680_get_regs (4 , , , -> -> 4 `i `uc &U _temp_var -> -> 1 `i `us _dev ]
+[e :U 1606 ]
+"798
+[; ;Sensors/bme680.c: 798:    }
+}
+[e :U 1605 ]
+"799
+[; ;Sensors/bme680.c: 799:   }
+}
+[e :U 1604 ]
+"800
+[; ;Sensors/bme680.c: 800:   dev->calib.range_sw_err = ((int8_t) temp_var & (int8_t) 0xf0) / 16;
+[e = . . *U _dev 5 26 -> / & -> -> _temp_var `c `i -> -> -> 240 `i `c `i -> 16 `i `c ]
+"801
+[; ;Sensors/bme680.c: 801:  }
+}
+[e :U 1602 ]
+"803
+[; ;Sensors/bme680.c: 803:  return rslt;
+[e ) _rslt ]
+[e $UE 1601  ]
+"804
+[; ;Sensors/bme680.c: 804: }
+[e :UE 1601 ]
+}
+"809
+[; ;Sensors/bme680.c: 809: static int8_t set_gas_config(struct bme680_dev *dev)
+[v _set_gas_config `(c ~T0 @X0 1 sf1`*S1521 ]
+"810
+[; ;Sensors/bme680.c: 810: {
+{
+[e :U _set_gas_config ]
+"809
+[; ;Sensors/bme680.c: 809: static int8_t set_gas_config(struct bme680_dev *dev)
+[v _dev `*S1521 ~T0 @X0 1 r1 ]
+"810
+[; ;Sensors/bme680.c: 810: {
+[f ]
+"811
+[; ;Sensors/bme680.c: 811:  int8_t rslt;
+[v _rslt `c ~T0 @X0 1 a ]
+"814
+[; ;Sensors/bme680.c: 814:  rslt = null_ptr_check(dev);
+[e = _rslt ( _null_ptr_check (1 -> _dev `*CS1521 ]
+"815
+[; ;Sensors/bme680.c: 815:  if (rslt == 0) {
+[e $ ! == -> _rslt `i -> 0 `i 1608  ]
+{
+[v F11147 `uc ~T0 @X0 -> 2 `i s ]
+[i F11147
+:U ..
+"817
+[; ;Sensors/bme680.c: 817:   uint8_t reg_addr[2] = {0};
+-> -> 0 `i `uc
+..
+]
+[v _reg_addr `uc ~T0 @X0 -> 2 `i a ]
+[e = _reg_addr F11147 ]
+[v F11149 `uc ~T0 @X0 -> 2 `i s ]
+[i F11149
+:U ..
+"818
+[; ;Sensors/bme680.c: 818:   uint8_t reg_data[2] = {0};
+-> -> 0 `i `uc
+..
+]
+[v _reg_data `uc ~T0 @X0 -> 2 `i a ]
+[e = _reg_data F11149 ]
+"820
+[; ;Sensors/bme680.c: 820:   if (dev->power_mode == 1) {
+[e $ ! == -> . *U _dev 8 `i -> 1 `i 1609  ]
+{
+"821
+[; ;Sensors/bme680.c: 821:    reg_addr[0] = 0x5a;
+[e = *U + &U _reg_addr * -> -> -> 0 `i `ui `ux -> -> # *U &U _reg_addr `ui `ux -> -> 90 `i `uc ]
+"822
+[; ;Sensors/bme680.c: 822:    reg_data[0] = calc_heater_res(dev->gas_sett.heatr_temp, dev);
+[e = *U + &U _reg_data * -> -> -> 0 `i `ui `ux -> -> # *U &U _reg_data `ui `ux ( _calc_heater_res (2 , . . *U _dev 7 3 -> _dev `*CS1521 ]
+"823
+[; ;Sensors/bme680.c: 823:    reg_addr[1] = 0x64;
+[e = *U + &U _reg_addr * -> -> -> 1 `i `ui `ux -> -> # *U &U _reg_addr `ui `ux -> -> 100 `i `uc ]
+"824
+[; ;Sensors/bme680.c: 824:    reg_data[1] = calc_heater_dur(dev->gas_sett.heatr_dur);
+[e = *U + &U _reg_data * -> -> -> 1 `i `ui `ux -> -> # *U &U _reg_data `ui `ux ( _calc_heater_dur (1 . . *U _dev 7 4 ]
+"825
+[; ;Sensors/bme680.c: 825:    dev->gas_sett.nb_conv = 0;
+[e = . . *U _dev 7 0 -> -> 0 `i `uc ]
+"826
+[; ;Sensors/bme680.c: 826:   } else {
+}
+[e $U 1610  ]
+[e :U 1609 ]
+{
+"827
+[; ;Sensors/bme680.c: 827:    rslt = 1;
+[e = _rslt -> -> 1 `i `c ]
+"828
+[; ;Sensors/bme680.c: 828:   }
+}
+[e :U 1610 ]
+"829
+[; ;Sensors/bme680.c: 829:   if (rslt == 0)
+[e $ ! == -> _rslt `i -> 0 `i 1611  ]
+"830
+[; ;Sensors/bme680.c: 830:    rslt = bme680_set_regs(reg_addr, reg_data, 2, dev);
+[e = _rslt ( _bme680_set_regs (4 , , , -> &U _reg_addr `*Cuc -> &U _reg_data `*Cuc -> -> 2 `i `uc _dev ]
+[e :U 1611 ]
+"831
+[; ;Sensors/bme680.c: 831:  }
+}
+[e :U 1608 ]
+"833
+[; ;Sensors/bme680.c: 833:  return rslt;
+[e ) _rslt ]
+[e $UE 1607  ]
+"834
+[; ;Sensors/bme680.c: 834: }
+[e :UE 1607 ]
+}
+"841
+[; ;Sensors/bme680.c: 841: static int8_t get_gas_config(struct bme680_dev *dev)
+[v _get_gas_config `(c ~T0 @X0 1 sf1`*S1521 ]
+"842
+[; ;Sensors/bme680.c: 842: {
+{
+[e :U _get_gas_config ]
+"841
+[; ;Sensors/bme680.c: 841: static int8_t get_gas_config(struct bme680_dev *dev)
+[v _dev `*S1521 ~T0 @X0 1 r1 ]
+"842
+[; ;Sensors/bme680.c: 842: {
+[f ]
+"843
+[; ;Sensors/bme680.c: 843:  int8_t rslt;
+[v _rslt `c ~T0 @X0 1 a ]
+"845
+[; ;Sensors/bme680.c: 845:  uint8_t reg_addr1 = 0x5A;
+[v _reg_addr1 `uc ~T0 @X0 1 a ]
+[e = _reg_addr1 -> -> 90 `i `uc ]
+"846
+[; ;Sensors/bme680.c: 846:  uint8_t reg_addr2 = 0x64;
+[v _reg_addr2 `uc ~T0 @X0 1 a ]
+[e = _reg_addr2 -> -> 100 `i `uc ]
+"847
+[; ;Sensors/bme680.c: 847:  uint8_t reg_data = 0;
+[v _reg_data `uc ~T0 @X0 1 a ]
+[e = _reg_data -> -> 0 `i `uc ]
+"850
+[; ;Sensors/bme680.c: 850:  rslt = null_ptr_check(dev);
+[e = _rslt ( _null_ptr_check (1 -> _dev `*CS1521 ]
+"851
+[; ;Sensors/bme680.c: 851:  if (rslt == 0) {
+[e $ ! == -> _rslt `i -> 0 `i 1613  ]
+{
+"852
+[; ;Sensors/bme680.c: 852:   if (BME680_SPI_INTF == dev->intf) {
+[e $ ! == -> . `E10904 0 `ui -> . *U _dev 2 `ui 1614  ]
+{
+"854
+[; ;Sensors/bme680.c: 854:    rslt = set_mem_page(reg_addr1, dev);
+[e = _rslt ( _set_mem_page (2 , _reg_addr1 _dev ]
+"855
+[; ;Sensors/bme680.c: 855:   }
+}
+[e :U 1614 ]
+"857
+[; ;Sensors/bme680.c: 857:   if (rslt == 0) {
+[e $ ! == -> _rslt `i -> 0 `i 1615  ]
+{
+"858
+[; ;Sensors/bme680.c: 858:    rslt = bme680_get_regs(reg_addr1, &reg_data, 1, dev);
+[e = _rslt ( _bme680_get_regs (4 , , , _reg_addr1 &U _reg_data -> -> 1 `i `us _dev ]
+"859
+[; ;Sensors/bme680.c: 859:    if (rslt == 0) {
+[e $ ! == -> _rslt `i -> 0 `i 1616  ]
+{
+"860
+[; ;Sensors/bme680.c: 860:     dev->gas_sett.heatr_temp = reg_data;
+[e = . . *U _dev 7 3 -> _reg_data `us ]
+"861
+[; ;Sensors/bme680.c: 861:     rslt = bme680_get_regs(reg_addr2, &reg_data, 1, dev);
+[e = _rslt ( _bme680_get_regs (4 , , , _reg_addr2 &U _reg_data -> -> 1 `i `us _dev ]
+"862
+[; ;Sensors/bme680.c: 862:     if (rslt == 0) {
+[e $ ! == -> _rslt `i -> 0 `i 1617  ]
+{
+"864
+[; ;Sensors/bme680.c: 864:      dev->gas_sett.heatr_dur = reg_data;
+[e = . . *U _dev 7 4 -> _reg_data `us ]
+"865
+[; ;Sensors/bme680.c: 865:     }
+}
+[e :U 1617 ]
+"866
+[; ;Sensors/bme680.c: 866:    }
+}
+[e :U 1616 ]
+"867
+[; ;Sensors/bme680.c: 867:   }
+}
+[e :U 1615 ]
+"868
+[; ;Sensors/bme680.c: 868:  }
+}
+[e :U 1613 ]
+"870
+[; ;Sensors/bme680.c: 870:  return rslt;
+[e ) _rslt ]
+[e $UE 1612  ]
+"871
+[; ;Sensors/bme680.c: 871: }
+[e :UE 1612 ]
+}
+"878
+[; ;Sensors/bme680.c: 878: static int16_t calc_temperature(uint32_t temp_adc, struct bme680_dev *dev)
+[v _calc_temperature `(s ~T0 @X0 1 sf2`ul`*S1521 ]
+"879
+[; ;Sensors/bme680.c: 879: {
+{
+[e :U _calc_temperature ]
+"878
+[; ;Sensors/bme680.c: 878: static int16_t calc_temperature(uint32_t temp_adc, struct bme680_dev *dev)
+[v _temp_adc `ul ~T0 @X0 1 r1 ]
+[v _dev `*S1521 ~T0 @X0 1 r2 ]
+"879
+[; ;Sensors/bme680.c: 879: {
+[f ]
+"884
+[; ;Sensors/bme680.c: 884:     int32_t var1;
+[v _var1 `l ~T0 @X0 1 a ]
+"885
+[; ;Sensors/bme680.c: 885:  int32_t var2;
+[v _var2 `l ~T0 @X0 1 a ]
+"886
+[; ;Sensors/bme680.c: 886:  int32_t var3;
+[v _var3 `l ~T0 @X0 1 a ]
+"887
+[; ;Sensors/bme680.c: 887:  int16_t calc_temp;
+[v _calc_temp `s ~T0 @X0 1 a ]
+"889
+[; ;Sensors/bme680.c: 889:  var1 = ((int32_t) temp_adc >> 3) - ((int32_t) dev->calib.par_t1 << 1);
+[e = _var1 - >> -> _temp_adc `l -> 3 `i << -> . . *U _dev 5 10 `l -> 1 `i ]
+"890
+[; ;Sensors/bme680.c: 890:  var2 = (var1 * (int32_t) dev->calib.par_t2) >> 11;
+[e = _var2 >> * _var1 -> . . *U _dev 5 11 `l -> 11 `i ]
+"891
+[; ;Sensors/bme680.c: 891:  var3 = ((var1 >> 1) * (var1 >> 1)) >> 12;
+[e = _var3 >> * >> _var1 -> 1 `i >> _var1 -> 1 `i -> 12 `i ]
+"892
+[; ;Sensors/bme680.c: 892:  var3 = ((var3) * ((int32_t) dev->calib.par_t3 << 4)) >> 14;
+[e = _var3 >> * _var3 << -> . . *U _dev 5 12 `l -> 4 `i -> 14 `i ]
+"893
+[; ;Sensors/bme680.c: 893:  dev->calib.t_fine = (int32_t) (var2 + var3);
+[e = . . *U _dev 5 23 + _var2 _var3 ]
+"894
+[; ;Sensors/bme680.c: 894:  calc_temp = (int16_t) (((dev->calib.t_fine * 5) + 128) >> 8);
+[e = _calc_temp -> >> + * . . *U _dev 5 23 -> -> 5 `i `l -> -> 128 `i `l -> 8 `i `s ]
+"896
+[; ;Sensors/bme680.c: 896:  return calc_temp;
+[e ) _calc_temp ]
+[e $UE 1618  ]
+"897
+[; ;Sensors/bme680.c: 897: }
+[e :UE 1618 ]
+}
+"902
+[; ;Sensors/bme680.c: 902: static uint32_t calc_pressure(uint32_t pres_adc, const struct bme680_dev *dev)
+[v _calc_pressure `(ul ~T0 @X0 1 sf2`ul`*CS1521 ]
+"903
+[; ;Sensors/bme680.c: 903: {
+{
+[e :U _calc_pressure ]
+"902
+[; ;Sensors/bme680.c: 902: static uint32_t calc_pressure(uint32_t pres_adc, const struct bme680_dev *dev)
+[v _pres_adc `ul ~T0 @X0 1 r1 ]
+[v _dev `*CS1521 ~T0 @X0 1 r2 ]
+"903
+[; ;Sensors/bme680.c: 903: {
+[f ]
+"904
+[; ;Sensors/bme680.c: 904:  int32_t var1;
+[v _var1 `l ~T0 @X0 1 a ]
+"905
+[; ;Sensors/bme680.c: 905:  int32_t var2;
+[v _var2 `l ~T0 @X0 1 a ]
+"906
+[; ;Sensors/bme680.c: 906:  int32_t var3;
+[v _var3 `l ~T0 @X0 1 a ]
+"907
+[; ;Sensors/bme680.c: 907:  int32_t pressure_comp;
+[v _pressure_comp `l ~T0 @X0 1 a ]
+"909
+[; ;Sensors/bme680.c: 909:  var1 = (((int32_t)dev->calib.t_fine) >> 1) - 64000;
+[e = _var1 - >> . . *U _dev 5 23 -> 1 `i -> 64000 `l ]
+"910
+[; ;Sensors/bme680.c: 910:  var2 = ((((var1 >> 2) * (var1 >> 2)) >> 11) *
+[e = _var2 >> * >> * >> _var1 -> 2 `i >> _var1 -> 2 `i -> 11 `i -> . . *U _dev 5 18 `l -> 2 `i ]
+"912
+[; ;Sensors/bme680.c: 912:  var2 = var2 + ((var1 * (int32_t)dev->calib.par_p5) << 1);
+[e = _var2 + _var2 << * _var1 -> . . *U _dev 5 17 `l -> 1 `i ]
+"913
+[; ;Sensors/bme680.c: 913:  var2 = (var2 >> 2) + ((int32_t)dev->calib.par_p4 << 16);
+[e = _var2 + >> _var2 -> 2 `i << -> . . *U _dev 5 16 `l -> 16 `i ]
+"914
+[; ;Sensors/bme680.c: 914:  var1 = (((((var1 >> 2) * (var1 >> 2)) >> 13) *
+[e = _var1 + >> * >> * >> _var1 -> 2 `i >> _var1 -> 2 `i -> 13 `i << -> . . *U _dev 5 15 `l -> 5 `i -> 3 `i >> * -> . . *U _dev 5 14 `l _var1 -> 1 `i ]
+"917
+[; ;Sensors/bme680.c: 917:  var1 = var1 >> 18;
+[e = _var1 >> _var1 -> 18 `i ]
+"918
+[; ;Sensors/bme680.c: 918:  var1 = ((32768 + var1) * (int32_t)dev->calib.par_p1) >> 15;
+[e = _var1 >> * + -> 32768 `l _var1 -> . . *U _dev 5 13 `l -> 15 `i ]
+"919
+[; ;Sensors/bme680.c: 919:  pressure_comp = 1048576 - pres_adc;
+[e = _pressure_comp -> - -> -> 1048576 `l `ul _pres_adc `l ]
+"920
+[; ;Sensors/bme680.c: 920:  pressure_comp = (int32_t)((pressure_comp - (var2 >> 12)) * ((uint32_t)3125));
+[e = _pressure_comp -> * -> - _pressure_comp >> _var2 -> 12 `i `ul -> -> 3125 `i `ul `l ]
+"921
+[; ;Sensors/bme680.c: 921:  if (pressure_comp >= 0x40000000L)
+[e $ ! >= _pressure_comp -> 1073741824 `l 1620  ]
+"922
+[; ;Sensors/bme680.c: 922:   pressure_comp = ((pressure_comp / var1) << 1);
+[e = _pressure_comp << / _pressure_comp _var1 -> 1 `i ]
+[e $U 1621  ]
+"923
+[; ;Sensors/bme680.c: 923:  else
+[e :U 1620 ]
+"924
+[; ;Sensors/bme680.c: 924:   pressure_comp = ((pressure_comp << 1) / var1);
+[e = _pressure_comp / << _pressure_comp -> 1 `i _var1 ]
+[e :U 1621 ]
+"925
+[; ;Sensors/bme680.c: 925:  var1 = ((int32_t)dev->calib.par_p9 * (int32_t)(((pressure_comp >> 3) *
+[e = _var1 >> * -> . . *U _dev 5 21 `l >> * >> _pressure_comp -> 3 `i >> _pressure_comp -> 3 `i -> 13 `i -> 12 `i ]
+"927
+[; ;Sensors/bme680.c: 927:  var2 = ((int32_t)(pressure_comp >> 2) *
+[e = _var2 >> * >> _pressure_comp -> 2 `i -> . . *U _dev 5 20 `l -> 13 `i ]
+"929
+[; ;Sensors/bme680.c: 929:  var3 = ((int32_t)(pressure_comp >> 8) * (int32_t)(pressure_comp >> 8) *
+[e = _var3 >> * * * >> _pressure_comp -> 8 `i >> _pressure_comp -> 8 `i >> _pressure_comp -> 8 `i -> . . *U _dev 5 22 `l -> 17 `i ]
+"933
+[; ;Sensors/bme680.c: 933:  pressure_comp = (int32_t)(pressure_comp) + ((var1 + var2 + var3 +
+[e = _pressure_comp + _pressure_comp >> + + + _var1 _var2 _var3 << -> . . *U _dev 5 19 `l -> 7 `i -> 4 `i ]
+"936
+[; ;Sensors/bme680.c: 936:  return (uint32_t)pressure_comp;
+[e ) -> _pressure_comp `ul ]
+[e $UE 1619  ]
+"938
+[; ;Sensors/bme680.c: 938: }
+[e :UE 1619 ]
+}
+"943
+[; ;Sensors/bme680.c: 943: static uint32_t calc_humidity(uint16_t hum_adc, const struct bme680_dev *dev)
+[v _calc_humidity `(ul ~T0 @X0 1 sf2`us`*CS1521 ]
+"944
+[; ;Sensors/bme680.c: 944: {
+{
+[e :U _calc_humidity ]
+"943
+[; ;Sensors/bme680.c: 943: static uint32_t calc_humidity(uint16_t hum_adc, const struct bme680_dev *dev)
+[v _hum_adc `us ~T0 @X0 1 r1 ]
+[v _dev `*CS1521 ~T0 @X0 1 r2 ]
+"944
+[; ;Sensors/bme680.c: 944: {
+[f ]
+"945
+[; ;Sensors/bme680.c: 945:  int32_t var1;
+[v _var1 `l ~T0 @X0 1 a ]
+"946
+[; ;Sensors/bme680.c: 946:  int32_t var2;
+[v _var2 `l ~T0 @X0 1 a ]
+"947
+[; ;Sensors/bme680.c: 947:  int32_t var3;
+[v _var3 `l ~T0 @X0 1 a ]
+"948
+[; ;Sensors/bme680.c: 948:  int32_t var4;
+[v _var4 `l ~T0 @X0 1 a ]
+"949
+[; ;Sensors/bme680.c: 949:  int32_t var5;
+[v _var5 `l ~T0 @X0 1 a ]
+"950
+[; ;Sensors/bme680.c: 950:  int32_t var6;
+[v _var6 `l ~T0 @X0 1 a ]
+"951
+[; ;Sensors/bme680.c: 951:  int32_t temp_scaled;
+[v _temp_scaled `l ~T0 @X0 1 a ]
+"952
+[; ;Sensors/bme680.c: 952:  int32_t calc_hum;
+[v _calc_hum `l ~T0 @X0 1 a ]
+"954
+[; ;Sensors/bme680.c: 954:  temp_scaled = (((int32_t) dev->calib.t_fine * 5) + 128) >> 8;
+[e = _temp_scaled >> + * . . *U _dev 5 23 -> -> 5 `i `l -> -> 128 `i `l -> 8 `i ]
+"955
+[; ;Sensors/bme680.c: 955:  var1 = (int32_t) (hum_adc - ((int32_t) ((int32_t) dev->calib.par_h1 * 16)))
+[e = _var1 - - -> _hum_adc `l * -> . . *U _dev 5 0 `l -> -> 16 `i `l >> / * _temp_scaled -> . . *U _dev 5 2 `l -> -> 100 `i `l -> 1 `i ]
+"957
+[; ;Sensors/bme680.c: 957:  var2 = ((int32_t) dev->calib.par_h2
+[e = _var2 >> * -> . . *U _dev 5 1 `l + + / * _temp_scaled -> . . *U _dev 5 3 `l -> -> 100 `i `l / >> * _temp_scaled / * _temp_scaled -> . . *U _dev 5 4 `l -> -> 100 `i `l -> 6 `i -> -> 100 `i `l -> << -> 1 `i -> 14 `i `l -> 10 `i ]
+"961
+[; ;Sensors/bme680.c: 961:  var3 = var1 * var2;
+[e = _var3 * _var1 _var2 ]
+"962
+[; ;Sensors/bme680.c: 962:  var4 = (int32_t) dev->calib.par_h6 << 7;
+[e = _var4 << -> . . *U _dev 5 5 `l -> 7 `i ]
+"963
+[; ;Sensors/bme680.c: 963:  var4 = ((var4) + ((temp_scaled * (int32_t) dev->calib.par_h7) / ((int32_t) 100))) >> 4;
+[e = _var4 >> + _var4 / * _temp_scaled -> . . *U _dev 5 6 `l -> -> 100 `i `l -> 4 `i ]
+"964
+[; ;Sensors/bme680.c: 964:  var5 = ((var3 >> 14) * (var3 >> 14)) >> 10;
+[e = _var5 >> * >> _var3 -> 14 `i >> _var3 -> 14 `i -> 10 `i ]
+"965
+[; ;Sensors/bme680.c: 965:  var6 = (var4 * var5) >> 1;
+[e = _var6 >> * _var4 _var5 -> 1 `i ]
+"966
+[; ;Sensors/bme680.c: 966:  calc_hum = (((var3 + var6) >> 10) * ((int32_t) 1000)) >> 12;
+[e = _calc_hum >> * >> + _var3 _var6 -> 10 `i -> -> 1000 `i `l -> 12 `i ]
+"968
+[; ;Sensors/bme680.c: 968:  if (calc_hum > 100000)
+[e $ ! > _calc_hum -> 100000 `l 1623  ]
+"969
+[; ;Sensors/bme680.c: 969:   calc_hum = 100000;
+[e = _calc_hum -> 100000 `l ]
+[e $U 1624  ]
+"970
+[; ;Sensors/bme680.c: 970:  else if (calc_hum < 0)
+[e :U 1623 ]
+[e $ ! < _calc_hum -> -> 0 `i `l 1625  ]
+"971
+[; ;Sensors/bme680.c: 971:   calc_hum = 0;
+[e = _calc_hum -> -> 0 `i `l ]
+[e :U 1625 ]
+[e :U 1624 ]
+"973
+[; ;Sensors/bme680.c: 973:  return (uint32_t) calc_hum;
+[e ) -> _calc_hum `ul ]
+[e $UE 1622  ]
+"974
+[; ;Sensors/bme680.c: 974: }
+[e :UE 1622 ]
+}
+"979
+[; ;Sensors/bme680.c: 979: static uint32_t calc_gas_resistance(uint16_t gas_res_adc, uint8_t gas_range, const struct bme680_dev *dev)
+[v _calc_gas_resistance `(ul ~T0 @X0 1 sf3`us`uc`*CS1521 ]
+"980
+[; ;Sensors/bme680.c: 980: {
+{
+[e :U _calc_gas_resistance ]
+"979
+[; ;Sensors/bme680.c: 979: static uint32_t calc_gas_resistance(uint16_t gas_res_adc, uint8_t gas_range, const struct bme680_dev *dev)
+[v _gas_res_adc `us ~T0 @X0 1 r1 ]
+[v _gas_range `uc ~T0 @X0 1 r2 ]
+[v _dev `*CS1521 ~T0 @X0 1 r3 ]
+"980
+[; ;Sensors/bme680.c: 980: {
+[f ]
+"985
+[; ;Sensors/bme680.c: 985:     int32_t var1;
+[v _var1 `l ~T0 @X0 1 a ]
+"986
+[; ;Sensors/bme680.c: 986:  uint32_t var2;
+[v _var2 `ul ~T0 @X0 1 a ]
+"987
+[; ;Sensors/bme680.c: 987:  int32_t var3;
+[v _var3 `l ~T0 @X0 1 a ]
+"989
+[; ;Sensors/bme680.c: 989:  uint32_t calc_gas_res;
+[v _calc_gas_res `ul ~T0 @X0 1 a ]
+[v F11190 `ul ~T0 @X0 -> 16 `i s ]
+[i F11190
+:U ..
+"991
+[; ;Sensors/bme680.c: 991:  uint32_t lookupTable1[16] = { 2147483647UL, 2147483647UL, 2147483647UL, 2147483647UL,
+-> 2147483647 `ul
+-> 2147483647 `ul
+-> 2147483647 `ul
+-> 2147483647 `ul
+-> 2147483647 `ul
+-> 2126008810 `ul
+-> 2147483647 `ul
+-> 2130303777 `ul
+-> 2147483647 `ul
+-> 2147483647 `ul
+-> 2143188679 `ul
+-> 2136746228 `ul
+-> 2147483647 `ul
+-> 2126008810 `ul
+-> 2147483647 `ul
+-> 2147483647 `ul
+..
+]
+[v _lookupTable1 `ul ~T0 @X0 -> 16 `i a ]
+[e = _lookupTable1 F11190 ]
+[v F11192 `ul ~T0 @X0 -> 16 `i s ]
+[i F11192
+:U ..
+"996
+[; ;Sensors/bme680.c: 996:  uint32_t lookupTable2[16] = { 4096000000UL, 2048000000UL, 1024000000UL, 512000000UL,
+-> 4096000000 `ul
+-> 2048000000 `ul
+-> 1024000000 `ul
+-> 512000000 `ul
+-> 255744255 `ul
+-> 127110228 `ul
+-> 64000000 `ul
+-> 32258064 `ul
+-> 16016016 `ul
+-> 8000000 `ul
+-> 4000000 `ul
+-> 2000000 `ul
+-> 1000000 `ul
+-> 500000 `ul
+-> 250000 `ul
+-> 125000 `ul
+..
+]
+[v _lookupTable2 `ul ~T0 @X0 -> 16 `i a ]
+[e = _lookupTable2 F11192 ]
+"1007
+[; ;Sensors/bme680.c: 1007:     var1 = (int32_t) ((1340 + (5 * (int32_t) dev->calib.range_sw_err)) *
+[e = _var1 >> * + -> -> 1340 `i `l * -> -> 5 `i `l -> . . *U _dev 5 26 `l -> *U + &U _lookupTable1 * -> _gas_range `ux -> -> # *U &U _lookupTable1 `ui `ux `l -> 16 `i ]
+"1009
+[; ;Sensors/bme680.c: 1009:  var2 = (((int32_t) ((int32_t) gas_res_adc << 15) - (int32_t) (16777216)) + var1);
+[e = _var2 -> + - << -> _gas_res_adc `l -> 15 `i -> 16777216 `l _var1 `ul ]
+"1010
+[; ;Sensors/bme680.c: 1010:  var3 = (((int32_t) lookupTable2[gas_range] * (int32_t) var1) >> 9);
+[e = _var3 >> * -> *U + &U _lookupTable2 * -> _gas_range `ux -> -> # *U &U _lookupTable2 `ui `ux `l _var1 -> 9 `i ]
+"1011
+[; ;Sensors/bme680.c: 1011:  calc_gas_res = (uint32_t) ((var3 + ((int32_t) var2 >> 1)) / (int32_t) var2);
+[e = _calc_gas_res -> / + _var3 >> -> _var2 `l -> 1 `i -> _var2 `l `ul ]
+"1013
+[; ;Sensors/bme680.c: 1013:  return calc_gas_res;
+[e ) _calc_gas_res ]
+[e $UE 1626  ]
+"1014
+[; ;Sensors/bme680.c: 1014: }
+[e :UE 1626 ]
+}
+"1019
+[; ;Sensors/bme680.c: 1019: static uint8_t calc_heater_res(uint16_t temp, const struct bme680_dev *dev)
+[v _calc_heater_res `(uc ~T0 @X0 1 sf2`us`*CS1521 ]
+"1020
+[; ;Sensors/bme680.c: 1020: {
+{
+[e :U _calc_heater_res ]
+"1019
+[; ;Sensors/bme680.c: 1019: static uint8_t calc_heater_res(uint16_t temp, const struct bme680_dev *dev)
+[v _temp `us ~T0 @X0 1 r1 ]
+[v _dev `*CS1521 ~T0 @X0 1 r2 ]
+"1020
+[; ;Sensors/bme680.c: 1020: {
+[f ]
+"1021
+[; ;Sensors/bme680.c: 1021:  uint8_t heatr_res;
+[v _heatr_res `uc ~T0 @X0 1 a ]
+"1022
+[; ;Sensors/bme680.c: 1022:  int32_t var1;
+[v _var1 `l ~T0 @X0 1 a ]
+"1023
+[; ;Sensors/bme680.c: 1023:  int32_t var2;
+[v _var2 `l ~T0 @X0 1 a ]
+"1024
+[; ;Sensors/bme680.c: 1024:  int32_t var3;
+[v _var3 `l ~T0 @X0 1 a ]
+"1025
+[; ;Sensors/bme680.c: 1025:  int32_t var4;
+[v _var4 `l ~T0 @X0 1 a ]
+"1026
+[; ;Sensors/bme680.c: 1026:  int32_t var5;
+[v _var5 `l ~T0 @X0 1 a ]
+"1027
+[; ;Sensors/bme680.c: 1027:  int32_t heatr_res_x100;
+[v _heatr_res_x100 `l ~T0 @X0 1 a ]
+"1029
+[; ;Sensors/bme680.c: 1029:  if (temp > 400)
+[e $ ! > -> _temp `ui -> -> 400 `i `ui 1628  ]
+"1030
+[; ;Sensors/bme680.c: 1030:   temp = 400;
+[e = _temp -> -> 400 `i `us ]
+[e :U 1628 ]
+"1032
+[; ;Sensors/bme680.c: 1032:  var1 = (((int32_t) dev->amb_temp * dev->calib.par_gh3) / 1000) * 256;
+[e = _var1 * / * -> . *U _dev 4 `l -> . . *U _dev 5 9 `l -> -> 1000 `i `l -> -> 256 `i `l ]
+"1033
+[; ;Sensors/bme680.c: 1033:  var2 = (dev->calib.par_gh1 + 784) * (((((dev->calib.par_gh2 + 154009) * temp * 5) / 100) + 3276800) / 10);
+[e = _var2 * -> + -> . . *U _dev 5 7 `i -> 784 `i `l / + / * * + -> . . *U _dev 5 8 `l -> 154009 `l -> _temp `l -> -> 5 `i `l -> -> 100 `i `l -> 3276800 `l -> -> 10 `i `l ]
+"1034
+[; ;Sensors/bme680.c: 1034:  var3 = var1 + (var2 / 2);
+[e = _var3 + _var1 / _var2 -> -> 2 `i `l ]
+"1035
+[; ;Sensors/bme680.c: 1035:  var4 = (var3 / (dev->calib.res_heat_range + 4));
+[e = _var4 / _var3 -> + -> . . *U _dev 5 24 `i -> 4 `i `l ]
+"1036
+[; ;Sensors/bme680.c: 1036:  var5 = (131 * dev->calib.res_heat_val) + 65536;
+[e = _var5 + -> * -> 131 `i -> . . *U _dev 5 25 `i `l -> 65536 `l ]
+"1037
+[; ;Sensors/bme680.c: 1037:  heatr_res_x100 = (int32_t) (((var4 / var5) - 250) * 34);
+[e = _heatr_res_x100 * - / _var4 _var5 -> -> 250 `i `l -> -> 34 `i `l ]
+"1038
+[; ;Sensors/bme680.c: 1038:  heatr_res = (uint8_t) ((heatr_res_x100 + 50) / 100);
+[e = _heatr_res -> / + _heatr_res_x100 -> -> 50 `i `l -> -> 100 `i `l `uc ]
+"1040
+[; ;Sensors/bme680.c: 1040:  return heatr_res;
+[e ) _heatr_res ]
+[e $UE 1627  ]
+"1041
+[; ;Sensors/bme680.c: 1041: }
+[e :UE 1627 ]
+}
+"1205
+[; ;Sensors/bme680.c: 1205: static uint8_t calc_heater_dur(uint16_t dur)
+[v _calc_heater_dur `(uc ~T0 @X0 1 sf1`us ]
+"1206
+[; ;Sensors/bme680.c: 1206: {
+{
+[e :U _calc_heater_dur ]
+"1205
+[; ;Sensors/bme680.c: 1205: static uint8_t calc_heater_dur(uint16_t dur)
+[v _dur `us ~T0 @X0 1 r1 ]
+"1206
+[; ;Sensors/bme680.c: 1206: {
+[f ]
+"1207
+[; ;Sensors/bme680.c: 1207:  uint8_t factor = 0;
+[v _factor `uc ~T0 @X0 1 a ]
+[e = _factor -> -> 0 `i `uc ]
+"1208
+[; ;Sensors/bme680.c: 1208:  uint8_t durval;
+[v _durval `uc ~T0 @X0 1 a ]
+"1210
+[; ;Sensors/bme680.c: 1210:  if (dur >= 0xfc0) {
+[e $ ! >= -> _dur `ui -> -> 4032 `i `ui 1630  ]
+{
+"1211
+[; ;Sensors/bme680.c: 1211:   durval = 0xff;
+[e = _durval -> -> 255 `i `uc ]
+"1212
+[; ;Sensors/bme680.c: 1212:  } else {
+}
+[e $U 1631  ]
+[e :U 1630 ]
+{
+"1213
+[; ;Sensors/bme680.c: 1213:   while (dur > 0x3F) {
+[e $U 1632  ]
+[e :U 1633 ]
+{
+"1214
+[; ;Sensors/bme680.c: 1214:    dur = dur / 4;
+[e = _dur -> / -> _dur `ui -> -> 4 `i `ui `us ]
+"1215
+[; ;Sensors/bme680.c: 1215:    factor += 1;
+[e =+ _factor -> -> 1 `i `uc ]
+"1216
+[; ;Sensors/bme680.c: 1216:   }
+}
+[e :U 1632 ]
+"1213
+[; ;Sensors/bme680.c: 1213:   while (dur > 0x3F) {
+[e $ > -> _dur `ui -> -> 63 `i `ui 1633  ]
+[e :U 1634 ]
+"1217
+[; ;Sensors/bme680.c: 1217:   durval = (uint8_t) (dur + (factor * 64));
+[e = _durval -> + -> _dur `ui -> * -> _factor `i -> 64 `i `ui `uc ]
+"1218
+[; ;Sensors/bme680.c: 1218:  }
+}
+[e :U 1631 ]
+"1220
+[; ;Sensors/bme680.c: 1220:  return durval;
+[e ) _durval ]
+[e $UE 1629  ]
+"1221
+[; ;Sensors/bme680.c: 1221: }
+[e :UE 1629 ]
+}
+"1226
+[; ;Sensors/bme680.c: 1226: static int8_t read_field_data(struct bme680_field_data *data, struct bme680_dev *dev)
+[v _read_field_data `(c ~T0 @X0 1 sf2`*S1517`*S1521 ]
+"1227
+[; ;Sensors/bme680.c: 1227: {
+{
+[e :U _read_field_data ]
+"1226
+[; ;Sensors/bme680.c: 1226: static int8_t read_field_data(struct bme680_field_data *data, struct bme680_dev *dev)
+[v _data `*S1517 ~T0 @X0 1 r1 ]
+[v _dev `*S1521 ~T0 @X0 1 r2 ]
+"1227
+[; ;Sensors/bme680.c: 1227: {
+[f ]
+"1228
+[; ;Sensors/bme680.c: 1228:  int8_t rslt;
+[v _rslt `c ~T0 @X0 1 a ]
+[v F11212 `uc ~T0 @X0 -> 15 `i s ]
+[i F11212
+:U ..
+"1229
+[; ;Sensors/bme680.c: 1229:  uint8_t buff[15] = { 0 };
+-> -> 0 `i `uc
+..
+]
+[v _buff `uc ~T0 @X0 -> 15 `i a ]
+[e = _buff F11212 ]
+"1230
+[; ;Sensors/bme680.c: 1230:  uint8_t gas_range;
+[v _gas_range `uc ~T0 @X0 1 a ]
+"1231
+[; ;Sensors/bme680.c: 1231:  uint32_t adc_temp;
+[v _adc_temp `ul ~T0 @X0 1 a ]
+"1232
+[; ;Sensors/bme680.c: 1232:  uint32_t adc_pres;
+[v _adc_pres `ul ~T0 @X0 1 a ]
+"1233
+[; ;Sensors/bme680.c: 1233:  uint16_t adc_hum;
+[v _adc_hum `us ~T0 @X0 1 a ]
+"1234
+[; ;Sensors/bme680.c: 1234:  uint16_t adc_gas_res;
+[v _adc_gas_res `us ~T0 @X0 1 a ]
+"1235
+[; ;Sensors/bme680.c: 1235:  uint8_t tries = 10;
+[v _tries `uc ~T0 @X0 1 a ]
+[e = _tries -> -> 10 `i `uc ]
+"1238
+[; ;Sensors/bme680.c: 1238:  rslt = null_ptr_check(dev);
+[e = _rslt ( _null_ptr_check (1 -> _dev `*CS1521 ]
+"1239
+[; ;Sensors/bme680.c: 1239:  do {
+[e :U 1638 ]
+{
+"1240
+[; ;Sensors/bme680.c: 1240:   if (rslt == 0) {
+[e $ ! == -> _rslt `i -> 0 `i 1639  ]
+{
+"1241
+[; ;Sensors/bme680.c: 1241:    rslt = bme680_get_regs(((uint8_t) (0x1d)), buff, (uint16_t) 15,
+[e = _rslt ( _bme680_get_regs (4 , , , -> -> 29 `i `uc &U _buff -> -> 15 `i `us _dev ]
+"1244
+[; ;Sensors/bme680.c: 1244:    data->status = buff[0] & 0x80;
+[e = . *U _data 0 -> & -> *U + &U _buff * -> -> -> 0 `i `ui `ux -> -> # *U &U _buff `ui `ux `i -> 128 `i `uc ]
+"1245
+[; ;Sensors/bme680.c: 1245:    data->gas_index = buff[0] & 0x0f;
+[e = . *U _data 1 -> & -> *U + &U _buff * -> -> -> 0 `i `ui `ux -> -> # *U &U _buff `ui `ux `i -> 15 `i `uc ]
+"1246
+[; ;Sensors/bme680.c: 1246:    data->meas_index = buff[1];
+[e = . *U _data 2 *U + &U _buff * -> -> -> 1 `i `ui `ux -> -> # *U &U _buff `ui `ux ]
+"1249
+[; ;Sensors/bme680.c: 1249:    adc_pres = (uint32_t) (((uint32_t) buff[2] * 4096) | ((uint32_t) buff[3] * 16)
+[e = _adc_pres | | * -> *U + &U _buff * -> -> -> 2 `i `ui `ux -> -> # *U &U _buff `ui `ux `ul -> -> -> 4096 `i `l `ul * -> *U + &U _buff * -> -> -> 3 `i `ui `ux -> -> # *U &U _buff `ui `ux `ul -> -> -> 16 `i `l `ul / -> *U + &U _buff * -> -> -> 4 `i `ui `ux -> -> # *U &U _buff `ui `ux `ul -> -> -> 16 `i `l `ul ]
+"1251
+[; ;Sensors/bme680.c: 1251:    adc_temp = (uint32_t) (((uint32_t) buff[5] * 4096) | ((uint32_t) buff[6] * 16)
+[e = _adc_temp | | * -> *U + &U _buff * -> -> -> 5 `i `ui `ux -> -> # *U &U _buff `ui `ux `ul -> -> -> 4096 `i `l `ul * -> *U + &U _buff * -> -> -> 6 `i `ui `ux -> -> # *U &U _buff `ui `ux `ul -> -> -> 16 `i `l `ul / -> *U + &U _buff * -> -> -> 7 `i `ui `ux -> -> # *U &U _buff `ui `ux `ul -> -> -> 16 `i `l `ul ]
+"1253
+[; ;Sensors/bme680.c: 1253:    adc_hum = (uint16_t) (((uint32_t) buff[8] * 256) | (uint32_t) buff[9]);
+[e = _adc_hum -> | * -> *U + &U _buff * -> -> -> 8 `i `ui `ux -> -> # *U &U _buff `ui `ux `ul -> -> -> 256 `i `l `ul -> *U + &U _buff * -> -> -> 9 `i `ui `ux -> -> # *U &U _buff `ui `ux `ul `us ]
+"1254
+[; ;Sensors/bme680.c: 1254:    adc_gas_res = (uint16_t) ((uint32_t) buff[13] * 4 | (((uint32_t) buff[14]) / 64));
+[e = _adc_gas_res -> | * -> *U + &U _buff * -> -> -> 13 `i `ui `ux -> -> # *U &U _buff `ui `ux `ul -> -> -> 4 `i `l `ul / -> *U + &U _buff * -> -> -> 14 `i `ui `ux -> -> # *U &U _buff `ui `ux `ul -> -> -> 64 `i `l `ul `us ]
+"1255
+[; ;Sensors/bme680.c: 1255:    gas_range = buff[14] & 0x0f;
+[e = _gas_range -> & -> *U + &U _buff * -> -> -> 14 `i `ui `ux -> -> # *U &U _buff `ui `ux `i -> 15 `i `uc ]
+"1257
+[; ;Sensors/bme680.c: 1257:    data->status |= buff[14] & 0x20;
+[e =| . *U _data 0 -> & -> *U + &U _buff * -> -> -> 14 `i `ui `ux -> -> # *U &U _buff `ui `ux `i -> 32 `i `uc ]
+"1258
+[; ;Sensors/bme680.c: 1258:    data->status |= buff[14] & 0x10;
+[e =| . *U _data 0 -> & -> *U + &U _buff * -> -> -> 14 `i `ui `ux -> -> # *U &U _buff `ui `ux `i -> 16 `i `uc ]
+"1260
+[; ;Sensors/bme680.c: 1260:    if (data->status & 0x80) {
+[e $ ! != & -> . *U _data 0 `i -> 128 `i -> 0 `i 1640  ]
+{
+"1261
+[; ;Sensors/bme680.c: 1261:     data->temperature = calc_temperature(adc_temp, dev);
+[e = . *U _data 3 ( _calc_temperature (2 , _adc_temp _dev ]
+"1262
+[; ;Sensors/bme680.c: 1262:     data->pressure = calc_pressure(adc_pres, dev);
+[e = . *U _data 4 ( _calc_pressure (2 , _adc_pres -> _dev `*CS1521 ]
+"1263
+[; ;Sensors/bme680.c: 1263:     data->humidity = calc_humidity(adc_hum, dev);
+[e = . *U _data 5 ( _calc_humidity (2 , _adc_hum -> _dev `*CS1521 ]
+"1264
+[; ;Sensors/bme680.c: 1264:     data->gas_resistance = calc_gas_resistance(adc_gas_res, gas_range, dev);
+[e = . *U _data 6 ( _calc_gas_resistance (3 , , _adc_gas_res _gas_range -> _dev `*CS1521 ]
+"1265
+[; ;Sensors/bme680.c: 1265:     break;
+[e $U 1637  ]
+"1266
+[; ;Sensors/bme680.c: 1266:    }
+}
+[e :U 1640 ]
+"1268
+[; ;Sensors/bme680.c: 1268:    dev->delay_ms(10);
+[e ( *U . *U _dev 13 (1 -> -> -> 10 `i `l `ul ]
+"1269
+[; ;Sensors/bme680.c: 1269:   }
+}
+[e :U 1639 ]
+"1270
+[; ;Sensors/bme680.c: 1270:   tries--;
+[e -- _tries -> -> 1 `i `uc ]
+"1271
+[; ;Sensors/bme680.c: 1271:  } while (tries);
+}
+[e $ != -> _tries `i -> 0 `i 1638  ]
+[e :U 1637 ]
+"1273
+[; ;Sensors/bme680.c: 1273:  if (!tries)
+[e $ ! ! != -> _tries `i -> 0 `i 1641  ]
+"1274
+[; ;Sensors/bme680.c: 1274:   rslt = 2;
+[e = _rslt -> -> 2 `i `c ]
+[e :U 1641 ]
+"1276
+[; ;Sensors/bme680.c: 1276:  return rslt;
+[e ) _rslt ]
+[e $UE 1635  ]
+"1277
+[; ;Sensors/bme680.c: 1277: }
+[e :UE 1635 ]
+}
+"1282
+[; ;Sensors/bme680.c: 1282: static int8_t set_mem_page(uint8_t reg_addr, struct bme680_dev *dev)
+[v _set_mem_page `(c ~T0 @X0 1 sf2`uc`*S1521 ]
+"1283
+[; ;Sensors/bme680.c: 1283: {
+{
+[e :U _set_mem_page ]
+"1282
+[; ;Sensors/bme680.c: 1282: static int8_t set_mem_page(uint8_t reg_addr, struct bme680_dev *dev)
+[v _reg_addr `uc ~T0 @X0 1 r1 ]
+[v _dev `*S1521 ~T0 @X0 1 r2 ]
+"1283
+[; ;Sensors/bme680.c: 1283: {
+[f ]
+"1284
+[; ;Sensors/bme680.c: 1284:  int8_t rslt;
+[v _rslt `c ~T0 @X0 1 a ]
+"1285
+[; ;Sensors/bme680.c: 1285:  uint8_t reg;
+[v _reg `uc ~T0 @X0 1 a ]
+"1286
+[; ;Sensors/bme680.c: 1286:  uint8_t mem_page;
+[v _mem_page `uc ~T0 @X0 1 a ]
+"1289
+[; ;Sensors/bme680.c: 1289:  rslt = null_ptr_check(dev);
+[e = _rslt ( _null_ptr_check (1 -> _dev `*CS1521 ]
+"1290
+[; ;Sensors/bme680.c: 1290:  if (rslt == 0) {
+[e $ ! == -> _rslt `i -> 0 `i 1643  ]
+{
+"1291
+[; ;Sensors/bme680.c: 1291:   if (reg_addr > 0x7f)
+[e $ ! > -> _reg_addr `i -> 127 `i 1644  ]
+"1292
+[; ;Sensors/bme680.c: 1292:    mem_page = 0x00;
+[e = _mem_page -> -> 0 `i `uc ]
+[e $U 1645  ]
+"1293
+[; ;Sensors/bme680.c: 1293:   else
+[e :U 1644 ]
+"1294
+[; ;Sensors/bme680.c: 1294:    mem_page = 0x10;
+[e = _mem_page -> -> 16 `i `uc ]
+[e :U 1645 ]
+"1296
+[; ;Sensors/bme680.c: 1296:   if (mem_page != dev->mem_page) {
+[e $ ! != -> _mem_page `i -> . *U _dev 3 `i 1646  ]
+{
+"1297
+[; ;Sensors/bme680.c: 1297:    dev->mem_page = mem_page;
+[e = . *U _dev 3 _mem_page ]
+"1299
+[; ;Sensors/bme680.c: 1299:    dev->com_rslt = dev->read(dev->dev_id, 0xf3 | 0x80, &reg, 1);
+[e = . *U _dev 14 ( *U . *U _dev 11 (4 , , , . *U _dev 1 -> | -> 243 `i -> 128 `i `uc &U _reg -> -> 1 `i `us ]
+"1300
+[; ;Sensors/bme680.c: 1300:    if (dev->com_rslt != 0)
+[e $ ! != -> . *U _dev 14 `i -> 0 `i 1647  ]
+"1301
+[; ;Sensors/bme680.c: 1301:     rslt = -2;
+[e = _rslt -> -U -> 2 `i `c ]
+[e :U 1647 ]
+"1303
+[; ;Sensors/bme680.c: 1303:    if (rslt == 0) {
+[e $ ! == -> _rslt `i -> 0 `i 1648  ]
+{
+"1304
+[; ;Sensors/bme680.c: 1304:     reg = reg & (~0x10);
+[e = _reg -> & -> _reg `i ~ -> 16 `i `uc ]
+"1305
+[; ;Sensors/bme680.c: 1305:     reg = reg | (dev->mem_page & 0x10);
+[e = _reg -> | -> _reg `i & -> . *U _dev 3 `i -> 16 `i `uc ]
+"1307
+[; ;Sensors/bme680.c: 1307:     dev->com_rslt = dev->write(dev->dev_id, 0xf3 & 0x7f,
+[e = . *U _dev 14 ( *U . *U _dev 12 (4 , , , . *U _dev 1 -> & -> 243 `i -> 127 `i `uc &U _reg -> -> 1 `i `us ]
+"1309
+[; ;Sensors/bme680.c: 1309:     if (dev->com_rslt != 0)
+[e $ ! != -> . *U _dev 14 `i -> 0 `i 1649  ]
+"1310
+[; ;Sensors/bme680.c: 1310:      rslt = -2;
+[e = _rslt -> -U -> 2 `i `c ]
+[e :U 1649 ]
+"1311
+[; ;Sensors/bme680.c: 1311:    }
+}
+[e :U 1648 ]
+"1312
+[; ;Sensors/bme680.c: 1312:   }
+}
+[e :U 1646 ]
+"1313
+[; ;Sensors/bme680.c: 1313:  }
+}
+[e :U 1643 ]
+"1315
+[; ;Sensors/bme680.c: 1315:  return rslt;
+[e ) _rslt ]
+[e $UE 1642  ]
+"1316
+[; ;Sensors/bme680.c: 1316: }
+[e :UE 1642 ]
+}
+"1321
+[; ;Sensors/bme680.c: 1321: static int8_t get_mem_page(struct bme680_dev *dev)
+[v _get_mem_page `(c ~T0 @X0 1 sf1`*S1521 ]
+"1322
+[; ;Sensors/bme680.c: 1322: {
+{
+[e :U _get_mem_page ]
+"1321
+[; ;Sensors/bme680.c: 1321: static int8_t get_mem_page(struct bme680_dev *dev)
+[v _dev `*S1521 ~T0 @X0 1 r1 ]
+"1322
+[; ;Sensors/bme680.c: 1322: {
+[f ]
+"1323
+[; ;Sensors/bme680.c: 1323:  int8_t rslt;
+[v _rslt `c ~T0 @X0 1 a ]
+"1324
+[; ;Sensors/bme680.c: 1324:  uint8_t reg;
+[v _reg `uc ~T0 @X0 1 a ]
+"1327
+[; ;Sensors/bme680.c: 1327:  rslt = null_ptr_check(dev);
+[e = _rslt ( _null_ptr_check (1 -> _dev `*CS1521 ]
+"1328
+[; ;Sensors/bme680.c: 1328:  if (rslt == 0) {
+[e $ ! == -> _rslt `i -> 0 `i 1651  ]
+{
+"1329
+[; ;Sensors/bme680.c: 1329:   dev->com_rslt = dev->read(dev->dev_id, 0xf3 | 0x80, &reg, 1);
+[e = . *U _dev 14 ( *U . *U _dev 11 (4 , , , . *U _dev 1 -> | -> 243 `i -> 128 `i `uc &U _reg -> -> 1 `i `us ]
+"1330
+[; ;Sensors/bme680.c: 1330:   if (dev->com_rslt != 0)
+[e $ ! != -> . *U _dev 14 `i -> 0 `i 1652  ]
+"1331
+[; ;Sensors/bme680.c: 1331:    rslt = -2;
+[e = _rslt -> -U -> 2 `i `c ]
+[e $U 1653  ]
+"1332
+[; ;Sensors/bme680.c: 1332:   else
+[e :U 1652 ]
+"1333
+[; ;Sensors/bme680.c: 1333:    dev->mem_page = reg & 0x10;
+[e = . *U _dev 3 -> & -> _reg `i -> 16 `i `uc ]
+[e :U 1653 ]
+"1334
+[; ;Sensors/bme680.c: 1334:  }
+}
+[e :U 1651 ]
+"1336
+[; ;Sensors/bme680.c: 1336:  return rslt;
+[e ) _rslt ]
+[e $UE 1650  ]
+"1337
+[; ;Sensors/bme680.c: 1337: }
+[e :UE 1650 ]
+}
+"1343
+[; ;Sensors/bme680.c: 1343: static int8_t boundary_check(uint8_t *value, uint8_t min, uint8_t max, struct bme680_dev *dev)
+[v _boundary_check `(c ~T0 @X0 1 sf4`*uc`uc`uc`*S1521 ]
+"1344
+[; ;Sensors/bme680.c: 1344: {
+{
+[e :U _boundary_check ]
+"1343
+[; ;Sensors/bme680.c: 1343: static int8_t boundary_check(uint8_t *value, uint8_t min, uint8_t max, struct bme680_dev *dev)
+[v _value `*uc ~T0 @X0 1 r1 ]
+[v _min `uc ~T0 @X0 1 r2 ]
+[v _max `uc ~T0 @X0 1 r3 ]
+[v _dev `*S1521 ~T0 @X0 1 r4 ]
+"1344
+[; ;Sensors/bme680.c: 1344: {
+[f ]
+"1345
+[; ;Sensors/bme680.c: 1345:  int8_t rslt = 0;
+[v _rslt `c ~T0 @X0 1 a ]
+[e = _rslt -> -> 0 `i `c ]
+"1347
+[; ;Sensors/bme680.c: 1347:  if (value != ((void*)0)) {
+[e $ ! != _value -> -> -> 0 `i `*v `*uc 1655  ]
+{
+"1349
+[; ;Sensors/bme680.c: 1349:   if (*value < min) {
+[e $ ! < -> *U _value `i -> _min `i 1656  ]
+{
+"1351
+[; ;Sensors/bme680.c: 1351:    *value = min;
+[e = *U _value _min ]
+"1352
+[; ;Sensors/bme680.c: 1352:    dev->info_msg |= 1;
+[e =| . *U _dev 10 -> -> 1 `i `uc ]
+"1353
+[; ;Sensors/bme680.c: 1353:   }
+}
+[e :U 1656 ]
+"1355
+[; ;Sensors/bme680.c: 1355:   if (*value > max) {
+[e $ ! > -> *U _value `i -> _max `i 1657  ]
+{
+"1357
+[; ;Sensors/bme680.c: 1357:    *value = max;
+[e = *U _value _max ]
+"1358
+[; ;Sensors/bme680.c: 1358:    dev->info_msg |= 2;
+[e =| . *U _dev 10 -> -> 2 `i `uc ]
+"1359
+[; ;Sensors/bme680.c: 1359:   }
+}
+[e :U 1657 ]
+"1360
+[; ;Sensors/bme680.c: 1360:  } else {
+}
+[e $U 1658  ]
+[e :U 1655 ]
+{
+"1361
+[; ;Sensors/bme680.c: 1361:   rslt = -1;
+[e = _rslt -> -U -> 1 `i `c ]
+"1362
+[; ;Sensors/bme680.c: 1362:  }
+}
+[e :U 1658 ]
+"1364
+[; ;Sensors/bme680.c: 1364:  return rslt;
+[e ) _rslt ]
+[e $UE 1654  ]
+"1365
+[; ;Sensors/bme680.c: 1365: }
+[e :UE 1654 ]
+}
+"1371
+[; ;Sensors/bme680.c: 1371: static int8_t null_ptr_check(const struct bme680_dev *dev)
+[v _null_ptr_check `(c ~T0 @X0 1 sf1`*CS1521 ]
+"1372
+[; ;Sensors/bme680.c: 1372: {
+{
+[e :U _null_ptr_check ]
+"1371
+[; ;Sensors/bme680.c: 1371: static int8_t null_ptr_check(const struct bme680_dev *dev)
+[v _dev `*CS1521 ~T0 @X0 1 r1 ]
+"1372
+[; ;Sensors/bme680.c: 1372: {
+[f ]
+"1373
+[; ;Sensors/bme680.c: 1373:  int8_t rslt;
+[v _rslt `c ~T0 @X0 1 a ]
+"1375
+[; ;Sensors/bme680.c: 1375:  if ((dev == ((void*)0)) || (dev->read == ((void*)0)) || (dev->write == ((void*)0)) || (dev->delay_ms == ((void*)0))) {
+[e $ ! || || || == _dev -> -> -> 0 `i `*v `*CS1521 == . *U _dev 11 -> -> -> 0 `i `*v `*F11262 == . *U _dev 12 -> -> -> 0 `i `*v `*F11273 == . *U _dev 13 -> -> -> 0 `i `*v `*F11281 1660  ]
+{
+"1377
+[; ;Sensors/bme680.c: 1377:   rslt = -1;
+[e = _rslt -> -U -> 1 `i `c ]
+"1378
+[; ;Sensors/bme680.c: 1378:  } else {
+}
+[e $U 1661  ]
+[e :U 1660 ]
+{
+"1380
+[; ;Sensors/bme680.c: 1380:   rslt = 0;
+[e = _rslt -> -> 0 `i `c ]
+"1381
+[; ;Sensors/bme680.c: 1381:  }
+}
+[e :U 1661 ]
+"1383
+[; ;Sensors/bme680.c: 1383:  return rslt;
+[e ) _rslt ]
+[e $UE 1659  ]
+"1384
+[; ;Sensors/bme680.c: 1384: }
+[e :UE 1659 ]
+}

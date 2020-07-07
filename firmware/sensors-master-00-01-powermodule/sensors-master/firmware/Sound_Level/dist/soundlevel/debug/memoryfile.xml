@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <executable name="dist/soundlevel/debug\Sound_Level.debug.hex">
+    <memory name="program">
+      <units>words</units>
+      <length>16384</length>
+      <used>3956</used>
+      <free>12428</free>
+    </memory>
+    <memory name="data">
+      <units>bytes</units>
+      <length>2048</length>
+      <used>291</used>
+      <free>1757</free>
+    </memory>
+  </executable>
+</project>
