@@ -18,6 +18,10 @@
  *  Description: Main program implementing common interface for buttons sensor 
  *               in the "IoT with a SOFT touch" project.
  *               (DRAMCO / KU Leuven TCG project)
+ * 
+ *  Current measurments:
+ *      - approx. 330 nA in sleep
+ *      - approx. 7 mA for 2 seconds on button press 
  *
  */
 

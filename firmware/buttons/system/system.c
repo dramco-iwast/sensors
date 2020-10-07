@@ -20,18 +20,33 @@
  * 
  */
 
+#include <pic16f18446.h>
+
 #include "system.h"
 #include "i2c1.h"
 #include "interrupt.h"
 
 void OSCILLATOR_Initialize(void);
 void PMD_Initialize(void);
-void PIN_MANAGER_Initialize(void);
 
 void SYSTEM_Initialize(uint8_t slave_address){ //MODIFIED (was void))
-    PMD_Initialize();
     OSCILLATOR_Initialize();
-       
+    PMD_Initialize();
+    
+    VREGCONbits.VREGPM = 1; // Low-Power Sleep mode enabled in Sleep
+    //Unused I/O pins should be configured as outputs and driven to a logic
+    //low state. Alternatively, connect a1k? to 10 k? resistor to VSS on unused
+    // pins to drive the output to logic low
+    ANSELA = 0x00;
+    ANSELB = 0x00;
+    ANSELC = 0x00;
+    TRISA = 0x00;
+    TRISB = 0x00;
+    TRISC = 0x00;
+    LATA = 0xFF;
+    LATB = 0xFF;
+    LATC = 0xFF;
+    
     I2C1_Initialize(slave_address);
 
     GlobalInterruptEnable();
@@ -54,13 +69,8 @@ void OSCILLATOR_Initialize(void){
 
 // Enable/disable peripheral modules
 void PMD_Initialize(void){
-    // CLKRMD CLKR enabled;
-    // SYSCMD SYSCLK enabled;
-    // FVRMD FVR enabled;
-    // IOCMD IOC enabled;
-    // NVMMD NVM enabled; 
-    PMD0 = 0x00; // reset value
-    // disable the rest by default -> should be enabled by sensor
+    // disable everything by default -> should be enabled by sensor
+    PMD0 = 0xFF;
     PMD1 = 0xFF;
     PMD2 = 0xFF;
     PMD3 = 0xFF;

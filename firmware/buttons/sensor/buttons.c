@@ -33,6 +33,15 @@ static void Buttons_GenerateInterrupt(void){
     READY_SetHigh(); // default state
 }
 
+static void EnterSleep(void){
+    CPUDOZEbits.IDLEN = 0;
+        
+    NOP();
+    SLEEP();
+    NOP();
+    NOP();
+}
+
 /* local variables ************************************************************/
 
 // variables that control the sampling
@@ -85,6 +94,7 @@ void Buttons_ISR(void){
 // Device_API_t -> Init
 // Initialize pins, LEDs and interrupts
 void Buttons_Init(void){
+    PMD0bits.IOCMD = 0;
     // configure READY pin
     READY_SetDigitalOutput();
     READY_SetHigh();
@@ -119,6 +129,10 @@ void Buttons_Init(void){
     SW_2_SetDigitalInput();
     SW_3_SetDigitalInput();
     SW_4_SetDigitalInput();
+    SW_1_ResetPullup();
+    SW_2_ResetPullup();
+    SW_3_ResetPullup();
+    SW_4_ResetPullup();
     
     // configure interrupt on change registers
     //interrupt on change for group IOCCF - flag
@@ -151,6 +165,7 @@ void Buttons_Init(void){
     // Enable IOC interrupt 
     PIE0bits.IOCIE = 1; 
     
+    WDTCON0bits.SWDTEN = 0;
 }
 
 // Device_API_t -> Measure
@@ -164,7 +179,7 @@ void Buttons_ReadButtons(void){
 // switches is pressed.
 void Buttons_Loop(void){
     // Button press "animation" on button leds
-    if(swState1 | swState2 | swState3 | swState4){        
+    if(swState1 | swState2 | swState3 | swState4){ 
         LSW_1_SetLow(); // LED ON
         LSW_2_SetLow(); // LED ON
         LSW_3_SetLow(); // LED ON
@@ -216,9 +231,8 @@ void Buttons_Loop(void){
     // Enable interrupts
     IOCCF = 0x00; // clear all interrupts that might have occurred during animation
     PIE0bits.IOCIE = 1;  
-    
-    SLEEP();
-    NOP();
+
+    EnterSleep();
 }
 
 // Device_API_t -> GetData
