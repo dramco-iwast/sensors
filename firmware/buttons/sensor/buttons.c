@@ -88,6 +88,8 @@ void Buttons_ISR(void){
             buttonsMeasurementData[1] |= 0x08;
         }
         PIR0bits.IOCIF = 0;
+        // disable all pin change interrupts
+        PIE0bits.IOCIE = 0; 
     }
 }
 
