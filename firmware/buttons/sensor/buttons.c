@@ -193,8 +193,8 @@ void Buttons_Loop(void){
         LSW_4_SetHigh(); // LED OFF
         
         
-        for(uint8_t i=0; i<255; i++){
-            uint8_t onTime = 255-i;
+        for(uint8_t i=0; i<220; i++){
+            uint8_t onTime = 250-i;
             uint8_t offTime = i;
             if(swState1){
                 LSW_1_SetLow(); // LED ON
