@@ -38,7 +38,7 @@
 // include sensor
 #include "sensor/buttons.h"
 
-Sensor_API_t sensorAPI = SENSOR_API;
+Sensor_API_t sensorAPI = BUTTONS_API;
 
 uint8_t mData[2 * M_NR];
 uint8_t mDataLength;

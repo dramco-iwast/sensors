@@ -244,7 +244,7 @@ typedef struct sensorApi{
     void (* Ready)(ReadyMode_t mode);
 } Sensor_API_t;
 */
-#define SENSOR_API { \
+#define BUTTONS_API { \
     Buttons_ISR, \
     Buttons_Init, \
     Buttons_ReadButtons, \
