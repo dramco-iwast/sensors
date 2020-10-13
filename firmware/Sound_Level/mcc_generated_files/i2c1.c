@@ -99,6 +99,21 @@ void I2C1_StatusCallback(I2C1_SLAVE_DRIVER_STATUS i2c_bus_state);
 */
 void I2C1_Initialize(uint8_t slave_address) //MODIFIED (was void)
 {
+    
+        // initialize the hardware
+    PMD6bits.MSSP1MD = 0; // enable MSSP1
+    //ANSELB = 0x50;
+    ANSELBbits.ANSB5 = 0; // RB5 is digital pin
+    ANSELBbits.ANSB7 = 0; // RB7 is digital pin
+    //TRISB = 0xF0;
+    TRISBbits.TRISB5 = 1; // RB5 is input
+    TRISBbits.TRISB7 = 1; // RB7 is input
+    
+    SSP1CLKPPS = 0x0F;   //RB7->MSSP1:SCL1;    
+    RB7PPS = 0x13;       //RB7->MSSP1:SCL1;    
+    RB5PPS = 0x14;       //RB5->MSSP1:SDA1;    
+    SSP1DATPPS = 0x0D;   //RB5->MSSP1:SDA1;  
+    
     // initialize the hardware
     // SMP High Speed; CKE disabled; 
     SSP1STAT = 0x00;

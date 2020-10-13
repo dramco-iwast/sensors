@@ -28,7 +28,7 @@
 #include <stdbool.h>
 #include "../global.h"
 
-#define BLINK_ACTIVE_LED
+//#define BLINK_ACTIVE_LED
 
 #define TYPE_BYTE   SOUND_LEVEL
 #define M_NR        0x01
@@ -95,6 +95,30 @@
 #define READY_SetAnalogMode()      do { ANSELCbits.ANSC7 = 1; } while(0)
 #define READY_SetDigitalMode()     do { ANSELCbits.ANSC7 = 0; } while(0)
 
+
+
+
+// get/set LED aliases
+#define LED_TRIS                 TRISBbits.TRISB6
+#define LED_LAT                  LATBbits.LATB6
+#define LED_PORT                 PORTBbits.RC6
+#define LED_WPU                  WPUBbits.WPUB6
+#define LED_OD                   ODCONBbits.ODCB6
+#define LED_ANS                  ANSELBbits.ANSB6
+#define LED_SetHigh()            do { LATBbits.LATB6 = 1; } while(0)
+#define LED_SetLow()             do { LATBbits.LATB6 = 0; } while(0)
+#define LED_Toggle()             do { LATBbits.LATB6 = ~LATBbits.LATB6; } while(0)
+#define LED_GetValue()           PORTBbits.RB6
+#define LED_SetDigitalInput()    do { TRISBbits.TRISB6 = 1; } while(0)
+#define LED_SetDigitalOutput()   do { TRISBbits.TRISB6 = 0; } while(0)
+#define LED_SetPullup()          do { WPUBbits.WPUB6 = 1; } while(0)
+#define LED_ResetPullup()        do { WPUBbits.WPUB6 = 0; } while(0)
+#define LED_SetPushPull()        do { ODCONBbits.ODCB6 = 0; } while(0)
+#define LED_SetOpenDrain()       do { ODCONBbits.ODCB6 = 1; } while(0)
+#define LED_SetAnalogMode()      do { ANSELBbits.ANSB6 = 1; } while(0)
+#define LED_SetDigitalMode()     do { ANSELBbits.ANSB6 = 0; } while(0)
+
+
 /* Initializer for:
 typedef struct devApi{
    void (* Init)(void);
@@ -104,7 +128,7 @@ typedef struct devApi{
    void (* UpdateThreshold)(uint8_t, uint8_t *);
 } Device_API_t;
  */
-#define SENSOR_API { \
+#define SOUND_API { \
     SoundLevel_Init, \
     SoundLevel_Measure, \
     SoundLevel_Loop, \

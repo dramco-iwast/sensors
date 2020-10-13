@@ -18,7 +18,34 @@
  *  Description: Generic I2C sensor interface for 
  *                  "IoT with a SOFT touch"
  *               (DRAMCO / KU Leuven TCG project)
- *
+ * 
+ *  Current measurments:
+ *      - approx. 370µA sleep
+ *      - approx. 288µA sleep between measurements of 1 minute, 954.51µW (50sec)
+ *      - approx. 34.64µA sleep without MIC on, 114.97µW (50sec)
+ * 
+ *      - approx. 69µA extra by disabling VREGCONbits.VREGPM = 1;
+ * 
+ *      - approx. 25.7µA threshold based -> improved to 19µA (incorrect LED initialisation)
+ *                                       -> improved to 10.4µA (PIN_MANAGER_Initialize() bad initialisation)
+ * -------------------------------------------
+ *      - approx. 1.37µA in SLEEP
+ *      - approx. 260µA MIC ON      
+ * -------------------------------------------
+ * 
+ *      - 868.68µA -> MIC voltage duty cycle
+ *      - 449.36µA -> MIC always ON without delay
+ *      - 1.09mA -> MIC always ON + 100ms delay
+ *      --> Best option:
+ *          - Threshold mode: MIC always ON
+ *          - Polling mode: MIC voltage duty cycle
+ * 
+ * 
+ *  Pinout:        ------------------------
+ *      TOP:      |  INT  |   GND  |   3V3 |
+ *      BOTTOM:   |  SDA  |   SCL  |   NC  |
+ *                 ------------------------
+ * 
  */
 
 #include "mcc_generated_files/mcc.h"
@@ -30,41 +57,12 @@
 #include "mcc_generated_files/pin_manager.h"
 
 // include sensor
-#ifdef SENSOR_TYPE
-    #if (SENSOR_TYPE == BUTTONS)
-        #include "Sensors/buttons.h"
-    #elif (SENSOR_TYPE == SOUND_LEVEL)
-        #include "Sensors/sound_level.h"
-    #elif (SENSOR_TYPE == BME680)
-        #include "Sensors/bme680_air_quality.h"
-    #else
-        #warning "Make sure your build settings in global.h are correct."
-        #error "Unsupported sensor type."
-    #endif
-#else
-    #warning "Make sure your build settings in global.h are correct."
-    #error "Sensor type is undefined."
-#endif
+#include "Sensors/sound_level.h"
 
-Device_API_t sensorAPI = SENSOR_API;
+#include <xc.h>
 
-#ifndef TYPE_BYTE
-    #error "TYPE_BYTE is not defined"
-#elif (~(~TYPE_BYTE + 0) == 0 && ~(~TYPE_BYTE + 1) == 1)
-    #error "TYPE_BYTE is defined, but has no value"
-#endif
+Device_API_t sensorAPI = SOUND_API;
 
-#ifndef M_NR
-    #error "M_NR is not defined"
-#elif (~(~M_NR + 0) == 0 && ~(~M_NR + 1) == 1)
-    #error "M_NR is defined, but has no value"
-#endif
-
-#ifndef SLAVE_ADDRESS
-    #error "SLAVE_ADDRESS is not defined"
-#elif (~(~SLAVE_ADDRESS + 0) == 0 && ~(~SLAVE_ADDRESS + 1) == 1)
-    #error "SLAVE_ADDRESS is defined, but has no value"
-#endif
 
 uint8_t mData[2 * M_NR];
 //uint8_t * mData;
@@ -94,7 +92,7 @@ void main(void)
     // Disable the Peripheral Interrupts
     //INTERRUPT_PeripheralInterruptDisable();
 
-    READY_SetHigh();
+    //READY_SetHigh();
     
     sensorAPI.Init();
     

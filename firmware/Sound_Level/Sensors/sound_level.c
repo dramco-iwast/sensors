@@ -65,6 +65,15 @@ void SoundLevel_LedToggle(void);
 void generateInt(void);
 void measure(void);
 
+// Sleep functionality
+static void EnterSleep(void);
+
+void LED_Init(void);
+
+void LED_DeInit(void);
+
+void LED_Blink(void);
+
 /* local variables ************************************************************/
 
 // variables used during the sampling
@@ -86,20 +95,74 @@ bool overThreshold = false;
 
 /* Sensor API functions *******************************************************/
 
+void LED_Init(void)
+{
+    #ifdef BLINK_ACTIVE_LED
+    // enable led output
+    //TRISB &= 0xBF; // RB6 = output
+    //TRISBbits.TRISB6 = 0; // reads easier
+    LED_SetDigitalMode();
+    LED_SetDigitalOutput();
+    SoundLevel_LedOff();
+    LED_Blink();
+    #endif
+}
+
+void LED_Blink(void)
+{
+    SoundLevel_LedOn();
+    __delay_ms(100);
+    SoundLevel_LedOff();
+    __delay_ms(100);
+    SoundLevel_LedOn();
+    __delay_ms(100);
+    SoundLevel_LedOff();
+    __delay_ms(500);
+    SoundLevel_LedOn();
+    __delay_ms(100);
+    SoundLevel_LedOff();
+    __delay_ms(100);
+    SoundLevel_LedOn();
+    __delay_ms(100);
+    SoundLevel_LedOff();
+}
+
+void LED_DeInit(void)
+{
+    #ifdef BLINK_ACTIVE_LED
+    // disable led output
+    //TRISB &= 0xBF; // RB6 = output
+    TRISBbits.TRISB6 = 1; // reads easier
+    #endif
+}
+
+
 /* Initialize peripherals needed for sound level detection
  */
 void SoundLevel_Init(void){
-#ifdef BLINK_ACTIVE_LED
-    // enable led output
-    TRISB &= 0xBF; // RB6 = output
-#endif
-       
+
+    LED_Init(); // no need to init LED's any more -> integrated in LED_on/off functions
+    
+    PMD0bits.IOCMD = 0; // enable gpio clock
+    
+    nWakeMic_SetDigitalMode();
+    powerMic_SetDigitalMode();
+    
     nWakeMic_SetDigitalOutput();
     powerMic_SetDigitalOutput();
+    
     powerMic_SetHigh();
     __delay_ms(10);
     nWakeMic_SetLow();
+    __delay_ms(100);
     
+    READY_SetDigitalOutput();
+    READY_SetHigh();
+    
+    //if(thresholdEnabled == true) // if polled measurement, than duty cycle power to MIC
+    //{
+        powerMic_SetLow(); // prevents it from powering the MIC the in the time before the first measurement when sensor is in polled mode
+    //}
     adcScaler = V_SUPPLY / (ADC_SCALE * SENSITIVITY * AMP_FACTOR);
     
     // initialize ADC
@@ -118,9 +181,15 @@ void SoundLevel_Init(void){
     // else
     // thresholdEnbled is a persistent variable and will keep it's previous value
     
+    //thresholdEnabled = true;
+    //thresholdLevel = 70*600; //70db
+    
+    
     // start watchdog
     CLRWDT();
     WDTCON0bits.SWDTEN = 1;
+    
+
 }
 
 /* Measure the sound level (MCU remains active)
@@ -132,12 +201,15 @@ void SoundLevel_Measure(){
 /* does sensor loop stuff
  */
 void SoundLevel_Loop(void){
+        
     bool startMeasurement = false;
     // watchdog timer overflow has occurred while sleeping
     if(STATUSbits.nTO == 0){
         WDTCON0bits.SWDTEN = 1; //start watchdog -> results in reset after 1 s
         if(!measurementRunning && thresholdEnabled) startMeasurement = true;
     }
+    if(thresholdEnabled == false) powerMic_SetLow();// fix for problem of MICs staying powered when switching from threshold mode to polling mode during first sleep period
+
     CLRWDT();
     if(startMeasurement || polledMeasurement){
         measurementRunning = true;
@@ -152,9 +224,17 @@ void SoundLevel_Loop(void){
          *  - i2c clock line goes active
          *  - watchdog timer overflow
          */
-        SLEEP();
-        NOP();
+        EnterSleep();
     }
+}
+
+static void EnterSleep(void){
+    CPUDOZEbits.IDLEN = 0; // make sure PIC is not in doze mode before going to sleep
+        
+    NOP();
+    SLEEP();
+    NOP();
+    NOP();
 }
 
 /* copy data to buffer
@@ -253,21 +333,30 @@ void SoundLevel_StopADC(){
 // 'active' led on
 void SoundLevel_LedOn(void){
 #ifdef BLINK_ACTIVE_LED
-    LATB |= 0x40; // RB6 = 1
+    //LED_Init();
+    //LATB |= 0x40; // RB6 = 1
+    LED_SetHigh(); // low = on
+    //LED_DeInit();
 #endif
 }
 
 // 'active' led off
 void SoundLevel_LedOff(void){
 #ifdef BLINK_ACTIVE_LED
-    LATB &= 0xBF; // RB6 = 0
+    //LED_Init();
+    //LATB &= 0xBF; // RB6 = 0
+    LED_SetLow(); // high = uit
+    //LED_DeInit();
 #endif
 }
 
 // 'active' led toggle
 void SoundLevel_LedToggle(void){
 #ifdef BLINK_ACTIVE_LED
-    LATB ^= 0x40;
+    //LED_Init();
+    //LATB ^= 0x40;
+    LED_Toggle();
+    //LED_DeInit();
 #endif
 }
 
@@ -288,8 +377,13 @@ void measure(void){
     presSumSquared = 0;
     
     // power-on microphone and amplifier circuit
-    //powerMic_SetHigh();
-    __delay_ms(100);         // wait until stable
+    if(thresholdEnabled == false) // if polled measurement, than duty cycle power to MIC
+    {
+        powerMic_SetHigh();
+        __delay_ms(100);         // wait until stable
+    }else{
+        powerMic_SetHigh();
+    }
     SoundLevel_StartADC();  // ADC conversion will be handled by 
                             // SoundLevel_GetSample callback
     
@@ -298,7 +392,10 @@ void measure(void){
     
     // stop conversions and power-down analog circuitry
     SoundLevel_StopADC();
-    //powerMic_SetLow();
+    if(thresholdEnabled == false) // if polled measurement, than duty cycle power to MIC
+    {
+        powerMic_SetLow();
+    }
     
     
     // prepare measurement for transmission

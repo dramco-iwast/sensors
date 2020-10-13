@@ -65,6 +65,10 @@ void (*ADCC_ADI_InterruptHandler)(void);
 
 void ADCC_Initialize(void)
 {
+    
+    PMD3bits.ADCMD = 0; // enable ADC
+    
+    
     // set the ADCC to the options selected in the User Interface
     // ADLTH 0; 
     ADLTHL = 0x00;
