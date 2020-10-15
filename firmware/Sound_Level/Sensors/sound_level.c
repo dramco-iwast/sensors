@@ -12,7 +12,7 @@
  *
  *         File: sound_level.c
  *      Created: 2019-09-11
- *       Author: Matthias Alleman
+ *       Author: Matthias Alleman - Jona Cappelle
  *      Version: 0.2
  *
  *  Description: Sound Level Sensor Implementation
@@ -21,8 +21,8 @@
 
 #include <math.h>
 #include "sound_level.h"
-#include "../mcc_generated_files/mcc.h"
-#include "../mcc_generated_files/adcc.h"
+#include "../system/system.h"
+#include "../system/adcc.h"
 
 #ifdef SENSOR_TYPE
 #if (SENSOR_TYPE == SOUND_LEVEL)
@@ -33,7 +33,7 @@
 #define SAMPLES         400 // amount of samples
 #define AMP_FACTOR      44
 #define SENSITIVITY     0.01258925
-#define V_SUPPLY        3.3
+#define V_SUPPLY        3.3 //3.1 // measured voltage when sampling
 #define ADC_SCALE       4095
 #define REF_PRESSURE    20e-6
 #define DBZ_MAX         106
@@ -62,17 +62,35 @@ void SoundLevel_LedOff(void);
 // 'active' led toggle
 void SoundLevel_LedToggle(void);
 
+// generate Interrupt to main board
 void generateInt(void);
+
+// measure sound
 void measure(void);
 
 // Sleep functionality
 static void EnterSleep(void);
 
+// init leds
 void LED_Init(void);
 
+// deinit leds
 void LED_DeInit(void);
 
+// blink functionality
 void LED_Blink(void);
+
+// Initialize power to the MIC and wakeup circuits
+void powerMic_Init(void);
+
+// Initialize nWakeMic
+void nWakeMic_Init(void);
+
+// Initialize READY interrupt pin to warn central microcontroller
+void READY_Init(void);
+
+// Initialize watchdog timer
+void WDT_Init(void);
 
 /* local variables ************************************************************/
 
@@ -95,12 +113,10 @@ bool overThreshold = false;
 
 /* Sensor API functions *******************************************************/
 
+/* Initialize LED */
 void LED_Init(void)
 {
     #ifdef BLINK_ACTIVE_LED
-    // enable led output
-    //TRISB &= 0xBF; // RB6 = output
-    //TRISBbits.TRISB6 = 0; // reads easier
     LED_SetDigitalMode();
     LED_SetDigitalOutput();
     SoundLevel_LedOff();
@@ -108,6 +124,15 @@ void LED_Init(void)
     #endif
 }
 
+/* DeInitialize LED */
+void LED_DeInit(void)
+{
+    #ifdef BLINK_ACTIVE_LED
+    TRISBbits.TRISB6 = 1; // disable led output
+    #endif
+}
+
+/* Animation when Sound Module is plugged in */
 void LED_Blink(void)
 {
     SoundLevel_LedOn();
@@ -127,69 +152,61 @@ void LED_Blink(void)
     SoundLevel_LedOff();
 }
 
-void LED_DeInit(void)
+void powerMic_Init(void)
 {
-    #ifdef BLINK_ACTIVE_LED
-    // disable led output
-    //TRISB &= 0xBF; // RB6 = output
-    TRISBbits.TRISB6 = 1; // reads easier
-    #endif
+    powerMic_SetDigitalMode();
+    powerMic_SetDigitalOutput();
+    powerMic_SetHigh();
+    __delay_ms(100);
+    powerMic_SetLow(); // prevents it from powering the MIC the in the time before the first measurement when sensor is in polled mode
 }
 
-
-/* Initialize peripherals needed for sound level detection
- */
-void SoundLevel_Init(void){
-
-    LED_Init(); // no need to init LED's any more -> integrated in LED_on/off functions
-    
-    PMD0bits.IOCMD = 0; // enable gpio clock
-    
+void nWakeMic_Init(void)
+{
     nWakeMic_SetDigitalMode();
-    powerMic_SetDigitalMode();
-    
     nWakeMic_SetDigitalOutput();
-    powerMic_SetDigitalOutput();
-    
-    powerMic_SetHigh();
-    __delay_ms(10);
     nWakeMic_SetLow();
     __delay_ms(100);
-    
+}
+
+void READY_Init(void)
+{
     READY_SetDigitalOutput();
     READY_SetHigh();
+}
+
+void WDT_Init(void)
+{
+    // initialize timer for periodic measurements   
+    WDTCON0 = 0x14; // 1 second period
+    WDTCON1 = 0x07; // LFINTOSC, window 100%
+}
+
+/* Initialize peripherals needed for Sound Level detection */
+void SoundLevel_Init(void){
+
+    LED_Init(); // Initialize LED
     
-    //if(thresholdEnabled == true) // if polled measurement, than duty cycle power to MIC
-    //{
-        powerMic_SetLow(); // prevents it from powering the MIC the in the time before the first measurement when sensor is in polled mode
-    //}
+    PMD0bits.IOCMD = 0; // Enable gpio clock
+    
+    nWakeMic_Init();
+    powerMic_Init();
+    READY_Init();
+
     adcScaler = V_SUPPLY / (ADC_SCALE * SENSITIVITY * AMP_FACTOR);
     
     // initialize ADC
     ADCC_Initialize();
     ADCC_SetADIInterruptHandler(SoundLevel_GetSample);
     
-    // initialize timer for periodic measurements
     // setup watchdog (WWDT))
-    WDTCON0 = 0x14; // 1 second period
-    WDTCON1 = 0x07; // LFINTOSC, window 100%
+    WDT_Init();
     
-    // No WWDT reset
-    /*if(STATUSbits.nTO){ // we assume this occurs only once
-        thresholdEnabled = 0;
-    }*/
-    // else
-    // thresholdEnbled is a persistent variable and will keep it's previous value
-    
-    //thresholdEnabled = true;
-    //thresholdLevel = 70*600; //70db
-    
-    
+    thresholdEnabled = false;
+
     // start watchdog
     CLRWDT();
     WDTCON0bits.SWDTEN = 1;
-    
-
 }
 
 /* Measure the sound level (MCU remains active)
@@ -229,27 +246,21 @@ void SoundLevel_Loop(void){
 }
 
 static void EnterSleep(void){
-    CPUDOZEbits.IDLEN = 0; // make sure PIC is not in doze mode before going to sleep
-        
+    CPUDOZEbits.IDLEN = 0; // make sure PIC is not in doze mode before going to sleep   
     NOP();
-    SLEEP();
+    SLEEP(); // enter sleep
     NOP();
     NOP();
 }
 
-/* copy data to buffer
- */
+/* copy data to buffer */
 void SoundLevel_GetData(uint8_t * data, uint8_t * length){
     *length = 2; // this is fixed (M_NR = 1)
     data[0] = measurementData[0];
     data[1] = measurementData[1];
-    //data = measurementData;
 }
 
-/* Sensor 'local' functions ***************************************************/
-
-/* Set sound threshold level (and enable/disable) thresholds
- */
+/* Set sound threshold level (and enable/disable) thresholds */
 void SoundLevel_SetThreshold(uint8_t metric, uint8_t * thresholdData){
     if(metric == 0){
         thresholdEnabled = thresholdData[0];
@@ -261,8 +272,7 @@ void SoundLevel_SetThreshold(uint8_t metric, uint8_t * thresholdData){
     }
 }
 
-/* Prepare data for transmission 
- */
+/* Prepare data for transmission */
 void SoundLevel_PrepareData(){
     float presAvgSquared = presSumSquared/SAMPLES;
     float dBZ = 10 * log10(presAvgSquared/(REF_PRESSURE * REF_PRESSURE));
@@ -272,8 +282,7 @@ void SoundLevel_PrepareData(){
     }
 
     uint16_t dataToSend = (uint16_t)(round(dBZ * SCALE_FACTOR));
-    //uint16_t dataToSend = 0x1234;
-    
+
     measurementData[0] = (uint8_t)(dataToSend>>8);
     measurementData[1] = (uint8_t)(dataToSend);
     
@@ -287,6 +296,9 @@ void SoundLevel_PrepareData(){
             if(!overThreshold){
                 overThreshold = true;
                 generateInt();
+                SoundLevel_LedOn(); // only blink LED if value is above threshold
+                __delay_ms(100);
+                SoundLevel_LedOff();
             }
         }
         else{
@@ -296,9 +308,11 @@ void SoundLevel_PrepareData(){
         WDTCON0bits.SWDTEN = 1;
     }
 
-    
     // show not 'active'
-    SoundLevel_LedOff();
+    if(polledMeasurement == true) // only blink LED if it's a polled measurement
+    {
+        SoundLevel_LedOff();
+    }
 }
 
 // This function is called when an ADC-conversion has completed
@@ -306,11 +320,8 @@ void SoundLevel_GetSample(){
     uint16_t sample = ADCC_GetConversionResult();    
     
     float voltageToPressure = sample * adcScaler;
-   // float sampleToVoltage = (3.3*sample)/(4095);                                      //Calculate the equivalent voltage value at output of mic
-    //float voltageToPressure = sampleToVoltage/(0.01258925 * 44);
     
     presSumSquared = presSumSquared + (voltageToPressure * voltageToPressure);
-    //presSumSquared = presSumSquared + (sample*sample)
     
     sampleCounter++;
     if(sampleCounter>SAMPLES-1){ // we've taken enough samples
@@ -333,30 +344,21 @@ void SoundLevel_StopADC(){
 // 'active' led on
 void SoundLevel_LedOn(void){
 #ifdef BLINK_ACTIVE_LED
-    //LED_Init();
-    //LATB |= 0x40; // RB6 = 1
-    LED_SetHigh(); // low = on
-    //LED_DeInit();
+    LED_SetHigh();
 #endif
 }
 
 // 'active' led off
 void SoundLevel_LedOff(void){
 #ifdef BLINK_ACTIVE_LED
-    //LED_Init();
-    //LATB &= 0xBF; // RB6 = 0
-    LED_SetLow(); // high = uit
-    //LED_DeInit();
+    LED_SetLow();
 #endif
 }
 
 // 'active' led toggle
 void SoundLevel_LedToggle(void){
 #ifdef BLINK_ACTIVE_LED
-    //LED_Init();
-    //LATB ^= 0x40;
     LED_Toggle();
-    //LED_DeInit();
 #endif
 }
 
@@ -369,7 +371,11 @@ void generateInt(void){
 
 void measure(void){
     CLRWDT();               // feed the dog
-    SoundLevel_LedOn();     // show 'active'
+    
+    if(polledMeasurement == true) // only blink LED if it's a polled measurement
+    {
+        SoundLevel_LedOn();     // show 'active'
+    }
     
     // initialize control variables
     sampling = true;
@@ -396,7 +402,6 @@ void measure(void){
     {
         powerMic_SetLow();
     }
-    
     
     // prepare measurement for transmission
     SoundLevel_PrepareData();

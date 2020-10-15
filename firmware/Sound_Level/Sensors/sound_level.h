@@ -12,7 +12,7 @@
  *
  *         File: sound_level.h
  *      Created: 2019-09-11
- *       Author: Matthias Alleman
+ *       Author: Matthias Alleman - Jona Cappelle
  *      Version: 0.2
  *
  *  Description: Sound Level Sensor Header File
@@ -28,7 +28,7 @@
 #include <stdbool.h>
 #include "../global.h"
 
-//#define BLINK_ACTIVE_LED
+#define BLINK_ACTIVE_LED
 
 #define TYPE_BYTE   SOUND_LEVEL
 #define M_NR        0x01

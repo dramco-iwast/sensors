@@ -48,24 +48,23 @@
  * 
  */
 
-#include "mcc_generated_files/mcc.h"
-#include "global.h"
-
+#include <xc.h>
 #include <stdio.h>
 #include <stdint.h>
 #include <string.h>
-#include "mcc_generated_files/pin_manager.h"
+#include <stdbool.h>
+
+#include "global.h"
+#include "system/system.h"
+#include "system/pin_manager.h"
 
 // include sensor
 #include "Sensors/sound_level.h"
 
-#include <xc.h>
 
 Device_API_t sensorAPI = SOUND_API;
 
-
 uint8_t mData[2 * M_NR];
-//uint8_t * mData;
 uint8_t mDataLength;
 
 void toggleInt(void);
@@ -76,23 +75,6 @@ void main(void)
 {
     // initialize the device
     SYSTEM_Initialize(SLAVE_ADDRESS);
-
-    // When using interrupts, you need to set the Global and Peripheral Interrupt Enable bits
-    // Use the following macros to:
-
-    // Enable the Global Interrupts
-    INTERRUPT_GlobalInterruptEnable();
-
-    // Enable the Peripheral Interrupts
-    INTERRUPT_PeripheralInterruptEnable();
-
-    // Disable the Global Interrupts
-    //INTERRUPT_GlobalInterruptDisable();
-
-    // Disable the Peripheral Interrupts
-    //INTERRUPT_PeripheralInterruptDisable();
-
-    //READY_SetHigh();
     
     sensorAPI.Init();
     

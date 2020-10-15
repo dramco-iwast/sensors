@@ -18451,7 +18451,7 @@ extern __bank0 __bit __timeout;
 # 15 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\stdbool.h"
 typedef unsigned char bool;
 
-# 65 "Sensors/../global.h"
+# 63 "Sensors/../global.h"
 typedef struct devApi{
 void (* Init)(void);
 void (* Measure)(void);
@@ -18460,6 +18460,45 @@ void (* GetData)(uint8_t *, uint8_t *);
 void (* UpdateThreshold)(uint8_t, uint8_t *);
 } Device_API_t;
 
+
+# 77
+#pragma config FEXTOSC = OFF
+#pragma config RSTOSC = HFINT1
+#pragma config CLKOUTEN = OFF
+#pragma config CSWEN = ON
+#pragma config FCMEN = ON
+
+
+#pragma config MCLRE = ON
+#pragma config PWRTS = OFF
+#pragma config LPBOREN = OFF
+#pragma config BOREN = OFF
+#pragma config BORV = LO
+#pragma config ZCDDIS = OFF
+#pragma config PPS1WAY = ON
+#pragma config STVREN = ON
+
+
+#pragma config WDTCPS = WDTCPS_10
+#pragma config WDTE = SWDTEN
+
+#pragma config WDTCWS = WDTCWS_7
+#pragma config WDTCCS = SC
+
+
+#pragma config BBSIZE = BB512
+#pragma config BBEN = OFF
+#pragma config SAFEN = OFF
+#pragma config WRTAPP = OFF
+#pragma config WRTB = OFF
+#pragma config WRTC = OFF
+#pragma config WRTD = OFF
+#pragma config WRTSAF = OFF
+#pragma config LVP = ON
+
+
+#pragma config CP = OFF
+
 # 141 "Sensors/sound_level.h"
 void SoundLevel_Init(void);
 void SoundLevel_Measure(void);
@@ -18467,58 +18506,55 @@ void SoundLevel_Loop(void);
 void SoundLevel_GetData(uint8_t * data, uint8_t * length);
 void SoundLevel_SetThreshold(uint8_t metric, uint8_t * thresholdData);
 
-# 118 "Sensors/../mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_Initialize (void);
-
-# 130
+# 95 "Sensors/../system/pin_manager.h"
 void PIN_MANAGER_IOC(void);
 
-# 143
+# 108
 void IOCCF0_ISR(void);
 
-# 166
+# 131
 void IOCCF0_SetInterruptHandler(void (* InterruptHandler)(void));
 
-# 190
+# 155
 extern void (*IOCCF0_InterruptHandler)(void);
 
-# 214
+# 179
 void IOCCF0_DefaultInterruptHandler(void);
 
-# 227
+# 192
 void IOCCF2_ISR(void);
 
-# 250
+# 215
 void IOCCF2_SetInterruptHandler(void (* InterruptHandler)(void));
 
-# 274
+# 239
 extern void (*IOCCF2_InterruptHandler)(void);
 
-# 298
+# 263
 void IOCCF2_DefaultInterruptHandler(void);
 
-# 311
+# 276
 void IOCCF4_ISR(void);
 
-# 334
+# 299
 void IOCCF4_SetInterruptHandler(void (* InterruptHandler)(void));
 
-# 358
+# 323
 extern void (*IOCCF4_InterruptHandler)(void);
 
-# 382
+# 347
 void IOCCF4_DefaultInterruptHandler(void);
 
-# 395
+# 360
 void IOCCF6_ISR(void);
 
-# 418
+# 383
 void IOCCF6_SetInterruptHandler(void (* InterruptHandler)(void));
 
-# 442
+# 407
 extern void (*IOCCF6_InterruptHandler)(void);
 
-# 466
+# 431
 void IOCCF6_DefaultInterruptHandler(void);
 
 # 15 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\stdbool.h"
@@ -18533,7 +18569,7 @@ typedef unsigned size_t;
 # 6 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\stddef.h"
 typedef int ptrdiff_t;
 
-# 81 "Sensors/../mcc_generated_files/i2c1.h"
+# 56 "Sensors/../system/i2c1.h"
 typedef enum
 {
 I2C1_SLAVE_WRITE_REQUEST,
@@ -18542,16 +18578,16 @@ I2C1_SLAVE_WRITE_COMPLETED,
 I2C1_SLAVE_READ_COMPLETED,
 } I2C1_SLAVE_DRIVER_STATUS;
 
-# 116
+# 91
 void I2C1_Initialize(uint8_t slave_address);
 
-# 136
+# 111
 void I2C1_ISR ( void );
 
-# 143
+# 118
 extern volatile uint8_t I2C1_slaveWriteData;
 
-# 150
+# 125
 bool I2C1_CommandReceived(void);
 void I2C1_GetCommand(uint8_t * cmd);
 void I2C1_GetCommandData(uint8_t * data, uint8_t * len);
@@ -18561,10 +18597,10 @@ bool I2C1_TxBufferEmpty(void);
 # 15 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\stdbool.h"
 typedef unsigned char bool;
 
-# 72 "Sensors/../mcc_generated_files/adcc.h"
+# 47 "Sensors/../system/adcc.h"
 typedef uint16_t adc_result_t;
 
-# 89
+# 64
 typedef enum
 {
 channel_ANC1 = 0x11,
@@ -18575,103 +18611,103 @@ channel_FVR_Buffer1 = 0x3E,
 channel_FVR_Buffer2 = 0x3F
 } adcc_channel_t;
 
-# 131
+# 106
 void ADCC_Initialize(void);
 
-# 160
+# 135
 void ADCC_StartConversion(adcc_channel_t channel);
 
-# 190
+# 165
 bool ADCC_IsConversionDone();
 
-# 222
+# 197
 adc_result_t ADCC_GetConversionResult(void);
 
-# 253
+# 228
 adc_result_t ADCC_GetSingleConversion(adcc_channel_t channel);
 
-# 278
+# 253
 void ADCC_StopConversion(void);
 
-# 305
+# 280
 void ADCC_SetStopOnInterrupt(void);
 
-# 330
+# 305
 void ADCC_DischargeSampleCapacitor(void);
 
-# 356
+# 331
 void ADCC_LoadAcquisitionRegister(uint16_t);
 
-# 382
+# 357
 void ADCC_SetPrechargeTime(uint16_t);
 
-# 407
+# 382
 void ADCC_SetRepeatCount(uint8_t);
 
-# 435
+# 410
 uint8_t ADCC_GetCurrentCountofConversions(void);
 
-# 459
+# 434
 void ADCC_ClearAccumulator(void);
 
-# 484
+# 459
 uint24_t ADCC_GetAccumulatorValue(void);
 
-# 512
+# 487
 bool ADCC_HasAccumulatorOverflowed(void);
 
-# 537
+# 512
 uint16_t ADCC_GetFilterValue(void);
 
-# 565
+# 540
 uint16_t ADCC_GetPreviousResult(void);
 
-# 591
+# 566
 void ADCC_DefineSetPoint(uint16_t);
 
-# 617
+# 592
 void ADCC_SetUpperThreshold(uint16_t);
 
-# 643
+# 618
 void ADCC_SetLowerThreshold(uint16_t);
 
-# 670
+# 645
 uint16_t ADCC_GetErrorCalculation(void);
 
-# 697
+# 672
 void ADCC_EnableDoubleSampling(void);
 
-# 721
+# 696
 void ADCC_EnableContinuousConversion(void);
 
-# 745
+# 720
 void ADCC_DisableContinuousConversion(void);
 
-# 773
+# 748
 bool ADCC_HasErrorCrossedUpperThreshold(void);
 
-# 801
+# 776
 bool ADCC_HasErrorCrossedLowerThreshold(void);
 
-# 828
+# 803
 uint8_t ADCC_GetConversionStageStatus(void);
 
-# 845
+# 820
 void ADCC_SetADIInterruptHandler(void (* InterruptHandler)(void));
 
-# 861
+# 836
 void ADCC_ISR(void);
 
-# 880
+# 855
 void ADCC_DefaultInterruptHandler(void);
 
-# 70 "Sensors/../mcc_generated_files/mcc.h"
+# 44 "Sensors/../system/system.h"
 void SYSTEM_Initialize(uint8_t slave_address);
 
-# 83
+# 57
 void OSCILLATOR_Initialize(void);
 
-# 96
+# 70
 void PMD_Initialize(void);
 
 # 45 "Sensors/sound_level.c"
@@ -18695,17 +18731,35 @@ void SoundLevel_LedOff(void);
 
 void SoundLevel_LedToggle(void);
 
+
 void generateInt(void);
+
+
 void measure(void);
 
 
 static void EnterSleep(void);
 
+
 void LED_Init(void);
+
 
 void LED_DeInit(void);
 
+
 void LED_Blink(void);
+
+
+void powerMic_Init(void);
+
+
+void nWakeMic_Init(void);
+
+
+void READY_Init(void);
+
+
+void WDT_Init(void);
 
 
 
@@ -18728,11 +18782,25 @@ bool overThreshold = 0;
 
 
 
+
 void LED_Init(void)
 {
 
-# 109
+do { ANSELBbits.ANSB6 = 0; } while(0);
+do { TRISBbits.TRISB6 = 0; } while(0);
+SoundLevel_LedOff();
+LED_Blink();
+
 }
+
+
+void LED_DeInit(void)
+{
+
+TRISBbits.TRISB6 = 1;
+
+}
+
 
 void LED_Blink(void)
 {
@@ -18753,36 +18821,46 @@ _delay((unsigned long)((100)*(32000000/4000.0)));
 SoundLevel_LedOff();
 }
 
-void LED_DeInit(void)
+void powerMic_Init(void)
 {
-
-# 137
+do { ANSELCbits.ANSC0 = 0; } while(0);
+do { TRISCbits.TRISC0 = 0; } while(0);
+do { LATCbits.LATC0 = 1; } while(0);
+_delay((unsigned long)((100)*(32000000/4000.0)));
+do { LATCbits.LATC0 = 0; } while(0);
 }
 
-# 142
+void nWakeMic_Init(void)
+{
+do { ANSELCbits.ANSC3 = 0; } while(0);
+do { TRISCbits.TRISC3 = 0; } while(0);
+do { LATCbits.LATC3 = 0; } while(0);
+_delay((unsigned long)((100)*(32000000/4000.0)));
+}
+
+void READY_Init(void)
+{
+do { TRISCbits.TRISC7 = 0; } while(0);
+do { LATCbits.LATC7 = 1; } while(0);
+}
+
+void WDT_Init(void)
+{
+
+WDTCON0 = 0x14;
+WDTCON1 = 0x07;
+}
+
+
 void SoundLevel_Init(void){
 
 LED_Init();
 
 PMD0bits.IOCMD = 0;
 
-do { ANSELCbits.ANSC3 = 0; } while(0);
-do { ANSELCbits.ANSC0 = 0; } while(0);
-
-do { TRISCbits.TRISC3 = 0; } while(0);
-do { TRISCbits.TRISC0 = 0; } while(0);
-
-do { LATCbits.LATC0 = 1; } while(0);
-_delay((unsigned long)((10)*(32000000/4000.0)));
-do { LATCbits.LATC3 = 0; } while(0);
-_delay((unsigned long)((100)*(32000000/4000.0)));
-
-do { TRISCbits.TRISC7 = 0; } while(0);
-do { LATCbits.LATC7 = 1; } while(0);
-
-
-
-do { LATCbits.LATC0 = 0; } while(0);
+nWakeMic_Init();
+powerMic_Init();
+READY_Init();
 
 adcScaler = 3.3 / (4095 * 0.01258925 * 44);
 
@@ -18791,23 +18869,21 @@ ADCC_Initialize();
 ADCC_SetADIInterruptHandler(SoundLevel_GetSample);
 
 
+WDT_Init();
 
-WDTCON0 = 0x14;
-WDTCON1 = 0x07;
+thresholdEnabled = 0;
 
-# 189
+
 asm("clrwdt");
 WDTCON0bits.SWDTEN = 1;
-
-
 }
 
-# 197
+# 214
 void SoundLevel_Measure(){
 polledMeasurement = 1;
 }
 
-# 203
+# 220
 void SoundLevel_Loop(void){
 
 bool startMeasurement = 0;
@@ -18828,29 +18904,27 @@ asm("clrwdt");
 }
 else{
 
-# 227
+# 244
 EnterSleep();
 }
 }
 
 static void EnterSleep(void){
 CPUDOZEbits.IDLEN = 0;
-
 __nop();
 asm("sleep");
 __nop();
 __nop();
 }
 
-# 242
+
 void SoundLevel_GetData(uint8_t * data, uint8_t * length){
 *length = 2;
 data[0] = measurementData[0];
 data[1] = measurementData[1];
-
 }
 
-# 253
+
 void SoundLevel_SetThreshold(uint8_t metric, uint8_t * thresholdData){
 if(metric == 0){
 thresholdEnabled = thresholdData[0];
@@ -18862,7 +18936,7 @@ WDTCON0bits.SWDTEN = 1;
 }
 }
 
-# 266
+
 void SoundLevel_PrepareData(){
 float presAvgSquared = presSumSquared/400;
 float dBZ = 10 * log10(presAvgSquared/(20e-6 * 20e-6));
@@ -18872,7 +18946,6 @@ dBZ = 106;
 }
 
 uint16_t dataToSend = (uint16_t)(round(dBZ * 600));
-
 
 measurementData[0] = (uint8_t)(dataToSend>>8);
 measurementData[1] = (uint8_t)(dataToSend);
@@ -18887,6 +18960,9 @@ if(dataToSend > thresholdLevel){
 if(!overThreshold){
 overThreshold = 1;
 generateInt();
+SoundLevel_LedOn();
+_delay((unsigned long)((100)*(32000000/4000.0)));
+SoundLevel_LedOff();
 }
 }
 else{
@@ -18897,8 +18973,10 @@ WDTCON0bits.SWDTEN = 1;
 }
 
 
-
+if(polledMeasurement == 1)
+{
 SoundLevel_LedOff();
+}
 }
 
 
@@ -18907,10 +18985,7 @@ uint16_t sample = ADCC_GetConversionResult();
 
 float voltageToPressure = sample * adcScaler;
 
-
-
 presSumSquared = presSumSquared + (voltageToPressure * voltageToPressure);
-
 
 sampleCounter++;
 if(sampleCounter>400-1){
@@ -18933,19 +19008,22 @@ ADCC_DisableContinuousConversion();
 
 void SoundLevel_LedOn(void){
 
-# 341
+do { LATBbits.LATB6 = 1; } while(0);
+
 }
 
 
 void SoundLevel_LedOff(void){
 
-# 351
+do { LATBbits.LATB6 = 0; } while(0);
+
 }
 
 
 void SoundLevel_LedToggle(void){
 
-# 361
+do { LATBbits.LATB6 = ~LATBbits.LATB6; } while(0);
+
 }
 
 
@@ -18957,7 +19035,11 @@ do { LATCbits.LATC7 = 1; } while(0);
 
 void measure(void){
 asm("clrwdt");
+
+if(polledMeasurement == 1)
+{
 SoundLevel_LedOn();
+}
 
 
 sampling = 1;
@@ -18984,7 +19066,6 @@ if(thresholdEnabled == 0)
 {
 do { LATCbits.LATC0 = 0; } while(0);
 }
-
 
 
 SoundLevel_PrepareData();

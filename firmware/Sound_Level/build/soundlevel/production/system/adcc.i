@@ -1,5 +1,5 @@
 
-# 1 "main.c"
+# 1 "system/adcc.c"
 
 # 18 "C:/Users/Jona Cappelle/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\xc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -18420,243 +18420,6 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 
-# 4 "C:/Users/Jona Cappelle/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\__size_t.h"
-typedef unsigned size_t;
-
-# 7 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\stdarg.h"
-typedef void * va_list[1];
-
-#pragma intrinsic(__va_start)
-extern void * __va_start(void);
-
-#pragma intrinsic(__va_arg)
-extern void * __va_arg(void *, ...);
-
-# 43 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\stdio.h"
-struct __prbuf
-{
-char * ptr;
-void (* func)(char);
-};
-
-# 29 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\errno.h"
-extern int errno;
-
-# 12 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\conio.h"
-extern void init_uart(void);
-
-extern char getch(void);
-extern char getche(void);
-extern void putch(char);
-extern void ungetch(char);
-
-extern __bit kbhit(void);
-
-# 23
-extern char * cgets(char *);
-extern void cputs(const char *);
-
-# 88 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\stdio.h"
-extern int cprintf(char *, ...);
-#pragma printf_check(cprintf)
-
-
-
-extern int _doprnt(struct __prbuf *, const register char *, register va_list);
-
-
-# 180
-#pragma printf_check(vprintf) const
-#pragma printf_check(vsprintf) const
-
-extern char * gets(char *);
-extern int puts(const char *);
-extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
-extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
-extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
-extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
-extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
-extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
-
-#pragma printf_check(printf) const
-#pragma printf_check(sprintf) const
-extern int sprintf(char *, const char *, ...);
-extern int printf(const char *, ...);
-
-# 14 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\string.h"
-extern void * memcpy(void *, const void *, size_t);
-extern void * memmove(void *, const void *, size_t);
-extern void * memset(void *, int, size_t);
-
-
-
-
-extern void * __builtin_memcpy(void *, const void *, size_t);
-#pragma intrinsic(__builtin_memcpy)
-
-# 36
-extern char * strcat(char *, const char *);
-extern char * strcpy(char *, const char *);
-extern char * strncat(char *, const char *, size_t);
-extern char * strncpy(char *, const char *, size_t);
-extern char * strdup(const char *);
-extern char * strtok(char *, const char *);
-
-
-extern int memcmp(const void *, const void *, size_t);
-extern int strcmp(const char *, const char *);
-extern int stricmp(const char *, const char *);
-extern int strncmp(const char *, const char *, size_t);
-extern int strnicmp(const char *, const char *, size_t);
-extern void * memchr(const void *, int, size_t);
-extern size_t strcspn(const char *, const char *);
-extern char * strpbrk(const char *, const char *);
-extern size_t strspn(const char *, const char *);
-extern char * strstr(const char *, const char *);
-extern char * stristr(const char *, const char *);
-extern char * strerror(int);
-extern size_t strlen(const char *);
-extern char * strchr(const char *, int);
-extern char * strichr(const char *, int);
-extern char * strrchr(const char *, int);
-extern char * strrichr(const char *, int);
-
-# 15 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\stdbool.h"
-typedef unsigned char bool;
-
-# 63 "global.h"
-typedef struct devApi{
-void (* Init)(void);
-void (* Measure)(void);
-void (* Loop)(void);
-void (* GetData)(uint8_t *, uint8_t *);
-void (* UpdateThreshold)(uint8_t, uint8_t *);
-} Device_API_t;
-
-
-# 77
-#pragma config FEXTOSC = OFF
-#pragma config RSTOSC = HFINT1
-#pragma config CLKOUTEN = OFF
-#pragma config CSWEN = ON
-#pragma config FCMEN = ON
-
-
-#pragma config MCLRE = ON
-#pragma config PWRTS = OFF
-#pragma config LPBOREN = OFF
-#pragma config BOREN = OFF
-#pragma config BORV = LO
-#pragma config ZCDDIS = OFF
-#pragma config PPS1WAY = ON
-#pragma config STVREN = ON
-
-
-#pragma config WDTCPS = WDTCPS_10
-#pragma config WDTE = SWDTEN
-
-#pragma config WDTCWS = WDTCWS_7
-#pragma config WDTCCS = SC
-
-
-#pragma config BBSIZE = BB512
-#pragma config BBEN = OFF
-#pragma config SAFEN = OFF
-#pragma config WRTAPP = OFF
-#pragma config WRTB = OFF
-#pragma config WRTC = OFF
-#pragma config WRTD = OFF
-#pragma config WRTSAF = OFF
-#pragma config LVP = ON
-
-
-#pragma config CP = OFF
-
-# 95 "system/pin_manager.h"
-void PIN_MANAGER_IOC(void);
-
-# 108
-void IOCCF0_ISR(void);
-
-# 131
-void IOCCF0_SetInterruptHandler(void (* InterruptHandler)(void));
-
-# 155
-extern void (*IOCCF0_InterruptHandler)(void);
-
-# 179
-void IOCCF0_DefaultInterruptHandler(void);
-
-# 192
-void IOCCF2_ISR(void);
-
-# 215
-void IOCCF2_SetInterruptHandler(void (* InterruptHandler)(void));
-
-# 239
-extern void (*IOCCF2_InterruptHandler)(void);
-
-# 263
-void IOCCF2_DefaultInterruptHandler(void);
-
-# 276
-void IOCCF4_ISR(void);
-
-# 299
-void IOCCF4_SetInterruptHandler(void (* InterruptHandler)(void));
-
-# 323
-extern void (*IOCCF4_InterruptHandler)(void);
-
-# 347
-void IOCCF4_DefaultInterruptHandler(void);
-
-# 360
-void IOCCF6_ISR(void);
-
-# 383
-void IOCCF6_SetInterruptHandler(void (* InterruptHandler)(void));
-
-# 407
-extern void (*IOCCF6_InterruptHandler)(void);
-
-# 431
-void IOCCF6_DefaultInterruptHandler(void);
-
-# 15 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\stdbool.h"
-typedef unsigned char bool;
-
-# 15
-typedef unsigned char bool;
-
-# 6 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\stddef.h"
-typedef int ptrdiff_t;
-
-# 56 "system/i2c1.h"
-typedef enum
-{
-I2C1_SLAVE_WRITE_REQUEST,
-I2C1_SLAVE_READ_REQUEST,
-I2C1_SLAVE_WRITE_COMPLETED,
-I2C1_SLAVE_READ_COMPLETED,
-} I2C1_SLAVE_DRIVER_STATUS;
-
-# 91
-void I2C1_Initialize(uint8_t slave_address);
-
-# 111
-void I2C1_ISR ( void );
-
-# 118
-extern volatile uint8_t I2C1_slaveWriteData;
-
-# 125
-bool I2C1_CommandReceived(void);
-void I2C1_GetCommand(uint8_t * cmd);
-void I2C1_GetCommandData(uint8_t * data, uint8_t * len);
-void I2C1_SetTransmitData(uint8_t * data, uint8_t len);
-bool I2C1_TxBufferEmpty(void);
-
 # 15 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\stdbool.h"
 typedef unsigned char bool;
 
@@ -18764,6 +18527,142 @@ void ADCC_ISR(void);
 # 855
 void ADCC_DefaultInterruptHandler(void);
 
+# 95 "system/pin_manager.h"
+void PIN_MANAGER_IOC(void);
+
+# 108
+void IOCCF0_ISR(void);
+
+# 131
+void IOCCF0_SetInterruptHandler(void (* InterruptHandler)(void));
+
+# 155
+extern void (*IOCCF0_InterruptHandler)(void);
+
+# 179
+void IOCCF0_DefaultInterruptHandler(void);
+
+# 192
+void IOCCF2_ISR(void);
+
+# 215
+void IOCCF2_SetInterruptHandler(void (* InterruptHandler)(void));
+
+# 239
+extern void (*IOCCF2_InterruptHandler)(void);
+
+# 263
+void IOCCF2_DefaultInterruptHandler(void);
+
+# 276
+void IOCCF4_ISR(void);
+
+# 299
+void IOCCF4_SetInterruptHandler(void (* InterruptHandler)(void));
+
+# 323
+extern void (*IOCCF4_InterruptHandler)(void);
+
+# 347
+void IOCCF4_DefaultInterruptHandler(void);
+
+# 360
+void IOCCF6_ISR(void);
+
+# 383
+void IOCCF6_SetInterruptHandler(void (* InterruptHandler)(void));
+
+# 407
+extern void (*IOCCF6_InterruptHandler)(void);
+
+# 431
+void IOCCF6_DefaultInterruptHandler(void);
+
+# 15 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\stdbool.h"
+typedef unsigned char bool;
+
+# 15
+typedef unsigned char bool;
+
+# 4 "C:/Users/Jona Cappelle/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\__size_t.h"
+typedef unsigned size_t;
+
+# 6 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\stddef.h"
+typedef int ptrdiff_t;
+
+# 56 "system/i2c1.h"
+typedef enum
+{
+I2C1_SLAVE_WRITE_REQUEST,
+I2C1_SLAVE_READ_REQUEST,
+I2C1_SLAVE_WRITE_COMPLETED,
+I2C1_SLAVE_READ_COMPLETED,
+} I2C1_SLAVE_DRIVER_STATUS;
+
+# 91
+void I2C1_Initialize(uint8_t slave_address);
+
+# 111
+void I2C1_ISR ( void );
+
+# 118
+extern volatile uint8_t I2C1_slaveWriteData;
+
+# 125
+bool I2C1_CommandReceived(void);
+void I2C1_GetCommand(uint8_t * cmd);
+void I2C1_GetCommandData(uint8_t * data, uint8_t * len);
+void I2C1_SetTransmitData(uint8_t * data, uint8_t len);
+bool I2C1_TxBufferEmpty(void);
+
+# 63 "system/../global.h"
+typedef struct devApi{
+void (* Init)(void);
+void (* Measure)(void);
+void (* Loop)(void);
+void (* GetData)(uint8_t *, uint8_t *);
+void (* UpdateThreshold)(uint8_t, uint8_t *);
+} Device_API_t;
+
+
+# 77
+#pragma config FEXTOSC = OFF
+#pragma config RSTOSC = HFINT1
+#pragma config CLKOUTEN = OFF
+#pragma config CSWEN = ON
+#pragma config FCMEN = ON
+
+
+#pragma config MCLRE = ON
+#pragma config PWRTS = OFF
+#pragma config LPBOREN = OFF
+#pragma config BOREN = OFF
+#pragma config BORV = LO
+#pragma config ZCDDIS = OFF
+#pragma config PPS1WAY = ON
+#pragma config STVREN = ON
+
+
+#pragma config WDTCPS = WDTCPS_10
+#pragma config WDTE = SWDTEN
+
+#pragma config WDTCWS = WDTCWS_7
+#pragma config WDTCCS = SC
+
+
+#pragma config BBSIZE = BB512
+#pragma config BBEN = OFF
+#pragma config SAFEN = OFF
+#pragma config WRTAPP = OFF
+#pragma config WRTB = OFF
+#pragma config WRTC = OFF
+#pragma config WRTD = OFF
+#pragma config WRTSAF = OFF
+#pragma config LVP = ON
+
+
+#pragma config CP = OFF
+
 # 44 "system/system.h"
 void SYSTEM_Initialize(uint8_t slave_address);
 
@@ -18773,104 +18672,272 @@ void OSCILLATOR_Initialize(void);
 # 70
 void PMD_Initialize(void);
 
-# 15 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\stdbool.h"
-typedef unsigned char bool;
+# 30 "system/adcc.c"
+void (*ADCC_ADI_InterruptHandler)(void);
 
-# 141 "Sensors/sound_level.h"
-void SoundLevel_Init(void);
-void SoundLevel_Measure(void);
-void SoundLevel_Loop(void);
-void SoundLevel_GetData(uint8_t * data, uint8_t * length);
-void SoundLevel_SetThreshold(uint8_t metric, uint8_t * thresholdData);
-
-# 65 "main.c"
-Device_API_t sensorAPI = { SoundLevel_Init, SoundLevel_Measure, SoundLevel_Loop, SoundLevel_GetData, SoundLevel_SetThreshold };
-
-uint8_t mData[2 * 0x01];
-uint8_t mDataLength;
-
-void toggleInt(void);
-
-# 74
-void main(void)
+# 36
+void ADCC_Initialize(void)
 {
 
-SYSTEM_Initialize(0x54);
-
-sensorAPI.Init();
-
-while(1){
-sensorAPI.Loop();
-sensorAPI.GetData(mData, &mDataLength);
-I2C1_SetTransmitData(mData, mDataLength);
+PMD3bits.ADCMD = 0;
 
 
-if(I2C1_CommandReceived()){
-uint8_t cmd;
-I2C1_GetCommand(&cmd);
-
-switch(cmd){
-
-case 0x10:{
-
-uint8_t ack = 0xAA;
-I2C1_SetTransmitData(&ack, 1);
-} break;
 
 
-case 0x11:{
+ADLTHL = 0x00;
 
-uint8_t type = 0x01;
-I2C1_SetTransmitData(&type, 1);
-} break;
+ADLTHH = 0x00;
+
+ADUTHL = 0x00;
+
+ADUTHH = 0x00;
+
+ADSTPTL = 0x00;
+
+ADSTPTH = 0x00;
+
+ADACCU = 0x00;
+
+ADRPT = 0x00;
+
+ADPCH = 0x00;
+
+ADACQL = 0x00;
+
+ADACQH = 0x00;
+
+ADCAP = 0x00;
+
+ADPREL = 0x00;
+
+ADPREH = 0x00;
+
+ADCON1 = 0x00;
+
+ADCON2 = 0x00;
+
+ADCON3 = 0x00;
+
+ADSTAT = 0x00;
+
+ADREF = 0x00;
+
+ADACT = 0x00;
+
+ADCLK = 0x3F;
+
+ADCON0 = 0x84;
 
 
-case 0x23:{
+PIR1bits.ADIF = 0;
 
-uint8_t mnr = 0x01;
-I2C1_SetTransmitData(&mnr, 1);
-} break;
+PIE1bits.ADIE = 1;
 
+ADCC_SetADIInterruptHandler(ADCC_DefaultInterruptHandler);
 
-case 0x13:{
-
-sensorAPI.Measure();
-} break;
-
-
-case 0x14:{
-
-uint8_t retries = 20;
-while(!I2C1_TxBufferEmpty() && retries--){
-_delay((unsigned long)((1)*(32000000/4000.0)));
-}
-} break;
-
-
-case 0x15:{
-toggleInt();
-} break;
-
-
-case 0x24:{
-_delay((unsigned long)((2)*(32000000/4000.0)));
-uint8_t len;
-uint8_t data[20];
-I2C1_GetCommandData(data, &len);
-if(len == 6){
-sensorAPI.UpdateThreshold(data[0], data+1);
-}
-} break;
-
-
-default:{
-} break;
-}
-}
-}
 }
 
-void toggleInt(void){
-do { LATCbits.LATC7 = ~LATCbits.LATC7; } while(0);
+void ADCC_StartConversion(adcc_channel_t channel)
+{
+
+ADPCH = channel;
+
+
+ADCON0bits.ADON = 1;
+
+
+ADCON0bits.ADGO = 1;
+}
+
+bool ADCC_IsConversionDone()
+{
+
+return ((unsigned char)(!ADCON0bits.ADGO));
+}
+
+adc_result_t ADCC_GetConversionResult(void)
+{
+
+return ((adc_result_t)((ADRESH << 8) + ADRESL));
+}
+
+adc_result_t ADCC_GetSingleConversion(adcc_channel_t channel)
+{
+
+ADPCH = channel;
+
+
+ADCON0bits.ADON = 1;
+
+
+ADCON0bits.ADCONT = 0;
+
+
+ADCON0bits.ADGO = 1;
+
+
+
+while (ADCON0bits.ADGO)
+{
+}
+
+
+
+return ((adc_result_t)((ADRESH << 8) + ADRESL));
+}
+
+void ADCC_StopConversion(void)
+{
+
+ADCON0bits.ADGO = 0;
+}
+
+void ADCC_SetStopOnInterrupt(void)
+{
+
+ADCON3bits.ADSOI = 1;
+}
+
+void ADCC_DischargeSampleCapacitor(void)
+{
+
+ADPCH = 0x3b;
+}
+
+void ADCC_LoadAcquisitionRegister(uint16_t acquisitionValue)
+{
+
+ADACQH = acquisitionValue >> 8;
+ADACQL = acquisitionValue;
+}
+
+void ADCC_SetPrechargeTime(uint16_t prechargeTime)
+{
+
+ADPREH = prechargeTime >> 8;
+ADPREL = prechargeTime;
+}
+
+void ADCC_SetRepeatCount(uint8_t repeatCount)
+{
+
+ADRPT = repeatCount;
+}
+
+uint8_t ADCC_GetCurrentCountofConversions(void)
+{
+
+return ADCNT;
+}
+
+void ADCC_ClearAccumulator(void)
+{
+
+ADCON2bits.ADACLR = 1;
+}
+
+uint24_t ADCC_GetAccumulatorValue(void)
+{
+
+return (((uint24_t)ADACCU << 16)+((uint24_t)ADACCH << 8) + ADACCL);
+}
+
+bool ADCC_HasAccumulatorOverflowed(void)
+{
+
+return ADSTATbits.ADAOV;
+}
+
+uint16_t ADCC_GetFilterValue(void)
+{
+
+return ((uint16_t)((ADFLTRH << 8) + ADFLTRL));
+}
+
+uint16_t ADCC_GetPreviousResult(void)
+{
+
+return ((uint16_t)((ADPREVH << 8) + ADPREVL));
+}
+
+void ADCC_DefineSetPoint(uint16_t setPoint)
+{
+
+ADSTPTH = setPoint >> 8;
+ADSTPTL = setPoint;
+}
+
+void ADCC_SetUpperThreshold(uint16_t upperThreshold)
+{
+
+ADUTHH = upperThreshold >> 8;
+ADUTHL = upperThreshold;
+}
+
+void ADCC_SetLowerThreshold(uint16_t lowerThreshold)
+{
+
+ADLTHH = lowerThreshold >> 8;
+ADLTHL = lowerThreshold;
+}
+
+uint16_t ADCC_GetErrorCalculation(void)
+{
+
+return ((uint16_t)((ADERRH << 8) + ADERRL));
+}
+
+void ADCC_EnableDoubleSampling(void)
+{
+
+ADCON1bits.ADDSEN = 1;
+}
+
+void ADCC_EnableContinuousConversion(void)
+{
+
+ADCON0bits.ADCONT = 1;
+}
+
+void ADCC_DisableContinuousConversion(void)
+{
+
+ADCON0bits.ADCONT = 0;
+}
+
+bool ADCC_HasErrorCrossedUpperThreshold(void)
+{
+
+return ADSTATbits.ADUTHR;
+}
+
+bool ADCC_HasErrorCrossedLowerThreshold(void)
+{
+
+return ADSTATbits.ADLTHR;
+}
+
+uint8_t ADCC_GetConversionStageStatus(void)
+{
+
+return ADSTATbits.ADSTAT;
+}
+
+void ADCC_ISR(void){
+
+
+PIR1bits.ADIF = 0;
+
+if (ADCC_ADI_InterruptHandler)
+ADCC_ADI_InterruptHandler();
+}
+
+void ADCC_SetADIInterruptHandler(void (* InterruptHandler)(void)){
+ADCC_ADI_InterruptHandler = InterruptHandler;
+}
+
+void ADCC_DefaultInterruptHandler(void){
+
+
 }
 

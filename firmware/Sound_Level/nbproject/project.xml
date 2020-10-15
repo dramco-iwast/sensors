@@ -13,8 +13,8 @@
             <sourceEncoding>ISO-8859-1</sourceEncoding>
             <make-dep-projects/>
             <sourceRootList>
-                <sourceRootElem>mcc_generated_files</sourceRootElem>
                 <sourceRootElem>Sensors</sourceRootElem>
+                <sourceRootElem>system</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>
