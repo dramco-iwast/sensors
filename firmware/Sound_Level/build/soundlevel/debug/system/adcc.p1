@@ -1,49 +1,197 @@
 Version 3.2 HI-TECH Software Intermediate Code
-[v F10903 `(v ~T0 @X0 0 tf ]
-[v F10906 `(v ~T0 @X0 0 tf ]
-[v F10909 `(v ~T0 @X0 0 tf ]
-[v F10912 `(v ~T0 @X0 0 tf2`*uc`*uc ]
-[v F10916 `(v ~T0 @X0 0 tf2`uc`*uc ]
-"63 global.h
-[s S1513 `*F10903 1 `*F10906 1 `*F10909 1 `*F10912 1 `*F10916 1 ]
-[n S1513 devApi Init Measure Loop GetData UpdateThreshold ]
-"224 Sensors/sound_level.h
-[v _SoundLevel_Init `(v ~T0 @X0 0 ef ]
-"225
-[v _SoundLevel_Measure `(v ~T0 @X0 0 ef ]
-"226
-[v _SoundLevel_Loop `(v ~T0 @X0 0 ef ]
-"227
-[v _SoundLevel_GetData `(v ~T0 @X0 0 ef2`*uc`*uc ]
-"228
-[v _SoundLevel_SetThreshold `(v ~T0 @X0 0 ef2`uc`*uc ]
-[p mainexit ]
-"44 system/system.h
-[v _SYSTEM_Initialize `(v ~T0 @X0 0 ef1`uc ]
-"128 system/i2c1.h
-[v _I2C1_SetTransmitData `(v ~T0 @X0 0 ef2`*uc`uc ]
-"125
-[v _I2C1_CommandReceived `(uc ~T0 @X0 0 ef ]
-"126
-[v _I2C1_GetCommand `(v ~T0 @X0 0 ef1`*uc ]
-[v F38 `(v ~T0 @X0 1 tf1`ul ]
-"12 C:/Users/Jona Cappelle/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\builtins.h
-[v __delay `JF38 ~T0 @X0 0 e ]
-[p i __delay ]
-"129 system/i2c1.h
-[v _I2C1_TxBufferEmpty `(uc ~T0 @X0 0 ef ]
-"70 main.c
-[v _toggleInt `(v ~T0 @X0 0 ef ]
-"127 system/i2c1.h
-[v _I2C1_GetCommandData `(v ~T0 @X0 0 ef2`*uc`*uc ]
-"844 C:/Users/Jona Cappelle/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18446.h
-[s S44 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S44 . LATC0 LATC1 LATC2 LATC3 LATC4 LATC5 LATC6 LATC7 ]
-"843
-[u S43 `S44 1 ]
-[n S43 . . ]
+[v F10918 `(v ~T0 @X0 0 tf ]
+"19887 C:/Users/Jona Cappelle/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18446.h
+[s S923 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S923 . ZCDMD CMP1MD CMP2MD . ADCMD DAC1MD ]
+"19886
+[u S922 `S923 1 ]
+[n S922 . . ]
+"19896
+[v _PMD3bits `VS922 ~T0 @X0 0 e@1945 ]
+"907
+[v _ADLTHL `Vuc ~T0 @X0 0 e@140 ]
+"1035
+[v _ADLTHH `Vuc ~T0 @X0 0 e@141 ]
+"1170
+[v _ADUTHL `Vuc ~T0 @X0 0 e@142 ]
+"1298
+[v _ADUTHH `Vuc ~T0 @X0 0 e@143 ]
+"1696
+[v _ADSTPTL `Vuc ~T0 @X0 0 e@146 ]
+"1824
+[v _ADSTPTH `Vuc ~T0 @X0 0 e@147 ]
+"2480
+[v _ADACCU `Vuc ~T0 @X0 0 e@152 ]
+"2736
+[v _ADRPT `Vuc ~T0 @X0 0 e@154 ]
+"3382
+[v _ADPCH `Vuc ~T0 @X0 0 e@159 ]
+"3493
+[v _ADACQL `Vuc ~T0 @X0 0 e@268 ]
+"3621
+[v _ADACQH `Vuc ~T0 @X0 0 e@269 ]
+"3713
+[v _ADCAP `Vuc ~T0 @X0 0 e@270 ]
+"3812
+[v _ADPREL `Vuc ~T0 @X0 0 e@271 ]
+"3940
+[v _ADPREH `Vuc ~T0 @X0 0 e@272 ]
+"4163
+[v _ADCON1 `Vuc ~T0 @X0 0 e@274 ]
+"4274
+[v _ADCON2 `Vuc ~T0 @X0 0 e@275 ]
+"4452
+[v _ADCON3 `Vuc ~T0 @X0 0 e@276 ]
+"4582
+[v _ADSTAT `Vuc ~T0 @X0 0 e@277 ]
+"4707
+[v _ADREF `Vuc ~T0 @X0 0 e@278 ]
+"4847
+[v _ADACT `Vuc ~T0 @X0 0 e@279 ]
+"4939
+[v _ADCLK `Vuc ~T0 @X0 0 e@280 ]
+"4032
+[v _ADCON0 `Vuc ~T0 @X0 0 e@273 ]
+"19047
+[s S882 :1 `uc 1 :1 `uc 1 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S882 . ADIF ADTIF . CSWIF OSFIF ]
+"19046
+[u S881 `S882 1 ]
+[n S881 . . ]
+"19055
+[v _PIR1bits `VS881 ~T0 @X0 0 e@1805 ]
+"19418
+[s S900 :1 `uc 1 :1 `uc 1 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S900 . ADIE ADTIE . CSWIE OSFIE ]
+"19417
+[u S899 `S900 1 ]
+[n S899 . . ]
+"19426
+[v _PIE1bits `VS899 ~T0 @X0 0 e@1815 ]
+[v F10815 `(v ~T0 @X0 0 tf ]
+"820 system/adcc.h
+[v _ADCC_SetADIInterruptHandler `(v ~T0 @X0 0 ef1`*F10815 ]
 "855
-[v _LATCbits `VS43 ~T0 @X0 0 e@26 ]
+[v _ADCC_DefaultInterruptHandler `(v ~T0 @X0 0 ef ]
+"98 system/adcc.c
+[c E10752 17 59 60 61 62 63 .. ]
+[n E10752 . channel_ANC1 channel_Vss channel_Temp_Sensor channel_DAC1_Output channel_FVR_Buffer1 channel_FVR_Buffer2  ]
+"4038 C:/Users/Jona Cappelle/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18446.h
+[s S170 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S170 . GO . FM CS . CONT ON ]
+"4047
+[s S171 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S171 . ADGO . ADFM ADCS . ADCONT ADON ]
+"4056
+[s S172 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S172 . DONE . FM0 FM1 ]
+"4062
+[s S173 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S173 . GO_nDONE . ADFM0 ADFM1 ]
+"4068
+[s S174 :7 `uc 1 :1 `uc 1 ]
+[n S174 . . ADCAL ]
+"4037
+[u S169 `S170 1 `S171 1 `S172 1 `S173 1 `S174 1 ]
+[n S169 . . . . . . ]
+"4073
+[v _ADCON0bits `VS169 ~T0 @X0 0 e@273 ]
+"3262
+[v _ADRESH `Vuc ~T0 @X0 0 e@158 ]
+"3134
+[v _ADRESL `Vuc ~T0 @X0 0 e@157 ]
+"4458
+[s S188 :3 `uc 1 :1 `uc 1 :3 `uc 1 ]
+[n S188 . TMD SOI CALC ]
+"4463
+[s S189 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S189 . ADTMD0 ADTMD1 ADTMD2 ADSOI ADCALC0 ADCALC1 ADCALC2 ]
+"4472
+[s S190 :3 `uc 1 :1 `uc 1 :3 `uc 1 ]
+[n S190 . ADTMD . ADCALC ]
+"4477
+[s S191 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S191 . TMD0 TMD1 TMD2 . CALC0 CALC1 CALC2 ]
+"4457
+[u S187 `S188 1 `S189 1 `S190 1 `S191 1 ]
+[n S187 . . . . . ]
+"4487
+[v _ADCON3bits `VS187 ~T0 @X0 0 e@276 ]
+"2608
+[v _ADCNT `Vuc ~T0 @X0 0 e@153 ]
+"4280
+[s S180 :3 `uc 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 ]
+[n S180 . MODE ACLR CRS PSIS ]
+"4286
+[s S181 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S181 . ADMD0 ADMD1 ADMD2 ADACLR ADCRS0 ADCRS1 ADCRS2 ADPSIS ]
+"4296
+[s S182 :3 `uc 1 :1 `uc 1 :3 `uc 1 ]
+[n S182 . ADMD . ADCRS ]
+"4301
+[s S183 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S183 . MODE0 MODE1 MODE2 . CRS0 CRS1 CRS2 ]
+"4310
+[s S184 :3 `uc 1 ]
+[n S184 . MD ]
+"4313
+[s S185 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S185 . MD0 MD1 MD2 ]
+"4318
+[s S186 :3 `uc 1 ]
+[n S186 . ADMODE ]
+"4279
+[u S179 `S180 1 `S181 1 `S182 1 `S183 1 `S184 1 `S185 1 `S186 1 ]
+[n S179 . . . . . . . . ]
+"4322
+[v _ADCON2bits `VS179 ~T0 @X0 0 e@275 ]
+"2352
+[v _ADACCH `Vuc ~T0 @X0 0 e@151 ]
+"2224
+[v _ADACCL `Vuc ~T0 @X0 0 e@150 ]
+"4588
+[s S193 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S193 . STAT . MATH LTHR UTHR OV ]
+"4596
+[s S194 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S194 . ADSTAT0 ADSTAT1 ADSTAT2 . ADMATH ADLTHR ADUTHR ADAOV ]
+"4606
+[s S195 :3 `uc 1 :4 `uc 1 :1 `uc 1 ]
+[n S195 . ADSTAT . ADOV ]
+"4611
+[s S196 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S196 . STAT0 STAT1 STAT2 ]
+"4587
+[u S192 `S193 1 `S194 1 `S195 1 `S196 1 ]
+[n S192 . . . . . ]
+"4617
+[v _ADSTATbits `VS192 ~T0 @X0 0 e@277 ]
+"2087
+[v _ADFLTRH `Vuc ~T0 @X0 0 e@149 ]
+"1959
+[v _ADFLTRL `Vuc ~T0 @X0 0 e@148 ]
+"2999
+[v _ADPREVH `Vuc ~T0 @X0 0 e@156 ]
+"2871
+[v _ADPREVL `Vuc ~T0 @X0 0 e@155 ]
+"1561
+[v _ADERRH `Vuc ~T0 @X0 0 e@145 ]
+"1433
+[v _ADERRL `Vuc ~T0 @X0 0 e@144 ]
+"4169
+[s S176 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S176 . DSEN . GBOE GAOE GPOL IPEN PPOL ]
+"4178
+[s S177 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S177 . ADDSEN . ADGBOE ADGAOE ADGPOL ADIPEN ADPPOL ]
+"4187
+[s S178 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S178 . . CHSN3 VCFG01 VCFG11 ]
+"4168
+[u S175 `S176 1 `S177 1 `S178 1 ]
+[n S175 . . . . ]
+"4194
+[v _ADCON1bits `VS175 ~T0 @X0 0 e@274 ]
 [; ;xc8\pic\include\xc.h: 18: extern const char __xc8_OPTIM_SPEED;
 [; ;xc8\pic\include\xc.h: 20: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -12139,64 +12287,83 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;xc8\pic\include\pic.h: 127: extern __bank0 unsigned char __resetbits;
 [; ;xc8\pic\include\pic.h: 128: extern __bank0 __bit __powerdown;
 [; ;xc8\pic\include\pic.h: 129: extern __bank0 __bit __timeout;
-[; ;xc8\pic\include\__size_t.h: 4: typedef unsigned size_t;
-[; ;stdarg.h: 7: typedef void * va_list[1];
-[; ;stdarg.h: 10: extern void * __va_start(void);
-[; ;stdarg.h: 13: extern void * __va_arg(void *, ...);
-[; ;stdio.h: 43: struct __prbuf
-[; ;stdio.h: 44: {
-[; ;stdio.h: 45: char * ptr;
-[; ;stdio.h: 46: void (* func)(char);
-[; ;stdio.h: 47: };
-[; ;errno.h: 29: extern int errno;
-[; ;conio.h: 12: extern void init_uart(void);
-[; ;conio.h: 14: extern char getch(void);
-[; ;conio.h: 15: extern char getche(void);
-[; ;conio.h: 16: extern void putch(char);
-[; ;conio.h: 17: extern void ungetch(char);
-[; ;conio.h: 19: extern __bit kbhit(void);
-[; ;conio.h: 23: extern char * cgets(char *);
-[; ;conio.h: 24: extern void cputs(const char *);
-[; ;stdio.h: 88: extern int cprintf(char *, ...);
-[; ;stdio.h: 93: extern int _doprnt(struct __prbuf *, const register char *, register va_list);
-[; ;stdio.h: 183: extern char * gets(char *);
-[; ;stdio.h: 184: extern int puts(const char *);
-[; ;stdio.h: 185: extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
-[; ;stdio.h: 186: extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
-[; ;stdio.h: 187: extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
-[; ;stdio.h: 188: extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
-[; ;stdio.h: 189: extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
-[; ;stdio.h: 190: extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
-[; ;stdio.h: 194: extern int sprintf(char *, const char *, ...);
-[; ;stdio.h: 195: extern int printf(const char *, ...);
-[; ;string.h: 14: extern void * memcpy(void *, const void *, size_t);
-[; ;string.h: 15: extern void * memmove(void *, const void *, size_t);
-[; ;string.h: 16: extern void * memset(void *, int, size_t);
-[; ;string.h: 21: extern void * __builtin_memcpy(void *, const void *, size_t);
-[; ;string.h: 36: extern char * strcat(char *, const char *);
-[; ;string.h: 37: extern char * strcpy(char *, const char *);
-[; ;string.h: 38: extern char * strncat(char *, const char *, size_t);
-[; ;string.h: 39: extern char * strncpy(char *, const char *, size_t);
-[; ;string.h: 40: extern char * strdup(const char *);
-[; ;string.h: 41: extern char * strtok(char *, const char *);
-[; ;string.h: 44: extern int memcmp(const void *, const void *, size_t);
-[; ;string.h: 45: extern int strcmp(const char *, const char *);
-[; ;string.h: 46: extern int stricmp(const char *, const char *);
-[; ;string.h: 47: extern int strncmp(const char *, const char *, size_t);
-[; ;string.h: 48: extern int strnicmp(const char *, const char *, size_t);
-[; ;string.h: 49: extern void * memchr(const void *, int, size_t);
-[; ;string.h: 50: extern size_t strcspn(const char *, const char *);
-[; ;string.h: 51: extern char * strpbrk(const char *, const char *);
-[; ;string.h: 52: extern size_t strspn(const char *, const char *);
-[; ;string.h: 53: extern char * strstr(const char *, const char *);
-[; ;string.h: 54: extern char * stristr(const char *, const char *);
-[; ;string.h: 55: extern char * strerror(int);
-[; ;string.h: 56: extern size_t strlen(const char *);
-[; ;string.h: 57: extern char * strchr(const char *, int);
-[; ;string.h: 58: extern char * strichr(const char *, int);
-[; ;string.h: 59: extern char * strrchr(const char *, int);
-[; ;string.h: 60: extern char * strrichr(const char *, int);
 [; ;stdbool.h: 15: typedef unsigned char bool;
+[; ;adcc.h: 47: typedef uint16_t adc_result_t;
+[; ;adcc.h: 64: typedef enum
+[; ;adcc.h: 65: {
+[; ;adcc.h: 66: channel_ANC1 = 0x11,
+[; ;adcc.h: 67: channel_Vss = 0x3B,
+[; ;adcc.h: 68: channel_Temp_Sensor = 0x3C,
+[; ;adcc.h: 69: channel_DAC1_Output = 0x3D,
+[; ;adcc.h: 70: channel_FVR_Buffer1 = 0x3E,
+[; ;adcc.h: 71: channel_FVR_Buffer2 = 0x3F
+[; ;adcc.h: 72: } adcc_channel_t;
+[; ;adcc.h: 106: void ADCC_Initialize(void);
+[; ;adcc.h: 135: void ADCC_StartConversion(adcc_channel_t channel);
+[; ;adcc.h: 165: bool ADCC_IsConversionDone();
+[; ;adcc.h: 197: adc_result_t ADCC_GetConversionResult(void);
+[; ;adcc.h: 228: adc_result_t ADCC_GetSingleConversion(adcc_channel_t channel);
+[; ;adcc.h: 253: void ADCC_StopConversion(void);
+[; ;adcc.h: 280: void ADCC_SetStopOnInterrupt(void);
+[; ;adcc.h: 305: void ADCC_DischargeSampleCapacitor(void);
+[; ;adcc.h: 331: void ADCC_LoadAcquisitionRegister(uint16_t);
+[; ;adcc.h: 357: void ADCC_SetPrechargeTime(uint16_t);
+[; ;adcc.h: 382: void ADCC_SetRepeatCount(uint8_t);
+[; ;adcc.h: 410: uint8_t ADCC_GetCurrentCountofConversions(void);
+[; ;adcc.h: 434: void ADCC_ClearAccumulator(void);
+[; ;adcc.h: 459: uint24_t ADCC_GetAccumulatorValue(void);
+[; ;adcc.h: 487: bool ADCC_HasAccumulatorOverflowed(void);
+[; ;adcc.h: 512: uint16_t ADCC_GetFilterValue(void);
+[; ;adcc.h: 540: uint16_t ADCC_GetPreviousResult(void);
+[; ;adcc.h: 566: void ADCC_DefineSetPoint(uint16_t);
+[; ;adcc.h: 592: void ADCC_SetUpperThreshold(uint16_t);
+[; ;adcc.h: 618: void ADCC_SetLowerThreshold(uint16_t);
+[; ;adcc.h: 645: uint16_t ADCC_GetErrorCalculation(void);
+[; ;adcc.h: 672: void ADCC_EnableDoubleSampling(void);
+[; ;adcc.h: 696: void ADCC_EnableContinuousConversion(void);
+[; ;adcc.h: 720: void ADCC_DisableContinuousConversion(void);
+[; ;adcc.h: 748: bool ADCC_HasErrorCrossedUpperThreshold(void);
+[; ;adcc.h: 776: bool ADCC_HasErrorCrossedLowerThreshold(void);
+[; ;adcc.h: 803: uint8_t ADCC_GetConversionStageStatus(void);
+[; ;adcc.h: 820: void ADCC_SetADIInterruptHandler(void (* InterruptHandler)(void));
+[; ;adcc.h: 836: void ADCC_ISR(void);
+[; ;adcc.h: 855: void ADCC_DefaultInterruptHandler(void);
+[; ;pin_manager.h: 95: void PIN_MANAGER_IOC(void);
+[; ;pin_manager.h: 108: void IOCCF0_ISR(void);
+[; ;pin_manager.h: 131: void IOCCF0_SetInterruptHandler(void (* InterruptHandler)(void));
+[; ;pin_manager.h: 155: extern void (*IOCCF0_InterruptHandler)(void);
+[; ;pin_manager.h: 179: void IOCCF0_DefaultInterruptHandler(void);
+[; ;pin_manager.h: 192: void IOCCF2_ISR(void);
+[; ;pin_manager.h: 215: void IOCCF2_SetInterruptHandler(void (* InterruptHandler)(void));
+[; ;pin_manager.h: 239: extern void (*IOCCF2_InterruptHandler)(void);
+[; ;pin_manager.h: 263: void IOCCF2_DefaultInterruptHandler(void);
+[; ;pin_manager.h: 276: void IOCCF4_ISR(void);
+[; ;pin_manager.h: 299: void IOCCF4_SetInterruptHandler(void (* InterruptHandler)(void));
+[; ;pin_manager.h: 323: extern void (*IOCCF4_InterruptHandler)(void);
+[; ;pin_manager.h: 347: void IOCCF4_DefaultInterruptHandler(void);
+[; ;pin_manager.h: 360: void IOCCF6_ISR(void);
+[; ;pin_manager.h: 383: void IOCCF6_SetInterruptHandler(void (* InterruptHandler)(void));
+[; ;pin_manager.h: 407: extern void (*IOCCF6_InterruptHandler)(void);
+[; ;pin_manager.h: 431: void IOCCF6_DefaultInterruptHandler(void);
+[; ;stdbool.h: 15: typedef unsigned char bool;
+[; ;stdbool.h: 15: typedef unsigned char bool;
+[; ;xc8\pic\include\__size_t.h: 4: typedef unsigned size_t;
+[; ;stddef.h: 6: typedef int ptrdiff_t;
+[; ;i2c1.h: 56: typedef enum
+[; ;i2c1.h: 57: {
+[; ;i2c1.h: 58: I2C1_SLAVE_WRITE_REQUEST,
+[; ;i2c1.h: 59: I2C1_SLAVE_READ_REQUEST,
+[; ;i2c1.h: 60: I2C1_SLAVE_WRITE_COMPLETED,
+[; ;i2c1.h: 61: I2C1_SLAVE_READ_COMPLETED,
+[; ;i2c1.h: 62: } I2C1_SLAVE_DRIVER_STATUS;
+[; ;i2c1.h: 91: void I2C1_Initialize(uint8_t slave_address);
+[; ;i2c1.h: 111: void I2C1_ISR ( void );
+[; ;i2c1.h: 118: extern volatile uint8_t I2C1_slaveWriteData;
+[; ;i2c1.h: 125: bool I2C1_CommandReceived(void);
+[; ;i2c1.h: 126: void I2C1_GetCommand(uint8_t * cmd);
+[; ;i2c1.h: 127: void I2C1_GetCommandData(uint8_t * data, uint8_t * len);
+[; ;i2c1.h: 128: void I2C1_SetTransmitData(uint8_t * data, uint8_t len);
+[; ;i2c1.h: 129: bool I2C1_TxBufferEmpty(void);
 [; ;global.h: 63: typedef struct devApi{
 [; ;global.h: 64: void (* Init)(void);
 [; ;global.h: 65: void (* Measure)(void);
@@ -12204,7 +12371,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;global.h: 67: void (* GetData)(uint8_t *, uint8_t *);
 [; ;global.h: 68: void (* UpdateThreshold)(uint8_t, uint8_t *);
 [; ;global.h: 69: } Device_API_t;
-"77 global.h
+"77 system/../global.h
 [p x FEXTOSC=OFF ]
 "78
 [p x RSTOSC=HFINT1 ]
@@ -12258,332 +12425,617 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p x LVP=ON ]
 "112
 [p x CP=OFF ]
-[; ;pin_manager.h: 95: void PIN_MANAGER_IOC(void);
-[; ;pin_manager.h: 108: void IOCCF0_ISR(void);
-[; ;pin_manager.h: 131: void IOCCF0_SetInterruptHandler(void (* InterruptHandler)(void));
-[; ;pin_manager.h: 155: extern void (*IOCCF0_InterruptHandler)(void);
-[; ;pin_manager.h: 179: void IOCCF0_DefaultInterruptHandler(void);
-[; ;pin_manager.h: 192: void IOCCF2_ISR(void);
-[; ;pin_manager.h: 215: void IOCCF2_SetInterruptHandler(void (* InterruptHandler)(void));
-[; ;pin_manager.h: 239: extern void (*IOCCF2_InterruptHandler)(void);
-[; ;pin_manager.h: 263: void IOCCF2_DefaultInterruptHandler(void);
-[; ;pin_manager.h: 276: void IOCCF4_ISR(void);
-[; ;pin_manager.h: 299: void IOCCF4_SetInterruptHandler(void (* InterruptHandler)(void));
-[; ;pin_manager.h: 323: extern void (*IOCCF4_InterruptHandler)(void);
-[; ;pin_manager.h: 347: void IOCCF4_DefaultInterruptHandler(void);
-[; ;pin_manager.h: 360: void IOCCF6_ISR(void);
-[; ;pin_manager.h: 383: void IOCCF6_SetInterruptHandler(void (* InterruptHandler)(void));
-[; ;pin_manager.h: 407: extern void (*IOCCF6_InterruptHandler)(void);
-[; ;pin_manager.h: 431: void IOCCF6_DefaultInterruptHandler(void);
-[; ;stdbool.h: 15: typedef unsigned char bool;
-[; ;stdbool.h: 15: typedef unsigned char bool;
-[; ;stddef.h: 6: typedef int ptrdiff_t;
-[; ;i2c1.h: 56: typedef enum
-[; ;i2c1.h: 57: {
-[; ;i2c1.h: 58: I2C1_SLAVE_WRITE_REQUEST,
-[; ;i2c1.h: 59: I2C1_SLAVE_READ_REQUEST,
-[; ;i2c1.h: 60: I2C1_SLAVE_WRITE_COMPLETED,
-[; ;i2c1.h: 61: I2C1_SLAVE_READ_COMPLETED,
-[; ;i2c1.h: 62: } I2C1_SLAVE_DRIVER_STATUS;
-[; ;i2c1.h: 91: void I2C1_Initialize(uint8_t slave_address);
-[; ;i2c1.h: 111: void I2C1_ISR ( void );
-[; ;i2c1.h: 118: extern volatile uint8_t I2C1_slaveWriteData;
-[; ;i2c1.h: 125: bool I2C1_CommandReceived(void);
-[; ;i2c1.h: 126: void I2C1_GetCommand(uint8_t * cmd);
-[; ;i2c1.h: 127: void I2C1_GetCommandData(uint8_t * data, uint8_t * len);
-[; ;i2c1.h: 128: void I2C1_SetTransmitData(uint8_t * data, uint8_t len);
-[; ;i2c1.h: 129: bool I2C1_TxBufferEmpty(void);
-[; ;stdbool.h: 15: typedef unsigned char bool;
-[; ;adcc.h: 47: typedef uint16_t adc_result_t;
-[; ;adcc.h: 64: typedef enum
-[; ;adcc.h: 65: {
-[; ;adcc.h: 66: channel_ANC1 = 0x11,
-[; ;adcc.h: 67: channel_Vss = 0x3B,
-[; ;adcc.h: 68: channel_Temp_Sensor = 0x3C,
-[; ;adcc.h: 69: channel_DAC1_Output = 0x3D,
-[; ;adcc.h: 70: channel_FVR_Buffer1 = 0x3E,
-[; ;adcc.h: 71: channel_FVR_Buffer2 = 0x3F
-[; ;adcc.h: 72: } adcc_channel_t;
-[; ;adcc.h: 106: void ADCC_Initialize(void);
-[; ;adcc.h: 135: void ADCC_StartConversion(adcc_channel_t channel);
-[; ;adcc.h: 165: bool ADCC_IsConversionDone();
-[; ;adcc.h: 197: adc_result_t ADCC_GetConversionResult(void);
-[; ;adcc.h: 228: adc_result_t ADCC_GetSingleConversion(adcc_channel_t channel);
-[; ;adcc.h: 253: void ADCC_StopConversion(void);
-[; ;adcc.h: 280: void ADCC_SetStopOnInterrupt(void);
-[; ;adcc.h: 305: void ADCC_DischargeSampleCapacitor(void);
-[; ;adcc.h: 331: void ADCC_LoadAcquisitionRegister(uint16_t);
-[; ;adcc.h: 357: void ADCC_SetPrechargeTime(uint16_t);
-[; ;adcc.h: 382: void ADCC_SetRepeatCount(uint8_t);
-[; ;adcc.h: 410: uint8_t ADCC_GetCurrentCountofConversions(void);
-[; ;adcc.h: 434: void ADCC_ClearAccumulator(void);
-[; ;adcc.h: 459: uint24_t ADCC_GetAccumulatorValue(void);
-[; ;adcc.h: 487: bool ADCC_HasAccumulatorOverflowed(void);
-[; ;adcc.h: 512: uint16_t ADCC_GetFilterValue(void);
-[; ;adcc.h: 540: uint16_t ADCC_GetPreviousResult(void);
-[; ;adcc.h: 566: void ADCC_DefineSetPoint(uint16_t);
-[; ;adcc.h: 592: void ADCC_SetUpperThreshold(uint16_t);
-[; ;adcc.h: 618: void ADCC_SetLowerThreshold(uint16_t);
-[; ;adcc.h: 645: uint16_t ADCC_GetErrorCalculation(void);
-[; ;adcc.h: 672: void ADCC_EnableDoubleSampling(void);
-[; ;adcc.h: 696: void ADCC_EnableContinuousConversion(void);
-[; ;adcc.h: 720: void ADCC_DisableContinuousConversion(void);
-[; ;adcc.h: 748: bool ADCC_HasErrorCrossedUpperThreshold(void);
-[; ;adcc.h: 776: bool ADCC_HasErrorCrossedLowerThreshold(void);
-[; ;adcc.h: 803: uint8_t ADCC_GetConversionStageStatus(void);
-[; ;adcc.h: 820: void ADCC_SetADIInterruptHandler(void (* InterruptHandler)(void));
-[; ;adcc.h: 836: void ADCC_ISR(void);
-[; ;adcc.h: 855: void ADCC_DefaultInterruptHandler(void);
 [; ;system.h: 44: void SYSTEM_Initialize(uint8_t slave_address);
 [; ;system.h: 57: void OSCILLATOR_Initialize(void);
 [; ;system.h: 70: void PMD_Initialize(void);
-[; ;stdbool.h: 15: typedef unsigned char bool;
-[; ;sound_level.h: 224: void SoundLevel_Init(void);
-[; ;sound_level.h: 225: void SoundLevel_Measure(void);
-[; ;sound_level.h: 226: void SoundLevel_Loop(void);
-[; ;sound_level.h: 227: void SoundLevel_GetData(uint8_t * data, uint8_t * length);
-[; ;sound_level.h: 228: void SoundLevel_SetThreshold(uint8_t metric, uint8_t * thresholdData);
-"65 main.c
-[v _sensorAPI `S1513 ~T0 @X0 1 e ]
-[i _sensorAPI
-:U ..
-:U ..
-&U _SoundLevel_Init
-&U _SoundLevel_Measure
-&U _SoundLevel_Loop
-&U _SoundLevel_GetData
-&U _SoundLevel_SetThreshold
-..
-..
-]
-[; ;main.c: 65: Device_API_t sensorAPI = { SoundLevel_Init, SoundLevel_Measure, SoundLevel_Loop, SoundLevel_GetData, SoundLevel_SetThreshold };
-"67
-[v _mData `uc ~T0 @X0 * -> 2 `i -> 1 `i e ]
-[; ;main.c: 67: uint8_t mData[2 * 0x01];
-"68
-[v _mDataLength `uc ~T0 @X0 1 e ]
-[; ;main.c: 68: uint8_t mDataLength;
-[; ;main.c: 70: void toggleInt(void);
-[v $root$_main `(v ~T0 @X0 0 e ]
-"74
-[v _main `(v ~T0 @X0 1 ef ]
-"75
+"30 system/adcc.c
+[v _ADCC_ADI_InterruptHandler `*F10918 ~T0 @X0 1 e ]
+[; ;adcc.c: 30: void (*ADCC_ADI_InterruptHandler)(void);
+"36
+[v _ADCC_Initialize `(v ~T0 @X0 1 ef ]
+"37
 {
-[; ;main.c: 74: void main(void)
-[; ;main.c: 75: {
-[e :U _main ]
+[; ;adcc.c: 36: void ADCC_Initialize(void)
+[; ;adcc.c: 37: {
+[e :U _ADCC_Initialize ]
 [f ]
-[; ;main.c: 77: SYSTEM_Initialize(0x54);
-"77
-[e ( _SYSTEM_Initialize (1 -> -> 84 `i `uc ]
-[; ;main.c: 79: sensorAPI.Init();
-"79
-[e ( *U . _sensorAPI 0 ..  ]
-[; ;main.c: 81: while(1){
-"81
-[e :U 1516 ]
-{
-[; ;main.c: 82: sensorAPI.Loop();
+[; ;adcc.c: 39: PMD3bits.ADCMD = 0;
+"39
+[e = . . _PMD3bits 0 4 -> -> 0 `i `uc ]
+[; ;adcc.c: 44: ADLTHL = 0x00;
+"44
+[e = _ADLTHL -> -> 0 `i `uc ]
+[; ;adcc.c: 46: ADLTHH = 0x00;
+"46
+[e = _ADLTHH -> -> 0 `i `uc ]
+[; ;adcc.c: 48: ADUTHL = 0x00;
+"48
+[e = _ADUTHL -> -> 0 `i `uc ]
+[; ;adcc.c: 50: ADUTHH = 0x00;
+"50
+[e = _ADUTHH -> -> 0 `i `uc ]
+[; ;adcc.c: 52: ADSTPTL = 0x00;
+"52
+[e = _ADSTPTL -> -> 0 `i `uc ]
+[; ;adcc.c: 54: ADSTPTH = 0x00;
+"54
+[e = _ADSTPTH -> -> 0 `i `uc ]
+[; ;adcc.c: 56: ADACCU = 0x00;
+"56
+[e = _ADACCU -> -> 0 `i `uc ]
+[; ;adcc.c: 58: ADRPT = 0x00;
+"58
+[e = _ADRPT -> -> 0 `i `uc ]
+[; ;adcc.c: 60: ADPCH = 0x00;
+"60
+[e = _ADPCH -> -> 0 `i `uc ]
+[; ;adcc.c: 62: ADACQL = 0x00;
+"62
+[e = _ADACQL -> -> 0 `i `uc ]
+[; ;adcc.c: 64: ADACQH = 0x00;
+"64
+[e = _ADACQH -> -> 0 `i `uc ]
+[; ;adcc.c: 66: ADCAP = 0x00;
+"66
+[e = _ADCAP -> -> 0 `i `uc ]
+[; ;adcc.c: 68: ADPREL = 0x00;
+"68
+[e = _ADPREL -> -> 0 `i `uc ]
+[; ;adcc.c: 70: ADPREH = 0x00;
+"70
+[e = _ADPREH -> -> 0 `i `uc ]
+[; ;adcc.c: 72: ADCON1 = 0x00;
+"72
+[e = _ADCON1 -> -> 0 `i `uc ]
+[; ;adcc.c: 74: ADCON2 = 0x00;
+"74
+[e = _ADCON2 -> -> 0 `i `uc ]
+[; ;adcc.c: 76: ADCON3 = 0x00;
+"76
+[e = _ADCON3 -> -> 0 `i `uc ]
+[; ;adcc.c: 78: ADSTAT = 0x00;
+"78
+[e = _ADSTAT -> -> 0 `i `uc ]
+[; ;adcc.c: 80: ADREF = 0x00;
+"80
+[e = _ADREF -> -> 0 `i `uc ]
+[; ;adcc.c: 82: ADACT = 0x00;
 "82
-[e ( *U . _sensorAPI 2 ..  ]
-[; ;main.c: 83: sensorAPI.GetData(mData, &mDataLength);
-"83
-[e ( *U . _sensorAPI 3 (2 , &U _mData &U _mDataLength ]
-[; ;main.c: 84: I2C1_SetTransmitData(mData, mDataLength);
+[e = _ADACT -> -> 0 `i `uc ]
+[; ;adcc.c: 84: ADCLK = 0x3F;
 "84
-[e ( _I2C1_SetTransmitData (2 , &U _mData _mDataLength ]
-[; ;main.c: 87: if(I2C1_CommandReceived()){
-"87
-[e $ ! != -> ( _I2C1_CommandReceived ..  `i -> -> -> 0 `i `uc `i 1518  ]
-{
-"88
-[v _cmd `uc ~T0 @X0 1 a ]
-[; ;main.c: 88: uint8_t cmd;
-[; ;main.c: 89: I2C1_GetCommand(&cmd);
+[e = _ADCLK -> -> 63 `i `uc ]
+[; ;adcc.c: 86: ADCON0 = 0x84;
+"86
+[e = _ADCON0 -> -> 132 `i `uc ]
+[; ;adcc.c: 89: PIR1bits.ADIF = 0;
 "89
-[e ( _I2C1_GetCommand (1 &U _cmd ]
-[; ;main.c: 91: switch(cmd){
+[e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
+[; ;adcc.c: 91: PIE1bits.ADIE = 1;
 "91
-[e $U 1520  ]
-{
-[; ;main.c: 93: case 0x10:{
+[e = . . _PIE1bits 0 0 -> -> 1 `i `uc ]
+[; ;adcc.c: 93: ADCC_SetADIInterruptHandler(ADCC_DefaultInterruptHandler);
 "93
-[e :U 1521 ]
-{
+[e ( _ADCC_SetADIInterruptHandler (1 &U _ADCC_DefaultInterruptHandler ]
+[; ;adcc.c: 95: }
 "95
-[v _ack `uc ~T0 @X0 1 a ]
-[; ;main.c: 95: uint8_t ack = 0xAA;
-[e = _ack -> -> 170 `i `uc ]
-[; ;main.c: 96: I2C1_SetTransmitData(&ack, 1);
-"96
-[e ( _I2C1_SetTransmitData (2 , &U _ack -> -> 1 `i `uc ]
+[e :UE 1513 ]
+}
 "97
-}
-[; ;main.c: 97: } break;
-[e $U 1519  ]
-[; ;main.c: 100: case 0x11:{
+[v _ADCC_StartConversion `(v ~T0 @X0 1 ef1`E10752 ]
+"98
+{
+[; ;adcc.c: 97: void ADCC_StartConversion(adcc_channel_t channel)
+[; ;adcc.c: 98: {
+[e :U _ADCC_StartConversion ]
+"97
+[v _channel `E10752 ~T0 @X0 1 r1 ]
+"98
+[f ]
+[; ;adcc.c: 100: ADPCH = channel;
 "100
-[e :U 1522 ]
-{
-"102
-[v _type `uc ~T0 @X0 1 a ]
-[; ;main.c: 102: uint8_t type = 0x01;
-[e = _type -> -> 1 `i `uc ]
-[; ;main.c: 103: I2C1_SetTransmitData(&type, 1);
+[e = _ADPCH -> _channel `uc ]
+[; ;adcc.c: 103: ADCON0bits.ADON = 1;
 "103
-[e ( _I2C1_SetTransmitData (2 , &U _type -> -> 1 `i `uc ]
-"104
-}
-[; ;main.c: 104: } break;
-[e $U 1519  ]
-[; ;main.c: 107: case 0x23:{
+[e = . . _ADCON0bits 1 6 -> -> 1 `i `uc ]
+[; ;adcc.c: 106: ADCON0bits.ADGO = 1;
+"106
+[e = . . _ADCON0bits 1 0 -> -> 1 `i `uc ]
+[; ;adcc.c: 107: }
 "107
-[e :U 1523 ]
-{
-"109
-[v _mnr `uc ~T0 @X0 1 a ]
-[; ;main.c: 109: uint8_t mnr = 0x01;
-[e = _mnr -> -> 1 `i `uc ]
-[; ;main.c: 110: I2C1_SetTransmitData(&mnr, 1);
-"110
-[e ( _I2C1_SetTransmitData (2 , &U _mnr -> -> 1 `i `uc ]
-"111
-}
-[; ;main.c: 111: } break;
-[e $U 1519  ]
-[; ;main.c: 114: case 0x13:{
-"114
-[e :U 1524 ]
-{
-[; ;main.c: 116: sensorAPI.Measure();
-"116
-[e ( *U . _sensorAPI 1 ..  ]
-"117
-}
-[; ;main.c: 117: } break;
-[e $U 1519  ]
-[; ;main.c: 120: case 0x14:{
-"120
-[e :U 1525 ]
-{
-"122
-[v _retries `uc ~T0 @X0 1 a ]
-[; ;main.c: 122: uint8_t retries = 20;
-[e = _retries -> -> 20 `i `uc ]
-[; ;main.c: 123: while(!I2C1_TxBufferEmpty() && retries--){
-"123
-[e $U 1526  ]
-[e :U 1527 ]
-{
-[; ;main.c: 124: _delay((unsigned long)((1)*(32000000/4000.0)));
-"124
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-"125
-}
-[e :U 1526 ]
-"123
-[e $ && ! != -> ( _I2C1_TxBufferEmpty ..  `i -> -> -> 0 `i `uc `i != -> -- _retries -> -> 1 `i `uc `i -> -> -> 0 `i `uc `i 1527  ]
-[e :U 1528 ]
-"126
-}
-[; ;main.c: 125: }
-[; ;main.c: 126: } break;
-[e $U 1519  ]
-[; ;main.c: 129: case 0x15:{
-"129
-[e :U 1529 ]
-{
-[; ;main.c: 130: toggleInt();
-"130
-[e ( _toggleInt ..  ]
-"131
-}
-[; ;main.c: 131: } break;
-[e $U 1519  ]
-[; ;main.c: 134: case 0x24:{
-"134
-[e :U 1530 ]
-{
-[; ;main.c: 135: _delay((unsigned long)((2)*(32000000/4000.0)));
-"135
-[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-"136
-[v _len `uc ~T0 @X0 1 a ]
-"137
-[v _data `uc ~T0 @X0 -> 20 `i a ]
-[; ;main.c: 136: uint8_t len;
-[; ;main.c: 137: uint8_t data[20];
-[; ;main.c: 138: I2C1_GetCommandData(data, &len);
-"138
-[e ( _I2C1_GetCommandData (2 , &U _data &U _len ]
-[; ;main.c: 139: if(len == 6){
-"139
-[e $ ! == -> _len `i -> 6 `i 1531  ]
-{
-[; ;main.c: 140: sensorAPI.UpdateThreshold(data[0], data+1);
-"140
-[e ( *U . _sensorAPI 4 (2 , *U + &U _data * -> -> -> 0 `i `ui `ux -> -> # *U &U _data `ui `ux + &U _data * -> -> 1 `i `x -> -> # *U &U _data `i `x ]
-"141
-}
-[e :U 1531 ]
-"142
-}
-[; ;main.c: 141: }
-[; ;main.c: 142: } break;
-[e $U 1519  ]
-[; ;main.c: 145: default:{
-"145
-[e :U 1532 ]
-{
-"146
-}
-[; ;main.c: 146: } break;
-[e $U 1519  ]
-"147
-}
-[; ;main.c: 147: }
-[e $U 1519  ]
-"91
-[e :U 1520 ]
-[e [\ _cmd , $ -> -> 16 `i `uc 1521
- , $ -> -> 17 `i `uc 1522
- , $ -> -> 35 `i `uc 1523
- , $ -> -> 19 `i `uc 1524
- , $ -> -> 20 `i `uc 1525
- , $ -> -> 21 `i `uc 1529
- , $ -> -> 36 `i `uc 1530
- 1532 ]
-"147
-[e :U 1519 ]
-"148
-}
-[e :U 1518 ]
-"149
-}
-[e :U 1515 ]
-"81
-[e $U 1516  ]
-[e :U 1517 ]
-[; ;main.c: 148: }
-[; ;main.c: 149: }
-[; ;main.c: 150: }
-"150
 [e :UE 1514 ]
 }
-"152
-[v _toggleInt `(v ~T0 @X0 1 ef ]
+"109
+[v _ADCC_IsConversionDone `(uc ~T0 @X0 1 ef ]
+"110
 {
-[; ;main.c: 152: void toggleInt(void){
-[e :U _toggleInt ]
+[; ;adcc.c: 109: bool ADCC_IsConversionDone()
+[; ;adcc.c: 110: {
+[e :U _ADCC_IsConversionDone ]
 [f ]
-[; ;main.c: 153: do { LATCbits.LATC7 = ~LATCbits.LATC7; } while(0);
-"153
-[e :U 1536 ]
-{
-[e = . . _LATCbits 0 7 -> ~ -> . . _LATCbits 0 7 `i `uc ]
+[; ;adcc.c: 112: return ((unsigned char)(!ADCON0bits.ADGO));
+"112
+[e ) -> -> ! != -> . . _ADCON0bits 1 0 `i -> -> -> 0 `i `Vuc `i `i `uc ]
+[e $UE 1515  ]
+[; ;adcc.c: 113: }
+"113
+[e :UE 1515 ]
 }
-[e :U 1535 ]
-[; ;main.c: 154: }
-"154
+"115
+[v _ADCC_GetConversionResult `(ui ~T0 @X0 1 ef ]
+"116
+{
+[; ;adcc.c: 115: adc_result_t ADCC_GetConversionResult(void)
+[; ;adcc.c: 116: {
+[e :U _ADCC_GetConversionResult ]
+[f ]
+[; ;adcc.c: 118: return ((adc_result_t)((ADRESH << 8) + ADRESL));
+"118
+[e ) -> + << -> _ADRESH `i -> 8 `i -> _ADRESL `i `ui ]
+[e $UE 1516  ]
+[; ;adcc.c: 119: }
+"119
+[e :UE 1516 ]
+}
+"121
+[v _ADCC_GetSingleConversion `(ui ~T0 @X0 1 ef1`E10752 ]
+"122
+{
+[; ;adcc.c: 121: adc_result_t ADCC_GetSingleConversion(adcc_channel_t channel)
+[; ;adcc.c: 122: {
+[e :U _ADCC_GetSingleConversion ]
+"121
+[v _channel `E10752 ~T0 @X0 1 r1 ]
+"122
+[f ]
+[; ;adcc.c: 124: ADPCH = channel;
+"124
+[e = _ADPCH -> _channel `uc ]
+[; ;adcc.c: 127: ADCON0bits.ADON = 1;
+"127
+[e = . . _ADCON0bits 1 6 -> -> 1 `i `uc ]
+[; ;adcc.c: 130: ADCON0bits.ADCONT = 0;
+"130
+[e = . . _ADCON0bits 1 5 -> -> 0 `i `uc ]
+[; ;adcc.c: 133: ADCON0bits.ADGO = 1;
+"133
+[e = . . _ADCON0bits 1 0 -> -> 1 `i `uc ]
+[; ;adcc.c: 137: while (ADCON0bits.ADGO)
+"137
+[e $U 1518  ]
+[e :U 1519 ]
+[; ;adcc.c: 138: {
+"138
+{
+"139
+}
+[e :U 1518 ]
+"137
+[e $ != -> . . _ADCON0bits 1 0 `i -> -> -> 0 `i `Vuc `i 1519  ]
+[e :U 1520 ]
+[; ;adcc.c: 139: }
+[; ;adcc.c: 143: return ((adc_result_t)((ADRESH << 8) + ADRESL));
+"143
+[e ) -> + << -> _ADRESH `i -> 8 `i -> _ADRESL `i `ui ]
+[e $UE 1517  ]
+[; ;adcc.c: 144: }
+"144
+[e :UE 1517 ]
+}
+"146
+[v _ADCC_StopConversion `(v ~T0 @X0 1 ef ]
+"147
+{
+[; ;adcc.c: 146: void ADCC_StopConversion(void)
+[; ;adcc.c: 147: {
+[e :U _ADCC_StopConversion ]
+[f ]
+[; ;adcc.c: 149: ADCON0bits.ADGO = 0;
+"149
+[e = . . _ADCON0bits 1 0 -> -> 0 `i `uc ]
+[; ;adcc.c: 150: }
+"150
+[e :UE 1521 ]
+}
+"152
+[v _ADCC_SetStopOnInterrupt `(v ~T0 @X0 1 ef ]
+"153
+{
+[; ;adcc.c: 152: void ADCC_SetStopOnInterrupt(void)
+[; ;adcc.c: 153: {
+[e :U _ADCC_SetStopOnInterrupt ]
+[f ]
+[; ;adcc.c: 155: ADCON3bits.ADSOI = 1;
+"155
+[e = . . _ADCON3bits 1 3 -> -> 1 `i `uc ]
+[; ;adcc.c: 156: }
+"156
+[e :UE 1522 ]
+}
+"158
+[v _ADCC_DischargeSampleCapacitor `(v ~T0 @X0 1 ef ]
+"159
+{
+[; ;adcc.c: 158: void ADCC_DischargeSampleCapacitor(void)
+[; ;adcc.c: 159: {
+[e :U _ADCC_DischargeSampleCapacitor ]
+[f ]
+[; ;adcc.c: 161: ADPCH = 0x3b;
+"161
+[e = _ADPCH -> -> 59 `i `uc ]
+[; ;adcc.c: 162: }
+"162
+[e :UE 1523 ]
+}
+"164
+[v _ADCC_LoadAcquisitionRegister `(v ~T0 @X0 1 ef1`ui ]
+"165
+{
+[; ;adcc.c: 164: void ADCC_LoadAcquisitionRegister(uint16_t acquisitionValue)
+[; ;adcc.c: 165: {
+[e :U _ADCC_LoadAcquisitionRegister ]
+"164
+[v _acquisitionValue `ui ~T0 @X0 1 r1 ]
+"165
+[f ]
+[; ;adcc.c: 167: ADACQH = acquisitionValue >> 8;
+"167
+[e = _ADACQH -> >> _acquisitionValue -> 8 `i `uc ]
+[; ;adcc.c: 168: ADACQL = acquisitionValue;
+"168
+[e = _ADACQL -> _acquisitionValue `uc ]
+[; ;adcc.c: 169: }
+"169
+[e :UE 1524 ]
+}
+"171
+[v _ADCC_SetPrechargeTime `(v ~T0 @X0 1 ef1`ui ]
+"172
+{
+[; ;adcc.c: 171: void ADCC_SetPrechargeTime(uint16_t prechargeTime)
+[; ;adcc.c: 172: {
+[e :U _ADCC_SetPrechargeTime ]
+"171
+[v _prechargeTime `ui ~T0 @X0 1 r1 ]
+"172
+[f ]
+[; ;adcc.c: 174: ADPREH = prechargeTime >> 8;
+"174
+[e = _ADPREH -> >> _prechargeTime -> 8 `i `uc ]
+[; ;adcc.c: 175: ADPREL = prechargeTime;
+"175
+[e = _ADPREL -> _prechargeTime `uc ]
+[; ;adcc.c: 176: }
+"176
+[e :UE 1525 ]
+}
+"178
+[v _ADCC_SetRepeatCount `(v ~T0 @X0 1 ef1`uc ]
+"179
+{
+[; ;adcc.c: 178: void ADCC_SetRepeatCount(uint8_t repeatCount)
+[; ;adcc.c: 179: {
+[e :U _ADCC_SetRepeatCount ]
+"178
+[v _repeatCount `uc ~T0 @X0 1 r1 ]
+"179
+[f ]
+[; ;adcc.c: 181: ADRPT = repeatCount;
+"181
+[e = _ADRPT _repeatCount ]
+[; ;adcc.c: 182: }
+"182
+[e :UE 1526 ]
+}
+"184
+[v _ADCC_GetCurrentCountofConversions `(uc ~T0 @X0 1 ef ]
+"185
+{
+[; ;adcc.c: 184: uint8_t ADCC_GetCurrentCountofConversions(void)
+[; ;adcc.c: 185: {
+[e :U _ADCC_GetCurrentCountofConversions ]
+[f ]
+[; ;adcc.c: 187: return ADCNT;
+"187
+[e ) _ADCNT ]
+[e $UE 1527  ]
+[; ;adcc.c: 188: }
+"188
+[e :UE 1527 ]
+}
+"190
+[v _ADCC_ClearAccumulator `(v ~T0 @X0 1 ef ]
+"191
+{
+[; ;adcc.c: 190: void ADCC_ClearAccumulator(void)
+[; ;adcc.c: 191: {
+[e :U _ADCC_ClearAccumulator ]
+[f ]
+[; ;adcc.c: 193: ADCON2bits.ADACLR = 1;
+"193
+[e = . . _ADCON2bits 1 3 -> -> 1 `i `uc ]
+[; ;adcc.c: 194: }
+"194
+[e :UE 1528 ]
+}
+"196
+[v _ADCC_GetAccumulatorValue `(um ~T0 @X0 1 ef ]
+"197
+{
+[; ;adcc.c: 196: uint24_t ADCC_GetAccumulatorValue(void)
+[; ;adcc.c: 197: {
+[e :U _ADCC_GetAccumulatorValue ]
+[f ]
+[; ;adcc.c: 199: return (((uint24_t)ADACCU << 16)+((uint24_t)ADACCH << 8) + ADACCL);
+"199
+[e ) + + << -> _ADACCU `um -> 16 `i << -> _ADACCH `um -> 8 `i -> _ADACCL `um ]
+[e $UE 1529  ]
+[; ;adcc.c: 200: }
+"200
+[e :UE 1529 ]
+}
+"202
+[v _ADCC_HasAccumulatorOverflowed `(uc ~T0 @X0 1 ef ]
+"203
+{
+[; ;adcc.c: 202: bool ADCC_HasAccumulatorOverflowed(void)
+[; ;adcc.c: 203: {
+[e :U _ADCC_HasAccumulatorOverflowed ]
+[f ]
+[; ;adcc.c: 205: return ADSTATbits.ADAOV;
+"205
+[e ) . . _ADSTATbits 1 7 ]
+[e $UE 1530  ]
+[; ;adcc.c: 206: }
+"206
+[e :UE 1530 ]
+}
+"208
+[v _ADCC_GetFilterValue `(ui ~T0 @X0 1 ef ]
+"209
+{
+[; ;adcc.c: 208: uint16_t ADCC_GetFilterValue(void)
+[; ;adcc.c: 209: {
+[e :U _ADCC_GetFilterValue ]
+[f ]
+[; ;adcc.c: 211: return ((uint16_t)((ADFLTRH << 8) + ADFLTRL));
+"211
+[e ) -> + << -> _ADFLTRH `i -> 8 `i -> _ADFLTRL `i `ui ]
+[e $UE 1531  ]
+[; ;adcc.c: 212: }
+"212
+[e :UE 1531 ]
+}
+"214
+[v _ADCC_GetPreviousResult `(ui ~T0 @X0 1 ef ]
+"215
+{
+[; ;adcc.c: 214: uint16_t ADCC_GetPreviousResult(void)
+[; ;adcc.c: 215: {
+[e :U _ADCC_GetPreviousResult ]
+[f ]
+[; ;adcc.c: 217: return ((uint16_t)((ADPREVH << 8) + ADPREVL));
+"217
+[e ) -> + << -> _ADPREVH `i -> 8 `i -> _ADPREVL `i `ui ]
+[e $UE 1532  ]
+[; ;adcc.c: 218: }
+"218
+[e :UE 1532 ]
+}
+"220
+[v _ADCC_DefineSetPoint `(v ~T0 @X0 1 ef1`ui ]
+"221
+{
+[; ;adcc.c: 220: void ADCC_DefineSetPoint(uint16_t setPoint)
+[; ;adcc.c: 221: {
+[e :U _ADCC_DefineSetPoint ]
+"220
+[v _setPoint `ui ~T0 @X0 1 r1 ]
+"221
+[f ]
+[; ;adcc.c: 223: ADSTPTH = setPoint >> 8;
+"223
+[e = _ADSTPTH -> >> _setPoint -> 8 `i `uc ]
+[; ;adcc.c: 224: ADSTPTL = setPoint;
+"224
+[e = _ADSTPTL -> _setPoint `uc ]
+[; ;adcc.c: 225: }
+"225
 [e :UE 1533 ]
+}
+"227
+[v _ADCC_SetUpperThreshold `(v ~T0 @X0 1 ef1`ui ]
+"228
+{
+[; ;adcc.c: 227: void ADCC_SetUpperThreshold(uint16_t upperThreshold)
+[; ;adcc.c: 228: {
+[e :U _ADCC_SetUpperThreshold ]
+"227
+[v _upperThreshold `ui ~T0 @X0 1 r1 ]
+"228
+[f ]
+[; ;adcc.c: 230: ADUTHH = upperThreshold >> 8;
+"230
+[e = _ADUTHH -> >> _upperThreshold -> 8 `i `uc ]
+[; ;adcc.c: 231: ADUTHL = upperThreshold;
+"231
+[e = _ADUTHL -> _upperThreshold `uc ]
+[; ;adcc.c: 232: }
+"232
+[e :UE 1534 ]
+}
+"234
+[v _ADCC_SetLowerThreshold `(v ~T0 @X0 1 ef1`ui ]
+"235
+{
+[; ;adcc.c: 234: void ADCC_SetLowerThreshold(uint16_t lowerThreshold)
+[; ;adcc.c: 235: {
+[e :U _ADCC_SetLowerThreshold ]
+"234
+[v _lowerThreshold `ui ~T0 @X0 1 r1 ]
+"235
+[f ]
+[; ;adcc.c: 237: ADLTHH = lowerThreshold >> 8;
+"237
+[e = _ADLTHH -> >> _lowerThreshold -> 8 `i `uc ]
+[; ;adcc.c: 238: ADLTHL = lowerThreshold;
+"238
+[e = _ADLTHL -> _lowerThreshold `uc ]
+[; ;adcc.c: 239: }
+"239
+[e :UE 1535 ]
+}
+"241
+[v _ADCC_GetErrorCalculation `(ui ~T0 @X0 1 ef ]
+"242
+{
+[; ;adcc.c: 241: uint16_t ADCC_GetErrorCalculation(void)
+[; ;adcc.c: 242: {
+[e :U _ADCC_GetErrorCalculation ]
+[f ]
+[; ;adcc.c: 244: return ((uint16_t)((ADERRH << 8) + ADERRL));
+"244
+[e ) -> + << -> _ADERRH `i -> 8 `i -> _ADERRL `i `ui ]
+[e $UE 1536  ]
+[; ;adcc.c: 245: }
+"245
+[e :UE 1536 ]
+}
+"247
+[v _ADCC_EnableDoubleSampling `(v ~T0 @X0 1 ef ]
+"248
+{
+[; ;adcc.c: 247: void ADCC_EnableDoubleSampling(void)
+[; ;adcc.c: 248: {
+[e :U _ADCC_EnableDoubleSampling ]
+[f ]
+[; ;adcc.c: 250: ADCON1bits.ADDSEN = 1;
+"250
+[e = . . _ADCON1bits 1 0 -> -> 1 `i `uc ]
+[; ;adcc.c: 251: }
+"251
+[e :UE 1537 ]
+}
+"253
+[v _ADCC_EnableContinuousConversion `(v ~T0 @X0 1 ef ]
+"254
+{
+[; ;adcc.c: 253: void ADCC_EnableContinuousConversion(void)
+[; ;adcc.c: 254: {
+[e :U _ADCC_EnableContinuousConversion ]
+[f ]
+[; ;adcc.c: 256: ADCON0bits.ADCONT = 1;
+"256
+[e = . . _ADCON0bits 1 5 -> -> 1 `i `uc ]
+[; ;adcc.c: 257: }
+"257
+[e :UE 1538 ]
+}
+"259
+[v _ADCC_DisableContinuousConversion `(v ~T0 @X0 1 ef ]
+"260
+{
+[; ;adcc.c: 259: void ADCC_DisableContinuousConversion(void)
+[; ;adcc.c: 260: {
+[e :U _ADCC_DisableContinuousConversion ]
+[f ]
+[; ;adcc.c: 262: ADCON0bits.ADCONT = 0;
+"262
+[e = . . _ADCON0bits 1 5 -> -> 0 `i `uc ]
+[; ;adcc.c: 263: }
+"263
+[e :UE 1539 ]
+}
+"265
+[v _ADCC_HasErrorCrossedUpperThreshold `(uc ~T0 @X0 1 ef ]
+"266
+{
+[; ;adcc.c: 265: bool ADCC_HasErrorCrossedUpperThreshold(void)
+[; ;adcc.c: 266: {
+[e :U _ADCC_HasErrorCrossedUpperThreshold ]
+[f ]
+[; ;adcc.c: 268: return ADSTATbits.ADUTHR;
+"268
+[e ) . . _ADSTATbits 1 6 ]
+[e $UE 1540  ]
+[; ;adcc.c: 269: }
+"269
+[e :UE 1540 ]
+}
+"271
+[v _ADCC_HasErrorCrossedLowerThreshold `(uc ~T0 @X0 1 ef ]
+"272
+{
+[; ;adcc.c: 271: bool ADCC_HasErrorCrossedLowerThreshold(void)
+[; ;adcc.c: 272: {
+[e :U _ADCC_HasErrorCrossedLowerThreshold ]
+[f ]
+[; ;adcc.c: 274: return ADSTATbits.ADLTHR;
+"274
+[e ) . . _ADSTATbits 1 5 ]
+[e $UE 1541  ]
+[; ;adcc.c: 275: }
+"275
+[e :UE 1541 ]
+}
+"277
+[v _ADCC_GetConversionStageStatus `(uc ~T0 @X0 1 ef ]
+"278
+{
+[; ;adcc.c: 277: uint8_t ADCC_GetConversionStageStatus(void)
+[; ;adcc.c: 278: {
+[e :U _ADCC_GetConversionStageStatus ]
+[f ]
+[; ;adcc.c: 280: return ADSTATbits.ADSTAT;
+"280
+[e ) . . _ADSTATbits 2 0 ]
+[e $UE 1542  ]
+[; ;adcc.c: 281: }
+"281
+[e :UE 1542 ]
+}
+"283
+[v _ADCC_ISR `(v ~T0 @X0 1 ef ]
+{
+[; ;adcc.c: 283: void ADCC_ISR(void){
+[e :U _ADCC_ISR ]
+[f ]
+[; ;adcc.c: 286: PIR1bits.ADIF = 0;
+"286
+[e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
+[; ;adcc.c: 288: if (ADCC_ADI_InterruptHandler)
+"288
+[e $ ! != _ADCC_ADI_InterruptHandler -> -> 0 `i `*F10918 1544  ]
+[; ;adcc.c: 289: ADCC_ADI_InterruptHandler();
+"289
+[e ( *U _ADCC_ADI_InterruptHandler ..  ]
+[e :U 1544 ]
+[; ;adcc.c: 290: }
+"290
+[e :UE 1543 ]
+}
+"292
+[v _ADCC_SetADIInterruptHandler `(v ~T0 @X0 1 ef1`*F10815 ]
+{
+[; ;adcc.c: 292: void ADCC_SetADIInterruptHandler(void (* InterruptHandler)(void)){
+[e :U _ADCC_SetADIInterruptHandler ]
+[v F10957 `(v ~T0 @X0 0 tf ]
+[v _InterruptHandler `*F10957 ~T0 @X0 1 r1 ]
+[f ]
+[; ;adcc.c: 293: ADCC_ADI_InterruptHandler = InterruptHandler;
+"293
+[e = _ADCC_ADI_InterruptHandler _InterruptHandler ]
+[; ;adcc.c: 294: }
+"294
+[e :UE 1545 ]
+}
+"296
+[v _ADCC_DefaultInterruptHandler `(v ~T0 @X0 1 ef ]
+{
+[; ;adcc.c: 296: void ADCC_DefaultInterruptHandler(void){
+[e :U _ADCC_DefaultInterruptHandler ]
+[f ]
+[; ;adcc.c: 299: }
+"299
+[e :UE 1546 ]
 }

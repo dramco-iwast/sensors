@@ -19007,12 +19007,11 @@ measure();
 polledMeasurement = 0;
 measurementRunning = 0;
 soundinterrupt = 0;
-_delay((unsigned long)((100)*(32000000/4000.0)));
 
 }
 else{
 
-# 367
+# 366
 EnterSleep();
 }
 }
@@ -19153,21 +19152,21 @@ do { LATCbits.LATC4 = 1; } while(0);
 do { LATBbits.LATB4 = 1; } while(0);
 _delay((unsigned long)((100)*(32000000/4000.0)));
 
-# 514
+# 513
 sampling = 1;
 sampleCounter = 0;
 presSumSquared = 0;
 
-# 529
+# 528
 SoundLevel_StartADC();
 
-# 535
+# 534
 while(sampling);
 
 
 SoundLevel_StopADC();
 
-# 546
+# 545
 SoundLevel_PrepareData();
 
 
@@ -19176,7 +19175,7 @@ if(soundinterrupt)
 do { LATCbits.LATC4 = 0; } while(0);
 do { LATBbits.LATB4 = 0; } while(0);
 MIC_Mode(2);
-
+_delay((unsigned long)((100)*(32000000/4000.0)));
 }
 
 SoundLevel_LedOff();

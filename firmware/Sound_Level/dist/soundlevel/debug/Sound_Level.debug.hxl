@@ -7,7 +7,7 @@
   10000h - 1000Dh
   10018h - 1003Fh
   
- dist/soundlevel/production\Sound_Level.production.hex ranges:
+ dist/soundlevel/debug\Sound_Level.debug.hex ranges:
   0h - FFFh
   1004h - 2035h
   2FDCh - 2FFFh
@@ -24,7 +24,7 @@
   T = Trailing code
   & = Find & replace opcode
   X = Find & delete opcode
-  1 = dist/soundlevel/production\Sound_Level.production.hex
+  1 = dist/soundlevel/debug\Sound_Level.debug.hex
 00000000: 1111111111111111111111111111111111111111111111111111111111111111
 00000040: 1111111111111111111111111111111111111111111111111111111111111111
 00000080: 1111111111111111111111111111111111111111111111111111111111111111

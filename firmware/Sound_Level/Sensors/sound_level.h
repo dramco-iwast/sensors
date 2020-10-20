@@ -118,6 +118,89 @@
 #define LED_SetAnalogMode()      do { ANSELBbits.ANSB6 = 1; } while(0)
 #define LED_SetDigitalMode()     do { ANSELBbits.ANSB6 = 0; } while(0)
 
+// get/set DOUT aliases
+#define DOUT_TRIS                 TRISCbits.TRISC6
+#define DOUT_LAT                  LATCbits.LATC6
+#define DOUT_PORT                 PORTCbits.RC6
+#define DOUT_WPU                  WPUCbits.WPUC6
+#define DOUT_OD                   ODCONCbits.ODCC6
+#define DOUT_ANS                  ANSELCbits.ANSC6
+#define DOUT_SetHigh()            do { LATCbits.LATC6 = 1; } while(0)
+#define DOUT_SetLow()             do { LATCbits.LATC6 = 0; } while(0)
+#define DOUT_Toggle()             do { LATCbits.LATC6 = ~LATCbits.LATC6; } while(0)
+#define DOUT_GetValue()           PORTCbits.RC6
+#define DOUT_SetDigitalInput()    do { TRISCbits.TRISC6 = 1; } while(0)
+#define DOUT_SetDigitalOutput()   do { TRISCbits.TRISC6 = 0; } while(0)
+#define DOUT_SetPullup()          do { WPUCbits.WPUC6 = 1; } while(0)
+#define DOUT_ResetPullup()        do { WPUCbits.WPUC6 = 0; } while(0)
+#define DOUT_SetPushPull()        do { ODCONCbits.ODCC6 = 0; } while(0)
+#define DOUT_SetOpenDrain()       do { ODCONCbits.ODCC6 = 1; } while(0)
+#define DOUT_SetAnalogMode()      do { ANSELCbits.ANSC6 = 1; } while(0)
+#define DOUT_SetDigitalMode()     do { ANSELCbits.ANSC6 = 0; } while(0)
+
+
+// get/set VDDBIASAMP aliases
+#define VDDBIASAMP_TRIS                 TRISBbits.TRISB4
+#define VDDBIASAMP_LAT                  LATBbits.LATB4
+#define VDDBIASAMP_PORT                 PORTBbits.RB4
+#define VDDBIASAMP_WPU                  WPUBbits.WPUB4
+#define VDDBIASAMP_OD                   ODCONBbits.ODCB4
+#define VDDBIASAMP_ANS                  ANSELBbits.ANSB4
+#define VDDBIASAMP_SetHigh()            do { LATBbits.LATB4 = 1; } while(0)
+#define VDDBIASAMP_SetLow()             do { LATBbits.LATB4 = 0; } while(0)
+#define VDDBIASAMP_Toggle()             do { LATBbits.LATB4 = ~LATBbits.LATB4; } while(0)
+#define VDDBIASAMP_GetValue()           PORTBbits.RB4
+#define VDDBIASAMP_SetDigitalInput()    do { TRISBbits.TRISB4 = 1; } while(0)
+#define VDDBIASAMP_SetDigitalOutput()   do { TRISBbits.TRISB4 = 0; } while(0)
+#define VDDBIASAMP_SetPullup()          do { WPUBbits.WPUB4 = 1; } while(0)
+#define VDDBIASAMP_ResetPullup()        do { WPUBbits.WPUB4 = 0; } while(0)
+#define VDDBIASAMP_SetPushPull()        do { ODCONBbits.ODCB4 = 0; } while(0)
+#define VDDBIASAMP_SetOpenDrain()       do { ODCONBbits.ODCB4 = 1; } while(0)
+#define VDDBIASAMP_SetAnalogMode()      do { ANSELBbits.ANSB4 = 1; } while(0)
+#define VDDBIASAMP_SetDigitalMode()     do { ANSELBbits.ANSB4 = 0; } while(0)
+
+// get/set VDDBIAS aliases
+#define VDDBIAS_TRIS                 TRISCbits.TRISC2
+#define VDDBIAS_LAT                  LATCbits.LATC2
+#define VDDBIAS_PORT                 PORTCbits.RC2
+#define VDDBIAS_WPU                  WPUCbits.WPUC2
+#define VDDBIAS_OD                   ODCONCbits.ODCC2
+#define VDDBIAS_ANS                  ANSELCbits.ANSC2
+#define VDDBIAS_SetHigh()            do { LATCbits.LATC2 = 1; } while(0)
+#define VDDBIAS_SetLow()             do { LATCbits.LATC2 = 0; } while(0)
+#define VDDBIAS_Toggle()             do { LATCbits.LATC2 = ~LATCbits.LATC2; } while(0)
+#define VDDBIAS_GetValue()           PORTCbits.RC2
+#define VDDBIAS_SetDigitalInput()    do { TRISCbits.TRISC2 = 1; } while(0)
+#define VDDBIAS_SetDigitalOutput()   do { TRISCbits.TRISC2 = 0; } while(0)
+#define VDDBIAS_SetPullup()          do { WPUCbits.WPUC2 = 1; } while(0)
+#define VDDBIAS_ResetPullup()        do { WPUCbits.WPUC2 = 0; } while(0)
+#define VDDBIAS_SetPushPull()        do { ODCONCbits.ODCC2 = 0; } while(0)
+#define VDDBIAS_SetOpenDrain()       do { ODCONCbits.ODCC2 = 1; } while(0)
+#define VDDBIAS_SetAnalogMode()      do { ANSELCbits.ANSC2 = 1; } while(0)
+#define VDDBIAS_SetDigitalMode()     do { ANSELCbits.ANSC2 = 0; } while(0)
+
+// get/set VDDAMP aliases
+#define VDDAMP_TRIS                 TRISCbits.TRISC4
+#define VDDAMP_LAT                  LATCbits.LATC4
+#define VDDAMP_PORT                 PORTCbits.RC4
+#define VDDAMP_WPU                  WPUCbits.WPUC4
+#define VDDAMP_OD                   ODCONCbits.ODCC4
+#define VDDAMP_ANS                  ANSELCbits.ANSC4
+#define VDDAMP_SetHigh()            do { LATCbits.LATC4 = 1; } while(0)
+#define VDDAMP_SetLow()             do { LATCbits.LATC4 = 0; } while(0)
+#define VDDAMP_Toggle()             do { LATCbits.LATC4 = ~LATCbits.LATC4; } while(0)
+#define VDDAMP_GetValue()           PORTCbits.RC4
+#define VDDAMP_SetDigitalInput()    do { TRISCbits.TRISC4 = 1; } while(0)
+#define VDDAMP_SetDigitalOutput()   do { TRISCbits.TRISC4 = 0; } while(0)
+#define VDDAMP_SetPullup()          do { WPUCbits.WPUC4 = 1; } while(0)
+#define VDDAMP_ResetPullup()        do { WPUCbits.WPUC4 = 0; } while(0)
+#define VDDAMP_SetPushPull()        do { ODCONCbits.ODCC4 = 0; } while(0)
+#define VDDAMP_SetOpenDrain()       do { ODCONCbits.ODCC4 = 1; } while(0)
+#define VDDAMP_SetAnalogMode()      do { ANSELCbits.ANSC4 = 1; } while(0)
+#define VDDAMP_SetDigitalMode()     do { ANSELCbits.ANSC4 = 0; } while(0)
+
+
+
 
 /* Initializer for:
 typedef struct devApi{

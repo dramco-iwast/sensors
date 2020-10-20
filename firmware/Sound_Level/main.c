@@ -29,8 +29,8 @@
  *      - approx. 25.7µA threshold based -> improved to 19µA (incorrect LED initialisation)
  *                                       -> improved to 10.4µA (PIN_MANAGER_Initialize() bad initialisation)
  * -------------------------------------------
- *      - approx. 1.37µA in SLEEP
- *      - approx. 260µA MIC ON      
+ *      - approx. 1 µA in SLEEP
+ *      - approx. 260µA MIC ON -> Improved to 16 µA in WOS mode      
  * -------------------------------------------
  * 
  *      - 868.68µA -> MIC voltage duty cycle
