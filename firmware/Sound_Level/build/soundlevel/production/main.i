@@ -18553,8 +18553,8 @@ void (* UpdateThreshold)(uint8_t, uint8_t *);
 
 
 #pragma config WDTCPS = WDTCPS_10
-#pragma config WDTE = SWDTEN
 
+#pragma config WDTE = OFF
 #pragma config WDTCWS = WDTCWS_7
 #pragma config WDTCCS = SC
 
@@ -18783,7 +18783,7 @@ void SoundLevel_Loop(void);
 void SoundLevel_GetData(uint8_t * data, uint8_t * length);
 void SoundLevel_SetThreshold(uint8_t metric, uint8_t * thresholdData);
 
-# 65 "main.c"
+# 66 "main.c"
 Device_API_t sensorAPI = { SoundLevel_Init, SoundLevel_Measure, SoundLevel_Loop, SoundLevel_GetData, SoundLevel_SetThreshold };
 
 uint8_t mData[2 * 0x01];
@@ -18791,7 +18791,7 @@ uint8_t mDataLength;
 
 void toggleInt(void);
 
-# 74
+# 75
 void main(void)
 {
 

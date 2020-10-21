@@ -32,7 +32,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p i __delay ]
 "129 system/i2c1.h
 [v _I2C1_TxBufferEmpty `(uc ~T0 @X0 0 ef ]
-"70 main.c
+"71 main.c
 [v _toggleInt `(v ~T0 @X0 0 ef ]
 "127 system/i2c1.h
 [v _I2C1_GetCommandData `(v ~T0 @X0 0 ef2`*uc`*uc ]
@@ -12232,8 +12232,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p x STVREN=ON ]
 "94
 [p x WDTCPS=WDTCPS_10 ]
-"95
-[p x WDTE=SWDTEN ]
+"96
+[p x WDTE=OFF ]
 "97
 [p x WDTCWS=WDTCWS_7 ]
 "98
@@ -12343,7 +12343,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;sound_level.h: 226: void SoundLevel_Loop(void);
 [; ;sound_level.h: 227: void SoundLevel_GetData(uint8_t * data, uint8_t * length);
 [; ;sound_level.h: 228: void SoundLevel_SetThreshold(uint8_t metric, uint8_t * thresholdData);
-"65 main.c
+"66 main.c
 [v _sensorAPI `S1513 ~T0 @X0 1 e ]
 [i _sensorAPI
 :U ..
@@ -12356,194 +12356,194 @@ Version 3.2 HI-TECH Software Intermediate Code
 ..
 ..
 ]
-[; ;main.c: 65: Device_API_t sensorAPI = { SoundLevel_Init, SoundLevel_Measure, SoundLevel_Loop, SoundLevel_GetData, SoundLevel_SetThreshold };
-"67
-[v _mData `uc ~T0 @X0 * -> 2 `i -> 1 `i e ]
-[; ;main.c: 67: uint8_t mData[2 * 0x01];
+[; ;main.c: 66: Device_API_t sensorAPI = { SoundLevel_Init, SoundLevel_Measure, SoundLevel_Loop, SoundLevel_GetData, SoundLevel_SetThreshold };
 "68
+[v _mData `uc ~T0 @X0 * -> 2 `i -> 1 `i e ]
+[; ;main.c: 68: uint8_t mData[2 * 0x01];
+"69
 [v _mDataLength `uc ~T0 @X0 1 e ]
-[; ;main.c: 68: uint8_t mDataLength;
-[; ;main.c: 70: void toggleInt(void);
+[; ;main.c: 69: uint8_t mDataLength;
+[; ;main.c: 71: void toggleInt(void);
 [v $root$_main `(v ~T0 @X0 0 e ]
-"74
-[v _main `(v ~T0 @X0 1 ef ]
 "75
+[v _main `(v ~T0 @X0 1 ef ]
+"76
 {
-[; ;main.c: 74: void main(void)
-[; ;main.c: 75: {
+[; ;main.c: 75: void main(void)
+[; ;main.c: 76: {
 [e :U _main ]
 [f ]
-[; ;main.c: 77: SYSTEM_Initialize(0x54);
-"77
+[; ;main.c: 78: SYSTEM_Initialize(0x54);
+"78
 [e ( _SYSTEM_Initialize (1 -> -> 84 `i `uc ]
-[; ;main.c: 79: sensorAPI.Init();
-"79
+[; ;main.c: 80: sensorAPI.Init();
+"80
 [e ( *U . _sensorAPI 0 ..  ]
-[; ;main.c: 81: while(1){
-"81
+[; ;main.c: 82: while(1){
+"82
 [e :U 1516 ]
 {
-[; ;main.c: 82: sensorAPI.Loop();
-"82
-[e ( *U . _sensorAPI 2 ..  ]
-[; ;main.c: 83: sensorAPI.GetData(mData, &mDataLength);
+[; ;main.c: 83: sensorAPI.Loop();
 "83
-[e ( *U . _sensorAPI 3 (2 , &U _mData &U _mDataLength ]
-[; ;main.c: 84: I2C1_SetTransmitData(mData, mDataLength);
+[e ( *U . _sensorAPI 2 ..  ]
+[; ;main.c: 84: sensorAPI.GetData(mData, &mDataLength);
 "84
+[e ( *U . _sensorAPI 3 (2 , &U _mData &U _mDataLength ]
+[; ;main.c: 85: I2C1_SetTransmitData(mData, mDataLength);
+"85
 [e ( _I2C1_SetTransmitData (2 , &U _mData _mDataLength ]
-[; ;main.c: 87: if(I2C1_CommandReceived()){
-"87
+[; ;main.c: 88: if(I2C1_CommandReceived()){
+"88
 [e $ ! != -> ( _I2C1_CommandReceived ..  `i -> -> -> 0 `i `uc `i 1518  ]
 {
-"88
-[v _cmd `uc ~T0 @X0 1 a ]
-[; ;main.c: 88: uint8_t cmd;
-[; ;main.c: 89: I2C1_GetCommand(&cmd);
 "89
+[v _cmd `uc ~T0 @X0 1 a ]
+[; ;main.c: 89: uint8_t cmd;
+[; ;main.c: 90: I2C1_GetCommand(&cmd);
+"90
 [e ( _I2C1_GetCommand (1 &U _cmd ]
-[; ;main.c: 91: switch(cmd){
-"91
+[; ;main.c: 92: switch(cmd){
+"92
 [e $U 1520  ]
 {
-[; ;main.c: 93: case 0x10:{
-"93
+[; ;main.c: 94: case 0x10:{
+"94
 [e :U 1521 ]
 {
-"95
-[v _ack `uc ~T0 @X0 1 a ]
-[; ;main.c: 95: uint8_t ack = 0xAA;
-[e = _ack -> -> 170 `i `uc ]
-[; ;main.c: 96: I2C1_SetTransmitData(&ack, 1);
 "96
-[e ( _I2C1_SetTransmitData (2 , &U _ack -> -> 1 `i `uc ]
+[v _ack `uc ~T0 @X0 1 a ]
+[; ;main.c: 96: uint8_t ack = 0xAA;
+[e = _ack -> -> 170 `i `uc ]
+[; ;main.c: 97: I2C1_SetTransmitData(&ack, 1);
 "97
+[e ( _I2C1_SetTransmitData (2 , &U _ack -> -> 1 `i `uc ]
+"98
 }
-[; ;main.c: 97: } break;
+[; ;main.c: 98: } break;
 [e $U 1519  ]
-[; ;main.c: 100: case 0x11:{
-"100
+[; ;main.c: 101: case 0x11:{
+"101
 [e :U 1522 ]
 {
-"102
-[v _type `uc ~T0 @X0 1 a ]
-[; ;main.c: 102: uint8_t type = 0x01;
-[e = _type -> -> 1 `i `uc ]
-[; ;main.c: 103: I2C1_SetTransmitData(&type, 1);
 "103
-[e ( _I2C1_SetTransmitData (2 , &U _type -> -> 1 `i `uc ]
+[v _type `uc ~T0 @X0 1 a ]
+[; ;main.c: 103: uint8_t type = 0x01;
+[e = _type -> -> 1 `i `uc ]
+[; ;main.c: 104: I2C1_SetTransmitData(&type, 1);
 "104
+[e ( _I2C1_SetTransmitData (2 , &U _type -> -> 1 `i `uc ]
+"105
 }
-[; ;main.c: 104: } break;
+[; ;main.c: 105: } break;
 [e $U 1519  ]
-[; ;main.c: 107: case 0x23:{
-"107
+[; ;main.c: 108: case 0x23:{
+"108
 [e :U 1523 ]
 {
-"109
-[v _mnr `uc ~T0 @X0 1 a ]
-[; ;main.c: 109: uint8_t mnr = 0x01;
-[e = _mnr -> -> 1 `i `uc ]
-[; ;main.c: 110: I2C1_SetTransmitData(&mnr, 1);
 "110
-[e ( _I2C1_SetTransmitData (2 , &U _mnr -> -> 1 `i `uc ]
+[v _mnr `uc ~T0 @X0 1 a ]
+[; ;main.c: 110: uint8_t mnr = 0x01;
+[e = _mnr -> -> 1 `i `uc ]
+[; ;main.c: 111: I2C1_SetTransmitData(&mnr, 1);
 "111
+[e ( _I2C1_SetTransmitData (2 , &U _mnr -> -> 1 `i `uc ]
+"112
 }
-[; ;main.c: 111: } break;
+[; ;main.c: 112: } break;
 [e $U 1519  ]
-[; ;main.c: 114: case 0x13:{
-"114
+[; ;main.c: 115: case 0x13:{
+"115
 [e :U 1524 ]
 {
-[; ;main.c: 116: sensorAPI.Measure();
-"116
-[e ( *U . _sensorAPI 1 ..  ]
+[; ;main.c: 117: sensorAPI.Measure();
 "117
+[e ( *U . _sensorAPI 1 ..  ]
+"118
 }
-[; ;main.c: 117: } break;
+[; ;main.c: 118: } break;
 [e $U 1519  ]
-[; ;main.c: 120: case 0x14:{
-"120
+[; ;main.c: 121: case 0x14:{
+"121
 [e :U 1525 ]
 {
-"122
-[v _retries `uc ~T0 @X0 1 a ]
-[; ;main.c: 122: uint8_t retries = 20;
-[e = _retries -> -> 20 `i `uc ]
-[; ;main.c: 123: while(!I2C1_TxBufferEmpty() && retries--){
 "123
+[v _retries `uc ~T0 @X0 1 a ]
+[; ;main.c: 123: uint8_t retries = 20;
+[e = _retries -> -> 20 `i `uc ]
+[; ;main.c: 124: while(!I2C1_TxBufferEmpty() && retries--){
+"124
 [e $U 1526  ]
 [e :U 1527 ]
 {
-[; ;main.c: 124: _delay((unsigned long)((1)*(32000000/4000.0)));
-"124
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
+[; ;main.c: 125: _delay((unsigned long)((1)*(32000000/4000.0)));
 "125
-}
-[e :U 1526 ]
-"123
-[e $ && ! != -> ( _I2C1_TxBufferEmpty ..  `i -> -> -> 0 `i `uc `i != -> -- _retries -> -> 1 `i `uc `i -> -> -> 0 `i `uc `i 1527  ]
-[e :U 1528 ]
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
 "126
 }
-[; ;main.c: 125: }
-[; ;main.c: 126: } break;
+[e :U 1526 ]
+"124
+[e $ && ! != -> ( _I2C1_TxBufferEmpty ..  `i -> -> -> 0 `i `uc `i != -> -- _retries -> -> 1 `i `uc `i -> -> -> 0 `i `uc `i 1527  ]
+[e :U 1528 ]
+"127
+}
+[; ;main.c: 126: }
+[; ;main.c: 127: } break;
 [e $U 1519  ]
-[; ;main.c: 129: case 0x15:{
-"129
+[; ;main.c: 130: case 0x15:{
+"130
 [e :U 1529 ]
 {
-[; ;main.c: 130: toggleInt();
-"130
-[e ( _toggleInt ..  ]
+[; ;main.c: 131: toggleInt();
 "131
+[e ( _toggleInt ..  ]
+"132
 }
-[; ;main.c: 131: } break;
+[; ;main.c: 132: } break;
 [e $U 1519  ]
-[; ;main.c: 134: case 0x24:{
-"134
+[; ;main.c: 135: case 0x24:{
+"135
 [e :U 1530 ]
 {
-[; ;main.c: 135: _delay((unsigned long)((2)*(32000000/4000.0)));
-"135
-[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
+[; ;main.c: 136: _delay((unsigned long)((2)*(32000000/4000.0)));
 "136
-[v _len `uc ~T0 @X0 1 a ]
+[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
 "137
-[v _data `uc ~T0 @X0 -> 20 `i a ]
-[; ;main.c: 136: uint8_t len;
-[; ;main.c: 137: uint8_t data[20];
-[; ;main.c: 138: I2C1_GetCommandData(data, &len);
+[v _len `uc ~T0 @X0 1 a ]
 "138
-[e ( _I2C1_GetCommandData (2 , &U _data &U _len ]
-[; ;main.c: 139: if(len == 6){
+[v _data `uc ~T0 @X0 -> 20 `i a ]
+[; ;main.c: 137: uint8_t len;
+[; ;main.c: 138: uint8_t data[20];
+[; ;main.c: 139: I2C1_GetCommandData(data, &len);
 "139
+[e ( _I2C1_GetCommandData (2 , &U _data &U _len ]
+[; ;main.c: 140: if(len == 6){
+"140
 [e $ ! == -> _len `i -> 6 `i 1531  ]
 {
-[; ;main.c: 140: sensorAPI.UpdateThreshold(data[0], data+1);
-"140
-[e ( *U . _sensorAPI 4 (2 , *U + &U _data * -> -> -> 0 `i `ui `ux -> -> # *U &U _data `ui `ux + &U _data * -> -> 1 `i `x -> -> # *U &U _data `i `x ]
+[; ;main.c: 141: sensorAPI.UpdateThreshold(data[0], data+1);
 "141
-}
-[e :U 1531 ]
+[e ( *U . _sensorAPI 4 (2 , *U + &U _data * -> -> -> 0 `i `ui `ux -> -> # *U &U _data `ui `ux + &U _data * -> -> 1 `i `x -> -> # *U &U _data `i `x ]
 "142
 }
-[; ;main.c: 141: }
-[; ;main.c: 142: } break;
+[e :U 1531 ]
+"143
+}
+[; ;main.c: 142: }
+[; ;main.c: 143: } break;
 [e $U 1519  ]
-[; ;main.c: 145: default:{
-"145
+[; ;main.c: 146: default:{
+"146
 [e :U 1532 ]
 {
-"146
-}
-[; ;main.c: 146: } break;
-[e $U 1519  ]
 "147
 }
-[; ;main.c: 147: }
+[; ;main.c: 147: } break;
 [e $U 1519  ]
-"91
+"148
+}
+[; ;main.c: 148: }
+[e $U 1519  ]
+"92
 [e :U 1520 ]
 [e [\ _cmd , $ -> -> 16 `i `uc 1521
  , $ -> -> 17 `i `uc 1522
@@ -12553,37 +12553,37 @@ Version 3.2 HI-TECH Software Intermediate Code
  , $ -> -> 21 `i `uc 1529
  , $ -> -> 36 `i `uc 1530
  1532 ]
-"147
-[e :U 1519 ]
 "148
-}
-[e :U 1518 ]
+[e :U 1519 ]
 "149
 }
+[e :U 1518 ]
+"150
+}
 [e :U 1515 ]
-"81
+"82
 [e $U 1516  ]
 [e :U 1517 ]
-[; ;main.c: 148: }
 [; ;main.c: 149: }
 [; ;main.c: 150: }
-"150
+[; ;main.c: 151: }
+"151
 [e :UE 1514 ]
 }
-"152
+"153
 [v _toggleInt `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 152: void toggleInt(void){
+[; ;main.c: 153: void toggleInt(void){
 [e :U _toggleInt ]
 [f ]
-[; ;main.c: 153: do { LATCbits.LATC7 = ~LATCbits.LATC7; } while(0);
-"153
+[; ;main.c: 154: do { LATCbits.LATC7 = ~LATCbits.LATC7; } while(0);
+"154
 [e :U 1536 ]
 {
 [e = . . _LATCbits 0 7 -> ~ -> . . _LATCbits 0 7 `i `uc ]
 }
 [e :U 1535 ]
-[; ;main.c: 154: }
-"154
+[; ;main.c: 155: }
+"155
 [e :UE 1533 ]
 }

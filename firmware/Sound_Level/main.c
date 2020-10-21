@@ -30,7 +30,7 @@
  *                                       -> improved to 10.4µA (PIN_MANAGER_Initialize() bad initialisation)
  * -------------------------------------------
  *      - approx. 1 µA in SLEEP
- *      - approx. 260µA MIC ON -> Improved to 16 µA in WOS mode      
+ *      - approx. 260µA MIC ON -> Improved to 23 µA in WOS mode      
  * -------------------------------------------
  * 
  *      - 868.68µA -> MIC voltage duty cycle
@@ -40,6 +40,7 @@
  *          - Threshold mode: MIC always ON
  *          - Polling mode: MIC voltage duty cycle
  * 
+ *  - Added external pullup to minimize sleep currents for DOUT pin (pullup)
  * 
  *  Pinout:        ------------------------
  *      TOP:      |  INT  |   GND  |   3V3 |

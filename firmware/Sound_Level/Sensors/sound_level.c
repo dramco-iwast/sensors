@@ -43,7 +43,7 @@
 #define DISABLE 0
 #define WOS     2
 
-
+//#define DEBUG_THRESHOLD
 
 /* 'local' function prototypes ************************************************/
 
@@ -200,7 +200,7 @@ void MIC_Mode(uint8_t mode)
             break;
 
         case WOS:
-            __delay_ms(100);
+            //__delay_ms(100);
             nWakeMic_SetHigh();
 //            __delay_ms(100);
             break;
@@ -218,7 +218,11 @@ void READY_Init(void)
 
 void DOUT_Init(void)
 {
+//    DOUT_SetDigitalMode();
     DOUT_SetDigitalInput();
+//    DOUT_SetDigitalOutput();
+//    DOUT_SetLow();
+    //DOUT_SetPullup();
 }
 
 void VDDAMP_Init()
@@ -278,7 +282,7 @@ void SoundLevel_Init(void){
     PMD0bits.IOCMD = 0; // Enable gpio clock
     
     powerMic_Init();
-    powerMic_SetHigh();
+    //powerMic_SetHigh();
     __delay_ms(100);
     
     
@@ -290,13 +294,21 @@ void SoundLevel_Init(void){
     DOUT_Init();
     VDDAMP_Init();
     VDDBIAS_Init();
-
-
     
-    // default go to WOS mode
-    __delay_ms(1000);
-    MIC_Mode(WOS);
-    __delay_ms(1000);
+    
+#ifdef DEBUG_THRESHOLD
+            powerMic_SetHigh();
+            // default go to WOS mode
+            __delay_ms(1000);
+            MIC_Mode(WOS);
+            //__delay_ms(1000);
+#endif
+    
+            
+//    // default go to WOS mode
+//    __delay_ms(1000);
+//    MIC_Mode(WOS);
+//    __delay_ms(1000);
     
     // external interrupt on rising edge
     //INTCONbits.INTEDG = 1;
@@ -321,8 +333,12 @@ void SoundLevel_Init(void){
     // setup watchdog (WWDT))
 //    WDT_Init();
     
+    
+#ifdef DEBUG_THRESHOLD    
     thresholdEnabled = true;
     thresholdLevel = 400*60;
+#endif
+    
     
     // start watchdog
 //    CLRWDT();
@@ -347,6 +363,7 @@ void SoundLevel_Loop(void){
 //    }
 //    if(thresholdEnabled == false) powerMic_SetLow();// fix for problem of MICs staying powered when switching from threshold mode to polling mode during first sleep period
 
+    
 //    CLRWDT();
 //    if(startMeasurement || polledMeasurement || soundinterrupt){
     if( polledMeasurement || soundinterrupt ){
@@ -355,7 +372,7 @@ void SoundLevel_Loop(void){
         polledMeasurement = false;
         measurementRunning = false;
         soundinterrupt = false;
-        __delay_ms(100);
+        __delay_ms(10);
 //        CLRWDT();
     }
     else{
@@ -391,6 +408,14 @@ void SoundLevel_SetThreshold(uint8_t metric, uint8_t * thresholdData){
         
         if(thresholdEnabled){
 //            WDTCON0bits.SWDTEN = 1;
+        }
+        if(thresholdEnabled)
+        {
+            powerMic_SetHigh();
+            // default go to WOS mode
+            __delay_ms(1000);
+            MIC_Mode(WOS);
+            __delay_ms(1000);
         }
     }
 }
@@ -431,11 +456,11 @@ void SoundLevel_PrepareData(){
 //        WDTCON0bits.SWDTEN = 1;
     }
 
-    // show not 'active'
-    if(polledMeasurement == true) // only blink LED if it's a polled measurement
-    {
-        SoundLevel_LedOff();
-    }
+//    // show not 'active'
+//    if(polledMeasurement == true) // only blink LED if it's a polled measurement
+//    {
+//        SoundLevel_LedOff();
+//    }
 }
 
 // This function is called when an ADC-conversion has completed
@@ -497,7 +522,15 @@ void measure(void){
     
     SoundLevel_LedOn();
     
-    __delay_ms(100);
+    
+    if(polledMeasurement == true) // only blink LED if it's a polled measurement
+    {
+        powerMic_SetHigh();
+        //__delay_ms(100);
+        //SoundLevel_LedOn();     // show 'active'
+    }
+    
+    //__delay_ms(100);
     MIC_Mode(ENABLE);
 
     VDDAMP_SetHigh();
@@ -505,10 +538,7 @@ void measure(void){
     __delay_ms(100);
     
     
-//    if(polledMeasurement == true) // only blink LED if it's a polled measurement
-//    {
-//        SoundLevel_LedOn();     // show 'active'
-//    }
+
     
     // initialize control variables
     sampling = true;
@@ -548,10 +578,17 @@ void measure(void){
     
     if(soundinterrupt)
     {
-        VDDAMP_SetLow();
-        VDDBIASAMP_SetLow();
         MIC_Mode(WOS);
         
+    }
+    
+    VDDAMP_SetLow();
+    VDDBIASAMP_SetLow();
+    
+    if(polledMeasurement == true) // only blink LED if it's a polled measurement
+    {
+        powerMic_SetLow();
+        //SoundLevel_LedOn();     // show 'active'
     }
     
     SoundLevel_LedOff();

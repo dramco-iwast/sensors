@@ -18941,7 +18941,7 @@ LED_Init();
 PMD0bits.IOCMD = 0;
 
 powerMic_Init();
-do { LATCbits.LATC0 = 1; } while(0);
+
 _delay((unsigned long)((100)*(32000000/4000.0)));
 
 
@@ -18956,14 +18956,15 @@ VDDBIAS_Init();
 
 
 
+do { LATCbits.LATC0 = 1; } while(0);
 
 _delay((unsigned long)((1000)*(32000000/4000.0)));
 MIC_Mode(2);
-_delay((unsigned long)((1000)*(32000000/4000.0)));
 
 
+while(1);
 
-
+# 312
 PIE0bits.IOCIE = 1;
 
 IOCCFbits.IOCCF6 = 0;
@@ -18992,26 +18993,27 @@ thresholdLevel = 400*60;
 
 }
 
-# 334
+# 342
 void SoundLevel_Measure(){
 polledMeasurement = 1;
 }
 
-# 340
+# 348
 void SoundLevel_Loop(void){
 
-# 352
+# 361
 if( polledMeasurement || soundinterrupt ){
 measurementRunning = 1;
 measure();
 polledMeasurement = 0;
 measurementRunning = 0;
 soundinterrupt = 0;
+_delay((unsigned long)((100)*(32000000/4000.0)));
 
 }
 else{
 
-# 366
+# 376
 EnterSleep();
 }
 }
@@ -19039,6 +19041,14 @@ thresholdLevel = (uint16_t)((thresholdData[3]<<8) | thresholdData[4]);
 
 if(thresholdEnabled){
 
+}
+if(thresholdEnabled)
+{
+do { LATCbits.LATC0 = 1; } while(0);
+
+_delay((unsigned long)((1000)*(32000000/4000.0)));
+MIC_Mode(2);
+_delay((unsigned long)((1000)*(32000000/4000.0)));
 }
 }
 }
@@ -19079,11 +19089,7 @@ overThreshold = 0;
 
 }
 
-
-if(polledMeasurement == 1)
-{
-SoundLevel_LedOff();
-}
+# 456
 }
 
 
@@ -19145,6 +19151,14 @@ void measure(void){
 
 SoundLevel_LedOn();
 
+
+if(polledMeasurement == 1)
+{
+do { LATCbits.LATC0 = 1; } while(0);
+_delay((unsigned long)((100)*(32000000/4000.0)));
+
+}
+
 _delay((unsigned long)((100)*(32000000/4000.0)));
 MIC_Mode(1);
 
@@ -19152,21 +19166,21 @@ do { LATCbits.LATC4 = 1; } while(0);
 do { LATBbits.LATB4 = 1; } while(0);
 _delay((unsigned long)((100)*(32000000/4000.0)));
 
-# 513
+# 536
 sampling = 1;
 sampleCounter = 0;
 presSumSquared = 0;
 
-# 528
+# 551
 SoundLevel_StartADC();
 
-# 534
+# 557
 while(sampling);
 
 
 SoundLevel_StopADC();
 
-# 545
+# 568
 SoundLevel_PrepareData();
 
 
@@ -19175,7 +19189,13 @@ if(soundinterrupt)
 do { LATCbits.LATC4 = 0; } while(0);
 do { LATBbits.LATB4 = 0; } while(0);
 MIC_Mode(2);
-_delay((unsigned long)((100)*(32000000/4000.0)));
+
+}
+
+if(polledMeasurement == 1)
+{
+do { LATCbits.LATC0 = 0; } while(0);
+
 }
 
 SoundLevel_LedOff();

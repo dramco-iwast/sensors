@@ -12270,8 +12270,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p x STVREN=ON ]
 "94
 [p x WDTCPS=WDTCPS_10 ]
-"95
-[p x WDTE=SWDTEN ]
+"96
+[p x WDTE=OFF ]
 "97
 [p x WDTCWS=WDTCWS_7 ]
 "98

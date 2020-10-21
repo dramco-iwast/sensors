@@ -18480,8 +18480,8 @@ void (* UpdateThreshold)(uint8_t, uint8_t *);
 
 
 #pragma config WDTCPS = WDTCPS_10
-#pragma config WDTE = SWDTEN
 
+#pragma config WDTE = OFF
 #pragma config WDTCWS = WDTCWS_7
 #pragma config WDTCCS = SC
 
@@ -18863,7 +18863,7 @@ do { LATCbits.LATC3 = 0; } while(0);
 break;
 
 case 2:
-_delay((unsigned long)((100)*(32000000/4000.0)));
+
 do { LATCbits.LATC3 = 1; } while(0);
 
 break;
@@ -18881,7 +18881,11 @@ do { LATCbits.LATC7 = 1; } while(0);
 
 void DOUT_Init(void)
 {
+
 do { TRISCbits.TRISC6 = 1; } while(0);
+
+
+
 }
 
 void VDDAMP_Init()
@@ -18941,7 +18945,7 @@ LED_Init();
 PMD0bits.IOCMD = 0;
 
 powerMic_Init();
-do { LATCbits.LATC0 = 1; } while(0);
+
 _delay((unsigned long)((100)*(32000000/4000.0)));
 
 
@@ -18954,16 +18958,7 @@ DOUT_Init();
 VDDAMP_Init();
 VDDBIAS_Init();
 
-
-
-
-_delay((unsigned long)((1000)*(32000000/4000.0)));
-MIC_Mode(2);
-_delay((unsigned long)((1000)*(32000000/4000.0)));
-
-
-
-
+# 316
 PIE0bits.IOCIE = 1;
 
 IOCCFbits.IOCCF6 = 0;
@@ -18981,38 +18976,30 @@ adcScaler = 3.3 / (4095 * 0.01258925 * 44);
 ADCC_Initialize();
 ADCC_SetADIInterruptHandler(SoundLevel_GetSample);
 
-
-
-
-thresholdEnabled = 1;
-thresholdLevel = 400*60;
-
-
-
-
+# 346
 }
 
-# 334
+# 350
 void SoundLevel_Measure(){
 polledMeasurement = 1;
 }
 
-# 340
+# 356
 void SoundLevel_Loop(void){
 
-# 352
+# 369
 if( polledMeasurement || soundinterrupt ){
 measurementRunning = 1;
 measure();
 polledMeasurement = 0;
 measurementRunning = 0;
 soundinterrupt = 0;
-_delay((unsigned long)((100)*(32000000/4000.0)));
+_delay((unsigned long)((10)*(32000000/4000.0)));
 
 }
 else{
 
-# 367
+# 384
 EnterSleep();
 }
 }
@@ -19040,6 +19027,14 @@ thresholdLevel = (uint16_t)((thresholdData[3]<<8) | thresholdData[4]);
 
 if(thresholdEnabled){
 
+}
+if(thresholdEnabled)
+{
+do { LATCbits.LATC0 = 1; } while(0);
+
+_delay((unsigned long)((1000)*(32000000/4000.0)));
+MIC_Mode(2);
+_delay((unsigned long)((1000)*(32000000/4000.0)));
 }
 }
 }
@@ -19080,11 +19075,7 @@ overThreshold = 0;
 
 }
 
-
-if(polledMeasurement == 1)
-{
-SoundLevel_LedOff();
-}
+# 464
 }
 
 
@@ -19146,36 +19137,51 @@ void measure(void){
 
 SoundLevel_LedOn();
 
-_delay((unsigned long)((100)*(32000000/4000.0)));
+
+if(polledMeasurement == 1)
+{
+do { LATCbits.LATC0 = 1; } while(0);
+
+
+}
+
+
 MIC_Mode(1);
 
 do { LATCbits.LATC4 = 1; } while(0);
 do { LATBbits.LATB4 = 1; } while(0);
 _delay((unsigned long)((100)*(32000000/4000.0)));
 
-# 514
+# 544
 sampling = 1;
 sampleCounter = 0;
 presSumSquared = 0;
 
-# 529
+# 559
 SoundLevel_StartADC();
 
-# 535
+# 565
 while(sampling);
 
 
 SoundLevel_StopADC();
 
-# 546
+# 576
 SoundLevel_PrepareData();
 
 
 if(soundinterrupt)
 {
+MIC_Mode(2);
+
+}
+
 do { LATCbits.LATC4 = 0; } while(0);
 do { LATBbits.LATB4 = 0; } while(0);
-MIC_Mode(2);
+
+if(polledMeasurement == 1)
+{
+do { LATCbits.LATC0 = 0; } while(0);
 
 }
 
