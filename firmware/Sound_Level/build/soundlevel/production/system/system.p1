@@ -12296,33 +12296,33 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p x PPS1WAY=ON ]
 "91
 [p x STVREN=ON ]
-"94
-[p x WDTCPS=WDTCPS_10 ]
+"95
+[p x WDTCPS=WDTCPS_31 ]
 "96
-[p x WDTE=OFF ]
-"97
-[p x WDTCWS=WDTCWS_7 ]
+[p x WDTE=SWDTEN ]
 "98
+[p x WDTCWS=WDTCWS_7 ]
+"99
 [p x WDTCCS=SC ]
-"101
-[p x BBSIZE=BB512 ]
 "102
-[p x BBEN=OFF ]
+[p x BBSIZE=BB512 ]
 "103
-[p x SAFEN=OFF ]
+[p x BBEN=OFF ]
 "104
-[p x WRTAPP=OFF ]
+[p x SAFEN=OFF ]
 "105
-[p x WRTB=OFF ]
+[p x WRTAPP=OFF ]
 "106
-[p x WRTC=OFF ]
+[p x WRTB=OFF ]
 "107
-[p x WRTD=OFF ]
+[p x WRTC=OFF ]
 "108
-[p x WRTSAF=OFF ]
+[p x WRTD=OFF ]
 "109
+[p x WRTSAF=OFF ]
+"110
 [p x LVP=ON ]
-"112
+"113
 [p x CP=OFF ]
 [; ;system.h: 44: void SYSTEM_Initialize(uint8_t slave_address);
 [; ;system.h: 57: void OSCILLATOR_Initialize(void);

@@ -18643,9 +18643,10 @@ void (* UpdateThreshold)(uint8_t, uint8_t *);
 #pragma config STVREN = ON
 
 
-#pragma config WDTCPS = WDTCPS_10
 
-#pragma config WDTE = OFF
+#pragma config WDTCPS = WDTCPS_31
+#pragma config WDTE = SWDTEN
+
 #pragma config WDTCWS = WDTCWS_7
 #pragma config WDTCCS = SC
 
