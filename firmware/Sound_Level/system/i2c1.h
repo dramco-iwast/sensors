@@ -10,17 +10,41 @@
  *  Gebroeders De Smetstraat 1,
  *  B-9000 Gent, Belgium
  *
- *         File: i2c1.h
- *      Created: 2020-10-15
- *       Author: Mathias Alleman - Jona Cappelle
- *      Version: 0.2
+ *         File: i2c1.c
+ *      Created: 2020-08-26
+ *       Author: Geoffrey Ottoy
+ *      Version: 1.0
  *
- *  Description: I2C slave functionality
+ *  Description: Header file for the modified version of the Microchip 
+ *               MSSP1 Driver (see License)
  *
  */
 
-#ifndef _I2C1_H
-#define _I2C1_H
+/*
+    (c) 2018 Microchip Technology Inc. and its subsidiaries. 
+    
+    Subject to your compliance with these terms, you may use Microchip software and any 
+    derivatives exclusively with Microchip products. It is your responsibility to comply with third party 
+    license terms applicable to your use of third party software (including open source software) that 
+    may accompany Microchip software.
+    
+    THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER 
+    EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY 
+    IMPLIED WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS 
+    FOR A PARTICULAR PURPOSE.
+    
+    IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, 
+    INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND 
+    WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP 
+    HAS BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO 
+    THE FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL 
+    CLAIMS IN ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT 
+    OF FEES, IF ANY, THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS 
+    SOFTWARE.
+*/
+
+#ifndef __I2C1_H__
+#define __I2C1_H__
 
 #include <stdint.h>
 #include <stdbool.h>
@@ -53,8 +77,7 @@
 
  */
 
-typedef enum
-{
+typedef enum{
     I2C1_SLAVE_WRITE_REQUEST,
     I2C1_SLAVE_READ_REQUEST,
     I2C1_SLAVE_WRITE_COMPLETED,
@@ -108,7 +131,7 @@ void I2C1_Initialize(uint8_t slave_address); //MODIFIED (was void))
         A basic EEPROM emulator is provided as an example.
  */
 
-void I2C1_ISR ( void );
+void I2C1_ISR(void);
 
 /**
    @Summary
@@ -127,6 +150,7 @@ void I2C1_GetCommand(uint8_t * cmd);
 void I2C1_GetCommandData(uint8_t * data, uint8_t * len);
 void I2C1_SetTransmitData(uint8_t * data, uint8_t len);
 bool I2C1_TxBufferEmpty(void);
+void I2C1_ClearTxBuffer(void);
 
 #ifdef __cplusplus  // Provide C++ Compatibility
 
@@ -134,4 +158,4 @@ bool I2C1_TxBufferEmpty(void);
 
 #endif
 
-#endif  // _I2C1_H
+#endif  /* __I2C1_H__ */

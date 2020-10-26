@@ -1,5 +1,5 @@
 Version 3.2 HI-TECH Software Intermediate Code
-[v F10918 `(v ~T0 @X0 0 tf ]
+[v F10920 `(v ~T0 @X0 0 tf ]
 "19887 C:/Users/Jona Cappelle/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18446.h
 [s S923 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S923 . ZCDMD CMP1MD CMP2MD . ADCMD DAC1MD ]
@@ -12349,21 +12349,21 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdbool.h: 15: typedef unsigned char bool;
 [; ;xc8\pic\include\__size_t.h: 4: typedef unsigned size_t;
 [; ;stddef.h: 6: typedef int ptrdiff_t;
-[; ;i2c1.h: 56: typedef enum
-[; ;i2c1.h: 57: {
-[; ;i2c1.h: 58: I2C1_SLAVE_WRITE_REQUEST,
-[; ;i2c1.h: 59: I2C1_SLAVE_READ_REQUEST,
-[; ;i2c1.h: 60: I2C1_SLAVE_WRITE_COMPLETED,
-[; ;i2c1.h: 61: I2C1_SLAVE_READ_COMPLETED,
-[; ;i2c1.h: 62: } I2C1_SLAVE_DRIVER_STATUS;
-[; ;i2c1.h: 91: void I2C1_Initialize(uint8_t slave_address);
-[; ;i2c1.h: 111: void I2C1_ISR ( void );
-[; ;i2c1.h: 118: extern volatile uint8_t I2C1_slaveWriteData;
-[; ;i2c1.h: 125: bool I2C1_CommandReceived(void);
-[; ;i2c1.h: 126: void I2C1_GetCommand(uint8_t * cmd);
-[; ;i2c1.h: 127: void I2C1_GetCommandData(uint8_t * data, uint8_t * len);
-[; ;i2c1.h: 128: void I2C1_SetTransmitData(uint8_t * data, uint8_t len);
-[; ;i2c1.h: 129: bool I2C1_TxBufferEmpty(void);
+[; ;i2c1.h: 80: typedef enum{
+[; ;i2c1.h: 81: I2C1_SLAVE_WRITE_REQUEST,
+[; ;i2c1.h: 82: I2C1_SLAVE_READ_REQUEST,
+[; ;i2c1.h: 83: I2C1_SLAVE_WRITE_COMPLETED,
+[; ;i2c1.h: 84: I2C1_SLAVE_READ_COMPLETED,
+[; ;i2c1.h: 85: } I2C1_SLAVE_DRIVER_STATUS;
+[; ;i2c1.h: 114: void I2C1_Initialize(uint8_t slave_address);
+[; ;i2c1.h: 134: void I2C1_ISR(void);
+[; ;i2c1.h: 141: extern volatile uint8_t I2C1_slaveWriteData;
+[; ;i2c1.h: 148: bool I2C1_CommandReceived(void);
+[; ;i2c1.h: 149: void I2C1_GetCommand(uint8_t * cmd);
+[; ;i2c1.h: 150: void I2C1_GetCommandData(uint8_t * data, uint8_t * len);
+[; ;i2c1.h: 151: void I2C1_SetTransmitData(uint8_t * data, uint8_t len);
+[; ;i2c1.h: 152: bool I2C1_TxBufferEmpty(void);
+[; ;i2c1.h: 153: void I2C1_ClearTxBuffer(void);
 [; ;global.h: 63: typedef struct devApi{
 [; ;global.h: 64: void (* Init)(void);
 [; ;global.h: 65: void (* Measure)(void);
@@ -12397,39 +12397,39 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p x PPS1WAY=ON ]
 "91
 [p x STVREN=ON ]
-"94
-[p x WDTCPS=WDTCPS_10 ]
+"95
+[p x WDTCPS=WDTCPS_31 ]
 "96
-[p x WDTE=OFF ]
-"97
-[p x WDTCWS=WDTCWS_7 ]
+[p x WDTE=SWDTEN ]
 "98
+[p x WDTCWS=WDTCWS_7 ]
+"99
 [p x WDTCCS=SC ]
-"101
-[p x BBSIZE=BB512 ]
 "102
-[p x BBEN=OFF ]
+[p x BBSIZE=BB512 ]
 "103
-[p x SAFEN=OFF ]
+[p x BBEN=OFF ]
 "104
-[p x WRTAPP=OFF ]
+[p x SAFEN=OFF ]
 "105
-[p x WRTB=OFF ]
+[p x WRTAPP=OFF ]
 "106
-[p x WRTC=OFF ]
+[p x WRTB=OFF ]
 "107
-[p x WRTD=OFF ]
+[p x WRTC=OFF ]
 "108
-[p x WRTSAF=OFF ]
+[p x WRTD=OFF ]
 "109
+[p x WRTSAF=OFF ]
+"110
 [p x LVP=ON ]
-"112
+"113
 [p x CP=OFF ]
 [; ;system.h: 44: void SYSTEM_Initialize(uint8_t slave_address);
 [; ;system.h: 57: void OSCILLATOR_Initialize(void);
 [; ;system.h: 70: void PMD_Initialize(void);
 "30 system/adcc.c
-[v _ADCC_ADI_InterruptHandler `*F10918 ~T0 @X0 1 e ]
+[v _ADCC_ADI_InterruptHandler `*F10920 ~T0 @X0 1 e ]
 [; ;adcc.c: 30: void (*ADCC_ADI_InterruptHandler)(void);
 "36
 [v _ADCC_Initialize `(v ~T0 @X0 1 ef ]
@@ -13005,7 +13005,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
 [; ;adcc.c: 288: if (ADCC_ADI_InterruptHandler)
 "288
-[e $ ! != _ADCC_ADI_InterruptHandler -> -> 0 `i `*F10918 1544  ]
+[e $ ! != _ADCC_ADI_InterruptHandler -> -> 0 `i `*F10920 1544  ]
 [; ;adcc.c: 289: ADCC_ADI_InterruptHandler();
 "289
 [e ( *U _ADCC_ADI_InterruptHandler ..  ]
@@ -13019,8 +13019,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 {
 [; ;adcc.c: 292: void ADCC_SetADIInterruptHandler(void (* InterruptHandler)(void)){
 [e :U _ADCC_SetADIInterruptHandler ]
-[v F10957 `(v ~T0 @X0 0 tf ]
-[v _InterruptHandler `*F10957 ~T0 @X0 1 r1 ]
+[v F10959 `(v ~T0 @X0 0 tf ]
+[v _InterruptHandler `*F10959 ~T0 @X0 1 r1 ]
 [f ]
 [; ;adcc.c: 293: ADCC_ADI_InterruptHandler = InterruptHandler;
 "293

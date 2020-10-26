@@ -18590,30 +18590,30 @@ typedef unsigned size_t;
 # 6 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\stddef.h"
 typedef int ptrdiff_t;
 
-# 56 "system/i2c1.h"
-typedef enum
-{
+# 80 "system/i2c1.h"
+typedef enum{
 I2C1_SLAVE_WRITE_REQUEST,
 I2C1_SLAVE_READ_REQUEST,
 I2C1_SLAVE_WRITE_COMPLETED,
 I2C1_SLAVE_READ_COMPLETED,
 } I2C1_SLAVE_DRIVER_STATUS;
 
-# 91
+# 114
 void I2C1_Initialize(uint8_t slave_address);
 
-# 111
-void I2C1_ISR ( void );
+# 134
+void I2C1_ISR(void);
 
-# 118
+# 141
 extern volatile uint8_t I2C1_slaveWriteData;
 
-# 125
+# 148
 bool I2C1_CommandReceived(void);
 void I2C1_GetCommand(uint8_t * cmd);
 void I2C1_GetCommandData(uint8_t * data, uint8_t * len);
 void I2C1_SetTransmitData(uint8_t * data, uint8_t len);
 bool I2C1_TxBufferEmpty(void);
+void I2C1_ClearTxBuffer(void);
 
 # 63 "system/../global.h"
 typedef struct devApi{
@@ -18643,9 +18643,10 @@ void (* UpdateThreshold)(uint8_t, uint8_t *);
 #pragma config STVREN = ON
 
 
-#pragma config WDTCPS = WDTCPS_10
 
-#pragma config WDTE = OFF
+#pragma config WDTCPS = WDTCPS_31
+#pragma config WDTE = SWDTEN
+
 #pragma config WDTCWS = WDTCWS_7
 #pragma config WDTCCS = SC
 

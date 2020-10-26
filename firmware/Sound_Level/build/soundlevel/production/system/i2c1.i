@@ -18467,38 +18467,38 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 
-# 56 "system/i2c1.h"
-typedef enum
-{
+# 80 "system/i2c1.h"
+typedef enum{
 I2C1_SLAVE_WRITE_REQUEST,
 I2C1_SLAVE_READ_REQUEST,
 I2C1_SLAVE_WRITE_COMPLETED,
 I2C1_SLAVE_READ_COMPLETED,
 } I2C1_SLAVE_DRIVER_STATUS;
 
-# 91
+# 114
 void I2C1_Initialize(uint8_t slave_address);
 
-# 111
-void I2C1_ISR ( void );
+# 134
+void I2C1_ISR(void);
 
-# 118
+# 141
 extern volatile uint8_t I2C1_slaveWriteData;
 
-# 125
+# 148
 bool I2C1_CommandReceived(void);
 void I2C1_GetCommand(uint8_t * cmd);
 void I2C1_GetCommandData(uint8_t * data, uint8_t * len);
 void I2C1_SetTransmitData(uint8_t * data, uint8_t len);
 bool I2C1_TxBufferEmpty(void);
+void I2C1_ClearTxBuffer(void);
 
-# 31 "system/i2c1.c"
+# 53 "system/i2c1.c"
 typedef enum {
 SLAVE_COMMAND_DATA,
 SLAVE_COMMAND,
 } SLAVE_WRITE_DATA_TYPE;
 
-# 46
+# 62
 volatile uint8_t I2C1_slaveWriteData = 0x55;
 
 
@@ -18512,13 +18512,11 @@ static uint8_t rxLen;
 static uint8_t txLen;
 static uint8_t txCnt;
 
-# 62
+# 78
 void I2C1_StatusCallback(I2C1_SLAVE_DRIVER_STATUS i2c_bus_state);
 
-# 75
-void I2C1_Initialize(uint8_t slave_address)
-{
-
+# 91
+void I2C1_Initialize(uint8_t slave_address){
 
 PMD6bits.MSSP1MD = 0;
 
@@ -18534,7 +18532,6 @@ RB5PPS = 0x14;
 SSP1DATPPS = 0x0D;
 
 
-
 SSP1STAT = 0x00;
 
 SSP1CON1 = 0x26;
@@ -18547,7 +18544,6 @@ SSP1CON3bits.DHEN = 1;
 
 SSP1MSK = (0x7F << 1);
 
-
 SSP1ADD = (slave_address << 1);
 
 
@@ -18559,42 +18555,36 @@ PIE3bits.SSP1IE = 1;
 txCnt = 0;
 rxLen = 0;
 cmdReceived = 0;
-
-
 }
 
-void I2C1_ISR ( void )
-{
+void I2C1_ISR(void){
 uint8_t i2c_data = 0x00;
 
-# 130
+
+
+
 PIE3bits.SSP1IE = 0;
 PIR3bits.SSP1IF = 0;
 i2c_data = SSP1BUF;
-if(1 == SSP1STATbits.R_nW)
-{
-if((1 == SSP1STATbits.D_nA) && (1 == SSP1CON2bits.ACKSTAT))
-{
+if(1 == SSP1STATbits.R_nW){
+if((1 == SSP1STATbits.D_nA) && (1 == SSP1CON2bits.ACKSTAT)){
 
 I2C1_StatusCallback(I2C1_SLAVE_READ_COMPLETED);
 }
-else
-{
+else{
 
 I2C1_StatusCallback(I2C1_SLAVE_READ_REQUEST);
 SSP1CON1bits.CKP = 1;
 
 }
 }
-else if(0 == SSP1STATbits.D_nA)
-{
+else if(0 == SSP1STATbits.D_nA){
 
 
 
 I2C1_StatusCallback(I2C1_SLAVE_WRITE_REQUEST);
 }
-else
-{
+else{
 I2C1_slaveWriteData = i2c_data;
 
 
@@ -18638,7 +18628,11 @@ txLen = txCnt;
 txCnt = 0;
 }
 
-# 202
+void I2C1_ClearTxBuffer(void){
+txCnt = 0;
+}
+
+# 209
 void I2C1_StatusCallback(I2C1_SLAVE_DRIVER_STATUS i2c_bus_state){
 
 static uint8_t slaveWriteType = SLAVE_COMMAND_DATA;

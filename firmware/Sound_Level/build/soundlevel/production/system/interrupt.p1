@@ -43,7 +43,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S885 . . ]
 "19128
 [v _PIR3bits `VS885 ~T0 @X0 0 e@1807 ]
-"111 system/i2c1.h
+"134 system/i2c1.h
 [v _I2C1_ISR `(v ~T0 @X0 0 ef ]
 "19418 C:/Users/Jona Cappelle/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18446.h
 [s S900 :1 `uc 1 :1 `uc 1 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -12179,21 +12179,21 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdbool.h: 15: typedef unsigned char bool;
 [; ;xc8\pic\include\__size_t.h: 4: typedef unsigned size_t;
 [; ;stddef.h: 6: typedef int ptrdiff_t;
-[; ;i2c1.h: 56: typedef enum
-[; ;i2c1.h: 57: {
-[; ;i2c1.h: 58: I2C1_SLAVE_WRITE_REQUEST,
-[; ;i2c1.h: 59: I2C1_SLAVE_READ_REQUEST,
-[; ;i2c1.h: 60: I2C1_SLAVE_WRITE_COMPLETED,
-[; ;i2c1.h: 61: I2C1_SLAVE_READ_COMPLETED,
-[; ;i2c1.h: 62: } I2C1_SLAVE_DRIVER_STATUS;
-[; ;i2c1.h: 91: void I2C1_Initialize(uint8_t slave_address);
-[; ;i2c1.h: 111: void I2C1_ISR ( void );
-[; ;i2c1.h: 118: extern volatile uint8_t I2C1_slaveWriteData;
-[; ;i2c1.h: 125: bool I2C1_CommandReceived(void);
-[; ;i2c1.h: 126: void I2C1_GetCommand(uint8_t * cmd);
-[; ;i2c1.h: 127: void I2C1_GetCommandData(uint8_t * data, uint8_t * len);
-[; ;i2c1.h: 128: void I2C1_SetTransmitData(uint8_t * data, uint8_t len);
-[; ;i2c1.h: 129: bool I2C1_TxBufferEmpty(void);
+[; ;i2c1.h: 80: typedef enum{
+[; ;i2c1.h: 81: I2C1_SLAVE_WRITE_REQUEST,
+[; ;i2c1.h: 82: I2C1_SLAVE_READ_REQUEST,
+[; ;i2c1.h: 83: I2C1_SLAVE_WRITE_COMPLETED,
+[; ;i2c1.h: 84: I2C1_SLAVE_READ_COMPLETED,
+[; ;i2c1.h: 85: } I2C1_SLAVE_DRIVER_STATUS;
+[; ;i2c1.h: 114: void I2C1_Initialize(uint8_t slave_address);
+[; ;i2c1.h: 134: void I2C1_ISR(void);
+[; ;i2c1.h: 141: extern volatile uint8_t I2C1_slaveWriteData;
+[; ;i2c1.h: 148: bool I2C1_CommandReceived(void);
+[; ;i2c1.h: 149: void I2C1_GetCommand(uint8_t * cmd);
+[; ;i2c1.h: 150: void I2C1_GetCommandData(uint8_t * data, uint8_t * len);
+[; ;i2c1.h: 151: void I2C1_SetTransmitData(uint8_t * data, uint8_t len);
+[; ;i2c1.h: 152: bool I2C1_TxBufferEmpty(void);
+[; ;i2c1.h: 153: void I2C1_ClearTxBuffer(void);
 [; ;stdbool.h: 15: typedef unsigned char bool;
 [; ;adcc.h: 47: typedef uint16_t adc_result_t;
 [; ;adcc.h: 64: typedef enum
@@ -12268,33 +12268,33 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p x PPS1WAY=ON ]
 "91
 [p x STVREN=ON ]
-"94
-[p x WDTCPS=WDTCPS_10 ]
+"95
+[p x WDTCPS=WDTCPS_31 ]
 "96
-[p x WDTE=OFF ]
-"97
-[p x WDTCWS=WDTCWS_7 ]
+[p x WDTE=SWDTEN ]
 "98
+[p x WDTCWS=WDTCWS_7 ]
+"99
 [p x WDTCCS=SC ]
-"101
-[p x BBSIZE=BB512 ]
 "102
-[p x BBEN=OFF ]
+[p x BBSIZE=BB512 ]
 "103
-[p x SAFEN=OFF ]
+[p x BBEN=OFF ]
 "104
-[p x WRTAPP=OFF ]
+[p x SAFEN=OFF ]
 "105
-[p x WRTB=OFF ]
+[p x WRTAPP=OFF ]
 "106
-[p x WRTC=OFF ]
+[p x WRTB=OFF ]
 "107
-[p x WRTD=OFF ]
+[p x WRTC=OFF ]
 "108
-[p x WRTSAF=OFF ]
+[p x WRTD=OFF ]
 "109
+[p x WRTSAF=OFF ]
+"110
 [p x LVP=ON ]
-"112
+"113
 [p x CP=OFF ]
 [; ;system.h: 44: void SYSTEM_Initialize(uint8_t slave_address);
 [; ;system.h: 57: void OSCILLATOR_Initialize(void);

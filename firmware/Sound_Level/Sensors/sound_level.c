@@ -218,7 +218,7 @@ void READY_Init(void)
 
 void DOUT_Init(void)
 {
-//    DOUT_SetDigitalMode();
+    DOUT_SetDigitalMode();
     DOUT_SetDigitalInput();
 //    DOUT_SetDigitalOutput();
 //    DOUT_SetLow();
@@ -253,16 +253,20 @@ void AMPS_enable(bool enable)
         case ENABLE:
             VDDBIASAMP_SetHigh();
             VDDBIAS_SetHigh();
+            VDDAMP_SetHigh();
+            __delay_ms(100);
             break;
 
         case DISABLE:
             VDDBIASAMP_SetLow();
             VDDBIAS_SetLow();
+            VDDAMP_SetLow();
             break;
             
         default:
             VDDBIASAMP_SetLow();
             VDDBIAS_SetLow();
+            VDDAMP_SetLow();
     }
 }
 
@@ -270,7 +274,7 @@ void AMPS_enable(bool enable)
 void WDT_Init(void)
 {
     // initialize timer for periodic measurements   
-    WDTCON0 = 0x14; // 1 second period
+    WDTCON0 = 0x1C; // 16 second period
     WDTCON1 = 0x07; // LFINTOSC, window 100%
 }
 
@@ -281,37 +285,28 @@ void SoundLevel_Init(void){
     
     PMD0bits.IOCMD = 0; // Enable gpio clock
     
-    powerMic_Init();
-    //powerMic_SetHigh();
-    __delay_ms(100);
-    
-    
-    __delay_ms(100);
+    powerMic_Init();    
+    __delay_ms(1);
     nWakeMic_Init();
-    __delay_ms(100);
+    __delay_ms(1);
     
     READY_Init();
     DOUT_Init();
     VDDAMP_Init();
     VDDBIAS_Init();
+    __delay_ms(1);
     
+
     
 #ifdef DEBUG_THRESHOLD
             powerMic_SetHigh();
             // default go to WOS mode
-            __delay_ms(1000);
+            __delay_ms(1);
             MIC_Mode(WOS);
             //__delay_ms(1000);
 #endif
     
             
-//    // default go to WOS mode
-//    __delay_ms(1000);
-//    MIC_Mode(WOS);
-//    __delay_ms(1000);
-    
-    // external interrupt on rising edge
-    //INTCONbits.INTEDG = 1;
     // enable interrupt on change
     PIE0bits.IOCIE = 1;   
     //interrupt on change for group IOCCF - flag
@@ -331,7 +326,7 @@ void SoundLevel_Init(void){
     ADCC_SetADIInterruptHandler(SoundLevel_GetSample);
     
     // setup watchdog (WWDT))
-//    WDT_Init();
+    WDT_Init();
     
     
 #ifdef DEBUG_THRESHOLD    
@@ -355,34 +350,107 @@ void SoundLevel_Measure(){
  */
 void SoundLevel_Loop(void){
     
-//    bool startMeasurement = false;
-    // watchdog timer overflow has occurred while sleeping
-//    if(STATUSbits.nTO == 0){
-//        WDTCON0bits.SWDTEN = 1; //start watchdog -> results in reset after 1 s
-//        if(!measurementRunning && thresholdEnabled) startMeasurement = true;
-//    }
-//    if(thresholdEnabled == false) powerMic_SetLow();// fix for problem of MICs staying powered when switching from threshold mode to polling mode during first sleep period
-
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     
-//    CLRWDT();
-//    if(startMeasurement || polledMeasurement || soundinterrupt){
-    if( polledMeasurement || soundinterrupt ){
-        measurementRunning = true;
-        measure();
-        polledMeasurement = false;
-        measurementRunning = false;
-        soundinterrupt = false;
-        __delay_ms(10);
-//        CLRWDT();
+    if(polledMeasurement && (WDTCON0bits.SEN == 0)) // poll with WDT off
+    {
+        if(thresholdEnabled) // if threshold enabled
+        {
+            measurementRunning = true;
+            measure(); // measure
+            measurementRunning = false;
+            
+            generateInt();
+            
+            MIC_Mode(WOS);
+            //__delay_ms(10);
+            
+            polledMeasurement = false; // clear polledmeasurement bool
+        }
+        else if(!thresholdEnabled) // if threshold disabled
+        {
+            powerMic_SetHigh(); // enable MIC
+            __delay_ms(1);
+
+            measurementRunning = true;
+            measure(); // measure
+            measurementRunning = false;
+            
+            generateInt();
+
+            powerMic_SetLow(); // disable MIC
+            __delay_ms(1);
+            MIC_Mode(ENABLE); // disable WOS
+            
+            polledMeasurement = false; // clear polledmeasurement bool
+        }
     }
-    else{
-        /* go to sleep
-         * possible wake-up sources in this case:
-         *  - i2c clock line goes active
-         *  - watchdog timer overflow
-         */
+    else if(polledMeasurement && (WDTCON0bits.SEN == 1)) // poll with WDT on
+    {
+        powerMic_SetHigh(); // enable MIC
+        __delay_ms(1);
+        
+        measurementRunning = true;
+        measure(); // measure
+        measurementRunning = false;
+        
+        generateInt();
+        
+        //powerMic_SetLow(); // disable MIC
+        //__delay_ms(1);
+        //MIC_Mode(ENABLE); // disable WOS
+        
+        MIC_Mode(WOS); // enable WOS mode
+        
+        WDTCON0bits.SEN = 0; // disable WDT
+        
+        polledMeasurement = false; // clear polledmeasurement bool
+    }
+    else if(soundinterrupt) // event MIC
+    {   
+        measurementRunning = true;
+        measure(); // measure
+        measurementRunning = false;
+        
+        if(overThreshold)
+        {
+            CLRWDT(); // reset WDT
+            WDTCON0bits.SEN = 1; // enable WDT
+            
+            generateInt(); // interrupt to motherboard
+            
+            powerMic_SetLow(); // disable MIC
+            //__delay_ms(1);
+            MIC_Mode(ENABLE); // disable WOS
+        }else
+        {
+            MIC_Mode(ENABLE);
+            __delay_ms(10);
+            
+            MIC_Mode(WOS); // enable WOS
+            //__delay_ms(10);
+        }
+        
+        soundinterrupt = false; // clear soundinterrupt bool
+    }
+    else if(STATUSbits.nTO == 0) // WDT time-out
+    {
+        WDTCON0bits.SEN = 0; // disable WDT
+        
+        powerMic_SetHigh(); // enable MIC
+        __delay_ms(1);
+        MIC_Mode(WOS); // enable WOS
+        //__delay_ms(10);
+        
         EnterSleep();
     }
+    else
+    {
+        EnterSleep();
+    }
+    
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
 }
 
 static void EnterSleep(void){
@@ -406,16 +474,12 @@ void SoundLevel_SetThreshold(uint8_t metric, uint8_t * thresholdData){
         thresholdEnabled = thresholdData[0];
         thresholdLevel = (uint16_t)((thresholdData[3]<<8) | thresholdData[4]);
         
-        if(thresholdEnabled){
-//            WDTCON0bits.SWDTEN = 1;
-        }
         if(thresholdEnabled)
         {
-            powerMic_SetHigh();
-            // default go to WOS mode
-            __delay_ms(1000);
-            MIC_Mode(WOS);
-            __delay_ms(1000);
+            powerMic_SetHigh(); // enable MIC
+            __delay_ms(1);
+            MIC_Mode(WOS); // MIC in WOS mode
+            //__delay_ms(10);
         }
     }
 }
@@ -435,32 +499,12 @@ void SoundLevel_PrepareData(){
     measurementData[1] = (uint8_t)(dataToSend);
     
     // notify motherboard
-    if(polledMeasurement){
-        generateInt();
+    if(dataToSend > thresholdLevel){
+        overThreshold = true;
     }
     else{
-        // only generate interrupt when maxiValue exceeds thresholdLevel
-        if(dataToSend > thresholdLevel){
-            if(!overThreshold){
-                overThreshold = true;
-                generateInt();
-//                SoundLevel_LedOn(); // only blink LED if value is above threshold
-//                __delay_ms(100);
-//                SoundLevel_LedOff();
-            }
-        }
-        else{
-            overThreshold = false;
-        }
-        // make sure watchdog is running again
-//        WDTCON0bits.SWDTEN = 1;
+        overThreshold = false;
     }
-
-//    // show not 'active'
-//    if(polledMeasurement == true) // only blink LED if it's a polled measurement
-//    {
-//        SoundLevel_LedOff();
-//    }
 }
 
 // This function is called when an ADC-conversion has completed
@@ -474,6 +518,7 @@ void SoundLevel_GetSample(){
     sampleCounter++;
     if(sampleCounter>SAMPLES-1){ // we've taken enough samples
         sampling = false;
+        SoundLevel_StopADC(); // stop conversions and power-down analog circuitry
     }   
 }
 
@@ -518,78 +563,28 @@ void generateInt(void){
 }
 
 void measure(void){
-//    CLRWDT();               // feed the dog
-    
+
     SoundLevel_LedOn();
-    
-    
-    if(polledMeasurement == true) // only blink LED if it's a polled measurement
-    {
-        powerMic_SetHigh();
-        //__delay_ms(100);
-        //SoundLevel_LedOn();     // show 'active'
-    }
-    
-    //__delay_ms(100);
+
     MIC_Mode(ENABLE);
-
-    VDDAMP_SetHigh();
-    VDDBIASAMP_SetHigh();
-    __delay_ms(100);
+    __delay_ms(10);
     
-    
-
+    AMPS_enable(ENABLE); // enable amplifier circuits
     
     // initialize control variables
     sampling = true;
     sampleCounter = 0;
     presSumSquared = 0;
     
-    // Enable MIC
-
-    
-    // power-on microphone and amplifier circuit
-//    if(thresholdEnabled == false) // if polled measurement, than duty cycle power to MIC
-//    {
-//        powerMic_SetHigh();
-//        __delay_ms(100);         // wait until stable
-//    }else{
-//        powerMic_SetHigh();
-//    }
     SoundLevel_StartADC();  // ADC conversion will be handled by 
                             // SoundLevel_GetSample callback
-    
-    // wait until measurement is complete
-//    while(sampling) CLRWDT();
-    
     while(sampling);
     
-    // stop conversions and power-down analog circuitry
-    SoundLevel_StopADC();
+//    SoundLevel_StopADC(); // stop conversions and power-down analog circuitry
     
-//    if(thresholdEnabled == false) // if polled measurement, than duty cycle power to MIC
-//    {
-//        powerMic_SetLow();
-//    }
+    AMPS_enable(DISABLE); // disable amplifier circuits
     
-    // prepare measurement for transmission
-    SoundLevel_PrepareData();
-    
-    
-    if(soundinterrupt)
-    {
-        MIC_Mode(WOS);
-        
-    }
-    
-    VDDAMP_SetLow();
-    VDDBIASAMP_SetLow();
-    
-    if(polledMeasurement == true) // only blink LED if it's a polled measurement
-    {
-        powerMic_SetLow();
-        //SoundLevel_LedOn();     // show 'active'
-    }
+    SoundLevel_PrepareData(); // prepare measurement for transmission
     
     SoundLevel_LedOff();
         
@@ -601,8 +596,6 @@ void ISR_MIC_Wake(void)
     NOP();
     if(!measurementRunning)
     {
-        // enable interrupt on change
-        //PIE0bits.IOCIE = 0;  
         soundinterrupt = true;
     }
 }

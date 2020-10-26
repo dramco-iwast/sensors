@@ -11,18 +11,40 @@
  *  B-9000 Gent, Belgium
  *
  *         File: i2c1.c
- *      Created: 2020-10-15
- *       Author: Mathias Alleman - Jona Cappelle
- *      Version: 0.2
+ *      Created: 2020-08-26
+ *       Author: Geoffrey Ottoy
+ *      Version: 1.0
  *
- *  Description: I2C slave functionality
+ *  Description: Modified version of the Microchip MSSP1 Driver (see License)
  *
  */
+
+/*
+    (c) 2018 Microchip Technology Inc. and its subsidiaries. 
+    
+    Subject to your compliance with these terms, you may use Microchip software and any 
+    derivatives exclusively with Microchip products. It is your responsibility to comply with third party 
+    license terms applicable to your use of third party software (including open source software) that 
+    may accompany Microchip software.
+    
+    THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER 
+    EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY 
+    IMPLIED WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS 
+    FOR A PARTICULAR PURPOSE.
+    
+    IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, 
+    INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND 
+    WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP 
+    HAS BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO 
+    THE FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL 
+    CLAIMS IN ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT 
+    OF FEES, IF ANY, THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS 
+    SOFTWARE.
+*/
 
 #include <string.h>
 #include "i2c1.h"
 
-#define I2C1_SLAVE_ADDRESS 0x08 
 #define I2C1_SLAVE_MASK    0x7F
 
 #define I2C1_RX_BUF_SIZE   32  // MODIFIED
@@ -33,12 +55,6 @@ typedef enum {                 // MODIFIED
     SLAVE_COMMAND,             // MODIFIED
 } SLAVE_WRITE_DATA_TYPE;       // MODIFIED
 
-/*typedef enum
-{
-    SLAVE_NORMAL_DATA,
-    SLAVE_DATA_ADDRESS,
-} SLAVE_WRITE_DATA_TYPE;
-*/
 /**
  Section: Global Variables
 */
@@ -72,10 +88,8 @@ void I2C1_StatusCallback(I2C1_SLAVE_DRIVER_STATUS i2c_bus_state);
   Usage:            I2C1_Initialize();
 
 */
-void I2C1_Initialize(uint8_t slave_address) //MODIFIED (was void)
-{
-    
-        // initialize the hardware
+void I2C1_Initialize(uint8_t slave_address){ //MODIFIED
+    // initialize the hardware
     PMD6bits.MSSP1MD = 0; // enable MSSP1
     //ANSELB = 0x50;
     ANSELBbits.ANSB5 = 0; // RB5 is digital pin
@@ -87,9 +101,8 @@ void I2C1_Initialize(uint8_t slave_address) //MODIFIED (was void)
     SSP1CLKPPS = 0x0F;   //RB7->MSSP1:SCL1;    
     RB7PPS = 0x13;       //RB7->MSSP1:SCL1;    
     RB5PPS = 0x14;       //RB5->MSSP1:SDA1;    
-    SSP1DATPPS = 0x0D;   //RB5->MSSP1:SDA1;  
+    SSP1DATPPS = 0x0D;   //RB5->MSSP1:SDA1;   
     
-    // initialize the hardware
     // SMP High Speed; CKE disabled; 
     SSP1STAT = 0x00;
     // SSPEN enabled; CKP disabled; SSPM 7 Bit Polling; 
@@ -102,8 +115,7 @@ void I2C1_Initialize(uint8_t slave_address) //MODIFIED (was void)
     SSP1CON3bits.DHEN = 1;
     // SSPMSK 127; 
     SSP1MSK = (I2C1_SLAVE_MASK << 1);  // adjust UI mask for R/nW bit            
-    // SSPADD 8; 
-    //SSP1ADD = (I2C1_SLAVE_ADDRESS << 1);  // adjust UI address for R/nW bit
+    // SSPADD; 
 	SSP1ADD = (slave_address << 1);  // adjust UI address for R/nW bit //MODIFIED
 	
     
@@ -115,14 +127,10 @@ void I2C1_Initialize(uint8_t slave_address) //MODIFIED (was void)
     txCnt = 0;
     rxLen = 0;                  // MODIFIED
     cmdReceived = false;        // MODIFIED
-    
-
 }
 
-void I2C1_ISR ( void )
-{
+void I2C1_ISR(void){
     uint8_t     i2c_data                = 0x00;
-
 
     // NOTE: The slave driver will always acknowledge
     //       any address match.
@@ -130,30 +138,25 @@ void I2C1_ISR ( void )
     PIE3bits.SSP1IE = 0;
     PIR3bits.SSP1IF = 0;        // clear the slave interrupt flag
     i2c_data        = SSP1BUF;  // read SSPBUF to clear BF
-    if(1 == SSP1STATbits.R_nW)
-    {
-        if((1 == SSP1STATbits.D_nA) && (1 == SSP1CON2bits.ACKSTAT))
-        {
+    if(1 == SSP1STATbits.R_nW){
+        if((1 == SSP1STATbits.D_nA) && (1 == SSP1CON2bits.ACKSTAT)){
             // callback routine can perform any post-read processing
             I2C1_StatusCallback(I2C1_SLAVE_READ_COMPLETED);
         }
-        else
-        {
+        else{
             // callback routine should write data into SSPBUF
             I2C1_StatusCallback(I2C1_SLAVE_READ_REQUEST);
             SSP1CON1bits.CKP = 1;       // release SCL
             //while(!PIR3bits.SSP1IF);    // TODO: make non-blocking
         }
     }
-    else if(0 == SSP1STATbits.D_nA)
-    {
+    else if(0 == SSP1STATbits.D_nA){
         // this is an I2C address
 
         // callback routine should prepare to receive data from the master
         I2C1_StatusCallback(I2C1_SLAVE_WRITE_REQUEST);
     }
-    else
-    {
+    else{
         I2C1_slaveWriteData   = i2c_data;
 
         // callback routine should process I2C1_slaveWriteData from the master
@@ -194,6 +197,10 @@ void I2C1_SetTransmitData(uint8_t * data, uint8_t len){
         txCnt++;
     }
     txLen = txCnt;
+    txCnt = 0;
+}
+
+void I2C1_ClearTxBuffer(void){
     txCnt = 0;
 }
 

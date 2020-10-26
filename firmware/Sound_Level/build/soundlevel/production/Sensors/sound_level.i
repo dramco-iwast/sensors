@@ -18479,9 +18479,10 @@ void (* UpdateThreshold)(uint8_t, uint8_t *);
 #pragma config STVREN = ON
 
 
-#pragma config WDTCPS = WDTCPS_10
 
-#pragma config WDTE = OFF
+#pragma config WDTCPS = WDTCPS_31
+#pragma config WDTE = SWDTEN
+
 #pragma config WDTCWS = WDTCWS_7
 #pragma config WDTCCS = SC
 
@@ -18569,30 +18570,30 @@ typedef unsigned size_t;
 # 6 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\stddef.h"
 typedef int ptrdiff_t;
 
-# 56 "Sensors/../system/i2c1.h"
-typedef enum
-{
+# 80 "Sensors/../system/i2c1.h"
+typedef enum{
 I2C1_SLAVE_WRITE_REQUEST,
 I2C1_SLAVE_READ_REQUEST,
 I2C1_SLAVE_WRITE_COMPLETED,
 I2C1_SLAVE_READ_COMPLETED,
 } I2C1_SLAVE_DRIVER_STATUS;
 
-# 91
+# 114
 void I2C1_Initialize(uint8_t slave_address);
 
-# 111
-void I2C1_ISR ( void );
+# 134
+void I2C1_ISR(void);
 
-# 118
+# 141
 extern volatile uint8_t I2C1_slaveWriteData;
 
-# 125
+# 148
 bool I2C1_CommandReceived(void);
 void I2C1_GetCommand(uint8_t * cmd);
 void I2C1_GetCommandData(uint8_t * data, uint8_t * len);
 void I2C1_SetTransmitData(uint8_t * data, uint8_t len);
 bool I2C1_TxBufferEmpty(void);
+void I2C1_ClearTxBuffer(void);
 
 # 15 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\stdbool.h"
 typedef unsigned char bool;
@@ -18881,7 +18882,7 @@ do { LATCbits.LATC7 = 1; } while(0);
 
 void DOUT_Init(void)
 {
-
+do { ANSELCbits.ANSC6 = 0; } while(0);
 do { TRISCbits.TRISC6 = 1; } while(0);
 
 
@@ -18916,16 +18917,20 @@ switch(enable)
 case 1:
 do { LATBbits.LATB4 = 1; } while(0);
 do { LATCbits.LATC2 = 1; } while(0);
+do { LATCbits.LATC4 = 1; } while(0);
+_delay((unsigned long)((100)*(32000000/4000.0)));
 break;
 
 case 0:
 do { LATBbits.LATB4 = 0; } while(0);
 do { LATCbits.LATC2 = 0; } while(0);
+do { LATCbits.LATC4 = 0; } while(0);
 break;
 
 default:
 do { LATBbits.LATB4 = 0; } while(0);
 do { LATCbits.LATC2 = 0; } while(0);
+do { LATCbits.LATC4 = 0; } while(0);
 }
 }
 
@@ -18933,7 +18938,7 @@ do { LATCbits.LATC2 = 0; } while(0);
 void WDT_Init(void)
 {
 
-WDTCON0 = 0x14;
+WDTCON0 = 0x1C;
 WDTCON1 = 0x07;
 }
 
@@ -18945,20 +18950,17 @@ LED_Init();
 PMD0bits.IOCMD = 0;
 
 powerMic_Init();
-
-_delay((unsigned long)((100)*(32000000/4000.0)));
-
-
-_delay((unsigned long)((100)*(32000000/4000.0)));
+_delay((unsigned long)((1)*(32000000/4000.0)));
 nWakeMic_Init();
-_delay((unsigned long)((100)*(32000000/4000.0)));
+_delay((unsigned long)((1)*(32000000/4000.0)));
 
 READY_Init();
 DOUT_Init();
 VDDAMP_Init();
 VDDBIAS_Init();
+_delay((unsigned long)((1)*(32000000/4000.0)));
 
-# 316
+# 311
 PIE0bits.IOCIE = 1;
 
 IOCCFbits.IOCCF6 = 0;
@@ -18976,32 +18978,118 @@ adcScaler = 3.3 / (4095 * 0.01258925 * 44);
 ADCC_Initialize();
 ADCC_SetADIInterruptHandler(SoundLevel_GetSample);
 
-# 346
+
+WDT_Init();
+
+# 341
 }
 
-# 350
+# 345
 void SoundLevel_Measure(){
 polledMeasurement = 1;
 }
 
-# 356
+# 351
 void SoundLevel_Loop(void){
 
-# 369
-if( polledMeasurement || soundinterrupt ){
+
+
+if(polledMeasurement && (WDTCON0bits.SEN == 0))
+{
+if(thresholdEnabled)
+{
 measurementRunning = 1;
 measure();
-polledMeasurement = 0;
 measurementRunning = 0;
-soundinterrupt = 0;
+
+generateInt();
+
+MIC_Mode(2);
+
+
+polledMeasurement = 0;
+}
+else if(!thresholdEnabled)
+{
+do { LATCbits.LATC0 = 1; } while(0);
+_delay((unsigned long)((1)*(32000000/4000.0)));
+
+measurementRunning = 1;
+measure();
+measurementRunning = 0;
+
+generateInt();
+
+do { LATCbits.LATC0 = 0; } while(0);
+_delay((unsigned long)((1)*(32000000/4000.0)));
+MIC_Mode(1);
+
+polledMeasurement = 0;
+}
+}
+else if(polledMeasurement && (WDTCON0bits.SEN == 1))
+{
+do { LATCbits.LATC0 = 1; } while(0);
+_delay((unsigned long)((1)*(32000000/4000.0)));
+
+measurementRunning = 1;
+measure();
+measurementRunning = 0;
+
+generateInt();
+
+# 403
+MIC_Mode(2);
+
+WDTCON0bits.SEN = 0;
+
+polledMeasurement = 0;
+}
+else if(soundinterrupt)
+{
+measurementRunning = 1;
+measure();
+measurementRunning = 0;
+
+if(overThreshold)
+{
+asm("clrwdt");
+WDTCON0bits.SEN = 1;
+
+generateInt();
+
+do { LATCbits.LATC0 = 0; } while(0);
+
+MIC_Mode(1);
+}else
+{
+MIC_Mode(1);
 _delay((unsigned long)((10)*(32000000/4000.0)));
 
-}
-else{
+MIC_Mode(2);
 
-# 384
+}
+
+soundinterrupt = 0;
+}
+else if(STATUSbits.nTO == 0)
+{
+WDTCON0bits.SEN = 0;
+
+do { LATCbits.LATC0 = 1; } while(0);
+_delay((unsigned long)((1)*(32000000/4000.0)));
+MIC_Mode(2);
+
+
 EnterSleep();
 }
+else
+{
+EnterSleep();
+}
+
+
+
 }
 
 static void EnterSleep(void){
@@ -19025,16 +19113,12 @@ if(metric == 0){
 thresholdEnabled = thresholdData[0];
 thresholdLevel = (uint16_t)((thresholdData[3]<<8) | thresholdData[4]);
 
-if(thresholdEnabled){
-
-}
 if(thresholdEnabled)
 {
 do { LATCbits.LATC0 = 1; } while(0);
-
-_delay((unsigned long)((1000)*(32000000/4000.0)));
+_delay((unsigned long)((1)*(32000000/4000.0)));
 MIC_Mode(2);
-_delay((unsigned long)((1000)*(32000000/4000.0)));
+
 }
 }
 }
@@ -19054,28 +19138,12 @@ measurementData[0] = (uint8_t)(dataToSend>>8);
 measurementData[1] = (uint8_t)(dataToSend);
 
 
-if(polledMeasurement){
-generateInt();
-}
-else{
-
 if(dataToSend > thresholdLevel){
-if(!overThreshold){
 overThreshold = 1;
-generateInt();
-
-
-
-}
 }
 else{
 overThreshold = 0;
 }
-
-
-}
-
-# 464
 }
 
 
@@ -19089,6 +19157,7 @@ presSumSquared = presSumSquared + (voltageToPressure * voltageToPressure);
 sampleCounter++;
 if(sampleCounter>400-1){
 sampling = 0;
+SoundLevel_StopADC();
 }
 }
 
@@ -19134,56 +19203,27 @@ do { LATCbits.LATC7 = 1; } while(0);
 
 void measure(void){
 
-
 SoundLevel_LedOn();
 
-
-if(polledMeasurement == 1)
-{
-do { LATCbits.LATC0 = 1; } while(0);
-
-
-}
-
-
 MIC_Mode(1);
+_delay((unsigned long)((10)*(32000000/4000.0)));
 
-do { LATCbits.LATC4 = 1; } while(0);
-do { LATBbits.LATB4 = 1; } while(0);
-_delay((unsigned long)((100)*(32000000/4000.0)));
+AMPS_enable(1);
 
-# 544
+
 sampling = 1;
 sampleCounter = 0;
 presSumSquared = 0;
 
-# 559
 SoundLevel_StartADC();
 
-# 565
 while(sampling);
 
 
-SoundLevel_StopADC();
 
-# 576
+AMPS_enable(0);
+
 SoundLevel_PrepareData();
-
-
-if(soundinterrupt)
-{
-MIC_Mode(2);
-
-}
-
-do { LATCbits.LATC4 = 0; } while(0);
-do { LATBbits.LATB4 = 0; } while(0);
-
-if(polledMeasurement == 1)
-{
-do { LATCbits.LATC0 = 0; } while(0);
-
-}
 
 SoundLevel_LedOff();
 
@@ -19195,8 +19235,6 @@ void ISR_MIC_Wake(void)
 __nop();
 if(!measurementRunning)
 {
-
-
 soundinterrupt = 1;
 }
 }

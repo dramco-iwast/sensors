@@ -108,14 +108,44 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _ISR_MIC_Wake `(v ~T0 @X0 0 ef ]
 "106 Sensors/../system/adcc.h
 [v _ADCC_Initialize `(v ~T0 @X0 0 ef ]
-[v F10977 `(v ~T0 @X0 0 tf ]
+[v F10979 `(v ~T0 @X0 0 tf ]
 "820
-[v _ADCC_SetADIInterruptHandler `(v ~T0 @X0 0 ef1`*F10977 ]
+[v _ADCC_SetADIInterruptHandler `(v ~T0 @X0 0 ef1`*F10979 ]
 "60 Sensors/sound_level.c
 [v _SoundLevel_GetSample `(v ~T0 @X0 0 ef ]
-"75
+"20093 C:/Users/Jona Cappelle/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18446.h
+[s S933 :1 `uc 1 :5 `uc 1 ]
+[n S933 . SEN WDTPS ]
+"20097
+[s S934 :1 `uc 1 ]
+[n S934 . SWDTEN ]
+"20100
+[s S935 :1 `uc 1 ]
+[n S935 . WDTSEN ]
+"20103
+[s S936 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S936 . . WDTPS0 WDTPS1 WDTPS2 WDTPS3 WDTPS4 ]
+"20092
+[u S932 `S933 1 `S934 1 `S935 1 `S936 1 ]
+[n S932 . . . . . ]
+"20112
+[v _WDTCON0bits `VS932 ~T0 @X0 0 e@2060 ]
+"75 Sensors/sound_level.c
 [v _measure `(v ~T0 @X0 0 ef ]
-"78
+"72
+[v _generateInt `(v ~T0 @X0 0 ef ]
+"175 C:/Users/Jona Cappelle/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18446.h
+[s S8 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S8 . C DC Z nPD nTO ]
+"182
+[s S9 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S9 . CARRY . ZERO ]
+"174
+[u S7 `S8 1 `S9 1 ]
+[n S7 . . . ]
+"188
+[v _STATUSbits `VS7 ~T0 @X0 0 e@3 ]
+"78 Sensors/sound_level.c
 [v _EnterSleep `(v ~T0 @X0 0 sf ]
 "21051 C:/Users/Jona Cappelle/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18446.h
 [s S976 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -135,17 +165,17 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _log10 `(d ~T0 @X0 0 ef1`d ]
 "55
 [v _round `(d ~T0 @X0 0 ef1`d ]
-"72 Sensors/sound_level.c
-[v _generateInt `(v ~T0 @X0 0 ef ]
 "197 Sensors/../system/adcc.h
 [v _ADCC_GetConversionResult `(ui ~T0 @X0 0 ef ]
-"696
+"57 Sensors/sound_level.c
+[v _SoundLevel_StopADC `(v ~T0 @X0 0 ef ]
+"696 Sensors/../system/adcc.h
 [v _ADCC_EnableContinuousConversion `(v ~T0 @X0 0 ef ]
-"483 Sensors/sound_level.c
-[c E10914 17 59 60 61 62 63 .. ]
-[n E10914 . channel_ANC1 channel_Vss channel_Temp_Sensor channel_DAC1_Output channel_FVR_Buffer1 channel_FVR_Buffer2  ]
+"528 Sensors/sound_level.c
+[c E10916 17 59 60 61 62 63 .. ]
+[n E10916 . channel_ANC1 channel_Vss channel_Temp_Sensor channel_DAC1_Output channel_FVR_Buffer1 channel_FVR_Buffer2  ]
 "135 Sensors/../system/adcc.h
-[v _ADCC_StartConversion `(v ~T0 @X0 0 ef1`E10914 ]
+[v _ADCC_StartConversion `(v ~T0 @X0 0 ef1`E10916 ]
 "253
 [v _ADCC_StopConversion `(v ~T0 @X0 0 ef ]
 "720
@@ -12305,33 +12335,33 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p x PPS1WAY=ON ]
 "91
 [p x STVREN=ON ]
-"94
-[p x WDTCPS=WDTCPS_10 ]
+"95
+[p x WDTCPS=WDTCPS_31 ]
 "96
-[p x WDTE=OFF ]
-"97
-[p x WDTCWS=WDTCWS_7 ]
+[p x WDTE=SWDTEN ]
 "98
+[p x WDTCWS=WDTCWS_7 ]
+"99
 [p x WDTCCS=SC ]
-"101
-[p x BBSIZE=BB512 ]
 "102
-[p x BBEN=OFF ]
+[p x BBSIZE=BB512 ]
 "103
-[p x SAFEN=OFF ]
+[p x BBEN=OFF ]
 "104
-[p x WRTAPP=OFF ]
+[p x SAFEN=OFF ]
 "105
-[p x WRTB=OFF ]
+[p x WRTAPP=OFF ]
 "106
-[p x WRTC=OFF ]
+[p x WRTB=OFF ]
 "107
-[p x WRTD=OFF ]
+[p x WRTC=OFF ]
 "108
-[p x WRTSAF=OFF ]
+[p x WRTD=OFF ]
 "109
+[p x WRTSAF=OFF ]
+"110
 [p x LVP=ON ]
-"112
+"113
 [p x CP=OFF ]
 [; ;sound_level.h: 224: void SoundLevel_Init(void);
 [; ;sound_level.h: 225: void SoundLevel_Measure(void);
@@ -12359,21 +12389,21 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdbool.h: 15: typedef unsigned char bool;
 [; ;xc8\pic\include\__size_t.h: 4: typedef unsigned size_t;
 [; ;stddef.h: 6: typedef int ptrdiff_t;
-[; ;i2c1.h: 56: typedef enum
-[; ;i2c1.h: 57: {
-[; ;i2c1.h: 58: I2C1_SLAVE_WRITE_REQUEST,
-[; ;i2c1.h: 59: I2C1_SLAVE_READ_REQUEST,
-[; ;i2c1.h: 60: I2C1_SLAVE_WRITE_COMPLETED,
-[; ;i2c1.h: 61: I2C1_SLAVE_READ_COMPLETED,
-[; ;i2c1.h: 62: } I2C1_SLAVE_DRIVER_STATUS;
-[; ;i2c1.h: 91: void I2C1_Initialize(uint8_t slave_address);
-[; ;i2c1.h: 111: void I2C1_ISR ( void );
-[; ;i2c1.h: 118: extern volatile uint8_t I2C1_slaveWriteData;
-[; ;i2c1.h: 125: bool I2C1_CommandReceived(void);
-[; ;i2c1.h: 126: void I2C1_GetCommand(uint8_t * cmd);
-[; ;i2c1.h: 127: void I2C1_GetCommandData(uint8_t * data, uint8_t * len);
-[; ;i2c1.h: 128: void I2C1_SetTransmitData(uint8_t * data, uint8_t len);
-[; ;i2c1.h: 129: bool I2C1_TxBufferEmpty(void);
+[; ;i2c1.h: 80: typedef enum{
+[; ;i2c1.h: 81: I2C1_SLAVE_WRITE_REQUEST,
+[; ;i2c1.h: 82: I2C1_SLAVE_READ_REQUEST,
+[; ;i2c1.h: 83: I2C1_SLAVE_WRITE_COMPLETED,
+[; ;i2c1.h: 84: I2C1_SLAVE_READ_COMPLETED,
+[; ;i2c1.h: 85: } I2C1_SLAVE_DRIVER_STATUS;
+[; ;i2c1.h: 114: void I2C1_Initialize(uint8_t slave_address);
+[; ;i2c1.h: 134: void I2C1_ISR(void);
+[; ;i2c1.h: 141: extern volatile uint8_t I2C1_slaveWriteData;
+[; ;i2c1.h: 148: bool I2C1_CommandReceived(void);
+[; ;i2c1.h: 149: void I2C1_GetCommand(uint8_t * cmd);
+[; ;i2c1.h: 150: void I2C1_GetCommandData(uint8_t * data, uint8_t * len);
+[; ;i2c1.h: 151: void I2C1_SetTransmitData(uint8_t * data, uint8_t len);
+[; ;i2c1.h: 152: bool I2C1_TxBufferEmpty(void);
+[; ;i2c1.h: 153: void I2C1_ClearTxBuffer(void);
 [; ;stdbool.h: 15: typedef unsigned char bool;
 [; ;adcc.h: 47: typedef uint16_t adc_result_t;
 [; ;adcc.h: 64: typedef enum
@@ -12767,13 +12797,20 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;sound_level.c: 220: {
 [e :U _DOUT_Init ]
 [f ]
+[; ;sound_level.c: 221: do { ANSELCbits.ANSC6 = 0; } while(0);
+"221
+[e :U 1567 ]
+{
+[e = . . _ANSELCbits 0 6 -> -> 0 `i `uc ]
+}
+[e :U 1566 ]
 [; ;sound_level.c: 222: do { TRISCbits.TRISC6 = 1; } while(0);
 "222
-[e :U 1567 ]
+[e :U 1570 ]
 {
 [e = . . _TRISCbits 0 6 -> -> 1 `i `uc ]
 }
-[e :U 1566 ]
+[e :U 1569 ]
 [; ;sound_level.c: 226: }
 "226
 [e :UE 1564 ]
@@ -12788,28 +12825,28 @@ Version 3.2 HI-TECH Software Intermediate Code
 [f ]
 [; ;sound_level.c: 230: do { ANSELCbits.ANSC4 = 0; } while(0);
 "230
-[e :U 1571 ]
+[e :U 1574 ]
 {
 [e = . . _ANSELCbits 0 4 -> -> 0 `i `uc ]
 }
-[e :U 1570 ]
+[e :U 1573 ]
 [; ;sound_level.c: 231: do { TRISCbits.TRISC4 = 0; } while(0);
 "231
-[e :U 1574 ]
+[e :U 1577 ]
 {
 [e = . . _TRISCbits 0 4 -> -> 0 `i `uc ]
 }
-[e :U 1573 ]
+[e :U 1576 ]
 [; ;sound_level.c: 232: do { LATCbits.LATC4 = 0; } while(0);
 "232
-[e :U 1577 ]
+[e :U 1580 ]
 {
 [e = . . _LATCbits 0 4 -> -> 0 `i `uc ]
 }
-[e :U 1576 ]
+[e :U 1579 ]
 [; ;sound_level.c: 234: }
 "234
-[e :UE 1568 ]
+[e :UE 1571 ]
 }
 "236
 [v _VDDBIAS_Init `(v ~T0 @X0 1 ef ]
@@ -12821,49 +12858,49 @@ Version 3.2 HI-TECH Software Intermediate Code
 [f ]
 [; ;sound_level.c: 238: do { ANSELCbits.ANSC2 = 0; } while(0);
 "238
-[e :U 1581 ]
+[e :U 1584 ]
 {
 [e = . . _ANSELCbits 0 2 -> -> 0 `i `uc ]
 }
-[e :U 1580 ]
+[e :U 1583 ]
 [; ;sound_level.c: 239: do { TRISCbits.TRISC2 = 0; } while(0);
 "239
-[e :U 1584 ]
+[e :U 1587 ]
 {
 [e = . . _TRISCbits 0 2 -> -> 0 `i `uc ]
 }
-[e :U 1583 ]
+[e :U 1586 ]
 [; ;sound_level.c: 240: do { LATCbits.LATC2 = 0; } while(0);
 "240
-[e :U 1587 ]
+[e :U 1590 ]
 {
 [e = . . _LATCbits 0 2 -> -> 0 `i `uc ]
 }
-[e :U 1586 ]
+[e :U 1589 ]
 [; ;sound_level.c: 243: do { ANSELBbits.ANSB4 = 0; } while(0);
 "243
-[e :U 1590 ]
+[e :U 1593 ]
 {
 [e = . . _ANSELBbits 0 1 -> -> 0 `i `uc ]
 }
-[e :U 1589 ]
+[e :U 1592 ]
 [; ;sound_level.c: 244: do { TRISBbits.TRISB4 = 0; } while(0);
 "244
-[e :U 1593 ]
+[e :U 1596 ]
 {
 [e = . . _TRISBbits 0 1 -> -> 0 `i `uc ]
 }
-[e :U 1592 ]
+[e :U 1595 ]
 [; ;sound_level.c: 245: do { LATBbits.LATB4 = 0; } while(0);
 "245
-[e :U 1596 ]
+[e :U 1599 ]
 {
 [e = . . _LATBbits 0 1 -> -> 0 `i `uc ]
 }
-[e :U 1595 ]
+[e :U 1598 ]
 [; ;sound_level.c: 247: }
 "247
-[e :UE 1578 ]
+[e :UE 1581 ]
 }
 "249
 [v _AMPS_enable `(v ~T0 @X0 1 ef1`uc ]
@@ -12878,127 +12915,148 @@ Version 3.2 HI-TECH Software Intermediate Code
 [f ]
 [; ;sound_level.c: 251: switch(enable)
 "251
-[e $U 1599  ]
+[e $U 1602  ]
 [; ;sound_level.c: 252: {
 "252
 {
 [; ;sound_level.c: 253: case 1:
 "253
-[e :U 1600 ]
+[e :U 1603 ]
 [; ;sound_level.c: 254: do { LATBbits.LATB4 = 1; } while(0);
 "254
-[e :U 1603 ]
+[e :U 1606 ]
 {
 [e = . . _LATBbits 0 1 -> -> 1 `i `uc ]
 }
-[e :U 1602 ]
+[e :U 1605 ]
 [; ;sound_level.c: 255: do { LATCbits.LATC2 = 1; } while(0);
 "255
-[e :U 1606 ]
+[e :U 1609 ]
 {
 [e = . . _LATCbits 0 2 -> -> 1 `i `uc ]
 }
-[e :U 1605 ]
-[; ;sound_level.c: 256: break;
+[e :U 1608 ]
+[; ;sound_level.c: 256: do { LATCbits.LATC4 = 1; } while(0);
 "256
-[e $U 1598  ]
-[; ;sound_level.c: 258: case 0:
-"258
-[e :U 1607 ]
-[; ;sound_level.c: 259: do { LATBbits.LATB4 = 0; } while(0);
-"259
-[e :U 1610 ]
+[e :U 1612 ]
 {
-[e = . . _LATBbits 0 1 -> -> 0 `i `uc ]
+[e = . . _LATCbits 0 4 -> -> 1 `i `uc ]
 }
-[e :U 1609 ]
-[; ;sound_level.c: 260: do { LATCbits.LATC2 = 0; } while(0);
+[e :U 1611 ]
+[; ;sound_level.c: 257: _delay((unsigned long)((100)*(32000000/4000.0)));
+"257
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
+[; ;sound_level.c: 258: break;
+"258
+[e $U 1601  ]
+[; ;sound_level.c: 260: case 0:
 "260
 [e :U 1613 ]
-{
-[e = . . _LATCbits 0 2 -> -> 0 `i `uc ]
-}
-[e :U 1612 ]
-[; ;sound_level.c: 261: break;
+[; ;sound_level.c: 261: do { LATBbits.LATB4 = 0; } while(0);
 "261
-[e $U 1598  ]
-[; ;sound_level.c: 263: default:
-"263
-[e :U 1614 ]
-[; ;sound_level.c: 264: do { LATBbits.LATB4 = 0; } while(0);
-"264
-[e :U 1617 ]
+[e :U 1616 ]
 {
 [e = . . _LATBbits 0 1 -> -> 0 `i `uc ]
 }
-[e :U 1616 ]
-[; ;sound_level.c: 265: do { LATCbits.LATC2 = 0; } while(0);
-"265
-[e :U 1620 ]
+[e :U 1615 ]
+[; ;sound_level.c: 262: do { LATCbits.LATC2 = 0; } while(0);
+"262
+[e :U 1619 ]
 {
 [e = . . _LATCbits 0 2 -> -> 0 `i `uc ]
 }
-[e :U 1619 ]
-"266
-}
-[; ;sound_level.c: 266: }
-[e $U 1598  ]
-"251
-[e :U 1599 ]
-[e [\ _enable , $ -> -> 1 `i `uc 1600
- , $ -> -> 0 `i `uc 1607
- 1614 ]
-"266
-[e :U 1598 ]
-[; ;sound_level.c: 267: }
-"267
-[e :UE 1597 ]
-}
-"270
-[v _WDT_Init `(v ~T0 @X0 1 ef ]
-"271
+[e :U 1618 ]
+[; ;sound_level.c: 263: do { LATCbits.LATC4 = 0; } while(0);
+"263
+[e :U 1622 ]
 {
-[; ;sound_level.c: 270: void WDT_Init(void)
-[; ;sound_level.c: 271: {
+[e = . . _LATCbits 0 4 -> -> 0 `i `uc ]
+}
+[e :U 1621 ]
+[; ;sound_level.c: 264: break;
+"264
+[e $U 1601  ]
+[; ;sound_level.c: 266: default:
+"266
+[e :U 1623 ]
+[; ;sound_level.c: 267: do { LATBbits.LATB4 = 0; } while(0);
+"267
+[e :U 1626 ]
+{
+[e = . . _LATBbits 0 1 -> -> 0 `i `uc ]
+}
+[e :U 1625 ]
+[; ;sound_level.c: 268: do { LATCbits.LATC2 = 0; } while(0);
+"268
+[e :U 1629 ]
+{
+[e = . . _LATCbits 0 2 -> -> 0 `i `uc ]
+}
+[e :U 1628 ]
+[; ;sound_level.c: 269: do { LATCbits.LATC4 = 0; } while(0);
+"269
+[e :U 1632 ]
+{
+[e = . . _LATCbits 0 4 -> -> 0 `i `uc ]
+}
+[e :U 1631 ]
+"270
+}
+[; ;sound_level.c: 270: }
+[e $U 1601  ]
+"251
+[e :U 1602 ]
+[e [\ _enable , $ -> -> 1 `i `uc 1603
+ , $ -> -> 0 `i `uc 1613
+ 1623 ]
+"270
+[e :U 1601 ]
+[; ;sound_level.c: 271: }
+"271
+[e :UE 1600 ]
+}
+"274
+[v _WDT_Init `(v ~T0 @X0 1 ef ]
+"275
+{
+[; ;sound_level.c: 274: void WDT_Init(void)
+[; ;sound_level.c: 275: {
 [e :U _WDT_Init ]
 [f ]
-[; ;sound_level.c: 273: WDTCON0 = 0x14;
-"273
-[e = _WDTCON0 -> -> 20 `i `uc ]
-[; ;sound_level.c: 274: WDTCON1 = 0x07;
-"274
-[e = _WDTCON1 -> -> 7 `i `uc ]
-[; ;sound_level.c: 275: }
-"275
-[e :UE 1621 ]
-}
+[; ;sound_level.c: 277: WDTCON0 = 0x1C;
+"277
+[e = _WDTCON0 -> -> 28 `i `uc ]
+[; ;sound_level.c: 278: WDTCON1 = 0x07;
 "278
+[e = _WDTCON1 -> -> 7 `i `uc ]
+[; ;sound_level.c: 279: }
+"279
+[e :UE 1633 ]
+}
+"282
 [v _SoundLevel_Init `(v ~T0 @X0 1 ef ]
 {
-[; ;sound_level.c: 278: void SoundLevel_Init(void){
+[; ;sound_level.c: 282: void SoundLevel_Init(void){
 [e :U _SoundLevel_Init ]
 [f ]
-[; ;sound_level.c: 280: LED_Init();
-"280
-[e ( _LED_Init ..  ]
-[; ;sound_level.c: 282: PMD0bits.IOCMD = 0;
-"282
-[e = . . _PMD0bits 0 0 -> -> 0 `i `uc ]
-[; ;sound_level.c: 284: powerMic_Init();
+[; ;sound_level.c: 284: LED_Init();
 "284
-[e ( _powerMic_Init ..  ]
-[; ;sound_level.c: 286: _delay((unsigned long)((100)*(32000000/4000.0)));
+[e ( _LED_Init ..  ]
+[; ;sound_level.c: 286: PMD0bits.IOCMD = 0;
 "286
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-[; ;sound_level.c: 289: _delay((unsigned long)((100)*(32000000/4000.0)));
+[e = . . _PMD0bits 0 0 -> -> 0 `i `uc ]
+[; ;sound_level.c: 288: powerMic_Init();
+"288
+[e ( _powerMic_Init ..  ]
+[; ;sound_level.c: 289: _delay((unsigned long)((1)*(32000000/4000.0)));
 "289
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
 [; ;sound_level.c: 290: nWakeMic_Init();
 "290
 [e ( _nWakeMic_Init ..  ]
-[; ;sound_level.c: 291: _delay((unsigned long)((100)*(32000000/4000.0)));
+[; ;sound_level.c: 291: _delay((unsigned long)((1)*(32000000/4000.0)));
 "291
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
 [; ;sound_level.c: 293: READY_Init();
 "293
 [e ( _READY_Init ..  ]
@@ -13011,583 +13069,687 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;sound_level.c: 296: VDDBIAS_Init();
 "296
 [e ( _VDDBIAS_Init ..  ]
-[; ;sound_level.c: 316: PIE0bits.IOCIE = 1;
-"316
+[; ;sound_level.c: 297: _delay((unsigned long)((1)*(32000000/4000.0)));
+"297
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
+[; ;sound_level.c: 311: PIE0bits.IOCIE = 1;
+"311
 [e = . . _PIE0bits 0 2 -> -> 1 `i `uc ]
-[; ;sound_level.c: 318: IOCCFbits.IOCCF6 = 0;
-"318
+[; ;sound_level.c: 313: IOCCFbits.IOCCF6 = 0;
+"313
 [e = . . _IOCCFbits 0 6 -> -> 0 `i `uc ]
-[; ;sound_level.c: 320: IOCCNbits.IOCCN6 = 0;
-"320
+[; ;sound_level.c: 315: IOCCNbits.IOCCN6 = 0;
+"315
 [e = . . _IOCCNbits 0 6 -> -> 0 `i `uc ]
-[; ;sound_level.c: 322: IOCCPbits.IOCCP6 = 1;
-"322
+[; ;sound_level.c: 317: IOCCPbits.IOCCP6 = 1;
+"317
 [e = . . _IOCCPbits 0 6 -> -> 1 `i `uc ]
-[; ;sound_level.c: 324: IOCCF6_SetInterruptHandler(ISR_MIC_Wake);
-"324
+[; ;sound_level.c: 319: IOCCF6_SetInterruptHandler(ISR_MIC_Wake);
+"319
 [e ( _IOCCF6_SetInterruptHandler (1 &U _ISR_MIC_Wake ]
-[; ;sound_level.c: 327: adcScaler = 3.3 / (4095 * 0.01258925 * 44);
-"327
+[; ;sound_level.c: 322: adcScaler = 3.3 / (4095 * 0.01258925 * 44);
+"322
 [e = _adcScaler -> / .3.3 * * -> -> 4095 `i `d .0.01258925 -> -> 44 `i `d `f ]
-[; ;sound_level.c: 330: ADCC_Initialize();
-"330
+[; ;sound_level.c: 325: ADCC_Initialize();
+"325
 [e ( _ADCC_Initialize ..  ]
-[; ;sound_level.c: 331: ADCC_SetADIInterruptHandler(SoundLevel_GetSample);
-"331
+[; ;sound_level.c: 326: ADCC_SetADIInterruptHandler(SoundLevel_GetSample);
+"326
 [e ( _ADCC_SetADIInterruptHandler (1 &U _SoundLevel_GetSample ]
-[; ;sound_level.c: 346: }
-"346
-[e :UE 1622 ]
+[; ;sound_level.c: 329: WDT_Init();
+"329
+[e ( _WDT_Init ..  ]
+[; ;sound_level.c: 341: }
+"341
+[e :UE 1634 ]
 }
-"350
+"345
 [v _SoundLevel_Measure `(v ~T0 @X0 1 ef ]
 {
-[; ;sound_level.c: 350: void SoundLevel_Measure(){
+[; ;sound_level.c: 345: void SoundLevel_Measure(){
 [e :U _SoundLevel_Measure ]
 [f ]
-[; ;sound_level.c: 351: polledMeasurement = 1;
-"351
+[; ;sound_level.c: 346: polledMeasurement = 1;
+"346
 [e = _polledMeasurement -> -> 1 `i `uc ]
-[; ;sound_level.c: 352: }
-"352
-[e :UE 1623 ]
+[; ;sound_level.c: 347: }
+"347
+[e :UE 1635 ]
 }
-"356
+"351
 [v _SoundLevel_Loop `(v ~T0 @X0 1 ef ]
 {
-[; ;sound_level.c: 356: void SoundLevel_Loop(void){
+[; ;sound_level.c: 351: void SoundLevel_Loop(void){
 [e :U _SoundLevel_Loop ]
 [f ]
-[; ;sound_level.c: 369: if( polledMeasurement || soundinterrupt ){
-"369
-[e $ ! || != -> _polledMeasurement `i -> -> -> 0 `i `uc `i != -> _soundinterrupt `i -> -> -> 0 `i `uc `i 1625  ]
+[; ;sound_level.c: 355: if(polledMeasurement && (WDTCON0bits.SEN == 0))
+"355
+[e $ ! && != -> _polledMeasurement `i -> -> -> 0 `i `uc `i == -> . . _WDTCON0bits 0 0 `i -> 0 `i 1637  ]
+[; ;sound_level.c: 356: {
+"356
 {
-[; ;sound_level.c: 370: measurementRunning = 1;
-"370
+[; ;sound_level.c: 357: if(thresholdEnabled)
+"357
+[e $ ! != -> _thresholdEnabled `i -> -> -> 0 `i `Suc `i 1638  ]
+[; ;sound_level.c: 358: {
+"358
+{
+[; ;sound_level.c: 359: measurementRunning = 1;
+"359
 [e = _measurementRunning -> -> 1 `i `uc ]
-[; ;sound_level.c: 371: measure();
-"371
+[; ;sound_level.c: 360: measure();
+"360
 [e ( _measure ..  ]
-[; ;sound_level.c: 372: polledMeasurement = 0;
-"372
-[e = _polledMeasurement -> -> 0 `i `uc ]
-[; ;sound_level.c: 373: measurementRunning = 0;
-"373
+[; ;sound_level.c: 361: measurementRunning = 0;
+"361
 [e = _measurementRunning -> -> 0 `i `uc ]
-[; ;sound_level.c: 374: soundinterrupt = 0;
-"374
-[e = _soundinterrupt -> -> 0 `i `uc ]
-[; ;sound_level.c: 375: _delay((unsigned long)((10)*(32000000/4000.0)));
-"375
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-"377
+[; ;sound_level.c: 363: generateInt();
+"363
+[e ( _generateInt ..  ]
+[; ;sound_level.c: 365: MIC_Mode(2);
+"365
+[e ( _MIC_Mode (1 -> -> 2 `i `uc ]
+[; ;sound_level.c: 368: polledMeasurement = 0;
+"368
+[e = _polledMeasurement -> -> 0 `i `uc ]
+"369
 }
-[; ;sound_level.c: 377: }
-[e $U 1626  ]
-"378
-[e :U 1625 ]
-[; ;sound_level.c: 378: else{
+[; ;sound_level.c: 369: }
+[e $U 1639  ]
+"370
+[e :U 1638 ]
+[; ;sound_level.c: 370: else if(!thresholdEnabled)
+[e $ ! ! != -> _thresholdEnabled `i -> -> -> 0 `i `Suc `i 1640  ]
+[; ;sound_level.c: 371: {
+"371
 {
-[; ;sound_level.c: 384: EnterSleep();
-"384
-[e ( _EnterSleep ..  ]
+[; ;sound_level.c: 372: do { LATCbits.LATC0 = 1; } while(0);
+"372
+[e :U 1643 ]
+{
+[e = . . _LATCbits 0 0 -> -> 1 `i `uc ]
+}
+[e :U 1642 ]
+[; ;sound_level.c: 373: _delay((unsigned long)((1)*(32000000/4000.0)));
+"373
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
+[; ;sound_level.c: 375: measurementRunning = 1;
+"375
+[e = _measurementRunning -> -> 1 `i `uc ]
+[; ;sound_level.c: 376: measure();
+"376
+[e ( _measure ..  ]
+[; ;sound_level.c: 377: measurementRunning = 0;
+"377
+[e = _measurementRunning -> -> 0 `i `uc ]
+[; ;sound_level.c: 379: generateInt();
+"379
+[e ( _generateInt ..  ]
+[; ;sound_level.c: 381: do { LATCbits.LATC0 = 0; } while(0);
+"381
+[e :U 1646 ]
+{
+[e = . . _LATCbits 0 0 -> -> 0 `i `uc ]
+}
+[e :U 1645 ]
+[; ;sound_level.c: 382: _delay((unsigned long)((1)*(32000000/4000.0)));
+"382
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
+[; ;sound_level.c: 383: MIC_Mode(1);
+"383
+[e ( _MIC_Mode (1 -> -> 1 `i `uc ]
+[; ;sound_level.c: 385: polledMeasurement = 0;
 "385
-}
-[e :U 1626 ]
-[; ;sound_level.c: 385: }
-[; ;sound_level.c: 386: }
+[e = _polledMeasurement -> -> 0 `i `uc ]
 "386
-[e :UE 1624 ]
 }
+[e :U 1640 ]
+"387
+[e :U 1639 ]
+}
+[; ;sound_level.c: 386: }
+[; ;sound_level.c: 387: }
+[e $U 1647  ]
 "388
+[e :U 1637 ]
+[; ;sound_level.c: 388: else if(polledMeasurement && (WDTCON0bits.SEN == 1))
+[e $ ! && != -> _polledMeasurement `i -> -> -> 0 `i `uc `i == -> . . _WDTCON0bits 0 0 `i -> 1 `i 1648  ]
+[; ;sound_level.c: 389: {
+"389
+{
+[; ;sound_level.c: 390: do { LATCbits.LATC0 = 1; } while(0);
+"390
+[e :U 1651 ]
+{
+[e = . . _LATCbits 0 0 -> -> 1 `i `uc ]
+}
+[e :U 1650 ]
+[; ;sound_level.c: 391: _delay((unsigned long)((1)*(32000000/4000.0)));
+"391
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
+[; ;sound_level.c: 393: measurementRunning = 1;
+"393
+[e = _measurementRunning -> -> 1 `i `uc ]
+[; ;sound_level.c: 394: measure();
+"394
+[e ( _measure ..  ]
+[; ;sound_level.c: 395: measurementRunning = 0;
+"395
+[e = _measurementRunning -> -> 0 `i `uc ]
+[; ;sound_level.c: 397: generateInt();
+"397
+[e ( _generateInt ..  ]
+[; ;sound_level.c: 403: MIC_Mode(2);
+"403
+[e ( _MIC_Mode (1 -> -> 2 `i `uc ]
+[; ;sound_level.c: 405: WDTCON0bits.SEN = 0;
+"405
+[e = . . _WDTCON0bits 0 0 -> -> 0 `i `uc ]
+[; ;sound_level.c: 407: polledMeasurement = 0;
+"407
+[e = _polledMeasurement -> -> 0 `i `uc ]
+"408
+}
+[; ;sound_level.c: 408: }
+[e $U 1652  ]
+"409
+[e :U 1648 ]
+[; ;sound_level.c: 409: else if(soundinterrupt)
+[e $ ! != -> _soundinterrupt `i -> -> -> 0 `i `uc `i 1653  ]
+[; ;sound_level.c: 410: {
+"410
+{
+[; ;sound_level.c: 411: measurementRunning = 1;
+"411
+[e = _measurementRunning -> -> 1 `i `uc ]
+[; ;sound_level.c: 412: measure();
+"412
+[e ( _measure ..  ]
+[; ;sound_level.c: 413: measurementRunning = 0;
+"413
+[e = _measurementRunning -> -> 0 `i `uc ]
+[; ;sound_level.c: 415: if(overThreshold)
+"415
+[e $ ! != -> _overThreshold `i -> -> -> 0 `i `uc `i 1654  ]
+[; ;sound_level.c: 416: {
+"416
+{
+[; ;sound_level.c: 417: asm("clrwdt");
+"417
+[; <" clrwdt ;# ">
+[; ;sound_level.c: 418: WDTCON0bits.SEN = 1;
+"418
+[e = . . _WDTCON0bits 0 0 -> -> 1 `i `uc ]
+[; ;sound_level.c: 420: generateInt();
+"420
+[e ( _generateInt ..  ]
+[; ;sound_level.c: 422: do { LATCbits.LATC0 = 0; } while(0);
+"422
+[e :U 1657 ]
+{
+[e = . . _LATCbits 0 0 -> -> 0 `i `uc ]
+}
+[e :U 1656 ]
+[; ;sound_level.c: 424: MIC_Mode(1);
+"424
+[e ( _MIC_Mode (1 -> -> 1 `i `uc ]
+"425
+}
+[; ;sound_level.c: 425: }else
+[e $U 1658  ]
+[e :U 1654 ]
+[; ;sound_level.c: 426: {
+"426
+{
+[; ;sound_level.c: 427: MIC_Mode(1);
+"427
+[e ( _MIC_Mode (1 -> -> 1 `i `uc ]
+[; ;sound_level.c: 428: _delay((unsigned long)((10)*(32000000/4000.0)));
+"428
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
+[; ;sound_level.c: 430: MIC_Mode(2);
+"430
+[e ( _MIC_Mode (1 -> -> 2 `i `uc ]
+"432
+}
+[e :U 1658 ]
+[; ;sound_level.c: 432: }
+[; ;sound_level.c: 434: soundinterrupt = 0;
+"434
+[e = _soundinterrupt -> -> 0 `i `uc ]
+"435
+}
+[; ;sound_level.c: 435: }
+[e $U 1659  ]
+"436
+[e :U 1653 ]
+[; ;sound_level.c: 436: else if(STATUSbits.nTO == 0)
+[e $ ! == -> . . _STATUSbits 0 4 `i -> 0 `i 1660  ]
+[; ;sound_level.c: 437: {
+"437
+{
+[; ;sound_level.c: 438: WDTCON0bits.SEN = 0;
+"438
+[e = . . _WDTCON0bits 0 0 -> -> 0 `i `uc ]
+[; ;sound_level.c: 440: do { LATCbits.LATC0 = 1; } while(0);
+"440
+[e :U 1663 ]
+{
+[e = . . _LATCbits 0 0 -> -> 1 `i `uc ]
+}
+[e :U 1662 ]
+[; ;sound_level.c: 441: _delay((unsigned long)((1)*(32000000/4000.0)));
+"441
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
+[; ;sound_level.c: 442: MIC_Mode(2);
+"442
+[e ( _MIC_Mode (1 -> -> 2 `i `uc ]
+[; ;sound_level.c: 445: EnterSleep();
+"445
+[e ( _EnterSleep ..  ]
+"446
+}
+[; ;sound_level.c: 446: }
+[e $U 1664  ]
+"447
+[e :U 1660 ]
+[; ;sound_level.c: 447: else
+[; ;sound_level.c: 448: {
+"448
+{
+[; ;sound_level.c: 449: EnterSleep();
+"449
+[e ( _EnterSleep ..  ]
+"450
+}
+[e :U 1664 ]
+[e :U 1659 ]
+[e :U 1652 ]
+[e :U 1647 ]
+[; ;sound_level.c: 450: }
+[; ;sound_level.c: 454: }
+"454
+[e :UE 1636 ]
+}
+"456
 [v _EnterSleep `(v ~T0 @X0 1 sf ]
 {
-[; ;sound_level.c: 388: static void EnterSleep(void){
+[; ;sound_level.c: 456: static void EnterSleep(void){
 [e :U _EnterSleep ]
 [f ]
-[; ;sound_level.c: 389: CPUDOZEbits.IDLEN = 0;
-"389
+[; ;sound_level.c: 457: CPUDOZEbits.IDLEN = 0;
+"457
 [e = . . _CPUDOZEbits 0 5 -> -> 0 `i `uc ]
-[; ;sound_level.c: 390: __nop();
-"390
+[; ;sound_level.c: 458: __nop();
+"458
 [e ( ___nop ..  ]
-[; ;sound_level.c: 391: asm("sleep");
-"391
+[; ;sound_level.c: 459: asm("sleep");
+"459
 [; <" sleep ;# ">
-[; ;sound_level.c: 392: __nop();
-"392
+[; ;sound_level.c: 460: __nop();
+"460
 [e ( ___nop ..  ]
-[; ;sound_level.c: 393: __nop();
-"393
+[; ;sound_level.c: 461: __nop();
+"461
 [e ( ___nop ..  ]
-[; ;sound_level.c: 394: }
-"394
-[e :UE 1627 ]
+[; ;sound_level.c: 462: }
+"462
+[e :UE 1665 ]
 }
-"397
+"465
 [v _SoundLevel_GetData `(v ~T0 @X0 1 ef2`*uc`*uc ]
 {
-[; ;sound_level.c: 397: void SoundLevel_GetData(uint8_t * data, uint8_t * length){
+[; ;sound_level.c: 465: void SoundLevel_GetData(uint8_t * data, uint8_t * length){
 [e :U _SoundLevel_GetData ]
 [v _data `*uc ~T0 @X0 1 r1 ]
 [v _length `*uc ~T0 @X0 1 r2 ]
 [f ]
-[; ;sound_level.c: 398: *length = 2;
-"398
+[; ;sound_level.c: 466: *length = 2;
+"466
 [e = *U _length -> -> 2 `i `uc ]
-[; ;sound_level.c: 399: data[0] = measurementData[0];
-"399
+[; ;sound_level.c: 467: data[0] = measurementData[0];
+"467
 [e = *U + _data * -> -> 0 `i `x -> -> # *U _data `i `x *U + &U _measurementData * -> -> -> 0 `i `ui `ux -> -> # *U &U _measurementData `ui `ux ]
-[; ;sound_level.c: 400: data[1] = measurementData[1];
-"400
+[; ;sound_level.c: 468: data[1] = measurementData[1];
+"468
 [e = *U + _data * -> -> 1 `i `x -> -> # *U _data `i `x *U + &U _measurementData * -> -> -> 1 `i `ui `ux -> -> # *U &U _measurementData `ui `ux ]
-[; ;sound_level.c: 401: }
-"401
-[e :UE 1628 ]
+[; ;sound_level.c: 469: }
+"469
+[e :UE 1666 ]
 }
-"404
+"472
 [v _SoundLevel_SetThreshold `(v ~T0 @X0 1 ef2`uc`*uc ]
 {
-[; ;sound_level.c: 404: void SoundLevel_SetThreshold(uint8_t metric, uint8_t * thresholdData){
+[; ;sound_level.c: 472: void SoundLevel_SetThreshold(uint8_t metric, uint8_t * thresholdData){
 [e :U _SoundLevel_SetThreshold ]
 [v _metric `uc ~T0 @X0 1 r1 ]
 [v _thresholdData `*uc ~T0 @X0 1 r2 ]
 [f ]
-[; ;sound_level.c: 405: if(metric == 0){
-"405
-[e $ ! == -> _metric `i -> 0 `i 1630  ]
+[; ;sound_level.c: 473: if(metric == 0){
+"473
+[e $ ! == -> _metric `i -> 0 `i 1668  ]
 {
-[; ;sound_level.c: 406: thresholdEnabled = thresholdData[0];
-"406
+[; ;sound_level.c: 474: thresholdEnabled = thresholdData[0];
+"474
 [e = _thresholdEnabled *U + _thresholdData * -> -> 0 `i `x -> -> # *U _thresholdData `i `x ]
-[; ;sound_level.c: 407: thresholdLevel = (uint16_t)((thresholdData[3]<<8) | thresholdData[4]);
-"407
+[; ;sound_level.c: 475: thresholdLevel = (uint16_t)((thresholdData[3]<<8) | thresholdData[4]);
+"475
 [e = _thresholdLevel -> | << -> *U + _thresholdData * -> -> 3 `i `x -> -> # *U _thresholdData `i `x `i -> 8 `i -> *U + _thresholdData * -> -> 4 `i `x -> -> # *U _thresholdData `i `x `i `ui ]
-[; ;sound_level.c: 409: if(thresholdEnabled){
-"409
-[e $ ! != -> _thresholdEnabled `i -> -> -> 0 `i `Suc `i 1631  ]
+[; ;sound_level.c: 477: if(thresholdEnabled)
+"477
+[e $ ! != -> _thresholdEnabled `i -> -> -> 0 `i `Suc `i 1669  ]
+[; ;sound_level.c: 478: {
+"478
 {
-"411
-}
-[e :U 1631 ]
-[; ;sound_level.c: 411: }
-[; ;sound_level.c: 412: if(thresholdEnabled)
-"412
-[e $ ! != -> _thresholdEnabled `i -> -> -> 0 `i `Suc `i 1632  ]
-[; ;sound_level.c: 413: {
-"413
-{
-[; ;sound_level.c: 414: do { LATCbits.LATC0 = 1; } while(0);
-"414
-[e :U 1635 ]
+[; ;sound_level.c: 479: do { LATCbits.LATC0 = 1; } while(0);
+"479
+[e :U 1672 ]
 {
 [e = . . _LATCbits 0 0 -> -> 1 `i `uc ]
 }
-[e :U 1634 ]
-[; ;sound_level.c: 416: _delay((unsigned long)((1000)*(32000000/4000.0)));
-"416
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-[; ;sound_level.c: 417: MIC_Mode(2);
-"417
+[e :U 1671 ]
+[; ;sound_level.c: 480: _delay((unsigned long)((1)*(32000000/4000.0)));
+"480
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
+[; ;sound_level.c: 481: MIC_Mode(2);
+"481
 [e ( _MIC_Mode (1 -> -> 2 `i `uc ]
-[; ;sound_level.c: 418: _delay((unsigned long)((1000)*(32000000/4000.0)));
-"418
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-"419
+"483
 }
-[e :U 1632 ]
-"420
+[e :U 1669 ]
+"484
 }
-[e :U 1630 ]
-[; ;sound_level.c: 419: }
-[; ;sound_level.c: 420: }
-[; ;sound_level.c: 421: }
-"421
-[e :UE 1629 ]
+[e :U 1668 ]
+[; ;sound_level.c: 483: }
+[; ;sound_level.c: 484: }
+[; ;sound_level.c: 485: }
+"485
+[e :UE 1667 ]
 }
-"424
+"488
 [v _SoundLevel_PrepareData `(v ~T0 @X0 1 ef ]
 {
-[; ;sound_level.c: 424: void SoundLevel_PrepareData(){
+[; ;sound_level.c: 488: void SoundLevel_PrepareData(){
 [e :U _SoundLevel_PrepareData ]
 [f ]
-"425
+"489
 [v _presAvgSquared `f ~T0 @X0 1 a ]
-[; ;sound_level.c: 425: float presAvgSquared = presSumSquared/400;
+[; ;sound_level.c: 489: float presAvgSquared = presSumSquared/400;
 [e = _presAvgSquared / _presSumSquared -> -> 400 `i `f ]
-"426
+"490
 [v _dBZ `f ~T0 @X0 1 a ]
-[; ;sound_level.c: 426: float dBZ = 10 * log10(presAvgSquared/(20e-6 * 20e-6));
+[; ;sound_level.c: 490: float dBZ = 10 * log10(presAvgSquared/(20e-6 * 20e-6));
 [e = _dBZ -> * -> -> 10 `i `d ( _log10 (1 / -> _presAvgSquared `d * .20e-6 .20e-6 `f ]
-[; ;sound_level.c: 428: if(dBZ > 106){
-"428
-[e $ ! > _dBZ -> -> 106 `i `f 1637  ]
+[; ;sound_level.c: 492: if(dBZ > 106){
+"492
+[e $ ! > _dBZ -> -> 106 `i `f 1674  ]
 {
-[; ;sound_level.c: 429: dBZ = 106;
-"429
+[; ;sound_level.c: 493: dBZ = 106;
+"493
 [e = _dBZ -> -> 106 `i `f ]
-"430
+"494
 }
-[e :U 1637 ]
-"432
+[e :U 1674 ]
+"496
 [v _dataToSend `ui ~T0 @X0 1 a ]
-[; ;sound_level.c: 430: }
-[; ;sound_level.c: 432: uint16_t dataToSend = (uint16_t)(round(dBZ * 600));
+[; ;sound_level.c: 494: }
+[; ;sound_level.c: 496: uint16_t dataToSend = (uint16_t)(round(dBZ * 600));
 [e = _dataToSend -> ( _round (1 -> * _dBZ -> -> 600 `i `f `d `ui ]
-[; ;sound_level.c: 434: measurementData[0] = (uint8_t)(dataToSend>>8);
-"434
+[; ;sound_level.c: 498: measurementData[0] = (uint8_t)(dataToSend>>8);
+"498
 [e = *U + &U _measurementData * -> -> -> 0 `i `ui `ux -> -> # *U &U _measurementData `ui `ux -> >> _dataToSend -> 8 `i `uc ]
-[; ;sound_level.c: 435: measurementData[1] = (uint8_t)(dataToSend);
-"435
+[; ;sound_level.c: 499: measurementData[1] = (uint8_t)(dataToSend);
+"499
 [e = *U + &U _measurementData * -> -> -> 1 `i `ui `ux -> -> # *U &U _measurementData `ui `ux -> _dataToSend `uc ]
-[; ;sound_level.c: 438: if(polledMeasurement){
-"438
-[e $ ! != -> _polledMeasurement `i -> -> -> 0 `i `uc `i 1638  ]
+[; ;sound_level.c: 502: if(dataToSend > thresholdLevel){
+"502
+[e $ ! > _dataToSend _thresholdLevel 1675  ]
 {
-[; ;sound_level.c: 439: generateInt();
-"439
-[e ( _generateInt ..  ]
-"440
-}
-[; ;sound_level.c: 440: }
-[e $U 1639  ]
-"441
-[e :U 1638 ]
-[; ;sound_level.c: 441: else{
-{
-[; ;sound_level.c: 443: if(dataToSend > thresholdLevel){
-"443
-[e $ ! > _dataToSend _thresholdLevel 1640  ]
-{
-[; ;sound_level.c: 444: if(!overThreshold){
-"444
-[e $ ! ! != -> _overThreshold `i -> -> -> 0 `i `uc `i 1641  ]
-{
-[; ;sound_level.c: 445: overThreshold = 1;
-"445
+[; ;sound_level.c: 503: overThreshold = 1;
+"503
 [e = _overThreshold -> -> 1 `i `uc ]
-[; ;sound_level.c: 446: generateInt();
-"446
-[e ( _generateInt ..  ]
-"450
+"504
 }
-[e :U 1641 ]
-"451
-}
-[; ;sound_level.c: 450: }
-[; ;sound_level.c: 451: }
-[e $U 1642  ]
-"452
-[e :U 1640 ]
-[; ;sound_level.c: 452: else{
+[; ;sound_level.c: 504: }
+[e $U 1676  ]
+"505
+[e :U 1675 ]
+[; ;sound_level.c: 505: else{
 {
-[; ;sound_level.c: 453: overThreshold = 0;
-"453
+[; ;sound_level.c: 506: overThreshold = 0;
+"506
 [e = _overThreshold -> -> 0 `i `uc ]
-"454
+"507
 }
-[e :U 1642 ]
-"457
+[e :U 1676 ]
+[; ;sound_level.c: 507: }
+[; ;sound_level.c: 508: }
+"508
+[e :UE 1673 ]
 }
-[e :U 1639 ]
-[; ;sound_level.c: 454: }
-[; ;sound_level.c: 457: }
-[; ;sound_level.c: 464: }
-"464
-[e :UE 1636 ]
-}
-"467
+"511
 [v _SoundLevel_GetSample `(v ~T0 @X0 1 ef ]
 {
-[; ;sound_level.c: 467: void SoundLevel_GetSample(){
+[; ;sound_level.c: 511: void SoundLevel_GetSample(){
 [e :U _SoundLevel_GetSample ]
 [f ]
-"468
+"512
 [v _sample `ui ~T0 @X0 1 a ]
-[; ;sound_level.c: 468: uint16_t sample = ADCC_GetConversionResult();
+[; ;sound_level.c: 512: uint16_t sample = ADCC_GetConversionResult();
 [e = _sample ( _ADCC_GetConversionResult ..  ]
-"470
+"514
 [v _voltageToPressure `f ~T0 @X0 1 a ]
-[; ;sound_level.c: 470: float voltageToPressure = sample * adcScaler;
+[; ;sound_level.c: 514: float voltageToPressure = sample * adcScaler;
 [e = _voltageToPressure * -> _sample `f _adcScaler ]
-[; ;sound_level.c: 472: presSumSquared = presSumSquared + (voltageToPressure * voltageToPressure);
-"472
+[; ;sound_level.c: 516: presSumSquared = presSumSquared + (voltageToPressure * voltageToPressure);
+"516
 [e = _presSumSquared + _presSumSquared * _voltageToPressure _voltageToPressure ]
-[; ;sound_level.c: 474: sampleCounter++;
-"474
+[; ;sound_level.c: 518: sampleCounter++;
+"518
 [e ++ _sampleCounter -> -> 1 `i `ui ]
-[; ;sound_level.c: 475: if(sampleCounter>400-1){
-"475
-[e $ ! > _sampleCounter -> - -> 400 `i -> 1 `i `ui 1644  ]
+[; ;sound_level.c: 519: if(sampleCounter>400-1){
+"519
+[e $ ! > _sampleCounter -> - -> 400 `i -> 1 `i `ui 1678  ]
 {
-[; ;sound_level.c: 476: sampling = 0;
-"476
+[; ;sound_level.c: 520: sampling = 0;
+"520
 [e = _sampling -> -> 0 `i `uc ]
-"477
+[; ;sound_level.c: 521: SoundLevel_StopADC();
+"521
+[e ( _SoundLevel_StopADC ..  ]
+"522
 }
-[e :U 1644 ]
-[; ;sound_level.c: 477: }
-[; ;sound_level.c: 478: }
-"478
-[e :UE 1643 ]
+[e :U 1678 ]
+[; ;sound_level.c: 522: }
+[; ;sound_level.c: 523: }
+"523
+[e :UE 1677 ]
 }
-"481
+"526
 [v _SoundLevel_StartADC `(v ~T0 @X0 1 ef ]
 {
-[; ;sound_level.c: 481: void SoundLevel_StartADC(){
+[; ;sound_level.c: 526: void SoundLevel_StartADC(){
 [e :U _SoundLevel_StartADC ]
 [f ]
-[; ;sound_level.c: 482: ADCC_EnableContinuousConversion();
-"482
+[; ;sound_level.c: 527: ADCC_EnableContinuousConversion();
+"527
 [e ( _ADCC_EnableContinuousConversion ..  ]
-[; ;sound_level.c: 483: ADCC_StartConversion(channel_ANC1);
-"483
-[e ( _ADCC_StartConversion (1 . `E10914 0 ]
-[; ;sound_level.c: 484: }
-"484
-[e :UE 1645 ]
+[; ;sound_level.c: 528: ADCC_StartConversion(channel_ANC1);
+"528
+[e ( _ADCC_StartConversion (1 . `E10916 0 ]
+[; ;sound_level.c: 529: }
+"529
+[e :UE 1679 ]
 }
-"487
+"532
 [v _SoundLevel_StopADC `(v ~T0 @X0 1 ef ]
 {
-[; ;sound_level.c: 487: void SoundLevel_StopADC(){
+[; ;sound_level.c: 532: void SoundLevel_StopADC(){
 [e :U _SoundLevel_StopADC ]
 [f ]
-[; ;sound_level.c: 488: ADCC_StopConversion();
-"488
+[; ;sound_level.c: 533: ADCC_StopConversion();
+"533
 [e ( _ADCC_StopConversion ..  ]
-[; ;sound_level.c: 489: ADCC_DisableContinuousConversion();
-"489
+[; ;sound_level.c: 534: ADCC_DisableContinuousConversion();
+"534
 [e ( _ADCC_DisableContinuousConversion ..  ]
-[; ;sound_level.c: 490: }
-"490
-[e :UE 1646 ]
+[; ;sound_level.c: 535: }
+"535
+[e :UE 1680 ]
 }
-"493
+"538
 [v _SoundLevel_LedOn `(v ~T0 @X0 1 ef ]
 {
-[; ;sound_level.c: 493: void SoundLevel_LedOn(void){
+[; ;sound_level.c: 538: void SoundLevel_LedOn(void){
 [e :U _SoundLevel_LedOn ]
 [f ]
-[; ;sound_level.c: 495: do { LATBbits.LATB6 = 1; } while(0);
-"495
-[e :U 1650 ]
+[; ;sound_level.c: 540: do { LATBbits.LATB6 = 1; } while(0);
+"540
+[e :U 1684 ]
 {
 [e = . . _LATBbits 0 3 -> -> 1 `i `uc ]
 }
-[e :U 1649 ]
-[; ;sound_level.c: 497: }
-"497
-[e :UE 1647 ]
+[e :U 1683 ]
+[; ;sound_level.c: 542: }
+"542
+[e :UE 1681 ]
 }
-"500
+"545
 [v _SoundLevel_LedOff `(v ~T0 @X0 1 ef ]
 {
-[; ;sound_level.c: 500: void SoundLevel_LedOff(void){
+[; ;sound_level.c: 545: void SoundLevel_LedOff(void){
 [e :U _SoundLevel_LedOff ]
 [f ]
-[; ;sound_level.c: 502: do { LATBbits.LATB6 = 0; } while(0);
-"502
-[e :U 1654 ]
+[; ;sound_level.c: 547: do { LATBbits.LATB6 = 0; } while(0);
+"547
+[e :U 1688 ]
 {
 [e = . . _LATBbits 0 3 -> -> 0 `i `uc ]
 }
-[e :U 1653 ]
-[; ;sound_level.c: 504: }
-"504
-[e :UE 1651 ]
+[e :U 1687 ]
+[; ;sound_level.c: 549: }
+"549
+[e :UE 1685 ]
 }
-"507
+"552
 [v _SoundLevel_LedToggle `(v ~T0 @X0 1 ef ]
 {
-[; ;sound_level.c: 507: void SoundLevel_LedToggle(void){
+[; ;sound_level.c: 552: void SoundLevel_LedToggle(void){
 [e :U _SoundLevel_LedToggle ]
 [f ]
-[; ;sound_level.c: 509: do { LATBbits.LATB6 = ~LATBbits.LATB6; } while(0);
-"509
-[e :U 1658 ]
+[; ;sound_level.c: 554: do { LATBbits.LATB6 = ~LATBbits.LATB6; } while(0);
+"554
+[e :U 1692 ]
 {
 [e = . . _LATBbits 0 3 -> ~ -> . . _LATBbits 0 3 `i `uc ]
 }
-[e :U 1657 ]
-[; ;sound_level.c: 511: }
-"511
-[e :UE 1655 ]
+[e :U 1691 ]
+[; ;sound_level.c: 556: }
+"556
+[e :UE 1689 ]
 }
-"514
+"559
 [v _generateInt `(v ~T0 @X0 1 ef ]
 {
-[; ;sound_level.c: 514: void generateInt(void){
+[; ;sound_level.c: 559: void generateInt(void){
 [e :U _generateInt ]
 [f ]
-[; ;sound_level.c: 515: do { LATCbits.LATC7 = 0; } while(0);
-"515
-[e :U 1662 ]
+[; ;sound_level.c: 560: do { LATCbits.LATC7 = 0; } while(0);
+"560
+[e :U 1696 ]
 {
 [e = . . _LATCbits 0 7 -> -> 0 `i `uc ]
 }
-[e :U 1661 ]
-[; ;sound_level.c: 516: _delay((unsigned long)((5)*(32000000/4000.0)));
-"516
+[e :U 1695 ]
+[; ;sound_level.c: 561: _delay((unsigned long)((5)*(32000000/4000.0)));
+"561
 [e ( __delay (1 -> * -> -> 5 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-[; ;sound_level.c: 517: do { LATCbits.LATC7 = 1; } while(0);
-"517
-[e :U 1665 ]
+[; ;sound_level.c: 562: do { LATCbits.LATC7 = 1; } while(0);
+"562
+[e :U 1699 ]
 {
 [e = . . _LATCbits 0 7 -> -> 1 `i `uc ]
 }
-[e :U 1664 ]
-[; ;sound_level.c: 518: }
-"518
-[e :UE 1659 ]
+[e :U 1698 ]
+[; ;sound_level.c: 563: }
+"563
+[e :UE 1693 ]
 }
-"520
+"565
 [v _measure `(v ~T0 @X0 1 ef ]
 {
-[; ;sound_level.c: 520: void measure(void){
+[; ;sound_level.c: 565: void measure(void){
 [e :U _measure ]
 [f ]
-[; ;sound_level.c: 523: SoundLevel_LedOn();
-"523
+[; ;sound_level.c: 567: SoundLevel_LedOn();
+"567
 [e ( _SoundLevel_LedOn ..  ]
-[; ;sound_level.c: 526: if(polledMeasurement == 1)
-"526
-[e $ ! == -> _polledMeasurement `i -> 1 `i 1667  ]
-[; ;sound_level.c: 527: {
-"527
-{
-[; ;sound_level.c: 528: do { LATCbits.LATC0 = 1; } while(0);
-"528
-[e :U 1670 ]
-{
-[e = . . _LATCbits 0 0 -> -> 1 `i `uc ]
-}
-[e :U 1669 ]
-"531
-}
-[e :U 1667 ]
-[; ;sound_level.c: 531: }
-[; ;sound_level.c: 534: MIC_Mode(1);
-"534
+[; ;sound_level.c: 569: MIC_Mode(1);
+"569
 [e ( _MIC_Mode (1 -> -> 1 `i `uc ]
-[; ;sound_level.c: 536: do { LATCbits.LATC4 = 1; } while(0);
-"536
-[e :U 1673 ]
-{
-[e = . . _LATCbits 0 4 -> -> 1 `i `uc ]
-}
-[e :U 1672 ]
-[; ;sound_level.c: 537: do { LATBbits.LATB4 = 1; } while(0);
-"537
-[e :U 1676 ]
-{
-[e = . . _LATBbits 0 1 -> -> 1 `i `uc ]
-}
-[e :U 1675 ]
-[; ;sound_level.c: 538: _delay((unsigned long)((100)*(32000000/4000.0)));
-"538
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-[; ;sound_level.c: 544: sampling = 1;
-"544
+[; ;sound_level.c: 570: _delay((unsigned long)((10)*(32000000/4000.0)));
+"570
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
+[; ;sound_level.c: 572: AMPS_enable(1);
+"572
+[e ( _AMPS_enable (1 -> -> 1 `i `uc ]
+[; ;sound_level.c: 575: sampling = 1;
+"575
 [e = _sampling -> -> 1 `i `uc ]
-[; ;sound_level.c: 545: sampleCounter = 0;
-"545
-[e = _sampleCounter -> -> 0 `i `ui ]
-[; ;sound_level.c: 546: presSumSquared = 0;
-"546
-[e = _presSumSquared -> -> 0 `i `f ]
-[; ;sound_level.c: 559: SoundLevel_StartADC();
-"559
-[e ( _SoundLevel_StartADC ..  ]
-[; ;sound_level.c: 565: while(sampling);
-"565
-[e $U 1677  ]
-[e :U 1678 ]
-[e :U 1677 ]
-[e $ != -> _sampling `i -> -> -> 0 `i `uc `i 1678  ]
-[e :U 1679 ]
-[; ;sound_level.c: 568: SoundLevel_StopADC();
-"568
-[e ( _SoundLevel_StopADC ..  ]
-[; ;sound_level.c: 576: SoundLevel_PrepareData();
+[; ;sound_level.c: 576: sampleCounter = 0;
 "576
-[e ( _SoundLevel_PrepareData ..  ]
-[; ;sound_level.c: 579: if(soundinterrupt)
+[e = _sampleCounter -> -> 0 `i `ui ]
+[; ;sound_level.c: 577: presSumSquared = 0;
+"577
+[e = _presSumSquared -> -> 0 `i `f ]
+[; ;sound_level.c: 579: SoundLevel_StartADC();
 "579
-[e $ ! != -> _soundinterrupt `i -> -> -> 0 `i `uc `i 1680  ]
-[; ;sound_level.c: 580: {
-"580
-{
-[; ;sound_level.c: 581: MIC_Mode(2);
+[e ( _SoundLevel_StartADC ..  ]
+[; ;sound_level.c: 581: while(sampling);
 "581
-[e ( _MIC_Mode (1 -> -> 2 `i `uc ]
-"583
-}
-[e :U 1680 ]
-[; ;sound_level.c: 583: }
-[; ;sound_level.c: 585: do { LATCbits.LATC4 = 0; } while(0);
+[e $U 1701  ]
+[e :U 1702 ]
+[e :U 1701 ]
+[e $ != -> _sampling `i -> -> -> 0 `i `uc `i 1702  ]
+[e :U 1703 ]
+[; ;sound_level.c: 585: AMPS_enable(0);
 "585
-[e :U 1683 ]
-{
-[e = . . _LATCbits 0 4 -> -> 0 `i `uc ]
-}
-[e :U 1682 ]
-[; ;sound_level.c: 586: do { LATBbits.LATB4 = 0; } while(0);
-"586
-[e :U 1686 ]
-{
-[e = . . _LATBbits 0 1 -> -> 0 `i `uc ]
-}
-[e :U 1685 ]
-[; ;sound_level.c: 588: if(polledMeasurement == 1)
-"588
-[e $ ! == -> _polledMeasurement `i -> 1 `i 1687  ]
-[; ;sound_level.c: 589: {
+[e ( _AMPS_enable (1 -> -> 0 `i `uc ]
+[; ;sound_level.c: 587: SoundLevel_PrepareData();
+"587
+[e ( _SoundLevel_PrepareData ..  ]
+[; ;sound_level.c: 589: SoundLevel_LedOff();
 "589
-{
-[; ;sound_level.c: 590: do { LATCbits.LATC0 = 0; } while(0);
-"590
-[e :U 1690 ]
-{
-[e = . . _LATCbits 0 0 -> -> 0 `i `uc ]
-}
-[e :U 1689 ]
-"592
-}
-[e :U 1687 ]
-[; ;sound_level.c: 592: }
-[; ;sound_level.c: 594: SoundLevel_LedOff();
-"594
 [e ( _SoundLevel_LedOff ..  ]
-[; ;sound_level.c: 596: }
-"596
-[e :UE 1666 ]
+[; ;sound_level.c: 591: }
+"591
+[e :UE 1700 ]
 }
-"599
+"594
 [v _ISR_MIC_Wake `(v ~T0 @X0 1 ef ]
-"600
+"595
 {
-[; ;sound_level.c: 599: void ISR_MIC_Wake(void)
-[; ;sound_level.c: 600: {
+[; ;sound_level.c: 594: void ISR_MIC_Wake(void)
+[; ;sound_level.c: 595: {
 [e :U _ISR_MIC_Wake ]
 [f ]
-[; ;sound_level.c: 601: __nop();
-"601
+[; ;sound_level.c: 596: __nop();
+"596
 [e ( ___nop ..  ]
-[; ;sound_level.c: 602: if(!measurementRunning)
-"602
-[e $ ! ! != -> _measurementRunning `i -> -> -> 0 `i `uc `i 1692  ]
-[; ;sound_level.c: 603: {
-"603
+[; ;sound_level.c: 597: if(!measurementRunning)
+"597
+[e $ ! ! != -> _measurementRunning `i -> -> -> 0 `i `uc `i 1705  ]
+[; ;sound_level.c: 598: {
+"598
 {
-[; ;sound_level.c: 606: soundinterrupt = 1;
-"606
+[; ;sound_level.c: 599: soundinterrupt = 1;
+"599
 [e = _soundinterrupt -> -> 1 `i `uc ]
-"607
+"600
 }
-[e :U 1692 ]
-[; ;sound_level.c: 607: }
-[; ;sound_level.c: 608: }
-"608
-[e :UE 1691 ]
+[e :U 1705 ]
+[; ;sound_level.c: 600: }
+[; ;sound_level.c: 601: }
+"601
+[e :UE 1704 ]
 }

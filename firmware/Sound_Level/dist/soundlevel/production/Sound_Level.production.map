@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files\Microchip\xc8\v2.30\pic\dat\en_msgs.txt -cn \
   -h+dist/soundlevel/production\Sound_Level.production.sym \
   --cmf=dist/soundlevel/production\Sound_Level.production.cmf -z -Q16F18446 \
-  -oC:\Users\JONACA~1\AppData\Local\Temp\s84cx2 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\JONACA~1\AppData\Local\Temp\s6ogx2 --defsym=__MPLAB_BUILD=1 \
   -Mdist/soundlevel/production/Sound_Level.production.map -E1 \
   -ver=XC8 Compiler -ASTACK=02130h-027EFh -pstack=STACK -ACODE=00h-07FFhx8 \
   -ASTRCODE=00h-03FFFh -ASTRING=00h-0FFhx64 -ACONST=00h-0FFhx64 \
@@ -46,7 +46,7 @@ Linker command line:
   -AEEDATA=00h-0FFh/0F000h -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 \
   -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 \
   -preset_vec=00h,intentry=04h,init,end_init -ppowerup=CODE -pcinit=CODE \
-  -pfunctab=ENTRY -k C:\Users\JONACA~1\AppData\Local\Temp\s84cxg.o \
+  -pfunctab=ENTRY -k C:\Users\JONACA~1\AppData\Local\Temp\s6ogxg.o \
   dist/soundlevel/production\Sound_Level.production.o 
 
 Object code version is 3.11
@@ -56,7 +56,7 @@ Machine type is 16F18446
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\JONACA~1\AppData\Local\Temp\s84cxg.o
+C:\Users\JONACA~1\AppData\Local\Temp\s6ogxg.o
                 end_init                             31       31        2        8       0
                 reset_vec                             0        0        2        0       0
                 config                             8007     8007        5        0       4
@@ -64,95 +64,96 @@ dist/soundlevel/production\Sound_Level.production.o
                 cinit                                33       33       30        8       0
                 intentry                              4        4       2D        8       0
                 config                             8007     8007        5        0       4
-                text72                              82D      82D        6     105A       0
-                text71                              F17      F17       74     1E2E       0
-                text70                              90D      90D       14     121A       0
-                text69                              183      183      120        8       0
-                text68                              53B      53B       C1        8       0
-                text67                              DCF      DCF       68     1B9E       0
-                text66                                2        2        1        0       0
-                text65                              8DC      8DC        F     11B8       0
-                text64                              CBC      CBC       54     1978       0
-                text63                              B51      B51       3F     16A2       0
-                text62                              807      807        3     100E       0
-                text61                              80A      80A        3     1014       0
-                text60                              80D      80D        3     101A       0
-                text59                              88A      88A        A     1114       0
-                text58                              8EB      8EB        F     11D6       0
-                text57                              95F      95F       21     12BE       0
-                text55                              810      810        3     1020       0
-                text54                              8B4      8B4        D     1168       0
-                text53                              9C3      9C3       23     1386       0
-                text52                              AA9      AA9       31     1552       0
-                text51                              86F      86F        9     10DE       0
-                text50                              A7E      A7E       2B     14FC       0
-                text49                              833      833        6     1066       0
-                text48                              8FA      8FA       13     11F4       0
-                text47                              9E6      9E6       23     13CC       0
-                text46                              921      921       1E     1242       0
-                text45                              878      878        9     10F0       0
-                text44                              A2E      A2E       28     145C       0
-                text43                              813      813        3     1026       0
-                text42                              881      881        9     1102       0
-                text41                              816      816        3     102C       0
-                text40                              819      819        3     1032       0
-                text39                              E37      E37       6E     1C6E       0
-                text38                              89E      89E        B     113C       0
-                text37                              825      825        4     104A       0
-                text36                              839      839        6     1072       0
-                text35                              8A9      8A9        B     1152       0
-                text34                              83F      83F        6     107E       0
-                text33                              845      845        6     108A       0
-                text32                              D10      D10       5C     1A20       0
-                text31                              851      851        7     10A2       0
-                text30                              7E5      7E5       15        8       0
-                text29                              F8B      F8B       75     1F16       0
-                text28                              6AE      6AE       B2        8       0
-                text27                              8CE      8CE        E     119C       0
-                text26                              A09      A09       25     1412       0
-                text25                              ADA      ADA       39     15B4       0
-                text24                               63       63      120        8       0
-                text23                              47A      47A       C1        8       0
-                text22                              93F      93F       20     127E       0
-                text21                              D6C      D6C       63     1AD8       0
-                text20                              B13      B13       3E     1626       0
-                text19                              5FC      5FC       B2        8       0
-                text18                              A56      A56       28     14AC       0
-                text17                              980      980       21     1300       0
-                text16                              B90      B90       42     1720       0
-                text15                              760      760       85        8       0
-                text14                              BD2      BD2       47     17A4       0
-                text13                              EA5      EA5       72     1D4A       0
-                text12                              2A3      2A3       FD        8       0
-                text11                              81C      81C        3     1038       0
-                text10                              85F      85F        8     10BE       0
-                text9                               867      867        8     10CE       0
-                text8                               81F      81F        3     103E       0
-                text7                               822      822        3     1044       0
-                text6                               858      858        7     10B0       0
-                text5                               C69      C69       53     18D2       0
-                text4                               9A1      9A1       22     1342       0
-                text3                               829      829        4     1052       0
-                text2                               C19      C19       50     1832       0
-                text1                               8C1      8C1        D     1182       0
-                maintext                            3A0      3A0       DA        8       0
+                text74                             1797     1797        6     2F2E       0
+                text73                             1776     1776        3     2EEC       0
+                text72                             1779     1779        3     2EF2       0
+                text71                             17C7     17C7        7     2F8E       0
+                text70                              E65      E65       74     1CCA       0
+                text69                              886      886       14     110C       0
+                text68                              183      183      120        8       0
+                text67                              5EF      5EF       C1        8       0
+                text66                              D1A      D1A       6B     1A34       0
+                text65                                2        2        1        0       0
+                text64                              855      855        F     10AA       0
+                text63                              C0D      C0D       54     181A       0
+                text62                              B04      B04       3F     1608       0
+                text61                             177C     177C        3     2EF8       0
+                text60                             177F     177F        3     2EFE       0
+                text59                             1782     1782        3     2F04       0
+                text58                              803      803        A     1006       0
+                text57                              864      864        F     10C8       0
+                text56                              8D8      8D8       21     11B0       0
+                text54                             1785     1785        3     2F0A       0
+                text53                              82D      82D        D     105A       0
+                text52                              91A      91A       23     1234       0
+                text51                              A27      A27       31     144E       0
+                text50                             17E5     17E5        9     2FCA       0
+                text49                              9FC      9FC       2B     13F8       0
+                text48                             179D     179D        6     2F3A       0
+                text47                              873      873       13     10E6       0
+                text46                              93D      93D       23     127A       0
+                text45                              89A      89A       1E     1134       0
+                text44                             17EE     17EE        9     2FDC       0
+                text43                              9AC      9AC       28     1358       0
+                text42                             1792     1792        5     2F24       0
+                text41                             17F7     17F7        9     2FEE       0
+                text40                             1788     1788        3     2F10       0
+                text39                             178B     178B        3     2F16       0
+                text38                              D85      D85       6E     1B0A       0
+                text37                              817      817        B     102E       0
+                text36                             178E     178E        4     2F1C       0
+                text35                             17A3     17A3        6     2F46       0
+                text34                              822      822        B     1044       0
+                text33                             17A9     17A9        6     2F52       0
+                text32                             17AF     17AF        6     2F5E       0
+                text31                             17B5     17B5        6     2F6A       0
+                text30                              C61      C61       56     18C2       0
+                text29                             17CE     17CE        7     2F9C       0
+                text28                              847      847        E     108E       0
+                text27                              985      985       27     130A       0
+                text26                              7E7      7E7       15        8       0
+                text25                              ED9      ED9       75     1DB2       0
+                text24                              F4E      F4E       B2     1E9C       0
+                text23                              960      960       25     12C0       0
+                text22                              A8D      A8D       39     151A       0
+                text21                               63       63      120        8       0
+                text20                              52E      52E       C1        8       0
+                text19                              8B8      8B8       20     1170       0
+                text18                              CB7      CB7       63     196E       0
+                text17                              AC6      AC6       3E     158C       0
+                text16                              6B0      6B0       B2        8       0
+                text15                              9D4      9D4       28     13A8       0
+                text14                              8F9      8F9       21     11F2       0
+                text13                              B84      B84       42     1708       0
+                text12                              762      762       85        8       0
+                text11                              BC6      BC6       47     178C       0
+                text10                              DF3      DF3       72     1BE6       0
+                text9                               2A3      2A3       EF        8       0
+                text8                               800      800        3        8       0
+                text7                              17D5     17D5        8     2FAA       0
+                text6                              17DD     17DD        8     2FBA       0
+                text5                               A58      A58       35     14B0       0
+                text4                               46C      46C       C2        8       0
+                text3                               7FC      7FC        4        8       0
+                text2                               B43      B43       41     1686       0
+                text1                               83A      83A        D     1074       0
+                maintext                            392      392       DA        8       0
                 cstackBANK0                          20       20       22       20       1
                 cstackCOMMON                         70       70        C       70       1
                 cstackBANK1                          A0       A0       4E       A0       1
-                cstackBANK2                         120      120       33      120       1
-                clrtext                             84B      84B        6     1096       0
-                inittext                            7FA      7FA        6        8       0
+                cstackBANK2                         120      120       32      120       1
+                clrtext                            17BB     17BB        6     2F76       0
+                inittext                           17C1     17C1        6     2F82       0
                 bssBANK3                            1A0      1A0       40      1A0       1
-                dataBANK2                           15E      15E        A      120       1
-                bssBANK2                            153      153        B      120       1
+                dataBANK2                           15D      15D        A      120       1
+                bssBANK2                            152      152        B      120       1
                 bssBANK1                             EE       EE        2       A0       1
                 bssBANK0                             42       42       17       20       1
                 dataCOMMON                           7D       7D        1       70       1
                 bssCOMMON                            7C       7C        1       70       1
-                nvBANK2                             168      168        2      120       1
-                nvBANK0                              59       59        1       20       1
+                nvBANK2                             167      167        3      120       1
                 stringtext1                        1000     1000       1B     2000       0
-                idataBANK2                          894      894        A     1128       0
+                idataBANK2                          80D      80D        A     101A       0
                 idataCOMMON                           3        3        1        6       0
 
 TOTAL           Name                               Link     Load   Length     Space
@@ -163,81 +164,83 @@ TOTAL           Name                               Link     Load   Length     Sp
                 cinit                                33       33       30         0
                 intentry                              4        4       2D         0
                 reset_vec                             0        0        2         0
-                text72                              82D      82D        6         0
-                text71                              F17      F17       74         0
-                text70                              90D      90D       14         0
-                text69                              183      183      120         0
-                text68                              53B      53B       C1         0
-                text67                              DCF      DCF       68         0
-                text66                                2        2        1         0
-                text65                              8DC      8DC        F         0
-                text64                              CBC      CBC       54         0
-                text63                              B51      B51       3F         0
-                text62                              807      807        3         0
-                text61                              80A      80A        3         0
-                text60                              80D      80D        3         0
-                text59                              88A      88A        A         0
-                text58                              8EB      8EB        F         0
-                text57                              95F      95F       21         0
-                text55                              810      810        3         0
-                text54                              8B4      8B4        D         0
-                text53                              9C3      9C3       23         0
-                text52                              AA9      AA9       31         0
-                text51                              86F      86F        9         0
-                text50                              A7E      A7E       2B         0
-                text49                              833      833        6         0
-                text48                              8FA      8FA       13         0
-                text47                              9E6      9E6       23         0
-                text46                              921      921       1E         0
-                text45                              878      878        9         0
-                text44                              A2E      A2E       28         0
-                text43                              813      813        3         0
-                text42                              881      881        9         0
-                text41                              816      816        3         0
-                text40                              819      819        3         0
-                text39                              E37      E37       6E         0
-                text38                              89E      89E        B         0
-                text37                              825      825        4         0
-                text36                              839      839        6         0
-                text35                              8A9      8A9        B         0
-                text34                              83F      83F        6         0
-                text33                              845      845        6         0
-                text32                              D10      D10       5C         0
-                text31                              851      851        7         0
-                text30                              7E5      7E5       15         0
-                text29                              F8B      F8B       75         0
-                text28                              6AE      6AE       B2         0
-                text27                              8CE      8CE        E         0
-                text26                              A09      A09       25         0
-                text25                              ADA      ADA       39         0
-                text24                               63       63      120         0
-                text23                              47A      47A       C1         0
-                text22                              93F      93F       20         0
-                text21                              D6C      D6C       63         0
-                text20                              B13      B13       3E         0
-                text19                              5FC      5FC       B2         0
-                text18                              A56      A56       28         0
-                text17                              980      980       21         0
-                text16                              B90      B90       42         0
-                text15                              760      760       85         0
-                text14                              BD2      BD2       47         0
-                text13                              EA5      EA5       72         0
-                text12                              2A3      2A3       FD         0
-                text11                              81C      81C        3         0
-                text10                              85F      85F        8         0
-                text9                               867      867        8         0
-                text8                               81F      81F        3         0
-                text7                               822      822        3         0
-                text6                               858      858        7         0
-                text5                               C69      C69       53         0
-                text4                               9A1      9A1       22         0
-                text3                               829      829        4         0
-                text2                               C19      C19       50         0
-                text1                               8C1      8C1        D         0
-                maintext                            3A0      3A0       DA         0
-                clrtext                             84B      84B        6         0
-                inittext                            7FA      7FA        6         0
-                idataBANK2                          894      894        A         0
+                text74                             1797     1797        6         0
+                text73                             1776     1776        3         0
+                text72                             1779     1779        3         0
+                text71                             17C7     17C7        7         0
+                text70                              E65      E65       74         0
+                text69                              886      886       14         0
+                text68                              183      183      120         0
+                text67                              5EF      5EF       C1         0
+                text66                              D1A      D1A       6B         0
+                text65                                2        2        1         0
+                text64                              855      855        F         0
+                text63                              C0D      C0D       54         0
+                text62                              B04      B04       3F         0
+                text61                             177C     177C        3         0
+                text60                             177F     177F        3         0
+                text59                             1782     1782        3         0
+                text58                              803      803        A         0
+                text57                              864      864        F         0
+                text56                              8D8      8D8       21         0
+                text54                             1785     1785        3         0
+                text53                              82D      82D        D         0
+                text52                              91A      91A       23         0
+                text51                              A27      A27       31         0
+                text50                             17E5     17E5        9         0
+                text49                              9FC      9FC       2B         0
+                text48                             179D     179D        6         0
+                text47                              873      873       13         0
+                text46                              93D      93D       23         0
+                text45                              89A      89A       1E         0
+                text44                             17EE     17EE        9         0
+                text43                              9AC      9AC       28         0
+                text42                             1792     1792        5         0
+                text41                             17F7     17F7        9         0
+                text40                             1788     1788        3         0
+                text39                             178B     178B        3         0
+                text38                              D85      D85       6E         0
+                text37                              817      817        B         0
+                text36                             178E     178E        4         0
+                text35                             17A3     17A3        6         0
+                text34                              822      822        B         0
+                text33                             17A9     17A9        6         0
+                text32                             17AF     17AF        6         0
+                text31                             17B5     17B5        6         0
+                text30                              C61      C61       56         0
+                text29                             17CE     17CE        7         0
+                text28                              847      847        E         0
+                text27                              985      985       27         0
+                text26                              7E7      7E7       15         0
+                text25                              ED9      ED9       75         0
+                text24                              F4E      F4E       B2         0
+                text23                              960      960       25         0
+                text22                              A8D      A8D       39         0
+                text21                               63       63      120         0
+                text20                              52E      52E       C1         0
+                text19                              8B8      8B8       20         0
+                text18                              CB7      CB7       63         0
+                text17                              AC6      AC6       3E         0
+                text16                              6B0      6B0       B2         0
+                text15                              9D4      9D4       28         0
+                text14                              8F9      8F9       21         0
+                text13                              B84      B84       42         0
+                text12                              762      762       85         0
+                text11                              BC6      BC6       47         0
+                text10                              DF3      DF3       72         0
+                text9                               2A3      2A3       EF         0
+                text8                               800      800        3         0
+                text7                              17D5     17D5        8         0
+                text6                              17DD     17DD        8         0
+                text5                               A58      A58       35         0
+                text4                               46C      46C       C2         0
+                text3                               7FC      7FC        4         0
+                text2                               B43      B43       41         0
+                text1                               83A      83A        D         0
+                maintext                            392      392       DA         0
+                clrtext                            17BB     17BB        6         0
+                inittext                           17C1     17C1        6         0
+                idataBANK2                          80D      80D        A         0
                 idataCOMMON                           3        3        1         0
 
         CLASS   STRCODE        
@@ -257,17 +260,16 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   BANK0          
                 cstackBANK0                          20       20       22         1
                 bssBANK0                             42       42       17         1
-                nvBANK0                              59       59        1         1
 
         CLASS   BANK1          
                 cstackBANK1                          A0       A0       4E         1
                 bssBANK1                             EE       EE        2         1
 
         CLASS   BANK2          
-                cstackBANK2                         120      120       33         1
-                dataBANK2                           15E      15E        A         1
-                bssBANK2                            153      153        B         1
-                nvBANK2                             168      168        2         1
+                cstackBANK2                         120      120       32         1
+                dataBANK2                           15D      15D        A         1
+                bssBANK2                            152      152        B         1
+                nvBANK2                             167      167        3         1
 
         CLASS   BANK3          
                 bssBANK3                            1A0      1A0       40         1
@@ -540,82 +542,83 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
 
                 reset_vec                      000000  000003  000003         0       0  CODE        2
                 idataCOMMON                    000003  000001  000004         6       0  CODE        2
-                intentry                       000004  0007FC  000800         8       0  CODE        2
-                cstackBANK0                    000020  00003A  00005A        20       1  BANK0       1
+                intentry                       000004  0007FF  000803         8       0  CODE        2
+                cstackBANK0                    000020  000039  000059        20       1  BANK0       1
                 cstackCOMMON                   000070  00000E  00007E        70       1  COMMON      1
                 cstackBANK1                    0000A0  000050  0000F0        A0       1  BANK1       1
                 cstackBANK2                    000120  00004A  00016A       120       1  BANK2       1
                 bssBANK3                       0001A0  000040  0001E0       1A0       1  BANK3       1
-                text62                         000807  000003  00080A      100E       0  CODE        2
-                text61                         00080A  000003  00080D      1014       0  CODE        2
-                text60                         00080D  000003  000810      101A       0  CODE        2
-                text55                         000810  000003  000813      1020       0  CODE        2
-                text43                         000813  000003  000816      1026       0  CODE        2
-                text41                         000816  000003  000819      102C       0  CODE        2
-                text40                         000819  000003  00081C      1032       0  CODE        2
-                text11                         00081C  000003  00081F      1038       0  CODE        2
-                text8                          00081F  000003  000822      103E       0  CODE        2
-                text7                          000822  000003  000825      1044       0  CODE        2
-                text37                         000825  000004  000829      104A       0  CODE        2
-                text3                          000829  000004  00082D      1052       0  CODE        2
-                text72                         00082D  000006  000833      105A       0  CODE        2
-                text49                         000833  000006  000839      1066       0  CODE        2
-                text36                         000839  000006  00083F      1072       0  CODE        2
-                text34                         00083F  000006  000845      107E       0  CODE        2
-                text33                         000845  000006  00084B      108A       0  CODE        2
-                clrtext                        00084B  000006  000851      1096       0  CODE        2
-                text31                         000851  000007  000858      10A2       0  CODE        2
-                text6                          000858  000007  00085F      10B0       0  CODE        2
-                text10                         00085F  000008  000867      10BE       0  CODE        2
-                text9                          000867  000008  00086F      10CE       0  CODE        2
-                text51                         00086F  000009  000878      10DE       0  CODE        2
-                text45                         000878  000009  000881      10F0       0  CODE        2
-                text42                         000881  000009  00088A      1102       0  CODE        2
-                text59                         00088A  00000A  000894      1114       0  CODE        2
-                idataBANK2                     000894  00000A  00089E      1128       0  CODE        2
-                text38                         00089E  00000B  0008A9      113C       0  CODE        2
-                text35                         0008A9  00000B  0008B4      1152       0  CODE        2
-                text54                         0008B4  00000D  0008C1      1168       0  CODE        2
-                text1                          0008C1  00000D  0008CE      1182       0  CODE        2
-                text27                         0008CE  00000E  0008DC      119C       0  CODE        2
-                text65                         0008DC  00000F  0008EB      11B8       0  CODE        2
-                text58                         0008EB  00000F  0008FA      11D6       0  CODE        2
-                text48                         0008FA  000013  00090D      11F4       0  CODE        2
-                text70                         00090D  000014  000921      121A       0  CODE        2
-                text46                         000921  00001E  00093F      1242       0  CODE        2
-                text22                         00093F  000020  00095F      127E       0  CODE        2
-                text57                         00095F  000021  000980      12BE       0  CODE        2
-                text17                         000980  000021  0009A1      1300       0  CODE        2
-                text4                          0009A1  000022  0009C3      1342       0  CODE        2
-                text53                         0009C3  000023  0009E6      1386       0  CODE        2
-                text47                         0009E6  000023  000A09      13CC       0  CODE        2
-                text26                         000A09  000025  000A2E      1412       0  CODE        2
-                text44                         000A2E  000028  000A56      145C       0  CODE        2
-                text18                         000A56  000028  000A7E      14AC       0  CODE        2
-                text50                         000A7E  00002B  000AA9      14FC       0  CODE        2
-                text52                         000AA9  000031  000ADA      1552       0  CODE        2
-                text25                         000ADA  000039  000B13      15B4       0  CODE        2
-                text20                         000B13  00003E  000B51      1626       0  CODE        2
-                text63                         000B51  00003F  000B90      16A2       0  CODE        2
-                text16                         000B90  000042  000BD2      1720       0  CODE        2
-                text14                         000BD2  000047  000C19      17A4       0  CODE        2
-                text2                          000C19  000050  000C69      1832       0  CODE        2
-                text5                          000C69  000053  000CBC      18D2       0  CODE        2
-                text64                         000CBC  000054  000D10      1978       0  CODE        2
-                text32                         000D10  00005C  000D6C      1A20       0  CODE        2
-                text21                         000D6C  000063  000DCF      1AD8       0  CODE        2
-                text67                         000DCF  000068  000E37      1B9E       0  CODE        2
-                text39                         000E37  00006E  000EA5      1C6E       0  CODE        2
-                text13                         000EA5  000072  000F17      1D4A       0  CODE        2
-                text71                         000F17  000074  000F8B      1E2E       0  CODE        2
-                text29                         000F8B  000075  001000      1F16       0  CODE        2
+                text58                         000803  00000A  00080D      1006       0  CODE        2
+                idataBANK2                     00080D  00000A  000817      101A       0  CODE        2
+                text37                         000817  00000B  000822      102E       0  CODE        2
+                text34                         000822  00000B  00082D      1044       0  CODE        2
+                text53                         00082D  00000D  00083A      105A       0  CODE        2
+                text1                          00083A  00000D  000847      1074       0  CODE        2
+                text28                         000847  00000E  000855      108E       0  CODE        2
+                text64                         000855  00000F  000864      10AA       0  CODE        2
+                text57                         000864  00000F  000873      10C8       0  CODE        2
+                text47                         000873  000013  000886      10E6       0  CODE        2
+                text69                         000886  000014  00089A      110C       0  CODE        2
+                text45                         00089A  00001E  0008B8      1134       0  CODE        2
+                text19                         0008B8  000020  0008D8      1170       0  CODE        2
+                text56                         0008D8  000021  0008F9      11B0       0  CODE        2
+                text14                         0008F9  000021  00091A      11F2       0  CODE        2
+                text52                         00091A  000023  00093D      1234       0  CODE        2
+                text46                         00093D  000023  000960      127A       0  CODE        2
+                text23                         000960  000025  000985      12C0       0  CODE        2
+                text27                         000985  000027  0009AC      130A       0  CODE        2
+                text43                         0009AC  000028  0009D4      1358       0  CODE        2
+                text15                         0009D4  000028  0009FC      13A8       0  CODE        2
+                text49                         0009FC  00002B  000A27      13F8       0  CODE        2
+                text51                         000A27  000031  000A58      144E       0  CODE        2
+                text5                          000A58  000035  000A8D      14B0       0  CODE        2
+                text22                         000A8D  000039  000AC6      151A       0  CODE        2
+                text17                         000AC6  00003E  000B04      158C       0  CODE        2
+                text62                         000B04  00003F  000B43      1608       0  CODE        2
+                text2                          000B43  000041  000B84      1686       0  CODE        2
+                text13                         000B84  000042  000BC6      1708       0  CODE        2
+                text11                         000BC6  000047  000C0D      178C       0  CODE        2
+                text63                         000C0D  000054  000C61      181A       0  CODE        2
+                text30                         000C61  000056  000CB7      18C2       0  CODE        2
+                text18                         000CB7  000063  000D1A      196E       0  CODE        2
+                text66                         000D1A  00006B  000D85      1A34       0  CODE        2
+                text38                         000D85  00006E  000DF3      1B0A       0  CODE        2
+                text10                         000DF3  000072  000E65      1BE6       0  CODE        2
+                text70                         000E65  000074  000ED9      1CCA       0  CODE        2
+                text25                         000ED9  000075  000F4E      1DB2       0  CODE        2
+                text24                         000F4E  0000B2  001000      1E9C       0  CODE        2
                 stringtext1                    001000  00001B  00101B      2000       0  STRCODE     2
+                text73                         001776  000003  001779      2EEC       0  CODE        2
+                text72                         001779  000003  00177C      2EF2       0  CODE        2
+                text61                         00177C  000003  00177F      2EF8       0  CODE        2
+                text60                         00177F  000003  001782      2EFE       0  CODE        2
+                text59                         001782  000003  001785      2F04       0  CODE        2
+                text54                         001785  000003  001788      2F0A       0  CODE        2
+                text40                         001788  000003  00178B      2F10       0  CODE        2
+                text39                         00178B  000003  00178E      2F16       0  CODE        2
+                text36                         00178E  000004  001792      2F1C       0  CODE        2
+                text42                         001792  000005  001797      2F24       0  CODE        2
+                text74                         001797  000006  00179D      2F2E       0  CODE        2
+                text48                         00179D  000006  0017A3      2F3A       0  CODE        2
+                text35                         0017A3  000006  0017A9      2F46       0  CODE        2
+                text33                         0017A9  000006  0017AF      2F52       0  CODE        2
+                text32                         0017AF  000006  0017B5      2F5E       0  CODE        2
+                text31                         0017B5  000006  0017BB      2F6A       0  CODE        2
+                clrtext                        0017BB  000006  0017C1      2F76       0  CODE        2
+                inittext                       0017C1  000006  0017C7      2F82       0  CODE        2
+                text71                         0017C7  000007  0017CE      2F8E       0  CODE        2
+                text29                         0017CE  000007  0017D5      2F9C       0  CODE        2
+                text7                          0017D5  000008  0017DD      2FAA       0  CODE        2
+                text6                          0017DD  000008  0017E5      2FBA       0  CODE        2
+                text50                         0017E5  000009  0017EE      2FCA       0  CODE        2
+                text44                         0017EE  000009  0017F7      2FDC       0  CODE        2
+                text41                         0017F7  000009  001800      2FEE       0  CODE        2
 
 
 UNUSED ADDRESS RANGES
 
         Name                Unused          Largest block    Delta
-        BANK0            0005A-0006F              16           1
+        BANK0            00059-0006F              17           1
         BANK10           00520-0056F              50           1
         BANK11           005A0-005EF              50           1
         BANK12           00620-0066F              50           1
@@ -641,15 +644,15 @@ UNUSED ADDRESS RANGES
         BANK8            00420-0046F              50           1
         BANK9            004A0-004EF              50           1
         BIGRAM           02000-027EF             7F0           1
-        CODE             00800-00806               7           2
-                         0101B-03FFF             800
-        CONST            00800-00806               7           2
-                         0101B-03FFF             100
+        CODE             0101B-01775             75B           2
+                         01800-03FFF             800
+        CONST            0101B-01775             100           2
+                         01800-03FFF             100
         EEDATA           0F000-0F0FF             100           2
-        ENTRY            00800-00806               7           2
-                         0101B-03FFF             100
+        ENTRY            0101B-01775             100           2
+                         01800-03FFF             100
         IDLOC            08000-08003               4           2
-        RAM              0005A-0006F              16           1
+        RAM              00059-0006F              17           1
                          0016A-0016F               6
                          001E0-001EF              10
                          00220-0026F              50
@@ -739,10 +742,10 @@ UNUSED ADDRESS RANGES
         SFR8             00400-0041F              20           1
         SFR9             00480-0049F              20           1
         STACK            02130-027EF             6C0           1
-        STRCODE          00800-00806               7           2
-                         0101B-03FFF            2FE5
-        STRING           00800-00806               7           2
-                         0101B-03FFF             100
+        STRCODE          0101B-01775             75B           2
+                         01800-03FFF            2800
+        STRING           0101B-01775             100           2
+                         01800-03FFF             100
 
                                   Symbol Table
 
@@ -768,6 +771,7 @@ UNUSED ADDRESS RANGES
 ?i1___ftpack                                 cstackCOMMON 00070
 ADCC_SetADIInterruptHandler@InterruptHandler cstackBANK1  000A0
 ADCC_StartConversion@channel                 cstackBANK1  000A0
+AMPS_enable@enable                           cstackBANK1  000A2
 I2C1_GetCommand@cmd                          cstackBANK1  000A1
 I2C1_GetCommandData@data                     cstackBANK1  000A2
 I2C1_GetCommandData@len                      cstackBANK1  000A0
@@ -797,15 +801,15 @@ _ADACQL                                      (abs)        0010C
 _ADACT                                       (abs)        00117
 _ADCAP                                       (abs)        0010E
 _ADCC_ADI_InterruptHandler                   bssBANK0     0004D
-_ADCC_DefaultInterruptHandler                text66       00002
-_ADCC_DisableContinuousConversion            text8        0081F
-_ADCC_EnableContinuousConversion             text11       0081C
-_ADCC_GetConversionResult                    text72       0082D
-_ADCC_ISR                                    text65       008DC
-_ADCC_Initialize                             text44       00A2E
-_ADCC_SetADIInterruptHandler                 text45       00878
-_ADCC_StartConversion                        text10       0085F
-_ADCC_StopConversion                         text7        00822
+_ADCC_DefaultInterruptHandler                text65       00002
+_ADCC_DisableContinuousConversion            text73       01776
+_ADCC_EnableContinuousConversion             text8        00800
+_ADCC_GetConversionResult                    text74       01797
+_ADCC_ISR                                    text64       00855
+_ADCC_Initialize                             text43       009AC
+_ADCC_SetADIInterruptHandler                 text44       017EE
+_ADCC_StartConversion                        text7        017D5
+_ADCC_StopConversion                         text72       01779
 _ADCLK                                       (abs)        00118
 _ADCNT                                       (abs)        00099
 _ADCON0                                      (abs)        00111
@@ -837,53 +841,54 @@ _ADSTPTH                                     (abs)        00093
 _ADSTPTL                                     (abs)        00092
 _ADUTHH                                      (abs)        0008F
 _ADUTHL                                      (abs)        0008E
+_AMPS_enable                                 text27       00985
 _ANSELA                                      (abs)        01F38
 _ANSELB                                      (abs)        01F43
 _ANSELBbits                                  (abs)        01F43
 _ANSELC                                      (abs)        01F4E
 _ANSELCbits                                  (abs)        01F4E
 _CPUDOZEbits                                 (abs)        0088C
-_DOUT_Init                                   text43       00813
-_EnterSleep                                  text31       00851
-_I2C1_CommandReceived                        text55       00810
-_I2C1_GetCommand                             text54       008B4
-_I2C1_GetCommandData                         text53       009C3
-_I2C1_ISR                                    text63       00B51
-_I2C1_Initialize                             text50       00A7E
-_I2C1_SetTransmitData                        text52       00AA9
-_I2C1_StatusCallback                         text64       00CBC
-_I2C1_TxBufferEmpty                          text51       0086F
+_DOUT_Init                                   text42       01792
+_EnterSleep                                  text29       017CE
+_I2C1_CommandReceived                        text54       01785
+_I2C1_GetCommand                             text53       0082D
+_I2C1_GetCommandData                         text52       0091A
+_I2C1_ISR                                    text62       00B04
+_I2C1_Initialize                             text49       009FC
+_I2C1_SetTransmitData                        text51       00A27
+_I2C1_StatusCallback                         text63       00C0D
+_I2C1_TxBufferEmpty                          text50       017E5
 _I2C1_slaveWriteData                         dataCOMMON   0007D
 _INTCONbits                                  (abs)        0000B
 _INTERRUPT_InterruptManager                  intentry     00004
-_IOCCF0_ISR                                  text62       00807
+_IOCCF0_ISR                                  text61       0177C
 _IOCCF0_InterruptHandler                     bssBANK0     0004B
-_IOCCF2_ISR                                  text61       0080A
+_IOCCF2_ISR                                  text60       0177F
 _IOCCF2_InterruptHandler                     bssBANK0     00049
-_IOCCF4_ISR                                  text60       0080D
+_IOCCF4_ISR                                  text59       01782
 _IOCCF4_InterruptHandler                     bssBANK0     00047
-_IOCCF6_ISR                                  text58       008EB
+_IOCCF6_ISR                                  text57       00864
 _IOCCF6_InterruptHandler                     bssBANK0     00045
-_IOCCF6_SetInterruptHandler                  text42       00881
+_IOCCF6_SetInterruptHandler                  text41       017F7
 _IOCCFbits                                   (abs)        01F55
 _IOCCNbits                                   (abs)        01F54
 _IOCCPbits                                   (abs)        01F53
-_ISR_MIC_Wake                                text59       0088A
+_ISR_MIC_Wake                                text58       00803
 _LATA                                        (abs)        00018
 _LATB                                        (abs)        00019
 _LATBbits                                    (abs)        00019
 _LATC                                        (abs)        0001A
 _LATCbits                                    (abs)        0001A
-_LED_Blink                                   text39       00E37
-_LED_Init                                    text38       0089E
-_MIC_Mode                                    text30       007E5
+_LED_Blink                                   text38       00D85
+_LED_Init                                    text37       00817
+_MIC_Mode                                    text26       007E7
 _OSCCON1                                     (abs)        0088D
 _OSCFRQ                                      (abs)        00893
-_OSCILLATOR_Initialize                       text49       00833
+_OSCILLATOR_Initialize                       text48       0179D
 _PIE0bits                                    (abs)        00716
 _PIE1bits                                    (abs)        00717
 _PIE3bits                                    (abs)        00719
-_PIN_MANAGER_IOC                             text57       0095F
+_PIN_MANAGER_IOC                             text56       008D8
 _PIR0bits                                    (abs)        0070C
 _PIR1bits                                    (abs)        0070D
 _PIR3bits                                    (abs)        0070F
@@ -898,10 +903,10 @@ _PMD5                                        (abs)        0079B
 _PMD6                                        (abs)        0079C
 _PMD6bits                                    (abs)        0079C
 _PMD7                                        (abs)        0079D
-_PMD_Initialize                              text48       008FA
+_PMD_Initialize                              text47       00873
 _RB5PPS                                      (abs)        01F1D
 _RB7PPS                                      (abs)        01F1F
-_READY_Init                                  text37       00825
+_READY_Init                                  text36       0178E
 _SSP1ADD                                     (abs)        0018D
 _SSP1BUF                                     (abs)        0018C
 _SSP1CLKPPS                                  (abs)        01EC5
@@ -915,30 +920,33 @@ _SSP1DATPPS                                  (abs)        01EC6
 _SSP1MSK                                     (abs)        0018E
 _SSP1STAT                                    (abs)        0018F
 _SSP1STATbits                                (abs)        0018F
-_SYSTEM_Initialize                           text47       009E6
-_SoundLevel_GetData                          text46       00921
-_SoundLevel_GetSample                        text67       00DCF
-_SoundLevel_Init                             text32       00D10
-_SoundLevel_LedOff                           text41       00816
-_SoundLevel_LedOn                            text40       00819
-_SoundLevel_Loop                             text4        009A1
-_SoundLevel_Measure                          text3        00829
-_SoundLevel_PrepareData                      text12       002A3
-_SoundLevel_PrepareData$2587                 cstackBANK2  00129
-_SoundLevel_PrepareData$2588                 cstackBANK2  0012C
-_SoundLevel_SetThreshold                     text2        00C19
-_SoundLevel_StartADC                         text9        00867
-_SoundLevel_StopADC                          text6        00858
+_STATUSbits                                  (abs)        00003
+_SYSTEM_Initialize                           text46       0093D
+_SoundLevel_GetData                          text45       0089A
+_SoundLevel_GetSample                        text66       00D1A
+_SoundLevel_Init                             text30       00C61
+_SoundLevel_LedOff                           text40       01788
+_SoundLevel_LedOn                            text39       0178B
+_SoundLevel_Loop                             text4        0046C
+_SoundLevel_Measure                          text3        007FC
+_SoundLevel_PrepareData                      text9        002A3
+_SoundLevel_PrepareData$2647                 cstackBANK2  00129
+_SoundLevel_PrepareData$2648                 cstackBANK2  0012C
+_SoundLevel_SetThreshold                     text2        00B43
+_SoundLevel_StartADC                         text6        017DD
+_SoundLevel_StopADC                          text71       017C7
 _TRISA                                       (abs)        00012
 _TRISB                                       (abs)        00013
 _TRISBbits                                   (abs)        00013
 _TRISC                                       (abs)        00014
 _TRISCbits                                   (abs)        00014
-_VDDAMP_Init                                 text36       00839
-_VDDBIAS_Init                                text35       008A9
+_VDDAMP_Init                                 text35       017A3
+_VDDBIAS_Init                                text34       00822
 _VREGCONbits                                 (abs)        00812
 _WDTCON0                                     (abs)        0080C
+_WDTCON0bits                                 (abs)        0080C
 _WDTCON1                                     (abs)        0080D
+_WDT_Init                                    text33       017A9
 __Habs1                                      abs1         00000
 __Hbank0                                     bank0        00000
 __Hbank1                                     bank1        00000
@@ -1030,7 +1038,6 @@ __Hinit                                      init         00031
 __Hinittext                                  inittext     00000
 __Hintentry                                  intentry     00031
 __Hmaintext                                  maintext     00000
-__HnvBANK0                                   nvBANK0      00000
 __HnvBANK2                                   nvBANK2      00000
 __Hpowerup                                   powerup      00000
 __Hram                                       ram          00000
@@ -1099,7 +1106,7 @@ __Hsfr63                                     sfr63        00000
 __Hsfr7                                      sfr7         00000
 __Hsfr8                                      sfr8         00000
 __Hsfr9                                      sfr9         00000
-__Hspace_0                                   (abs)        0101B
+__Hspace_0                                   (abs)        01800
 __Hspace_1                                   (abs)        001E0
 __Hspace_2                                   (abs)        00000
 __Hspace_3                                   (abs)        00000
@@ -1199,7 +1206,6 @@ __Linit                                      init         00031
 __Linittext                                  inittext     00000
 __Lintentry                                  intentry     00004
 __Lmaintext                                  maintext     00000
-__LnvBANK0                                   nvBANK0      00000
 __LnvBANK2                                   nvBANK2      00000
 __Lpowerup                                   powerup      00000
 __Lram                                       ram          00000
@@ -1277,228 +1283,231 @@ __Lstack                                     stack        00000
 __Lstrings                                   strings      00000
 __Lstringtext1                               stringtext1  00000
 __Ltext                                      text         00000
-__S0                                         (abs)        0101B
+__S0                                         (abs)        01800
 __S1                                         (abs)        001E0
 __S2                                         (abs)        00000
 __S3                                         (abs)        00000
-___altoft                                    text16       00B90
+___altoft                                    text13       00B84
 ___altoft@c                                  cstackBANK1  000D6
 ___altoft@exp                                cstackBANK1  000DC
 ___altoft@sign                               cstackBANK1  000DD
-___awtoft                                    text26       00A09
+___awtoft                                    text23       00960
 ___awtoft@c                                  cstackBANK1  000A8
 ___awtoft@sign                               cstackBANK1  000AD
-___ftadd                                     text24       00063
+___ftadd                                     text21       00063
 ___ftadd@exp1                                cstackBANK1  000D4
 ___ftadd@exp2                                cstackBANK1  000D3
 ___ftadd@f1                                  cstackBANK1  000C8
 ___ftadd@f2                                  cstackBANK1  000CB
 ___ftadd@sign                                cstackBANK1  000D2
-___ftdiv                                     text28       006AE
+___ftdiv                                     text24       00F4E
 ___ftdiv@cntr                                cstackBANK1  000B2
 ___ftdiv@exp                                 cstackBANK1  000B6
 ___ftdiv@f1                                  cstackBANK1  000AB
 ___ftdiv@f2                                  cstackBANK1  000A8
 ___ftdiv@f3                                  cstackBANK1  000B3
 ___ftdiv@sign                                cstackBANK1  000B7
-___ftge                                      text25       00ADA
+___ftge                                      text22       00A8D
 ___ftge@ff1                                  cstackBANK1  000A0
 ___ftge@ff2                                  cstackBANK1  000A3
-___ftmul                                     text23       0047A
+___ftmul                                     text20       0052E
 ___ftmul@cntr                                cstackBANK1  000C6
 ___ftmul@exp                                 cstackBANK1  000C2
 ___ftmul@f1                                  cstackBANK1  000B8
 ___ftmul@f2                                  cstackBANK1  000BB
 ___ftmul@f3_as_product                       cstackBANK1  000C3
 ___ftmul@sign                                cstackBANK1  000C7
-___ftpack                                    text29       00F8B
+___ftpack                                    text25       00ED9
 ___ftpack@arg                                cstackBANK1  000A0
 ___ftpack@exp                                cstackBANK1  000A3
 ___ftpack@sign                               cstackBANK1  000A4
-___ftsub                                     text17       00980
+___ftsub                                     text14       008F9
 ___ftsub@f1                                  cstackBANK1  000EA
 ___ftsub@f2                                  cstackBANK1  000E7
-___fttol                                     text15       00760
+___fttol                                     text12       00762
 ___fttol@exp1                                cstackBANK1  000D5
 ___fttol@f1                                  cstackBANK1  000C8
 ___fttol@lval                                cstackBANK1  000D1
 ___fttol@sign1                               cstackBANK1  000D0
 ___int_sp                                    stack        00000
 ___latbits                                   (abs)        00003
-___lwtoft                                    text70       0090D
+___lwtoft                                    text69       00886
 ___lwtoft@c                                  cstackCOMMON 00078
 ___sp                                        stack        00000
 ___stackhi                                   (abs)        027EF
 ___stacklo                                   (abs)        02130
-___wmul                                      text22       0093F
+___wmul                                      text19       008B8
 ___wmul@multiplicand                         cstackBANK1  000A2
 ___wmul@multiplier                           cstackBANK1  000A0
 ___wmul@product                              cstackBANK1  000A4
-__end_of_ADCC_DefaultInterruptHandler        text66       00003
-__end_of_ADCC_DisableContinuousConversion    text8        00822
-__end_of_ADCC_EnableContinuousConversion     text11       0081F
-__end_of_ADCC_GetConversionResult            text72       00833
-__end_of_ADCC_ISR                            text65       008EB
-__end_of_ADCC_Initialize                     text44       00A56
-__end_of_ADCC_SetADIInterruptHandler         text45       00881
-__end_of_ADCC_StartConversion                text10       00867
-__end_of_ADCC_StopConversion                 text7        00825
-__end_of_DOUT_Init                           text43       00816
-__end_of_EnterSleep                          text31       00858
-__end_of_I2C1_CommandReceived                text55       00813
-__end_of_I2C1_GetCommand                     text54       008C1
-__end_of_I2C1_GetCommandData                 text53       009E6
-__end_of_I2C1_ISR                            text63       00B90
-__end_of_I2C1_Initialize                     text50       00AA9
-__end_of_I2C1_SetTransmitData                text52       00ADA
-__end_of_I2C1_StatusCallback                 text64       00D10
-__end_of_I2C1_TxBufferEmpty                  text51       00878
+__end_of_ADCC_DefaultInterruptHandler        text65       00003
+__end_of_ADCC_DisableContinuousConversion    text73       01779
+__end_of_ADCC_EnableContinuousConversion     text8        00803
+__end_of_ADCC_GetConversionResult            text74       0179D
+__end_of_ADCC_ISR                            text64       00864
+__end_of_ADCC_Initialize                     text43       009D4
+__end_of_ADCC_SetADIInterruptHandler         text44       017F7
+__end_of_ADCC_StartConversion                text7        017DD
+__end_of_ADCC_StopConversion                 text72       0177C
+__end_of_AMPS_enable                         text27       009AC
+__end_of_DOUT_Init                           text42       01797
+__end_of_EnterSleep                          text29       017D5
+__end_of_I2C1_CommandReceived                text54       01788
+__end_of_I2C1_GetCommand                     text53       0083A
+__end_of_I2C1_GetCommandData                 text52       0093D
+__end_of_I2C1_ISR                            text62       00B43
+__end_of_I2C1_Initialize                     text49       00A27
+__end_of_I2C1_SetTransmitData                text51       00A58
+__end_of_I2C1_StatusCallback                 text63       00C61
+__end_of_I2C1_TxBufferEmpty                  text50       017EE
 __end_of_INTERRUPT_InterruptManager          intentry     00031
-__end_of_IOCCF0_ISR                          text62       0080A
-__end_of_IOCCF2_ISR                          text61       0080D
-__end_of_IOCCF4_ISR                          text60       00810
-__end_of_IOCCF6_ISR                          text58       008FA
-__end_of_IOCCF6_SetInterruptHandler          text42       0088A
-__end_of_ISR_MIC_Wake                        text59       00894
-__end_of_LED_Blink                           text39       00EA5
-__end_of_LED_Init                            text38       008A9
-__end_of_MIC_Mode                            text30       007FA
-__end_of_OSCILLATOR_Initialize               text49       00839
-__end_of_PIN_MANAGER_IOC                     text57       00980
-__end_of_PMD_Initialize                      text48       0090D
-__end_of_READY_Init                          text37       00829
-__end_of_SYSTEM_Initialize                   text47       00A09
-__end_of_SoundLevel_GetData                  text46       0093F
-__end_of_SoundLevel_GetSample                text67       00E37
-__end_of_SoundLevel_Init                     text32       00D6C
-__end_of_SoundLevel_LedOff                   text41       00819
-__end_of_SoundLevel_LedOn                    text40       0081C
-__end_of_SoundLevel_Loop                     text4        009C3
-__end_of_SoundLevel_Measure                  text3        0082D
-__end_of_SoundLevel_PrepareData              text12       003A0
-__end_of_SoundLevel_SetThreshold             text2        00C69
-__end_of_SoundLevel_StartADC                 text9        0086F
-__end_of_SoundLevel_StopADC                  text6        0085F
-__end_of_VDDAMP_Init                         text36       0083F
-__end_of_VDDBIAS_Init                        text35       008B4
-__end_of___altoft                            text16       00BD2
-__end_of___awtoft                            text26       00A2E
-__end_of___ftadd                             text24       00183
-__end_of___ftdiv                             text28       00760
-__end_of___ftge                              text25       00B13
-__end_of___ftmul                             text23       0053B
-__end_of___ftpack                            text29       01000
-__end_of___ftsub                             text17       009A1
-__end_of___fttol                             text15       007E5
-__end_of___lwtoft                            text70       00921
-__end_of___wmul                              text22       0095F
+__end_of_IOCCF0_ISR                          text61       0177F
+__end_of_IOCCF2_ISR                          text60       01782
+__end_of_IOCCF4_ISR                          text59       01785
+__end_of_IOCCF6_ISR                          text57       00873
+__end_of_IOCCF6_SetInterruptHandler          text41       01800
+__end_of_ISR_MIC_Wake                        text58       0080D
+__end_of_LED_Blink                           text38       00DF3
+__end_of_LED_Init                            text37       00822
+__end_of_MIC_Mode                            text26       007FC
+__end_of_OSCILLATOR_Initialize               text48       017A3
+__end_of_PIN_MANAGER_IOC                     text56       008F9
+__end_of_PMD_Initialize                      text47       00886
+__end_of_READY_Init                          text36       01792
+__end_of_SYSTEM_Initialize                   text46       00960
+__end_of_SoundLevel_GetData                  text45       008B8
+__end_of_SoundLevel_GetSample                text66       00D85
+__end_of_SoundLevel_Init                     text30       00CB7
+__end_of_SoundLevel_LedOff                   text40       0178B
+__end_of_SoundLevel_LedOn                    text39       0178E
+__end_of_SoundLevel_Loop                     text4        0052E
+__end_of_SoundLevel_Measure                  text3        00800
+__end_of_SoundLevel_PrepareData              text9        00392
+__end_of_SoundLevel_SetThreshold             text2        00B84
+__end_of_SoundLevel_StartADC                 text6        017E5
+__end_of_SoundLevel_StopADC                  text71       017CE
+__end_of_VDDAMP_Init                         text35       017A9
+__end_of_VDDBIAS_Init                        text34       0082D
+__end_of_WDT_Init                            text33       017AF
+__end_of___altoft                            text13       00BC6
+__end_of___awtoft                            text23       00985
+__end_of___ftadd                             text21       00183
+__end_of___ftdiv                             text24       01000
+__end_of___ftge                              text22       00AC6
+__end_of___ftmul                             text20       005EF
+__end_of___ftpack                            text25       00F4E
+__end_of___ftsub                             text14       0091A
+__end_of___fttol                             text12       007E7
+__end_of___lwtoft                            text69       0089A
+__end_of___wmul                              text19       008D8
 __end_of__initialization                     cinit        0005F
-__end_of_eval_poly                           text21       00DCF
-__end_of_frexp                               text20       00B51
-__end_of_generateInt                         text27       008DC
-__end_of_log                                 text19       006AE
-__end_of_log10                               text18       00A7E
-__end_of_main                                maintext     0047A
-__end_of_measure                             text5        00CBC
-__end_of_nWakeMic_Init                       text34       00845
-__end_of_powerMic_Init                       text33       0084B
-__end_of_round                               text13       00F17
-__end_of_toggleInt                           text1        008CE
-__end_of_trunc                               text14       00C19
-__end_ofi1___ftadd                           text69       002A3
-__end_ofi1___ftmul                           text68       005FC
-__end_ofi1___ftpack                          text71       00F8B
+__end_of_eval_poly                           text18       00D1A
+__end_of_frexp                               text17       00B04
+__end_of_generateInt                         text28       00855
+__end_of_log                                 text16       00762
+__end_of_log10                               text15       009FC
+__end_of_main                                maintext     0046C
+__end_of_measure                             text5        00A8D
+__end_of_nWakeMic_Init                       text32       017B5
+__end_of_powerMic_Init                       text31       017BB
+__end_of_round                               text10       00E65
+__end_of_toggleInt                           text1        00847
+__end_of_trunc                               text11       00C0D
+__end_ofi1___ftadd                           text68       002A3
+__end_ofi1___ftmul                           text67       006B0
+__end_ofi1___ftpack                          text70       00ED9
 __end_oflog@coeff                            stringtext1  0101B
 __initialization                             cinit        00033
 __pbssBANK0                                  bssBANK0     00042
 __pbssBANK1                                  bssBANK1     000EE
-__pbssBANK2                                  bssBANK2     00153
+__pbssBANK2                                  bssBANK2     00152
 __pbssBANK3                                  bssBANK3     001A0
 __pbssCOMMON                                 bssCOMMON    0007C
 __pcstackBANK0                               cstackBANK0  00020
 __pcstackBANK1                               cstackBANK1  000A0
 __pcstackBANK2                               cstackBANK2  00120
 __pcstackCOMMON                              cstackCOMMON 00070
-__pdataBANK2                                 dataBANK2    0015E
+__pdataBANK2                                 dataBANK2    0015D
 __pdataCOMMON                                dataCOMMON   0007D
-__pidataBANK2                                idataBANK2   00894
+__pidataBANK2                                idataBANK2   0080D
 __pidataCOMMON                               idataCOMMON  00003
 __pintentry                                  intentry     00004
-__pmaintext                                  maintext     003A0
-__pnvBANK0                                   nvBANK0      00059
-__pnvBANK2                                   nvBANK2      00168
+__pmaintext                                  maintext     00392
+__pnvBANK2                                   nvBANK2      00167
 __pstringtext1                               stringtext1  01000
-__ptext1                                     text1        008C1
-__ptext10                                    text10       0085F
-__ptext11                                    text11       0081C
-__ptext12                                    text12       002A3
-__ptext13                                    text13       00EA5
-__ptext14                                    text14       00BD2
-__ptext15                                    text15       00760
-__ptext16                                    text16       00B90
-__ptext17                                    text17       00980
-__ptext18                                    text18       00A56
-__ptext19                                    text19       005FC
-__ptext2                                     text2        00C19
-__ptext20                                    text20       00B13
-__ptext21                                    text21       00D6C
-__ptext22                                    text22       0093F
-__ptext23                                    text23       0047A
-__ptext24                                    text24       00063
-__ptext25                                    text25       00ADA
-__ptext26                                    text26       00A09
-__ptext27                                    text27       008CE
-__ptext28                                    text28       006AE
-__ptext29                                    text29       00F8B
-__ptext3                                     text3        00829
-__ptext30                                    text30       007E5
-__ptext31                                    text31       00851
-__ptext32                                    text32       00D10
-__ptext33                                    text33       00845
-__ptext34                                    text34       0083F
-__ptext35                                    text35       008A9
-__ptext36                                    text36       00839
-__ptext37                                    text37       00825
-__ptext38                                    text38       0089E
-__ptext39                                    text39       00E37
-__ptext4                                     text4        009A1
-__ptext40                                    text40       00819
-__ptext41                                    text41       00816
-__ptext42                                    text42       00881
-__ptext43                                    text43       00813
-__ptext44                                    text44       00A2E
-__ptext45                                    text45       00878
-__ptext46                                    text46       00921
-__ptext47                                    text47       009E6
-__ptext48                                    text48       008FA
-__ptext49                                    text49       00833
-__ptext5                                     text5        00C69
-__ptext50                                    text50       00A7E
-__ptext51                                    text51       0086F
-__ptext52                                    text52       00AA9
-__ptext53                                    text53       009C3
-__ptext54                                    text54       008B4
-__ptext55                                    text55       00810
-__ptext57                                    text57       0095F
-__ptext58                                    text58       008EB
-__ptext59                                    text59       0088A
-__ptext6                                     text6        00858
-__ptext60                                    text60       0080D
-__ptext61                                    text61       0080A
-__ptext62                                    text62       00807
-__ptext63                                    text63       00B51
-__ptext64                                    text64       00CBC
-__ptext65                                    text65       008DC
-__ptext66                                    text66       00002
-__ptext67                                    text67       00DCF
-__ptext68                                    text68       0053B
-__ptext69                                    text69       00183
-__ptext7                                     text7        00822
-__ptext70                                    text70       0090D
-__ptext71                                    text71       00F17
-__ptext72                                    text72       0082D
-__ptext8                                     text8        0081F
-__ptext9                                     text9        00867
+__ptext1                                     text1        0083A
+__ptext10                                    text10       00DF3
+__ptext11                                    text11       00BC6
+__ptext12                                    text12       00762
+__ptext13                                    text13       00B84
+__ptext14                                    text14       008F9
+__ptext15                                    text15       009D4
+__ptext16                                    text16       006B0
+__ptext17                                    text17       00AC6
+__ptext18                                    text18       00CB7
+__ptext19                                    text19       008B8
+__ptext2                                     text2        00B43
+__ptext20                                    text20       0052E
+__ptext21                                    text21       00063
+__ptext22                                    text22       00A8D
+__ptext23                                    text23       00960
+__ptext24                                    text24       00F4E
+__ptext25                                    text25       00ED9
+__ptext26                                    text26       007E7
+__ptext27                                    text27       00985
+__ptext28                                    text28       00847
+__ptext29                                    text29       017CE
+__ptext3                                     text3        007FC
+__ptext30                                    text30       00C61
+__ptext31                                    text31       017B5
+__ptext32                                    text32       017AF
+__ptext33                                    text33       017A9
+__ptext34                                    text34       00822
+__ptext35                                    text35       017A3
+__ptext36                                    text36       0178E
+__ptext37                                    text37       00817
+__ptext38                                    text38       00D85
+__ptext39                                    text39       0178B
+__ptext4                                     text4        0046C
+__ptext40                                    text40       01788
+__ptext41                                    text41       017F7
+__ptext42                                    text42       01792
+__ptext43                                    text43       009AC
+__ptext44                                    text44       017EE
+__ptext45                                    text45       0089A
+__ptext46                                    text46       0093D
+__ptext47                                    text47       00873
+__ptext48                                    text48       0179D
+__ptext49                                    text49       009FC
+__ptext5                                     text5        00A58
+__ptext50                                    text50       017E5
+__ptext51                                    text51       00A27
+__ptext52                                    text52       0091A
+__ptext53                                    text53       0082D
+__ptext54                                    text54       01785
+__ptext56                                    text56       008D8
+__ptext57                                    text57       00864
+__ptext58                                    text58       00803
+__ptext59                                    text59       01782
+__ptext6                                     text6        017DD
+__ptext60                                    text60       0177F
+__ptext61                                    text61       0177C
+__ptext62                                    text62       00B04
+__ptext63                                    text63       00C0D
+__ptext64                                    text64       00855
+__ptext65                                    text65       00002
+__ptext66                                    text66       00D1A
+__ptext67                                    text67       005EF
+__ptext68                                    text68       00183
+__ptext69                                    text69       00886
+__ptext7                                     text7        017D5
+__ptext70                                    text70       00E65
+__ptext71                                    text71       017C7
+__ptext72                                    text72       01779
+__ptext73                                    text73       01776
+__ptext74                                    text74       01797
+__ptext8                                     text8        00800
+__ptext9                                     text9        002A3
 __size_of_ADCC_DefaultInterruptHandler       (abs)        00000
 __size_of_ADCC_DisableContinuousConversion   (abs)        00000
 __size_of_ADCC_EnableContinuousConversion    (abs)        00000
@@ -1508,6 +1517,7 @@ __size_of_ADCC_Initialize                    (abs)        00000
 __size_of_ADCC_SetADIInterruptHandler        (abs)        00000
 __size_of_ADCC_StartConversion               (abs)        00000
 __size_of_ADCC_StopConversion                (abs)        00000
+__size_of_AMPS_enable                        (abs)        00000
 __size_of_DOUT_Init                          (abs)        00000
 __size_of_EnterSleep                         (abs)        00000
 __size_of_I2C1_CommandReceived               (abs)        00000
@@ -1546,6 +1556,7 @@ __size_of_SoundLevel_StartADC                (abs)        00000
 __size_of_SoundLevel_StopADC                 (abs)        00000
 __size_of_VDDAMP_Init                        (abs)        00000
 __size_of_VDDBIAS_Init                       (abs)        00000
+__size_of_WDT_Init                           (abs)        00000
 __size_of___altoft                           (abs)        00000
 __size_of___awtoft                           (abs)        00000
 __size_of___ftadd                            (abs)        00000
@@ -1576,39 +1587,39 @@ _adcScaler                                   bssBANK0     00042
 _cmdByte                                     bssCOMMON    0007C
 _cmdReceived                                 bssBANK0     00057
 _errno                                       bssBANK1     000EE
-_eval_poly                                   text21       00D6C
-_frexp                                       text20       00B13
-_generateInt                                 text27       008CE
+_eval_poly                                   text18       00CB7
+_frexp                                       text17       00AC6
+_generateInt                                 text28       00847
 _i2c1_rx_buffer                              bssBANK3     001C0
 _i2c1_tx_buffer                              bssBANK3     001A0
-_log                                         text19       005FC
-_log10                                       text18       00A56
-_log10$2589                                  cstackBANK1  000E8
-_mData                                       bssBANK2     0015B
-_mDataLength                                 bssBANK2     0015D
-_main                                        maintext     003A0
-_measure                                     text5        00C69
+_log                                         text16       006B0
+_log10                                       text15       009D4
+_log10$2649                                  cstackBANK1  000E8
+_mData                                       bssBANK2     0015A
+_mDataLength                                 bssBANK2     0015C
+_main                                        maintext     00392
+_measure                                     text5        00A58
 _measurementData                             bssBANK0     0004F
-_measurementRunning                          bssBANK2     00159
-_nWakeMic_Init                               text34       0083F
-_overThreshold                               bssBANK2     00156
-_polledMeasurement                           bssBANK2     00157
-_powerMic_Init                               text33       00845
-_presSumSquared                              bssBANK2     00153
-_round                                       text13       00EA5
+_measurementRunning                          bssBANK2     00158
+_nWakeMic_Init                               text32       017AF
+_overThreshold                               bssBANK2     00155
+_polledMeasurement                           bssBANK2     00156
+_powerMic_Init                               text31       017B5
+_presSumSquared                              bssBANK2     00152
+_round                                       text10       00DF3
 _rxLen                                       bssBANK0     00056
 _sampleCounter                               bssBANK0     00051
-_sampling                                    bssBANK2     00158
-_sensorAPI                                   dataBANK2    0015E
-_soundinterrupt                              bssBANK2     0015A
-_thresholdEnabled                            nvBANK0      00059
-_thresholdLevel                              nvBANK2      00168
-_toggleInt                                   text1        008C1
-_trunc                                       text14       00BD2
+_sampling                                    bssBANK2     00157
+_sensorAPI                                   dataBANK2    0015D
+_soundinterrupt                              bssBANK2     00159
+_thresholdEnabled                            nvBANK2      00169
+_thresholdLevel                              nvBANK2      00167
+_toggleInt                                   text1        0083A
+_trunc                                       text11       00BC6
 _txCnt                                       bssBANK0     00054
 _txLen                                       bssBANK0     00055
 btemp                                        (abs)        0007E
-clear_ram0                                   clrtext      0084B
+clear_ram0                                   clrtext      017BB
 end_of_initialization                        cinit        0005F
 eval_poly@d                                  cstackBANK1  000D8
 eval_poly@n                                  cstackBANK1  000DA
@@ -1616,24 +1627,24 @@ eval_poly@res                                cstackBANK1  000DC
 eval_poly@x                                  cstackBANK1  000D5
 frexp@eptr                                   cstackBANK1  000A3
 frexp@value                                  cstackBANK1  000A0
-i1___ftadd                                   text69       00183
+i1___ftadd                                   text68       00183
 i1___ftadd@exp1                              cstackBANK0  0003C
 i1___ftadd@exp2                              cstackBANK0  0003B
 i1___ftadd@f1                                cstackBANK0  00030
 i1___ftadd@f2                                cstackBANK0  00033
 i1___ftadd@sign                              cstackBANK0  0003A
-i1___ftmul                                   text68       0053B
+i1___ftmul                                   text67       005EF
 i1___ftmul@cntr                              cstackBANK0  0002E
 i1___ftmul@exp                               cstackBANK0  0002A
 i1___ftmul@f1                                cstackBANK0  00020
 i1___ftmul@f2                                cstackBANK0  00023
 i1___ftmul@f3_as_product                     cstackBANK0  0002B
 i1___ftmul@sign                              cstackBANK0  0002F
-i1___ftpack                                  text71       00F17
+i1___ftpack                                  text70       00E65
 i1___ftpack@arg                              cstackCOMMON 00070
 i1___ftpack@exp                              cstackCOMMON 00073
 i1___ftpack@sign                             cstackCOMMON 00074
-init_ram                                     inittext     007FA
+init_ram                                     inittext     017C1
 int$flags                                    (abs)        0007E
 intlevel0                                    functab      00000
 intlevel1                                    functab      00000
@@ -1645,13 +1656,13 @@ log10@x                                      cstackBANK1  000E5
 log@coeff                                    stringtext1  01000
 log@exponent                                 cstackBANK1  000E3
 log@x                                        cstackBANK1  000DF
-main@ack                                     cstackBANK2  0014E
-main@cmd                                     cstackBANK2  00151
-main@data                                    cstackBANK2  00139
-main@len                                     cstackBANK2  00152
-main@mnr                                     cstackBANK2  00150
-main@retries                                 cstackBANK2  0014D
-main@type                                    cstackBANK2  0014F
+main@ack                                     cstackBANK2  0014D
+main@cmd                                     cstackBANK2  00150
+main@data                                    cstackBANK2  00138
+main@len                                     cstackBANK2  00151
+main@mnr                                     cstackBANK2  0014F
+main@retries                                 cstackBANK2  0014C
+main@type                                    cstackBANK2  0014E
 reset_vec                                    reset_vec    00000
 round@f                                      cstackBANK2  00123
 round@x                                      cstackBANK2  00120
@@ -1671,13 +1682,13 @@ FUNCTION INFORMATION:
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
-  data           20   25[BANK2 ] unsigned char [20]
-  len             1   50[BANK2 ] unsigned char 
-  retries         1   45[BANK2 ] unsigned char 
-  mnr             1   48[BANK2 ] unsigned char 
-  type            1   47[BANK2 ] unsigned char 
-  ack             1   46[BANK2 ] unsigned char 
-  cmd             1   49[BANK2 ] unsigned char 
+  data           20   24[BANK2 ] unsigned char [20]
+  len             1   49[BANK2 ] unsigned char 
+  retries         1   44[BANK2 ] unsigned char 
+  mnr             1   47[BANK2 ] unsigned char 
+  type            1   46[BANK2 ] unsigned char 
+  ack             1   45[BANK2 ] unsigned char 
+  cmd             1   48[BANK2 ] unsigned char 
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
@@ -1743,7 +1754,7 @@ Total ram usage:        0 bytes
 
  *************** function _SoundLevel_SetThreshold *****************
  Defined at:
-		line 404 in file "Sensors/sound_level.c"
+		line 472 in file "Sensors/sound_level.c"
  Parameters:    Size  Location     Type
   metric          1    1[BANK1 ] unsigned char 
   thresholdDat    1    2[BANK1 ] PTR unsigned char 
@@ -1775,7 +1786,7 @@ Total ram usage:        7 bytes
 
  *************** function _SoundLevel_Measure *****************
  Defined at:
-		line 350 in file "Sensors/sound_level.c"
+		line 345 in file "Sensors/sound_level.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1805,7 +1816,7 @@ Total ram usage:        0 bytes
 
  *************** function _SoundLevel_Loop *****************
  Defined at:
-		line 356 in file "Sensors/sound_level.c"
+		line 351 in file "Sensors/sound_level.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1828,6 +1839,8 @@ Total ram usage:        1 bytes
  Hardware stack levels required when called:   12
  This function calls:
 		_EnterSleep
+		_MIC_Mode
+		_generateInt
 		_measure
  This function is called by:
 		_main
@@ -1836,7 +1849,7 @@ Total ram usage:        1 bytes
 
  *************** function _measure *****************
  Defined at:
-		line 520 in file "Sensors/sound_level.c"
+		line 565 in file "Sensors/sound_level.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1852,117 +1865,26 @@ Total ram usage:        1 bytes
  Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
       Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
       Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       0       0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        2 bytes
+      Temps:          0       0       0       1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       0       0       1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        1 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:   11
  This function calls:
+		_AMPS_enable
 		_MIC_Mode
 		_SoundLevel_LedOff
 		_SoundLevel_LedOn
 		_SoundLevel_PrepareData
 		_SoundLevel_StartADC
-		_SoundLevel_StopADC
  This function is called by:
 		_SoundLevel_Loop
  This function uses a non-reentrant model
 
 
- *************** function _SoundLevel_StopADC *****************
- Defined at:
-		line 487 in file "Sensors/sound_level.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		status,2, status,0, pclath, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    6
- This function calls:
-		_ADCC_DisableContinuousConversion
-		_ADCC_StopConversion
- This function is called by:
-		_measure
- This function uses a non-reentrant model
-
-
- *************** function _ADCC_StopConversion *****************
- Defined at:
-		line 146 in file "system/adcc.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		None
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    5
- This function calls:
-		Nothing
- This function is called by:
-		_SoundLevel_StopADC
- This function uses a non-reentrant model
-
-
- *************** function _ADCC_DisableContinuousConversion *****************
- Defined at:
-		line 259 in file "system/adcc.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		None
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    5
- This function calls:
-		Nothing
- This function is called by:
-		_SoundLevel_StopADC
- This function uses a non-reentrant model
-
-
  *************** function _SoundLevel_StartADC *****************
  Defined at:
-		line 481 in file "Sensors/sound_level.c"
+		line 526 in file "Sensors/sound_level.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2053,7 +1975,7 @@ Total ram usage:        0 bytes
 
  *************** function _SoundLevel_PrepareData *****************
  Defined at:
-		line 424 in file "Sensors/sound_level.c"
+		line 488 in file "Sensors/sound_level.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2081,7 +2003,6 @@ Total ram usage:       15 bytes
 		___ftge
 		___ftmul
 		___fttol
-		_generateInt
 		_log10
 		_round
  This function is called by:
@@ -2549,36 +2470,6 @@ Total ram usage:        6 bytes
  This function uses a non-reentrant model
 
 
- *************** function _generateInt *****************
- Defined at:
-		line 514 in file "Sensors/sound_level.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       0       1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        1 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    5
- This function calls:
-		Nothing
- This function is called by:
-		_SoundLevel_PrepareData
- This function uses a non-reentrant model
-
-
  *************** function ___ftdiv *****************
  Defined at:
 		line 56 in file "C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\ftdiv.c"
@@ -2675,14 +2566,75 @@ Total ram usage:        1 bytes
  This function calls:
 		Nothing
  This function is called by:
+		_SoundLevel_Loop
 		_SoundLevel_SetThreshold
 		_measure
  This function uses a non-reentrant model
 
 
+ *************** function _AMPS_enable *****************
+ Defined at:
+		line 249 in file "Sensors/sound_level.c"
+ Parameters:    Size  Location     Type
+  enable          1    wreg     unsigned char 
+ Auto vars:     Size  Location     Type
+  enable          1    2[BANK1 ] unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, fsr0l, fsr0h, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
+      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       0       1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       0       3       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        3 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    5
+ This function calls:
+		Nothing
+ This function is called by:
+		_measure
+ This function uses a non-reentrant model
+
+
+ *************** function _generateInt *****************
+ Defined at:
+		line 559 in file "Sensors/sound_level.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
+      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       0       1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       0       1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        1 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    5
+ This function calls:
+		Nothing
+ This function is called by:
+		_SoundLevel_Loop
+ This function uses a non-reentrant model
+
+
  *************** function _EnterSleep *****************
  Defined at:
-		line 388 in file "Sensors/sound_level.c"
+		line 456 in file "Sensors/sound_level.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2712,7 +2664,7 @@ Total ram usage:        0 bytes
 
  *************** function _SoundLevel_Init *****************
  Defined at:
-		line 278 in file "Sensors/sound_level.c"
+		line 282 in file "Sensors/sound_level.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2728,9 +2680,9 @@ Total ram usage:        0 bytes
  Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
       Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
       Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        2 bytes
+      Temps:          0       0       1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       0       1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        1 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    8
  This function calls:
@@ -2742,6 +2694,7 @@ Total ram usage:        2 bytes
 		_READY_Init
 		_VDDAMP_Init
 		_VDDBIAS_Init
+		_WDT_Init
 		_nWakeMic_Init
 		_powerMic_Init
  This function is called by:
@@ -2790,6 +2743,36 @@ Total ram usage:        0 bytes
                   1    wreg      void 
  Registers used:
 		None
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
+      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    5
+ This function calls:
+		Nothing
+ This function is called by:
+		_SoundLevel_Init
+ This function uses a non-reentrant model
+
+
+ *************** function _WDT_Init *****************
+ Defined at:
+		line 274 in file "Sensors/sound_level.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg
  Tracked objects:
 		On entry : 
 		On exit  : 
@@ -2963,7 +2946,7 @@ Total ram usage:        2 bytes
 
  *************** function _SoundLevel_LedOn *****************
  Defined at:
-		line 493 in file "Sensors/sound_level.c"
+		line 538 in file "Sensors/sound_level.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2994,7 +2977,7 @@ Total ram usage:        0 bytes
 
  *************** function _SoundLevel_LedOff *****************
  Defined at:
-		line 500 in file "Sensors/sound_level.c"
+		line 545 in file "Sensors/sound_level.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -3149,7 +3132,7 @@ Total ram usage:        2 bytes
 
  *************** function _SoundLevel_GetData *****************
  Defined at:
-		line 397 in file "Sensors/sound_level.c"
+		line 465 in file "Sensors/sound_level.c"
  Parameters:    Size  Location     Type
   data            1    0[BANK1 ] PTR unsigned char 
 		 -> mData(2), 
@@ -3274,7 +3257,7 @@ Total ram usage:        0 bytes
 
  *************** function _I2C1_Initialize *****************
  Defined at:
-		line 75 in file "system/i2c1.c"
+		line 91 in file "system/i2c1.c"
  Parameters:    Size  Location     Type
   slave_addres    1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -3304,7 +3287,7 @@ Total ram usage:        1 bytes
 
  *************** function _I2C1_TxBufferEmpty *****************
  Defined at:
-		line 176 in file "system/i2c1.c"
+		line 179 in file "system/i2c1.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -3334,7 +3317,7 @@ Total ram usage:        0 bytes
 
  *************** function _I2C1_SetTransmitData *****************
  Defined at:
-		line 190 in file "system/i2c1.c"
+		line 193 in file "system/i2c1.c"
  Parameters:    Size  Location     Type
   data            1    wreg     PTR unsigned char 
 		 -> main@mnr(1), main@type(1), main@ack(1), mData(2), 
@@ -3367,7 +3350,7 @@ Total ram usage:        4 bytes
 
  *************** function _I2C1_GetCommandData *****************
  Defined at:
-		line 185 in file "system/i2c1.c"
+		line 188 in file "system/i2c1.c"
  Parameters:    Size  Location     Type
   data            1    wreg     PTR unsigned char 
 		 -> main@data(20), 
@@ -3401,7 +3384,7 @@ Total ram usage:        3 bytes
 
  *************** function _I2C1_GetCommand *****************
  Defined at:
-		line 180 in file "system/i2c1.c"
+		line 183 in file "system/i2c1.c"
  Parameters:    Size  Location     Type
   cmd             1    wreg     PTR unsigned char 
 		 -> main@cmd(1), 
@@ -3433,7 +3416,7 @@ Total ram usage:        2 bytes
 
  *************** function _I2C1_CommandReceived *****************
  Defined at:
-		line 172 in file "system/i2c1.c"
+		line 175 in file "system/i2c1.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -3559,7 +3542,7 @@ Total ram usage:        0 bytes
 
  *************** function _ISR_MIC_Wake *****************
  Defined at:
-		line 599 in file "Sensors/sound_level.c"
+		line 594 in file "Sensors/sound_level.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -3676,7 +3659,7 @@ Total ram usage:        0 bytes
 
  *************** function _I2C1_ISR *****************
  Defined at:
-		line 122 in file "system/i2c1.c"
+		line 132 in file "system/i2c1.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -3706,7 +3689,7 @@ Total ram usage:        2 bytes
 
  *************** function _I2C1_StatusCallback *****************
  Defined at:
-		line 202 in file "system/i2c1.c"
+		line 209 in file "system/i2c1.c"
  Parameters:    Size  Location     Type
   i2c_bus_stat    1    wreg     enum E10841
  Auto vars:     Size  Location     Type
@@ -3797,7 +3780,7 @@ Total ram usage:        0 bytes
 
  *************** function _SoundLevel_GetSample *****************
  Defined at:
-		line 467 in file "Sensors/sound_level.c"
+		line 511 in file "Sensors/sound_level.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -3821,6 +3804,7 @@ Total ram usage:        5 bytes
  Hardware stack levels required when called:    2
  This function calls:
 		_ADCC_GetConversionResult
+		_SoundLevel_StopADC
 		___lwtoft
 		i1___ftadd
 		i1___ftmul
@@ -3960,6 +3944,95 @@ Total ram usage:        8 bytes
  This function uses a non-reentrant model
 
 
+ *************** function _SoundLevel_StopADC *****************
+ Defined at:
+		line 532 in file "Sensors/sound_level.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		status,2, status,0, pclath, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
+      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    1
+ This function calls:
+		_ADCC_DisableContinuousConversion
+		_ADCC_StopConversion
+ This function is called by:
+		_SoundLevel_GetSample
+ This function uses a non-reentrant model
+
+
+ *************** function _ADCC_StopConversion *****************
+ Defined at:
+		line 146 in file "system/adcc.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		None
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
+      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_SoundLevel_StopADC
+ This function uses a non-reentrant model
+
+
+ *************** function _ADCC_DisableContinuousConversion *****************
+ Defined at:
+		line 259 in file "system/adcc.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		None
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
+      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_SoundLevel_StopADC
+ This function uses a non-reentrant model
+
+
  *************** function _ADCC_GetConversionResult *****************
  Defined at:
 		line 115 in file "system/adcc.c"
@@ -3994,32 +4067,32 @@ MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\round.c
-		_round         		CODE           	0EA5	0000	114
+		_round         		CODE           	0DF3	0000	114
 
 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\round.c estimated size: 114
 
 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\ftge.c
-		___ftge        		CODE           	0ADA	0000	57
+		___ftge        		CODE           	0A8D	0000	57
 
 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\ftge.c estimated size: 57
 
 system/pin_manager.c
-		_IOCCF0_ISR    		CODE           	0807	0000	3
-		_IOCCF6_ISR    		CODE           	08EB	0000	15
-		_IOCCF4_ISR    		CODE           	080D	0000	3
-		_IOCCF6_SetInterruptHandler		CODE           	0881	0000	9
-		_PIN_MANAGER_IOC		CODE           	095F	0000	33
-		_IOCCF2_ISR    		CODE           	080A	0000	3
+		_IOCCF0_ISR    		CODE           	177C	0000	3
+		_IOCCF6_ISR    		CODE           	0864	0000	15
+		_IOCCF4_ISR    		CODE           	1782	0000	3
+		_IOCCF6_SetInterruptHandler		CODE           	17F7	0000	9
+		_PIN_MANAGER_IOC		CODE           	08D8	0000	33
+		_IOCCF2_ISR    		CODE           	177F	0000	3
 
 system/pin_manager.c estimated size: 66
 
 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\frexp.c
-		_frexp         		CODE           	0B13	0000	62
+		_frexp         		CODE           	0AC6	0000	62
 
 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\frexp.c estimated size: 62
 
 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\awtoft.c
-		___awtoft      		CODE           	0A09	0000	37
+		___awtoft      		CODE           	0960	0000	37
 
 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\awtoft.c estimated size: 37
 
@@ -4029,80 +4102,82 @@ system/interrupt.c
 system/interrupt.c estimated size: 45
 
 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\altoft.c
-		___altoft      		CODE           	0B90	0000	66
+		___altoft      		CODE           	0B84	0000	66
 
 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\altoft.c estimated size: 66
 
 Sensors/sound_level.c
-		_SoundLevel_SetThreshold		CODE           	0C19	0000	80
-		_LED_Init      		CODE           	089E	0000	11
-		_VDDAMP_Init   		CODE           	0839	0000	6
-		_VDDBIAS_Init  		CODE           	08A9	0000	11
-		_LED_Blink     		CODE           	0E37	0000	110
-		_SoundLevel_Loop		CODE           	09A1	0000	34
-		_SoundLevel_Init		CODE           	0D10	0000	92
-		_SoundLevel_Measure		CODE           	0829	0000	4
-		_measure       		CODE           	0C69	0000	83
-		_READY_Init    		CODE           	0825	0000	4
-		_EnterSleep    		CODE           	0851	0000	7
-		_DOUT_Init     		CODE           	0813	0000	3
-		_generateInt   		CODE           	08CE	0000	14
-		_SoundLevel_GetSample		CODE           	0DCF	0000	104
-		_SoundLevel_LedOn		CODE           	0819	0000	3
-		_nWakeMic_Init 		CODE           	083F	0000	6
-		_SoundLevel_PrepareData		CODE           	02A3	0000	253
-		_MIC_Mode      		CODE           	07E5	0000	21
-		_SoundLevel_StopADC		CODE           	0858	0000	7
-		_SoundLevel_LedOff		CODE           	0816	0000	3
-		_ISR_MIC_Wake  		CODE           	088A	0000	10
-		_SoundLevel_StartADC		CODE           	0867	0000	8
-		_powerMic_Init 		CODE           	0845	0000	6
-		_SoundLevel_GetData		CODE           	0921	0000	30
+		_SoundLevel_SetThreshold		CODE           	0B43	0000	65
+		_LED_Init      		CODE           	0817	0000	11
+		_VDDAMP_Init   		CODE           	17A3	0000	6
+		_VDDBIAS_Init  		CODE           	0822	0000	11
+		_LED_Blink     		CODE           	0D85	0000	110
+		_SoundLevel_Loop		CODE           	046C	0000	194
+		_SoundLevel_Init		CODE           	0C61	0000	86
+		_SoundLevel_Measure		CODE           	07FC	0000	4
+		_measure       		CODE           	0A58	0000	53
+		_READY_Init    		CODE           	178E	0000	4
+		_EnterSleep    		CODE           	17CE	0000	7
+		_DOUT_Init     		CODE           	1792	0000	5
+		_generateInt   		CODE           	0847	0000	14
+		_SoundLevel_GetSample		CODE           	0D1A	0000	107
+		_SoundLevel_LedOn		CODE           	178B	0000	3
+		_nWakeMic_Init 		CODE           	17AF	0000	6
+		_SoundLevel_PrepareData		CODE           	02A3	0000	239
+		_MIC_Mode      		CODE           	07E7	0000	21
+		_SoundLevel_StopADC		CODE           	17C7	0000	7
+		_SoundLevel_LedOff		CODE           	1788	0000	3
+		_AMPS_enable   		CODE           	0985	0000	39
+		_ISR_MIC_Wake  		CODE           	0803	0000	10
+		_WDT_Init      		CODE           	17A9	0000	6
+		_SoundLevel_StartADC		CODE           	17DD	0000	8
+		_powerMic_Init 		CODE           	17B5	0000	6
+		_SoundLevel_GetData		CODE           	089A	0000	30
 
-Sensors/sound_level.c estimated size: 910
+Sensors/sound_level.c estimated size: 1055
 
 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\ftmul.c
-		___ftmul       		CODE           	047A	0000	193
+		___ftmul       		CODE           	052E	0000	193
 
 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\ftmul.c estimated size: 193
 
 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\ftdiv.c
-		___ftdiv       		CODE           	06AE	0000	178
+		___ftdiv       		CODE           	0F4E	0000	178
 
 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\ftdiv.c estimated size: 178
 
 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\lwtoft.c
-		___lwtoft      		CODE           	090D	0000	20
+		___lwtoft      		CODE           	0886	0000	20
 
 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\lwtoft.c estimated size: 20
 
 system/i2c1.c
-		_I2C1_CommandReceived		CODE           	0810	0000	3
-		_I2C1_StatusCallback		CODE           	0CBC	0000	84
-		_I2C1_ISR      		CODE           	0B51	0000	63
-		_I2C1_Initialize		CODE           	0A7E	0000	43
-		_I2C1_SetTransmitData		CODE           	0AA9	0000	49
-		_I2C1_TxBufferEmpty		CODE           	086F	0000	9
-		_I2C1_GetCommand		CODE           	08B4	0000	13
-		_I2C1_GetCommandData		CODE           	09C3	0000	35
+		_I2C1_CommandReceived		CODE           	1785	0000	3
+		_I2C1_StatusCallback		CODE           	0C0D	0000	84
+		_I2C1_ISR      		CODE           	0B04	0000	63
+		_I2C1_Initialize		CODE           	09FC	0000	43
+		_I2C1_SetTransmitData		CODE           	0A27	0000	49
+		_I2C1_TxBufferEmpty		CODE           	17E5	0000	9
+		_I2C1_GetCommand		CODE           	082D	0000	13
+		_I2C1_GetCommandData		CODE           	091A	0000	35
 
 system/i2c1.c estimated size: 299
 
 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\log.c
-		_log           		CODE           	05FC	0000	178
-		_log10         		CODE           	0A56	0000	40
+		_log           		CODE           	06B0	0000	178
+		_log10         		CODE           	09D4	0000	40
 
 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\log.c estimated size: 218
 
 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\fttol.c
-		___fttol       		CODE           	0760	0000	133
+		___fttol       		CODE           	0762	0000	133
 
 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\fttol.c estimated size: 133
 
 system/system.c
-		_PMD_Initialize		CODE           	08FA	0000	19
-		_OSCILLATOR_Initialize		CODE           	0833	0000	6
-		_SYSTEM_Initialize		CODE           	09E6	0000	35
+		_PMD_Initialize		CODE           	0873	0000	19
+		_OSCILLATOR_Initialize		CODE           	179D	0000	6
+		_SYSTEM_Initialize		CODE           	093D	0000	35
 
 system/system.c estimated size: 60
 
@@ -4113,54 +4188,54 @@ C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\ftadd.c estimated si
 
 shared
 		i1___ftadd     		CODE           	0183	0000	288
-		i1___ftmul     		CODE           	053B	0000	193
-		i1___ftpack    		CODE           	0F17	0000	116
+		i1___ftmul     		CODE           	05EF	0000	193
+		i1___ftpack    		CODE           	0E65	0000	116
 		__initialization		CODE           	0033	0000	44
 		log@coeff      		STRCODE        	1000	0000	27
 
 shared estimated size: 668
 
 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\Umul16.c
-		___wmul        		CODE           	093F	0000	32
+		___wmul        		CODE           	08B8	0000	32
 
 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\Umul16.c estimated size: 32
 
 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\trunc.c
-		_trunc         		CODE           	0BD2	0000	71
+		_trunc         		CODE           	0BC6	0000	71
 
 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\trunc.c estimated size: 71
 
 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\evalpoly.c
-		_eval_poly     		CODE           	0D6C	0000	99
+		_eval_poly     		CODE           	0CB7	0000	99
 
 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\evalpoly.c estimated size: 99
 
 main.c
-		_main          		CODE           	03A0	0000	218
-		_toggleInt     		CODE           	08C1	0000	13
+		_main          		CODE           	0392	0000	218
+		_toggleInt     		CODE           	083A	0000	13
 
 main.c estimated size: 231
 
 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\ftsub.c
-		___ftsub       		CODE           	0980	0000	33
+		___ftsub       		CODE           	08F9	0000	33
 
 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\ftsub.c estimated size: 33
 
 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\float.c
-		___ftpack      		CODE           	0F8B	0000	117
+		___ftpack      		CODE           	0ED9	0000	117
 
 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\float.c estimated size: 117
 
 system/adcc.c
-		_ADCC_StopConversion		CODE           	0822	0000	3
-		_ADCC_DisableContinuousConversion		CODE           	081F	0000	3
+		_ADCC_StopConversion		CODE           	1779	0000	3
+		_ADCC_DisableContinuousConversion		CODE           	1776	0000	3
 		_ADCC_DefaultInterruptHandler		CODE           	0002	0000	1
-		_ADCC_EnableContinuousConversion		CODE           	081C	0000	3
-		_ADCC_GetConversionResult		CODE           	082D	0000	6
-		_ADCC_SetADIInterruptHandler		CODE           	0878	0000	9
-		_ADCC_ISR      		CODE           	08DC	0000	15
-		_ADCC_StartConversion		CODE           	085F	0000	8
-		_ADCC_Initialize		CODE           	0A2E	0000	40
+		_ADCC_EnableContinuousConversion		CODE           	0800	0000	3
+		_ADCC_GetConversionResult		CODE           	1797	0000	6
+		_ADCC_SetADIInterruptHandler		CODE           	17EE	0000	9
+		_ADCC_ISR      		CODE           	0855	0000	15
+		_ADCC_StartConversion		CODE           	17D5	0000	8
+		_ADCC_Initialize		CODE           	09AC	0000	40
 
 system/adcc.c estimated size: 88
 
