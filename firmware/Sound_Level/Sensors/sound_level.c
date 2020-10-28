@@ -33,12 +33,11 @@
 #define SAMPLES         400 // amount of samples
 #define AMP_FACTOR      44
 #define SENSITIVITY     0.01258925
-#define V_SUPPLY        3.3 //3.1 // measured voltage when sampling
+#define V_SUPPLY        3.3 // measured voltage when sampling
 #define ADC_SCALE       4095
 #define REF_PRESSURE    20e-6
 #define DBZ_MAX         106
 #define SCALE_FACTOR    600
-#define DC_OFFSET       2048 // half the voltage (4096)
 
 #define ENABLE  1
 #define DISABLE 0
@@ -160,6 +159,7 @@ void LED_DeInit(void)
 /* Animation when Sound Module is plugged in */
 void LED_Blink(void)
 {
+    // startup animation
     SoundLevel_LedOn();
     __delay_ms(100);
     SoundLevel_LedOff();
@@ -182,7 +182,6 @@ void powerMic_Init(void)
     powerMic_SetDigitalMode();
     powerMic_SetDigitalOutput();
     powerMic_SetLow(); // prevents it from powering the MIC the in the time before the first measurement when sensor is in polled mode
-    //powerMic_SetHigh(); ///temp
 }
 
 void nWakeMic_Init(void)
@@ -190,7 +189,6 @@ void nWakeMic_Init(void)
     nWakeMic_SetDigitalMode();
     nWakeMic_SetDigitalOutput();
     nWakeMic_SetLow();
-    //nWakeMic_SetHigh();
 }
 
 void MIC_Mode(uint8_t mode)
@@ -199,13 +197,10 @@ void MIC_Mode(uint8_t mode)
     {
         case ENABLE:
             nWakeMic_SetLow();
-//            __delay_ms(100);
             break;
 
         case WOS:
-            //__delay_ms(100);
             nWakeMic_SetHigh();
-//            __delay_ms(100);
             break;
             
         default:
@@ -223,9 +218,6 @@ void DOUT_Init(void)
 {
     DOUT_SetDigitalMode();
     DOUT_SetDigitalInput();
-//    DOUT_SetDigitalOutput();
-//    DOUT_SetLow();
-    //DOUT_SetPullup();
 }
 
 void VDDAMP_Init()
@@ -233,7 +225,6 @@ void VDDAMP_Init()
     VDDAMP_SetDigitalMode();
     VDDAMP_SetDigitalOutput();
     VDDAMP_SetLow();
-    //VDDAMP_SetHigh();
 }
 
 void VDDBIAS_Init()
@@ -241,12 +232,10 @@ void VDDBIAS_Init()
     VDDBIAS_SetDigitalMode();
     VDDBIAS_SetDigitalOutput();
     VDDBIAS_SetLow();
-    //VDDBIAS_SetHigh();
     
     VDDBIASAMP_SetDigitalMode();
     VDDBIASAMP_SetDigitalOutput();
     VDDBIASAMP_SetLow();
-    //VDDBIASAMP_SetHigh();
 }
 
 void AMPS_enable(bool enable)
@@ -300,8 +289,6 @@ void SoundLevel_Init(void){
     VDDBIAS_Init();
     __delay_ms(1);
     
-
-    
 #ifdef DEBUG_THRESHOLD
             powerMic_SetHigh();
             // default go to WOS mode
@@ -309,8 +296,7 @@ void SoundLevel_Init(void){
             MIC_Mode(WOS);
             //__delay_ms(1000);
 #endif
-    
-            
+     
     // enable interrupt on change
     PIE0bits.IOCIE = 1;   
     //interrupt on change for group IOCCF - flag
@@ -321,8 +307,7 @@ void SoundLevel_Init(void){
     IOCCPbits.IOCCP6 = 1;
     
     IOCCF6_SetInterruptHandler(ISR_MIC_Wake); // interrupt hander for 
-    
-    
+
     adcScaler = V_SUPPLY / (ADC_SCALE * SENSITIVITY * AMP_FACTOR);
     
     // initialize ADC
@@ -331,17 +316,11 @@ void SoundLevel_Init(void){
     
     // setup watchdog (WWDT))
     WDT_Init();
-    
-    
+
 #ifdef DEBUG_THRESHOLD    
     thresholdEnabled = true;
     thresholdLevel = 400*60;
 #endif
-    
-    
-    // start watchdog
-//    CLRWDT();
-//    WDTCON0bits.SWDTEN = 1;
 }
 
 /* Measure the sound level (MCU remains active)
@@ -350,11 +329,9 @@ void SoundLevel_Measure(){
     polledMeasurement = true;
 }
 
-/* does sensor loop stuff
+/* Main sensor loop
  */
 void SoundLevel_Loop(void){
-    
-    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     
     if(polledMeasurement && (WDTCON0bits.SEN == 0)) // poll with WDT off
     {
@@ -367,9 +344,8 @@ void SoundLevel_Loop(void){
             generateInt();
             
             MIC_Mode(WOS);
-            //__delay_ms(10);
             
-            polledMeasurement = false; // clear polledmeasurement bool
+            polledMeasurement = false; // clear polled measurement bool
         }
         else if(!thresholdEnabled) // if threshold disabled
         {
@@ -400,10 +376,6 @@ void SoundLevel_Loop(void){
         
         generateInt();
         
-        //powerMic_SetLow(); // disable MIC
-        //__delay_ms(1);
-        //MIC_Mode(ENABLE); // disable WOS
-        
         MIC_Mode(WOS); // enable WOS mode
         
         WDTCON0bits.SEN = 0; // disable WDT
@@ -424,7 +396,6 @@ void SoundLevel_Loop(void){
             generateInt(); // interrupt to motherboard
             
             powerMic_SetLow(); // disable MIC
-            //__delay_ms(1);
             MIC_Mode(ENABLE); // disable WOS
         }else
         {
@@ -432,7 +403,6 @@ void SoundLevel_Loop(void){
             __delay_ms(10);
             
             MIC_Mode(WOS); // enable WOS
-            //__delay_ms(10);
         }
         
         soundinterrupt = false; // clear soundinterrupt bool
@@ -444,7 +414,6 @@ void SoundLevel_Loop(void){
         powerMic_SetHigh(); // enable MIC
         __delay_ms(1);
         MIC_Mode(WOS); // enable WOS
-        //__delay_ms(10);
         
         EnterSleep();
     }
@@ -452,9 +421,6 @@ void SoundLevel_Loop(void){
     {
         EnterSleep();
     }
-    
-    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    
 }
 
 static void EnterSleep(void){
@@ -483,7 +449,6 @@ void SoundLevel_SetThreshold(uint8_t metric, uint8_t * thresholdData){
             powerMic_SetHigh(); // enable MIC
             __delay_ms(1);
             MIC_Mode(WOS); // MIC in WOS mode
-            //__delay_ms(10);
         }
     }
 }
@@ -491,8 +456,8 @@ void SoundLevel_SetThreshold(uint8_t metric, uint8_t * thresholdData){
 /* Prepare data for transmission */
 void SoundLevel_PrepareData(){
     float dBZ = 0;
-    uint32_t sampleSum = 0;
     
+    // calculate mean value of samples to obtain the DC offset
     float mean = 0;
     for(int i=0; i<SAMPLES; i++)
     {
@@ -500,6 +465,7 @@ void SoundLevel_PrepareData(){
     }
     mean /= SAMPLES;
     
+    // calculate squared RMS value referenced to pressure
     for(int i=0; i<SAMPLES; i++)
     {
         float signal = (sampleArray[i] - mean) * adcScaler;
@@ -507,15 +473,19 @@ void SoundLevel_PrepareData(){
         presSumSquared += signal;
     }
     
-    float presAvgSquared = presSumSquared/SAMPLES; //sqrt() also possible but easier to process with squared rms pressure values
+    //sqrt() also possible but easier to process with squared rms pressure values
+    float presAvgSquared = presSumSquared/SAMPLES; 
     
+    // avoid taking log10(0) which could result in a system hang
     if( (presAvgSquared/(REF_PRESSURE * REF_PRESSURE)) != 0.0 )
     {
+        // 20 * log10( sqrt() ) -> 10 * log10( squared )
         dBZ = 10 * log10(presAvgSquared/(REF_PRESSURE * REF_PRESSURE));
     }else{
         dBZ = 0;
     }
     
+    // constraint to max value
     if(dBZ > DBZ_MAX){
         dBZ = DBZ_MAX;
     }
@@ -539,14 +509,10 @@ void SoundLevel_GetSample(){
     
     sampleArray[sampleCounter] = ADCC_GetConversionResult();
     
-    //float voltageToPressure = sample * adcScaler;
-    
-    //presSumSquared = presSumSquared + (voltageToPressure * voltageToPressure);
-    
     sampleCounter++;
     if(sampleCounter>SAMPLES-1){ // we've taken enough samples
         SoundLevel_StopADC(); // stop conversions and power-down analog circuitry
-        sampling = false;
+        sampling = false; // reference to while(sampling), continue execution of program
     }   
 }
 
@@ -586,7 +552,7 @@ void SoundLevel_LedToggle(void){
 // Toggle the interrupt line
 void generateInt(void){
     READY_SetLow();
-    __delay_ms(5);                          
+    __delay_ms(1); // 1 ms interrupt                         
     READY_SetHigh();
 }
 
@@ -595,7 +561,7 @@ void measure(void){
     SoundLevel_LedOn();
 
     MIC_Mode(ENABLE);
-    __delay_ms(10);
+    __delay_ms(1); // short delay to stabilize microphone
     
     AMPS_enable(ENABLE); // enable amplifier circuits
     
@@ -618,7 +584,7 @@ void measure(void){
 
 void ISR_MIC_Wake(void)
 {
-    NOP();
+    // only generate interrupt if no measurements are running
     if(!measurementRunning)
     {
         soundinterrupt = true;

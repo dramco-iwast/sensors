@@ -18711,7 +18711,7 @@ void OSCILLATOR_Initialize(void);
 # 70
 void PMD_Initialize(void);
 
-# 52 "Sensors/sound_level.c"
+# 51 "Sensors/sound_level.c"
 void SoundLevel_PrepareData(void);
 
 
@@ -18823,6 +18823,7 @@ TRISBbits.TRISB6 = 1;
 
 void LED_Blink(void)
 {
+
 SoundLevel_LedOn();
 _delay((unsigned long)((100)*(32000000/4000.0)));
 SoundLevel_LedOff();
@@ -18845,7 +18846,6 @@ void powerMic_Init(void)
 do { ANSELCbits.ANSC0 = 0; } while(0);
 do { TRISCbits.TRISC0 = 0; } while(0);
 do { LATCbits.LATC0 = 0; } while(0);
-
 }
 
 void nWakeMic_Init(void)
@@ -18853,7 +18853,6 @@ void nWakeMic_Init(void)
 do { ANSELCbits.ANSC3 = 0; } while(0);
 do { TRISCbits.TRISC3 = 0; } while(0);
 do { LATCbits.LATC3 = 0; } while(0);
-
 }
 
 void MIC_Mode(uint8_t mode)
@@ -18862,13 +18861,10 @@ switch(mode)
 {
 case 1:
 do { LATCbits.LATC3 = 0; } while(0);
-
 break;
 
 case 2:
-
 do { LATCbits.LATC3 = 1; } while(0);
-
 break;
 
 default:
@@ -18886,9 +18882,6 @@ void DOUT_Init(void)
 {
 do { ANSELCbits.ANSC6 = 0; } while(0);
 do { TRISCbits.TRISC6 = 1; } while(0);
-
-
-
 }
 
 void VDDAMP_Init()
@@ -18896,7 +18889,6 @@ void VDDAMP_Init()
 do { ANSELCbits.ANSC4 = 0; } while(0);
 do { TRISCbits.TRISC4 = 0; } while(0);
 do { LATCbits.LATC4 = 0; } while(0);
-
 }
 
 void VDDBIAS_Init()
@@ -18905,11 +18897,9 @@ do { ANSELCbits.ANSC2 = 0; } while(0);
 do { TRISCbits.TRISC2 = 0; } while(0);
 do { LATCbits.LATC2 = 0; } while(0);
 
-
 do { ANSELBbits.ANSB4 = 0; } while(0);
 do { TRISBbits.TRISB4 = 0; } while(0);
 do { LATBbits.LATB4 = 0; } while(0);
-
 }
 
 void AMPS_enable(bool enable)
@@ -18963,7 +18953,7 @@ VDDAMP_Init();
 VDDBIAS_Init();
 _delay((unsigned long)((1)*(32000000/4000.0)));
 
-# 315
+# 301
 PIE0bits.IOCIE = 1;
 
 IOCCFbits.IOCCF6 = 0;
@@ -18974,7 +18964,6 @@ IOCCPbits.IOCCP6 = 1;
 
 IOCCF6_SetInterruptHandler(ISR_MIC_Wake);
 
-
 adcScaler = 3.3 / (4095 * 0.01258925 * 44);
 
 
@@ -18984,18 +18973,16 @@ ADCC_SetADIInterruptHandler(SoundLevel_GetSample);
 
 WDT_Init();
 
-# 345
+# 324
 }
 
-# 349
+# 328
 void SoundLevel_Measure(){
 polledMeasurement = 1;
 }
 
-# 355
+# 334
 void SoundLevel_Loop(void){
-
-
 
 if(polledMeasurement && (WDTCON0bits.SEN == 0))
 {
@@ -19008,7 +18995,6 @@ measurementRunning = 0;
 generateInt();
 
 MIC_Mode(2);
-
 
 polledMeasurement = 0;
 }
@@ -19041,7 +19027,6 @@ measurementRunning = 0;
 
 generateInt();
 
-# 407
 MIC_Mode(2);
 
 WDTCON0bits.SEN = 0;
@@ -19062,7 +19047,6 @@ WDTCON0bits.SEN = 1;
 generateInt();
 
 do { LATCbits.LATC0 = 0; } while(0);
-
 MIC_Mode(1);
 }else
 {
@@ -19070,7 +19054,6 @@ MIC_Mode(1);
 _delay((unsigned long)((10)*(32000000/4000.0)));
 
 MIC_Mode(2);
-
 }
 
 soundinterrupt = 0;
@@ -19083,16 +19066,12 @@ do { LATCbits.LATC0 = 1; } while(0);
 _delay((unsigned long)((1)*(32000000/4000.0)));
 MIC_Mode(2);
 
-
 EnterSleep();
 }
 else
 {
 EnterSleep();
 }
-
-
-
 }
 
 static void EnterSleep(void){
@@ -19121,7 +19100,6 @@ if(thresholdEnabled)
 do { LATCbits.LATC0 = 1; } while(0);
 _delay((unsigned long)((1)*(32000000/4000.0)));
 MIC_Mode(2);
-
 }
 }
 }
@@ -19129,7 +19107,7 @@ MIC_Mode(2);
 
 void SoundLevel_PrepareData(){
 float dBZ = 0;
-uint32_t sampleSum = 0;
+
 
 float mean = 0;
 for(int i=0; i<400; i++)
@@ -19138,6 +19116,7 @@ mean += sampleArray[i];
 }
 mean /= 400;
 
+
 for(int i=0; i<400; i++)
 {
 float signal = (sampleArray[i] - mean) * adcScaler;
@@ -19145,14 +19124,18 @@ signal *= signal;
 presSumSquared += signal;
 }
 
+
 float presAvgSquared = presSumSquared/400;
+
 
 if( (presAvgSquared/(20e-6 * 20e-6)) != 0.0 )
 {
+
 dBZ = 10 * log10(presAvgSquared/(20e-6 * 20e-6));
 }else{
 dBZ = 0;
 }
+
 
 if(dBZ > 106){
 dBZ = 106;
@@ -19177,7 +19160,6 @@ void SoundLevel_GetSample(){
 
 sampleArray[sampleCounter] = ADCC_GetConversionResult();
 
-# 546
 sampleCounter++;
 if(sampleCounter>400-1){
 SoundLevel_StopADC();
@@ -19221,7 +19203,7 @@ do { LATBbits.LATB6 = ~LATBbits.LATB6; } while(0);
 
 void generateInt(void){
 do { LATCbits.LATC7 = 0; } while(0);
-_delay((unsigned long)((5)*(32000000/4000.0)));
+_delay((unsigned long)((1)*(32000000/4000.0)));
 do { LATCbits.LATC7 = 1; } while(0);
 }
 
@@ -19230,7 +19212,7 @@ void measure(void){
 SoundLevel_LedOn();
 
 MIC_Mode(1);
-_delay((unsigned long)((10)*(32000000/4000.0)));
+_delay((unsigned long)((1)*(32000000/4000.0)));
 
 AMPS_enable(1);
 
@@ -19253,7 +19235,7 @@ SoundLevel_LedOff();
 
 void ISR_MIC_Wake(void)
 {
-__nop();
+
 if(!measurementRunning)
 {
 soundinterrupt = 1;

@@ -3,7 +3,7 @@
 [d edition pro ]
 [d chip 16F18446 ]
 [d frameptr 6 ]
-"556 C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+"522 C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
 [e E10916 . `uc
 channel_ANC1 17
 channel_Vss 59
@@ -75,57 +75,57 @@ SLAVE_COMMAND 1
 [v _main main `(v  1 e 1 0 ]
 "153
 [v _toggleInt toggleInt `(v  1 e 1 0 ]
-"142 C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+"141 C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
 [v _LED_Init LED_Init `(v  1 e 1 0 ]
-"161
+"160
 [v _LED_Blink LED_Blink `(v  1 e 1 0 ]
 "180
 [v _powerMic_Init powerMic_Init `(v  1 e 1 0 ]
-"188
+"187
 [v _nWakeMic_Init nWakeMic_Init `(v  1 e 1 0 ]
-"196
+"194
 [v _MIC_Mode MIC_Mode `(v  1 e 1 0 ]
-"216
+"211
 [v _READY_Init READY_Init `(v  1 e 1 0 ]
-"222
+"217
 [v _DOUT_Init DOUT_Init `(v  1 e 1 0 ]
-"231
+"223
 [v _VDDAMP_Init VDDAMP_Init `(v  1 e 1 0 ]
-"239
+"230
 [v _VDDBIAS_Init VDDBIAS_Init `(v  1 e 1 0 ]
-"252
+"241
 [v _AMPS_enable AMPS_enable `(v  1 e 1 0 ]
-"277
+"266
 [v _WDT_Init WDT_Init `(v  1 e 1 0 ]
-"286
+"275
 [v _SoundLevel_Init SoundLevel_Init `(v  1 e 1 0 ]
-"349
+"328
 [v _SoundLevel_Measure SoundLevel_Measure `(v  1 e 1 0 ]
-"355
+"334
 [v _SoundLevel_Loop SoundLevel_Loop `(v  1 e 1 0 ]
-"460
+"426
 [v _EnterSleep EnterSleep `(v  1 s 1 EnterSleep ]
-"469
+"435
 [v _SoundLevel_GetData SoundLevel_GetData `(v  1 e 1 0 ]
-"476
+"442
 [v _SoundLevel_SetThreshold SoundLevel_SetThreshold `(v  1 e 1 0 ]
-"492
+"457
 [v _SoundLevel_PrepareData SoundLevel_PrepareData `(v  1 e 1 0 ]
-"538
+"508
 [v _SoundLevel_GetSample SoundLevel_GetSample `(v  1 e 1 0 ]
-"554
+"520
 [v _SoundLevel_StartADC SoundLevel_StartADC `(v  1 e 1 0 ]
-"560
+"526
 [v _SoundLevel_StopADC SoundLevel_StopADC `(v  1 e 1 0 ]
-"566
+"532
 [v _SoundLevel_LedOn SoundLevel_LedOn `(v  1 e 1 0 ]
-"573
+"539
 [v _SoundLevel_LedOff SoundLevel_LedOff `(v  1 e 1 0 ]
-"587
+"553
 [v _generateInt generateInt `(v  1 e 1 0 ]
-"593
+"559
 [v _measure measure `(v  1 e 1 0 ]
-"619
+"585
 [v _ISR_MIC_Wake ISR_MIC_Wake `(v  1 e 1 0 ]
 "36 C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\system/adcc.c
 [v _ADCC_Initialize ADCC_Initialize `(v  1 e 1 0 ]
@@ -194,14 +194,14 @@ SLAVE_COMMAND 1
 ]
 [u S444 . 1 `S434 1 . 1 0 `S440 1 . 1 0 ]
 [v _STATUSbits STATUSbits `VES444  1 e 1 @3 ]
-[s S1760 . 1 `uc 1 INTEDG 1 0 :1:0 
+[s S1759 . 1 `uc 1 INTEDG 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 PEIE 1 0 :1:6 
 `uc 1 GIE 1 0 :1:7 
 ]
 "427
-[u S1765 . 1 `S1760 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES1765  1 e 1 @11 ]
+[u S1764 . 1 `S1759 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES1764  1 e 1 @11 ]
 "598
 [v _TRISA TRISA `VEuc  1 e 1 @18 ]
 "648
@@ -308,7 +308,7 @@ SLAVE_COMMAND 1
 [v _ADPREH ADPREH `VEuc  1 e 1 @272 ]
 "4032
 [v _ADCON0 ADCON0 `VEuc  1 e 1 @273 ]
-[s S762 . 1 `uc 1 GO 1 0 :1:0 
+[s S761 . 1 `uc 1 GO 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 FM 1 0 :2:2 
 `uc 1 CS 1 0 :1:4 
@@ -317,7 +317,7 @@ SLAVE_COMMAND 1
 `uc 1 ON 1 0 :1:7 
 ]
 "4073
-[s S770 . 1 `uc 1 ADGO 1 0 :1:0 
+[s S769 . 1 `uc 1 ADGO 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 ADFM 1 0 :2:2 
 `uc 1 ADCS 1 0 :1:4 
@@ -325,24 +325,24 @@ SLAVE_COMMAND 1
 `uc 1 ADCONT 1 0 :1:6 
 `uc 1 ADON 1 0 :1:7 
 ]
-[s S778 . 1 `uc 1 DONE 1 0 :1:0 
+[s S777 . 1 `uc 1 DONE 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 FM0 1 0 :1:2 
 `uc 1 FM1 1 0 :1:3 
 ]
-[s S783 . 1 `uc 1 GO_nDONE 1 0 :1:0 
+[s S782 . 1 `uc 1 GO_nDONE 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 ADFM0 1 0 :1:2 
 `uc 1 ADFM1 1 0 :1:3 
 ]
-[s S788 . 1 `uc 1 . 1 0 :7:0 
+[s S787 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 ADCAL 1 0 :1:7 
 ]
-[u S791 . 1 `S762 1 . 1 0 `S770 1 . 1 0 `S778 1 . 1 0 `S783 1 . 1 0 `S788 1 . 1 0 ]
-[v _ADCON0bits ADCON0bits `VES791  1 e 1 @273 ]
+[u S790 . 1 `S761 1 . 1 0 `S769 1 . 1 0 `S777 1 . 1 0 `S782 1 . 1 0 `S787 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES790  1 e 1 @273 ]
 "4163
 [v _ADCON1 ADCON1 `VEuc  1 e 1 @274 ]
-[s S1023 . 1 `uc 1 DSEN 1 0 :1:0 
+[s S1022 . 1 `uc 1 DSEN 1 0 :1:0 
 `uc 1 . 1 0 :2:1 
 `uc 1 GBOE 1 0 :1:3 
 `uc 1 GAOE 1 0 :1:4 
@@ -351,7 +351,7 @@ SLAVE_COMMAND 1
 `uc 1 PPOL 1 0 :1:7 
 ]
 "4194
-[s S1031 . 1 `uc 1 ADDSEN 1 0 :1:0 
+[s S1030 . 1 `uc 1 ADDSEN 1 0 :1:0 
 `uc 1 . 1 0 :2:1 
 `uc 1 ADGBOE 1 0 :1:3 
 `uc 1 ADGAOE 1 0 :1:4 
@@ -359,22 +359,22 @@ SLAVE_COMMAND 1
 `uc 1 ADIPEN 1 0 :1:6 
 `uc 1 ADPPOL 1 0 :1:7 
 ]
-[s S1039 . 1 `uc 1 . 1 0 :3:0 
+[s S1038 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 CHSN3 1 0 :1:3 
 `uc 1 VCFG01 1 0 :1:4 
 `uc 1 VCFG11 1 0 :1:5 
 ]
-[u S1044 . 1 `S1023 1 . 1 0 `S1031 1 . 1 0 `S1039 1 . 1 0 ]
-[v _ADCON1bits ADCON1bits `VES1044  1 e 1 @274 ]
+[u S1043 . 1 `S1022 1 . 1 0 `S1030 1 . 1 0 `S1038 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES1043  1 e 1 @274 ]
 "4274
 [v _ADCON2 ADCON2 `VEuc  1 e 1 @275 ]
-[s S884 . 1 `uc 1 MODE 1 0 :3:0 
+[s S883 . 1 `uc 1 MODE 1 0 :3:0 
 `uc 1 ACLR 1 0 :1:3 
 `uc 1 CRS 1 0 :3:4 
 `uc 1 PSIS 1 0 :1:7 
 ]
 "4322
-[s S889 . 1 `uc 1 ADMD0 1 0 :1:0 
+[s S888 . 1 `uc 1 ADMD0 1 0 :1:0 
 `uc 1 ADMD1 1 0 :1:1 
 `uc 1 ADMD2 1 0 :1:2 
 `uc 1 ADACLR 1 0 :1:3 
@@ -383,11 +383,11 @@ SLAVE_COMMAND 1
 `uc 1 ADCRS2 1 0 :1:6 
 `uc 1 ADPSIS 1 0 :1:7 
 ]
-[s S898 . 1 `uc 1 ADMD 1 0 :3:0 
+[s S897 . 1 `uc 1 ADMD 1 0 :3:0 
 `uc 1 . 1 0 :1:3 
 `uc 1 ADCRS 1 0 :3:4 
 ]
-[s S902 . 1 `uc 1 MODE0 1 0 :1:0 
+[s S901 . 1 `uc 1 MODE0 1 0 :1:0 
 `uc 1 MODE1 1 0 :1:1 
 `uc 1 MODE2 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -395,24 +395,24 @@ SLAVE_COMMAND 1
 `uc 1 CRS1 1 0 :1:5 
 `uc 1 CRS2 1 0 :1:6 
 ]
-[s S910 . 1 `uc 1 MD 1 0 :3:0 
+[s S909 . 1 `uc 1 MD 1 0 :3:0 
 ]
-[s S912 . 1 `uc 1 MD0 1 0 :1:0 
+[s S911 . 1 `uc 1 MD0 1 0 :1:0 
 `uc 1 MD1 1 0 :1:1 
 `uc 1 MD2 1 0 :1:2 
 ]
-[s S916 . 1 `uc 1 ADMODE 1 0 :3:0 
+[s S915 . 1 `uc 1 ADMODE 1 0 :3:0 
 ]
-[u S918 . 1 `S884 1 . 1 0 `S889 1 . 1 0 `S898 1 . 1 0 `S902 1 . 1 0 `S910 1 . 1 0 `S912 1 . 1 0 `S916 1 . 1 0 ]
-[v _ADCON2bits ADCON2bits `VES918  1 e 1 @275 ]
+[u S917 . 1 `S883 1 . 1 0 `S888 1 . 1 0 `S897 1 . 1 0 `S901 1 . 1 0 `S909 1 . 1 0 `S911 1 . 1 0 `S915 1 . 1 0 ]
+[v _ADCON2bits ADCON2bits `VES917  1 e 1 @275 ]
 "4452
 [v _ADCON3 ADCON3 `VEuc  1 e 1 @276 ]
-[s S829 . 1 `uc 1 TMD 1 0 :3:0 
+[s S828 . 1 `uc 1 TMD 1 0 :3:0 
 `uc 1 SOI 1 0 :1:3 
 `uc 1 CALC 1 0 :3:4 
 ]
 "4487
-[s S833 . 1 `uc 1 ADTMD0 1 0 :1:0 
+[s S832 . 1 `uc 1 ADTMD0 1 0 :1:0 
 `uc 1 ADTMD1 1 0 :1:1 
 `uc 1 ADTMD2 1 0 :1:2 
 `uc 1 ADSOI 1 0 :1:3 
@@ -420,11 +420,11 @@ SLAVE_COMMAND 1
 `uc 1 ADCALC1 1 0 :1:5 
 `uc 1 ADCALC2 1 0 :1:6 
 ]
-[s S841 . 1 `uc 1 ADTMD 1 0 :3:0 
+[s S840 . 1 `uc 1 ADTMD 1 0 :3:0 
 `uc 1 . 1 0 :1:3 
 `uc 1 ADCALC 1 0 :3:4 
 ]
-[s S845 . 1 `uc 1 TMD0 1 0 :1:0 
+[s S844 . 1 `uc 1 TMD0 1 0 :1:0 
 `uc 1 TMD1 1 0 :1:1 
 `uc 1 TMD2 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -432,11 +432,11 @@ SLAVE_COMMAND 1
 `uc 1 CALC1 1 0 :1:5 
 `uc 1 CALC2 1 0 :1:6 
 ]
-[u S853 . 1 `S829 1 . 1 0 `S833 1 . 1 0 `S841 1 . 1 0 `S845 1 . 1 0 ]
-[v _ADCON3bits ADCON3bits `VES853  1 e 1 @276 ]
+[u S852 . 1 `S828 1 . 1 0 `S832 1 . 1 0 `S840 1 . 1 0 `S844 1 . 1 0 ]
+[v _ADCON3bits ADCON3bits `VES852  1 e 1 @276 ]
 "4582
 [v _ADSTAT ADSTAT `VEuc  1 e 1 @277 ]
-[s S963 . 1 `uc 1 STAT 1 0 :3:0 
+[s S962 . 1 `uc 1 STAT 1 0 :3:0 
 `uc 1 . 1 0 :1:3 
 `uc 1 MATH 1 0 :1:4 
 `uc 1 LTHR 1 0 :1:5 
@@ -444,7 +444,7 @@ SLAVE_COMMAND 1
 `uc 1 OV 1 0 :1:7 
 ]
 "4617
-[s S970 . 1 `uc 1 ADSTAT0 1 0 :1:0 
+[s S969 . 1 `uc 1 ADSTAT0 1 0 :1:0 
 `uc 1 ADSTAT1 1 0 :1:1 
 `uc 1 ADSTAT2 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -453,16 +453,16 @@ SLAVE_COMMAND 1
 `uc 1 ADUTHR 1 0 :1:6 
 `uc 1 ADAOV 1 0 :1:7 
 ]
-[s S979 . 1 `uc 1 ADSTAT 1 0 :3:0 
+[s S978 . 1 `uc 1 ADSTAT 1 0 :3:0 
 `uc 1 . 1 0 :4:3 
 `uc 1 ADOV 1 0 :1:7 
 ]
-[s S983 . 1 `uc 1 STAT0 1 0 :1:0 
+[s S982 . 1 `uc 1 STAT0 1 0 :1:0 
 `uc 1 STAT1 1 0 :1:1 
 `uc 1 STAT2 1 0 :1:2 
 ]
-[u S987 . 1 `S963 1 . 1 0 `S970 1 . 1 0 `S979 1 . 1 0 `S983 1 . 1 0 ]
-[v _ADSTATbits ADSTATbits `VES987  1 e 1 @277 ]
+[u S986 . 1 `S962 1 . 1 0 `S969 1 . 1 0 `S978 1 . 1 0 `S982 1 . 1 0 ]
+[v _ADSTATbits ADSTATbits `VES986  1 e 1 @277 ]
 "4707
 [v _ADREF ADREF `VEuc  1 e 1 @278 ]
 "4847
@@ -477,7 +477,7 @@ SLAVE_COMMAND 1
 [v _SSP1MSK SSP1MSK `VEuc  1 e 1 @398 ]
 "6098
 [v _SSP1STAT SSP1STAT `VEuc  1 e 1 @399 ]
-[s S1269 . 1 `uc 1 BF 1 0 :1:0 
+[s S1268 . 1 `uc 1 BF 1 0 :1:0 
 `uc 1 UA 1 0 :1:1 
 `uc 1 R_nW 1 0 :1:2 
 `uc 1 S 1 0 :1:3 
@@ -487,33 +487,33 @@ SLAVE_COMMAND 1
 `uc 1 SMP 1 0 :1:7 
 ]
 "6207
-[s S1278 . 1 `uc 1 . 1 0 :2:0 
+[s S1277 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_W 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D_A 1 0 :1:5 
 ]
-[s S1283 . 1 `uc 1 . 1 0 :2:0 
+[s S1282 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nW 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nA 1 0 :1:5 
 ]
-[s S1288 . 1 `uc 1 . 1 0 :2:0 
+[s S1287 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nWRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nADDRESS 1 0 :1:5 
 ]
-[s S1293 . 1 `uc 1 . 1 0 :2:0 
+[s S1292 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 READ_WRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 DATA_ADDRESS 1 0 :1:5 
 ]
-[s S1298 . 1 `uc 1 . 1 0 :2:0 
+[s S1297 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 I2C_READ 1 0 :1:2 
 `uc 1 I2C_START 1 0 :1:3 
 `uc 1 I2C_STOP 1 0 :1:4 
 `uc 1 I2C_DAT 1 0 :1:5 
 ]
-[s S1304 . 1 `uc 1 BF1 1 0 :1:0 
+[s S1303 . 1 `uc 1 BF1 1 0 :1:0 
 `uc 1 UA1 1 0 :1:1 
 `uc 1 R 1 0 :1:2 
 `uc 1 START 1 0 :1:3 
@@ -522,66 +522,66 @@ SLAVE_COMMAND 1
 `uc 1 CKE1 1 0 :1:6 
 `uc 1 SMP1 1 0 :1:7 
 ]
-[s S1313 . 1 `uc 1 . 1 0 :2:0 
+[s S1312 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 RW 1 0 :1:2 
 `uc 1 START1 1 0 :1:3 
 `uc 1 STOP1 1 0 :1:4 
 `uc 1 DA 1 0 :1:5 
 ]
-[s S1319 . 1 `uc 1 . 1 0 :2:0 
+[s S1318 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 RW1 1 0 :1:2 
 `uc 1 I2C_START1 1 0 :1:3 
 `uc 1 I2C_STOP2 1 0 :1:4 
 `uc 1 DA1 1 0 :1:5 
 ]
-[s S1325 . 1 `uc 1 . 1 0 :2:0 
+[s S1324 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 I2C_READ1 1 0 :1:2 
 `uc 1 S2 1 0 :1:3 
 `uc 1 P2 1 0 :1:4 
 `uc 1 DATA_ADDRESS1 1 0 :1:5 
 ]
-[s S1331 . 1 `uc 1 . 1 0 :2:0 
+[s S1330 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 READ_WRITE1 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D_A1 1 0 :1:5 
 ]
-[s S1336 . 1 `uc 1 . 1 0 :2:0 
+[s S1335 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_W1 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D_nA1 1 0 :1:5 
 ]
-[s S1341 . 1 `uc 1 . 1 0 :2:0 
+[s S1340 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_nW1 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 I2C_DAT1 1 0 :1:5 
 ]
-[s S1346 . 1 `uc 1 . 1 0 :2:0 
+[s S1345 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nW2 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nA2 1 0 :1:5 
 ]
-[s S1351 . 1 `uc 1 . 1 0 :2:0 
+[s S1350 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nWRITE1 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nADDRESS1 1 0 :1:5 
 ]
-[u S1356 . 1 `S1269 1 . 1 0 `S1278 1 . 1 0 `S1283 1 . 1 0 `S1288 1 . 1 0 `S1293 1 . 1 0 `S1298 1 . 1 0 `S1304 1 . 1 0 `S1313 1 . 1 0 `S1319 1 . 1 0 `S1325 1 . 1 0 `S1331 1 . 1 0 `S1336 1 . 1 0 `S1341 1 . 1 0 `S1346 1 . 1 0 `S1351 1 . 1 0 ]
-[v _SSP1STATbits SSP1STATbits `VES1356  1 e 1 @399 ]
+[u S1355 . 1 `S1268 1 . 1 0 `S1277 1 . 1 0 `S1282 1 . 1 0 `S1287 1 . 1 0 `S1292 1 . 1 0 `S1297 1 . 1 0 `S1303 1 . 1 0 `S1312 1 . 1 0 `S1318 1 . 1 0 `S1324 1 . 1 0 `S1330 1 . 1 0 `S1335 1 . 1 0 `S1340 1 . 1 0 `S1345 1 . 1 0 `S1350 1 . 1 0 ]
+[v _SSP1STATbits SSP1STATbits `VES1355  1 e 1 @399 ]
 "6462
 [v _SSP1CON1 SSP1CON1 `VEuc  1 e 1 @400 ]
-[s S1547 . 1 `uc 1 SSPM 1 0 :4:0 
+[s S1546 . 1 `uc 1 SSPM 1 0 :4:0 
 `uc 1 CKP 1 0 :1:4 
 `uc 1 SSPEN 1 0 :1:5 
 `uc 1 SSPOV 1 0 :1:6 
 `uc 1 WCOL 1 0 :1:7 
 ]
 "6492
-[s S1553 . 1 `uc 1 SSPM0 1 0 :1:0 
+[s S1552 . 1 `uc 1 SSPM0 1 0 :1:0 
 `uc 1 SSPM1 1 0 :1:1 
 `uc 1 SSPM2 1 0 :1:2 
 `uc 1 SSPM3 1 0 :1:3 
 ]
-[s S1558 . 1 `uc 1 SSPM01 1 0 :1:0 
+[s S1557 . 1 `uc 1 SSPM01 1 0 :1:0 
 `uc 1 SSPM11 1 0 :1:1 
 `uc 1 SSPM21 1 0 :1:2 
 `uc 1 SSPM31 1 0 :1:3 
@@ -590,11 +590,11 @@ SLAVE_COMMAND 1
 `uc 1 SSPOV1 1 0 :1:6 
 `uc 1 WCOL1 1 0 :1:7 
 ]
-[u S1567 . 1 `S1547 1 . 1 0 `S1553 1 . 1 0 `S1558 1 . 1 0 ]
-[v _SSP1CON1bits SSP1CON1bits `VES1567  1 e 1 @400 ]
+[u S1566 . 1 `S1546 1 . 1 0 `S1552 1 . 1 0 `S1557 1 . 1 0 ]
+[v _SSP1CON1bits SSP1CON1bits `VES1566  1 e 1 @400 ]
 "6582
 [v _SSP1CON2 SSP1CON2 `VEuc  1 e 1 @401 ]
-[s S1460 . 1 `uc 1 SEN 1 0 :1:0 
+[s S1459 . 1 `uc 1 SEN 1 0 :1:0 
 `uc 1 RSEN 1 0 :1:1 
 `uc 1 PEN 1 0 :1:2 
 `uc 1 RCEN 1 0 :1:3 
@@ -604,17 +604,17 @@ SLAVE_COMMAND 1
 `uc 1 GCEN 1 0 :1:7 
 ]
 "6629
-[s S1469 . 1 `uc 1 . 1 0 :1:0 
+[s S1468 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 ADMSK 1 0 :5:1 
 ]
-[s S1472 . 1 `uc 1 . 1 0 :1:0 
+[s S1471 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 ADMSK1 1 0 :1:1 
 `uc 1 ADMSK2 1 0 :1:2 
 `uc 1 ADMSK3 1 0 :1:3 
 `uc 1 ADMSK4 1 0 :1:4 
 `uc 1 ADMSK5 1 0 :1:5 
 ]
-[s S1479 . 1 `uc 1 SEN1 1 0 :1:0 
+[s S1478 . 1 `uc 1 SEN1 1 0 :1:0 
 `uc 1 ADMSK11 1 0 :1:1 
 `uc 1 ADMSK21 1 0 :1:2 
 `uc 1 ADMSK31 1 0 :1:3 
@@ -623,18 +623,18 @@ SLAVE_COMMAND 1
 `uc 1 ACKSTAT1 1 0 :1:6 
 `uc 1 GCEN1 1 0 :1:7 
 ]
-[s S1488 . 1 `uc 1 . 1 0 :1:0 
+[s S1487 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 RSEN1 1 0 :1:1 
 `uc 1 PEN1 1 0 :1:2 
 `uc 1 RCEN1 1 0 :1:3 
 `uc 1 ADMSK41 1 0 :1:4 
 `uc 1 ADMSK51 1 0 :1:5 
 ]
-[u S1495 . 1 `S1460 1 . 1 0 `S1469 1 . 1 0 `S1472 1 . 1 0 `S1479 1 . 1 0 `S1488 1 . 1 0 ]
-[v _SSP1CON2bits SSP1CON2bits `VES1495  1 e 1 @401 ]
+[u S1494 . 1 `S1459 1 . 1 0 `S1468 1 . 1 0 `S1471 1 . 1 0 `S1478 1 . 1 0 `S1487 1 . 1 0 ]
+[v _SSP1CON2bits SSP1CON2bits `VES1494  1 e 1 @401 ]
 "6769
 [v _SSP1CON3 SSP1CON3 `VEuc  1 e 1 @402 ]
-[s S1211 . 1 `uc 1 DHEN 1 0 :1:0 
+[s S1210 . 1 `uc 1 DHEN 1 0 :1:0 
 `uc 1 AHEN 1 0 :1:1 
 `uc 1 SBCDE 1 0 :1:2 
 `uc 1 SDAHT 1 0 :1:3 
@@ -644,26 +644,26 @@ SLAVE_COMMAND 1
 `uc 1 ACKTIM 1 0 :1:7 
 ]
 "6786
-[u S1220 . 1 `S1211 1 . 1 0 ]
-[v _SSP1CON3bits SSP1CON3bits `VES1220  1 e 1 @402 ]
-[s S1746 . 1 `uc 1 INTF 1 0 :1:0 
+[u S1219 . 1 `S1210 1 . 1 0 ]
+[v _SSP1CON3bits SSP1CON3bits `VES1219  1 e 1 @402 ]
+[s S1745 . 1 `uc 1 INTF 1 0 :1:0 
 `uc 1 . 1 0 :3:1 
 `uc 1 IOCIF 1 0 :1:4 
 `uc 1 TMR0IF 1 0 :1:5 
 ]
 "19021
-[u S1751 . 1 `S1746 1 . 1 0 ]
-[v _PIR0bits PIR0bits `VES1751  1 e 1 @1804 ]
-[s S719 . 1 `uc 1 ADIF 1 0 :1:0 
+[u S1750 . 1 `S1745 1 . 1 0 ]
+[v _PIR0bits PIR0bits `VES1750  1 e 1 @1804 ]
+[s S718 . 1 `uc 1 ADIF 1 0 :1:0 
 `uc 1 ADTIF 1 0 :1:1 
 `uc 1 . 1 0 :4:2 
 `uc 1 CSWIF 1 0 :1:6 
 `uc 1 OSFIF 1 0 :1:7 
 ]
 "19055
-[u S725 . 1 `S719 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES725  1 e 1 @1805 ]
-[s S1234 . 1 `uc 1 SSP1IF 1 0 :1:0 
+[u S724 . 1 `S718 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES724  1 e 1 @1805 ]
+[s S1233 . 1 `uc 1 SSP1IF 1 0 :1:0 
 `uc 1 BCL1IF 1 0 :1:1 
 `uc 1 SSP2IF 1 0 :1:2 
 `uc 1 BCL2IF 1 0 :1:3 
@@ -671,8 +671,8 @@ SLAVE_COMMAND 1
 `uc 1 RC1IF 1 0 :1:5 
 ]
 "19128
-[u S1241 . 1 `S1234 1 . 1 0 ]
-[v _PIR3bits PIR3bits `VES1241  1 e 1 @1807 ]
+[u S1240 . 1 `S1233 1 . 1 0 ]
+[v _PIR3bits PIR3bits `VES1240  1 e 1 @1807 ]
 [s S292 . 1 `uc 1 INTE 1 0 :1:0 
 `uc 1 . 1 0 :3:1 
 `uc 1 IOCIE 1 0 :1:4 
@@ -681,16 +681,16 @@ SLAVE_COMMAND 1
 "19392
 [u S297 . 1 `S292 1 . 1 0 ]
 [v _PIE0bits PIE0bits `VES297  1 e 1 @1814 ]
-[s S734 . 1 `uc 1 ADIE 1 0 :1:0 
+[s S733 . 1 `uc 1 ADIE 1 0 :1:0 
 `uc 1 ADTIE 1 0 :1:1 
 `uc 1 . 1 0 :4:2 
 `uc 1 CSWIE 1 0 :1:6 
 `uc 1 OSFIE 1 0 :1:7 
 ]
 "19426
-[u S740 . 1 `S734 1 . 1 0 ]
-[v _PIE1bits PIE1bits `VES740  1 e 1 @1815 ]
-[s S1251 . 1 `uc 1 SSP1IE 1 0 :1:0 
+[u S739 . 1 `S733 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES739  1 e 1 @1815 ]
+[s S1250 . 1 `uc 1 SSP1IE 1 0 :1:0 
 `uc 1 BCL1IE 1 0 :1:1 
 `uc 1 SSP2IE 1 0 :1:2 
 `uc 1 BCL2IE 1 0 :1:3 
@@ -698,8 +698,8 @@ SLAVE_COMMAND 1
 `uc 1 RC1IE 1 0 :1:5 
 ]
 "19499
-[u S1258 . 1 `S1251 1 . 1 0 ]
-[v _PIE3bits PIE3bits `VES1258  1 e 1 @1817 ]
+[u S1257 . 1 `S1250 1 . 1 0 ]
+[v _PIE3bits PIE3bits `VES1257  1 e 1 @1817 ]
 "19759
 [v _PMD0 PMD0 `VEuc  1 e 1 @1942 ]
 [s S275 . 1 `uc 1 IOCMD 1 0 :1:0 
@@ -718,7 +718,7 @@ SLAVE_COMMAND 1
 [v _PMD2 PMD2 `VEuc  1 e 1 @1944 ]
 "19881
 [v _PMD3 PMD3 `VEuc  1 e 1 @1945 ]
-[s S680 . 1 `uc 1 ZCDMD 1 0 :1:0 
+[s S679 . 1 `uc 1 ZCDMD 1 0 :1:0 
 `uc 1 CMP1MD 1 0 :1:1 
 `uc 1 CMP2MD 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
@@ -726,22 +726,22 @@ SLAVE_COMMAND 1
 `uc 1 DAC1MD 1 0 :1:6 
 ]
 "19896
-[u S687 . 1 `S680 1 . 1 0 ]
-[v _PMD3bits PMD3bits `VES687  1 e 1 @1945 ]
+[u S686 . 1 `S679 1 . 1 0 ]
+[v _PMD3bits PMD3bits `VES686  1 e 1 @1945 ]
 "19926
 [v _PMD4 PMD4 `VEuc  1 e 1 @1946 ]
 "19977
 [v _PMD5 PMD5 `VEuc  1 e 1 @1947 ]
 "20004
 [v _PMD6 PMD6 `VEuc  1 e 1 @1948 ]
-[s S1172 . 1 `uc 1 MSSP1MD 1 0 :1:0 
+[s S1171 . 1 `uc 1 MSSP1MD 1 0 :1:0 
 `uc 1 MSSP2MD 1 0 :1:1 
 `uc 1 . 1 0 :2:2 
 `uc 1 U1MD 1 0 :1:4 
 ]
 "20017
-[u S1177 . 1 `S1172 1 . 1 0 ]
-[v _PMD6bits PMD6bits `VES1177  1 e 1 @1948 ]
+[u S1176 . 1 `S1171 1 . 1 0 ]
+[v _PMD6bits PMD6bits `VES1176  1 e 1 @1948 ]
 "20037
 [v _PMD7 PMD7 `VEuc  1 e 1 @1949 ]
 "20087
@@ -765,12 +765,12 @@ SLAVE_COMMAND 1
 [v _WDTCON0bits WDTCON0bits `VES406  1 e 1 @2060 ]
 "20162
 [v _WDTCON1 WDTCON1 `VEuc  1 e 1 @2061 ]
-[s S1837 . 1 `uc 1 . 1 0 :1:0 
+[s S1836 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 VREGPM 1 0 :1:1 
 ]
 "20632
-[u S1840 . 1 `S1837 1 . 1 0 ]
-[v _VREGCONbits VREGCONbits `VES1840  1 e 1 @2066 ]
+[u S1839 . 1 `S1836 1 . 1 0 ]
+[v _VREGCONbits VREGCONbits `VES1839  1 e 1 @2066 ]
 [s S462 . 1 `uc 1 DOZE 1 0 :3:0 
 `uc 1 . 1 0 :1:3 
 `uc 1 DOE 1 0 :1:4 
@@ -869,29 +869,29 @@ SLAVE_COMMAND 1
 [v _mData mData `[2]uc  1 e 2 0 ]
 "69
 [v _mDataLength mDataLength `uc  1 e 1 0 ]
-"118 C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+"117 C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
 [v _soundinterrupt soundinterrupt `uc  1 e 1 0 ]
-"121
+"120
 [v _presSumSquared presSumSquared `f  1 e 3 0 ]
-"122
+"121
 [v _adcScaler adcScaler `f  1 e 3 0 ]
-"123
+"122
 [v _measurementRunning measurementRunning `uc  1 e 1 0 ]
-"124
+"123
 [v _sampling sampling `uc  1 e 1 0 ]
-"125
+"124
 [v _sampleCounter sampleCounter `ui  1 e 2 0 ]
-"127
+"126
 [v _measurementData measurementData `VE[2]uc  1 e 2 0 ]
-"131
+"130
 [v _thresholdEnabled thresholdEnabled `SSuc  1 e 1 0 ]
-"132
+"131
 [v _thresholdLevel thresholdLevel `SSui  1 e 2 0 ]
-"134
+"133
 [v _polledMeasurement polledMeasurement `uc  1 e 1 0 ]
-"135
+"134
 [v _overThreshold overThreshold `uc  1 e 1 0 ]
-"137
+"136
 [v _sampleArray sampleArray `[400]ui  1 e 800 @9424 ]
 "30 C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\system/adcc.c
 [v _ADCC_ADI_InterruptHandler ADCC_ADI_InterruptHandler `*.37(v  1 e 2 0 ]
@@ -943,32 +943,32 @@ SLAVE_COMMAND 1
 {
 "155
 } 0
-"476 C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+"442 C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
 [v _SoundLevel_SetThreshold SoundLevel_SetThreshold `(v  1 e 1 0 ]
 {
 [v SoundLevel_SetThreshold@metric metric `uc  1 p 1 1 ]
 [v SoundLevel_SetThreshold@thresholdData thresholdData `*.5uc  1 p 1 2 ]
-"489
+"454
 } 0
-"349
+"328
 [v _SoundLevel_Measure SoundLevel_Measure `(v  1 e 1 0 ]
 {
-"351
+"330
 } 0
-"355
+"334
 [v _SoundLevel_Loop SoundLevel_Loop `(v  1 e 1 0 ]
 {
-"458
+"424
 } 0
-"593
+"559
 [v _measure measure `(v  1 e 1 0 ]
 {
-"616
+"582
 } 0
-"554
+"520
 [v _SoundLevel_StartADC SoundLevel_StartADC `(v  1 e 1 0 ]
 {
-"557
+"523
 } 0
 "97 C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\system/adcc.c
 [v _ADCC_StartConversion ADCC_StartConversion `(v  1 e 1 0 ]
@@ -984,26 +984,24 @@ SLAVE_COMMAND 1
 {
 "257
 } 0
-"492 C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+"457 C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
 [v _SoundLevel_PrepareData SoundLevel_PrepareData `(v  1 e 1 0 ]
 {
-"505
-[v SoundLevel_PrepareData@signal signal `f  1 a 3 22 ]
-"503
-[v SoundLevel_PrepareData@i_663 i `i  1 a 2 27 ]
-"497
-[v SoundLevel_PrepareData@i i `i  1 a 2 25 ]
-"494
-[v SoundLevel_PrepareData@sampleSum sampleSum `ul  1 a 4 4 ]
-"496
-[v SoundLevel_PrepareData@mean mean `f  1 a 3 29 ]
+"471
+[v SoundLevel_PrepareData@signal signal `f  1 a 3 18 ]
+"469
+[v SoundLevel_PrepareData@i_662 i `i  1 a 2 23 ]
+"462
+[v SoundLevel_PrepareData@i i `i  1 a 2 21 ]
+"461
+[v SoundLevel_PrepareData@mean mean `f  1 a 3 25 ]
+"458
+[v SoundLevel_PrepareData@dBZ dBZ `f  1 a 3 15 ]
+"477
+[v SoundLevel_PrepareData@presAvgSquared presAvgSquared `f  1 a 3 10 ]
 "493
-[v SoundLevel_PrepareData@dBZ dBZ `f  1 a 3 19 ]
-"510
-[v SoundLevel_PrepareData@presAvgSquared presAvgSquared `f  1 a 3 14 ]
-"523
-[v SoundLevel_PrepareData@dataToSend dataToSend `ui  1 a 2 17 ]
-"535
+[v SoundLevel_PrepareData@dataToSend dataToSend `ui  1 a 2 13 ]
+"505
 } 0
 "6 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\round.c
 [v _round round `(d  1 e 3 0 ]
@@ -1169,86 +1167,86 @@ SLAVE_COMMAND 1
 [v ___ftpack@sign sign `uc  1 p 1 4 ]
 "86
 } 0
-"196 C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+"194 C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
 [v _MIC_Mode MIC_Mode `(v  1 e 1 0 ]
 {
 [v MIC_Mode@mode mode `uc  1 a 1 wreg ]
 [v MIC_Mode@mode mode `uc  1 a 1 wreg ]
 [v MIC_Mode@mode mode `uc  1 a 1 0 ]
-"214
+"209
 } 0
-"252
+"241
 [v _AMPS_enable AMPS_enable `(v  1 e 1 0 ]
 {
 [v AMPS_enable@enable enable `uc  1 a 1 wreg ]
 [v AMPS_enable@enable enable `uc  1 a 1 wreg ]
 [v AMPS_enable@enable enable `uc  1 a 1 2 ]
-"274
+"263
 } 0
-"587
+"553
 [v _generateInt generateInt `(v  1 e 1 0 ]
 {
-"591
+"557
 } 0
-"460
+"426
 [v _EnterSleep EnterSleep `(v  1 s 1 EnterSleep ]
 {
-"466
+"432
 } 0
-"286
+"275
 [v _SoundLevel_Init SoundLevel_Init `(v  1 e 1 0 ]
 {
-"345
+"324
 } 0
 "180
 [v _powerMic_Init powerMic_Init `(v  1 e 1 0 ]
 {
-"186
+"185
 } 0
-"188
+"187
 [v _nWakeMic_Init nWakeMic_Init `(v  1 e 1 0 ]
 {
-"194
+"192
 } 0
-"277
+"266
 [v _WDT_Init WDT_Init `(v  1 e 1 0 ]
 {
-"283
+"272
 } 0
-"239
+"230
 [v _VDDBIAS_Init VDDBIAS_Init `(v  1 e 1 0 ]
 {
-"250
+"239
 } 0
-"231
+"223
 [v _VDDAMP_Init VDDAMP_Init `(v  1 e 1 0 ]
 {
-"237
+"228
 } 0
-"216
+"211
 [v _READY_Init READY_Init `(v  1 e 1 0 ]
 {
-"220
+"215
 } 0
-"142
+"141
 [v _LED_Init LED_Init `(v  1 e 1 0 ]
 {
-"150
+"149
 } 0
-"161
+"160
 [v _LED_Blink LED_Blink `(v  1 e 1 0 ]
 {
 "178
 } 0
-"566
+"532
 [v _SoundLevel_LedOn SoundLevel_LedOn `(v  1 e 1 0 ]
 {
-"570
+"536
 } 0
-"573
+"539
 [v _SoundLevel_LedOff SoundLevel_LedOff `(v  1 e 1 0 ]
 {
-"577
+"543
 } 0
 "162 C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\system/pin_manager.c
 [v _IOCCF6_SetInterruptHandler IOCCF6_SetInterruptHandler `(v  1 e 1 0 ]
@@ -1256,10 +1254,10 @@ SLAVE_COMMAND 1
 [v IOCCF6_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
 "164
 } 0
-"222 C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+"217 C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
 [v _DOUT_Init DOUT_Init `(v  1 e 1 0 ]
 {
-"229
+"221
 } 0
 "36 C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\system/adcc.c
 [v _ADCC_Initialize ADCC_Initialize `(v  1 e 1 0 ]
@@ -1272,12 +1270,12 @@ SLAVE_COMMAND 1
 [v ADCC_SetADIInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
 "294
 } 0
-"469 C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+"435 C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
 [v _SoundLevel_GetData SoundLevel_GetData `(v  1 e 1 0 ]
 {
 [v SoundLevel_GetData@data data `*.4uc  1 p 1 0 ]
 [v SoundLevel_GetData@length length `*.4uc  1 p 1 1 ]
-"473
+"439
 } 0
 "25 C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\system/system.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
@@ -1356,10 +1354,10 @@ SLAVE_COMMAND 1
 {
 "157
 } 0
-"619 C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+"585 C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
 [v _ISR_MIC_Wake ISR_MIC_Wake `(v  1 e 1 0 ]
 {
-"626
+"592
 } 0
 "117 C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\system/pin_manager.c
 [v _IOCCF4_ISR IOCCF4_ISR `(v  1 e 1 0 ]
@@ -1404,15 +1402,15 @@ SLAVE_COMMAND 1
 {
 "299
 } 0
-"538 C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+"508 C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
 [v _SoundLevel_GetSample SoundLevel_GetSample `(v  1 e 1 0 ]
 {
-"551
+"517
 } 0
-"560
+"526
 [v _SoundLevel_StopADC SoundLevel_StopADC `(v  1 e 1 0 ]
 {
-"563
+"529
 } 0
 "146 C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\system/adcc.c
 [v _ADCC_StopConversion ADCC_StopConversion `(v  1 e 1 0 ]
