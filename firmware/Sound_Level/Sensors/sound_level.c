@@ -38,6 +38,7 @@
 #define REF_PRESSURE    20e-6
 #define DBZ_MAX         106
 #define SCALE_FACTOR    600
+#define DC_OFFSET       2048 // half the voltage (4096)
 
 #define ENABLE  1
 #define DISABLE 0
@@ -132,6 +133,8 @@ __persistent uint16_t thresholdLevel;
 
 bool polledMeasurement = false;
 bool overThreshold = false;
+
+uint16_t sampleArray[SAMPLES];
 
 /* Sensor API functions *******************************************************/
 
@@ -274,7 +277,8 @@ void AMPS_enable(bool enable)
 void WDT_Init(void)
 {
     // initialize timer for periodic measurements   
-    WDTCON0 = 0x1C; // 16 second period
+//    WDTCON0 = 0x1C; // 16 second period
+    WDTCON0 = 0x20; // 64 second period
     WDTCON1 = 0x07; // LFINTOSC, window 100%
 }
 
@@ -486,8 +490,31 @@ void SoundLevel_SetThreshold(uint8_t metric, uint8_t * thresholdData){
 
 /* Prepare data for transmission */
 void SoundLevel_PrepareData(){
-    float presAvgSquared = presSumSquared/SAMPLES;
-    float dBZ = 10 * log10(presAvgSquared/(REF_PRESSURE * REF_PRESSURE));
+    float dBZ = 0;
+    uint32_t sampleSum = 0;
+    
+    float mean = 0;
+    for(int i=0; i<SAMPLES; i++)
+    {
+        mean += sampleArray[i];
+    }
+    mean /= SAMPLES;
+    
+    for(int i=0; i<SAMPLES; i++)
+    {
+        float signal = (sampleArray[i] - mean) * adcScaler;
+        signal *= signal;
+        presSumSquared += signal;
+    }
+    
+    float presAvgSquared = presSumSquared/SAMPLES; //sqrt() also possible but easier to process with squared rms pressure values
+    
+    if( (presAvgSquared/(REF_PRESSURE * REF_PRESSURE)) != 0.0 )
+    {
+        dBZ = 10 * log10(presAvgSquared/(REF_PRESSURE * REF_PRESSURE));
+    }else{
+        dBZ = 0;
+    }
     
     if(dBZ > DBZ_MAX){
         dBZ = DBZ_MAX;
@@ -509,16 +536,17 @@ void SoundLevel_PrepareData(){
 
 // This function is called when an ADC-conversion has completed
 void SoundLevel_GetSample(){
-    uint16_t sample = ADCC_GetConversionResult();    
     
-    float voltageToPressure = sample * adcScaler;
+    sampleArray[sampleCounter] = ADCC_GetConversionResult();
     
-    presSumSquared = presSumSquared + (voltageToPressure * voltageToPressure);
+    //float voltageToPressure = sample * adcScaler;
+    
+    //presSumSquared = presSumSquared + (voltageToPressure * voltageToPressure);
     
     sampleCounter++;
     if(sampleCounter>SAMPLES-1){ // we've taken enough samples
-        sampling = false;
         SoundLevel_StopADC(); // stop conversions and power-down analog circuitry
+        sampling = false;
     }   
 }
 
@@ -580,14 +608,11 @@ void measure(void){
                             // SoundLevel_GetSample callback
     while(sampling);
     
-//    SoundLevel_StopADC(); // stop conversions and power-down analog circuitry
-    
     AMPS_enable(DISABLE); // disable amplifier circuits
     
     SoundLevel_PrepareData(); // prepare measurement for transmission
     
     SoundLevel_LedOff();
-        
 }
 
 

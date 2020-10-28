@@ -3,11 +3,11 @@ Microchip MPLAB XC8 Compiler V2.30
 Linker command line:
 
 -W-3 --edf=C:\Program Files\Microchip\xc8\v2.30\pic\dat\en_msgs.txt -cn \
-  -h+dist/soundlevel/production\Sound_Level.production.sym \
-  --cmf=dist/soundlevel/production\Sound_Level.production.cmf -z -Q16F18446 \
-  -oC:\Users\JONACA~1\AppData\Local\Temp\s5d8x2 --defsym=__MPLAB_BUILD=1 \
-  -Mdist/soundlevel/production/Sound_Level.production.map -E1 \
-  -ver=XC8 Compiler -ASTACK=0212Ah-024CFh -pstack=STACK -ACODE=00h-07FFhx8 \
+  -h+dist/soundlevel/debug\Sound_Level.debug.sym \
+  --cmf=dist/soundlevel/debug\Sound_Level.debug.cmf -z -Q16F18446 \
+  -oC:\Users\JONACA~1\AppData\Local\Temp\sf3cx2 --defsym=__MPLAB_BUILD=1 \
+  -Mdist/soundlevel/debug/Sound_Level.debug.map -E1 -ver=XC8 Compiler \
+  -ASTACK=0212Ah-024CFh -pstack=STACK -ACODE=00h-07FFhx8 \
   -ASTRCODE=00h-03FFFh -ASTRING=00h-0FFhx64 -ACONST=00h-0FFhx64 \
   -AENTRY=00h-0FFhx64 -ACOMMON=070h-07Fh -ABANK0=020h-06Fh \
   -ABANK1=0A0h-0EFh -ABANK2=0120h-016Fh -ABANK3=01A0h-01EFh \
@@ -46,8 +46,8 @@ Linker command line:
   -AEEDATA=00h-0FFh/0F000h -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 \
   -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 \
   -preset_vec=00h,intentry=04h,init,end_init -ppowerup=CODE -pcinit=CODE \
-  -pfunctab=ENTRY -k C:\Users\JONACA~1\AppData\Local\Temp\s5d8xg.o \
-  dist/soundlevel/production\Sound_Level.production.o 
+  -pfunctab=ENTRY -k C:\Users\JONACA~1\AppData\Local\Temp\sf3cxg.o \
+  dist/soundlevel/debug\Sound_Level.debug.o 
 
 Object code version is 3.11
 
@@ -56,11 +56,11 @@ Machine type is 16F18446
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\JONACA~1\AppData\Local\Temp\s5d8xg.o
+C:\Users\JONACA~1\AppData\Local\Temp\sf3cxg.o
                 end_init                             31       31        2        8       0
                 reset_vec                             0        0        2        0       0
                 config                             8007     8007        5        0       4
-dist/soundlevel/production\Sound_Level.production.o
+dist/soundlevel/debug\Sound_Level.debug.o
                 cinit                                33       33       47        8       0
                 intentry                              4        4       2D        8       0
                 config                             8007     8007        5        0       4
@@ -1719,7 +1719,7 @@ Total ram usage:        0 bytes
 
  *************** function _SoundLevel_SetThreshold *****************
  Defined at:
-		line 476 in file "Sensors/sound_level.c"
+		line 475 in file "Sensors/sound_level.c"
  Parameters:    Size  Location     Type
   metric          1    1[BANK0 ] unsigned char 
   thresholdDat    1    2[BANK0 ] PTR unsigned char 
@@ -1751,7 +1751,7 @@ Total ram usage:        7 bytes
 
  *************** function _SoundLevel_Measure *****************
  Defined at:
-		line 349 in file "Sensors/sound_level.c"
+		line 348 in file "Sensors/sound_level.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1781,7 +1781,7 @@ Total ram usage:        0 bytes
 
  *************** function _SoundLevel_Loop *****************
  Defined at:
-		line 355 in file "Sensors/sound_level.c"
+		line 354 in file "Sensors/sound_level.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1814,7 +1814,7 @@ Total ram usage:        1 bytes
 
  *************** function _measure *****************
  Defined at:
-		line 593 in file "Sensors/sound_level.c"
+		line 592 in file "Sensors/sound_level.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1849,7 +1849,7 @@ Total ram usage:        1 bytes
 
  *************** function _SoundLevel_StartADC *****************
  Defined at:
-		line 554 in file "Sensors/sound_level.c"
+		line 553 in file "Sensors/sound_level.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1940,7 +1940,7 @@ Total ram usage:        0 bytes
 
  *************** function _SoundLevel_PrepareData *****************
  Defined at:
-		line 492 in file "Sensors/sound_level.c"
+		line 491 in file "Sensors/sound_level.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2610,7 +2610,7 @@ Total ram usage:        3 bytes
 
  *************** function _generateInt *****************
  Defined at:
-		line 587 in file "Sensors/sound_level.c"
+		line 586 in file "Sensors/sound_level.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2640,7 +2640,7 @@ Total ram usage:        1 bytes
 
  *************** function _EnterSleep *****************
  Defined at:
-		line 460 in file "Sensors/sound_level.c"
+		line 459 in file "Sensors/sound_level.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2670,7 +2670,7 @@ Total ram usage:        0 bytes
 
  *************** function _SoundLevel_Init *****************
  Defined at:
-		line 286 in file "Sensors/sound_level.c"
+		line 285 in file "Sensors/sound_level.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2952,7 +2952,7 @@ Total ram usage:        2 bytes
 
  *************** function _SoundLevel_LedOn *****************
  Defined at:
-		line 566 in file "Sensors/sound_level.c"
+		line 565 in file "Sensors/sound_level.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2983,7 +2983,7 @@ Total ram usage:        0 bytes
 
  *************** function _SoundLevel_LedOff *****************
  Defined at:
-		line 573 in file "Sensors/sound_level.c"
+		line 572 in file "Sensors/sound_level.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -3138,7 +3138,7 @@ Total ram usage:        2 bytes
 
  *************** function _SoundLevel_GetData *****************
  Defined at:
-		line 469 in file "Sensors/sound_level.c"
+		line 468 in file "Sensors/sound_level.c"
  Parameters:    Size  Location     Type
   data            1    0[BANK0 ] PTR unsigned char 
 		 -> mData(2), 
@@ -3547,7 +3547,7 @@ Total ram usage:        0 bytes
 
  *************** function _ISR_MIC_Wake *****************
  Defined at:
-		line 619 in file "Sensors/sound_level.c"
+		line 618 in file "Sensors/sound_level.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -3785,7 +3785,7 @@ Total ram usage:        0 bytes
 
  *************** function _SoundLevel_GetSample *****************
  Defined at:
-		line 538 in file "Sensors/sound_level.c"
+		line 537 in file "Sensors/sound_level.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -3817,7 +3817,7 @@ Total ram usage:        4 bytes
 
  *************** function _SoundLevel_StopADC *****************
  Defined at:
-		line 560 in file "Sensors/sound_level.c"
+		line 559 in file "Sensors/sound_level.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type

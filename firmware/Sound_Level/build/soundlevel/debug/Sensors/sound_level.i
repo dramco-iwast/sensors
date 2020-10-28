@@ -18940,8 +18940,7 @@ do { LATCbits.LATC4 = 0; } while(0);
 void WDT_Init(void)
 {
 
-
-WDTCON0 = 0x20;
+WDTCON0 = 0x1C;
 WDTCON1 = 0x07;
 }
 
@@ -18963,7 +18962,7 @@ VDDAMP_Init();
 VDDBIAS_Init();
 _delay((unsigned long)((1)*(32000000/4000.0)));
 
-# 315
+# 314
 PIE0bits.IOCIE = 1;
 
 IOCCFbits.IOCCF6 = 0;
@@ -18984,15 +18983,15 @@ ADCC_SetADIInterruptHandler(SoundLevel_GetSample);
 
 WDT_Init();
 
-# 345
+# 344
 }
 
-# 349
+# 348
 void SoundLevel_Measure(){
 polledMeasurement = 1;
 }
 
-# 355
+# 354
 void SoundLevel_Loop(void){
 
 
@@ -19041,7 +19040,7 @@ measurementRunning = 0;
 
 generateInt();
 
-# 407
+# 406
 MIC_Mode(2);
 
 WDTCON0bits.SEN = 0;
@@ -19177,7 +19176,7 @@ void SoundLevel_GetSample(){
 
 sampleArray[sampleCounter] = ADCC_GetConversionResult();
 
-# 546
+# 545
 sampleCounter++;
 if(sampleCounter>400-1){
 SoundLevel_StopADC();

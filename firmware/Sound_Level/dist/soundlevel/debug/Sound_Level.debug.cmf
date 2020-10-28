@@ -11,11 +11,11 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\JONACA~1\AppData\Local\Temp\s5d8xg.o
+$C:\Users\JONACA~1\AppData\Local\Temp\sf3cxg.o
 reset_vec CODE 0 0 0 2 2
 end_init CODE 0 31 31 2 2
 config CONFIG 4 8007 8007 5 2
-$dist/soundlevel/production\Sound_Level.production.o
+$dist/soundlevel/debug\Sound_Level.debug.o
 cinit CODE 0 33 33 47 2
 text1 CODE 0 98D 98D D 2
 text2 CODE 0 D04 D04 42 2
@@ -237,68 +237,68 @@ STRING 101B-3FFF 2
 # are in ascending order of addresses.
 # All other numeric values are in decimal.
 %LINETAB
-$dist/soundlevel/production\Sound_Level.production.o
-33 cinit CODE >7814:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-33 cinit CODE >7817:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-33 cinit CODE >7946:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-36 cinit CODE >7947:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-37 cinit CODE >7951:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-38 cinit CODE >7952:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-39 cinit CODE >7953:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-3A cinit CODE >7954:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-3B cinit CODE >7955:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-3C cinit CODE >7956:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-3D cinit CODE >7957:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-3E cinit CODE >7958:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-3F cinit CODE >7959:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-40 cinit CODE >7960:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-41 cinit CODE >7961:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-42 cinit CODE >7962:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-45 cinit CODE >7985:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-46 cinit CODE >7986:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-47 cinit CODE >7987:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-48 cinit CODE >7988:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-49 cinit CODE >7989:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-4A cinit CODE >7990:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-4B cinit CODE >7991:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-4C cinit CODE >7992:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-4D cinit CODE >7993:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-50 cinit CODE >7997:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-51 cinit CODE >7998:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-52 cinit CODE >7999:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-53 cinit CODE >8000:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-54 cinit CODE >8001:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-55 cinit CODE >8005:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-56 cinit CODE >8006:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-57 cinit CODE >8007:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-58 cinit CODE >8008:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-59 cinit CODE >8009:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-5A cinit CODE >8010:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-5B cinit CODE >8011:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-5C cinit CODE >8012:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-5D cinit CODE >8013:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-60 cinit CODE >8017:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-61 cinit CODE >8018:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-62 cinit CODE >8019:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-63 cinit CODE >8020:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-64 cinit CODE >8021:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-65 cinit CODE >8022:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-66 cinit CODE >8023:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-67 cinit CODE >8024:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-68 cinit CODE >8025:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-6B cinit CODE >8029:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-6C cinit CODE >8030:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-6D cinit CODE >8031:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-6E cinit CODE >8032:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-6F cinit CODE >8033:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-70 cinit CODE >8034:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-71 cinit CODE >8035:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-72 cinit CODE >8036:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-73 cinit CODE >8037:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-76 cinit CODE >8043:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-76 cinit CODE >8045:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-77 cinit CODE >8046:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-78 cinit CODE >8047:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
+$dist/soundlevel/debug\Sound_Level.debug.o
+33 cinit CODE >7814:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+33 cinit CODE >7817:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+33 cinit CODE >7946:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+36 cinit CODE >7947:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+37 cinit CODE >7951:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+38 cinit CODE >7952:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+39 cinit CODE >7953:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+3A cinit CODE >7954:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+3B cinit CODE >7955:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+3C cinit CODE >7956:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+3D cinit CODE >7957:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+3E cinit CODE >7958:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+3F cinit CODE >7959:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+40 cinit CODE >7960:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+41 cinit CODE >7961:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+42 cinit CODE >7962:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+45 cinit CODE >7985:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+46 cinit CODE >7986:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+47 cinit CODE >7987:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+48 cinit CODE >7988:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+49 cinit CODE >7989:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+4A cinit CODE >7990:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+4B cinit CODE >7991:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+4C cinit CODE >7992:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+4D cinit CODE >7993:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+50 cinit CODE >7997:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+51 cinit CODE >7998:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+52 cinit CODE >7999:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+53 cinit CODE >8000:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+54 cinit CODE >8001:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+55 cinit CODE >8005:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+56 cinit CODE >8006:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+57 cinit CODE >8007:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+58 cinit CODE >8008:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+59 cinit CODE >8009:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+5A cinit CODE >8010:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+5B cinit CODE >8011:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+5C cinit CODE >8012:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+5D cinit CODE >8013:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+60 cinit CODE >8017:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+61 cinit CODE >8018:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+62 cinit CODE >8019:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+63 cinit CODE >8020:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+64 cinit CODE >8021:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+65 cinit CODE >8022:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+66 cinit CODE >8023:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+67 cinit CODE >8024:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+68 cinit CODE >8025:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+6B cinit CODE >8029:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+6C cinit CODE >8030:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+6D cinit CODE >8031:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+6E cinit CODE >8032:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+6F cinit CODE >8033:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+70 cinit CODE >8034:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+71 cinit CODE >8035:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+72 cinit CODE >8036:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+73 cinit CODE >8037:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+76 cinit CODE >8043:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+76 cinit CODE >8045:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+77 cinit CODE >8046:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+78 cinit CODE >8047:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
 4 intentry CODE >25:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\system/interrupt.c
 6 intentry CODE >28:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\system/interrupt.c
 F intentry CODE >30:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\system/interrupt.c
@@ -321,17 +321,17 @@ F intentry CODE >30:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sou
 8C6 text69 CODE >146:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\system/adcc.c
 8C6 text69 CODE >149:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\system/adcc.c
 8C8 text69 CODE >150:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\system/adcc.c
+906 text68 CODE >559:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
 906 text68 CODE >560:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-906 text68 CODE >561:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-909 text68 CODE >562:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-90C text68 CODE >563:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-BAE text67 CODE >538:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-BAE text67 CODE >540:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-BC6 text67 CODE >546:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-BCA text67 CODE >547:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-BD3 text67 CODE >548:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-BD6 text67 CODE >549:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-BD8 text67 CODE >551:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+909 text68 CODE >561:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+90C text68 CODE >562:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+BAE text67 CODE >537:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+BAE text67 CODE >539:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+BC6 text67 CODE >545:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+BCA text67 CODE >546:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+BD3 text67 CODE >547:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+BD6 text67 CODE >548:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+BD8 text67 CODE >550:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
 8C1 text66 CODE >296:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\system/adcc.c
 8C1 text66 CODE >299:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\system/adcc.c
 9A8 text65 CODE >283:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\system/adcc.c
@@ -397,11 +397,11 @@ CC1 text63 CODE >173:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\So
 8CF text60 CODE >125:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\system/pin_manager.c
 8CF text60 CODE >126:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\system/pin_manager.c
 8D1 text60 CODE >127:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\system/pin_manager.c
-93F text59 CODE >619:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-93F text59 CODE >621:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-940 text59 CODE >622:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-946 text59 CODE >624:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-948 text59 CODE >626:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+93F text59 CODE >618:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+93F text59 CODE >620:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+940 text59 CODE >621:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+946 text59 CODE >623:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+948 text59 CODE >625:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
 9B7 text58 CODE >147:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\system/pin_manager.c
 9B7 text58 CODE >152:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\system/pin_manager.c
 9BE text58 CODE >154:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\system/pin_manager.c
@@ -497,11 +497,11 @@ ABA text47 CODE >51:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sou
 ABE text47 CODE >54:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\system/system.c
 ABF text47 CODE >56:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\system/system.c
 AC0 text47 CODE >58:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\system/system.c
+A01 text46 CODE >468:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
 A01 text46 CODE >469:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-A01 text46 CODE >470:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-A09 text46 CODE >471:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-A12 text46 CODE >472:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-A1B text46 CODE >473:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+A09 text46 CODE >470:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+A12 text46 CODE >471:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+A1B text46 CODE >472:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
 924 text45 CODE >292:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\system/adcc.c
 924 text45 CODE >293:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\system/adcc.c
 92C text45 CODE >294:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\system/adcc.c
@@ -540,12 +540,12 @@ B31 text44 CODE >95:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sou
 92D text42 CODE >162:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\system/pin_manager.c
 92D text42 CODE >163:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\system/pin_manager.c
 935 text42 CODE >164:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\system/pin_manager.c
-8D2 text41 CODE >573:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-8D2 text41 CODE >575:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-8D4 text41 CODE >577:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-8D5 text40 CODE >566:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-8D5 text40 CODE >568:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-8D7 text40 CODE >570:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+8D2 text41 CODE >572:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+8D2 text41 CODE >574:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+8D4 text41 CODE >576:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+8D5 text40 CODE >565:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+8D5 text40 CODE >567:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+8D7 text40 CODE >569:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
 E98 text39 CODE >161:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
 E98 text39 CODE >163:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
 E9B text39 CODE >164:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
@@ -587,9 +587,9 @@ F05 text39 CODE >178:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\So
 967 text35 CODE >248:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
 968 text35 CODE >250:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
 8FA text34 CODE >277:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-8FA text34 CODE >281:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-8FD text34 CODE >282:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-8FF text34 CODE >283:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+8FA text34 CODE >280:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+8FD text34 CODE >281:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+8FF text34 CODE >282:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
 900 text33 CODE >188:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
 900 text33 CODE >190:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
 902 text33 CODE >191:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
@@ -600,40 +600,40 @@ F05 text39 CODE >178:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\So
 7FC text32 CODE >183:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
 7FE text32 CODE >184:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
 7FF text32 CODE >186:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-DDF text31 CODE >286:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-DDF text31 CODE >288:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-DE2 text31 CODE >290:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-DE4 text31 CODE >292:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-DE7 text31 CODE >293:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-DF0 text31 CODE >294:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-DF3 text31 CODE >295:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-DFC text31 CODE >297:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-DFF text31 CODE >298:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-E02 text31 CODE >299:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-E05 text31 CODE >300:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-E08 text31 CODE >301:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-E11 text31 CODE >315:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-E13 text31 CODE >317:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-E15 text31 CODE >319:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-E16 text31 CODE >321:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-E17 text31 CODE >323:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-E1F text31 CODE >326:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-E26 text31 CODE >329:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-E29 text31 CODE >330:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-E31 text31 CODE >333:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-E34 text31 CODE >345:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+DDF text31 CODE >285:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+DDF text31 CODE >287:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+DE2 text31 CODE >289:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+DE4 text31 CODE >291:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+DE7 text31 CODE >292:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+DF0 text31 CODE >293:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+DF3 text31 CODE >294:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+DFC text31 CODE >296:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+DFF text31 CODE >297:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+E02 text31 CODE >298:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+E05 text31 CODE >299:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+E08 text31 CODE >300:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+E11 text31 CODE >314:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+E13 text31 CODE >316:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+E15 text31 CODE >318:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+E16 text31 CODE >320:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+E17 text31 CODE >322:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+E1F text31 CODE >325:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+E26 text31 CODE >328:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+E29 text31 CODE >329:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+E31 text31 CODE >332:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+E34 text31 CODE >344:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+90D text30 CODE >459:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
 90D text30 CODE >460:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-90D text30 CODE >461:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-90F text30 CODE >462:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-910 text30 CODE >463:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-911 text30 CODE >464:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-912 text30 CODE >465:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-913 text30 CODE >466:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+90F text30 CODE >461:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+910 text30 CODE >462:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+911 text30 CODE >463:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+912 text30 CODE >464:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+913 text30 CODE >465:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+99A text29 CODE >586:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
 99A text29 CODE >587:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-99A text29 CODE >588:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-99C text29 CODE >589:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-9A5 text29 CODE >590:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-9A7 text29 CODE >591:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+99C text29 CODE >588:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+9A5 text29 CODE >589:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+9A7 text29 CODE >590:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
 AC1 text28 CODE >252:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
 AC3 text28 CODE >254:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
 AC4 text28 CODE >257:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
@@ -883,34 +883,34 @@ D8C text11 CODE >25:C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\
 7D3 text10 CODE >11:C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\round.c
 7E9 text10 CODE >12:C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\round.c
 7F9 text10 CODE >13:C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\round.c
+7A text9 CODE >491:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
 7A text9 CODE >492:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
 7A text9 CODE >493:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-7A text9 CODE >494:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-83 text9 CODE >496:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-89 text9 CODE >497:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-8B text9 CODE >499:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-C6 text9 CODE >497:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-D7 text9 CODE >501:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-F9 text9 CODE >503:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-FB text9 CODE >505:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-14C text9 CODE >506:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-172 text9 CODE >507:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-198 text9 CODE >503:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-1A9 text9 CODE >510:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-1CB text9 CODE >512:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-1E9 text9 CODE >514:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-236 text9 CODE >515:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-237 text9 CODE >516:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-23E text9 CODE >519:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-258 text9 CODE >520:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-25F text9 CODE >523:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-2A0 text9 CODE >525:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-2A4 text9 CODE >526:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-2A8 text9 CODE >529:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-2B5 text9 CODE >530:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-2B8 text9 CODE >531:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-2B9 text9 CODE >533:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-2BB text9 CODE >535:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+83 text9 CODE >495:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+89 text9 CODE >496:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+8B text9 CODE >498:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+C6 text9 CODE >496:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+D7 text9 CODE >500:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+F9 text9 CODE >502:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+FB text9 CODE >504:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+14C text9 CODE >505:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+172 text9 CODE >506:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+198 text9 CODE >502:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+1A9 text9 CODE >509:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+1CB text9 CODE >511:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+1E9 text9 CODE >513:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+236 text9 CODE >514:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+237 text9 CODE >515:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+23E text9 CODE >518:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+258 text9 CODE >519:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+25F text9 CODE >522:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+2A0 text9 CODE >524:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+2A4 text9 CODE >525:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+2A8 text9 CODE >528:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+2B5 text9 CODE >529:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+2B8 text9 CODE >530:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+2B9 text9 CODE >532:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+2BB text9 CODE >534:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
 8D8 text8 CODE >253:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\system/adcc.c
 8D8 text8 CODE >256:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\system/adcc.c
 8DA text8 CODE >257:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\system/adcc.c
@@ -919,88 +919,88 @@ FB text9 CODE >505:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Soun
 93B text7 CODE >103:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\system/adcc.c
 93D text7 CODE >106:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\system/adcc.c
 93E text7 CODE >107:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\system/adcc.c
+91C text6 CODE >553:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
 91C text6 CODE >554:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-91C text6 CODE >555:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-91F text6 CODE >556:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-923 text6 CODE >557:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-BD9 text5 CODE >593:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-BD9 text5 CODE >595:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-BDC text5 CODE >597:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-BE0 text5 CODE >598:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-BE9 text5 CODE >600:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-BED text5 CODE >603:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-BF0 text5 CODE >604:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-BF2 text5 CODE >605:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-BF8 text5 CODE >607:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-BFB text5 CODE >609:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-C01 text5 CODE >611:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-C05 text5 CODE >613:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-C08 text5 CODE >615:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-C0B text5 CODE >616:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-4C8 text4 CODE >355:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-4C8 text4 CODE >359:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-4D3 text4 CODE >361:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-4D9 text4 CODE >363:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-4DB text4 CODE >364:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-4DE text4 CODE >365:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-4E0 text4 CODE >367:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-4E3 text4 CODE >369:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-4E7 text4 CODE >372:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-4E9 text4 CODE >373:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-4EA text4 CODE >374:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-4EF text4 CODE >376:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-4F1 text4 CODE >377:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-4FA text4 CODE >379:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-4FD text4 CODE >380:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-500 text4 CODE >381:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-502 text4 CODE >383:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-505 text4 CODE >385:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-507 text4 CODE >386:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-510 text4 CODE >387:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-515 text4 CODE >392:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-520 text4 CODE >394:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-522 text4 CODE >395:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-52B text4 CODE >397:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-52E text4 CODE >398:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-531 text4 CODE >399:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-533 text4 CODE >401:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-536 text4 CODE >407:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-53A text4 CODE >409:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-53D text4 CODE >413:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-543 text4 CODE >415:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-545 text4 CODE >416:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-548 text4 CODE >417:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-54A text4 CODE >419:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-54F text4 CODE >421:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-550 text4 CODE >422:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-552 text4 CODE >424:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-555 text4 CODE >426:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-557 text4 CODE >428:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-55B text4 CODE >429:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-55C text4 CODE >431:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-560 text4 CODE >432:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-569 text4 CODE >434:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-56D text4 CODE >438:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-56F text4 CODE >439:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-570 text4 CODE >440:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-575 text4 CODE >442:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-577 text4 CODE >444:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-579 text4 CODE >445:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-582 text4 CODE >446:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-586 text4 CODE >449:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-589 text4 CODE >458:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+91F text6 CODE >555:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+923 text6 CODE >556:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+BD9 text5 CODE >592:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+BD9 text5 CODE >594:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+BDC text5 CODE >596:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+BE0 text5 CODE >597:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+BE9 text5 CODE >599:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+BED text5 CODE >602:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+BF0 text5 CODE >603:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+BF2 text5 CODE >604:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+BF8 text5 CODE >606:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+BFB text5 CODE >608:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+C01 text5 CODE >610:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+C05 text5 CODE >612:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+C08 text5 CODE >614:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+C0B text5 CODE >615:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+4C8 text4 CODE >354:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+4C8 text4 CODE >358:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+4D3 text4 CODE >360:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+4D9 text4 CODE >362:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+4DB text4 CODE >363:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+4DE text4 CODE >364:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+4E0 text4 CODE >366:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+4E3 text4 CODE >368:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+4E7 text4 CODE >371:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+4E9 text4 CODE >372:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+4EA text4 CODE >373:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+4EF text4 CODE >375:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+4F1 text4 CODE >376:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+4FA text4 CODE >378:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+4FD text4 CODE >379:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+500 text4 CODE >380:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+502 text4 CODE >382:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+505 text4 CODE >384:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+507 text4 CODE >385:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+510 text4 CODE >386:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+515 text4 CODE >391:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+520 text4 CODE >393:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+522 text4 CODE >394:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+52B text4 CODE >396:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+52E text4 CODE >397:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+531 text4 CODE >398:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+533 text4 CODE >400:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+536 text4 CODE >406:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+53A text4 CODE >408:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+53D text4 CODE >412:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+543 text4 CODE >414:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+545 text4 CODE >415:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+548 text4 CODE >416:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+54A text4 CODE >418:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+54F text4 CODE >420:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+550 text4 CODE >421:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+552 text4 CODE >423:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+555 text4 CODE >425:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+557 text4 CODE >427:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+55B text4 CODE >428:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+55C text4 CODE >430:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+560 text4 CODE >431:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+569 text4 CODE >433:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+56D text4 CODE >437:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+56F text4 CODE >438:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+570 text4 CODE >439:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+575 text4 CODE >441:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+577 text4 CODE >443:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+579 text4 CODE >444:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+582 text4 CODE >445:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+586 text4 CODE >448:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+589 text4 CODE >457:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+8DF text3 CODE >348:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
 8DF text3 CODE >349:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-8DF text3 CODE >350:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-8E2 text3 CODE >351:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+8E2 text3 CODE >350:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+D04 text2 CODE >475:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
 D04 text2 CODE >476:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-D04 text2 CODE >477:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-D0A text2 CODE >478:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-D13 text2 CODE >479:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-D30 text2 CODE >481:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-D36 text2 CODE >483:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-D38 text2 CODE >484:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-D41 text2 CODE >485:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
-D45 text2 CODE >489:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+D0A text2 CODE >477:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+D13 text2 CODE >478:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+D30 text2 CODE >480:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+D36 text2 CODE >482:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+D38 text2 CODE >483:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+D41 text2 CODE >484:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+D45 text2 CODE >488:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
 98D text1 CODE >153:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\main.c
 98D text1 CODE >154:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\main.c
 999 text1 CODE >155:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\main.c
@@ -1038,34 +1038,34 @@ D45 text2 CODE >489:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sou
 496 maintext CODE >141:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\main.c
 4AD maintext CODE >92:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\main.c
 4C5 maintext CODE >149:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\main.c
-975 clrtext CODE >7968:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-975 clrtext CODE >7969:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-976 clrtext CODE >7970:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-976 clrtext CODE >7971:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-977 clrtext CODE >7972:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-978 clrtext CODE >7973:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-979 clrtext CODE >7974:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-97A clrtext CODE >7975:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-97B clrtext CODE >7976:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-97C clrtext CODE >7977:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-97D clrtext CODE >7978:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-97E clrtext CODE >7979:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-97F clrtext CODE >7980:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-980 clrtext CODE >7981:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-981 inittext CODE >7929:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-981 inittext CODE >7930:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-982 inittext CODE >7931:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-982 inittext CODE >7932:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-983 inittext CODE >7933:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-984 inittext CODE >7934:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-985 inittext CODE >7935:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-986 inittext CODE >7936:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-987 inittext CODE >7937:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-988 inittext CODE >7938:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-989 inittext CODE >7939:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-98A inittext CODE >7940:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-98B inittext CODE >7941:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
-98C inittext CODE >7942:C:\Users\JONACA~1\AppData\Local\Temp\s5d8x.s
+975 clrtext CODE >7968:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+975 clrtext CODE >7969:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+976 clrtext CODE >7970:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+976 clrtext CODE >7971:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+977 clrtext CODE >7972:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+978 clrtext CODE >7973:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+979 clrtext CODE >7974:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+97A clrtext CODE >7975:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+97B clrtext CODE >7976:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+97C clrtext CODE >7977:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+97D clrtext CODE >7978:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+97E clrtext CODE >7979:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+97F clrtext CODE >7980:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+980 clrtext CODE >7981:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+981 inittext CODE >7929:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+981 inittext CODE >7930:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+982 inittext CODE >7931:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+982 inittext CODE >7932:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+983 inittext CODE >7933:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+984 inittext CODE >7934:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+985 inittext CODE >7935:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+986 inittext CODE >7936:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+987 inittext CODE >7937:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+988 inittext CODE >7938:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+989 inittext CODE >7939:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+98A inittext CODE >7940:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+98B inittext CODE >7941:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
+98C inittext CODE >7942:C:\Users\JONACA~1\AppData\Local\Temp\sf3cx.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -1078,238 +1078,238 @@ D45 text2 CODE >489:C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sou
 # was defined in a psect then <psect> will be "-". File-name
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
-__size_of_SoundLevel_GetData 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-___latbits 3 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
+__size_of_SoundLevel_GetData 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+___latbits 3 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
 __LdataBANK2 0 0 ABS 0 dataBANK2 -
-_I2C1_Initialize 1708 0 CODE 0 text50 dist/soundlevel/production\Sound_Level.production.o
-_powerMic_Init FF4 0 CODE 0 text32 dist/soundlevel/production\Sound_Level.production.o
-__size_of_IOCCF6_SetInterruptHandler 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
+_I2C1_Initialize 1708 0 CODE 0 text50 dist/soundlevel/debug\Sound_Level.debug.o
+_powerMic_Init FF4 0 CODE 0 text32 dist/soundlevel/debug\Sound_Level.debug.o
+__size_of_IOCCF6_SetInterruptHandler 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
 __Hspace_0 101B 0 ABS 0 - -
 __Hspace_1 1DA 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
 __Hspace_4 10013 0 ABS 0 - -
 __HidataBANK2 0 0 ABS 0 idataBANK2 -
-SoundLevel_PrepareData@sampleSum A4 0 BANK1 1 cstackBANK1 dist/soundlevel/production\Sound_Level.production.o
-_SSP1STATbits 18F 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-frexp@eptr 23 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-___ftdiv@exp 33 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-_I2C1_TxBufferEmpty 1228 0 CODE 0 text51 dist/soundlevel/production\Sound_Level.production.o
-_IOCCF2_InterruptHandler 127 0 BANK2 1 bssBANK2 dist/soundlevel/production\Sound_Level.production.o
-___awtoft@sign 2D 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
+SoundLevel_PrepareData@sampleSum A4 0 BANK1 1 cstackBANK1 dist/soundlevel/debug\Sound_Level.debug.o
+_SSP1STATbits 18F 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+frexp@eptr 23 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+___ftdiv@exp 33 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+_I2C1_TxBufferEmpty 1228 0 CODE 0 text51 dist/soundlevel/debug\Sound_Level.debug.o
+_IOCCF2_InterruptHandler 127 0 BANK2 1 bssBANK2 dist/soundlevel/debug\Sound_Level.debug.o
+___awtoft@sign 2D 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
-_ADCC_StopConversion 118C 0 CODE 0 text69 dist/soundlevel/production\Sound_Level.production.o
-_EnterSleep 121A 0 CODE 0 text30 dist/soundlevel/production\Sound_Level.production.o
-_PMD_Initialize 13B0 0 CODE 0 text48 dist/soundlevel/production\Sound_Level.production.o
-_I2C1_StatusCallback 1B1A 0 CODE 0 text64 dist/soundlevel/production\Sound_Level.production.o
-__end_of_PIN_MANAGER_IOC 14BA 0 CODE 0 text57 dist/soundlevel/production\Sound_Level.production.o
-?_log 5F 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-I2C1_SetTransmitData@len 22 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
+_ADCC_StopConversion 118C 0 CODE 0 text69 dist/soundlevel/debug\Sound_Level.debug.o
+_EnterSleep 121A 0 CODE 0 text30 dist/soundlevel/debug\Sound_Level.debug.o
+_PMD_Initialize 13B0 0 CODE 0 text48 dist/soundlevel/debug\Sound_Level.debug.o
+_I2C1_StatusCallback 1B1A 0 CODE 0 text64 dist/soundlevel/debug\Sound_Level.debug.o
+__end_of_PIN_MANAGER_IOC 14BA 0 CODE 0 text57 dist/soundlevel/debug\Sound_Level.debug.o
+?_log 5F 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+I2C1_SetTransmitData@len 22 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
 __Hstrings 0 0 ABS 0 strings -
-SoundLevel_GetData@data 20 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-_LATA 18 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_LATB 19 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_LATC 1A 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_PMD0 796 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_PMD1 797 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_PMD2 798 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_PMD3 799 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_PMD4 79A 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_PMD5 79B 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_PMD6 79C 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_PMD7 79D 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-___sp 0 0 STACK 2 stack C:\Users\JONACA~1\AppData\Local\Temp\s5d8xg.o
-_main 7B8 0 CODE 0 maintext dist/soundlevel/production\Sound_Level.production.o
-btemp 7E 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_i2c1_rx_buffer 12B 0 BANK2 1 bssBANK2 dist/soundlevel/production\Sound_Level.production.o
-log@x 5F 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-___ftadd@f1 2E 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-___ftadd@f2 31 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-start 62 0 CODE 0 init C:\Users\JONACA~1\AppData\Local\Temp\s5d8xg.o
-__size_of___ftadd 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-__size_of___ftdiv 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-__size_of___ftmul 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-__size_of___ftsub 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-__size_of___fttol 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-__size_of_main 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
+SoundLevel_GetData@data 20 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+_LATA 18 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_LATB 19 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_LATC 1A 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_PMD0 796 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_PMD1 797 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_PMD2 798 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_PMD3 799 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_PMD4 79A 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_PMD5 79B 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_PMD6 79C 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_PMD7 79D 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+___sp 0 0 STACK 2 stack C:\Users\JONACA~1\AppData\Local\Temp\sf3cxg.o
+_main 7B8 0 CODE 0 maintext dist/soundlevel/debug\Sound_Level.debug.o
+btemp 7E 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_i2c1_rx_buffer 12B 0 BANK2 1 bssBANK2 dist/soundlevel/debug\Sound_Level.debug.o
+log@x 5F 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+___ftadd@f1 2E 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+___ftadd@f2 31 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+start 62 0 CODE 0 init C:\Users\JONACA~1\AppData\Local\Temp\sf3cxg.o
+__size_of___ftadd 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+__size_of___ftdiv 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+__size_of___ftmul 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+__size_of___ftsub 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+__size_of___fttol 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+__size_of_main 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
-__size_of_I2C1_ISR 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-?___wmul 20 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-_measurementRunning D2 0 BANK1 1 bssBANK1 dist/soundlevel/production\Sound_Level.production.o
-___ftdiv@f1 2B 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-___ftdiv@f2 28 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-___ftdiv@f3 34 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
+__size_of_I2C1_ISR 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+?___wmul 20 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+_measurementRunning D2 0 BANK1 1 bssBANK1 dist/soundlevel/debug\Sound_Level.debug.o
+___ftdiv@f1 2B 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+___ftdiv@f2 28 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+___ftdiv@f3 34 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
 __LidataBANK2 0 0 ABS 0 idataBANK2 -
-SoundLevel_PrepareData@mean BD 0 BANK1 1 cstackBANK1 dist/soundlevel/production\Sound_Level.production.o
-IOCCF6_SetInterruptHandler@InterruptHandler 20 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
+SoundLevel_PrepareData@mean BD 0 BANK1 1 cstackBANK1 dist/soundlevel/debug\Sound_Level.debug.o
+IOCCF6_SetInterruptHandler@InterruptHandler 20 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
 __Hpowerup 0 0 CODE 0 powerup -
-_AMPS_enable 1582 0 CODE 0 text28 dist/soundlevel/production\Sound_Level.production.o
-log@coeff 2000 0 STRCODE 0 stringtext1 dist/soundlevel/production\Sound_Level.production.o
-__size_of_ADCC_ISR 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-ADCC_StartConversion@channel 20 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-_IOCCF6_SetInterruptHandler 125A 0 CODE 0 text42 dist/soundlevel/production\Sound_Level.production.o
-___ftge@ff1 20 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-___ftge@ff2 23 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-__size_of_ADCC_DefaultInterruptHandler 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-__size_of_SYSTEM_Initialize 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
+_AMPS_enable 1582 0 CODE 0 text28 dist/soundlevel/debug\Sound_Level.debug.o
+log@coeff 2000 0 STRCODE 0 stringtext1 dist/soundlevel/debug\Sound_Level.debug.o
+__size_of_ADCC_ISR 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+ADCC_StartConversion@channel 20 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+_IOCCF6_SetInterruptHandler 125A 0 CODE 0 text42 dist/soundlevel/debug\Sound_Level.debug.o
+___ftge@ff1 20 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+___ftge@ff2 23 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+__size_of_ADCC_DefaultInterruptHandler 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+__size_of_SYSTEM_Initialize 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
 __HdataCOMMON 0 0 ABS 0 dataCOMMON -
-intlevel0 0 0 ENTRY 0 functab C:\Users\JONACA~1\AppData\Local\Temp\s5d8xg.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\JONACA~1\AppData\Local\Temp\s5d8xg.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\JONACA~1\AppData\Local\Temp\s5d8xg.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\JONACA~1\AppData\Local\Temp\s5d8xg.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\JONACA~1\AppData\Local\Temp\s5d8xg.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\JONACA~1\AppData\Local\Temp\s5d8xg.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\JONACA~1\AppData\Local\Temp\sf3cxg.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\JONACA~1\AppData\Local\Temp\sf3cxg.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\JONACA~1\AppData\Local\Temp\sf3cxg.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\JONACA~1\AppData\Local\Temp\sf3cxg.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\JONACA~1\AppData\Local\Temp\sf3cxg.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\JONACA~1\AppData\Local\Temp\sf3cxg.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
-__end_oflog@coeff 2036 0 STRCODE 0 stringtext1 dist/soundlevel/production\Sound_Level.production.o
-_IOCCF0_ISR 1192 0 CODE 0 text62 dist/soundlevel/production\Sound_Level.production.o
-_IOCCF2_ISR 1198 0 CODE 0 text61 dist/soundlevel/production\Sound_Level.production.o
-_IOCCF4_ISR 119E 0 CODE 0 text60 dist/soundlevel/production\Sound_Level.production.o
-_IOCCF6_ISR 136E 0 CODE 0 text58 dist/soundlevel/production\Sound_Level.production.o
-__end_of_SoundLevel_PrepareData 578 0 CODE 0 text9 dist/soundlevel/production\Sound_Level.production.o
-_ADCC_StartConversion 126C 0 CODE 0 text7 dist/soundlevel/production\Sound_Level.production.o
-__end_of_ADCC_DefaultInterruptHandler 1184 0 CODE 0 text66 dist/soundlevel/production\Sound_Level.production.o
-MIC_Mode@mode 20 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-wtemp0 7E 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
+__end_oflog@coeff 2036 0 STRCODE 0 stringtext1 dist/soundlevel/debug\Sound_Level.debug.o
+_IOCCF0_ISR 1192 0 CODE 0 text62 dist/soundlevel/debug\Sound_Level.debug.o
+_IOCCF2_ISR 1198 0 CODE 0 text61 dist/soundlevel/debug\Sound_Level.debug.o
+_IOCCF4_ISR 119E 0 CODE 0 text60 dist/soundlevel/debug\Sound_Level.debug.o
+_IOCCF6_ISR 136E 0 CODE 0 text58 dist/soundlevel/debug\Sound_Level.debug.o
+__end_of_SoundLevel_PrepareData 578 0 CODE 0 text9 dist/soundlevel/debug\Sound_Level.debug.o
+_ADCC_StartConversion 126C 0 CODE 0 text7 dist/soundlevel/debug\Sound_Level.debug.o
+__end_of_ADCC_DefaultInterruptHandler 1184 0 CODE 0 text66 dist/soundlevel/debug\Sound_Level.debug.o
+MIC_Mode@mode 20 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+wtemp0 7E 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
 __Hfunctab 0 0 ENTRY 0 functab -
-_PIN_MANAGER_IOC 1478 0 CODE 0 text57 dist/soundlevel/production\Sound_Level.production.o
-SoundLevel_PrepareData@dataToSend B1 0 BANK1 1 cstackBANK1 dist/soundlevel/production\Sound_Level.production.o
-__end_of_PMD_Initialize 13D6 0 CODE 0 text48 dist/soundlevel/production\Sound_Level.production.o
+_PIN_MANAGER_IOC 1478 0 CODE 0 text57 dist/soundlevel/debug\Sound_Level.debug.o
+SoundLevel_PrepareData@dataToSend B1 0 BANK1 1 cstackBANK1 dist/soundlevel/debug\Sound_Level.debug.o
+__end_of_PMD_Initialize 13D6 0 CODE 0 text48 dist/soundlevel/debug\Sound_Level.debug.o
 __Hclrtext 0 0 ABS 0 clrtext -
-__end_of_EnterSleep 1228 0 CODE 0 text30 dist/soundlevel/production\Sound_Level.production.o
-_IOCCF0_InterruptHandler 129 0 BANK2 1 bssBANK2 dist/soundlevel/production\Sound_Level.production.o
-__pidataCOMMON 1184 0 CODE 0 idataCOMMON dist/soundlevel/production\Sound_Level.production.o
-___ftmul@f1 45 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-___ftmul@f2 48 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-___wmul@multiplicand 22 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-_ADACCH 97 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_ADACCL 96 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_ADACCU 98 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_ADACQH 10D 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_ADACQL 10C 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_ADCON0 111 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_ADCON1 112 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_ADCON2 113 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_ADCON3 114 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_ADERRH 91 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_ADERRL 90 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_ADLTHH 8D 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_ADLTHL 8C 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_ADPREH 110 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_ADPREL 10F 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_ADRESH 9E 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_ADRESL 9D 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_ADSTAT 115 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_ADUTHH 8F 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_ADUTHL 8E 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_ANSELA 1F38 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_ANSELB 1F43 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_ANSELC 1F4E 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-__size_of_I2C1_Initialize 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_I2C1_ISR 1906 0 CODE 0 text63 dist/soundlevel/production\Sound_Level.production.o
-__size_of___altoft 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
+__end_of_EnterSleep 1228 0 CODE 0 text30 dist/soundlevel/debug\Sound_Level.debug.o
+_IOCCF0_InterruptHandler 129 0 BANK2 1 bssBANK2 dist/soundlevel/debug\Sound_Level.debug.o
+__pidataCOMMON 1184 0 CODE 0 idataCOMMON dist/soundlevel/debug\Sound_Level.debug.o
+___ftmul@f1 45 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+___ftmul@f2 48 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+___wmul@multiplicand 22 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+_ADACCH 97 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_ADACCL 96 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_ADACCU 98 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_ADACQH 10D 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_ADACQL 10C 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_ADCON0 111 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_ADCON1 112 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_ADCON2 113 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_ADCON3 114 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_ADERRH 91 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_ADERRL 90 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_ADLTHH 8D 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_ADLTHL 8C 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_ADPREH 110 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_ADPREL 10F 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_ADRESH 9E 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_ADRESL 9D 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_ADSTAT 115 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_ADUTHH 8F 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_ADUTHL 8E 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_ANSELA 1F38 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_ANSELB 1F43 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_ANSELC 1F4E 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+__size_of_I2C1_Initialize 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_I2C1_ISR 1906 0 CODE 0 text63 dist/soundlevel/debug\Sound_Level.debug.o
+__size_of___altoft 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
 __LdataCOMMON 0 0 ABS 0 dataCOMMON -
-__size_of_powerMic_Init 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-__size_of___awtoft 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-__end_of_INTERRUPT_InterruptManager 62 0 CODE 0 intentry dist/soundlevel/production\Sound_Level.production.o
-___altoft@c 2E 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-__end_of___ftge 188A 0 CODE 0 text22 dist/soundlevel/production\Sound_Level.production.o
-__end_of___wmul 1478 0 CODE 0 text19 dist/soundlevel/production\Sound_Level.production.o
-_generateInt 1334 0 CODE 0 text29 dist/soundlevel/production\Sound_Level.production.o
-__size_of_SoundLevel_GetSample 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_VDDAMP_Init 11E8 0 CODE 0 text36 dist/soundlevel/production\Sound_Level.production.o
-__size_of_SoundLevel_LedOff 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_ADCC_EnableContinuousConversion 11B0 0 CODE 0 text8 dist/soundlevel/production\Sound_Level.production.o
-__end_of_I2C1_ISR 1984 0 CODE 0 text63 dist/soundlevel/production\Sound_Level.production.o
-___ftsub@f1 42 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-___ftsub@f2 3F 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-main@ack 1D5 0 BANK3 1 cstackBANK3 dist/soundlevel/production\Sound_Level.production.o
-main@cmd 1D8 0 BANK3 1 cstackBANK3 dist/soundlevel/production\Sound_Level.production.o
-main@len 1D9 0 BANK3 1 cstackBANK3 dist/soundlevel/production\Sound_Level.production.o
-main@mnr 1D7 0 BANK3 1 cstackBANK3 dist/soundlevel/production\Sound_Level.production.o
-__end_of_ADCC_StopConversion 1192 0 CODE 0 text69 dist/soundlevel/production\Sound_Level.production.o
-_ADCC_ISR 1350 0 CODE 0 text65 dist/soundlevel/production\Sound_Level.production.o
-___fttol@f1 20 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
+__size_of_powerMic_Init 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+__size_of___awtoft 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+__end_of_INTERRUPT_InterruptManager 62 0 CODE 0 intentry dist/soundlevel/debug\Sound_Level.debug.o
+___altoft@c 2E 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+__end_of___ftge 188A 0 CODE 0 text22 dist/soundlevel/debug\Sound_Level.debug.o
+__end_of___wmul 1478 0 CODE 0 text19 dist/soundlevel/debug\Sound_Level.debug.o
+_generateInt 1334 0 CODE 0 text29 dist/soundlevel/debug\Sound_Level.debug.o
+__size_of_SoundLevel_GetSample 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_VDDAMP_Init 11E8 0 CODE 0 text36 dist/soundlevel/debug\Sound_Level.debug.o
+__size_of_SoundLevel_LedOff 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_ADCC_EnableContinuousConversion 11B0 0 CODE 0 text8 dist/soundlevel/debug\Sound_Level.debug.o
+__end_of_I2C1_ISR 1984 0 CODE 0 text63 dist/soundlevel/debug\Sound_Level.debug.o
+___ftsub@f1 42 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+___ftsub@f2 3F 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+main@ack 1D5 0 BANK3 1 cstackBANK3 dist/soundlevel/debug\Sound_Level.debug.o
+main@cmd 1D8 0 BANK3 1 cstackBANK3 dist/soundlevel/debug\Sound_Level.debug.o
+main@len 1D9 0 BANK3 1 cstackBANK3 dist/soundlevel/debug\Sound_Level.debug.o
+main@mnr 1D7 0 BANK3 1 cstackBANK3 dist/soundlevel/debug\Sound_Level.debug.o
+__end_of_ADCC_StopConversion 1192 0 CODE 0 text69 dist/soundlevel/debug\Sound_Level.debug.o
+_ADCC_ISR 1350 0 CODE 0 text65 dist/soundlevel/debug\Sound_Level.debug.o
+___fttol@f1 20 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
 __Lmaintext 0 0 ABS 0 maintext -
-__end_of_I2C1_GetCommand 12EA 0 CODE 0 text54 dist/soundlevel/production\Sound_Level.production.o
-__end_of_I2C1_StatusCallback 1BBE 0 CODE 0 text64 dist/soundlevel/production\Sound_Level.production.o
-__end_of_LED_Blink 1E0C 0 CODE 0 text39 dist/soundlevel/production\Sound_Level.production.o
+__end_of_I2C1_GetCommand 12EA 0 CODE 0 text54 dist/soundlevel/debug\Sound_Level.debug.o
+__end_of_I2C1_StatusCallback 1BBE 0 CODE 0 text64 dist/soundlevel/debug\Sound_Level.debug.o
+__end_of_LED_Blink 1E0C 0 CODE 0 text39 dist/soundlevel/debug\Sound_Level.debug.o
 __LnvBANK1 0 0 ABS 0 nvBANK1 -
 __LnvBANK2 0 0 ABS 0 nvBANK2 -
-_ISR_MIC_Wake 127E 0 CODE 0 text59 dist/soundlevel/production\Sound_Level.production.o
-__size_of___ftpack 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-__end_of___ftadd 7B8 0 CODE 0 text21 dist/soundlevel/production\Sound_Level.production.o
-__end_of___ftdiv F64 0 CODE 0 text25 dist/soundlevel/production\Sound_Level.production.o
-__end_of___ftmul C96 0 CODE 0 text20 dist/soundlevel/production\Sound_Level.production.o
-__end_of___ftsub 153E 0 CODE 0 text14 dist/soundlevel/production\Sound_Level.production.o
-__end_of___fttol 2000 0 CODE 0 text12 dist/soundlevel/production\Sound_Level.production.o
-__size_of_LED_Blink 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-__end_of_ADCC_ISR 136E 0 CODE 0 text65 dist/soundlevel/production\Sound_Level.production.o
-__end_of_SoundLevel_GetSample 17B2 0 CODE 0 text67 dist/soundlevel/production\Sound_Level.production.o
-__end_of_IOCCF0_ISR 1198 0 CODE 0 text62 dist/soundlevel/production\Sound_Level.production.o
-__end_of_IOCCF2_ISR 119E 0 CODE 0 text61 dist/soundlevel/production\Sound_Level.production.o
-__end_of_IOCCF4_ISR 11A4 0 CODE 0 text60 dist/soundlevel/production\Sound_Level.production.o
-___stackhi 24CF 0 ABS 0 - C:\Users\JONACA~1\AppData\Local\Temp\s5d8xg.o
-___stacklo 212A 0 ABS 0 - C:\Users\JONACA~1\AppData\Local\Temp\s5d8xg.o
-?_eval_poly 55 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-__end_of_IOCCF6_ISR 138C 0 CODE 0 text58 dist/soundlevel/production\Sound_Level.production.o
-trunc@expon 3D 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-__end_of_powerMic_Init 1000 0 CODE 0 text32 dist/soundlevel/production\Sound_Level.production.o
-_cmdReceived 79 0 COMMON 1 bssCOMMON dist/soundlevel/production\Sound_Level.production.o
+_ISR_MIC_Wake 127E 0 CODE 0 text59 dist/soundlevel/debug\Sound_Level.debug.o
+__size_of___ftpack 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+__end_of___ftadd 7B8 0 CODE 0 text21 dist/soundlevel/debug\Sound_Level.debug.o
+__end_of___ftdiv F64 0 CODE 0 text25 dist/soundlevel/debug\Sound_Level.debug.o
+__end_of___ftmul C96 0 CODE 0 text20 dist/soundlevel/debug\Sound_Level.debug.o
+__end_of___ftsub 153E 0 CODE 0 text14 dist/soundlevel/debug\Sound_Level.debug.o
+__end_of___fttol 2000 0 CODE 0 text12 dist/soundlevel/debug\Sound_Level.debug.o
+__size_of_LED_Blink 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+__end_of_ADCC_ISR 136E 0 CODE 0 text65 dist/soundlevel/debug\Sound_Level.debug.o
+__end_of_SoundLevel_GetSample 17B2 0 CODE 0 text67 dist/soundlevel/debug\Sound_Level.debug.o
+__end_of_IOCCF0_ISR 1198 0 CODE 0 text62 dist/soundlevel/debug\Sound_Level.debug.o
+__end_of_IOCCF2_ISR 119E 0 CODE 0 text61 dist/soundlevel/debug\Sound_Level.debug.o
+__end_of_IOCCF4_ISR 11A4 0 CODE 0 text60 dist/soundlevel/debug\Sound_Level.debug.o
+___stackhi 24CF 0 ABS 0 - C:\Users\JONACA~1\AppData\Local\Temp\sf3cxg.o
+___stacklo 212A 0 ABS 0 - C:\Users\JONACA~1\AppData\Local\Temp\sf3cxg.o
+?_eval_poly 55 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+__end_of_IOCCF6_ISR 138C 0 CODE 0 text58 dist/soundlevel/debug\Sound_Level.debug.o
+trunc@expon 3D 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+__end_of_powerMic_Init 1000 0 CODE 0 text32 dist/soundlevel/debug\Sound_Level.debug.o
+_cmdReceived 79 0 COMMON 1 bssCOMMON dist/soundlevel/debug\Sound_Level.debug.o
 __LidataCOMMON 0 0 ABS 0 idataCOMMON -
-__size_of_frexp 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-__size_of_log10 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-__size_of_round 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-__size_of_trunc 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-__end_of_SoundLevel_StopADC 121A 0 CODE 0 text68 dist/soundlevel/production\Sound_Level.production.o
-_LED_Blink 1D30 0 CODE 0 text39 dist/soundlevel/production\Sound_Level.production.o
-__size_of___lwtoft 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-start_initialization 66 0 CODE 0 cinit dist/soundlevel/production\Sound_Level.production.o
-SoundLevel_PrepareData@i_663 BB 0 BANK1 1 cstackBANK1 dist/soundlevel/production\Sound_Level.production.o
-_OSCFRQ 893 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_sampleArray 24D0 0 ABS 1 - dist/soundlevel/production\Sound_Level.production.o
-___altoft 1984 0 CODE 0 text13 dist/soundlevel/production\Sound_Level.production.o
-___awtoft 15CA 0 CODE 0 text23 dist/soundlevel/production\Sound_Level.production.o
-__size_of_measure 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_TRISBbits 13 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_TRISCbits 14 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_sampleCounter CB 0 BANK1 1 bssBANK1 dist/soundlevel/production\Sound_Level.production.o
-round@f 58 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-round@x 55 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-_ADFLTRH 95 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_ADFLTRL 94 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_ADPREVH 9C 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_ADPREVL 9B 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_ADSTPTH 93 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_ADSTPTL 92 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-__size_of_ISR_MIC_Wake 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_RB5PPS 1F1D 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_RB7PPS 1F1F 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-__size_of_PIN_MANAGER_IOC 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-__end_of_SYSTEM_Initialize 1582 0 CODE 0 text47 dist/soundlevel/production\Sound_Level.production.o
-__end_of_SoundLevel_Measure 11C6 0 CODE 0 text3 dist/soundlevel/production\Sound_Level.production.o
-__end_of___altoft 1A08 0 CODE 0 text13 dist/soundlevel/production\Sound_Level.production.o
-_I2C1_GetCommand 12D2 0 CODE 0 text54 dist/soundlevel/production\Sound_Level.production.o
-__end_of___awtoft 1614 0 CODE 0 text23 dist/soundlevel/production\Sound_Level.production.o
-clear_ram0 12EA 0 CODE 0 clrtext dist/soundlevel/production\Sound_Level.production.o
-__pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-__pcstackBANK1 A0 0 BANK1 1 cstackBANK1 dist/soundlevel/production\Sound_Level.production.o
-__pcstackBANK3 1C0 0 BANK3 1 cstackBANK3 dist/soundlevel/production\Sound_Level.production.o
-___fttol@exp1 2D 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-___fttol@lval 29 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-_I2C1_SetTransmitData 16B4 0 CODE 0 text52 dist/soundlevel/production\Sound_Level.production.o
-__end_of_ADCC_DisableContinuousConversion 118C 0 CODE 0 text70 dist/soundlevel/production\Sound_Level.production.o
-_READY_Init 11B6 0 CODE 0 text37 dist/soundlevel/production\Sound_Level.production.o
-___ftpack 1E0C 0 CODE 0 text26 dist/soundlevel/production\Sound_Level.production.o
-__size_of_ADCC_DisableContinuousConversion 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_SoundLevel_StopADC 120C 0 CODE 0 text68 dist/soundlevel/production\Sound_Level.production.o
-___ftpack@arg 20 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-___ftpack@exp 23 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-__size_of_I2C1_TxBufferEmpty 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-SoundLevel_PrepareData@i B9 0 BANK1 1 cstackBANK1 dist/soundlevel/production\Sound_Level.production.o
-__end_of_ADCC_Initialize 1664 0 CODE 0 text44 dist/soundlevel/production\Sound_Level.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\JONACA~1\AppData\Local\Temp\s5d8xg.o
-__end_of___ftpack 1EF6 0 CODE 0 text26 dist/soundlevel/production\Sound_Level.production.o
-_sensorAPI 14B 0 BANK2 1 dataBANK2 dist/soundlevel/production\Sound_Level.production.o
+__size_of_frexp 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+__size_of_log10 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+__size_of_round 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+__size_of_trunc 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+__end_of_SoundLevel_StopADC 121A 0 CODE 0 text68 dist/soundlevel/debug\Sound_Level.debug.o
+_LED_Blink 1D30 0 CODE 0 text39 dist/soundlevel/debug\Sound_Level.debug.o
+__size_of___lwtoft 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+start_initialization 66 0 CODE 0 cinit dist/soundlevel/debug\Sound_Level.debug.o
+SoundLevel_PrepareData@i_663 BB 0 BANK1 1 cstackBANK1 dist/soundlevel/debug\Sound_Level.debug.o
+_OSCFRQ 893 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_sampleArray 24D0 0 ABS 1 - dist/soundlevel/debug\Sound_Level.debug.o
+___altoft 1984 0 CODE 0 text13 dist/soundlevel/debug\Sound_Level.debug.o
+___awtoft 15CA 0 CODE 0 text23 dist/soundlevel/debug\Sound_Level.debug.o
+__size_of_measure 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_TRISBbits 13 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_TRISCbits 14 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_sampleCounter CB 0 BANK1 1 bssBANK1 dist/soundlevel/debug\Sound_Level.debug.o
+round@f 58 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+round@x 55 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+_ADFLTRH 95 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_ADFLTRL 94 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_ADPREVH 9C 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_ADPREVL 9B 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_ADSTPTH 93 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_ADSTPTL 92 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+__size_of_ISR_MIC_Wake 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_RB5PPS 1F1D 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_RB7PPS 1F1F 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+__size_of_PIN_MANAGER_IOC 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+__end_of_SYSTEM_Initialize 1582 0 CODE 0 text47 dist/soundlevel/debug\Sound_Level.debug.o
+__end_of_SoundLevel_Measure 11C6 0 CODE 0 text3 dist/soundlevel/debug\Sound_Level.debug.o
+__end_of___altoft 1A08 0 CODE 0 text13 dist/soundlevel/debug\Sound_Level.debug.o
+_I2C1_GetCommand 12D2 0 CODE 0 text54 dist/soundlevel/debug\Sound_Level.debug.o
+__end_of___awtoft 1614 0 CODE 0 text23 dist/soundlevel/debug\Sound_Level.debug.o
+clear_ram0 12EA 0 CODE 0 clrtext dist/soundlevel/debug\Sound_Level.debug.o
+__pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+__pcstackBANK1 A0 0 BANK1 1 cstackBANK1 dist/soundlevel/debug\Sound_Level.debug.o
+__pcstackBANK3 1C0 0 BANK3 1 cstackBANK3 dist/soundlevel/debug\Sound_Level.debug.o
+___fttol@exp1 2D 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+___fttol@lval 29 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+_I2C1_SetTransmitData 16B4 0 CODE 0 text52 dist/soundlevel/debug\Sound_Level.debug.o
+__end_of_ADCC_DisableContinuousConversion 118C 0 CODE 0 text70 dist/soundlevel/debug\Sound_Level.debug.o
+_READY_Init 11B6 0 CODE 0 text37 dist/soundlevel/debug\Sound_Level.debug.o
+___ftpack 1E0C 0 CODE 0 text26 dist/soundlevel/debug\Sound_Level.debug.o
+__size_of_ADCC_DisableContinuousConversion 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_SoundLevel_StopADC 120C 0 CODE 0 text68 dist/soundlevel/debug\Sound_Level.debug.o
+___ftpack@arg 20 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+___ftpack@exp 23 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+__size_of_I2C1_TxBufferEmpty 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+SoundLevel_PrepareData@i B9 0 BANK1 1 cstackBANK1 dist/soundlevel/debug\Sound_Level.debug.o
+__end_of_ADCC_Initialize 1664 0 CODE 0 text44 dist/soundlevel/debug\Sound_Level.debug.o
+___int_sp 0 0 STACK 2 stack C:\Users\JONACA~1\AppData\Local\Temp\sf3cxg.o
+__end_of___ftpack 1EF6 0 CODE 0 text26 dist/soundlevel/debug\Sound_Level.debug.o
+_sensorAPI 14B 0 BANK2 1 dataBANK2 dist/soundlevel/debug\Sound_Level.debug.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -1321,8 +1321,8 @@ __Hbank7 0 0 ABS 0 bank7 -
 __Hbank8 0 0 ABS 0 bank8 -
 __Hbank9 0 0 ABS 0 bank9 -
 __Hcinit F4 0 CODE 0 cinit -
-__end_of_ISR_MIC_Wake 1292 0 CODE 0 text59 dist/soundlevel/production\Sound_Level.production.o
-__size_of_OSCILLATOR_Initialize 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
+__end_of_ISR_MIC_Wake 1292 0 CODE 0 text59 dist/soundlevel/debug\Sound_Level.debug.o
+__size_of_OSCILLATOR_Initialize 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
 __Hsfr10 0 0 ABS 0 sfr10 -
 __Hsfr11 0 0 ABS 0 sfr11 -
 __Hsfr12 0 0 ABS 0 sfr12 -
@@ -1378,7 +1378,7 @@ __Hsfr61 0 0 ABS 0 sfr61 -
 __Hsfr62 0 0 ABS 0 sfr62 -
 __Hsfr63 0 0 ABS 0 sfr63 -
 __Hstack 0 0 STACK 2 stack -
-_VREGCONbits 812 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
+_VREGCONbits 812 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
 __Hbank10 0 0 ABS 0 bank10 -
 __Hbank11 0 0 ABS 0 bank11 -
 __Hbank12 0 0 ABS 0 bank12 -
@@ -1435,12 +1435,12 @@ __Hbank62 0 0 BANK62 1 bank62 -
 __Hbank63 0 0 BANK63 1 bank63 -
 __Hbigram 0 0 ABS 0 bigram -
 __Hmaintext 0 0 ABS 0 maintext -
-__size_of_SoundLevel_StartADC 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
+__size_of_SoundLevel_StartADC 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
 __Hcommon 0 0 ABS 0 common -
 __Hconfig 10018 0 CONFIG 4 config -
-___lwtoft 13D6 0 CODE 0 text24 dist/soundlevel/production\Sound_Level.production.o
-_SoundLevel_Measure 11BE 0 CODE 0 text3 dist/soundlevel/production\Sound_Level.production.o
-_WDTCON0bits 80C 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
+___lwtoft 13D6 0 CODE 0 text24 dist/soundlevel/debug\Sound_Level.debug.o
+_SoundLevel_Measure 11BE 0 CODE 0 text3 dist/soundlevel/debug\Sound_Level.debug.o
+_WDTCON0bits 80C 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
 __Lbank0 0 0 ABS 0 bank0 -
 __Lbank1 0 0 ABS 0 bank1 -
 __Lbank2 0 0 ABS 0 bank2 -
@@ -1452,9 +1452,9 @@ __Lbank7 0 0 ABS 0 bank7 -
 __Lbank8 0 0 ABS 0 bank8 -
 __Lbank9 0 0 ABS 0 bank9 -
 __Lcinit 66 0 CODE 0 cinit -
-___ftadd@exp1 3A 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-___ftadd@exp2 39 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-___ftadd@sign 38 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
+___ftadd@exp1 3A 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+___ftadd@exp2 39 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+___ftadd@sign 38 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
 __Lsfr10 0 0 ABS 0 sfr10 -
 __Lsfr11 0 0 ABS 0 sfr11 -
 __Lsfr12 0 0 ABS 0 sfr12 -
@@ -1510,14 +1510,14 @@ __Lsfr61 0 0 ABS 0 sfr61 -
 __Lsfr62 0 0 ABS 0 sfr62 -
 __Lsfr63 0 0 ABS 0 sfr63 -
 __Lstack 0 0 STACK 2 stack -
-_mDataLength D6 0 BANK1 1 bssBANK1 dist/soundlevel/production\Sound_Level.production.o
-init_ram 1302 0 CODE 0 inittext dist/soundlevel/production\Sound_Level.production.o
-__end_of_SoundLevel_LedOff 11AA 0 CODE 0 text41 dist/soundlevel/production\Sound_Level.production.o
-__size_of_ADCC_EnableContinuousConversion 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-__end_of___lwtoft 1402 0 CODE 0 text24 dist/soundlevel/production\Sound_Level.production.o
+_mDataLength D6 0 BANK1 1 bssBANK1 dist/soundlevel/debug\Sound_Level.debug.o
+init_ram 1302 0 CODE 0 inittext dist/soundlevel/debug\Sound_Level.debug.o
+__end_of_SoundLevel_LedOff 11AA 0 CODE 0 text41 dist/soundlevel/debug\Sound_Level.debug.o
+__size_of_ADCC_EnableContinuousConversion 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+__end_of___lwtoft 1402 0 CODE 0 text24 dist/soundlevel/debug\Sound_Level.debug.o
 __Linittext 0 0 ABS 0 inittext -
-__size_of_SoundLevel_PrepareData 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_INTCONbits B 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
+__size_of_SoundLevel_PrepareData 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_INTCONbits B 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
 __Habs1 0 0 ABS 0 abs1 -
 __Hcode 0 0 ABS 0 code -
 __Hinit 62 0 CODE 0 init -
@@ -1546,150 +1546,150 @@ __Lsfr7 0 0 ABS 0 sfr7 -
 __Lsfr8 0 0 ABS 0 sfr8 -
 __Lsfr9 0 0 ABS 0 sfr9 -
 __Ltext 0 0 ABS 0 text -
-I2C1_GetCommand@cmd 21 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-__pstringtext1 2000 0 STRCODE 0 stringtext1 dist/soundlevel/production\Sound_Level.production.o
-__pnvBANK1 D7 0 BANK1 1 nvBANK1 dist/soundlevel/production\Sound_Level.production.o
-__pnvBANK2 155 0 BANK2 1 nvBANK2 dist/soundlevel/production\Sound_Level.production.o
-_SSP1CON1 190 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_SSP1CON2 191 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_SSP1CON3 192 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_SSP1STAT 18F 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-___ftge 1818 0 CODE 0 text22 dist/soundlevel/production\Sound_Level.production.o
-___wmul 1438 0 CODE 0 text19 dist/soundlevel/production\Sound_Level.production.o
-_SoundLevel_LedOn 11AA 0 CODE 0 text40 dist/soundlevel/production\Sound_Level.production.o
+I2C1_GetCommand@cmd 21 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+__pstringtext1 2000 0 STRCODE 0 stringtext1 dist/soundlevel/debug\Sound_Level.debug.o
+__pnvBANK1 D7 0 BANK1 1 nvBANK1 dist/soundlevel/debug\Sound_Level.debug.o
+__pnvBANK2 155 0 BANK2 1 nvBANK2 dist/soundlevel/debug\Sound_Level.debug.o
+_SSP1CON1 190 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_SSP1CON2 191 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_SSP1CON3 192 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_SSP1STAT 18F 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+___ftge 1818 0 CODE 0 text22 dist/soundlevel/debug\Sound_Level.debug.o
+___wmul 1438 0 CODE 0 text19 dist/soundlevel/debug\Sound_Level.debug.o
+_SoundLevel_LedOn 11AA 0 CODE 0 text40 dist/soundlevel/debug\Sound_Level.debug.o
 __LcstackBANK0 0 0 ABS 0 cstackBANK0 -
 __LcstackBANK1 0 0 ABS 0 cstackBANK1 -
 __LcstackBANK3 0 0 ABS 0 cstackBANK3 -
-_ADCC_GetConversionResult 11D0 0 CODE 0 text71 dist/soundlevel/production\Sound_Level.production.o
-int$flags 7E 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
+_ADCC_GetConversionResult 11D0 0 CODE 0 text71 dist/soundlevel/debug\Sound_Level.debug.o
+int$flags 7E 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
-__size_of_EnterSleep 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-__size_of_INTERRUPT_InterruptManager 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
+__size_of_EnterSleep 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+__size_of_INTERRUPT_InterruptManager 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
 __S0 101B 0 ABS 0 - -
 __S1 1DA 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
-_log C96 0 CODE 0 text16 dist/soundlevel/production\Sound_Level.production.o
-_SoundLevel_SetThreshold 1A08 0 CODE 0 text2 dist/soundlevel/production\Sound_Level.production.o
-__size_of_ADCC_SetADIInterruptHandler 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-__size_of_I2C1_CommandReceived 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_sampling D1 0 BANK1 1 bssBANK1 dist/soundlevel/production\Sound_Level.production.o
-__end_of_SoundLevel_SetThreshold 1A8C 0 CODE 0 text2 dist/soundlevel/production\Sound_Level.production.o
-__end_of_AMPS_enable 15CA 0 CODE 0 text28 dist/soundlevel/production\Sound_Level.production.o
-__end_of_READY_Init 11BE 0 CODE 0 text37 dist/soundlevel/production\Sound_Level.production.o
-_ADCC_Initialize 1614 0 CODE 0 text44 dist/soundlevel/production\Sound_Level.production.o
-__end_of_measure 1818 0 CODE 0 text5 dist/soundlevel/production\Sound_Level.production.o
-_nWakeMic_Init 1200 0 CODE 0 text33 dist/soundlevel/production\Sound_Level.production.o
-eval_poly@res 5C 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-___awtoft@c 28 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
+_log C96 0 CODE 0 text16 dist/soundlevel/debug\Sound_Level.debug.o
+_SoundLevel_SetThreshold 1A08 0 CODE 0 text2 dist/soundlevel/debug\Sound_Level.debug.o
+__size_of_ADCC_SetADIInterruptHandler 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+__size_of_I2C1_CommandReceived 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_sampling D1 0 BANK1 1 bssBANK1 dist/soundlevel/debug\Sound_Level.debug.o
+__end_of_SoundLevel_SetThreshold 1A8C 0 CODE 0 text2 dist/soundlevel/debug\Sound_Level.debug.o
+__end_of_AMPS_enable 15CA 0 CODE 0 text28 dist/soundlevel/debug\Sound_Level.debug.o
+__end_of_READY_Init 11BE 0 CODE 0 text37 dist/soundlevel/debug\Sound_Level.debug.o
+_ADCC_Initialize 1614 0 CODE 0 text44 dist/soundlevel/debug\Sound_Level.debug.o
+__end_of_measure 1818 0 CODE 0 text5 dist/soundlevel/debug\Sound_Level.debug.o
+_nWakeMic_Init 1200 0 CODE 0 text33 dist/soundlevel/debug\Sound_Level.debug.o
+eval_poly@res 5C 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+___awtoft@c 28 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
 __HidataCOMMON 0 0 ABS 0 idataCOMMON -
-log10@x 65 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-_SoundLevel_StartADC 1238 0 CODE 0 text6 dist/soundlevel/production\Sound_Level.production.o
-_SYSTEM_Initialize 153E 0 CODE 0 text47 dist/soundlevel/production\Sound_Level.production.o
-__end_of_I2C1_CommandReceived 8 0 CODE 0 text55 dist/soundlevel/production\Sound_Level.production.o
-__end_of_log E00 0 CODE 0 text16 dist/soundlevel/production\Sound_Level.production.o
-__size_of_I2C1_GetCommand 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-__end_of_ADCC_SetADIInterruptHandler 125A 0 CODE 0 text45 dist/soundlevel/production\Sound_Level.production.o
-_VDDBIAS_Init 12BC 0 CODE 0 text35 dist/soundlevel/production\Sound_Level.production.o
+log10@x 65 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+_SoundLevel_StartADC 1238 0 CODE 0 text6 dist/soundlevel/debug\Sound_Level.debug.o
+_SYSTEM_Initialize 153E 0 CODE 0 text47 dist/soundlevel/debug\Sound_Level.debug.o
+__end_of_I2C1_CommandReceived 8 0 CODE 0 text55 dist/soundlevel/debug\Sound_Level.debug.o
+__end_of_log E00 0 CODE 0 text16 dist/soundlevel/debug\Sound_Level.debug.o
+__size_of_I2C1_GetCommand 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+__end_of_ADCC_SetADIInterruptHandler 125A 0 CODE 0 text45 dist/soundlevel/debug\Sound_Level.debug.o
+_VDDBIAS_Init 12BC 0 CODE 0 text35 dist/soundlevel/debug\Sound_Level.debug.o
 __HnvBANK1 0 0 ABS 0 nvBANK1 -
 __HnvBANK2 0 0 ABS 0 nvBANK2 -
-__end_of_SoundLevel_GetData 1438 0 CODE 0 text46 dist/soundlevel/production\Sound_Level.production.o
+__end_of_SoundLevel_GetData 1438 0 CODE 0 text46 dist/soundlevel/debug\Sound_Level.debug.o
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\JONACA~1\AppData\Local\Temp\s5d8xg.o
-_ADCC_ADI_InterruptHandler C7 0 BANK1 1 bssBANK1 dist/soundlevel/production\Sound_Level.production.o
-__size_of_I2C1_GetCommandData 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-__pdataBANK2 14B 0 BANK2 1 dataBANK2 dist/soundlevel/production\Sound_Level.production.o
-__size_of___ftge 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-__size_of___wmul 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-SoundLevel_PrepareData@dBZ B3 0 BANK1 1 cstackBANK1 dist/soundlevel/production\Sound_Level.production.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\JONACA~1\AppData\Local\Temp\sf3cxg.o
+_ADCC_ADI_InterruptHandler C7 0 BANK1 1 bssBANK1 dist/soundlevel/debug\Sound_Level.debug.o
+__size_of_I2C1_GetCommandData 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+__pdataBANK2 14B 0 BANK2 1 dataBANK2 dist/soundlevel/debug\Sound_Level.debug.o
+__size_of___ftge 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+__size_of___wmul 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+SoundLevel_PrepareData@dBZ B3 0 BANK1 1 cstackBANK1 dist/soundlevel/debug\Sound_Level.debug.o
 __LbssBANK1 0 0 ABS 0 bssBANK1 -
 __LbssBANK2 0 0 ABS 0 bssBANK2 -
 __LbssBANK3 0 0 ABS 0 bssBANK3 -
-__size_of_WDT_Init 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-__size_of_LED_Init 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-__size_of_IOCCF0_ISR 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-__size_of_IOCCF2_ISR 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
+__size_of_WDT_Init 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+__size_of_LED_Init 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+__size_of_IOCCF0_ISR 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+__size_of_IOCCF2_ISR 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
 __Lstringtext1 0 0 ABS 0 stringtext1 -
-?___altoft 2E 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-__size_of_IOCCF4_ISR 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-__size_of_IOCCF6_ISR 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-?___awtoft 28 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-_INTERRUPT_InterruptManager 8 0 CODE 0 intentry dist/soundlevel/production\Sound_Level.production.o
-__size_of_PMD_Initialize 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_PIE0bits 716 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_PIE1bits 717 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_PIE3bits 719 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-___altoft@exp 34 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-_soundinterrupt D3 0 BANK1 1 bssBANK1 dist/soundlevel/production\Sound_Level.production.o
-__ptext10 F64 0 CODE 0 text10 dist/soundlevel/production\Sound_Level.production.o
-__ptext11 1A8C 0 CODE 0 text11 dist/soundlevel/production\Sound_Level.production.o
-__ptext12 1EF6 0 CODE 0 text12 dist/soundlevel/production\Sound_Level.production.o
-__ptext13 1984 0 CODE 0 text13 dist/soundlevel/production\Sound_Level.production.o
-__ptext14 14FC 0 CODE 0 text14 dist/soundlevel/production\Sound_Level.production.o
-__ptext15 1664 0 CODE 0 text15 dist/soundlevel/production\Sound_Level.production.o
-__ptext16 C96 0 CODE 0 text16 dist/soundlevel/production\Sound_Level.production.o
-__ptext17 188A 0 CODE 0 text17 dist/soundlevel/production\Sound_Level.production.o
-__ptext18 1C6A 0 CODE 0 text18 dist/soundlevel/production\Sound_Level.production.o
-__ptext19 1438 0 CODE 0 text19 dist/soundlevel/production\Sound_Level.production.o
-__ptext20 B14 0 CODE 0 text20 dist/soundlevel/production\Sound_Level.production.o
-__ptext21 578 0 CODE 0 text21 dist/soundlevel/production\Sound_Level.production.o
-__ptext22 1818 0 CODE 0 text22 dist/soundlevel/production\Sound_Level.production.o
-__ptext23 15CA 0 CODE 0 text23 dist/soundlevel/production\Sound_Level.production.o
-__ptext24 13D6 0 CODE 0 text24 dist/soundlevel/production\Sound_Level.production.o
-__ptext25 E00 0 CODE 0 text25 dist/soundlevel/production\Sound_Level.production.o
-__ptext26 1E0C 0 CODE 0 text26 dist/soundlevel/production\Sound_Level.production.o
-__ptext27 138C 0 CODE 0 text27 dist/soundlevel/production\Sound_Level.production.o
-__ptext28 1582 0 CODE 0 text28 dist/soundlevel/production\Sound_Level.production.o
-__ptext29 1334 0 CODE 0 text29 dist/soundlevel/production\Sound_Level.production.o
-__ptext30 121A 0 CODE 0 text30 dist/soundlevel/production\Sound_Level.production.o
-__ptext31 1BBE 0 CODE 0 text31 dist/soundlevel/production\Sound_Level.production.o
-__ptext32 FF4 0 CODE 0 text32 dist/soundlevel/production\Sound_Level.production.o
-__ptext33 1200 0 CODE 0 text33 dist/soundlevel/production\Sound_Level.production.o
-__ptext34 11F4 0 CODE 0 text34 dist/soundlevel/production\Sound_Level.production.o
-__ptext35 12BC 0 CODE 0 text35 dist/soundlevel/production\Sound_Level.production.o
-__ptext36 11E8 0 CODE 0 text36 dist/soundlevel/production\Sound_Level.production.o
-__ptext37 11B6 0 CODE 0 text37 dist/soundlevel/production\Sound_Level.production.o
-__ptext38 12A6 0 CODE 0 text38 dist/soundlevel/production\Sound_Level.production.o
-__ptext39 1D30 0 CODE 0 text39 dist/soundlevel/production\Sound_Level.production.o
-__ptext40 11AA 0 CODE 0 text40 dist/soundlevel/production\Sound_Level.production.o
-__ptext41 11A4 0 CODE 0 text41 dist/soundlevel/production\Sound_Level.production.o
-__ptext42 125A 0 CODE 0 text42 dist/soundlevel/production\Sound_Level.production.o
-__ptext43 11C6 0 CODE 0 text43 dist/soundlevel/production\Sound_Level.production.o
-__ptext44 1614 0 CODE 0 text44 dist/soundlevel/production\Sound_Level.production.o
-__ptext45 1248 0 CODE 0 text45 dist/soundlevel/production\Sound_Level.production.o
-__ptext46 1402 0 CODE 0 text46 dist/soundlevel/production\Sound_Level.production.o
-__ptext47 153E 0 CODE 0 text47 dist/soundlevel/production\Sound_Level.production.o
-__ptext48 13B0 0 CODE 0 text48 dist/soundlevel/production\Sound_Level.production.o
-__ptext49 11DC 0 CODE 0 text49 dist/soundlevel/production\Sound_Level.production.o
-__ptext50 1708 0 CODE 0 text50 dist/soundlevel/production\Sound_Level.production.o
-__ptext51 1228 0 CODE 0 text51 dist/soundlevel/production\Sound_Level.production.o
-__ptext52 16B4 0 CODE 0 text52 dist/soundlevel/production\Sound_Level.production.o
-__ptext53 14BA 0 CODE 0 text53 dist/soundlevel/production\Sound_Level.production.o
-__ptext54 12D2 0 CODE 0 text54 dist/soundlevel/production\Sound_Level.production.o
-__ptext55 4 0 CODE 0 text55 dist/soundlevel/production\Sound_Level.production.o
-__ptext57 1478 0 CODE 0 text57 dist/soundlevel/production\Sound_Level.production.o
-__ptext58 136E 0 CODE 0 text58 dist/soundlevel/production\Sound_Level.production.o
-__ptext59 127E 0 CODE 0 text59 dist/soundlevel/production\Sound_Level.production.o
-__ptext60 119E 0 CODE 0 text60 dist/soundlevel/production\Sound_Level.production.o
-__ptext61 1198 0 CODE 0 text61 dist/soundlevel/production\Sound_Level.production.o
-__ptext62 1192 0 CODE 0 text62 dist/soundlevel/production\Sound_Level.production.o
-__ptext63 1906 0 CODE 0 text63 dist/soundlevel/production\Sound_Level.production.o
-__ptext64 1B1A 0 CODE 0 text64 dist/soundlevel/production\Sound_Level.production.o
-__ptext65 1350 0 CODE 0 text65 dist/soundlevel/production\Sound_Level.production.o
-__ptext66 1182 0 CODE 0 text66 dist/soundlevel/production\Sound_Level.production.o
-__ptext67 175C 0 CODE 0 text67 dist/soundlevel/production\Sound_Level.production.o
-__ptext68 120C 0 CODE 0 text68 dist/soundlevel/production\Sound_Level.production.o
-__ptext69 118C 0 CODE 0 text69 dist/soundlevel/production\Sound_Level.production.o
-__ptext70 1186 0 CODE 0 text70 dist/soundlevel/production\Sound_Level.production.o
-__ptext71 11D0 0 CODE 0 text71 dist/soundlevel/production\Sound_Level.production.o
-_IOCCFbits 1F55 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_IOCCNbits 1F54 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_IOCCPbits 1F53 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-___ftadd 578 0 CODE 0 text21 dist/soundlevel/production\Sound_Level.production.o
-___ftdiv E00 0 CODE 0 text25 dist/soundlevel/production\Sound_Level.production.o
-___ftmul B14 0 CODE 0 text20 dist/soundlevel/production\Sound_Level.production.o
-___ftsub 14FC 0 CODE 0 text14 dist/soundlevel/production\Sound_Level.production.o
-___fttol 1EF6 0 CODE 0 text12 dist/soundlevel/production\Sound_Level.production.o
+?___altoft 2E 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+__size_of_IOCCF4_ISR 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+__size_of_IOCCF6_ISR 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+?___awtoft 28 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+_INTERRUPT_InterruptManager 8 0 CODE 0 intentry dist/soundlevel/debug\Sound_Level.debug.o
+__size_of_PMD_Initialize 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_PIE0bits 716 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_PIE1bits 717 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_PIE3bits 719 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+___altoft@exp 34 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+_soundinterrupt D3 0 BANK1 1 bssBANK1 dist/soundlevel/debug\Sound_Level.debug.o
+__ptext10 F64 0 CODE 0 text10 dist/soundlevel/debug\Sound_Level.debug.o
+__ptext11 1A8C 0 CODE 0 text11 dist/soundlevel/debug\Sound_Level.debug.o
+__ptext12 1EF6 0 CODE 0 text12 dist/soundlevel/debug\Sound_Level.debug.o
+__ptext13 1984 0 CODE 0 text13 dist/soundlevel/debug\Sound_Level.debug.o
+__ptext14 14FC 0 CODE 0 text14 dist/soundlevel/debug\Sound_Level.debug.o
+__ptext15 1664 0 CODE 0 text15 dist/soundlevel/debug\Sound_Level.debug.o
+__ptext16 C96 0 CODE 0 text16 dist/soundlevel/debug\Sound_Level.debug.o
+__ptext17 188A 0 CODE 0 text17 dist/soundlevel/debug\Sound_Level.debug.o
+__ptext18 1C6A 0 CODE 0 text18 dist/soundlevel/debug\Sound_Level.debug.o
+__ptext19 1438 0 CODE 0 text19 dist/soundlevel/debug\Sound_Level.debug.o
+__ptext20 B14 0 CODE 0 text20 dist/soundlevel/debug\Sound_Level.debug.o
+__ptext21 578 0 CODE 0 text21 dist/soundlevel/debug\Sound_Level.debug.o
+__ptext22 1818 0 CODE 0 text22 dist/soundlevel/debug\Sound_Level.debug.o
+__ptext23 15CA 0 CODE 0 text23 dist/soundlevel/debug\Sound_Level.debug.o
+__ptext24 13D6 0 CODE 0 text24 dist/soundlevel/debug\Sound_Level.debug.o
+__ptext25 E00 0 CODE 0 text25 dist/soundlevel/debug\Sound_Level.debug.o
+__ptext26 1E0C 0 CODE 0 text26 dist/soundlevel/debug\Sound_Level.debug.o
+__ptext27 138C 0 CODE 0 text27 dist/soundlevel/debug\Sound_Level.debug.o
+__ptext28 1582 0 CODE 0 text28 dist/soundlevel/debug\Sound_Level.debug.o
+__ptext29 1334 0 CODE 0 text29 dist/soundlevel/debug\Sound_Level.debug.o
+__ptext30 121A 0 CODE 0 text30 dist/soundlevel/debug\Sound_Level.debug.o
+__ptext31 1BBE 0 CODE 0 text31 dist/soundlevel/debug\Sound_Level.debug.o
+__ptext32 FF4 0 CODE 0 text32 dist/soundlevel/debug\Sound_Level.debug.o
+__ptext33 1200 0 CODE 0 text33 dist/soundlevel/debug\Sound_Level.debug.o
+__ptext34 11F4 0 CODE 0 text34 dist/soundlevel/debug\Sound_Level.debug.o
+__ptext35 12BC 0 CODE 0 text35 dist/soundlevel/debug\Sound_Level.debug.o
+__ptext36 11E8 0 CODE 0 text36 dist/soundlevel/debug\Sound_Level.debug.o
+__ptext37 11B6 0 CODE 0 text37 dist/soundlevel/debug\Sound_Level.debug.o
+__ptext38 12A6 0 CODE 0 text38 dist/soundlevel/debug\Sound_Level.debug.o
+__ptext39 1D30 0 CODE 0 text39 dist/soundlevel/debug\Sound_Level.debug.o
+__ptext40 11AA 0 CODE 0 text40 dist/soundlevel/debug\Sound_Level.debug.o
+__ptext41 11A4 0 CODE 0 text41 dist/soundlevel/debug\Sound_Level.debug.o
+__ptext42 125A 0 CODE 0 text42 dist/soundlevel/debug\Sound_Level.debug.o
+__ptext43 11C6 0 CODE 0 text43 dist/soundlevel/debug\Sound_Level.debug.o
+__ptext44 1614 0 CODE 0 text44 dist/soundlevel/debug\Sound_Level.debug.o
+__ptext45 1248 0 CODE 0 text45 dist/soundlevel/debug\Sound_Level.debug.o
+__ptext46 1402 0 CODE 0 text46 dist/soundlevel/debug\Sound_Level.debug.o
+__ptext47 153E 0 CODE 0 text47 dist/soundlevel/debug\Sound_Level.debug.o
+__ptext48 13B0 0 CODE 0 text48 dist/soundlevel/debug\Sound_Level.debug.o
+__ptext49 11DC 0 CODE 0 text49 dist/soundlevel/debug\Sound_Level.debug.o
+__ptext50 1708 0 CODE 0 text50 dist/soundlevel/debug\Sound_Level.debug.o
+__ptext51 1228 0 CODE 0 text51 dist/soundlevel/debug\Sound_Level.debug.o
+__ptext52 16B4 0 CODE 0 text52 dist/soundlevel/debug\Sound_Level.debug.o
+__ptext53 14BA 0 CODE 0 text53 dist/soundlevel/debug\Sound_Level.debug.o
+__ptext54 12D2 0 CODE 0 text54 dist/soundlevel/debug\Sound_Level.debug.o
+__ptext55 4 0 CODE 0 text55 dist/soundlevel/debug\Sound_Level.debug.o
+__ptext57 1478 0 CODE 0 text57 dist/soundlevel/debug\Sound_Level.debug.o
+__ptext58 136E 0 CODE 0 text58 dist/soundlevel/debug\Sound_Level.debug.o
+__ptext59 127E 0 CODE 0 text59 dist/soundlevel/debug\Sound_Level.debug.o
+__ptext60 119E 0 CODE 0 text60 dist/soundlevel/debug\Sound_Level.debug.o
+__ptext61 1198 0 CODE 0 text61 dist/soundlevel/debug\Sound_Level.debug.o
+__ptext62 1192 0 CODE 0 text62 dist/soundlevel/debug\Sound_Level.debug.o
+__ptext63 1906 0 CODE 0 text63 dist/soundlevel/debug\Sound_Level.debug.o
+__ptext64 1B1A 0 CODE 0 text64 dist/soundlevel/debug\Sound_Level.debug.o
+__ptext65 1350 0 CODE 0 text65 dist/soundlevel/debug\Sound_Level.debug.o
+__ptext66 1182 0 CODE 0 text66 dist/soundlevel/debug\Sound_Level.debug.o
+__ptext67 175C 0 CODE 0 text67 dist/soundlevel/debug\Sound_Level.debug.o
+__ptext68 120C 0 CODE 0 text68 dist/soundlevel/debug\Sound_Level.debug.o
+__ptext69 118C 0 CODE 0 text69 dist/soundlevel/debug\Sound_Level.debug.o
+__ptext70 1186 0 CODE 0 text70 dist/soundlevel/debug\Sound_Level.debug.o
+__ptext71 11D0 0 CODE 0 text71 dist/soundlevel/debug\Sound_Level.debug.o
+_IOCCFbits 1F55 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_IOCCNbits 1F54 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_IOCCPbits 1F53 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+___ftadd 578 0 CODE 0 text21 dist/soundlevel/debug\Sound_Level.debug.o
+___ftdiv E00 0 CODE 0 text25 dist/soundlevel/debug\Sound_Level.debug.o
+___ftmul B14 0 CODE 0 text20 dist/soundlevel/debug\Sound_Level.debug.o
+___ftsub 14FC 0 CODE 0 text14 dist/soundlevel/debug\Sound_Level.debug.o
+___fttol 1EF6 0 CODE 0 text12 dist/soundlevel/debug\Sound_Level.debug.o
 __Lbank10 0 0 ABS 0 bank10 -
 __Lbank11 0 0 ABS 0 bank11 -
 __Lbank12 0 0 ABS 0 bank12 -
@@ -1744,239 +1744,239 @@ __Lbank60 0 0 BANK60 1 bank60 -
 __Lbank61 0 0 BANK61 1 bank61 -
 __Lbank62 0 0 BANK62 1 bank62 -
 __Lbank63 0 0 BANK63 1 bank63 -
-__pmaintext 7B8 0 CODE 0 maintext dist/soundlevel/production\Sound_Level.production.o
-__end_of_generateInt 1350 0 CODE 0 text29 dist/soundlevel/production\Sound_Level.production.o
+__pmaintext 7B8 0 CODE 0 maintext dist/soundlevel/debug\Sound_Level.debug.o
+__end_of_generateInt 1350 0 CODE 0 text29 dist/soundlevel/debug\Sound_Level.debug.o
 __Lbigram 0 0 ABS 0 bigram -
-__end_of_VDDAMP_Init 11F4 0 CODE 0 text36 dist/soundlevel/production\Sound_Level.production.o
-?_ADCC_GetConversionResult 70 0 COMMON 1 cstackCOMMON dist/soundlevel/production\Sound_Level.production.o
-__end_of_SoundLevel_Init 1C6A 0 CODE 0 text31 dist/soundlevel/production\Sound_Level.production.o
-__end_of_SoundLevel_Loop B14 0 CODE 0 text4 dist/soundlevel/production\Sound_Level.production.o
+__end_of_VDDAMP_Init 11F4 0 CODE 0 text36 dist/soundlevel/debug\Sound_Level.debug.o
+?_ADCC_GetConversionResult 70 0 COMMON 1 cstackCOMMON dist/soundlevel/debug\Sound_Level.debug.o
+__end_of_SoundLevel_Init 1C6A 0 CODE 0 text31 dist/soundlevel/debug\Sound_Level.debug.o
+__end_of_SoundLevel_Loop B14 0 CODE 0 text4 dist/soundlevel/debug\Sound_Level.debug.o
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 0 0 CONFIG 4 config -
-?___ftpack 20 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
+?___ftpack 20 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
 __Hinittext 0 0 ABS 0 inittext -
-_SoundLevel_GetData 1402 0 CODE 0 text46 dist/soundlevel/production\Sound_Level.production.o
-___wmul@multiplier 20 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-_SoundLevel_LedOff 11A4 0 CODE 0 text41 dist/soundlevel/production\Sound_Level.production.o
-_LATBbits 19 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_LATCbits 1A 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-__size_of_VDDBIAS_Init 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-__end_of_SoundLevel_LedOn 11B0 0 CODE 0 text40 dist/soundlevel/production\Sound_Level.production.o
-_thresholdEnabled D7 0 BANK1 1 nvBANK1 dist/soundlevel/production\Sound_Level.production.o
-main@data 1C0 0 BANK3 1 cstackBANK3 dist/soundlevel/production\Sound_Level.production.o
-main@type 1D6 0 BANK3 1 cstackBANK3 dist/soundlevel/production\Sound_Level.production.o
-__size_of_ADCC_StartConversion 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-__size_of_SoundLevel_LedOn 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_I2C1_GetCommandData 14BA 0 CODE 0 text53 dist/soundlevel/production\Sound_Level.production.o
-___lwtoft@c 28 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-_thresholdLevel 155 0 BANK2 1 nvBANK2 dist/soundlevel/production\Sound_Level.production.o
-_SSP1CLKPPS 1EC5 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_SoundLevel_PrepareData$2651 A8 0 BANK1 1 cstackBANK1 dist/soundlevel/production\Sound_Level.production.o
-_SoundLevel_PrepareData$2652 AB 0 BANK1 1 cstackBANK1 dist/soundlevel/production\Sound_Level.production.o
-_OSCCON1 88D 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_adcScaler 120 0 BANK2 1 bssBANK2 dist/soundlevel/production\Sound_Level.production.o
-__end_of_eval_poly 1D30 0 CODE 0 text18 dist/soundlevel/production\Sound_Level.production.o
-?___lwtoft 28 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-_SSP1DATPPS 1EC6 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_ADCON0bits 111 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_ADCON1bits 112 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_ADCON2bits 113 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_ADCON3bits 114 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-__pbssBIGRAM 24D0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_SoundLevel_GetSample 175C 0 CODE 0 text67 dist/soundlevel/production\Sound_Level.production.o
-__size_of_eval_poly 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-__size_of_MIC_Mode 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-__size_of_ADCC_Initialize 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_WDT_Init 11F4 0 CODE 0 text34 dist/soundlevel/production\Sound_Level.production.o
+_SoundLevel_GetData 1402 0 CODE 0 text46 dist/soundlevel/debug\Sound_Level.debug.o
+___wmul@multiplier 20 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+_SoundLevel_LedOff 11A4 0 CODE 0 text41 dist/soundlevel/debug\Sound_Level.debug.o
+_LATBbits 19 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_LATCbits 1A 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+__size_of_VDDBIAS_Init 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+__end_of_SoundLevel_LedOn 11B0 0 CODE 0 text40 dist/soundlevel/debug\Sound_Level.debug.o
+_thresholdEnabled D7 0 BANK1 1 nvBANK1 dist/soundlevel/debug\Sound_Level.debug.o
+main@data 1C0 0 BANK3 1 cstackBANK3 dist/soundlevel/debug\Sound_Level.debug.o
+main@type 1D6 0 BANK3 1 cstackBANK3 dist/soundlevel/debug\Sound_Level.debug.o
+__size_of_ADCC_StartConversion 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+__size_of_SoundLevel_LedOn 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_I2C1_GetCommandData 14BA 0 CODE 0 text53 dist/soundlevel/debug\Sound_Level.debug.o
+___lwtoft@c 28 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+_thresholdLevel 155 0 BANK2 1 nvBANK2 dist/soundlevel/debug\Sound_Level.debug.o
+_SSP1CLKPPS 1EC5 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_SoundLevel_PrepareData$2651 A8 0 BANK1 1 cstackBANK1 dist/soundlevel/debug\Sound_Level.debug.o
+_SoundLevel_PrepareData$2652 AB 0 BANK1 1 cstackBANK1 dist/soundlevel/debug\Sound_Level.debug.o
+_OSCCON1 88D 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_adcScaler 120 0 BANK2 1 bssBANK2 dist/soundlevel/debug\Sound_Level.debug.o
+__end_of_eval_poly 1D30 0 CODE 0 text18 dist/soundlevel/debug\Sound_Level.debug.o
+?___lwtoft 28 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+_SSP1DATPPS 1EC6 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_ADCON0bits 111 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_ADCON1bits 112 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_ADCON2bits 113 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_ADCON3bits 114 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+__pbssBIGRAM 24D0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_SoundLevel_GetSample 175C 0 CODE 0 text67 dist/soundlevel/debug\Sound_Level.debug.o
+__size_of_eval_poly 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+__size_of_MIC_Mode 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+__size_of_ADCC_Initialize 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_WDT_Init 11F4 0 CODE 0 text34 dist/soundlevel/debug\Sound_Level.debug.o
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
 __Lspace_3 0 0 ABS 0 - -
 __Lspace_4 0 0 ABS 0 - -
-_CPUDOZEbits 88C 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-___ftmul@cntr 53 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-__pbssCOMMON 76 0 COMMON 1 bssCOMMON dist/soundlevel/production\Sound_Level.production.o
-___ftmul@sign 54 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-_LED_Init 12A6 0 CODE 0 text38 dist/soundlevel/production\Sound_Level.production.o
-AMPS_enable@enable 22 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
+_CPUDOZEbits 88C 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+___ftmul@cntr 53 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+__pbssCOMMON 76 0 COMMON 1 bssCOMMON dist/soundlevel/debug\Sound_Level.debug.o
+___ftmul@sign 54 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+_LED_Init 12A6 0 CODE 0 text38 dist/soundlevel/debug\Sound_Level.debug.o
+AMPS_enable@enable 22 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
 __HcstackBANK0 0 0 ABS 0 cstackBANK0 -
 __HcstackBANK1 0 0 ABS 0 cstackBANK1 -
 __HcstackBANK3 0 0 ABS 0 cstackBANK3 -
-__end_of_VDDBIAS_Init 12D2 0 CODE 0 text35 dist/soundlevel/production\Sound_Level.production.o
-__size_of_ADCC_GetConversionResult 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_PIR0bits 70C 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_PIR1bits 70D 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_PIR3bits 70F 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
+__end_of_VDDBIAS_Init 12D2 0 CODE 0 text35 dist/soundlevel/debug\Sound_Level.debug.o
+__size_of_ADCC_GetConversionResult 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_PIR0bits 70C 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_PIR1bits 70D 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_PIR3bits 70F 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
 __Lend_init 62 0 CODE 0 end_init -
-__size_of_nWakeMic_Init 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-__end_of_ADCC_StartConversion 127E 0 CODE 0 text7 dist/soundlevel/production\Sound_Level.production.o
+__size_of_nWakeMic_Init 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+__end_of_ADCC_StartConversion 127E 0 CODE 0 text7 dist/soundlevel/debug\Sound_Level.debug.o
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
-main@retries 1D4 0 BANK3 1 cstackBANK3 dist/soundlevel/production\Sound_Level.production.o
-end_of_initialization EC 0 CODE 0 cinit dist/soundlevel/production\Sound_Level.production.o
-__end_of_WDT_Init 1200 0 CODE 0 text34 dist/soundlevel/production\Sound_Level.production.o
-__end_of_SoundLevel_StartADC 1248 0 CODE 0 text6 dist/soundlevel/production\Sound_Level.production.o
-SoundLevel_SetThreshold@thresholdData 22 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-I2C1_ISR@i2c_data 73 0 COMMON 1 cstackCOMMON dist/soundlevel/production\Sound_Level.production.o
-__end_of_LED_Init 12BC 0 CODE 0 text38 dist/soundlevel/production\Sound_Level.production.o
+main@retries 1D4 0 BANK3 1 cstackBANK3 dist/soundlevel/debug\Sound_Level.debug.o
+end_of_initialization EC 0 CODE 0 cinit dist/soundlevel/debug\Sound_Level.debug.o
+__end_of_WDT_Init 1200 0 CODE 0 text34 dist/soundlevel/debug\Sound_Level.debug.o
+__end_of_SoundLevel_StartADC 1248 0 CODE 0 text6 dist/soundlevel/debug\Sound_Level.debug.o
+SoundLevel_SetThreshold@thresholdData 22 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+I2C1_ISR@i2c_data 73 0 COMMON 1 cstackCOMMON dist/soundlevel/debug\Sound_Level.debug.o
+__end_of_LED_Init 12BC 0 CODE 0 text38 dist/soundlevel/debug\Sound_Level.debug.o
 __Hintentry 62 0 CODE 0 intentry -
-__end_of_IOCCF6_SetInterruptHandler 126C 0 CODE 0 text42 dist/soundlevel/production\Sound_Level.production.o
-_SoundLevel_Init 1BBE 0 CODE 0 text31 dist/soundlevel/production\Sound_Level.production.o
-_SoundLevel_Loop 990 0 CODE 0 text4 dist/soundlevel/production\Sound_Level.production.o
-__size_of_SoundLevel_StopADC 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
+__end_of_IOCCF6_SetInterruptHandler 126C 0 CODE 0 text42 dist/soundlevel/debug\Sound_Level.debug.o
+_SoundLevel_Init 1BBE 0 CODE 0 text31 dist/soundlevel/debug\Sound_Level.debug.o
+_SoundLevel_Loop 990 0 CODE 0 text4 dist/soundlevel/debug\Sound_Level.debug.o
+__size_of_SoundLevel_StopADC 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
 __Lstrings 0 0 ABS 0 strings -
-_eval_poly 1C6A 0 CODE 0 text18 dist/soundlevel/production\Sound_Level.production.o
-I2C1_SetTransmitData@data 20 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-?___ftadd 2E 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-?___ftdiv 28 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-?___ftmul 45 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-?___ftsub 3F 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-?___fttol 20 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-SoundLevel_PrepareData@signal B6 0 BANK1 1 cstackBANK1 dist/soundlevel/production\Sound_Level.production.o
-_IOCCF6_InterruptHandler C5 0 BANK1 1 bssBANK1 dist/soundlevel/production\Sound_Level.production.o
+_eval_poly 1C6A 0 CODE 0 text18 dist/soundlevel/debug\Sound_Level.debug.o
+I2C1_SetTransmitData@data 20 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+?___ftadd 2E 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+?___ftdiv 28 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+?___ftmul 45 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+?___ftsub 3F 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+?___fttol 20 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+SoundLevel_PrepareData@signal B6 0 BANK1 1 cstackBANK1 dist/soundlevel/debug\Sound_Level.debug.o
+_IOCCF6_InterruptHandler C5 0 BANK1 1 bssBANK1 dist/soundlevel/debug\Sound_Level.debug.o
 __Hreset_vec 4 0 CODE 0 reset_vec -
 __HbssBANK1 0 0 ABS 0 bssBANK1 -
 __HbssBANK2 0 0 ABS 0 bssBANK2 -
 __HbssBANK3 0 0 ABS 0 bssBANK3 -
-__ptext1 131A 0 CODE 0 text1 dist/soundlevel/production\Sound_Level.production.o
-__ptext2 1A08 0 CODE 0 text2 dist/soundlevel/production\Sound_Level.production.o
-__ptext3 11BE 0 CODE 0 text3 dist/soundlevel/production\Sound_Level.production.o
-__ptext4 990 0 CODE 0 text4 dist/soundlevel/production\Sound_Level.production.o
-__ptext5 17B2 0 CODE 0 text5 dist/soundlevel/production\Sound_Level.production.o
-__ptext6 1238 0 CODE 0 text6 dist/soundlevel/production\Sound_Level.production.o
-__ptext7 126C 0 CODE 0 text7 dist/soundlevel/production\Sound_Level.production.o
-__ptext8 11B0 0 CODE 0 text8 dist/soundlevel/production\Sound_Level.production.o
-__ptext9 F4 0 CODE 0 text9 dist/soundlevel/production\Sound_Level.production.o
-__size_of_AMPS_enable 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_PMD0bits 796 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_PMD3bits 799 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_PMD6bits 79C 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-__end_of_nWakeMic_Init 120C 0 CODE 0 text33 dist/soundlevel/production\Sound_Level.production.o
+__ptext1 131A 0 CODE 0 text1 dist/soundlevel/debug\Sound_Level.debug.o
+__ptext2 1A08 0 CODE 0 text2 dist/soundlevel/debug\Sound_Level.debug.o
+__ptext3 11BE 0 CODE 0 text3 dist/soundlevel/debug\Sound_Level.debug.o
+__ptext4 990 0 CODE 0 text4 dist/soundlevel/debug\Sound_Level.debug.o
+__ptext5 17B2 0 CODE 0 text5 dist/soundlevel/debug\Sound_Level.debug.o
+__ptext6 1238 0 CODE 0 text6 dist/soundlevel/debug\Sound_Level.debug.o
+__ptext7 126C 0 CODE 0 text7 dist/soundlevel/debug\Sound_Level.debug.o
+__ptext8 11B0 0 CODE 0 text8 dist/soundlevel/debug\Sound_Level.debug.o
+__ptext9 F4 0 CODE 0 text9 dist/soundlevel/debug\Sound_Level.debug.o
+__size_of_AMPS_enable 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_PMD0bits 796 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_PMD3bits 799 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_PMD6bits 79C 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+__end_of_nWakeMic_Init 120C 0 CODE 0 text33 dist/soundlevel/debug\Sound_Level.debug.o
 __Lpowerup 0 0 CODE 0 powerup -
-__size_of_SoundLevel_Measure 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
+__size_of_SoundLevel_Measure 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
-_polledMeasurement CF 0 BANK1 1 bssBANK1 dist/soundlevel/production\Sound_Level.production.o
-SYSTEM_Initialize@slave_address 21 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-__end_of_toggleInt 1334 0 CODE 0 text1 dist/soundlevel/production\Sound_Level.production.o
-__size_of_READY_Init 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
+_polledMeasurement CF 0 BANK1 1 bssBANK1 dist/soundlevel/debug\Sound_Level.debug.o
+SYSTEM_Initialize@slave_address 21 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+__end_of_toggleInt 1334 0 CODE 0 text1 dist/soundlevel/debug\Sound_Level.debug.o
+__size_of_READY_Init 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
 __Lreset_vec 0 0 CODE 0 reset_vec -
 __Hstringtext1 0 0 ABS 0 stringtext1 -
-_MIC_Mode 138C 0 CODE 0 text27 dist/soundlevel/production\Sound_Level.production.o
-I2C1_Initialize@slave_address 20 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-eval_poly@d 58 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-eval_poly@n 5A 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-eval_poly@x 55 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-__size_of_toggleInt 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_ADCC_DefaultInterruptHandler 1182 0 CODE 0 text66 dist/soundlevel/production\Sound_Level.production.o
-___ftmul@exp 4F 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-__end_of__initialization EC 0 CODE 0 cinit dist/soundlevel/production\Sound_Level.production.o
-_SoundLevel_PrepareData F4 0 CODE 0 text9 dist/soundlevel/production\Sound_Level.production.o
-_presSumSquared C2 0 BANK1 1 bssBANK1 dist/soundlevel/production\Sound_Level.production.o
+_MIC_Mode 138C 0 CODE 0 text27 dist/soundlevel/debug\Sound_Level.debug.o
+I2C1_Initialize@slave_address 20 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+eval_poly@d 58 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+eval_poly@n 5A 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+eval_poly@x 55 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+__size_of_toggleInt 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_ADCC_DefaultInterruptHandler 1182 0 CODE 0 text66 dist/soundlevel/debug\Sound_Level.debug.o
+___ftmul@exp 4F 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+__end_of__initialization EC 0 CODE 0 cinit dist/soundlevel/debug\Sound_Level.debug.o
+_SoundLevel_PrepareData F4 0 CODE 0 text9 dist/soundlevel/debug\Sound_Level.debug.o
+_presSumSquared C2 0 BANK1 1 bssBANK1 dist/soundlevel/debug\Sound_Level.debug.o
 __Lfunctab 0 0 ENTRY 0 functab -
-_ADSTATbits 115 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-__end_of_ADCC_EnableContinuousConversion 11B6 0 CODE 0 text8 dist/soundlevel/production\Sound_Level.production.o
-__end_of_MIC_Mode 13B0 0 CODE 0 text27 dist/soundlevel/production\Sound_Level.production.o
-frexp@value 20 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-?_frexp 20 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-__end_of_DOUT_Init 11D0 0 CODE 0 text43 dist/soundlevel/production\Sound_Level.production.o
-__pidataBANK2 1292 0 CODE 0 idataBANK2 dist/soundlevel/production\Sound_Level.production.o
-?_log10 65 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-?_round 55 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-?_trunc 36 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-_log10$2653 68 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
+_ADSTATbits 115 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+__end_of_ADCC_EnableContinuousConversion 11B6 0 CODE 0 text8 dist/soundlevel/debug\Sound_Level.debug.o
+__end_of_MIC_Mode 13B0 0 CODE 0 text27 dist/soundlevel/debug\Sound_Level.debug.o
+frexp@value 20 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+?_frexp 20 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+__end_of_DOUT_Init 11D0 0 CODE 0 text43 dist/soundlevel/debug\Sound_Level.debug.o
+__pidataBANK2 1292 0 CODE 0 idataBANK2 dist/soundlevel/debug\Sound_Level.debug.o
+?_log10 65 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+?_round 55 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+?_trunc 36 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+_log10$2653 68 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
 __Lclrtext 0 0 ABS 0 clrtext -
-___altoft@sign 35 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-_SSP1CON1bits 190 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_SSP1CON2bits 191 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_SSP1CON3bits 192 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-__size_of_DOUT_Init 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_overThreshold CE 0 BANK1 1 bssBANK1 dist/soundlevel/production\Sound_Level.production.o
-___ftpack@sign 24 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-_I2C1_slaveWriteData 7B 0 COMMON 1 dataCOMMON dist/soundlevel/production\Sound_Level.production.o
-_toggleInt 131A 0 CODE 0 text1 dist/soundlevel/production\Sound_Level.production.o
-__end_of_I2C1_GetCommandData 14FC 0 CODE 0 text53 dist/soundlevel/production\Sound_Level.production.o
-_measure 17B2 0 CODE 0 text5 dist/soundlevel/production\Sound_Level.production.o
-__pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/soundlevel/production\Sound_Level.production.o
-___ftdiv@cntr 32 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-___ftdiv@sign 37 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-I2C1_StatusCallback@slaveWriteType CD 0 BANK1 1 bssBANK1 dist/soundlevel/production\Sound_Level.production.o
-__end_of_ADCC_GetConversionResult 11DC 0 CODE 0 text71 dist/soundlevel/production\Sound_Level.production.o
-__size_of_generateInt 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-__end_of_I2C1_Initialize 175C 0 CODE 0 text50 dist/soundlevel/production\Sound_Level.production.o
-_SSP1ADD 18D 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_SSP1BUF 18C 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_SSP1MSK 18E 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-__size_of_VDDAMP_Init 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_IOCCF4_InterruptHandler 125 0 BANK2 1 bssBANK2 dist/soundlevel/production\Sound_Level.production.o
-__size_of_I2C1_SetTransmitData 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
+___altoft@sign 35 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+_SSP1CON1bits 190 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_SSP1CON2bits 191 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_SSP1CON3bits 192 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+__size_of_DOUT_Init 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_overThreshold CE 0 BANK1 1 bssBANK1 dist/soundlevel/debug\Sound_Level.debug.o
+___ftpack@sign 24 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+_I2C1_slaveWriteData 7B 0 COMMON 1 dataCOMMON dist/soundlevel/debug\Sound_Level.debug.o
+_toggleInt 131A 0 CODE 0 text1 dist/soundlevel/debug\Sound_Level.debug.o
+__end_of_I2C1_GetCommandData 14FC 0 CODE 0 text53 dist/soundlevel/debug\Sound_Level.debug.o
+_measure 17B2 0 CODE 0 text5 dist/soundlevel/debug\Sound_Level.debug.o
+__pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/soundlevel/debug\Sound_Level.debug.o
+___ftdiv@cntr 32 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+___ftdiv@sign 37 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+I2C1_StatusCallback@slaveWriteType CD 0 BANK1 1 bssBANK1 dist/soundlevel/debug\Sound_Level.debug.o
+__end_of_ADCC_GetConversionResult 11DC 0 CODE 0 text71 dist/soundlevel/debug\Sound_Level.debug.o
+__size_of_generateInt 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+__end_of_I2C1_Initialize 175C 0 CODE 0 text50 dist/soundlevel/debug\Sound_Level.debug.o
+_SSP1ADD 18D 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_SSP1BUF 18C 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_SSP1MSK 18E 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+__size_of_VDDAMP_Init 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_IOCCF4_InterruptHandler 125 0 BANK2 1 bssBANK2 dist/soundlevel/debug\Sound_Level.debug.o
+__size_of_I2C1_SetTransmitData 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
 __Hend_init 66 0 CODE 0 end_init -
-SoundLevel_PrepareData@presAvgSquared AE 0 BANK1 1 cstackBANK1 dist/soundlevel/production\Sound_Level.production.o
-__end_of_main 990 0 CODE 0 maintext dist/soundlevel/production\Sound_Level.production.o
-_ADCC_DisableContinuousConversion 1186 0 CODE 0 text70 dist/soundlevel/production\Sound_Level.production.o
-_DOUT_Init 11C6 0 CODE 0 text43 dist/soundlevel/production\Sound_Level.production.o
-_ADACT 117 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_ADCAP 10E 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_ADCLK 118 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_ADCNT 99 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_ADPCH 9F 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_ADREF 116 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_ADRPT 9A 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-log@exponent 63 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-__end_of_frexp 1906 0 CODE 0 text17 dist/soundlevel/production\Sound_Level.production.o
-__end_of_log10 16B4 0 CODE 0 text15 dist/soundlevel/production\Sound_Level.production.o
-_TRISA 12 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_TRISB 13 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_TRISC 14 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-__end_of_round FF4 0 CODE 0 text10 dist/soundlevel/production\Sound_Level.production.o
-__end_of_trunc 1B1A 0 CODE 0 text11 dist/soundlevel/production\Sound_Level.production.o
+SoundLevel_PrepareData@presAvgSquared AE 0 BANK1 1 cstackBANK1 dist/soundlevel/debug\Sound_Level.debug.o
+__end_of_main 990 0 CODE 0 maintext dist/soundlevel/debug\Sound_Level.debug.o
+_ADCC_DisableContinuousConversion 1186 0 CODE 0 text70 dist/soundlevel/debug\Sound_Level.debug.o
+_DOUT_Init 11C6 0 CODE 0 text43 dist/soundlevel/debug\Sound_Level.debug.o
+_ADACT 117 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_ADCAP 10E 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_ADCLK 118 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_ADCNT 99 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_ADPCH 9F 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_ADREF 116 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_ADRPT 9A 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+log@exponent 63 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+__end_of_frexp 1906 0 CODE 0 text17 dist/soundlevel/debug\Sound_Level.debug.o
+__end_of_log10 16B4 0 CODE 0 text15 dist/soundlevel/debug\Sound_Level.debug.o
+_TRISA 12 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_TRISB 13 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_TRISC 14 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+__end_of_round FF4 0 CODE 0 text10 dist/soundlevel/debug\Sound_Level.debug.o
+__end_of_trunc 1B1A 0 CODE 0 text11 dist/soundlevel/debug\Sound_Level.debug.o
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
-ADCC_SetADIInterruptHandler@InterruptHandler 20 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-SoundLevel_SetThreshold@metric 21 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-_errno 123 0 BANK2 1 bssBANK2 dist/soundlevel/production\Sound_Level.production.o
-_frexp 188A 0 CODE 0 text17 dist/soundlevel/production\Sound_Level.production.o
-_mData D4 0 BANK1 1 bssBANK1 dist/soundlevel/production\Sound_Level.production.o
-_log10 1664 0 CODE 0 text15 dist/soundlevel/production\Sound_Level.production.o
-_round F64 0 CODE 0 text10 dist/soundlevel/production\Sound_Level.production.o
-_rxLen 78 0 COMMON 1 bssCOMMON dist/soundlevel/production\Sound_Level.production.o
-_trunc 1A8C 0 CODE 0 text11 dist/soundlevel/production\Sound_Level.production.o
-_txCnt 76 0 COMMON 1 bssCOMMON dist/soundlevel/production\Sound_Level.production.o
-_txLen 77 0 COMMON 1 bssCOMMON dist/soundlevel/production\Sound_Level.production.o
-__size_of_SoundLevel_Init 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-__size_of_SoundLevel_Loop 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-__size_of_ADCC_StopConversion 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-__pintentry 8 0 CODE 0 intentry dist/soundlevel/production\Sound_Level.production.o
-___fttol@sign1 28 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-I2C1_GetCommandData@len 20 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-__size_of_I2C1_StatusCallback 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_measurementData C9 0 BANK1 1 bssBANK1 dist/soundlevel/production\Sound_Level.production.o
-__end_of_I2C1_SetTransmitData 1708 0 CODE 0 text52 dist/soundlevel/production\Sound_Level.production.o
-__size_of_log 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
+ADCC_SetADIInterruptHandler@InterruptHandler 20 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+SoundLevel_SetThreshold@metric 21 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+_errno 123 0 BANK2 1 bssBANK2 dist/soundlevel/debug\Sound_Level.debug.o
+_frexp 188A 0 CODE 0 text17 dist/soundlevel/debug\Sound_Level.debug.o
+_mData D4 0 BANK1 1 bssBANK1 dist/soundlevel/debug\Sound_Level.debug.o
+_log10 1664 0 CODE 0 text15 dist/soundlevel/debug\Sound_Level.debug.o
+_round F64 0 CODE 0 text10 dist/soundlevel/debug\Sound_Level.debug.o
+_rxLen 78 0 COMMON 1 bssCOMMON dist/soundlevel/debug\Sound_Level.debug.o
+_trunc 1A8C 0 CODE 0 text11 dist/soundlevel/debug\Sound_Level.debug.o
+_txCnt 76 0 COMMON 1 bssCOMMON dist/soundlevel/debug\Sound_Level.debug.o
+_txLen 77 0 COMMON 1 bssCOMMON dist/soundlevel/debug\Sound_Level.debug.o
+__size_of_SoundLevel_Init 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+__size_of_SoundLevel_Loop 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+__size_of_ADCC_StopConversion 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+__pintentry 8 0 CODE 0 intentry dist/soundlevel/debug\Sound_Level.debug.o
+___fttol@sign1 28 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+I2C1_GetCommandData@len 20 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+__size_of_I2C1_StatusCallback 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_measurementData C9 0 BANK1 1 bssBANK1 dist/soundlevel/debug\Sound_Level.debug.o
+__end_of_I2C1_SetTransmitData 1708 0 CODE 0 text52 dist/soundlevel/debug\Sound_Level.debug.o
+__size_of_log 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
 __HdataBANK2 0 0 ABS 0 dataBANK2 -
-__end_of_OSCILLATOR_Initialize 11E8 0 CODE 0 text49 dist/soundlevel/production\Sound_Level.production.o
-_cmdByte 7A 0 COMMON 1 bssCOMMON dist/soundlevel/production\Sound_Level.production.o
-__end_of_I2C1_TxBufferEmpty 1238 0 CODE 0 text51 dist/soundlevel/production\Sound_Level.production.o
-__initialization 66 0 CODE 0 cinit dist/soundlevel/production\Sound_Level.production.o
-I2C1_GetCommandData@data 22 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-__pbssBANK1 C2 0 BANK1 1 bssBANK1 dist/soundlevel/production\Sound_Level.production.o
-__pbssBANK2 120 0 BANK2 1 bssBANK2 dist/soundlevel/production\Sound_Level.production.o
-__pbssBANK3 1A0 0 BANK3 1 bssBANK3 dist/soundlevel/production\Sound_Level.production.o
-_WDTCON0 80C 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_WDTCON1 80D 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-__pdataCOMMON 7B 0 COMMON 1 dataCOMMON dist/soundlevel/production\Sound_Level.production.o
-SoundLevel_GetData@length 21 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-_I2C1_CommandReceived 4 0 CODE 0 text55 dist/soundlevel/production\Sound_Level.production.o
-trunc@i 3A 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-trunc@x 36 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-_i2c1_tx_buffer 1A0 0 BANK3 1 bssBANK3 dist/soundlevel/production\Sound_Level.production.o
-___wmul@product 24 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-__size_of_SoundLevel_SetThreshold 0 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-I2C1_StatusCallback@i2c_bus_state 71 0 COMMON 1 cstackCOMMON dist/soundlevel/production\Sound_Level.production.o
-_STATUSbits 3 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_ANSELBbits 1F43 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_ANSELCbits 1F4E 0 ABS 0 - dist/soundlevel/production\Sound_Level.production.o
-_ADCC_SetADIInterruptHandler 1248 0 CODE 0 text45 dist/soundlevel/production\Sound_Level.production.o
-___ftmul@f3_as_product 50 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Sound_Level.production.o
-_OSCILLATOR_Initialize 11DC 0 CODE 0 text49 dist/soundlevel/production\Sound_Level.production.o
+__end_of_OSCILLATOR_Initialize 11E8 0 CODE 0 text49 dist/soundlevel/debug\Sound_Level.debug.o
+_cmdByte 7A 0 COMMON 1 bssCOMMON dist/soundlevel/debug\Sound_Level.debug.o
+__end_of_I2C1_TxBufferEmpty 1238 0 CODE 0 text51 dist/soundlevel/debug\Sound_Level.debug.o
+__initialization 66 0 CODE 0 cinit dist/soundlevel/debug\Sound_Level.debug.o
+I2C1_GetCommandData@data 22 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+__pbssBANK1 C2 0 BANK1 1 bssBANK1 dist/soundlevel/debug\Sound_Level.debug.o
+__pbssBANK2 120 0 BANK2 1 bssBANK2 dist/soundlevel/debug\Sound_Level.debug.o
+__pbssBANK3 1A0 0 BANK3 1 bssBANK3 dist/soundlevel/debug\Sound_Level.debug.o
+_WDTCON0 80C 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_WDTCON1 80D 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+__pdataCOMMON 7B 0 COMMON 1 dataCOMMON dist/soundlevel/debug\Sound_Level.debug.o
+SoundLevel_GetData@length 21 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+_I2C1_CommandReceived 4 0 CODE 0 text55 dist/soundlevel/debug\Sound_Level.debug.o
+trunc@i 3A 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+trunc@x 36 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+_i2c1_tx_buffer 1A0 0 BANK3 1 bssBANK3 dist/soundlevel/debug\Sound_Level.debug.o
+___wmul@product 24 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+__size_of_SoundLevel_SetThreshold 0 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+I2C1_StatusCallback@i2c_bus_state 71 0 COMMON 1 cstackCOMMON dist/soundlevel/debug\Sound_Level.debug.o
+_STATUSbits 3 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_ANSELBbits 1F43 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_ANSELCbits 1F4E 0 ABS 0 - dist/soundlevel/debug\Sound_Level.debug.o
+_ADCC_SetADIInterruptHandler 1248 0 CODE 0 text45 dist/soundlevel/debug\Sound_Level.debug.o
+___ftmul@f3_as_product 50 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Sound_Level.debug.o
+_OSCILLATOR_Initialize 11DC 0 CODE 0 text49 dist/soundlevel/debug\Sound_Level.debug.o
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
 # The beginning of the section is indicated by %SPLITSTAB.

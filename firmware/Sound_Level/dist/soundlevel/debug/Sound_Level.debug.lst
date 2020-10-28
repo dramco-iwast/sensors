@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.30 build 20200825195618 
-                                                                                               Wed Oct 28 15:13:04 2020
+                                                                                               Wed Oct 28 13:43:57 2020
 
 Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1 
      1                           	processor	16F18446
@@ -5362,7 +5362,7 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
   5337  0D04                     __ptext2:	
   5338 ;; *************** function _SoundLevel_SetThreshold *****************
   5339 ;; Defined at:
-  5340 ;;		line 476 in file "Sensors/sound_level.c"
+  5340 ;;		line 475 in file "Sensors/sound_level.c"
   5341 ;; Parameters:    Size  Location     Type
   5342 ;;  metric          1    1[BANK0 ] unsigned char 
   5343 ;;  thresholdDat    1    2[BANK0 ] PTR unsigned char 
@@ -5405,7 +5405,7 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
   5375                           ; Regs used in _SoundLevel_SetThreshold: [wreg-fsr1h+status,2+status,0+pclath+cstack]
   5376                           
   5377                           
-  5378                           ;sound_level.c: 477: if(metric == 0){
+  5378                           ;sound_level.c: 476: if(metric == 0){
   5379  0D04  0140               	movlb	0	; select bank0
   5380  0D05  0821               	movf	SoundLevel_SetThreshold@metric,w
   5381  0D06  1D03               	btfss	3,2
@@ -5416,7 +5416,7 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
   5386  0D0A                     u6030:
   5387  0D0A                     l6041:
   5388                           
-  5389                           ;sound_level.c: 478: thresholdEnabled = thresholdData[0];
+  5389                           ;sound_level.c: 477: thresholdEnabled = thresholdData[0];
   5390  0D0A  0822               	movf	SoundLevel_SetThreshold@thresholdData,w
   5391  0D0B  0086               	movwf	6
   5392  0D0C  3001               	movlw	1	; select bank2/3
@@ -5428,7 +5428,7 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
   5398  0D12  00D7               	movwf	_thresholdEnabled^(0+128)
   5399  0D13                     l6043:
   5400                           
-  5401                           ;sound_level.c: 479: thresholdLevel = (uint16_t)((thresholdData[3]<<8) | thresholdData[4
+  5401                           ;sound_level.c: 478: thresholdLevel = (uint16_t)((thresholdData[3]<<8) | thresholdData[4
       +                          ]);
   5402  0D13  0140               	movlb	0	; select bank0
   5403  0D14  0822               	movf	SoundLevel_SetThreshold@thresholdData,w
@@ -5461,7 +5461,7 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
   5430  0D2F  00D6               	movwf	(_thresholdLevel+1)^(0+256)
   5431  0D30                     l6045:
   5432                           
-  5433                           ;sound_level.c: 481: if(thresholdEnabled)
+  5433                           ;sound_level.c: 480: if(thresholdEnabled)
   5434  0D30  0141               	movlb	1	; select bank1
   5435  0D31  0857               	movf	_thresholdEnabled^(0+128),w
   5436  0D32  1903               	btfsc	3,2
@@ -5471,13 +5471,13 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
   5440  0D35  2D45               	goto	l321
   5441  0D36                     u6040:
   5442  0D36                     l319:	
-  5443                           ;sound_level.c: 482: {;sound_level.c: 483: do { LATCbits.LATC0 = 1; } while(0);
+  5443                           ;sound_level.c: 481: {;sound_level.c: 482: do { LATCbits.LATC0 = 1; } while(0);
   5444                           
   5445  0D36  0140               	movlb	0	; select bank0
   5446  0D37  141A               	bsf	26,0	;volatile
   5447  0D38                     l6047:
   5448                           
-  5449                           ;sound_level.c: 484: _delay((unsigned long)((1)*(32000000/4000.0)));
+  5449                           ;sound_level.c: 483: _delay((unsigned long)((1)*(32000000/4000.0)));
   5450  0D38  300B               	movlw	11
   5451  0D39  0140               	movlb	0	; select bank0
   5452  0D3A  00A3               	movwf	??_SoundLevel_SetThreshold
@@ -5490,7 +5490,7 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
   5459  0D40  0000               	nop
   5460  0D41                     l6049:
   5461                           
-  5462                           ;sound_level.c: 485: MIC_Mode(2);
+  5462                           ;sound_level.c: 484: MIC_Mode(2);
   5463  0D41  3002               	movlw	2
   5464  0D42  3189  21C6  318D   	fcall	_MIC_Mode
   5465  0D45                     l321:
@@ -5501,7 +5501,7 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
   5470  08DF                     __ptext3:	
   5471 ;; *************** function _SoundLevel_Measure *****************
   5472 ;; Defined at:
-  5473 ;;		line 349 in file "Sensors/sound_level.c"
+  5473 ;;		line 348 in file "Sensors/sound_level.c"
   5474 ;; Parameters:    Size  Location     Type
   5475 ;;		None
   5476 ;; Auto vars:     Size  Location     Type
@@ -5542,7 +5542,7 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
   5506                           ; Regs used in _SoundLevel_Measure: []
   5507                           
   5508                           
-  5509                           ;sound_level.c: 350: polledMeasurement = 1;
+  5509                           ;sound_level.c: 349: polledMeasurement = 1;
   5510  08DF  0141               	movlb	1	; select bank1
   5511  08E0  01CF               	clrf	_polledMeasurement^(0+128)
   5512  08E1  0ACF               	incf	_polledMeasurement^(0+128),f
@@ -5554,7 +5554,7 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
   5518  04C8                     __ptext4:	
   5519 ;; *************** function _SoundLevel_Loop *****************
   5520 ;; Defined at:
-  5521 ;;		line 355 in file "Sensors/sound_level.c"
+  5521 ;;		line 354 in file "Sensors/sound_level.c"
   5522 ;; Parameters:    Size  Location     Type
   5523 ;;		None
   5524 ;; Auto vars:     Size  Location     Type
@@ -5598,7 +5598,7 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
   5557                           ; Regs used in _SoundLevel_Loop: [wreg-fsr1h+status,2+status,0+pclath+cstack]
   5558                           
   5559                           
-  5560                           ;sound_level.c: 359: if(polledMeasurement && (WDTCON0bits.SEN == 0))
+  5560                           ;sound_level.c: 358: if(polledMeasurement && (WDTCON0bits.SEN == 0))
   5561  04C8  0141               	movlb	1	; select bank1
   5562  04C9  084F               	movf	_polledMeasurement^(0+128),w
   5563  04CA  1903               	btfsc	3,2
@@ -5617,7 +5617,7 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
   5576  04D3                     u5950:
   5577  04D3                     l5947:
   5578                           
-  5579                           ;sound_level.c: 360: {;sound_level.c: 361: if(thresholdEnabled)
+  5579                           ;sound_level.c: 359: {;sound_level.c: 360: if(thresholdEnabled)
   5580  04D3  0141               	movlb	1	; select bank1
   5581  04D4  0857               	movf	_thresholdEnabled^(0+128),w
   5582  04D5  1903               	btfsc	3,2
@@ -5628,38 +5628,38 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
   5587  04D9                     u5960:
   5588  04D9                     l5949:
   5589                           
-  5590                           ;sound_level.c: 362: {;sound_level.c: 363: measurementRunning = 1;
+  5590                           ;sound_level.c: 361: {;sound_level.c: 362: measurementRunning = 1;
   5591  04D9  01D2               	clrf	_measurementRunning^(0+128)
   5592  04DA  0AD2               	incf	_measurementRunning^(0+128),f
   5593  04DB                     l5951:
   5594                           
-  5595                           ;sound_level.c: 364: measure();
+  5595                           ;sound_level.c: 363: measure();
   5596  04DB  318B  23D9  3184   	fcall	_measure
   5597  04DE                     l5953:
   5598                           
-  5599                           ;sound_level.c: 365: measurementRunning = 0;
+  5599                           ;sound_level.c: 364: measurementRunning = 0;
   5600  04DE  0141               	movlb	1	; select bank1
   5601  04DF  01D2               	clrf	_measurementRunning^(0+128)
   5602  04E0                     l5955:
   5603                           
-  5604                           ;sound_level.c: 367: generateInt();
+  5604                           ;sound_level.c: 366: generateInt();
   5605  04E0  3189  219A  3184   	fcall	_generateInt
   5606  04E3                     l5957:
   5607                           
-  5608                           ;sound_level.c: 369: MIC_Mode(2);
+  5608                           ;sound_level.c: 368: MIC_Mode(2);
   5609  04E3  3002               	movlw	2
   5610  04E4  3189  21C6  3184   	fcall	_MIC_Mode
   5611  04E7                     l5959:
   5612                           
-  5613                           ;sound_level.c: 372: polledMeasurement = 0;
+  5613                           ;sound_level.c: 371: polledMeasurement = 0;
   5614  04E7  0141               	movlb	1	; select bank1
   5615  04E8  01CF               	clrf	_polledMeasurement^(0+128)
   5616                           
-  5617                           ;sound_level.c: 373: }
+  5617                           ;sound_level.c: 372: }
   5618  04E9  2D89               	goto	l308
   5619  04EA                     l5961:
   5620                           
-  5621                           ;sound_level.c: 374: else if(!thresholdEnabled)
+  5621                           ;sound_level.c: 373: else if(!thresholdEnabled)
   5622  04EA  0857               	movf	_thresholdEnabled^(0+128),w
   5623  04EB  1D03               	btfss	3,2
   5624  04EC  2CEE               	goto	u5971
@@ -5668,13 +5668,13 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
   5627  04EE  2D89               	goto	l308
   5628  04EF                     u5970:
   5629  04EF                     l289:	
-  5630                           ;sound_level.c: 375: {;sound_level.c: 376: do { LATCbits.LATC0 = 1; } while(0);
+  5630                           ;sound_level.c: 374: {;sound_level.c: 375: do { LATCbits.LATC0 = 1; } while(0);
   5631                           
   5632  04EF  0140               	movlb	0	; select bank0
   5633  04F0  141A               	bsf	26,0	;volatile
   5634  04F1                     l5963:
   5635                           
-  5636                           ;sound_level.c: 377: _delay((unsigned long)((1)*(32000000/4000.0)));
+  5636                           ;sound_level.c: 376: _delay((unsigned long)((1)*(32000000/4000.0)));
   5637  04F1  300B               	movlw	11
   5638  04F2  0140               	movlb	0	; select bank0
   5639  04F3  00EC               	movwf	??_SoundLevel_Loop
@@ -5687,29 +5687,29 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
   5646  04F9  0000               	nop
   5647  04FA                     l5965:
   5648                           
-  5649                           ;sound_level.c: 379: measurementRunning = 1;
+  5649                           ;sound_level.c: 378: measurementRunning = 1;
   5650  04FA  0141               	movlb	1	; select bank1
   5651  04FB  01D2               	clrf	_measurementRunning^(0+128)
   5652  04FC  0AD2               	incf	_measurementRunning^(0+128),f
   5653  04FD                     l5967:
   5654                           
-  5655                           ;sound_level.c: 380: measure();
+  5655                           ;sound_level.c: 379: measure();
   5656  04FD  318B  23D9  3184   	fcall	_measure
   5657  0500                     l5969:
   5658                           
-  5659                           ;sound_level.c: 381: measurementRunning = 0;
+  5659                           ;sound_level.c: 380: measurementRunning = 0;
   5660  0500  0141               	movlb	1	; select bank1
   5661  0501  01D2               	clrf	_measurementRunning^(0+128)
   5662  0502                     l5971:
   5663                           
-  5664                           ;sound_level.c: 383: generateInt();
+  5664                           ;sound_level.c: 382: generateInt();
   5665  0502  3189  219A  3184   	fcall	_generateInt
   5666  0505                     l5973:
   5667  0505  0140               	movlb	0	; select bank0
   5668  0506  101A               	bcf	26,0	;volatile
   5669  0507                     l5975:
   5670                           
-  5671                           ;sound_level.c: 386: _delay((unsigned long)((1)*(32000000/4000.0)));
+  5671                           ;sound_level.c: 385: _delay((unsigned long)((1)*(32000000/4000.0)));
   5672  0507  300B               	movlw	11
   5673  0508  0140               	movlb	0	; select bank0
   5674  0509  00EC               	movwf	??_SoundLevel_Loop
@@ -5722,13 +5722,13 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
   5681  050F  0000               	nop
   5682  0510                     l5977:
   5683                           
-  5684                           ;sound_level.c: 387: MIC_Mode(1);
+  5684                           ;sound_level.c: 386: MIC_Mode(1);
   5685  0510  3001               	movlw	1
   5686  0511  3189  21C6  3184   	fcall	_MIC_Mode
   5687  0514  2CE7               	goto	l5959
   5688  0515                     l5981:
   5689                           
-  5690                           ;sound_level.c: 392: else if(polledMeasurement && (WDTCON0bits.SEN == 1))
+  5690                           ;sound_level.c: 391: else if(polledMeasurement && (WDTCON0bits.SEN == 1))
   5691  0515  0141               	movlb	1	; select bank1
   5692  0516  084F               	movf	_polledMeasurement^(0+128),w
   5693  0517  1903               	btfsc	3,2
@@ -5746,13 +5746,13 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
   5705  051F  2D3D               	goto	l6001
   5706  0520                     u5990:
   5707  0520                     l295:	
-  5708                           ;sound_level.c: 393: {;sound_level.c: 394: do { LATCbits.LATC0 = 1; } while(0);
+  5708                           ;sound_level.c: 392: {;sound_level.c: 393: do { LATCbits.LATC0 = 1; } while(0);
   5709                           
   5710  0520  0140               	movlb	0	; select bank0
   5711  0521  141A               	bsf	26,0	;volatile
   5712  0522                     l5985:
   5713                           
-  5714                           ;sound_level.c: 395: _delay((unsigned long)((1)*(32000000/4000.0)));
+  5714                           ;sound_level.c: 394: _delay((unsigned long)((1)*(32000000/4000.0)));
   5715  0522  300B               	movlw	11
   5716  0523  0140               	movlb	0	; select bank0
   5717  0524  00EC               	movwf	??_SoundLevel_Loop
@@ -5765,37 +5765,37 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
   5724  052A  0000               	nop
   5725  052B                     l5987:
   5726                           
-  5727                           ;sound_level.c: 397: measurementRunning = 1;
+  5727                           ;sound_level.c: 396: measurementRunning = 1;
   5728  052B  0141               	movlb	1	; select bank1
   5729  052C  01D2               	clrf	_measurementRunning^(0+128)
   5730  052D  0AD2               	incf	_measurementRunning^(0+128),f
   5731  052E                     l5989:
   5732                           
-  5733                           ;sound_level.c: 398: measure();
+  5733                           ;sound_level.c: 397: measure();
   5734  052E  318B  23D9  3184   	fcall	_measure
   5735  0531                     l5991:
   5736                           
-  5737                           ;sound_level.c: 399: measurementRunning = 0;
+  5737                           ;sound_level.c: 398: measurementRunning = 0;
   5738  0531  0141               	movlb	1	; select bank1
   5739  0532  01D2               	clrf	_measurementRunning^(0+128)
   5740  0533                     l5993:
   5741                           
-  5742                           ;sound_level.c: 401: generateInt();
+  5742                           ;sound_level.c: 400: generateInt();
   5743  0533  3189  219A  3184   	fcall	_generateInt
   5744  0536                     l5995:
   5745                           
-  5746                           ;sound_level.c: 407: MIC_Mode(2);
+  5746                           ;sound_level.c: 406: MIC_Mode(2);
   5747  0536  3002               	movlw	2
   5748  0537  3189  21C6  3184   	fcall	_MIC_Mode
   5749  053A                     l5997:
   5750                           
-  5751                           ;sound_level.c: 409: WDTCON0bits.SEN = 0;
+  5751                           ;sound_level.c: 408: WDTCON0bits.SEN = 0;
   5752  053A  0150               	movlb	16	; select bank16
   5753  053B  100C               	bcf	12,0	;volatile
   5754  053C  2CE7               	goto	l5959
   5755  053D                     l6001:
   5756                           
-  5757                           ;sound_level.c: 413: else if(soundinterrupt)
+  5757                           ;sound_level.c: 412: else if(soundinterrupt)
   5758  053D  0141               	movlb	1	; select bank1
   5759  053E  0853               	movf	_soundinterrupt^(0+128),w
   5760  053F  1903               	btfsc	3,2
@@ -5806,21 +5806,21 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
   5765  0543                     u6000:
   5766  0543                     l6003:
   5767                           
-  5768                           ;sound_level.c: 414: {;sound_level.c: 415: measurementRunning = 1;
+  5768                           ;sound_level.c: 413: {;sound_level.c: 414: measurementRunning = 1;
   5769  0543  01D2               	clrf	_measurementRunning^(0+128)
   5770  0544  0AD2               	incf	_measurementRunning^(0+128),f
   5771  0545                     l6005:
   5772                           
-  5773                           ;sound_level.c: 416: measure();
+  5773                           ;sound_level.c: 415: measure();
   5774  0545  318B  23D9  3184   	fcall	_measure
   5775  0548                     l6007:
   5776                           
-  5777                           ;sound_level.c: 417: measurementRunning = 0;
+  5777                           ;sound_level.c: 416: measurementRunning = 0;
   5778  0548  0141               	movlb	1	; select bank1
   5779  0549  01D2               	clrf	_measurementRunning^(0+128)
   5780  054A                     l6009:
   5781                           
-  5782                           ;sound_level.c: 419: if(overThreshold)
+  5782                           ;sound_level.c: 418: if(overThreshold)
   5783  054A  084E               	movf	_overThreshold^(0+128),w
   5784  054B  1903               	btfsc	3,2
   5785  054C  2D4E               	goto	u6011
@@ -5831,32 +5831,32 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
   5790  054F                     l6011:
   5791  054F  0064               	clrwdt	;# 
   5792                           
-  5793                           ;sound_level.c: 422: WDTCON0bits.SEN = 1;
+  5793                           ;sound_level.c: 421: WDTCON0bits.SEN = 1;
   5794  0550  0150               	movlb	16	; select bank16
   5795  0551  140C               	bsf	12,0	;volatile
   5796  0552                     l6013:
   5797                           
-  5798                           ;sound_level.c: 424: generateInt();
+  5798                           ;sound_level.c: 423: generateInt();
   5799  0552  3189  219A  3184   	fcall	_generateInt
   5800  0555                     l6015:
   5801  0555  0140               	movlb	0	; select bank0
   5802  0556  101A               	bcf	26,0	;volatile
   5803  0557                     l6017:
   5804                           
-  5805                           ;sound_level.c: 428: MIC_Mode(1);
+  5805                           ;sound_level.c: 427: MIC_Mode(1);
   5806  0557  3001               	movlw	1
   5807  0558  3189  21C6  3184   	fcall	_MIC_Mode
   5808                           
-  5809                           ;sound_level.c: 429: }else
+  5809                           ;sound_level.c: 428: }else
   5810  055B  2D6D               	goto	l6025
   5811  055C                     l6019:
   5812                           
-  5813                           ;sound_level.c: 430: {;sound_level.c: 431: MIC_Mode(1);
+  5813                           ;sound_level.c: 429: {;sound_level.c: 430: MIC_Mode(1);
   5814  055C  3001               	movlw	1
   5815  055D  3189  21C6  3184   	fcall	_MIC_Mode
   5816  0560                     l6021:
   5817                           
-  5818                           ;sound_level.c: 432: _delay((unsigned long)((10)*(32000000/4000.0)));
+  5818                           ;sound_level.c: 431: _delay((unsigned long)((10)*(32000000/4000.0)));
   5819  0560  3068               	movlw	104
   5820  0561  0140               	movlb	0	; select bank0
   5821  0562  00EC               	movwf	??_SoundLevel_Loop
@@ -5869,20 +5869,20 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
   5828  0568  0000               	nop
   5829  0569                     l6023:
   5830                           
-  5831                           ;sound_level.c: 434: MIC_Mode(2);
+  5831                           ;sound_level.c: 433: MIC_Mode(2);
   5832  0569  3002               	movlw	2
   5833  056A  3189  21C6  3184   	fcall	_MIC_Mode
   5834  056D                     l6025:
   5835                           
-  5836                           ;sound_level.c: 436: };sound_level.c: 438: soundinterrupt = 0;
+  5836                           ;sound_level.c: 435: };sound_level.c: 437: soundinterrupt = 0;
   5837  056D  0141               	movlb	1	; select bank1
   5838  056E  01D3               	clrf	_soundinterrupt^(0+128)
   5839                           
-  5840                           ;sound_level.c: 439: }
+  5840                           ;sound_level.c: 438: }
   5841  056F  2D89               	goto	l308
   5842  0570                     l298:
   5843                           
-  5844                           ;sound_level.c: 440: else if(STATUSbits.nTO == 0)
+  5844                           ;sound_level.c: 439: else if(STATUSbits.nTO == 0)
   5845  0570  0140               	movlb	0	; select bank0
   5846  0571  1A03               	btfsc	3,4	;volatile
   5847  0572  2D74               	goto	u6021
@@ -5892,17 +5892,17 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
   5851  0575                     u6020:
   5852  0575                     l6027:
   5853                           
-  5854                           ;sound_level.c: 441: {;sound_level.c: 442: WDTCON0bits.SEN = 0;
+  5854                           ;sound_level.c: 440: {;sound_level.c: 441: WDTCON0bits.SEN = 0;
   5855  0575  0150               	movlb	16	; select bank16
   5856  0576  100C               	bcf	12,0	;volatile
   5857  0577                     l305:	
-  5858                           ;sound_level.c: 444: do { LATCbits.LATC0 = 1; } while(0);
+  5858                           ;sound_level.c: 443: do { LATCbits.LATC0 = 1; } while(0);
   5859                           
   5860  0577  0140               	movlb	0	; select bank0
   5861  0578  141A               	bsf	26,0	;volatile
   5862  0579                     l6029:
   5863                           
-  5864                           ;sound_level.c: 445: _delay((unsigned long)((1)*(32000000/4000.0)));
+  5864                           ;sound_level.c: 444: _delay((unsigned long)((1)*(32000000/4000.0)));
   5865  0579  300B               	movlw	11
   5866  057A  0140               	movlb	0	; select bank0
   5867  057B  00EC               	movwf	??_SoundLevel_Loop
@@ -5915,15 +5915,15 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
   5874  0581  0000               	nop
   5875  0582                     l6031:
   5876                           
-  5877                           ;sound_level.c: 446: MIC_Mode(2);
+  5877                           ;sound_level.c: 445: MIC_Mode(2);
   5878  0582  3002               	movlw	2
   5879  0583  3189  21C6  3184   	fcall	_MIC_Mode
   5880  0586                     l6033:
   5881                           
-  5882                           ;sound_level.c: 449: EnterSleep();
+  5882                           ;sound_level.c: 448: EnterSleep();
   5883  0586  3189  210D  3184   	fcall	_EnterSleep
   5884  0589                     l308:	
-  5885                           ;sound_level.c: 450: }
+  5885                           ;sound_level.c: 449: }
   5886                           
   5887  0589  0008               	return
   5888  058A                     __end_of_SoundLevel_Loop:
@@ -5932,7 +5932,7 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
   5891  0BD9                     __ptext5:	
   5892 ;; *************** function _measure *****************
   5893 ;; Defined at:
-  5894 ;;		line 593 in file "Sensors/sound_level.c"
+  5894 ;;		line 592 in file "Sensors/sound_level.c"
   5895 ;; Parameters:    Size  Location     Type
   5896 ;;		None
   5897 ;; Auto vars:     Size  Location     Type
@@ -5978,16 +5978,16 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
   5932                           ; Regs used in _measure: [wreg-fsr1h+status,2+status,0+pclath+cstack]
   5933                           
   5934                           
-  5935                           ;sound_level.c: 595: SoundLevel_LedOn();
+  5935                           ;sound_level.c: 594: SoundLevel_LedOn();
   5936  0BD9  3188  20D5  318B   	fcall	_SoundLevel_LedOn
   5937  0BDC                     l5787:
   5938                           
-  5939                           ;sound_level.c: 597: MIC_Mode(1);
+  5939                           ;sound_level.c: 596: MIC_Mode(1);
   5940  0BDC  3001               	movlw	1
   5941  0BDD  3189  21C6  318B   	fcall	_MIC_Mode
   5942  0BE0                     l5789:
   5943                           
-  5944                           ;sound_level.c: 598: _delay((unsigned long)((10)*(32000000/4000.0)));
+  5944                           ;sound_level.c: 597: _delay((unsigned long)((10)*(32000000/4000.0)));
   5945  0BE0  3068               	movlw	104
   5946  0BE1  0140               	movlb	0	; select bank0
   5947  0BE2  00EB               	movwf	??_measure
@@ -6000,23 +6000,23 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
   5954  0BE8  0000               	nop
   5955  0BE9                     l5791:
   5956                           
-  5957                           ;sound_level.c: 600: AMPS_enable(1);
+  5957                           ;sound_level.c: 599: AMPS_enable(1);
   5958  0BE9  3001               	movlw	1
   5959  0BEA  318A  22C1  318B   	fcall	_AMPS_enable
   5960  0BED                     l5793:
   5961                           
-  5962                           ;sound_level.c: 603: sampling = 1;
+  5962                           ;sound_level.c: 602: sampling = 1;
   5963  0BED  0141               	movlb	1	; select bank1
   5964  0BEE  01D1               	clrf	_sampling^(0+128)
   5965  0BEF  0AD1               	incf	_sampling^(0+128),f
   5966  0BF0                     l5795:
   5967                           
-  5968                           ;sound_level.c: 604: sampleCounter = 0;
+  5968                           ;sound_level.c: 603: sampleCounter = 0;
   5969  0BF0  01CB               	clrf	_sampleCounter^(0+128)
   5970  0BF1  01CC               	clrf	(_sampleCounter+1)^(0+128)
   5971  0BF2                     l5797:
   5972                           
-  5973                           ;sound_level.c: 605: presSumSquared = 0;
+  5973                           ;sound_level.c: 604: presSumSquared = 0;
   5974  0BF2  3000               	movlw	0
   5975  0BF3  00C2               	movwf	_presSumSquared^(0+128)
   5976  0BF4  3000               	movlw	0
@@ -6025,10 +6025,10 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
   5979  0BF7  00C4               	movwf	(_presSumSquared+2)^(0+128)
   5980  0BF8                     l5799:
   5981                           
-  5982                           ;sound_level.c: 607: SoundLevel_StartADC();
+  5982                           ;sound_level.c: 606: SoundLevel_StartADC();
   5983  0BF8  3189  211C  318B   	fcall	_SoundLevel_StartADC
   5984  0BFB                     l5801:	
-  5985                           ;sound_level.c: 609: while(sampling);
+  5985                           ;sound_level.c: 608: while(sampling);
   5986                           
   5987  0BFB  0141               	movlb	1	; select bank1
   5988  0BFC  0851               	movf	_sampling^(0+128),w
@@ -6040,16 +6040,16 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
   5994  0C01                     u5860:
   5995  0C01                     l5803:
   5996                           
-  5997                           ;sound_level.c: 611: AMPS_enable(0);
+  5997                           ;sound_level.c: 610: AMPS_enable(0);
   5998  0C01  3000               	movlw	0
   5999  0C02  318A  22C1  318B   	fcall	_AMPS_enable
   6000  0C05                     l5805:
   6001                           
-  6002                           ;sound_level.c: 613: SoundLevel_PrepareData();
+  6002                           ;sound_level.c: 612: SoundLevel_PrepareData();
   6003  0C05  3180  207A  318B   	fcall	_SoundLevel_PrepareData
   6004  0C08                     l5807:
   6005                           
-  6006                           ;sound_level.c: 615: SoundLevel_LedOff();
+  6006                           ;sound_level.c: 614: SoundLevel_LedOff();
   6007  0C08  3188  20D2  318B   	fcall	_SoundLevel_LedOff
   6008  0C0B                     l371:
   6009  0C0B  0008               	return
@@ -6059,7 +6059,7 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
   6013  091C                     __ptext6:	
   6014 ;; *************** function _SoundLevel_StartADC *****************
   6015 ;; Defined at:
-  6016 ;;		line 554 in file "Sensors/sound_level.c"
+  6016 ;;		line 553 in file "Sensors/sound_level.c"
   6017 ;; Parameters:    Size  Location     Type
   6018 ;;		None
   6019 ;; Auto vars:     Size  Location     Type
@@ -6101,11 +6101,11 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
   6050                           ; Regs used in _SoundLevel_StartADC: [wreg+status,2+status,0+pclath+cstack]
   6051                           
   6052                           
-  6053                           ;sound_level.c: 555: ADCC_EnableContinuousConversion();
+  6053                           ;sound_level.c: 554: ADCC_EnableContinuousConversion();
   6054  091C  3188  20D8  3189   	fcall	_ADCC_EnableContinuousConversion
   6055  091F                     l5761:
   6056                           
-  6057                           ;sound_level.c: 556: ADCC_StartConversion(channel_ANC1);
+  6057                           ;sound_level.c: 555: ADCC_StartConversion(channel_ANC1);
   6058  091F  3011               	movlw	17
   6059  0920  3189  2136  3189   	fcall	_ADCC_StartConversion
   6060  0923                     l340:
@@ -6233,7 +6233,7 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
   6172  007A                     __ptext9:	
   6173 ;; *************** function _SoundLevel_PrepareData *****************
   6174 ;; Defined at:
-  6175 ;;		line 492 in file "Sensors/sound_level.c"
+  6175 ;;		line 491 in file "Sensors/sound_level.c"
   6176 ;; Parameters:    Size  Location     Type
   6177 ;;		None
   6178 ;; Auto vars:     Size  Location     Type
@@ -6289,7 +6289,7 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
   6223                           ; Regs used in _SoundLevel_PrepareData: [wreg-fsr1h+status,2+status,0+pclath+cstack]
   6224                           
   6225                           
-  6226                           ;sound_level.c: 494: uint32_t sampleSum = 0;
+  6226                           ;sound_level.c: 493: uint32_t sampleSum = 0;
   6227  007A  3000               	movlw	0
   6228  007B  0141               	movlb	1	; select bank1
   6229  007C  00A7               	movwf	(SoundLevel_PrepareData@sampleSum+3)^(0+128)
@@ -6300,7 +6300,7 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
   6234  0081  3000               	movlw	0
   6235  0082  00A4               	movwf	SoundLevel_PrepareData@sampleSum^(0+128)
   6236                           
-  6237                           ;sound_level.c: 496: float mean = 0;
+  6237                           ;sound_level.c: 495: float mean = 0;
   6238  0083  3000               	movlw	0
   6239  0084  00BD               	movwf	SoundLevel_PrepareData@mean^(0+128)
   6240  0085  3000               	movlw	0
@@ -6309,12 +6309,12 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
   6243  0088  00BF               	movwf	(SoundLevel_PrepareData@mean+2)^(0+128)
   6244  0089                     l5703:
   6245                           
-  6246                           ;sound_level.c: 497: for(int i=0; i<400; i++)
+  6246                           ;sound_level.c: 496: for(int i=0; i<400; i++)
   6247  0089  01B9               	clrf	SoundLevel_PrepareData@i^(0+128)
   6248  008A  01BA               	clrf	(SoundLevel_PrepareData@i+1)^(0+128)
   6249  008B                     l5709:
   6250                           
-  6251                           ;sound_level.c: 498: {;sound_level.c: 499: mean += sampleArray[i];
+  6251                           ;sound_level.c: 497: {;sound_level.c: 498: mean += sampleArray[i];
   6252  008B  0141               	movlb	1	; select bank1
   6253  008C  083A               	movf	(SoundLevel_PrepareData@i+1)^(0+128),w
   6254  008D  00A1               	movwf	(??_SoundLevel_PrepareData^(0+128)+1)
@@ -6394,7 +6394,7 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
   6328  00D7                     u5810:
   6329  00D7                     l5715:
   6330                           
-  6331                           ;sound_level.c: 500: };sound_level.c: 501: mean /= 400;
+  6331                           ;sound_level.c: 499: };sound_level.c: 500: mean /= 400;
   6332  00D7  3000               	movlw	0
   6333  00D8  0140               	movlb	0	; select bank0
   6334  00D9  00A8               	movwf	___ftdiv@f2
@@ -6429,12 +6429,12 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
   6363  00F8  00BF               	movwf	(SoundLevel_PrepareData@mean+2)^(0+128)
   6364  00F9                     l5717:
   6365                           
-  6366                           ;sound_level.c: 503: for(int i=0; i<400; i++)
+  6366                           ;sound_level.c: 502: for(int i=0; i<400; i++)
   6367  00F9  01BB               	clrf	SoundLevel_PrepareData@i_663^(0+128)
   6368  00FA  01BC               	clrf	(SoundLevel_PrepareData@i_663+1)^(0+128)
   6369  00FB                     l5723:
   6370                           
-  6371                           ;sound_level.c: 504: {;sound_level.c: 505: float signal = (sampleArray[i] - mean) * adcS
+  6371                           ;sound_level.c: 503: {;sound_level.c: 504: float signal = (sampleArray[i] - mean) * adcS
       +                          caler;
   6372  00FB  0142               	movlb	2	; select bank2
   6373  00FC  0820               	movf	_adcScaler^(0+256),w
@@ -6513,7 +6513,7 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
   6446  014B  00B8               	movwf	(SoundLevel_PrepareData@signal+2)^(0+128)
   6447  014C                     l5725:
   6448                           
-  6449                           ;sound_level.c: 506: signal *= signal;
+  6449                           ;sound_level.c: 505: signal *= signal;
   6450  014C  0836               	movf	SoundLevel_PrepareData@signal^(0+128),w
   6451  014D  0140               	movlb	0	; select bank0
   6452  014E  00C5               	movwf	___ftmul@f1
@@ -6552,7 +6552,7 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
   6485  0171  00B8               	movwf	(SoundLevel_PrepareData@signal+2)^(0+128)
   6486  0172                     l5727:
   6487                           
-  6488                           ;sound_level.c: 507: presSumSquared += signal;
+  6488                           ;sound_level.c: 506: presSumSquared += signal;
   6489  0172  0836               	movf	SoundLevel_PrepareData@signal^(0+128),w
   6490  0173  0140               	movlb	0	; select bank0
   6491  0174  00AE               	movwf	___ftadd@f1
@@ -6613,7 +6613,7 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
   6546  01A9                     u5820:
   6547  01A9                     l5733:
   6548                           
-  6549                           ;sound_level.c: 508: };sound_level.c: 510: float presAvgSquared = presSumSquared/400;
+  6549                           ;sound_level.c: 507: };sound_level.c: 509: float presAvgSquared = presSumSquared/400;
   6550  01A9  3000               	movlw	0
   6551  01AA  0140               	movlb	0	; select bank0
   6552  01AB  00A8               	movwf	___ftdiv@f2
@@ -6647,7 +6647,7 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
   6580  01C9  0141               	movlb	1	; select bank1
   6581  01CA  00B0               	movwf	(SoundLevel_PrepareData@presAvgSquared+2)^(0+128)
   6582                           
-  6583                           ;sound_level.c: 512: if( (presAvgSquared/(20e-6 * 20e-6)) != 0.0 )
+  6583                           ;sound_level.c: 511: if( (presAvgSquared/(20e-6 * 20e-6)) != 0.0 )
   6584  01CB  30E7               	movlw	231
   6585  01CC  0140               	movlb	0	; select bank0
   6586  01CD  00A8               	movwf	___ftdiv@f2
@@ -6680,7 +6680,7 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
   6613  01E9                     u5830:
   6614  01E9                     l5735:
   6615                           
-  6616                           ;sound_level.c: 513: {;sound_level.c: 514: dBZ = 10 * log10(presAvgSquared/(20e-6 * 20e-
+  6616                           ;sound_level.c: 512: {;sound_level.c: 513: dBZ = 10 * log10(presAvgSquared/(20e-6 * 20e-
       +                          6));
   6617  01E9  30E7               	movlw	231
   6618  01EA  00A8               	movwf	___ftdiv@f2
@@ -6723,7 +6723,7 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
   6655  0213  00AA               	movwf	(_SoundLevel_PrepareData$2651+2)^(0+128)
   6656  0214                     l5737:
   6657                           
-  6658                           ;sound_level.c: 513: {;sound_level.c: 514: dBZ = 10 * log10(presAvgSquared/(20e-6 * 20e-
+  6658                           ;sound_level.c: 512: {;sound_level.c: 513: dBZ = 10 * log10(presAvgSquared/(20e-6 * 20e-
       +                          6));
   6659  0214  3000               	movlw	0
   6660  0215  0140               	movlb	0	; select bank0
@@ -6758,11 +6758,11 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
   6689  0234  0141               	movlb	1	; select bank1
   6690  0235  00B5               	movwf	(SoundLevel_PrepareData@dBZ+2)^(0+128)
   6691                           
-  6692                           ;sound_level.c: 515: }else{
+  6692                           ;sound_level.c: 514: }else{
   6693  0236  2A3E               	goto	l5741
   6694  0237                     l5739:
   6695                           
-  6696                           ;sound_level.c: 516: dBZ = 0;
+  6696                           ;sound_level.c: 515: dBZ = 0;
   6697  0237  3000               	movlw	0
   6698  0238  0141               	movlb	1	; select bank1
   6699  0239  00B3               	movwf	SoundLevel_PrepareData@dBZ^(0+128)
@@ -6772,7 +6772,7 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
   6703  023D  00B5               	movwf	(SoundLevel_PrepareData@dBZ+2)^(0+128)
   6704  023E                     l5741:
   6705                           
-  6706                           ;sound_level.c: 517: };sound_level.c: 519: if(dBZ > 106){
+  6706                           ;sound_level.c: 516: };sound_level.c: 518: if(dBZ > 106){
   6707  023E  3000               	movlw	0
   6708  023F  0140               	movlb	0	; select bank0
   6709  0240  00A0               	movwf	___ftge@ff1
@@ -6801,7 +6801,7 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
   6732  0258                     u5840:
   6733  0258                     l5743:
   6734                           
-  6735                           ;sound_level.c: 520: dBZ = 106;
+  6735                           ;sound_level.c: 519: dBZ = 106;
   6736  0258  3000               	movlw	0
   6737  0259  0141               	movlb	1	; select bank1
   6738  025A  00B3               	movwf	SoundLevel_PrepareData@dBZ^(0+128)
@@ -6811,7 +6811,7 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
   6742  025E  00B5               	movwf	(SoundLevel_PrepareData@dBZ+2)^(0+128)
   6743  025F                     l5745:
   6744                           
-  6745                           ;sound_level.c: 521: };sound_level.c: 523: uint16_t dataToSend = (uint16_t)(round(dBZ * 
+  6745                           ;sound_level.c: 520: };sound_level.c: 522: uint16_t dataToSend = (uint16_t)(round(dBZ * 
       +                          600));
   6746  025F  0141               	movlb	1	; select bank1
   6747  0260  0833               	movf	SoundLevel_PrepareData@dBZ^(0+128),w
@@ -6854,7 +6854,7 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
   6784  0289  00AD               	movwf	(_SoundLevel_PrepareData$2652+2)^(0+128)
   6785  028A                     l5747:
   6786                           
-  6787                           ;sound_level.c: 521: };sound_level.c: 523: uint16_t dataToSend = (uint16_t)(round(dBZ * 
+  6787                           ;sound_level.c: 520: };sound_level.c: 522: uint16_t dataToSend = (uint16_t)(round(dBZ * 
       +                          600));
   6788  028A  082B               	movf	_SoundLevel_PrepareData$2652^(0+128),w
   6789  028B  0140               	movlb	0	; select bank0
@@ -6878,21 +6878,21 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
   6807  029F  00B1               	movwf	SoundLevel_PrepareData@dataToSend^(0+128)
   6808  02A0                     l5749:
   6809                           
-  6810                           ;sound_level.c: 525: measurementData[0] = (uint8_t)(dataToSend>>8);
+  6810                           ;sound_level.c: 524: measurementData[0] = (uint8_t)(dataToSend>>8);
   6811  02A0  0832               	movf	(SoundLevel_PrepareData@dataToSend+1)^(0+128),w
   6812  02A1  00A0               	movwf	??_SoundLevel_PrepareData^(0+128)
   6813  02A2  0820               	movf	??_SoundLevel_PrepareData^(0+128),w
   6814  02A3  00C9               	movwf	_measurementData^(0+128)	;volatile
   6815  02A4                     l5751:
   6816                           
-  6817                           ;sound_level.c: 526: measurementData[1] = (uint8_t)(dataToSend);
+  6817                           ;sound_level.c: 525: measurementData[1] = (uint8_t)(dataToSend);
   6818  02A4  0831               	movf	SoundLevel_PrepareData@dataToSend^(0+128),w
   6819  02A5  00A0               	movwf	??_SoundLevel_PrepareData^(0+128)
   6820  02A6  0820               	movf	??_SoundLevel_PrepareData^(0+128),w
   6821  02A7  00CA               	movwf	(_measurementData^(0+128)+1)	;volatile
   6822  02A8                     l5753:
   6823                           
-  6824                           ;sound_level.c: 529: if(dataToSend > thresholdLevel){
+  6824                           ;sound_level.c: 528: if(dataToSend > thresholdLevel){
   6825  02A8  0832               	movf	(SoundLevel_PrepareData@dataToSend+1)^(0+128),w
   6826  02A9  0142               	movlb	2	; select bank2
   6827  02AA  0256               	subwf	(_thresholdLevel+1)^(0+256),w
@@ -6911,16 +6911,16 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
   6840  02B5                     u5850:
   6841  02B5                     l5755:
   6842                           
-  6843                           ;sound_level.c: 530: overThreshold = 1;
+  6843                           ;sound_level.c: 529: overThreshold = 1;
   6844  02B5  0141               	movlb	1	; select bank1
   6845  02B6  01CE               	clrf	_overThreshold^(0+128)
   6846  02B7  0ACE               	incf	_overThreshold^(0+128),f
   6847                           
-  6848                           ;sound_level.c: 531: }
+  6848                           ;sound_level.c: 530: }
   6849  02B8  2ABB               	goto	l333
   6850  02B9                     l5757:
   6851                           
-  6852                           ;sound_level.c: 532: else{;sound_level.c: 533: overThreshold = 0;
+  6852                           ;sound_level.c: 531: else{;sound_level.c: 532: overThreshold = 0;
   6853  02B9  0141               	movlb	1	; select bank1
   6854  02BA  01CE               	clrf	_overThreshold^(0+128)
   6855  02BB                     l333:
@@ -9935,7 +9935,7 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
   9769  099A                     __ptext29:	
   9770 ;; *************** function _generateInt *****************
   9771 ;; Defined at:
-  9772 ;;		line 587 in file "Sensors/sound_level.c"
+  9772 ;;		line 586 in file "Sensors/sound_level.c"
   9773 ;; Parameters:    Size  Location     Type
   9774 ;;		None
   9775 ;; Auto vars:     Size  Location     Type
@@ -9974,13 +9974,13 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
   9803  099A                     l361:	
   9804                           ;incstack = 0
   9805                           ; Regs used in _generateInt: [wreg]
-  9806                           ;sound_level.c: 588: do { LATCbits.LATC7 = 0; } while(0);
+  9806                           ;sound_level.c: 587: do { LATCbits.LATC7 = 0; } while(0);
   9807                           
   9808  099A  0140               	movlb	0	; select bank0
   9809  099B  139A               	bcf	26,7	;volatile
   9810  099C                     l5809:
   9811                           
-  9812                           ;sound_level.c: 589: _delay((unsigned long)((5)*(32000000/4000.0)));
+  9812                           ;sound_level.c: 588: _delay((unsigned long)((5)*(32000000/4000.0)));
   9813  099C  3034               	movlw	52
   9814  099D  0140               	movlb	0	; select bank0
   9815  099E  00A0               	movwf	??_generateInt
@@ -10002,7 +10002,7 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
   9831  090D                     __ptext30:	
   9832 ;; *************** function _EnterSleep *****************
   9833 ;; Defined at:
-  9834 ;;		line 460 in file "Sensors/sound_level.c"
+  9834 ;;		line 459 in file "Sensors/sound_level.c"
   9835 ;; Parameters:    Size  Location     Type
   9836 ;;		None
   9837 ;; Auto vars:     Size  Location     Type
@@ -10043,18 +10043,18 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
   9867                           ; Regs used in _EnterSleep: []
   9868                           
   9869                           
-  9870                           ;sound_level.c: 461: CPUDOZEbits.IDLEN = 0;
+  9870                           ;sound_level.c: 460: CPUDOZEbits.IDLEN = 0;
   9871  090D  0151               	movlb	17	; select bank17
   9872  090E  138C               	bcf	12,7	;volatile
   9873                           
-  9874                           ;sound_level.c: 462: __nop();
+  9874                           ;sound_level.c: 461: __nop();
   9875  090F  0000               	nop
   9876  0910  0063               	sleep	;# 
   9877                           
-  9878                           ;sound_level.c: 464: __nop();
+  9878                           ;sound_level.c: 463: __nop();
   9879  0911  0000               	nop
   9880                           
-  9881                           ;sound_level.c: 465: __nop();
+  9881                           ;sound_level.c: 464: __nop();
   9882  0912  0000               	nop
   9883  0913                     l311:
   9884  0913  0008               	return
@@ -10064,7 +10064,7 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
   9888  0DDF                     __ptext31:	
   9889 ;; *************** function _SoundLevel_Init *****************
   9890 ;; Defined at:
-  9891 ;;		line 286 in file "Sensors/sound_level.c"
+  9891 ;;		line 285 in file "Sensors/sound_level.c"
   9892 ;; Parameters:    Size  Location     Type
   9893 ;;		None
   9894 ;; Auto vars:     Size  Location     Type
@@ -10115,19 +10115,19 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
   9934                           ; Regs used in _SoundLevel_Init: [wreg+status,2+status,0+pclath+cstack]
   9935                           
   9936                           
-  9937                           ;sound_level.c: 288: LED_Init();
+  9937                           ;sound_level.c: 287: LED_Init();
   9938  0DDF  3189  2153  318D   	fcall	_LED_Init
   9939  0DE2                     l5915:
   9940                           
-  9941                           ;sound_level.c: 290: PMD0bits.IOCMD = 0;
+  9941                           ;sound_level.c: 289: PMD0bits.IOCMD = 0;
   9942  0DE2  014F               	movlb	15	; select bank15
   9943  0DE3  1016               	bcf	22,0	;volatile
   9944  0DE4                     l5917:
   9945                           
-  9946                           ;sound_level.c: 292: powerMic_Init();
+  9946                           ;sound_level.c: 291: powerMic_Init();
   9947  0DE4  3187  27FA  318D   	fcall	_powerMic_Init
   9948                           
-  9949                           ;sound_level.c: 293: _delay((unsigned long)((1)*(32000000/4000.0)));
+  9949                           ;sound_level.c: 292: _delay((unsigned long)((1)*(32000000/4000.0)));
   9950  0DE7  300B               	movlw	11
   9951  0DE8  0140               	movlb	0	; select bank0
   9952  0DE9  00A2               	movwf	??_SoundLevel_Init
@@ -10140,11 +10140,11 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
   9959  0DEF  0000               	nop
   9960  0DF0                     l5919:
   9961                           
-  9962                           ;sound_level.c: 294: nWakeMic_Init();
+  9962                           ;sound_level.c: 293: nWakeMic_Init();
   9963  0DF0  3189  2100  318D   	fcall	_nWakeMic_Init
   9964  0DF3                     l5921:
   9965                           
-  9966                           ;sound_level.c: 295: _delay((unsigned long)((1)*(32000000/4000.0)));
+  9966                           ;sound_level.c: 294: _delay((unsigned long)((1)*(32000000/4000.0)));
   9967  0DF3  300B               	movlw	11
   9968  0DF4  0140               	movlb	0	; select bank0
   9969  0DF5  00A2               	movwf	??_SoundLevel_Init
@@ -10156,20 +10156,20 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
   9975  0DFA  2DF7               	goto	u6277
   9976  0DFB  0000               	nop
   9977                           
-  9978                           ;sound_level.c: 297: READY_Init();
+  9978                           ;sound_level.c: 296: READY_Init();
   9979  0DFC  3188  20DB  318D   	fcall	_READY_Init
   9980                           
-  9981                           ;sound_level.c: 298: DOUT_Init();
+  9981                           ;sound_level.c: 297: DOUT_Init();
   9982  0DFF  3188  20E3  318D   	fcall	_DOUT_Init
   9983                           
-  9984                           ;sound_level.c: 299: VDDAMP_Init();
+  9984                           ;sound_level.c: 298: VDDAMP_Init();
   9985  0E02  3188  20F4  318D   	fcall	_VDDAMP_Init
   9986                           
-  9987                           ;sound_level.c: 300: VDDBIAS_Init();
+  9987                           ;sound_level.c: 299: VDDBIAS_Init();
   9988  0E05  3189  215E  318D   	fcall	_VDDBIAS_Init
   9989  0E08                     l5923:
   9990                           
-  9991                           ;sound_level.c: 301: _delay((unsigned long)((1)*(32000000/4000.0)));
+  9991                           ;sound_level.c: 300: _delay((unsigned long)((1)*(32000000/4000.0)));
   9992  0E08  300B               	movlw	11
   9993  0E09  0140               	movlb	0	; select bank0
   9994  0E0A  00A2               	movwf	??_SoundLevel_Init
@@ -10182,24 +10182,24 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
  10001  0E10  0000               	nop
  10002  0E11                     l5925:
  10003                           
- 10004                           ;sound_level.c: 315: PIE0bits.IOCIE = 1;
+ 10004                           ;sound_level.c: 314: PIE0bits.IOCIE = 1;
  10005  0E11  014E               	movlb	14	; select bank14
  10006  0E12  1616               	bsf	22,4	;volatile
  10007  0E13                     l5927:
  10008                           
- 10009                           ;sound_level.c: 317: IOCCFbits.IOCCF6 = 0;
+ 10009                           ;sound_level.c: 316: IOCCFbits.IOCCF6 = 0;
  10010  0E13  017E               	movlb	62	; select bank62
  10011  0E14  1355               	bcf	85,6	;volatile
  10012  0E15                     l5929:
  10013                           
- 10014                           ;sound_level.c: 319: IOCCNbits.IOCCN6 = 0;
+ 10014                           ;sound_level.c: 318: IOCCNbits.IOCCN6 = 0;
  10015  0E15  1354               	bcf	84,6	;volatile
  10016  0E16                     l5931:
  10017                           
- 10018                           ;sound_level.c: 321: IOCCPbits.IOCCP6 = 1;
+ 10018                           ;sound_level.c: 320: IOCCPbits.IOCCP6 = 1;
  10019  0E16  1753               	bsf	83,6	;volatile
  10020                           
- 10021                           ;sound_level.c: 323: IOCCF6_SetInterruptHandler(ISR_MIC_Wake);
+ 10021                           ;sound_level.c: 322: IOCCF6_SetInterruptHandler(ISR_MIC_Wake);
  10022  0E17  303F               	movlw	low _ISR_MIC_Wake
  10023  0E18  0140               	movlb	0	; select bank0
  10024  0E19  00A0               	movwf	IOCCF6_SetInterruptHandler@InterruptHandler
@@ -10208,7 +10208,7 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
  10027  0E1C  3189  212D  318D   	fcall	_IOCCF6_SetInterruptHandler
  10028  0E1F                     l5933:
  10029                           
- 10030                           ;sound_level.c: 326: adcScaler = 3.3 / (4095 * 0.01258925 * 44);
+ 10030                           ;sound_level.c: 325: adcScaler = 3.3 / (4095 * 0.01258925 * 44);
  10031  0E1F  30AF               	movlw	175
  10032  0E20  0142               	movlb	2	; select bank2
  10033  0E21  00A0               	movwf	_adcScaler^(0+256)
@@ -10218,11 +10218,11 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
  10037  0E25  00A2               	movwf	(_adcScaler+2)^(0+256)
  10038  0E26                     l5935:
  10039                           
- 10040                           ;sound_level.c: 329: ADCC_Initialize();
+ 10040                           ;sound_level.c: 328: ADCC_Initialize();
  10041  0E26  318B  230A  318D   	fcall	_ADCC_Initialize
  10042  0E29                     l5937:
  10043                           
- 10044                           ;sound_level.c: 330: ADCC_SetADIInterruptHandler(SoundLevel_GetSample);
+ 10044                           ;sound_level.c: 329: ADCC_SetADIInterruptHandler(SoundLevel_GetSample);
  10045  0E29  30AE               	movlw	low _SoundLevel_GetSample
  10046  0E2A  0140               	movlb	0	; select bank0
  10047  0E2B  00A0               	movwf	ADCC_SetADIInterruptHandler@InterruptHandler
@@ -10231,7 +10231,7 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
  10050  0E2E  3189  2124  318D   	fcall	_ADCC_SetADIInterruptHandler
  10051  0E31                     l5939:
  10052                           
- 10053                           ;sound_level.c: 333: WDT_Init();
+ 10053                           ;sound_level.c: 332: WDT_Init();
  10054  0E31  3188  20FA  318D   	fcall	_WDT_Init
  10055  0E34                     l279:
  10056  0E34  0008               	return
@@ -10402,12 +10402,12 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
  10206                           ; Regs used in _WDT_Init: [wreg]
  10207                           
  10208                           
- 10209                           ;sound_level.c: 281: WDTCON0 = 0x20;
- 10210  08FA  3020               	movlw	32
+ 10209                           ;sound_level.c: 280: WDTCON0 = 0x1C;
+ 10210  08FA  301C               	movlw	28
  10211  08FB  0150               	movlb	16	; select bank16
  10212  08FC  008C               	movwf	12	;volatile
  10213                           
- 10214                           ;sound_level.c: 282: WDTCON1 = 0x07;
+ 10214                           ;sound_level.c: 281: WDTCON1 = 0x07;
  10215  08FD  3007               	movlw	7
  10216  08FE  008D               	movwf	13	;volatile
  10217  08FF                     l276:
@@ -10861,7 +10861,7 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
  10640  08D5                     __ptext40:	
  10641 ;; *************** function _SoundLevel_LedOn *****************
  10642 ;; Defined at:
- 10643 ;;		line 566 in file "Sensors/sound_level.c"
+ 10643 ;;		line 565 in file "Sensors/sound_level.c"
  10644 ;; Parameters:    Size  Location     Type
  10645 ;;		None
  10646 ;; Auto vars:     Size  Location     Type
@@ -10901,7 +10901,7 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
  10675  08D5                     l346:	
  10676                           ;incstack = 0
  10677                           ; Regs used in _SoundLevel_LedOn: []
- 10678                           ;sound_level.c: 568: do { LATBbits.LATB6 = 1; } while(0);
+ 10678                           ;sound_level.c: 567: do { LATBbits.LATB6 = 1; } while(0);
  10679                           
  10680  08D5  0140               	movlb	0	; select bank0
  10681  08D6  1719               	bsf	25,6	;volatile
@@ -10913,7 +10913,7 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
  10687  08D2                     __ptext41:	
  10688 ;; *************** function _SoundLevel_LedOff *****************
  10689 ;; Defined at:
- 10690 ;;		line 573 in file "Sensors/sound_level.c"
+ 10690 ;;		line 572 in file "Sensors/sound_level.c"
  10691 ;; Parameters:    Size  Location     Type
  10692 ;;		None
  10693 ;; Auto vars:     Size  Location     Type
@@ -10954,7 +10954,7 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
  10723  08D2                     l351:	
  10724                           ;incstack = 0
  10725                           ; Regs used in _SoundLevel_LedOff: []
- 10726                           ;sound_level.c: 575: do { LATBbits.LATB6 = 0; } while(0);
+ 10726                           ;sound_level.c: 574: do { LATBbits.LATB6 = 0; } while(0);
  10727                           
  10728  08D2  0140               	movlb	0	; select bank0
  10729  08D3  1319               	bcf	25,6	;volatile
@@ -11284,7 +11284,7 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
  11033  0A01                     __ptext46:	
  11034 ;; *************** function _SoundLevel_GetData *****************
  11035 ;; Defined at:
- 11036 ;;		line 469 in file "Sensors/sound_level.c"
+ 11036 ;;		line 468 in file "Sensors/sound_level.c"
  11037 ;; Parameters:    Size  Location     Type
  11038 ;;  data            1    0[BANK0 ] PTR unsigned char 
  11039 ;;		 -> mData(2), 
@@ -11328,7 +11328,7 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
  11072                           ; Regs used in _SoundLevel_GetData: [wregfsr1]
  11073                           
  11074                           
- 11075                           ;sound_level.c: 470: *length = 2;
+ 11075                           ;sound_level.c: 469: *length = 2;
  11076  0A01  3002               	movlw	2
  11077  0A02  0140               	movlb	0	; select bank0
  11078  0A03  00A2               	movwf	??_SoundLevel_GetData
@@ -11338,7 +11338,7 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
  11082  0A07  0822               	movf	??_SoundLevel_GetData,w
  11083  0A08  0081               	movwf	1
  11084                           
- 11085                           ;sound_level.c: 471: data[0] = measurementData[0];
+ 11085                           ;sound_level.c: 470: data[0] = measurementData[0];
  11086  0A09  0141               	movlb	1	; select bank1
  11087  0A0A  0849               	movf	_measurementData^(0+128),w	;volatile
  11088  0A0B  0140               	movlb	0	; select bank0
@@ -11349,7 +11349,7 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
  11093  0A10  0822               	movf	??_SoundLevel_GetData,w
  11094  0A11  0081               	movwf	1
  11095                           
- 11096                           ;sound_level.c: 472: data[1] = measurementData[1];
+ 11096                           ;sound_level.c: 471: data[1] = measurementData[1];
  11097  0A12  0141               	movlb	1	; select bank1
  11098  0A13  084A               	movf	(_measurementData^(0+128)+1),w	;volatile
  11099  0A14  0140               	movlb	0	; select bank0
@@ -12479,7 +12479,7 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
  12163  093F                     __ptext59:	
  12164 ;; *************** function _ISR_MIC_Wake *****************
  12165 ;; Defined at:
- 12166 ;;		line 619 in file "Sensors/sound_level.c"
+ 12166 ;;		line 618 in file "Sensors/sound_level.c"
  12167 ;; Parameters:    Size  Location     Type
  12168 ;;		None
  12169 ;; Auto vars:     Size  Location     Type
@@ -12520,11 +12520,11 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
  12199                           ; Regs used in _ISR_MIC_Wake: [wreg+status,2+status,0]
  12200                           
  12201                           
- 12202                           ;sound_level.c: 621: __nop();
+ 12202                           ;sound_level.c: 620: __nop();
  12203  093F  0000               	nop
  12204  0940                     i1l3075:
  12205                           
- 12206                           ;sound_level.c: 622: if(!measurementRunning)
+ 12206                           ;sound_level.c: 621: if(!measurementRunning)
  12207  0940  0141               	movlb	1	; select bank1
  12208  0941  0852               	movf	_measurementRunning^(0+128),w
  12209  0942  1D03               	btfss	3,2
@@ -12535,7 +12535,7 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
  12214  0946                     u225_20:
  12215  0946                     i1l3077:
  12216                           
- 12217                           ;sound_level.c: 623: {;sound_level.c: 624: soundinterrupt = 1;
+ 12217                           ;sound_level.c: 622: {;sound_level.c: 623: soundinterrupt = 1;
  12218  0946  01D3               	clrf	_soundinterrupt^(0+128)
  12219  0947  0AD3               	incf	_soundinterrupt^(0+128),f
  12220  0948                     i1l375:
@@ -13187,7 +13187,7 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
  12830  0BAE                     __ptext67:	
  12831 ;; *************** function _SoundLevel_GetSample *****************
  12832 ;; Defined at:
- 12833 ;;		line 538 in file "Sensors/sound_level.c"
+ 12833 ;;		line 537 in file "Sensors/sound_level.c"
  12834 ;; Parameters:    Size  Location     Type
  12835 ;;		None
  12836 ;; Auto vars:     Size  Location     Type
@@ -13230,7 +13230,7 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
  12868                           ; Regs used in _SoundLevel_GetSample: [wreg+fsr1l+fsr1h+status,2+status,0+pclath+cstack]
  12869                           
  12870                           
- 12871                           ;sound_level.c: 540: sampleArray[sampleCounter] = ADCC_GetConversionResult();
+ 12871                           ;sound_level.c: 539: sampleArray[sampleCounter] = ADCC_GetConversionResult();
  12872  0BAE  3188  20E8  318B   	fcall	_ADCC_GetConversionResult
  12873  0BB1  0141               	movlb	1	; select bank1
  12874  0BB2  084C               	movf	(_sampleCounter+1)^(0+128),w
@@ -13255,14 +13255,14 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
  12893  0BC5  3FC1               	movwi [1]fsr1
  12894  0BC6                     i1l3133:
  12895                           
- 12896                           ;sound_level.c: 546: sampleCounter++;
+ 12896                           ;sound_level.c: 545: sampleCounter++;
  12897  0BC6  3001               	movlw	1
  12898  0BC7  07CB               	addwf	_sampleCounter^(0+128),f
  12899  0BC8  3000               	movlw	0
  12900  0BC9  3DCC               	addwfc	(_sampleCounter+1)^(0+128),f
  12901  0BCA                     i1l3135:
  12902                           
- 12903                           ;sound_level.c: 547: if(sampleCounter>400-1){
+ 12903                           ;sound_level.c: 546: if(sampleCounter>400-1){
  12904  0BCA  3001               	movlw	1
  12905  0BCB  024C               	subwf	(_sampleCounter+1)^(0+128),w
  12906  0BCC  3090               	movlw	144
@@ -13276,11 +13276,11 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
  12914  0BD3                     u227_20:
  12915  0BD3                     i1l3137:
  12916                           
- 12917                           ;sound_level.c: 548: SoundLevel_StopADC();
+ 12917                           ;sound_level.c: 547: SoundLevel_StopADC();
  12918  0BD3  3189  2106  318B   	fcall	_SoundLevel_StopADC
  12919  0BD6                     i1l3139:
  12920                           
- 12921                           ;sound_level.c: 549: sampling = 0;
+ 12921                           ;sound_level.c: 548: sampling = 0;
  12922  0BD6  0141               	movlb	1	; select bank1
  12923  0BD7  01D1               	clrf	_sampling^(0+128)
  12924  0BD8                     i1l337:
@@ -13291,7 +13291,7 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
  12929  0906                     __ptext68:	
  12930 ;; *************** function _SoundLevel_StopADC *****************
  12931 ;; Defined at:
- 12932 ;;		line 560 in file "Sensors/sound_level.c"
+ 12932 ;;		line 559 in file "Sensors/sound_level.c"
  12933 ;; Parameters:    Size  Location     Type
  12934 ;;		None
  12935 ;; Auto vars:     Size  Location     Type
@@ -13333,10 +13333,10 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
  12966                           ; Regs used in _SoundLevel_StopADC: [status,2+status,0+pclath+cstack]
  12967                           
  12968                           
- 12969                           ;sound_level.c: 561: ADCC_StopConversion();
+ 12969                           ;sound_level.c: 560: ADCC_StopConversion();
  12970  0906  3188  20C6  3189   	fcall	_ADCC_StopConversion
  12971                           
- 12972                           ;sound_level.c: 562: ADCC_DisableContinuousConversion();
+ 12972                           ;sound_level.c: 561: ADCC_DisableContinuousConversion();
  12973  0909  3188  20C3  3189   	fcall	_ADCC_DisableContinuousConversion
  12974  090C                     i1l343:
  12975  090C  0008               	return
@@ -14788,7 +14788,7 @@ SFR63                0      0       0      64        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.30 build 20200825195618 
-Symbol Table                                                                                   Wed Oct 28 15:13:04 2020
+Symbol Table                                                                                   Wed Oct 28 13:43:57 2020
 
                                ___altoft@exp 0034                                ___altoft@sign 0035  
                                          l40 04C5                                           l44 0432  

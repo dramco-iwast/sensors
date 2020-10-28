@@ -1,43 +1,46 @@
 
-# 1 "Sensors/sound_level.c"
+# 1 "system/i2c1.c"
 
-# 30 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\math.h"
-extern double fabs(double);
-extern double floor(double);
-extern double ceil(double);
-extern double modf(double, double *);
-extern double sqrt(double);
-extern double atof(const char *);
-extern double sin(double) ;
-extern double cos(double) ;
-extern double tan(double) ;
-extern double asin(double) ;
-extern double acos(double) ;
-extern double atan(double);
-extern double atan2(double, double) ;
-extern double log(double);
-extern double log10(double);
-extern double pow(double, double) ;
-extern double exp(double) ;
-extern double sinh(double) ;
-extern double cosh(double) ;
-extern double tanh(double);
-extern double eval_poly(double, const double *, int);
-extern double frexp(double, int *);
-extern double ldexp(double, int);
-extern double fmod(double, double);
-extern double trunc(double);
-extern double round(double);
+# 4 "C:/Users/Jona Cappelle/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\__size_t.h"
+typedef unsigned size_t;
 
-# 18 "C:/Users/Jona Cappelle/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\xc.h"
-extern const char __xc8_OPTIM_SPEED;
-
-extern double __fpnormalize(double);
+# 14 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\string.h"
+extern void * memcpy(void *, const void *, size_t);
+extern void * memmove(void *, const void *, size_t);
+extern void * memset(void *, int, size_t);
 
 
-# 13 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\xc8debug.h"
-#pragma intrinsic(__builtin_software_breakpoint)
-extern void __builtin_software_breakpoint(void);
+
+
+extern void * __builtin_memcpy(void *, const void *, size_t);
+#pragma intrinsic(__builtin_memcpy)
+
+# 36
+extern char * strcat(char *, const char *);
+extern char * strcpy(char *, const char *);
+extern char * strncat(char *, const char *, size_t);
+extern char * strncpy(char *, const char *, size_t);
+extern char * strdup(const char *);
+extern char * strtok(char *, const char *);
+
+
+extern int memcmp(const void *, const void *, size_t);
+extern int strcmp(const char *, const char *);
+extern int stricmp(const char *, const char *);
+extern int strncmp(const char *, const char *, size_t);
+extern int strnicmp(const char *, const char *, size_t);
+extern void * memchr(const void *, int, size_t);
+extern size_t strcspn(const char *, const char *);
+extern char * strpbrk(const char *, const char *);
+extern size_t strspn(const char *, const char *);
+extern char * strstr(const char *, const char *);
+extern char * stristr(const char *, const char *);
+extern char * strerror(int);
+extern size_t strlen(const char *);
+extern char * strchr(const char *, int);
+extern char * strichr(const char *, int);
+extern char * strrchr(const char *, int);
+extern char * strrichr(const char *, int);
 
 # 13 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\stdint.h"
 typedef signed char int8_t;
@@ -124,6 +127,22 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
+
+# 15 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\stdbool.h"
+typedef unsigned char bool;
+
+# 6 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\stddef.h"
+typedef int ptrdiff_t;
+
+# 18 "C:/Users/Jona Cappelle/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\xc.h"
+extern const char __xc8_OPTIM_SPEED;
+
+extern double __fpnormalize(double);
+
+
+# 13 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\xc8debug.h"
+#pragma intrinsic(__builtin_software_breakpoint)
+extern void __builtin_software_breakpoint(void);
 
 
 # 7 "C:/Users/Jona Cappelle/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\builtins.h"
@@ -18448,129 +18467,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 
-# 15 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\stdbool.h"
-typedef unsigned char bool;
-
-# 63 "Sensors/../global.h"
-typedef struct devApi{
-void (* Init)(void);
-void (* Measure)(void);
-void (* Loop)(void);
-void (* GetData)(uint8_t *, uint8_t *);
-void (* UpdateThreshold)(uint8_t, uint8_t *);
-} Device_API_t;
-
-
-# 77
-#pragma config FEXTOSC = OFF
-#pragma config RSTOSC = HFINT1
-#pragma config CLKOUTEN = OFF
-#pragma config CSWEN = ON
-#pragma config FCMEN = ON
-
-
-#pragma config MCLRE = ON
-#pragma config PWRTS = OFF
-#pragma config LPBOREN = OFF
-#pragma config BOREN = OFF
-#pragma config BORV = LO
-#pragma config ZCDDIS = OFF
-#pragma config PPS1WAY = ON
-#pragma config STVREN = ON
-
-
-
-#pragma config WDTCPS = WDTCPS_31
-#pragma config WDTE = SWDTEN
-
-#pragma config WDTCWS = WDTCWS_7
-#pragma config WDTCCS = SC
-
-
-#pragma config BBSIZE = BB512
-#pragma config BBEN = OFF
-#pragma config SAFEN = OFF
-#pragma config WRTAPP = OFF
-#pragma config WRTB = OFF
-#pragma config WRTC = OFF
-#pragma config WRTD = OFF
-#pragma config WRTSAF = OFF
-#pragma config LVP = ON
-
-
-#pragma config CP = OFF
-
-# 224 "Sensors/sound_level.h"
-void SoundLevel_Init(void);
-void SoundLevel_Measure(void);
-void SoundLevel_Loop(void);
-void SoundLevel_GetData(uint8_t * data, uint8_t * length);
-void SoundLevel_SetThreshold(uint8_t metric, uint8_t * thresholdData);
-
-# 95 "Sensors/../system/pin_manager.h"
-void PIN_MANAGER_IOC(void);
-
-# 108
-void IOCCF0_ISR(void);
-
-# 131
-void IOCCF0_SetInterruptHandler(void (* InterruptHandler)(void));
-
-# 155
-extern void (*IOCCF0_InterruptHandler)(void);
-
-# 179
-void IOCCF0_DefaultInterruptHandler(void);
-
-# 192
-void IOCCF2_ISR(void);
-
-# 215
-void IOCCF2_SetInterruptHandler(void (* InterruptHandler)(void));
-
-# 239
-extern void (*IOCCF2_InterruptHandler)(void);
-
-# 263
-void IOCCF2_DefaultInterruptHandler(void);
-
-# 276
-void IOCCF4_ISR(void);
-
-# 299
-void IOCCF4_SetInterruptHandler(void (* InterruptHandler)(void));
-
-# 323
-extern void (*IOCCF4_InterruptHandler)(void);
-
-# 347
-void IOCCF4_DefaultInterruptHandler(void);
-
-# 360
-void IOCCF6_ISR(void);
-
-# 383
-void IOCCF6_SetInterruptHandler(void (* InterruptHandler)(void));
-
-# 407
-extern void (*IOCCF6_InterruptHandler)(void);
-
-# 431
-void IOCCF6_DefaultInterruptHandler(void);
-
-# 15 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\stdbool.h"
-typedef unsigned char bool;
-
-# 15
-typedef unsigned char bool;
-
-# 4 "C:/Users/Jona Cappelle/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\__size_t.h"
-typedef unsigned size_t;
-
-# 6 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\stddef.h"
-typedef int ptrdiff_t;
-
-# 80 "Sensors/../system/i2c1.h"
+# 80 "system/i2c1.h"
 typedef enum{
 I2C1_SLAVE_WRITE_REQUEST,
 I2C1_SLAVE_READ_REQUEST,
@@ -18595,668 +18492,196 @@ void I2C1_SetTransmitData(uint8_t * data, uint8_t len);
 bool I2C1_TxBufferEmpty(void);
 void I2C1_ClearTxBuffer(void);
 
-# 15 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\stdbool.h"
-typedef unsigned char bool;
+# 53 "system/i2c1.c"
+typedef enum {
+SLAVE_COMMAND_DATA,
+SLAVE_COMMAND,
+} SLAVE_WRITE_DATA_TYPE;
 
-# 47 "Sensors/../system/adcc.h"
-typedef uint16_t adc_result_t;
+# 62
+volatile uint8_t I2C1_slaveWriteData = 0x55;
 
-# 64
-typedef enum
-{
-channel_ANC1 = 0x11,
-channel_Vss = 0x3B,
-channel_Temp_Sensor = 0x3C,
-channel_DAC1_Output = 0x3D,
-channel_FVR_Buffer1 = 0x3E,
-channel_FVR_Buffer2 = 0x3F
-} adcc_channel_t;
 
-# 106
-void ADCC_Initialize(void);
 
-# 135
-void ADCC_StartConversion(adcc_channel_t channel);
+static uint8_t i2c1_rx_buffer[32];
+static uint8_t i2c1_tx_buffer[32];
 
-# 165
-bool ADCC_IsConversionDone();
+static uint8_t cmdByte;
+static bool cmdReceived;
+static uint8_t rxLen;
+static uint8_t txLen;
+static uint8_t txCnt;
 
-# 197
-adc_result_t ADCC_GetConversionResult(void);
+# 78
+void I2C1_StatusCallback(I2C1_SLAVE_DRIVER_STATUS i2c_bus_state);
 
-# 228
-adc_result_t ADCC_GetSingleConversion(adcc_channel_t channel);
+# 91
+void I2C1_Initialize(uint8_t slave_address){
 
-# 253
-void ADCC_StopConversion(void);
+PMD6bits.MSSP1MD = 0;
 
-# 280
-void ADCC_SetStopOnInterrupt(void);
+ANSELBbits.ANSB5 = 0;
+ANSELBbits.ANSB7 = 0;
 
-# 305
-void ADCC_DischargeSampleCapacitor(void);
+TRISBbits.TRISB5 = 1;
+TRISBbits.TRISB7 = 1;
 
-# 331
-void ADCC_LoadAcquisitionRegister(uint16_t);
+SSP1CLKPPS = 0x0F;
+RB7PPS = 0x13;
+RB5PPS = 0x14;
+SSP1DATPPS = 0x0D;
 
-# 357
-void ADCC_SetPrechargeTime(uint16_t);
 
-# 382
-void ADCC_SetRepeatCount(uint8_t);
+SSP1STAT = 0x00;
 
-# 410
-uint8_t ADCC_GetCurrentCountofConversions(void);
+SSP1CON1 = 0x26;
 
-# 434
-void ADCC_ClearAccumulator(void);
+SSP1CON2 = 0x01;
 
-# 459
-uint24_t ADCC_GetAccumulatorValue(void);
+SSP1CON3 = 0x00;
 
-# 487
-bool ADCC_HasAccumulatorOverflowed(void);
+SSP1CON3bits.DHEN = 1;
 
-# 512
-uint16_t ADCC_GetFilterValue(void);
+SSP1MSK = (0x7F << 1);
 
-# 540
-uint16_t ADCC_GetPreviousResult(void);
+SSP1ADD = (slave_address << 1);
 
-# 566
-void ADCC_DefineSetPoint(uint16_t);
 
-# 592
-void ADCC_SetUpperThreshold(uint16_t);
 
-# 618
-void ADCC_SetLowerThreshold(uint16_t);
+PIR3bits.SSP1IF = 0;
 
-# 645
-uint16_t ADCC_GetErrorCalculation(void);
+PIE3bits.SSP1IE = 1;
 
-# 672
-void ADCC_EnableDoubleSampling(void);
-
-# 696
-void ADCC_EnableContinuousConversion(void);
-
-# 720
-void ADCC_DisableContinuousConversion(void);
-
-# 748
-bool ADCC_HasErrorCrossedUpperThreshold(void);
-
-# 776
-bool ADCC_HasErrorCrossedLowerThreshold(void);
-
-# 803
-uint8_t ADCC_GetConversionStageStatus(void);
-
-# 820
-void ADCC_SetADIInterruptHandler(void (* InterruptHandler)(void));
-
-# 836
-void ADCC_ISR(void);
-
-# 855
-void ADCC_DefaultInterruptHandler(void);
-
-# 44 "Sensors/../system/system.h"
-void SYSTEM_Initialize(uint8_t slave_address);
-
-# 57
-void OSCILLATOR_Initialize(void);
-
-# 70
-void PMD_Initialize(void);
-
-# 52 "Sensors/sound_level.c"
-void SoundLevel_PrepareData(void);
-
-
-void SoundLevel_StartADC(void);
-
-
-void SoundLevel_StopADC(void);
-
-
-void SoundLevel_GetSample(void);
-
-
-void SoundLevel_LedOn(void);
-
-
-void SoundLevel_LedOff(void);
-
-
-void SoundLevel_LedToggle(void);
-
-
-void generateInt(void);
-
-
-void measure(void);
-
-
-static void EnterSleep(void);
-
-
-void LED_Init(void);
-
-
-void LED_DeInit(void);
-
-
-void LED_Blink(void);
-
-
-void powerMic_Init(void);
-
-
-void nWakeMic_Init(void);
-
-
-void READY_Init(void);
-
-
-void WDT_Init(void);
-
-
-void ISR_MIC_Wake(void);
-
-
-void DOUT_Init(void);
-
-
-void VDDAMP_Init();
-void VDDBIAS_Init();
-
-void AMPS_enable(bool enable);
-
-void MIC_Mode(uint8_t mode);
-
-
-
-bool soundinterrupt = 0;
-
-
-float presSumSquared;
-float adcScaler;
-bool measurementRunning;
-bool sampling = 0;
-uint16_t sampleCounter = 0;
-
-volatile uint8_t measurementData[2];
-uint8_t dLen = 0;
-
-
-__persistent uint8_t thresholdEnabled;
-__persistent uint16_t thresholdLevel;
-
-bool polledMeasurement = 0;
-bool overThreshold = 0;
-
-uint16_t sampleArray[400];
-
-
-
-
-void LED_Init(void)
-{
-
-do { ANSELBbits.ANSB6 = 0; } while(0);
-do { TRISBbits.TRISB6 = 0; } while(0);
-SoundLevel_LedOff();
-LED_Blink();
-
+txCnt = 0;
+rxLen = 0;
+cmdReceived = 0;
 }
 
+void I2C1_ISR(void){
+uint8_t i2c_data = 0x00;
 
-void LED_DeInit(void)
-{
 
-TRISBbits.TRISB6 = 1;
 
-}
 
+PIE3bits.SSP1IE = 0;
+PIR3bits.SSP1IF = 0;
+i2c_data = SSP1BUF;
+if(1 == SSP1STATbits.R_nW){
+if((1 == SSP1STATbits.D_nA) && (1 == SSP1CON2bits.ACKSTAT)){
 
-void LED_Blink(void)
-{
-SoundLevel_LedOn();
-_delay((unsigned long)((100)*(32000000/4000.0)));
-SoundLevel_LedOff();
-_delay((unsigned long)((100)*(32000000/4000.0)));
-SoundLevel_LedOn();
-_delay((unsigned long)((100)*(32000000/4000.0)));
-SoundLevel_LedOff();
-_delay((unsigned long)((500)*(32000000/4000.0)));
-SoundLevel_LedOn();
-_delay((unsigned long)((100)*(32000000/4000.0)));
-SoundLevel_LedOff();
-_delay((unsigned long)((100)*(32000000/4000.0)));
-SoundLevel_LedOn();
-_delay((unsigned long)((100)*(32000000/4000.0)));
-SoundLevel_LedOff();
-}
-
-void powerMic_Init(void)
-{
-do { ANSELCbits.ANSC0 = 0; } while(0);
-do { TRISCbits.TRISC0 = 0; } while(0);
-do { LATCbits.LATC0 = 0; } while(0);
-
-}
-
-void nWakeMic_Init(void)
-{
-do { ANSELCbits.ANSC3 = 0; } while(0);
-do { TRISCbits.TRISC3 = 0; } while(0);
-do { LATCbits.LATC3 = 0; } while(0);
-
-}
-
-void MIC_Mode(uint8_t mode)
-{
-switch(mode)
-{
-case 1:
-do { LATCbits.LATC3 = 0; } while(0);
-
-break;
-
-case 2:
-
-do { LATCbits.LATC3 = 1; } while(0);
-
-break;
-
-default:
-do { LATCbits.LATC3 = 0; } while(0);
-}
-}
-
-void READY_Init(void)
-{
-do { TRISCbits.TRISC7 = 0; } while(0);
-do { LATCbits.LATC7 = 1; } while(0);
-}
-
-void DOUT_Init(void)
-{
-do { ANSELCbits.ANSC6 = 0; } while(0);
-do { TRISCbits.TRISC6 = 1; } while(0);
-
-
-
-}
-
-void VDDAMP_Init()
-{
-do { ANSELCbits.ANSC4 = 0; } while(0);
-do { TRISCbits.TRISC4 = 0; } while(0);
-do { LATCbits.LATC4 = 0; } while(0);
-
-}
-
-void VDDBIAS_Init()
-{
-do { ANSELCbits.ANSC2 = 0; } while(0);
-do { TRISCbits.TRISC2 = 0; } while(0);
-do { LATCbits.LATC2 = 0; } while(0);
-
-
-do { ANSELBbits.ANSB4 = 0; } while(0);
-do { TRISBbits.TRISB4 = 0; } while(0);
-do { LATBbits.LATB4 = 0; } while(0);
-
-}
-
-void AMPS_enable(bool enable)
-{
-switch(enable)
-{
-case 1:
-do { LATBbits.LATB4 = 1; } while(0);
-do { LATCbits.LATC2 = 1; } while(0);
-do { LATCbits.LATC4 = 1; } while(0);
-_delay((unsigned long)((100)*(32000000/4000.0)));
-break;
-
-case 0:
-do { LATBbits.LATB4 = 0; } while(0);
-do { LATCbits.LATC2 = 0; } while(0);
-do { LATCbits.LATC4 = 0; } while(0);
-break;
-
-default:
-do { LATBbits.LATB4 = 0; } while(0);
-do { LATCbits.LATC2 = 0; } while(0);
-do { LATCbits.LATC4 = 0; } while(0);
-}
-}
-
-
-void WDT_Init(void)
-{
-
-
-WDTCON0 = 0x20;
-WDTCON1 = 0x07;
-}
-
-
-void SoundLevel_Init(void){
-
-LED_Init();
-
-PMD0bits.IOCMD = 0;
-
-powerMic_Init();
-_delay((unsigned long)((1)*(32000000/4000.0)));
-nWakeMic_Init();
-_delay((unsigned long)((1)*(32000000/4000.0)));
-
-READY_Init();
-DOUT_Init();
-VDDAMP_Init();
-VDDBIAS_Init();
-_delay((unsigned long)((1)*(32000000/4000.0)));
-
-# 315
-PIE0bits.IOCIE = 1;
-
-IOCCFbits.IOCCF6 = 0;
-
-IOCCNbits.IOCCN6 = 0;
-
-IOCCPbits.IOCCP6 = 1;
-
-IOCCF6_SetInterruptHandler(ISR_MIC_Wake);
-
-
-adcScaler = 3.3 / (4095 * 0.01258925 * 44);
-
-
-ADCC_Initialize();
-ADCC_SetADIInterruptHandler(SoundLevel_GetSample);
-
-
-WDT_Init();
-
-# 345
-}
-
-# 349
-void SoundLevel_Measure(){
-polledMeasurement = 1;
-}
-
-# 355
-void SoundLevel_Loop(void){
-
-
-
-if(polledMeasurement && (WDTCON0bits.SEN == 0))
-{
-if(thresholdEnabled)
-{
-measurementRunning = 1;
-measure();
-measurementRunning = 0;
-
-generateInt();
-
-MIC_Mode(2);
-
-
-polledMeasurement = 0;
-}
-else if(!thresholdEnabled)
-{
-do { LATCbits.LATC0 = 1; } while(0);
-_delay((unsigned long)((1)*(32000000/4000.0)));
-
-measurementRunning = 1;
-measure();
-measurementRunning = 0;
-
-generateInt();
-
-do { LATCbits.LATC0 = 0; } while(0);
-_delay((unsigned long)((1)*(32000000/4000.0)));
-MIC_Mode(1);
-
-polledMeasurement = 0;
-}
-}
-else if(polledMeasurement && (WDTCON0bits.SEN == 1))
-{
-do { LATCbits.LATC0 = 1; } while(0);
-_delay((unsigned long)((1)*(32000000/4000.0)));
-
-measurementRunning = 1;
-measure();
-measurementRunning = 0;
-
-generateInt();
-
-# 407
-MIC_Mode(2);
-
-WDTCON0bits.SEN = 0;
-
-polledMeasurement = 0;
-}
-else if(soundinterrupt)
-{
-measurementRunning = 1;
-measure();
-measurementRunning = 0;
-
-if(overThreshold)
-{
-asm("clrwdt");
-WDTCON0bits.SEN = 1;
-
-generateInt();
-
-do { LATCbits.LATC0 = 0; } while(0);
-
-MIC_Mode(1);
-}else
-{
-MIC_Mode(1);
-_delay((unsigned long)((10)*(32000000/4000.0)));
-
-MIC_Mode(2);
-
-}
-
-soundinterrupt = 0;
-}
-else if(STATUSbits.nTO == 0)
-{
-WDTCON0bits.SEN = 0;
-
-do { LATCbits.LATC0 = 1; } while(0);
-_delay((unsigned long)((1)*(32000000/4000.0)));
-MIC_Mode(2);
-
-
-EnterSleep();
-}
-else
-{
-EnterSleep();
-}
-
-
-
-}
-
-static void EnterSleep(void){
-CPUDOZEbits.IDLEN = 0;
-__nop();
-asm("sleep");
-__nop();
-__nop();
-}
-
-
-void SoundLevel_GetData(uint8_t * data, uint8_t * length){
-*length = 2;
-data[0] = measurementData[0];
-data[1] = measurementData[1];
-}
-
-
-void SoundLevel_SetThreshold(uint8_t metric, uint8_t * thresholdData){
-if(metric == 0){
-thresholdEnabled = thresholdData[0];
-thresholdLevel = (uint16_t)((thresholdData[3]<<8) | thresholdData[4]);
-
-if(thresholdEnabled)
-{
-do { LATCbits.LATC0 = 1; } while(0);
-_delay((unsigned long)((1)*(32000000/4000.0)));
-MIC_Mode(2);
-
-}
-}
-}
-
-
-void SoundLevel_PrepareData(){
-float dBZ = 0;
-uint32_t sampleSum = 0;
-
-float mean = 0;
-for(int i=0; i<400; i++)
-{
-mean += sampleArray[i];
-}
-mean /= 400;
-
-for(int i=0; i<400; i++)
-{
-float signal = (sampleArray[i] - mean) * adcScaler;
-signal *= signal;
-presSumSquared += signal;
-}
-
-float presAvgSquared = presSumSquared/400;
-
-if( (presAvgSquared/(20e-6 * 20e-6)) != 0.0 )
-{
-dBZ = 10 * log10(presAvgSquared/(20e-6 * 20e-6));
-}else{
-dBZ = 0;
-}
-
-if(dBZ > 106){
-dBZ = 106;
-}
-
-uint16_t dataToSend = (uint16_t)(round(dBZ * 600));
-
-measurementData[0] = (uint8_t)(dataToSend>>8);
-measurementData[1] = (uint8_t)(dataToSend);
-
-
-if(dataToSend > thresholdLevel){
-overThreshold = 1;
+I2C1_StatusCallback(I2C1_SLAVE_READ_COMPLETED);
 }
 else{
-overThreshold = 0;
+
+I2C1_StatusCallback(I2C1_SLAVE_READ_REQUEST);
+SSP1CON1bits.CKP = 1;
+
 }
 }
+else if(0 == SSP1STATbits.D_nA){
 
 
-void SoundLevel_GetSample(){
 
-sampleArray[sampleCounter] = ADCC_GetConversionResult();
-
-# 546
-sampleCounter++;
-if(sampleCounter>400-1){
-SoundLevel_StopADC();
-sampling = 0;
+I2C1_StatusCallback(I2C1_SLAVE_WRITE_REQUEST);
 }
-}
+else{
+I2C1_slaveWriteData = i2c_data;
 
 
-void SoundLevel_StartADC(){
-ADCC_EnableContinuousConversion();
-ADCC_StartConversion(channel_ANC1);
+I2C1_StatusCallback(I2C1_SLAVE_WRITE_COMPLETED);
+SSP1CON1bits.CKP = 1;
+while(!PIR3bits.SSP1IF);
 }
 
 
-void SoundLevel_StopADC(){
-ADCC_StopConversion();
-ADCC_DisableContinuousConversion();
+PIR3bits.SSP1IF = 0;
+SSP1CON1bits.CKP = 1;
+
+PIE3bits.SSP1IE = 1;
 }
 
-
-void SoundLevel_LedOn(void){
-
-do { LATBbits.LATB6 = 1; } while(0);
-
+bool I2C1_CommandReceived(void){
+return cmdReceived;
 }
 
-
-void SoundLevel_LedOff(void){
-
-do { LATBbits.LATB6 = 0; } while(0);
-
+bool I2C1_TxBufferEmpty(void){
+return (txCnt != 0);
 }
 
-
-void SoundLevel_LedToggle(void){
-
-do { LATBbits.LATB6 = ~LATBbits.LATB6; } while(0);
-
+void I2C1_GetCommand(uint8_t * cmd){
+*cmd = cmdByte;
+cmdReceived = 0;
 }
 
-
-void generateInt(void){
-do { LATCbits.LATC7 = 0; } while(0);
-_delay((unsigned long)((5)*(32000000/4000.0)));
-do { LATCbits.LATC7 = 1; } while(0);
+void I2C1_GetCommandData(uint8_t * data, uint8_t * len){
+__builtin_memcpy(data,i2c1_rx_buffer,rxLen);
+*len = rxLen;
 }
 
-void measure(void){
+void I2C1_SetTransmitData(uint8_t * data, uint8_t len){
 
-SoundLevel_LedOn();
-
-MIC_Mode(1);
-_delay((unsigned long)((10)*(32000000/4000.0)));
-
-AMPS_enable(1);
-
-
-sampling = 1;
-sampleCounter = 0;
-presSumSquared = 0;
-
-SoundLevel_StartADC();
-
-while(sampling);
-
-AMPS_enable(0);
-
-SoundLevel_PrepareData();
-
-SoundLevel_LedOff();
+while((txCnt < len) && (txCnt < 32)){
+i2c1_tx_buffer[txCnt] = data[txCnt];
+txCnt++;
+}
+txLen = txCnt;
+txCnt = 0;
 }
 
+void I2C1_ClearTxBuffer(void){
+txCnt = 0;
+}
 
-void ISR_MIC_Wake(void)
+# 209
+void I2C1_StatusCallback(I2C1_SLAVE_DRIVER_STATUS i2c_bus_state){
+
+static uint8_t slaveWriteType = SLAVE_COMMAND_DATA;
+
+
+switch (i2c_bus_state){
+
+case I2C1_SLAVE_WRITE_REQUEST:
+
+slaveWriteType = SLAVE_COMMAND;
+break;
+
+case I2C1_SLAVE_WRITE_COMPLETED:
+
+switch(slaveWriteType)
 {
-__nop();
-if(!measurementRunning)
+case SLAVE_COMMAND:
+cmdByte = I2C1_slaveWriteData;
+rxLen = 0;
+cmdReceived = 1;
+break;
+
+case SLAVE_COMMAND_DATA:
+default:
+
+if(rxLen <= 32)
 {
-soundinterrupt = 1;
+i2c1_rx_buffer[rxLen++] = I2C1_slaveWriteData;
+}
+break;
+
+}
+
+slaveWriteType = SLAVE_COMMAND_DATA;
+break;
+
+case I2C1_SLAVE_READ_REQUEST:
+if(txCnt<txLen){
+SSP1BUF = i2c1_tx_buffer[txCnt++];
+}
+else{
+SSP1BUF = 0x00;
+}
+
+break;
+
+case I2C1_SLAVE_READ_COMPLETED:
+default:;
+
 }
 }
 

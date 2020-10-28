@@ -3,7 +3,7 @@
 [d edition pro ]
 [d chip 16F18446 ]
 [d frameptr 6 ]
-"556 C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+"555 C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
 [e E10916 . `uc
 channel_ANC1 17
 channel_Vss 59
@@ -97,35 +97,35 @@ SLAVE_COMMAND 1
 [v _AMPS_enable AMPS_enable `(v  1 e 1 0 ]
 "277
 [v _WDT_Init WDT_Init `(v  1 e 1 0 ]
-"286
+"285
 [v _SoundLevel_Init SoundLevel_Init `(v  1 e 1 0 ]
-"349
+"348
 [v _SoundLevel_Measure SoundLevel_Measure `(v  1 e 1 0 ]
-"355
+"354
 [v _SoundLevel_Loop SoundLevel_Loop `(v  1 e 1 0 ]
-"460
+"459
 [v _EnterSleep EnterSleep `(v  1 s 1 EnterSleep ]
-"469
+"468
 [v _SoundLevel_GetData SoundLevel_GetData `(v  1 e 1 0 ]
-"476
+"475
 [v _SoundLevel_SetThreshold SoundLevel_SetThreshold `(v  1 e 1 0 ]
-"492
+"491
 [v _SoundLevel_PrepareData SoundLevel_PrepareData `(v  1 e 1 0 ]
-"538
+"537
 [v _SoundLevel_GetSample SoundLevel_GetSample `(v  1 e 1 0 ]
-"554
+"553
 [v _SoundLevel_StartADC SoundLevel_StartADC `(v  1 e 1 0 ]
-"560
+"559
 [v _SoundLevel_StopADC SoundLevel_StopADC `(v  1 e 1 0 ]
-"566
+"565
 [v _SoundLevel_LedOn SoundLevel_LedOn `(v  1 e 1 0 ]
-"573
+"572
 [v _SoundLevel_LedOff SoundLevel_LedOff `(v  1 e 1 0 ]
-"587
+"586
 [v _generateInt generateInt `(v  1 e 1 0 ]
-"593
+"592
 [v _measure measure `(v  1 e 1 0 ]
-"619
+"618
 [v _ISR_MIC_Wake ISR_MIC_Wake `(v  1 e 1 0 ]
 "36 C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\system/adcc.c
 [v _ADCC_Initialize ADCC_Initialize `(v  1 e 1 0 ]
@@ -943,32 +943,32 @@ SLAVE_COMMAND 1
 {
 "155
 } 0
-"476 C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+"475 C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
 [v _SoundLevel_SetThreshold SoundLevel_SetThreshold `(v  1 e 1 0 ]
 {
 [v SoundLevel_SetThreshold@metric metric `uc  1 p 1 1 ]
 [v SoundLevel_SetThreshold@thresholdData thresholdData `*.5uc  1 p 1 2 ]
-"489
+"488
 } 0
-"349
+"348
 [v _SoundLevel_Measure SoundLevel_Measure `(v  1 e 1 0 ]
 {
-"351
+"350
 } 0
-"355
+"354
 [v _SoundLevel_Loop SoundLevel_Loop `(v  1 e 1 0 ]
 {
-"458
+"457
 } 0
-"593
+"592
 [v _measure measure `(v  1 e 1 0 ]
 {
-"616
+"615
 } 0
-"554
+"553
 [v _SoundLevel_StartADC SoundLevel_StartADC `(v  1 e 1 0 ]
 {
-"557
+"556
 } 0
 "97 C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\system/adcc.c
 [v _ADCC_StartConversion ADCC_StartConversion `(v  1 e 1 0 ]
@@ -984,26 +984,26 @@ SLAVE_COMMAND 1
 {
 "257
 } 0
-"492 C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+"491 C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
 [v _SoundLevel_PrepareData SoundLevel_PrepareData `(v  1 e 1 0 ]
 {
-"505
+"504
 [v SoundLevel_PrepareData@signal signal `f  1 a 3 22 ]
-"503
+"502
 [v SoundLevel_PrepareData@i_663 i `i  1 a 2 27 ]
-"497
-[v SoundLevel_PrepareData@i i `i  1 a 2 25 ]
-"494
-[v SoundLevel_PrepareData@sampleSum sampleSum `ul  1 a 4 4 ]
 "496
-[v SoundLevel_PrepareData@mean mean `f  1 a 3 29 ]
+[v SoundLevel_PrepareData@i i `i  1 a 2 25 ]
 "493
+[v SoundLevel_PrepareData@sampleSum sampleSum `ul  1 a 4 4 ]
+"495
+[v SoundLevel_PrepareData@mean mean `f  1 a 3 29 ]
+"492
 [v SoundLevel_PrepareData@dBZ dBZ `f  1 a 3 19 ]
-"510
+"509
 [v SoundLevel_PrepareData@presAvgSquared presAvgSquared `f  1 a 3 14 ]
-"523
+"522
 [v SoundLevel_PrepareData@dataToSend dataToSend `ui  1 a 2 17 ]
-"535
+"534
 } 0
 "6 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\round.c
 [v _round round `(d  1 e 3 0 ]
@@ -1185,20 +1185,20 @@ SLAVE_COMMAND 1
 [v AMPS_enable@enable enable `uc  1 a 1 2 ]
 "274
 } 0
-"587
+"586
 [v _generateInt generateInt `(v  1 e 1 0 ]
 {
-"591
+"590
 } 0
-"460
+"459
 [v _EnterSleep EnterSleep `(v  1 s 1 EnterSleep ]
 {
-"466
+"465
 } 0
-"286
+"285
 [v _SoundLevel_Init SoundLevel_Init `(v  1 e 1 0 ]
 {
-"345
+"344
 } 0
 "180
 [v _powerMic_Init powerMic_Init `(v  1 e 1 0 ]
@@ -1213,7 +1213,7 @@ SLAVE_COMMAND 1
 "277
 [v _WDT_Init WDT_Init `(v  1 e 1 0 ]
 {
-"283
+"282
 } 0
 "239
 [v _VDDBIAS_Init VDDBIAS_Init `(v  1 e 1 0 ]
@@ -1240,15 +1240,15 @@ SLAVE_COMMAND 1
 {
 "178
 } 0
-"566
+"565
 [v _SoundLevel_LedOn SoundLevel_LedOn `(v  1 e 1 0 ]
 {
-"570
+"569
 } 0
-"573
+"572
 [v _SoundLevel_LedOff SoundLevel_LedOff `(v  1 e 1 0 ]
 {
-"577
+"576
 } 0
 "162 C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\system/pin_manager.c
 [v _IOCCF6_SetInterruptHandler IOCCF6_SetInterruptHandler `(v  1 e 1 0 ]
@@ -1272,12 +1272,12 @@ SLAVE_COMMAND 1
 [v ADCC_SetADIInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
 "294
 } 0
-"469 C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+"468 C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
 [v _SoundLevel_GetData SoundLevel_GetData `(v  1 e 1 0 ]
 {
 [v SoundLevel_GetData@data data `*.4uc  1 p 1 0 ]
 [v SoundLevel_GetData@length length `*.4uc  1 p 1 1 ]
-"473
+"472
 } 0
 "25 C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\system/system.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
@@ -1356,10 +1356,10 @@ SLAVE_COMMAND 1
 {
 "157
 } 0
-"619 C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+"618 C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
 [v _ISR_MIC_Wake ISR_MIC_Wake `(v  1 e 1 0 ]
 {
-"626
+"625
 } 0
 "117 C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\system/pin_manager.c
 [v _IOCCF4_ISR IOCCF4_ISR `(v  1 e 1 0 ]
@@ -1404,15 +1404,15 @@ SLAVE_COMMAND 1
 {
 "299
 } 0
-"538 C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
+"537 C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\Sensors/sound_level.c
 [v _SoundLevel_GetSample SoundLevel_GetSample `(v  1 e 1 0 ]
 {
-"551
+"550
 } 0
-"560
+"559
 [v _SoundLevel_StopADC SoundLevel_StopADC `(v  1 e 1 0 ]
 {
-"563
+"562
 } 0
 "146 C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\system/adcc.c
 [v _ADCC_StopConversion ADCC_StopConversion `(v  1 e 1 0 ]

@@ -1,140 +1,21 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"31041 C:/Users/Jona Cappelle/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18446.h
-[s S1457 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1457 . . ANSB4 ANSB5 ANSB6 ANSB7 ]
-"31040
-[u S1456 `S1457 1 ]
-[n S1456 . . ]
-"31049
-[v _ANSELBbits `VS1456 ~T0 @X0 0 e@8003 ]
-"654
-[s S36 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S36 . . TRISB4 TRISB5 TRISB6 TRISB7 ]
-"653
-[u S35 `S36 1 ]
-[n S35 . . ]
-"662
-[v _TRISBbits `VS35 ~T0 @X0 0 e@19 ]
-"67 Sensors/sound_level.c
-[v _SoundLevel_LedOff `(v ~T0 @X0 0 ef ]
-"88
-[v _LED_Blink `(v ~T0 @X0 0 ef ]
-"64
-[v _SoundLevel_LedOn `(v ~T0 @X0 0 ef ]
-[v F98 `(v ~T0 @X0 1 tf1`ul ]
-"12 C:/Users/Jona Cappelle/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\builtins.h
-[v __delay `JF98 ~T0 @X0 0 e ]
-[p i __delay ]
-"31353 C:/Users/Jona Cappelle/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18446.h
-[s S1473 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1473 . ANSC0 ANSC1 ANSC2 ANSC3 ANSC4 ANSC5 ANSC6 ANSC7 ]
-"31352
-[u S1472 `S1473 1 ]
-[n S1472 . . ]
-"31364
-[v _ANSELCbits `VS1472 ~T0 @X0 0 e@8014 ]
-"693
-[s S38 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S38 . TRISC0 TRISC1 TRISC2 TRISC3 TRISC4 TRISC5 TRISC6 TRISC7 ]
-"692
-[u S37 `S38 1 ]
-[n S37 . . ]
-"704
-[v _TRISCbits `VS37 ~T0 @X0 0 e@20 ]
-"844
-[s S44 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S44 . LATC0 LATC1 LATC2 LATC3 LATC4 LATC5 LATC6 LATC7 ]
-"843
-[u S43 `S44 1 ]
-[n S43 . . ]
-"855
-[v _LATCbits `VS43 ~T0 @X0 0 e@26 ]
-"805
-[s S42 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S42 . . LATB4 LATB5 LATB6 LATB7 ]
-"804
-[u S41 `S42 1 ]
-[n S41 . . ]
-"813
-[v _LATBbits `VS41 ~T0 @X0 0 e@25 ]
-"20087
-[v _WDTCON0 `Vuc ~T0 @X0 0 e@2060 ]
-"20162
-[v _WDTCON1 `Vuc ~T0 @X0 0 e@2061 ]
-"19765
-[s S917 :1 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S917 . IOCMD CLKRMD NVMMD . FVRMD SYSCMD ]
-"19764
-[u S916 `S917 1 ]
-[n S916 . . ]
-"19774
-[v _PMD0bits `VS916 ~T0 @X0 0 e@1942 ]
-"19385
-[s S898 :1 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S898 . INTE . IOCIE TMR0IE ]
-"19384
-[u S897 `S898 1 ]
-[n S897 . . ]
-"19392
-[v _PIE0bits `VS897 ~T0 @X0 0 e@1814 ]
-"31787
-[s S1487 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1487 . IOCCF0 IOCCF1 IOCCF2 IOCCF3 IOCCF4 IOCCF5 IOCCF6 IOCCF7 ]
-"31786
-[u S1486 `S1487 1 ]
-[n S1486 . . ]
-"31798
-[v _IOCCFbits `VS1486 ~T0 @X0 0 e@8021 ]
-"31725
-[s S1485 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1485 . IOCCN0 IOCCN1 IOCCN2 IOCCN3 IOCCN4 IOCCN5 IOCCN6 IOCCN7 ]
-"31724
-[u S1484 `S1485 1 ]
-[n S1484 . . ]
-"31736
-[v _IOCCNbits `VS1484 ~T0 @X0 0 e@8020 ]
-"31663
-[s S1483 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1483 . IOCCP0 IOCCP1 IOCCP2 IOCCP3 IOCCP4 IOCCP5 IOCCP6 IOCCP7 ]
-"31662
-[u S1482 `S1483 1 ]
-[n S1482 . . ]
-"31674
-[v _IOCCPbits `VS1482 ~T0 @X0 0 e@8019 ]
-[v F10881 `(v ~T0 @X0 0 tf ]
-"383 Sensors/../system/pin_manager.h
-[v _IOCCF6_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F10881 ]
-"103 Sensors/sound_level.c
-[v _ISR_MIC_Wake `(v ~T0 @X0 0 ef ]
-"106 Sensors/../system/adcc.h
-[v _ADCC_Initialize `(v ~T0 @X0 0 ef ]
-[v F10979 `(v ~T0 @X0 0 tf ]
-"820
-[v _ADCC_SetADIInterruptHandler `(v ~T0 @X0 0 ef1`*F10979 ]
-"61 Sensors/sound_level.c
-[v _SoundLevel_GetSample `(v ~T0 @X0 0 ef ]
-"20093 C:/Users/Jona Cappelle/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18446.h
-[s S933 :1 `uc 1 :5 `uc 1 ]
-[n S933 . SEN WDTPS ]
-"20097
-[s S934 :1 `uc 1 ]
-[n S934 . SWDTEN ]
-"20100
-[s S935 :1 `uc 1 ]
-[n S935 . WDTSEN ]
-"20103
-[s S936 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S936 . . WDTPS0 WDTPS1 WDTPS2 WDTPS3 WDTPS4 ]
-"20092
-[u S932 `S933 1 `S934 1 `S935 1 `S936 1 ]
-[n S932 . . . . . ]
-"20112
-[v _WDTCON0bits `VS932 ~T0 @X0 0 e@2060 ]
-"76 Sensors/sound_level.c
-[v _measure `(v ~T0 @X0 0 ef ]
-"73
-[v _generateInt `(v ~T0 @X0 0 ef ]
-"175 C:/Users/Jona Cappelle/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18446.h
+"20975 C:/Users/Jona Cappelle/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18446.h
+[s S972 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S972 . RD WR WREN WRERR FREE LWLO NVMREGS ]
+"20974
+[u S971 `S972 1 ]
+[n S971 . . ]
+"20985
+[v _NVMCON1bits `VS971 ~T0 @X0 0 e@2078 ]
+"20732
+[v _NVMADRL `Vuc ~T0 @X0 0 e@2074 ]
+"20794
+[v _NVMADRH `Vuc ~T0 @X0 0 e@2075 ]
+"20857
+[v _NVMDATL `Vuc ~T0 @X0 0 e@2076 ]
+"20919
+[v _NVMDATH `Vuc ~T0 @X0 0 e@2077 ]
+"175
 [s S8 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S8 . C DC Z nPD nTO ]
 "182
@@ -145,67 +26,16 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S7 . . . ]
 "188
 [v _STATUSbits `VS7 ~T0 @X0 0 e@3 ]
-"79 Sensors/sound_level.c
-[v _EnterSleep `(v ~T0 @X0 0 sf ]
-"21051 C:/Users/Jona Cappelle/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18446.h
-[s S976 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S976 . DOZE . DOE ROI DOZEN IDLEN ]
-"21059
-[s S977 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S977 . DOZE0 DOZE1 DOZE2 ]
-"21050
-[u S975 `S976 1 `S977 1 ]
-[n S975 . . . ]
-"21065
-[v _CPUDOZEbits `VS975 ~T0 @X0 0 e@2188 ]
-"8 C:/Users/Jona Cappelle/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\builtins.h
-[v ___nop `(v ~T0 @X0 0 ef ]
-[p i ___nop ]
-"44 C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\math.h
-[v _log10 `(d ~T0 @X0 0 ef1`d ]
-"55
-[v _round `(d ~T0 @X0 0 ef1`d ]
-"197 Sensors/../system/adcc.h
-[v _ADCC_GetConversionResult `(ui ~T0 @X0 0 ef ]
-"58 Sensors/sound_level.c
-[v _SoundLevel_StopADC `(v ~T0 @X0 0 ef ]
-"696 Sensors/../system/adcc.h
-[v _ADCC_EnableContinuousConversion `(v ~T0 @X0 0 ef ]
-"556 Sensors/sound_level.c
-[c E10916 17 59 60 61 62 63 .. ]
-[n E10916 . channel_ANC1 channel_Vss channel_Temp_Sensor channel_DAC1_Output channel_FVR_Buffer1 channel_FVR_Buffer2  ]
-"135 Sensors/../system/adcc.h
-[v _ADCC_StartConversion `(v ~T0 @X0 0 ef1`E10916 ]
-"253
-[v _ADCC_StopConversion `(v ~T0 @X0 0 ef ]
-"720
-[v _ADCC_DisableContinuousConversion `(v ~T0 @X0 0 ef ]
-[; ;math.h: 30: extern double fabs(double);
-[; ;math.h: 31: extern double floor(double);
-[; ;math.h: 32: extern double ceil(double);
-[; ;math.h: 33: extern double modf(double, double *);
-[; ;math.h: 34: extern double sqrt(double);
-[; ;math.h: 35: extern double atof(const char *);
-[; ;math.h: 36: extern double sin(double) ;
-[; ;math.h: 37: extern double cos(double) ;
-[; ;math.h: 38: extern double tan(double) ;
-[; ;math.h: 39: extern double asin(double) ;
-[; ;math.h: 40: extern double acos(double) ;
-[; ;math.h: 41: extern double atan(double);
-[; ;math.h: 42: extern double atan2(double, double) ;
-[; ;math.h: 43: extern double log(double);
-[; ;math.h: 44: extern double log10(double);
-[; ;math.h: 45: extern double pow(double, double) ;
-[; ;math.h: 46: extern double exp(double) ;
-[; ;math.h: 47: extern double sinh(double) ;
-[; ;math.h: 48: extern double cosh(double) ;
-[; ;math.h: 49: extern double tanh(double);
-[; ;math.h: 50: extern double eval_poly(double, const double *, int);
-[; ;math.h: 51: extern double frexp(double, int *);
-[; ;math.h: 52: extern double ldexp(double, int);
-[; ;math.h: 53: extern double fmod(double, double);
-[; ;math.h: 54: extern double trunc(double);
-[; ;math.h: 55: extern double round(double);
+"420
+[s S26 :1 `uc 1 :5 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S26 . INTEDG . PEIE GIE ]
+"419
+[u S25 `S26 1 ]
+[n S25 . . ]
+"427
+[v _INTCONbits `VS25 ~T0 @X0 0 e@11 ]
+"21025
+[v _NVMCON2 `Vuc ~T0 @X0 0 e@2079 ]
 [; ;xc8\pic\include\xc.h: 18: extern const char __xc8_OPTIM_SPEED;
 [; ;xc8\pic\include\xc.h: 20: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -12301,1536 +12131,581 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;xc8\pic\include\pic.h: 127: extern __bank0 unsigned char __resetbits;
 [; ;xc8\pic\include\pic.h: 128: extern __bank0 __bit __powerdown;
 [; ;xc8\pic\include\pic.h: 129: extern __bank0 __bit __timeout;
-[; ;stdbool.h: 15: typedef unsigned char bool;
-[; ;global.h: 63: typedef struct devApi{
-[; ;global.h: 64: void (* Init)(void);
-[; ;global.h: 65: void (* Measure)(void);
-[; ;global.h: 66: void (* Loop)(void);
-[; ;global.h: 67: void (* GetData)(uint8_t *, uint8_t *);
-[; ;global.h: 68: void (* UpdateThreshold)(uint8_t, uint8_t *);
-[; ;global.h: 69: } Device_API_t;
-"77 Sensors/../global.h
-[p x FEXTOSC=OFF ]
-"78
-[p x RSTOSC=HFINT1 ]
-"79
-[p x CLKOUTEN=OFF ]
-"80
-[p x CSWEN=ON ]
-"81
-[p x FCMEN=ON ]
-"84
-[p x MCLRE=ON ]
-"85
-[p x PWRTS=OFF ]
-"86
-[p x LPBOREN=OFF ]
-"87
-[p x BOREN=OFF ]
-"88
-[p x BORV=LO ]
-"89
-[p x ZCDDIS=OFF ]
-"90
-[p x PPS1WAY=ON ]
-"91
-[p x STVREN=ON ]
-"95
-[p x WDTCPS=WDTCPS_31 ]
-"96
-[p x WDTE=SWDTEN ]
-"98
-[p x WDTCWS=WDTCWS_7 ]
-"99
-[p x WDTCCS=SC ]
-"102
-[p x BBSIZE=BB512 ]
-"103
-[p x BBEN=OFF ]
-"104
-[p x SAFEN=OFF ]
-"105
-[p x WRTAPP=OFF ]
-"106
-[p x WRTB=OFF ]
-"107
-[p x WRTC=OFF ]
-"108
-[p x WRTD=OFF ]
-"109
-[p x WRTSAF=OFF ]
-"110
-[p x LVP=ON ]
-"113
-[p x CP=OFF ]
-[; ;sound_level.h: 224: void SoundLevel_Init(void);
-[; ;sound_level.h: 225: void SoundLevel_Measure(void);
-[; ;sound_level.h: 226: void SoundLevel_Loop(void);
-[; ;sound_level.h: 227: void SoundLevel_GetData(uint8_t * data, uint8_t * length);
-[; ;sound_level.h: 228: void SoundLevel_SetThreshold(uint8_t metric, uint8_t * thresholdData);
-[; ;pin_manager.h: 95: void PIN_MANAGER_IOC(void);
-[; ;pin_manager.h: 108: void IOCCF0_ISR(void);
-[; ;pin_manager.h: 131: void IOCCF0_SetInterruptHandler(void (* InterruptHandler)(void));
-[; ;pin_manager.h: 155: extern void (*IOCCF0_InterruptHandler)(void);
-[; ;pin_manager.h: 179: void IOCCF0_DefaultInterruptHandler(void);
-[; ;pin_manager.h: 192: void IOCCF2_ISR(void);
-[; ;pin_manager.h: 215: void IOCCF2_SetInterruptHandler(void (* InterruptHandler)(void));
-[; ;pin_manager.h: 239: extern void (*IOCCF2_InterruptHandler)(void);
-[; ;pin_manager.h: 263: void IOCCF2_DefaultInterruptHandler(void);
-[; ;pin_manager.h: 276: void IOCCF4_ISR(void);
-[; ;pin_manager.h: 299: void IOCCF4_SetInterruptHandler(void (* InterruptHandler)(void));
-[; ;pin_manager.h: 323: extern void (*IOCCF4_InterruptHandler)(void);
-[; ;pin_manager.h: 347: void IOCCF4_DefaultInterruptHandler(void);
-[; ;pin_manager.h: 360: void IOCCF6_ISR(void);
-[; ;pin_manager.h: 383: void IOCCF6_SetInterruptHandler(void (* InterruptHandler)(void));
-[; ;pin_manager.h: 407: extern void (*IOCCF6_InterruptHandler)(void);
-[; ;pin_manager.h: 431: void IOCCF6_DefaultInterruptHandler(void);
-[; ;stdbool.h: 15: typedef unsigned char bool;
-[; ;stdbool.h: 15: typedef unsigned char bool;
-[; ;xc8\pic\include\__size_t.h: 4: typedef unsigned size_t;
-[; ;stddef.h: 6: typedef int ptrdiff_t;
-[; ;i2c1.h: 80: typedef enum{
-[; ;i2c1.h: 81: I2C1_SLAVE_WRITE_REQUEST,
-[; ;i2c1.h: 82: I2C1_SLAVE_READ_REQUEST,
-[; ;i2c1.h: 83: I2C1_SLAVE_WRITE_COMPLETED,
-[; ;i2c1.h: 84: I2C1_SLAVE_READ_COMPLETED,
-[; ;i2c1.h: 85: } I2C1_SLAVE_DRIVER_STATUS;
-[; ;i2c1.h: 114: void I2C1_Initialize(uint8_t slave_address);
-[; ;i2c1.h: 134: void I2C1_ISR(void);
-[; ;i2c1.h: 141: extern volatile uint8_t I2C1_slaveWriteData;
-[; ;i2c1.h: 148: bool I2C1_CommandReceived(void);
-[; ;i2c1.h: 149: void I2C1_GetCommand(uint8_t * cmd);
-[; ;i2c1.h: 150: void I2C1_GetCommandData(uint8_t * data, uint8_t * len);
-[; ;i2c1.h: 151: void I2C1_SetTransmitData(uint8_t * data, uint8_t len);
-[; ;i2c1.h: 152: bool I2C1_TxBufferEmpty(void);
-[; ;i2c1.h: 153: void I2C1_ClearTxBuffer(void);
-[; ;stdbool.h: 15: typedef unsigned char bool;
-[; ;adcc.h: 47: typedef uint16_t adc_result_t;
-[; ;adcc.h: 64: typedef enum
-[; ;adcc.h: 65: {
-[; ;adcc.h: 66: channel_ANC1 = 0x11,
-[; ;adcc.h: 67: channel_Vss = 0x3B,
-[; ;adcc.h: 68: channel_Temp_Sensor = 0x3C,
-[; ;adcc.h: 69: channel_DAC1_Output = 0x3D,
-[; ;adcc.h: 70: channel_FVR_Buffer1 = 0x3E,
-[; ;adcc.h: 71: channel_FVR_Buffer2 = 0x3F
-[; ;adcc.h: 72: } adcc_channel_t;
-[; ;adcc.h: 106: void ADCC_Initialize(void);
-[; ;adcc.h: 135: void ADCC_StartConversion(adcc_channel_t channel);
-[; ;adcc.h: 165: bool ADCC_IsConversionDone();
-[; ;adcc.h: 197: adc_result_t ADCC_GetConversionResult(void);
-[; ;adcc.h: 228: adc_result_t ADCC_GetSingleConversion(adcc_channel_t channel);
-[; ;adcc.h: 253: void ADCC_StopConversion(void);
-[; ;adcc.h: 280: void ADCC_SetStopOnInterrupt(void);
-[; ;adcc.h: 305: void ADCC_DischargeSampleCapacitor(void);
-[; ;adcc.h: 331: void ADCC_LoadAcquisitionRegister(uint16_t);
-[; ;adcc.h: 357: void ADCC_SetPrechargeTime(uint16_t);
-[; ;adcc.h: 382: void ADCC_SetRepeatCount(uint8_t);
-[; ;adcc.h: 410: uint8_t ADCC_GetCurrentCountofConversions(void);
-[; ;adcc.h: 434: void ADCC_ClearAccumulator(void);
-[; ;adcc.h: 459: uint24_t ADCC_GetAccumulatorValue(void);
-[; ;adcc.h: 487: bool ADCC_HasAccumulatorOverflowed(void);
-[; ;adcc.h: 512: uint16_t ADCC_GetFilterValue(void);
-[; ;adcc.h: 540: uint16_t ADCC_GetPreviousResult(void);
-[; ;adcc.h: 566: void ADCC_DefineSetPoint(uint16_t);
-[; ;adcc.h: 592: void ADCC_SetUpperThreshold(uint16_t);
-[; ;adcc.h: 618: void ADCC_SetLowerThreshold(uint16_t);
-[; ;adcc.h: 645: uint16_t ADCC_GetErrorCalculation(void);
-[; ;adcc.h: 672: void ADCC_EnableDoubleSampling(void);
-[; ;adcc.h: 696: void ADCC_EnableContinuousConversion(void);
-[; ;adcc.h: 720: void ADCC_DisableContinuousConversion(void);
-[; ;adcc.h: 748: bool ADCC_HasErrorCrossedUpperThreshold(void);
-[; ;adcc.h: 776: bool ADCC_HasErrorCrossedLowerThreshold(void);
-[; ;adcc.h: 803: uint8_t ADCC_GetConversionStageStatus(void);
-[; ;adcc.h: 820: void ADCC_SetADIInterruptHandler(void (* InterruptHandler)(void));
-[; ;adcc.h: 836: void ADCC_ISR(void);
-[; ;adcc.h: 855: void ADCC_DefaultInterruptHandler(void);
-[; ;system.h: 44: void SYSTEM_Initialize(uint8_t slave_address);
-[; ;system.h: 57: void OSCILLATOR_Initialize(void);
-[; ;system.h: 70: void PMD_Initialize(void);
-[; ;sound_level.c: 52: void SoundLevel_PrepareData(void);
-[; ;sound_level.c: 55: void SoundLevel_StartADC(void);
-[; ;sound_level.c: 58: void SoundLevel_StopADC(void);
-[; ;sound_level.c: 61: void SoundLevel_GetSample(void);
-[; ;sound_level.c: 64: void SoundLevel_LedOn(void);
-[; ;sound_level.c: 67: void SoundLevel_LedOff(void);
-[; ;sound_level.c: 70: void SoundLevel_LedToggle(void);
-[; ;sound_level.c: 73: void generateInt(void);
-[; ;sound_level.c: 76: void measure(void);
-[; ;sound_level.c: 79: static void EnterSleep(void);
-[; ;sound_level.c: 82: void LED_Init(void);
-[; ;sound_level.c: 85: void LED_DeInit(void);
-[; ;sound_level.c: 88: void LED_Blink(void);
-[; ;sound_level.c: 91: void powerMic_Init(void);
-[; ;sound_level.c: 94: void nWakeMic_Init(void);
-[; ;sound_level.c: 97: void READY_Init(void);
-[; ;sound_level.c: 100: void WDT_Init(void);
-[; ;sound_level.c: 103: void ISR_MIC_Wake(void);
-[; ;sound_level.c: 106: void DOUT_Init(void);
-[; ;sound_level.c: 109: void VDDAMP_Init();
-[; ;sound_level.c: 110: void VDDBIAS_Init();
-[; ;sound_level.c: 112: void AMPS_enable(bool enable);
-[; ;sound_level.c: 114: void MIC_Mode(uint8_t mode);
-"118 Sensors/sound_level.c
-[v _soundinterrupt `uc ~T0 @X0 1 e ]
-[i _soundinterrupt
--> -> 0 `i `uc
-]
-[; ;sound_level.c: 118: bool soundinterrupt = 0;
-"121
-[v _presSumSquared `f ~T0 @X0 1 e ]
-[; ;sound_level.c: 121: float presSumSquared;
-"122
-[v _adcScaler `f ~T0 @X0 1 e ]
-[; ;sound_level.c: 122: float adcScaler;
-"123
-[v _measurementRunning `uc ~T0 @X0 1 e ]
-[; ;sound_level.c: 123: bool measurementRunning;
-"124
-[v _sampling `uc ~T0 @X0 1 e ]
-[i _sampling
--> -> 0 `i `uc
-]
-[; ;sound_level.c: 124: bool sampling = 0;
-"125
-[v _sampleCounter `ui ~T0 @X0 1 e ]
-[i _sampleCounter
--> -> 0 `i `ui
-]
-[; ;sound_level.c: 125: uint16_t sampleCounter = 0;
-"127
-[v _measurementData `Vuc ~T0 @X0 -> 2 `i e ]
-[; ;sound_level.c: 127: volatile uint8_t measurementData[2];
-"128
-[v _dLen `uc ~T0 @X0 1 e ]
-[i _dLen
--> -> 0 `i `uc
-]
-[; ;sound_level.c: 128: uint8_t dLen = 0;
-"131
-[v _thresholdEnabled `Suc ~T0 @X0 1 e ]
-[; ;sound_level.c: 131: __persistent uint8_t thresholdEnabled;
-"132
-[v _thresholdLevel `Sui ~T0 @X0 1 e ]
-[; ;sound_level.c: 132: __persistent uint16_t thresholdLevel;
-"134
-[v _polledMeasurement `uc ~T0 @X0 1 e ]
-[i _polledMeasurement
--> -> 0 `i `uc
-]
-[; ;sound_level.c: 134: bool polledMeasurement = 0;
-"135
-[v _overThreshold `uc ~T0 @X0 1 e ]
-[i _overThreshold
--> -> 0 `i `uc
-]
-[; ;sound_level.c: 135: bool overThreshold = 0;
-"137
-[v _sampleArray `ui ~T0 @X0 -> 400 `i e ]
-[; ;sound_level.c: 137: uint16_t sampleArray[400];
-"142
-[v _LED_Init `(v ~T0 @X0 1 ef ]
-"143
+"6 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\pic\__eeprom.c
+[v ___eecpymem `(v ~T0 @X0 1 ef3`*Vuc`*Euc`uc ]
+"7
 {
-[; ;sound_level.c: 142: void LED_Init(void)
-[; ;sound_level.c: 143: {
-[e :U _LED_Init ]
+[; ;__eeprom.c: 5: void
+[; ;__eeprom.c: 6: __eecpymem(volatile unsigned char *to, __eeprom unsigned char * from, unsigned char size)
+[; ;__eeprom.c: 7: {
+[e :U ___eecpymem ]
+"6
+[v _to `*Vuc ~T0 @X0 1 r1 ]
+[v _from `*Euc ~T0 @X0 1 r2 ]
+[v _size `uc ~T0 @X0 1 r3 ]
+"7
 [f ]
-[; ;sound_level.c: 145: do { ANSELBbits.ANSB6 = 0; } while(0);
-"145
-[e :U 1516 ]
+"8
+[v _cp `*Vuc ~T0 @X0 1 a ]
+[; ;__eeprom.c: 8: volatile unsigned char *cp = to;
+[e = _cp _to ]
+[; ;__eeprom.c: 22: while (NVMCON1bits.WR) {
+"22
+[e $U 1513  ]
+[e :U 1514 ]
 {
-[e = . . _ANSELBbits 0 3 -> -> 0 `i `uc ]
+[; ;__eeprom.c: 23: continue;
+"23
+[e $U 1513  ]
+"24
 }
+[e :U 1513 ]
+"22
+[e $ != -> . . _NVMCON1bits 0 1 `i -> -> -> 0 `i `Vuc `i 1514  ]
 [e :U 1515 ]
-[; ;sound_level.c: 146: do { TRISBbits.TRISB6 = 0; } while(0);
-"146
-[e :U 1519 ]
+[; ;__eeprom.c: 24: }
+[; ;__eeprom.c: 25: NVMCON1bits.NVMREGS = 1;
+"25
+[e = . . _NVMCON1bits 0 6 -> -> 1 `i `uc ]
+[; ;__eeprom.c: 26: NVMADRL = (unsigned char) from;
+"26
+[e = _NVMADRL -> _from `uc ]
+[; ;__eeprom.c: 27: NVMADRH = 0x70;
+"27
+[e = _NVMADRH -> -> 112 `i `uc ]
+[; ;__eeprom.c: 28: while (size--) {
+"28
+[e $U 1516  ]
+[e :U 1517 ]
 {
-[e = . . _TRISBbits 0 3 -> -> 0 `i `uc ]
+[; ;__eeprom.c: 29: NVMCON1bits.RD = 1;
+"29
+[e = . . _NVMCON1bits 0 0 -> -> 1 `i `uc ]
+[; ;__eeprom.c: 30: *cp++ = NVMDATL;
+"30
+[e = *U ++ _cp * -> -> 1 `i `x -> -> # *U _cp `i `x _NVMDATL ]
+[; ;__eeprom.c: 31: NVMADRL++;
+"31
+[e ++ _NVMADRL -> -> 1 `i `uc ]
+"32
 }
+[e :U 1516 ]
+"28
+[e $ != -> -- _size -> -> 1 `i `uc `i -> -> -> 0 `i `uc `i 1517  ]
 [e :U 1518 ]
-[; ;sound_level.c: 147: SoundLevel_LedOff();
-"147
-[e ( _SoundLevel_LedOff ..  ]
-[; ;sound_level.c: 148: LED_Blink();
-"148
-[e ( _LED_Blink ..  ]
-[; ;sound_level.c: 150: }
-"150
-[e :UE 1513 ]
+[; ;__eeprom.c: 32: }
+[; ;__eeprom.c: 36: }
+"36
+[e :UE 1512 ]
 }
-"153
-[v _LED_DeInit `(v ~T0 @X0 1 ef ]
-"154
+"39
+[v ___memcpyee `(v ~T0 @X0 1 ef3`*Euc`*Cuc`uc ]
+"40
 {
-[; ;sound_level.c: 153: void LED_DeInit(void)
-[; ;sound_level.c: 154: {
-[e :U _LED_DeInit ]
+[; ;__eeprom.c: 38: void
+[; ;__eeprom.c: 39: __memcpyee(__eeprom unsigned char * to, const unsigned char *from, unsigned char size)
+[; ;__eeprom.c: 40: {
+[e :U ___memcpyee ]
+"39
+[v _to `*Euc ~T0 @X0 1 r1 ]
+[v _from `*Cuc ~T0 @X0 1 r2 ]
+[v _size `uc ~T0 @X0 1 r3 ]
+"40
 [f ]
-[; ;sound_level.c: 156: TRISBbits.TRISB6 = 1;
-"156
-[e = . . _TRISBbits 0 3 -> -> 1 `i `uc ]
-[; ;sound_level.c: 158: }
-"158
-[e :UE 1520 ]
-}
-"161
-[v _LED_Blink `(v ~T0 @X0 1 ef ]
-"162
+"41
+[v _ptr `*Cuc ~T0 @X0 1 a ]
+[; ;__eeprom.c: 41: const unsigned char *ptr =from;
+[e = _ptr _from ]
+[; ;__eeprom.c: 69: while (NVMCON1bits.WR) {
+"69
+[e $U 1520  ]
+[e :U 1521 ]
 {
-[; ;sound_level.c: 161: void LED_Blink(void)
-[; ;sound_level.c: 162: {
-[e :U _LED_Blink ]
-[f ]
-[; ;sound_level.c: 163: SoundLevel_LedOn();
-"163
-[e ( _SoundLevel_LedOn ..  ]
-[; ;sound_level.c: 164: _delay((unsigned long)((100)*(32000000/4000.0)));
-"164
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-[; ;sound_level.c: 165: SoundLevel_LedOff();
-"165
-[e ( _SoundLevel_LedOff ..  ]
-[; ;sound_level.c: 166: _delay((unsigned long)((100)*(32000000/4000.0)));
-"166
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-[; ;sound_level.c: 167: SoundLevel_LedOn();
-"167
-[e ( _SoundLevel_LedOn ..  ]
-[; ;sound_level.c: 168: _delay((unsigned long)((100)*(32000000/4000.0)));
-"168
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-[; ;sound_level.c: 169: SoundLevel_LedOff();
-"169
-[e ( _SoundLevel_LedOff ..  ]
-[; ;sound_level.c: 170: _delay((unsigned long)((500)*(32000000/4000.0)));
-"170
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-[; ;sound_level.c: 171: SoundLevel_LedOn();
-"171
-[e ( _SoundLevel_LedOn ..  ]
-[; ;sound_level.c: 172: _delay((unsigned long)((100)*(32000000/4000.0)));
-"172
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-[; ;sound_level.c: 173: SoundLevel_LedOff();
-"173
-[e ( _SoundLevel_LedOff ..  ]
-[; ;sound_level.c: 174: _delay((unsigned long)((100)*(32000000/4000.0)));
-"174
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-[; ;sound_level.c: 175: SoundLevel_LedOn();
-"175
-[e ( _SoundLevel_LedOn ..  ]
-[; ;sound_level.c: 176: _delay((unsigned long)((100)*(32000000/4000.0)));
-"176
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-[; ;sound_level.c: 177: SoundLevel_LedOff();
-"177
-[e ( _SoundLevel_LedOff ..  ]
-[; ;sound_level.c: 178: }
-"178
-[e :UE 1521 ]
+[; ;__eeprom.c: 70: continue;
+"70
+[e $U 1520  ]
+"71
 }
-"180
-[v _powerMic_Init `(v ~T0 @X0 1 ef ]
-"181
-{
-[; ;sound_level.c: 180: void powerMic_Init(void)
-[; ;sound_level.c: 181: {
-[e :U _powerMic_Init ]
-[f ]
-[; ;sound_level.c: 182: do { ANSELCbits.ANSC0 = 0; } while(0);
-"182
-[e :U 1525 ]
-{
-[e = . . _ANSELCbits 0 0 -> -> 0 `i `uc ]
-}
+[e :U 1520 ]
+"69
+[e $ != -> . . _NVMCON1bits 0 1 `i -> -> -> 0 `i `Vuc `i 1521  ]
+[e :U 1522 ]
+[; ;__eeprom.c: 71: }
+[; ;__eeprom.c: 72: NVMCON1bits.NVMREGS = 1;
+"72
+[e = . . _NVMCON1bits 0 6 -> -> 1 `i `uc ]
+[; ;__eeprom.c: 73: NVMADRL = (unsigned char) to - 1U;
+"73
+[e = _NVMADRL -> - -> -> _to `uc `ui -> 1 `ui `uc ]
+[; ;__eeprom.c: 74: NVMADRH = 0x70;
+"74
+[e = _NVMADRH -> -> 112 `i `uc ]
+[; ;__eeprom.c: 75: NVMDATH = 0;
+"75
+[e = _NVMDATH -> -> 0 `i `uc ]
+[; ;__eeprom.c: 76: while (size--) {
+"76
+[e $U 1523  ]
 [e :U 1524 ]
-[; ;sound_level.c: 183: do { TRISCbits.TRISC0 = 0; } while(0);
-"183
-[e :U 1528 ]
 {
-[e = . . _TRISCbits 0 0 -> -> 0 `i `uc ]
-}
+[; ;__eeprom.c: 77: while (NVMCON1bits.WR) {
+"77
+[e $U 1526  ]
 [e :U 1527 ]
-[; ;sound_level.c: 184: do { LATCbits.LATC0 = 0; } while(0);
-"184
+{
+[; ;__eeprom.c: 78: continue;
+"78
+[e $U 1526  ]
+"79
+}
+[e :U 1526 ]
+"77
+[e $ != -> . . _NVMCON1bits 0 1 `i -> -> -> 0 `i `Vuc `i 1527  ]
+[e :U 1528 ]
+[; ;__eeprom.c: 79: }
+[; ;__eeprom.c: 80: NVMDATL = *ptr++;
+"80
+[e = _NVMDATL *U ++ _ptr * -> -> 1 `i `x -> -> # *U _ptr `i `x ]
+[; ;__eeprom.c: 81: NVMADRL++;
+"81
+[e ++ _NVMADRL -> -> 1 `i `uc ]
+[; ;__eeprom.c: 82: STATUSbits.CARRY = 0;
+"82
+[e = . . _STATUSbits 1 0 -> -> 0 `i `uc ]
+[; ;__eeprom.c: 83: if (INTCONbits.GIE) {
+"83
+[e $ ! != -> . . _INTCONbits 0 3 `i -> -> -> 0 `i `Vuc `i 1529  ]
+{
+[; ;__eeprom.c: 84: STATUSbits.CARRY = 1;
+"84
+[e = . . _STATUSbits 1 0 -> -> 1 `i `uc ]
+"85
+}
+[e :U 1529 ]
+[; ;__eeprom.c: 85: }
+[; ;__eeprom.c: 86: NVMCON1bits.WREN = 1;
+"86
+[e = . . _NVMCON1bits 0 2 -> -> 1 `i `uc ]
+[; ;__eeprom.c: 87: NVMCON2 = 0x55;
+"87
+[e = _NVMCON2 -> -> 85 `i `uc ]
+[; ;__eeprom.c: 88: NVMCON2 = 0xAA;
+"88
+[e = _NVMCON2 -> -> 170 `i `uc ]
+[; ;__eeprom.c: 89: NVMCON1bits.WR = 1;
+"89
+[e = . . _NVMCON1bits 0 1 -> -> 1 `i `uc ]
+[; ;__eeprom.c: 90: while (NVMCON1bits.WR) {
+"90
+[e $U 1530  ]
 [e :U 1531 ]
 {
-[e = . . _LATCbits 0 0 -> -> 0 `i `uc ]
+[; ;__eeprom.c: 91: continue;
+"91
+[e $U 1530  ]
+"92
 }
 [e :U 1530 ]
-[; ;sound_level.c: 186: }
-"186
-[e :UE 1522 ]
-}
-"188
-[v _nWakeMic_Init `(v ~T0 @X0 1 ef ]
-"189
+"90
+[e $ != -> . . _NVMCON1bits 0 1 `i -> -> -> 0 `i `Vuc `i 1531  ]
+[e :U 1532 ]
+[; ;__eeprom.c: 92: }
+[; ;__eeprom.c: 93: NVMCON1bits.WREN = 0;
+"93
+[e = . . _NVMCON1bits 0 2 -> -> 0 `i `uc ]
+[; ;__eeprom.c: 94: if (STATUSbits.CARRY) {
+"94
+[e $ ! != -> . . _STATUSbits 1 0 `i -> -> -> 0 `i `Vuc `i 1533  ]
 {
-[; ;sound_level.c: 188: void nWakeMic_Init(void)
-[; ;sound_level.c: 189: {
-[e :U _nWakeMic_Init ]
+[; ;__eeprom.c: 95: INTCONbits.GIE = 1;
+"95
+[e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
+"96
+}
+[e :U 1533 ]
+"97
+}
+[e :U 1523 ]
+"76
+[e $ != -> -- _size -> -> 1 `i `uc `i -> -> -> 0 `i `uc `i 1524  ]
+[e :U 1525 ]
+[; ;__eeprom.c: 96: }
+[; ;__eeprom.c: 97: }
+[; ;__eeprom.c: 101: }
+"101
+[e :UE 1519 ]
+}
+"104
+[v ___eetoc `(uc ~T0 @X0 1 ef1`*Ev ]
+"105
+{
+[; ;__eeprom.c: 103: unsigned char
+[; ;__eeprom.c: 104: __eetoc(__eeprom void *addr)
+[; ;__eeprom.c: 105: {
+[e :U ___eetoc ]
+"104
+[v _addr `*Ev ~T0 @X0 1 r1 ]
+"105
 [f ]
-[; ;sound_level.c: 190: do { ANSELCbits.ANSC3 = 0; } while(0);
-"190
-[e :U 1535 ]
-{
-[e = . . _ANSELCbits 0 3 -> -> 0 `i `uc ]
+"106
+[v _data `uc ~T0 @X0 1 a ]
+[; ;__eeprom.c: 106: unsigned char data;
+[; ;__eeprom.c: 107: __eecpymem((unsigned char *) &data,addr,1);
+"107
+[e ( ___eecpymem (3 , , -> &U _data `*Vuc -> _addr `*Euc -> -> 1 `i `uc ]
+[; ;__eeprom.c: 108: return data;
+"108
+[e ) _data ]
+[e $UE 1534  ]
+[; ;__eeprom.c: 109: }
+"109
+[e :UE 1534 ]
 }
-[e :U 1534 ]
-[; ;sound_level.c: 191: do { TRISCbits.TRISC3 = 0; } while(0);
-"191
-[e :U 1538 ]
+"112
+[v ___eetoi `(ui ~T0 @X0 1 ef1`*Ev ]
+"113
 {
-[e = . . _TRISCbits 0 3 -> -> 0 `i `uc ]
-}
-[e :U 1537 ]
-[; ;sound_level.c: 192: do { LATCbits.LATC3 = 0; } while(0);
-"192
-[e :U 1541 ]
-{
-[e = . . _LATCbits 0 3 -> -> 0 `i `uc ]
-}
-[e :U 1540 ]
-[; ;sound_level.c: 194: }
-"194
-[e :UE 1532 ]
-}
-"196
-[v _MIC_Mode `(v ~T0 @X0 1 ef1`uc ]
-"197
-{
-[; ;sound_level.c: 196: void MIC_Mode(uint8_t mode)
-[; ;sound_level.c: 197: {
-[e :U _MIC_Mode ]
-"196
-[v _mode `uc ~T0 @X0 1 r1 ]
-"197
+[; ;__eeprom.c: 111: unsigned int
+[; ;__eeprom.c: 112: __eetoi(__eeprom void *addr)
+[; ;__eeprom.c: 113: {
+[e :U ___eetoi ]
+"112
+[v _addr `*Ev ~T0 @X0 1 r1 ]
+"113
 [f ]
-[; ;sound_level.c: 198: switch(mode)
-"198
-[e $U 1544  ]
-[; ;sound_level.c: 199: {
-"199
-{
-[; ;sound_level.c: 200: case 1:
-"200
-[e :U 1545 ]
-[; ;sound_level.c: 201: do { LATCbits.LATC3 = 0; } while(0);
-"201
-[e :U 1548 ]
-{
-[e = . . _LATCbits 0 3 -> -> 0 `i `uc ]
+"114
+[v _data `ui ~T0 @X0 1 a ]
+[; ;__eeprom.c: 114: unsigned int data;
+[; ;__eeprom.c: 115: __eecpymem((unsigned char *) &data,addr,2);
+"115
+[e ( ___eecpymem (3 , , -> -> &U _data `*uc `*Vuc -> _addr `*Euc -> -> 2 `i `uc ]
+[; ;__eeprom.c: 116: return data;
+"116
+[e ) _data ]
+[e $UE 1535  ]
+[; ;__eeprom.c: 117: }
+"117
+[e :UE 1535 ]
 }
-[e :U 1547 ]
-[; ;sound_level.c: 203: break;
-"203
-[e $U 1543  ]
-[; ;sound_level.c: 205: case 2:
-"205
-[e :U 1549 ]
-[; ;sound_level.c: 207: do { LATCbits.LATC3 = 1; } while(0);
-"207
-[e :U 1552 ]
+"119
+[p k ]
+"120
+[p n 2040 ]
+"122
+[v ___eetom `(um ~T0 @X0 1 ef1`*Ev ]
+"123
 {
-[e = . . _LATCbits 0 3 -> -> 1 `i `uc ]
+[; ;__eeprom.c: 121: __uint24
+[; ;__eeprom.c: 122: __eetom(__eeprom void *addr)
+[; ;__eeprom.c: 123: {
+[e :U ___eetom ]
+"122
+[v _addr `*Ev ~T0 @X0 1 r1 ]
+"123
+[f ]
+"124
+[v _data `um ~T0 @X0 1 a ]
+[; ;__eeprom.c: 124: __uint24 data;
+[; ;__eeprom.c: 125: __eecpymem((unsigned char *) &data,addr,3);
+"125
+[e ( ___eecpymem (3 , , -> -> &U _data `*uc `*Vuc -> _addr `*Euc -> -> 3 `i `uc ]
+[; ;__eeprom.c: 126: return data;
+"126
+[e ) _data ]
+[e $UE 1536  ]
+[; ;__eeprom.c: 127: }
+"127
+[e :UE 1536 ]
 }
-[e :U 1551 ]
-[; ;sound_level.c: 209: break;
-"209
-[e $U 1543  ]
-[; ;sound_level.c: 211: default:
-"211
-[e :U 1553 ]
-[; ;sound_level.c: 212: do { LATCbits.LATC3 = 0; } while(0);
-"212
-[e :U 1556 ]
+"128
+[p o ]
+"131
+[v ___eetol `(ul ~T0 @X0 1 ef1`*Ev ]
+"132
 {
-[e = . . _LATCbits 0 3 -> -> 0 `i `uc ]
+[; ;__eeprom.c: 130: unsigned long
+[; ;__eeprom.c: 131: __eetol(__eeprom void *addr)
+[; ;__eeprom.c: 132: {
+[e :U ___eetol ]
+"131
+[v _addr `*Ev ~T0 @X0 1 r1 ]
+"132
+[f ]
+"133
+[v _data `ul ~T0 @X0 1 a ]
+[; ;__eeprom.c: 133: unsigned long data;
+[; ;__eeprom.c: 134: __eecpymem((unsigned char *) &data,addr,4);
+"134
+[e ( ___eecpymem (3 , , -> -> &U _data `*uc `*Vuc -> _addr `*Euc -> -> 4 `i `uc ]
+[; ;__eeprom.c: 135: return data;
+"135
+[e ) _data ]
+[e $UE 1537  ]
+[; ;__eeprom.c: 136: }
+"136
+[e :UE 1537 ]
 }
-[e :U 1555 ]
-"213
+"138
+[p k ]
+"139
+[p n 1516 ]
+"141
+[v ___eetoo `(ul ~T0 @X0 1 ef1`*Ev ]
+"142
+{
+[; ;__eeprom.c: 140: unsigned long long
+[; ;__eeprom.c: 141: __eetoo(__eeprom void *addr)
+[; ;__eeprom.c: 142: {
+[e :U ___eetoo ]
+"141
+[v _addr `*Ev ~T0 @X0 1 r1 ]
+"142
+[f ]
+"143
+[v _data `ul ~T0 @X0 1 a ]
+[; ;__eeprom.c: 143: unsigned long long data;
+[; ;__eeprom.c: 144: __eecpymem((unsigned char *) &data,addr,8);
+"144
+[e ( ___eecpymem (3 , , -> -> &U _data `*uc `*Vuc -> _addr `*Euc -> -> 8 `i `uc ]
+[; ;__eeprom.c: 145: return data;
+"145
+[e ) _data ]
+[e $UE 1538  ]
+[; ;__eeprom.c: 146: }
+"146
+[e :UE 1538 ]
 }
-[; ;sound_level.c: 213: }
-[e $U 1543  ]
-"198
-[e :U 1544 ]
-[e [\ _mode , $ -> -> 1 `i `uc 1545
- , $ -> -> 2 `i `uc 1549
- 1553 ]
-"213
-[e :U 1543 ]
-[; ;sound_level.c: 214: }
-"214
+"147
+[p o ]
+"150
+[v ___ctoee `(uc ~T0 @X0 1 ef2`*Ev`uc ]
+"151
+{
+[; ;__eeprom.c: 149: unsigned char
+[; ;__eeprom.c: 150: __ctoee(__eeprom void *addr, unsigned char data)
+[; ;__eeprom.c: 151: {
+[e :U ___ctoee ]
+"150
+[v _addr `*Ev ~T0 @X0 1 r1 ]
+[v _data `uc ~T0 @X0 1 r2 ]
+"151
+[f ]
+[; ;__eeprom.c: 152: __memcpyee(addr,(unsigned char *) &data,1);
+"152
+[e ( ___memcpyee (3 , , -> _addr `*Euc -> &U _data `*Cuc -> -> 1 `i `uc ]
+[; ;__eeprom.c: 153: return data;
+"153
+[e ) _data ]
+[e $UE 1539  ]
+[; ;__eeprom.c: 154: }
+"154
+[e :UE 1539 ]
+}
+"157
+[v ___itoee `(ui ~T0 @X0 1 ef2`*Ev`ui ]
+"158
+{
+[; ;__eeprom.c: 156: unsigned int
+[; ;__eeprom.c: 157: __itoee(__eeprom void *addr, unsigned int data)
+[; ;__eeprom.c: 158: {
+[e :U ___itoee ]
+"157
+[v _addr `*Ev ~T0 @X0 1 r1 ]
+[v _data `ui ~T0 @X0 1 r2 ]
+"158
+[f ]
+[; ;__eeprom.c: 159: __memcpyee(addr,(unsigned char *) &data,2);
+"159
+[e ( ___memcpyee (3 , , -> _addr `*Euc -> -> &U _data `*uc `*Cuc -> -> 2 `i `uc ]
+[; ;__eeprom.c: 160: return data;
+"160
+[e ) _data ]
+[e $UE 1540  ]
+[; ;__eeprom.c: 161: }
+"161
+[e :UE 1540 ]
+}
+"163
+[p k ]
+"164
+[p n 2040 ]
+"166
+[v ___mtoee `(um ~T0 @X0 1 ef2`*Ev`um ]
+"167
+{
+[; ;__eeprom.c: 165: __uint24
+[; ;__eeprom.c: 166: __mtoee(__eeprom void *addr, __uint24 data)
+[; ;__eeprom.c: 167: {
+[e :U ___mtoee ]
+"166
+[v _addr `*Ev ~T0 @X0 1 r1 ]
+[v _data `um ~T0 @X0 1 r2 ]
+"167
+[f ]
+[; ;__eeprom.c: 168: __memcpyee(addr,(unsigned char *) &data,3);
+"168
+[e ( ___memcpyee (3 , , -> _addr `*Euc -> -> &U _data `*uc `*Cuc -> -> 3 `i `uc ]
+[; ;__eeprom.c: 169: return data;
+"169
+[e ) _data ]
+[e $UE 1541  ]
+[; ;__eeprom.c: 170: }
+"170
+[e :UE 1541 ]
+}
+"171
+[p o ]
+"174
+[v ___ltoee `(ul ~T0 @X0 1 ef2`*Ev`ul ]
+"175
+{
+[; ;__eeprom.c: 173: unsigned long
+[; ;__eeprom.c: 174: __ltoee(__eeprom void *addr, unsigned long data)
+[; ;__eeprom.c: 175: {
+[e :U ___ltoee ]
+"174
+[v _addr `*Ev ~T0 @X0 1 r1 ]
+[v _data `ul ~T0 @X0 1 r2 ]
+"175
+[f ]
+[; ;__eeprom.c: 176: __memcpyee(addr,(unsigned char *) &data,4);
+"176
+[e ( ___memcpyee (3 , , -> _addr `*Euc -> -> &U _data `*uc `*Cuc -> -> 4 `i `uc ]
+[; ;__eeprom.c: 177: return data;
+"177
+[e ) _data ]
+[e $UE 1542  ]
+[; ;__eeprom.c: 178: }
+"178
 [e :UE 1542 ]
 }
+"180
+[p k ]
+"181
+[p n 1516 ]
+"183
+[v ___otoee `(ul ~T0 @X0 1 ef2`*Ev`ul ]
+"184
+{
+[; ;__eeprom.c: 182: unsigned long long
+[; ;__eeprom.c: 183: __otoee(__eeprom void *addr, unsigned long long data)
+[; ;__eeprom.c: 184: {
+[e :U ___otoee ]
+"183
+[v _addr `*Ev ~T0 @X0 1 r1 ]
+[v _data `ul ~T0 @X0 1 r2 ]
+"184
+[f ]
+[; ;__eeprom.c: 185: __memcpyee(addr,(unsigned char *) &data,8);
+"185
+[e ( ___memcpyee (3 , , -> _addr `*Euc -> -> &U _data `*uc `*Cuc -> -> 8 `i `uc ]
+[; ;__eeprom.c: 186: return data;
+"186
+[e ) _data ]
+[e $UE 1543  ]
+[; ;__eeprom.c: 187: }
+"187
+[e :UE 1543 ]
+}
+"188
+[p o ]
+"191
+[v ___eetoft `(f ~T0 @X0 1 ef1`*Ev ]
+"192
+{
+[; ;__eeprom.c: 190: float
+[; ;__eeprom.c: 191: __eetoft(__eeprom void *addr)
+[; ;__eeprom.c: 192: {
+[e :U ___eetoft ]
+"191
+[v _addr `*Ev ~T0 @X0 1 r1 ]
+"192
+[f ]
+"193
+[v _data `f ~T0 @X0 1 a ]
+[; ;__eeprom.c: 193: float data;
+[; ;__eeprom.c: 194: __eecpymem((unsigned char *) &data,addr,3);
+"194
+[e ( ___eecpymem (3 , , -> -> &U _data `*uc `*Vuc -> _addr `*Euc -> -> 3 `i `uc ]
+[; ;__eeprom.c: 195: return data;
+"195
+[e ) _data ]
+[e $UE 1544  ]
+[; ;__eeprom.c: 196: }
+"196
+[e :UE 1544 ]
+}
+"199
+[v ___eetofl `(d ~T0 @X0 1 ef1`*Ev ]
+"200
+{
+[; ;__eeprom.c: 198: double
+[; ;__eeprom.c: 199: __eetofl(__eeprom void *addr)
+[; ;__eeprom.c: 200: {
+[e :U ___eetofl ]
+"199
+[v _addr `*Ev ~T0 @X0 1 r1 ]
+"200
+[f ]
+"201
+[v _data `d ~T0 @X0 1 a ]
+[; ;__eeprom.c: 201: double data;
+[; ;__eeprom.c: 202: __eecpymem((unsigned char *) &data,addr,4);
+"202
+[e ( ___eecpymem (3 , , -> -> &U _data `*uc `*Vuc -> _addr `*Euc -> -> 4 `i `uc ]
+[; ;__eeprom.c: 203: return data;
+"203
+[e ) _data ]
+[e $UE 1545  ]
+[; ;__eeprom.c: 204: }
+"204
+[e :UE 1545 ]
+}
+"207
+[v ___fttoee `(f ~T0 @X0 1 ef2`*Ev`f ]
+"208
+{
+[; ;__eeprom.c: 206: float
+[; ;__eeprom.c: 207: __fttoee(__eeprom void *addr, float data)
+[; ;__eeprom.c: 208: {
+[e :U ___fttoee ]
+"207
+[v _addr `*Ev ~T0 @X0 1 r1 ]
+[v _data `f ~T0 @X0 1 r2 ]
+"208
+[f ]
+[; ;__eeprom.c: 209: __memcpyee(addr,(unsigned char *) &data,3);
+"209
+[e ( ___memcpyee (3 , , -> _addr `*Euc -> -> &U _data `*uc `*Cuc -> -> 3 `i `uc ]
+[; ;__eeprom.c: 210: return data;
+"210
+[e ) _data ]
+[e $UE 1546  ]
+[; ;__eeprom.c: 211: }
+"211
+[e :UE 1546 ]
+}
+"214
+[v ___fltoee `(d ~T0 @X0 1 ef2`*Ev`d ]
+"215
+{
+[; ;__eeprom.c: 213: double
+[; ;__eeprom.c: 214: __fltoee(__eeprom void *addr, double data)
+[; ;__eeprom.c: 215: {
+[e :U ___fltoee ]
+"214
+[v _addr `*Ev ~T0 @X0 1 r1 ]
+[v _data `d ~T0 @X0 1 r2 ]
+"215
+[f ]
+[; ;__eeprom.c: 216: __memcpyee(addr,(unsigned char *) &data,4);
 "216
-[v _READY_Init `(v ~T0 @X0 1 ef ]
+[e ( ___memcpyee (3 , , -> _addr `*Euc -> -> &U _data `*uc `*Cuc -> -> 4 `i `uc ]
+[; ;__eeprom.c: 217: return data;
 "217
-{
-[; ;sound_level.c: 216: void READY_Init(void)
-[; ;sound_level.c: 217: {
-[e :U _READY_Init ]
-[f ]
-[; ;sound_level.c: 218: do { TRISCbits.TRISC7 = 0; } while(0);
+[e ) _data ]
+[e $UE 1547  ]
+[; ;__eeprom.c: 218: }
 "218
-[e :U 1560 ]
-{
-[e = . . _TRISCbits 0 7 -> -> 0 `i `uc ]
-}
-[e :U 1559 ]
-[; ;sound_level.c: 219: do { LATCbits.LATC7 = 1; } while(0);
-"219
-[e :U 1563 ]
-{
-[e = . . _LATCbits 0 7 -> -> 1 `i `uc ]
-}
-[e :U 1562 ]
-[; ;sound_level.c: 220: }
-"220
-[e :UE 1557 ]
-}
-"222
-[v _DOUT_Init `(v ~T0 @X0 1 ef ]
-"223
-{
-[; ;sound_level.c: 222: void DOUT_Init(void)
-[; ;sound_level.c: 223: {
-[e :U _DOUT_Init ]
-[f ]
-[; ;sound_level.c: 224: do { ANSELCbits.ANSC6 = 0; } while(0);
-"224
-[e :U 1567 ]
-{
-[e = . . _ANSELCbits 0 6 -> -> 0 `i `uc ]
-}
-[e :U 1566 ]
-[; ;sound_level.c: 225: do { TRISCbits.TRISC6 = 1; } while(0);
-"225
-[e :U 1570 ]
-{
-[e = . . _TRISCbits 0 6 -> -> 1 `i `uc ]
-}
-[e :U 1569 ]
-[; ;sound_level.c: 229: }
-"229
-[e :UE 1564 ]
-}
-"231
-[v _VDDAMP_Init `(v ~T0 @X0 1 ef ]
-"232
-{
-[; ;sound_level.c: 231: void VDDAMP_Init()
-[; ;sound_level.c: 232: {
-[e :U _VDDAMP_Init ]
-[f ]
-[; ;sound_level.c: 233: do { ANSELCbits.ANSC4 = 0; } while(0);
-"233
-[e :U 1574 ]
-{
-[e = . . _ANSELCbits 0 4 -> -> 0 `i `uc ]
-}
-[e :U 1573 ]
-[; ;sound_level.c: 234: do { TRISCbits.TRISC4 = 0; } while(0);
-"234
-[e :U 1577 ]
-{
-[e = . . _TRISCbits 0 4 -> -> 0 `i `uc ]
-}
-[e :U 1576 ]
-[; ;sound_level.c: 235: do { LATCbits.LATC4 = 0; } while(0);
-"235
-[e :U 1580 ]
-{
-[e = . . _LATCbits 0 4 -> -> 0 `i `uc ]
-}
-[e :U 1579 ]
-[; ;sound_level.c: 237: }
-"237
-[e :UE 1571 ]
-}
-"239
-[v _VDDBIAS_Init `(v ~T0 @X0 1 ef ]
-"240
-{
-[; ;sound_level.c: 239: void VDDBIAS_Init()
-[; ;sound_level.c: 240: {
-[e :U _VDDBIAS_Init ]
-[f ]
-[; ;sound_level.c: 241: do { ANSELCbits.ANSC2 = 0; } while(0);
-"241
-[e :U 1584 ]
-{
-[e = . . _ANSELCbits 0 2 -> -> 0 `i `uc ]
-}
-[e :U 1583 ]
-[; ;sound_level.c: 242: do { TRISCbits.TRISC2 = 0; } while(0);
-"242
-[e :U 1587 ]
-{
-[e = . . _TRISCbits 0 2 -> -> 0 `i `uc ]
-}
-[e :U 1586 ]
-[; ;sound_level.c: 243: do { LATCbits.LATC2 = 0; } while(0);
-"243
-[e :U 1590 ]
-{
-[e = . . _LATCbits 0 2 -> -> 0 `i `uc ]
-}
-[e :U 1589 ]
-[; ;sound_level.c: 246: do { ANSELBbits.ANSB4 = 0; } while(0);
-"246
-[e :U 1593 ]
-{
-[e = . . _ANSELBbits 0 1 -> -> 0 `i `uc ]
-}
-[e :U 1592 ]
-[; ;sound_level.c: 247: do { TRISBbits.TRISB4 = 0; } while(0);
-"247
-[e :U 1596 ]
-{
-[e = . . _TRISBbits 0 1 -> -> 0 `i `uc ]
-}
-[e :U 1595 ]
-[; ;sound_level.c: 248: do { LATBbits.LATB4 = 0; } while(0);
-"248
-[e :U 1599 ]
-{
-[e = . . _LATBbits 0 1 -> -> 0 `i `uc ]
-}
-[e :U 1598 ]
-[; ;sound_level.c: 250: }
-"250
-[e :UE 1581 ]
-}
-"252
-[v _AMPS_enable `(v ~T0 @X0 1 ef1`uc ]
-"253
-{
-[; ;sound_level.c: 252: void AMPS_enable(bool enable)
-[; ;sound_level.c: 253: {
-[e :U _AMPS_enable ]
-"252
-[v _enable `uc ~T0 @X0 1 r1 ]
-"253
-[f ]
-[; ;sound_level.c: 254: switch(enable)
-"254
-[e $U 1602  ]
-[; ;sound_level.c: 255: {
-"255
-{
-[; ;sound_level.c: 256: case 1:
-"256
-[e :U 1603 ]
-[; ;sound_level.c: 257: do { LATBbits.LATB4 = 1; } while(0);
-"257
-[e :U 1606 ]
-{
-[e = . . _LATBbits 0 1 -> -> 1 `i `uc ]
-}
-[e :U 1605 ]
-[; ;sound_level.c: 258: do { LATCbits.LATC2 = 1; } while(0);
-"258
-[e :U 1609 ]
-{
-[e = . . _LATCbits 0 2 -> -> 1 `i `uc ]
-}
-[e :U 1608 ]
-[; ;sound_level.c: 259: do { LATCbits.LATC4 = 1; } while(0);
-"259
-[e :U 1612 ]
-{
-[e = . . _LATCbits 0 4 -> -> 1 `i `uc ]
-}
-[e :U 1611 ]
-[; ;sound_level.c: 260: _delay((unsigned long)((100)*(32000000/4000.0)));
-"260
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-[; ;sound_level.c: 261: break;
-"261
-[e $U 1601  ]
-[; ;sound_level.c: 263: case 0:
-"263
-[e :U 1613 ]
-[; ;sound_level.c: 264: do { LATBbits.LATB4 = 0; } while(0);
-"264
-[e :U 1616 ]
-{
-[e = . . _LATBbits 0 1 -> -> 0 `i `uc ]
-}
-[e :U 1615 ]
-[; ;sound_level.c: 265: do { LATCbits.LATC2 = 0; } while(0);
-"265
-[e :U 1619 ]
-{
-[e = . . _LATCbits 0 2 -> -> 0 `i `uc ]
-}
-[e :U 1618 ]
-[; ;sound_level.c: 266: do { LATCbits.LATC4 = 0; } while(0);
-"266
-[e :U 1622 ]
-{
-[e = . . _LATCbits 0 4 -> -> 0 `i `uc ]
-}
-[e :U 1621 ]
-[; ;sound_level.c: 267: break;
-"267
-[e $U 1601  ]
-[; ;sound_level.c: 269: default:
-"269
-[e :U 1623 ]
-[; ;sound_level.c: 270: do { LATBbits.LATB4 = 0; } while(0);
-"270
-[e :U 1626 ]
-{
-[e = . . _LATBbits 0 1 -> -> 0 `i `uc ]
-}
-[e :U 1625 ]
-[; ;sound_level.c: 271: do { LATCbits.LATC2 = 0; } while(0);
-"271
-[e :U 1629 ]
-{
-[e = . . _LATCbits 0 2 -> -> 0 `i `uc ]
-}
-[e :U 1628 ]
-[; ;sound_level.c: 272: do { LATCbits.LATC4 = 0; } while(0);
-"272
-[e :U 1632 ]
-{
-[e = . . _LATCbits 0 4 -> -> 0 `i `uc ]
-}
-[e :U 1631 ]
-"273
-}
-[; ;sound_level.c: 273: }
-[e $U 1601  ]
-"254
-[e :U 1602 ]
-[e [\ _enable , $ -> -> 1 `i `uc 1603
- , $ -> -> 0 `i `uc 1613
- 1623 ]
-"273
-[e :U 1601 ]
-[; ;sound_level.c: 274: }
-"274
-[e :UE 1600 ]
-}
-"277
-[v _WDT_Init `(v ~T0 @X0 1 ef ]
-"278
-{
-[; ;sound_level.c: 277: void WDT_Init(void)
-[; ;sound_level.c: 278: {
-[e :U _WDT_Init ]
-[f ]
-[; ;sound_level.c: 281: WDTCON0 = 0x20;
-"281
-[e = _WDTCON0 -> -> 32 `i `uc ]
-[; ;sound_level.c: 282: WDTCON1 = 0x07;
-"282
-[e = _WDTCON1 -> -> 7 `i `uc ]
-[; ;sound_level.c: 283: }
-"283
-[e :UE 1633 ]
-}
-"286
-[v _SoundLevel_Init `(v ~T0 @X0 1 ef ]
-{
-[; ;sound_level.c: 286: void SoundLevel_Init(void){
-[e :U _SoundLevel_Init ]
-[f ]
-[; ;sound_level.c: 288: LED_Init();
-"288
-[e ( _LED_Init ..  ]
-[; ;sound_level.c: 290: PMD0bits.IOCMD = 0;
-"290
-[e = . . _PMD0bits 0 0 -> -> 0 `i `uc ]
-[; ;sound_level.c: 292: powerMic_Init();
-"292
-[e ( _powerMic_Init ..  ]
-[; ;sound_level.c: 293: _delay((unsigned long)((1)*(32000000/4000.0)));
-"293
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-[; ;sound_level.c: 294: nWakeMic_Init();
-"294
-[e ( _nWakeMic_Init ..  ]
-[; ;sound_level.c: 295: _delay((unsigned long)((1)*(32000000/4000.0)));
-"295
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-[; ;sound_level.c: 297: READY_Init();
-"297
-[e ( _READY_Init ..  ]
-[; ;sound_level.c: 298: DOUT_Init();
-"298
-[e ( _DOUT_Init ..  ]
-[; ;sound_level.c: 299: VDDAMP_Init();
-"299
-[e ( _VDDAMP_Init ..  ]
-[; ;sound_level.c: 300: VDDBIAS_Init();
-"300
-[e ( _VDDBIAS_Init ..  ]
-[; ;sound_level.c: 301: _delay((unsigned long)((1)*(32000000/4000.0)));
-"301
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-[; ;sound_level.c: 315: PIE0bits.IOCIE = 1;
-"315
-[e = . . _PIE0bits 0 2 -> -> 1 `i `uc ]
-[; ;sound_level.c: 317: IOCCFbits.IOCCF6 = 0;
-"317
-[e = . . _IOCCFbits 0 6 -> -> 0 `i `uc ]
-[; ;sound_level.c: 319: IOCCNbits.IOCCN6 = 0;
-"319
-[e = . . _IOCCNbits 0 6 -> -> 0 `i `uc ]
-[; ;sound_level.c: 321: IOCCPbits.IOCCP6 = 1;
-"321
-[e = . . _IOCCPbits 0 6 -> -> 1 `i `uc ]
-[; ;sound_level.c: 323: IOCCF6_SetInterruptHandler(ISR_MIC_Wake);
-"323
-[e ( _IOCCF6_SetInterruptHandler (1 &U _ISR_MIC_Wake ]
-[; ;sound_level.c: 326: adcScaler = 3.3 / (4095 * 0.01258925 * 44);
-"326
-[e = _adcScaler -> / .3.3 * * -> -> 4095 `i `d .0.01258925 -> -> 44 `i `d `f ]
-[; ;sound_level.c: 329: ADCC_Initialize();
-"329
-[e ( _ADCC_Initialize ..  ]
-[; ;sound_level.c: 330: ADCC_SetADIInterruptHandler(SoundLevel_GetSample);
-"330
-[e ( _ADCC_SetADIInterruptHandler (1 &U _SoundLevel_GetSample ]
-[; ;sound_level.c: 333: WDT_Init();
-"333
-[e ( _WDT_Init ..  ]
-[; ;sound_level.c: 345: }
-"345
-[e :UE 1634 ]
-}
-"349
-[v _SoundLevel_Measure `(v ~T0 @X0 1 ef ]
-{
-[; ;sound_level.c: 349: void SoundLevel_Measure(){
-[e :U _SoundLevel_Measure ]
-[f ]
-[; ;sound_level.c: 350: polledMeasurement = 1;
-"350
-[e = _polledMeasurement -> -> 1 `i `uc ]
-[; ;sound_level.c: 351: }
-"351
-[e :UE 1635 ]
-}
-"355
-[v _SoundLevel_Loop `(v ~T0 @X0 1 ef ]
-{
-[; ;sound_level.c: 355: void SoundLevel_Loop(void){
-[e :U _SoundLevel_Loop ]
-[f ]
-[; ;sound_level.c: 359: if(polledMeasurement && (WDTCON0bits.SEN == 0))
-"359
-[e $ ! && != -> _polledMeasurement `i -> -> -> 0 `i `uc `i == -> . . _WDTCON0bits 0 0 `i -> 0 `i 1637  ]
-[; ;sound_level.c: 360: {
-"360
-{
-[; ;sound_level.c: 361: if(thresholdEnabled)
-"361
-[e $ ! != -> _thresholdEnabled `i -> -> -> 0 `i `Suc `i 1638  ]
-[; ;sound_level.c: 362: {
-"362
-{
-[; ;sound_level.c: 363: measurementRunning = 1;
-"363
-[e = _measurementRunning -> -> 1 `i `uc ]
-[; ;sound_level.c: 364: measure();
-"364
-[e ( _measure ..  ]
-[; ;sound_level.c: 365: measurementRunning = 0;
-"365
-[e = _measurementRunning -> -> 0 `i `uc ]
-[; ;sound_level.c: 367: generateInt();
-"367
-[e ( _generateInt ..  ]
-[; ;sound_level.c: 369: MIC_Mode(2);
-"369
-[e ( _MIC_Mode (1 -> -> 2 `i `uc ]
-[; ;sound_level.c: 372: polledMeasurement = 0;
-"372
-[e = _polledMeasurement -> -> 0 `i `uc ]
-"373
-}
-[; ;sound_level.c: 373: }
-[e $U 1639  ]
-"374
-[e :U 1638 ]
-[; ;sound_level.c: 374: else if(!thresholdEnabled)
-[e $ ! ! != -> _thresholdEnabled `i -> -> -> 0 `i `Suc `i 1640  ]
-[; ;sound_level.c: 375: {
-"375
-{
-[; ;sound_level.c: 376: do { LATCbits.LATC0 = 1; } while(0);
-"376
-[e :U 1643 ]
-{
-[e = . . _LATCbits 0 0 -> -> 1 `i `uc ]
-}
-[e :U 1642 ]
-[; ;sound_level.c: 377: _delay((unsigned long)((1)*(32000000/4000.0)));
-"377
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-[; ;sound_level.c: 379: measurementRunning = 1;
-"379
-[e = _measurementRunning -> -> 1 `i `uc ]
-[; ;sound_level.c: 380: measure();
-"380
-[e ( _measure ..  ]
-[; ;sound_level.c: 381: measurementRunning = 0;
-"381
-[e = _measurementRunning -> -> 0 `i `uc ]
-[; ;sound_level.c: 383: generateInt();
-"383
-[e ( _generateInt ..  ]
-[; ;sound_level.c: 385: do { LATCbits.LATC0 = 0; } while(0);
-"385
-[e :U 1646 ]
-{
-[e = . . _LATCbits 0 0 -> -> 0 `i `uc ]
-}
-[e :U 1645 ]
-[; ;sound_level.c: 386: _delay((unsigned long)((1)*(32000000/4000.0)));
-"386
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-[; ;sound_level.c: 387: MIC_Mode(1);
-"387
-[e ( _MIC_Mode (1 -> -> 1 `i `uc ]
-[; ;sound_level.c: 389: polledMeasurement = 0;
-"389
-[e = _polledMeasurement -> -> 0 `i `uc ]
-"390
-}
-[e :U 1640 ]
-"391
-[e :U 1639 ]
-}
-[; ;sound_level.c: 390: }
-[; ;sound_level.c: 391: }
-[e $U 1647  ]
-"392
-[e :U 1637 ]
-[; ;sound_level.c: 392: else if(polledMeasurement && (WDTCON0bits.SEN == 1))
-[e $ ! && != -> _polledMeasurement `i -> -> -> 0 `i `uc `i == -> . . _WDTCON0bits 0 0 `i -> 1 `i 1648  ]
-[; ;sound_level.c: 393: {
-"393
-{
-[; ;sound_level.c: 394: do { LATCbits.LATC0 = 1; } while(0);
-"394
-[e :U 1651 ]
-{
-[e = . . _LATCbits 0 0 -> -> 1 `i `uc ]
-}
-[e :U 1650 ]
-[; ;sound_level.c: 395: _delay((unsigned long)((1)*(32000000/4000.0)));
-"395
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-[; ;sound_level.c: 397: measurementRunning = 1;
-"397
-[e = _measurementRunning -> -> 1 `i `uc ]
-[; ;sound_level.c: 398: measure();
-"398
-[e ( _measure ..  ]
-[; ;sound_level.c: 399: measurementRunning = 0;
-"399
-[e = _measurementRunning -> -> 0 `i `uc ]
-[; ;sound_level.c: 401: generateInt();
-"401
-[e ( _generateInt ..  ]
-[; ;sound_level.c: 407: MIC_Mode(2);
-"407
-[e ( _MIC_Mode (1 -> -> 2 `i `uc ]
-[; ;sound_level.c: 409: WDTCON0bits.SEN = 0;
-"409
-[e = . . _WDTCON0bits 0 0 -> -> 0 `i `uc ]
-[; ;sound_level.c: 411: polledMeasurement = 0;
-"411
-[e = _polledMeasurement -> -> 0 `i `uc ]
-"412
-}
-[; ;sound_level.c: 412: }
-[e $U 1652  ]
-"413
-[e :U 1648 ]
-[; ;sound_level.c: 413: else if(soundinterrupt)
-[e $ ! != -> _soundinterrupt `i -> -> -> 0 `i `uc `i 1653  ]
-[; ;sound_level.c: 414: {
-"414
-{
-[; ;sound_level.c: 415: measurementRunning = 1;
-"415
-[e = _measurementRunning -> -> 1 `i `uc ]
-[; ;sound_level.c: 416: measure();
-"416
-[e ( _measure ..  ]
-[; ;sound_level.c: 417: measurementRunning = 0;
-"417
-[e = _measurementRunning -> -> 0 `i `uc ]
-[; ;sound_level.c: 419: if(overThreshold)
-"419
-[e $ ! != -> _overThreshold `i -> -> -> 0 `i `uc `i 1654  ]
-[; ;sound_level.c: 420: {
-"420
-{
-[; ;sound_level.c: 421: asm("clrwdt");
-"421
-[; <" clrwdt ;# ">
-[; ;sound_level.c: 422: WDTCON0bits.SEN = 1;
-"422
-[e = . . _WDTCON0bits 0 0 -> -> 1 `i `uc ]
-[; ;sound_level.c: 424: generateInt();
-"424
-[e ( _generateInt ..  ]
-[; ;sound_level.c: 426: do { LATCbits.LATC0 = 0; } while(0);
-"426
-[e :U 1657 ]
-{
-[e = . . _LATCbits 0 0 -> -> 0 `i `uc ]
-}
-[e :U 1656 ]
-[; ;sound_level.c: 428: MIC_Mode(1);
-"428
-[e ( _MIC_Mode (1 -> -> 1 `i `uc ]
-"429
-}
-[; ;sound_level.c: 429: }else
-[e $U 1658  ]
-[e :U 1654 ]
-[; ;sound_level.c: 430: {
-"430
-{
-[; ;sound_level.c: 431: MIC_Mode(1);
-"431
-[e ( _MIC_Mode (1 -> -> 1 `i `uc ]
-[; ;sound_level.c: 432: _delay((unsigned long)((10)*(32000000/4000.0)));
-"432
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-[; ;sound_level.c: 434: MIC_Mode(2);
-"434
-[e ( _MIC_Mode (1 -> -> 2 `i `uc ]
-"436
-}
-[e :U 1658 ]
-[; ;sound_level.c: 436: }
-[; ;sound_level.c: 438: soundinterrupt = 0;
-"438
-[e = _soundinterrupt -> -> 0 `i `uc ]
-"439
-}
-[; ;sound_level.c: 439: }
-[e $U 1659  ]
-"440
-[e :U 1653 ]
-[; ;sound_level.c: 440: else if(STATUSbits.nTO == 0)
-[e $ ! == -> . . _STATUSbits 0 4 `i -> 0 `i 1660  ]
-[; ;sound_level.c: 441: {
-"441
-{
-[; ;sound_level.c: 442: WDTCON0bits.SEN = 0;
-"442
-[e = . . _WDTCON0bits 0 0 -> -> 0 `i `uc ]
-[; ;sound_level.c: 444: do { LATCbits.LATC0 = 1; } while(0);
-"444
-[e :U 1663 ]
-{
-[e = . . _LATCbits 0 0 -> -> 1 `i `uc ]
-}
-[e :U 1662 ]
-[; ;sound_level.c: 445: _delay((unsigned long)((1)*(32000000/4000.0)));
-"445
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-[; ;sound_level.c: 446: MIC_Mode(2);
-"446
-[e ( _MIC_Mode (1 -> -> 2 `i `uc ]
-[; ;sound_level.c: 449: EnterSleep();
-"449
-[e ( _EnterSleep ..  ]
-"450
-}
-[; ;sound_level.c: 450: }
-[e $U 1664  ]
-"451
-[e :U 1660 ]
-[; ;sound_level.c: 451: else
-[; ;sound_level.c: 452: {
-"452
-{
-[; ;sound_level.c: 453: EnterSleep();
-"453
-[e ( _EnterSleep ..  ]
-"454
-}
-[e :U 1664 ]
-[e :U 1659 ]
-[e :U 1652 ]
-[e :U 1647 ]
-[; ;sound_level.c: 454: }
-[; ;sound_level.c: 458: }
-"458
-[e :UE 1636 ]
-}
-"460
-[v _EnterSleep `(v ~T0 @X0 1 sf ]
-{
-[; ;sound_level.c: 460: static void EnterSleep(void){
-[e :U _EnterSleep ]
-[f ]
-[; ;sound_level.c: 461: CPUDOZEbits.IDLEN = 0;
-"461
-[e = . . _CPUDOZEbits 0 5 -> -> 0 `i `uc ]
-[; ;sound_level.c: 462: __nop();
-"462
-[e ( ___nop ..  ]
-[; ;sound_level.c: 463: asm("sleep");
-"463
-[; <" sleep ;# ">
-[; ;sound_level.c: 464: __nop();
-"464
-[e ( ___nop ..  ]
-[; ;sound_level.c: 465: __nop();
-"465
-[e ( ___nop ..  ]
-[; ;sound_level.c: 466: }
-"466
-[e :UE 1665 ]
-}
-"469
-[v _SoundLevel_GetData `(v ~T0 @X0 1 ef2`*uc`*uc ]
-{
-[; ;sound_level.c: 469: void SoundLevel_GetData(uint8_t * data, uint8_t * length){
-[e :U _SoundLevel_GetData ]
-[v _data `*uc ~T0 @X0 1 r1 ]
-[v _length `*uc ~T0 @X0 1 r2 ]
-[f ]
-[; ;sound_level.c: 470: *length = 2;
-"470
-[e = *U _length -> -> 2 `i `uc ]
-[; ;sound_level.c: 471: data[0] = measurementData[0];
-"471
-[e = *U + _data * -> -> 0 `i `x -> -> # *U _data `i `x *U + &U _measurementData * -> -> -> 0 `i `ui `ux -> -> # *U &U _measurementData `ui `ux ]
-[; ;sound_level.c: 472: data[1] = measurementData[1];
-"472
-[e = *U + _data * -> -> 1 `i `x -> -> # *U _data `i `x *U + &U _measurementData * -> -> -> 1 `i `ui `ux -> -> # *U &U _measurementData `ui `ux ]
-[; ;sound_level.c: 473: }
-"473
-[e :UE 1666 ]
-}
-"476
-[v _SoundLevel_SetThreshold `(v ~T0 @X0 1 ef2`uc`*uc ]
-{
-[; ;sound_level.c: 476: void SoundLevel_SetThreshold(uint8_t metric, uint8_t * thresholdData){
-[e :U _SoundLevel_SetThreshold ]
-[v _metric `uc ~T0 @X0 1 r1 ]
-[v _thresholdData `*uc ~T0 @X0 1 r2 ]
-[f ]
-[; ;sound_level.c: 477: if(metric == 0){
-"477
-[e $ ! == -> _metric `i -> 0 `i 1668  ]
-{
-[; ;sound_level.c: 478: thresholdEnabled = thresholdData[0];
-"478
-[e = _thresholdEnabled *U + _thresholdData * -> -> 0 `i `x -> -> # *U _thresholdData `i `x ]
-[; ;sound_level.c: 479: thresholdLevel = (uint16_t)((thresholdData[3]<<8) | thresholdData[4]);
-"479
-[e = _thresholdLevel -> | << -> *U + _thresholdData * -> -> 3 `i `x -> -> # *U _thresholdData `i `x `i -> 8 `i -> *U + _thresholdData * -> -> 4 `i `x -> -> # *U _thresholdData `i `x `i `ui ]
-[; ;sound_level.c: 481: if(thresholdEnabled)
-"481
-[e $ ! != -> _thresholdEnabled `i -> -> -> 0 `i `Suc `i 1669  ]
-[; ;sound_level.c: 482: {
-"482
-{
-[; ;sound_level.c: 483: do { LATCbits.LATC0 = 1; } while(0);
-"483
-[e :U 1672 ]
-{
-[e = . . _LATCbits 0 0 -> -> 1 `i `uc ]
-}
-[e :U 1671 ]
-[; ;sound_level.c: 484: _delay((unsigned long)((1)*(32000000/4000.0)));
-"484
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-[; ;sound_level.c: 485: MIC_Mode(2);
-"485
-[e ( _MIC_Mode (1 -> -> 2 `i `uc ]
-"487
-}
-[e :U 1669 ]
-"488
-}
-[e :U 1668 ]
-[; ;sound_level.c: 487: }
-[; ;sound_level.c: 488: }
-[; ;sound_level.c: 489: }
-"489
-[e :UE 1667 ]
-}
-"492
-[v _SoundLevel_PrepareData `(v ~T0 @X0 1 ef ]
-{
-[; ;sound_level.c: 492: void SoundLevel_PrepareData(){
-[e :U _SoundLevel_PrepareData ]
-[f ]
-"493
-[v _dBZ `f ~T0 @X0 1 a ]
-[; ;sound_level.c: 493: float dBZ = 0;
-[e = _dBZ -> -> 0 `i `f ]
-"494
-[v _sampleSum `ul ~T0 @X0 1 a ]
-[; ;sound_level.c: 494: uint32_t sampleSum = 0;
-[e = _sampleSum -> -> -> 0 `i `l `ul ]
-"496
-[v _mean `f ~T0 @X0 1 a ]
-[; ;sound_level.c: 496: float mean = 0;
-[e = _mean -> -> 0 `i `f ]
-[; ;sound_level.c: 497: for(int i=0; i<400; i++)
-"497
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $ < _i -> 400 `i 1674  ]
-[e $U 1675  ]
-"498
-[e :U 1674 ]
-[; ;sound_level.c: 498: {
-{
-[; ;sound_level.c: 499: mean += sampleArray[i];
-"499
-[e =+ _mean -> *U + &U _sampleArray * -> -> _i `ui `ux -> -> # *U &U _sampleArray `ui `ux `f ]
-"500
-}
-"497
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 400 `i 1674  ]
-[e :U 1675 ]
-"500
-}
-[; ;sound_level.c: 500: }
-[; ;sound_level.c: 501: mean /= 400;
-"501
-[e =/ _mean -> -> 400 `us `f ]
-[; ;sound_level.c: 503: for(int i=0; i<400; i++)
-"503
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $ < _i -> 400 `i 1677  ]
-[e $U 1678  ]
-"504
-[e :U 1677 ]
-[; ;sound_level.c: 504: {
-{
-"505
-[v _signal `f ~T0 @X0 1 a ]
-[; ;sound_level.c: 505: float signal = (sampleArray[i] - mean) * adcScaler;
-[e = _signal * - -> *U + &U _sampleArray * -> -> _i `ui `ux -> -> # *U &U _sampleArray `ui `ux `f _mean _adcScaler ]
-[; ;sound_level.c: 506: signal *= signal;
-"506
-[e =* _signal _signal ]
-[; ;sound_level.c: 507: presSumSquared += signal;
-"507
-[e =+ _presSumSquared _signal ]
-"508
-}
-"503
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 400 `i 1677  ]
-[e :U 1678 ]
-"508
-}
-"510
-[v _presAvgSquared `f ~T0 @X0 1 a ]
-[; ;sound_level.c: 508: }
-[; ;sound_level.c: 510: float presAvgSquared = presSumSquared/400;
-[e = _presAvgSquared / _presSumSquared -> -> 400 `i `f ]
-[; ;sound_level.c: 512: if( (presAvgSquared/(20e-6 * 20e-6)) != 0.0 )
-"512
-[e $ ! != / -> _presAvgSquared `d * .20e-6 .20e-6 .0.0 1680  ]
-[; ;sound_level.c: 513: {
-"513
-{
-[; ;sound_level.c: 514: dBZ = 10 * log10(presAvgSquared/(20e-6 * 20e-6));
-"514
-[e = _dBZ -> * -> -> 10 `i `d ( _log10 (1 / -> _presAvgSquared `d * .20e-6 .20e-6 `f ]
-"515
-}
-[; ;sound_level.c: 515: }else{
-[e $U 1681  ]
-[e :U 1680 ]
-{
-[; ;sound_level.c: 516: dBZ = 0;
-"516
-[e = _dBZ -> -> 0 `i `f ]
-"517
-}
-[e :U 1681 ]
-[; ;sound_level.c: 517: }
-[; ;sound_level.c: 519: if(dBZ > 106){
-"519
-[e $ ! > _dBZ -> -> 106 `i `f 1682  ]
-{
-[; ;sound_level.c: 520: dBZ = 106;
-"520
-[e = _dBZ -> -> 106 `i `f ]
-"521
-}
-[e :U 1682 ]
-"523
-[v _dataToSend `ui ~T0 @X0 1 a ]
-[; ;sound_level.c: 521: }
-[; ;sound_level.c: 523: uint16_t dataToSend = (uint16_t)(round(dBZ * 600));
-[e = _dataToSend -> ( _round (1 -> * _dBZ -> -> 600 `i `f `d `ui ]
-[; ;sound_level.c: 525: measurementData[0] = (uint8_t)(dataToSend>>8);
-"525
-[e = *U + &U _measurementData * -> -> -> 0 `i `ui `ux -> -> # *U &U _measurementData `ui `ux -> >> _dataToSend -> 8 `i `uc ]
-[; ;sound_level.c: 526: measurementData[1] = (uint8_t)(dataToSend);
-"526
-[e = *U + &U _measurementData * -> -> -> 1 `i `ui `ux -> -> # *U &U _measurementData `ui `ux -> _dataToSend `uc ]
-[; ;sound_level.c: 529: if(dataToSend > thresholdLevel){
-"529
-[e $ ! > _dataToSend _thresholdLevel 1683  ]
-{
-[; ;sound_level.c: 530: overThreshold = 1;
-"530
-[e = _overThreshold -> -> 1 `i `uc ]
-"531
-}
-[; ;sound_level.c: 531: }
-[e $U 1684  ]
-"532
-[e :U 1683 ]
-[; ;sound_level.c: 532: else{
-{
-[; ;sound_level.c: 533: overThreshold = 0;
-"533
-[e = _overThreshold -> -> 0 `i `uc ]
-"534
-}
-[e :U 1684 ]
-[; ;sound_level.c: 534: }
-[; ;sound_level.c: 535: }
-"535
-[e :UE 1673 ]
-}
-"538
-[v _SoundLevel_GetSample `(v ~T0 @X0 1 ef ]
-{
-[; ;sound_level.c: 538: void SoundLevel_GetSample(){
-[e :U _SoundLevel_GetSample ]
-[f ]
-[; ;sound_level.c: 540: sampleArray[sampleCounter] = ADCC_GetConversionResult();
-"540
-[e = *U + &U _sampleArray * -> _sampleCounter `ux -> -> # *U &U _sampleArray `ui `ux ( _ADCC_GetConversionResult ..  ]
-[; ;sound_level.c: 546: sampleCounter++;
-"546
-[e ++ _sampleCounter -> -> 1 `i `ui ]
-[; ;sound_level.c: 547: if(sampleCounter>400-1){
-"547
-[e $ ! > _sampleCounter -> - -> 400 `i -> 1 `i `ui 1686  ]
-{
-[; ;sound_level.c: 548: SoundLevel_StopADC();
-"548
-[e ( _SoundLevel_StopADC ..  ]
-[; ;sound_level.c: 549: sampling = 0;
-"549
-[e = _sampling -> -> 0 `i `uc ]
-"550
-}
-[e :U 1686 ]
-[; ;sound_level.c: 550: }
-[; ;sound_level.c: 551: }
-"551
-[e :UE 1685 ]
-}
-"554
-[v _SoundLevel_StartADC `(v ~T0 @X0 1 ef ]
-{
-[; ;sound_level.c: 554: void SoundLevel_StartADC(){
-[e :U _SoundLevel_StartADC ]
-[f ]
-[; ;sound_level.c: 555: ADCC_EnableContinuousConversion();
-"555
-[e ( _ADCC_EnableContinuousConversion ..  ]
-[; ;sound_level.c: 556: ADCC_StartConversion(channel_ANC1);
-"556
-[e ( _ADCC_StartConversion (1 . `E10916 0 ]
-[; ;sound_level.c: 557: }
-"557
-[e :UE 1687 ]
-}
-"560
-[v _SoundLevel_StopADC `(v ~T0 @X0 1 ef ]
-{
-[; ;sound_level.c: 560: void SoundLevel_StopADC(){
-[e :U _SoundLevel_StopADC ]
-[f ]
-[; ;sound_level.c: 561: ADCC_StopConversion();
-"561
-[e ( _ADCC_StopConversion ..  ]
-[; ;sound_level.c: 562: ADCC_DisableContinuousConversion();
-"562
-[e ( _ADCC_DisableContinuousConversion ..  ]
-[; ;sound_level.c: 563: }
-"563
-[e :UE 1688 ]
-}
-"566
-[v _SoundLevel_LedOn `(v ~T0 @X0 1 ef ]
-{
-[; ;sound_level.c: 566: void SoundLevel_LedOn(void){
-[e :U _SoundLevel_LedOn ]
-[f ]
-[; ;sound_level.c: 568: do { LATBbits.LATB6 = 1; } while(0);
-"568
-[e :U 1692 ]
-{
-[e = . . _LATBbits 0 3 -> -> 1 `i `uc ]
-}
-[e :U 1691 ]
-[; ;sound_level.c: 570: }
-"570
-[e :UE 1689 ]
-}
-"573
-[v _SoundLevel_LedOff `(v ~T0 @X0 1 ef ]
-{
-[; ;sound_level.c: 573: void SoundLevel_LedOff(void){
-[e :U _SoundLevel_LedOff ]
-[f ]
-[; ;sound_level.c: 575: do { LATBbits.LATB6 = 0; } while(0);
-"575
-[e :U 1696 ]
-{
-[e = . . _LATBbits 0 3 -> -> 0 `i `uc ]
-}
-[e :U 1695 ]
-[; ;sound_level.c: 577: }
-"577
-[e :UE 1693 ]
-}
-"580
-[v _SoundLevel_LedToggle `(v ~T0 @X0 1 ef ]
-{
-[; ;sound_level.c: 580: void SoundLevel_LedToggle(void){
-[e :U _SoundLevel_LedToggle ]
-[f ]
-[; ;sound_level.c: 582: do { LATBbits.LATB6 = ~LATBbits.LATB6; } while(0);
-"582
-[e :U 1700 ]
-{
-[e = . . _LATBbits 0 3 -> ~ -> . . _LATBbits 0 3 `i `uc ]
-}
-[e :U 1699 ]
-[; ;sound_level.c: 584: }
-"584
-[e :UE 1697 ]
-}
-"587
-[v _generateInt `(v ~T0 @X0 1 ef ]
-{
-[; ;sound_level.c: 587: void generateInt(void){
-[e :U _generateInt ]
-[f ]
-[; ;sound_level.c: 588: do { LATCbits.LATC7 = 0; } while(0);
-"588
-[e :U 1704 ]
-{
-[e = . . _LATCbits 0 7 -> -> 0 `i `uc ]
-}
-[e :U 1703 ]
-[; ;sound_level.c: 589: _delay((unsigned long)((5)*(32000000/4000.0)));
-"589
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-[; ;sound_level.c: 590: do { LATCbits.LATC7 = 1; } while(0);
-"590
-[e :U 1707 ]
-{
-[e = . . _LATCbits 0 7 -> -> 1 `i `uc ]
-}
-[e :U 1706 ]
-[; ;sound_level.c: 591: }
-"591
-[e :UE 1701 ]
-}
-"593
-[v _measure `(v ~T0 @X0 1 ef ]
-{
-[; ;sound_level.c: 593: void measure(void){
-[e :U _measure ]
-[f ]
-[; ;sound_level.c: 595: SoundLevel_LedOn();
-"595
-[e ( _SoundLevel_LedOn ..  ]
-[; ;sound_level.c: 597: MIC_Mode(1);
-"597
-[e ( _MIC_Mode (1 -> -> 1 `i `uc ]
-[; ;sound_level.c: 598: _delay((unsigned long)((10)*(32000000/4000.0)));
-"598
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-[; ;sound_level.c: 600: AMPS_enable(1);
-"600
-[e ( _AMPS_enable (1 -> -> 1 `i `uc ]
-[; ;sound_level.c: 603: sampling = 1;
-"603
-[e = _sampling -> -> 1 `i `uc ]
-[; ;sound_level.c: 604: sampleCounter = 0;
-"604
-[e = _sampleCounter -> -> 0 `i `ui ]
-[; ;sound_level.c: 605: presSumSquared = 0;
-"605
-[e = _presSumSquared -> -> 0 `i `f ]
-[; ;sound_level.c: 607: SoundLevel_StartADC();
-"607
-[e ( _SoundLevel_StartADC ..  ]
-[; ;sound_level.c: 609: while(sampling);
-"609
-[e $U 1709  ]
-[e :U 1710 ]
-[e :U 1709 ]
-[e $ != -> _sampling `i -> -> -> 0 `i `uc `i 1710  ]
-[e :U 1711 ]
-[; ;sound_level.c: 611: AMPS_enable(0);
-"611
-[e ( _AMPS_enable (1 -> -> 0 `i `uc ]
-[; ;sound_level.c: 613: SoundLevel_PrepareData();
-"613
-[e ( _SoundLevel_PrepareData ..  ]
-[; ;sound_level.c: 615: SoundLevel_LedOff();
-"615
-[e ( _SoundLevel_LedOff ..  ]
-[; ;sound_level.c: 616: }
-"616
-[e :UE 1708 ]
-}
-"619
-[v _ISR_MIC_Wake `(v ~T0 @X0 1 ef ]
-"620
-{
-[; ;sound_level.c: 619: void ISR_MIC_Wake(void)
-[; ;sound_level.c: 620: {
-[e :U _ISR_MIC_Wake ]
-[f ]
-[; ;sound_level.c: 621: __nop();
-"621
-[e ( ___nop ..  ]
-[; ;sound_level.c: 622: if(!measurementRunning)
-"622
-[e $ ! ! != -> _measurementRunning `i -> -> -> 0 `i `uc `i 1713  ]
-[; ;sound_level.c: 623: {
-"623
-{
-[; ;sound_level.c: 624: soundinterrupt = 1;
-"624
-[e = _soundinterrupt -> -> 1 `i `uc ]
-"625
-}
-[e :U 1713 ]
-[; ;sound_level.c: 625: }
-[; ;sound_level.c: 626: }
-"626
-[e :UE 1712 ]
+[e :UE 1547 ]
 }
