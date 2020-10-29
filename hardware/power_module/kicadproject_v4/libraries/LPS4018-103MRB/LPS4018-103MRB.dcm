@@ -1,9 +1,0 @@
-EESchema-DOCLIB  Version 2.0
-#
-$CMP LPS4018-103MRB
-D COILCRAFT - LPS4018-103MRB - INDUCTOR, 10UH, 20%, 0.9A, SHLD, SMD
-K
-F https://www.coilcraft.com/pdfs/lps4018.pdf
-$ENDCMP
-#
-#End Doc Library

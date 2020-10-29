@@ -1,9 +1,0 @@
-EESchema-DOCLIB  Version 2.0
-#
-$CMP LPS4018-223MRB
-D COILCRAFT - LPS4018-223MRB - INDUCTOR, SHLD, 22UH, 20%, 0.65A, SMD
-K
-F http://www.coilcraft.com/pdfs/lps4018.pdf
-$ENDCMP
-#
-#End Doc Library
