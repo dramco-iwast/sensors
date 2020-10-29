@@ -44,6 +44,7 @@
 
 #include <string.h>
 #include "i2c1.h"
+#include "../global.h"
 
 #define I2C1_SLAVE_MASK    0x7F
 
@@ -162,7 +163,10 @@ void I2C1_ISR(void){
         // callback routine should process I2C1_slaveWriteData from the master
         I2C1_StatusCallback(I2C1_SLAVE_WRITE_COMPLETED);
         SSP1CON1bits.CKP = 1;       // release SCL
-        while(!PIR3bits.SSP1IF);    // TODO: make non-blocking
+        uint8_t ctr=0xff;
+        while(!PIR3bits.SSP1IF && ctr--){
+            __delay_us(1);
+        }    // TODO: make non-blocking
     }
 
     // clear the slave interrupt flag

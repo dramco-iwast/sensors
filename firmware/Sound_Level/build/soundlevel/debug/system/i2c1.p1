@@ -139,10 +139,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S289 . . . . . . ]
 "6629
 [v _SSP1CON2bits `VS289 ~T0 @X0 0 e@401 ]
-"144 system/i2c1.c
+"145 system/i2c1.c
 [c E10841 0 1 2 3 .. ]
 [n E10841 . I2C1_SLAVE_WRITE_REQUEST I2C1_SLAVE_READ_REQUEST I2C1_SLAVE_WRITE_COMPLETED I2C1_SLAVE_READ_COMPLETED  ]
-"78
+"79
 [v _I2C1_StatusCallback `(v ~T0 @X0 0 ef1`E10841 ]
 "6468 C:/Users/Jona Cappelle/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18446.h
 [s S286 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -158,12 +158,16 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S285 . . . . ]
 "6492
 [v _SSP1CON1bits `VS285 ~T0 @X0 0 e@400 ]
+[v F129 `(v ~T0 @X0 1 tf1`ul ]
+"12 C:/Users/Jona Cappelle/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\builtins.h
+[v __delay `JF129 ~T0 @X0 0 e ]
+[p i __delay ]
 "21 C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\string.h
 [v ___builtin_memcpy `(*v ~T0 @X0 0 ef3`*v`*Cv`ui ]
 [p i ___builtin_memcpy ]
-"211 system/i2c1.c
-[c E10866 0 1 .. ]
-[n E10866 . SLAVE_COMMAND_DATA SLAVE_COMMAND  ]
+"215 system/i2c1.c
+[c E10885 0 1 .. ]
+[n E10885 . SLAVE_COMMAND_DATA SLAVE_COMMAND  ]
 [; ;xc8\pic\include\__size_t.h: 4: typedef unsigned size_t;
 [; ;string.h: 14: extern void * memcpy(void *, const void *, size_t);
 [; ;string.h: 15: extern void * memmove(void *, const void *, size_t);
@@ -12304,463 +12308,536 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;i2c1.h: 151: void I2C1_SetTransmitData(uint8_t * data, uint8_t len);
 [; ;i2c1.h: 152: bool I2C1_TxBufferEmpty(void);
 [; ;i2c1.h: 153: void I2C1_ClearTxBuffer(void);
-[; ;i2c1.c: 53: typedef enum {
-[; ;i2c1.c: 54: SLAVE_COMMAND_DATA,
-[; ;i2c1.c: 55: SLAVE_COMMAND,
-[; ;i2c1.c: 56: } SLAVE_WRITE_DATA_TYPE;
-"62 system/i2c1.c
+[; ;global.h: 63: typedef struct devApi{
+[; ;global.h: 64: void (* Init)(void);
+[; ;global.h: 65: void (* Measure)(void);
+[; ;global.h: 66: void (* Loop)(void);
+[; ;global.h: 67: void (* GetData)(uint8_t *, uint8_t *);
+[; ;global.h: 68: void (* UpdateThreshold)(uint8_t, uint8_t *);
+[; ;global.h: 69: } Device_API_t;
+"77 system/../global.h
+[p x FEXTOSC=OFF ]
+"78
+[p x RSTOSC=HFINT1 ]
+"79
+[p x CLKOUTEN=OFF ]
+"80
+[p x CSWEN=ON ]
+"81
+[p x FCMEN=ON ]
+"84
+[p x MCLRE=ON ]
+"85
+[p x PWRTS=OFF ]
+"86
+[p x LPBOREN=OFF ]
+"87
+[p x BOREN=OFF ]
+"88
+[p x BORV=LO ]
+"89
+[p x ZCDDIS=OFF ]
+"90
+[p x PPS1WAY=ON ]
+"91
+[p x STVREN=ON ]
+"95
+[p x WDTCPS=WDTCPS_31 ]
+"96
+[p x WDTE=SWDTEN ]
+"98
+[p x WDTCWS=WDTCWS_7 ]
+"99
+[p x WDTCCS=SC ]
+"102
+[p x BBSIZE=BB512 ]
+"103
+[p x BBEN=OFF ]
+"104
+[p x SAFEN=OFF ]
+"105
+[p x WRTAPP=OFF ]
+"106
+[p x WRTB=OFF ]
+"107
+[p x WRTC=OFF ]
+"108
+[p x WRTD=OFF ]
+"109
+[p x WRTSAF=OFF ]
+"110
+[p x LVP=ON ]
+"113
+[p x CP=OFF ]
+[; ;i2c1.c: 54: typedef enum {
+[; ;i2c1.c: 55: SLAVE_COMMAND_DATA,
+[; ;i2c1.c: 56: SLAVE_COMMAND,
+[; ;i2c1.c: 57: } SLAVE_WRITE_DATA_TYPE;
+"63 system/i2c1.c
 [v _I2C1_slaveWriteData `Vuc ~T0 @X0 1 e ]
 [i _I2C1_slaveWriteData
 -> -> 85 `i `uc
 ]
-[; ;i2c1.c: 62: volatile uint8_t I2C1_slaveWriteData = 0x55;
-"66
-[v _i2c1_rx_buffer `uc ~T0 @X0 -> 32 `i s ]
-[; ;i2c1.c: 66: static uint8_t i2c1_rx_buffer[32];
+[; ;i2c1.c: 63: volatile uint8_t I2C1_slaveWriteData = 0x55;
 "67
+[v _i2c1_rx_buffer `uc ~T0 @X0 -> 32 `i s ]
+[; ;i2c1.c: 67: static uint8_t i2c1_rx_buffer[32];
+"68
 [v _i2c1_tx_buffer `uc ~T0 @X0 -> 32 `i s ]
-[; ;i2c1.c: 67: static uint8_t i2c1_tx_buffer[32];
-"69
-[v _cmdByte `uc ~T0 @X0 1 s ]
-[; ;i2c1.c: 69: static uint8_t cmdByte;
+[; ;i2c1.c: 68: static uint8_t i2c1_tx_buffer[32];
 "70
-[v _cmdReceived `uc ~T0 @X0 1 s ]
-[; ;i2c1.c: 70: static bool cmdReceived;
+[v _cmdByte `uc ~T0 @X0 1 s ]
+[; ;i2c1.c: 70: static uint8_t cmdByte;
 "71
-[v _rxLen `uc ~T0 @X0 1 s ]
-[; ;i2c1.c: 71: static uint8_t rxLen;
+[v _cmdReceived `uc ~T0 @X0 1 s ]
+[; ;i2c1.c: 71: static bool cmdReceived;
 "72
-[v _txLen `uc ~T0 @X0 1 s ]
-[; ;i2c1.c: 72: static uint8_t txLen;
+[v _rxLen `uc ~T0 @X0 1 s ]
+[; ;i2c1.c: 72: static uint8_t rxLen;
 "73
+[v _txLen `uc ~T0 @X0 1 s ]
+[; ;i2c1.c: 73: static uint8_t txLen;
+"74
 [v _txCnt `uc ~T0 @X0 1 s ]
-[; ;i2c1.c: 73: static uint8_t txCnt;
-[; ;i2c1.c: 78: void I2C1_StatusCallback(I2C1_SLAVE_DRIVER_STATUS i2c_bus_state);
-"91
+[; ;i2c1.c: 74: static uint8_t txCnt;
+[; ;i2c1.c: 79: void I2C1_StatusCallback(I2C1_SLAVE_DRIVER_STATUS i2c_bus_state);
+"92
 [v _I2C1_Initialize `(v ~T0 @X0 1 ef1`uc ]
 {
-[; ;i2c1.c: 91: void I2C1_Initialize(uint8_t slave_address){
+[; ;i2c1.c: 92: void I2C1_Initialize(uint8_t slave_address){
 [e :U _I2C1_Initialize ]
 [v _slave_address `uc ~T0 @X0 1 r1 ]
 [f ]
-[; ;i2c1.c: 93: PMD6bits.MSSP1MD = 0;
-"93
+[; ;i2c1.c: 94: PMD6bits.MSSP1MD = 0;
+"94
 [e = . . _PMD6bits 0 0 -> -> 0 `i `uc ]
-[; ;i2c1.c: 95: ANSELBbits.ANSB5 = 0;
-"95
-[e = . . _ANSELBbits 0 2 -> -> 0 `i `uc ]
-[; ;i2c1.c: 96: ANSELBbits.ANSB7 = 0;
+[; ;i2c1.c: 96: ANSELBbits.ANSB5 = 0;
 "96
+[e = . . _ANSELBbits 0 2 -> -> 0 `i `uc ]
+[; ;i2c1.c: 97: ANSELBbits.ANSB7 = 0;
+"97
 [e = . . _ANSELBbits 0 4 -> -> 0 `i `uc ]
-[; ;i2c1.c: 98: TRISBbits.TRISB5 = 1;
-"98
-[e = . . _TRISBbits 0 2 -> -> 1 `i `uc ]
-[; ;i2c1.c: 99: TRISBbits.TRISB7 = 1;
+[; ;i2c1.c: 99: TRISBbits.TRISB5 = 1;
 "99
+[e = . . _TRISBbits 0 2 -> -> 1 `i `uc ]
+[; ;i2c1.c: 100: TRISBbits.TRISB7 = 1;
+"100
 [e = . . _TRISBbits 0 4 -> -> 1 `i `uc ]
-[; ;i2c1.c: 101: SSP1CLKPPS = 0x0F;
-"101
-[e = _SSP1CLKPPS -> -> 15 `i `uc ]
-[; ;i2c1.c: 102: RB7PPS = 0x13;
+[; ;i2c1.c: 102: SSP1CLKPPS = 0x0F;
 "102
-[e = _RB7PPS -> -> 19 `i `uc ]
-[; ;i2c1.c: 103: RB5PPS = 0x14;
+[e = _SSP1CLKPPS -> -> 15 `i `uc ]
+[; ;i2c1.c: 103: RB7PPS = 0x13;
 "103
-[e = _RB5PPS -> -> 20 `i `uc ]
-[; ;i2c1.c: 104: SSP1DATPPS = 0x0D;
+[e = _RB7PPS -> -> 19 `i `uc ]
+[; ;i2c1.c: 104: RB5PPS = 0x14;
 "104
+[e = _RB5PPS -> -> 20 `i `uc ]
+[; ;i2c1.c: 105: SSP1DATPPS = 0x0D;
+"105
 [e = _SSP1DATPPS -> -> 13 `i `uc ]
-[; ;i2c1.c: 107: SSP1STAT = 0x00;
-"107
+[; ;i2c1.c: 108: SSP1STAT = 0x00;
+"108
 [e = _SSP1STAT -> -> 0 `i `uc ]
-[; ;i2c1.c: 109: SSP1CON1 = 0x26;
-"109
+[; ;i2c1.c: 110: SSP1CON1 = 0x26;
+"110
 [e = _SSP1CON1 -> -> 38 `i `uc ]
-[; ;i2c1.c: 111: SSP1CON2 = 0x01;
-"111
+[; ;i2c1.c: 112: SSP1CON2 = 0x01;
+"112
 [e = _SSP1CON2 -> -> 1 `i `uc ]
-[; ;i2c1.c: 113: SSP1CON3 = 0x00;
-"113
+[; ;i2c1.c: 114: SSP1CON3 = 0x00;
+"114
 [e = _SSP1CON3 -> -> 0 `i `uc ]
-[; ;i2c1.c: 115: SSP1CON3bits.DHEN = 1;
-"115
+[; ;i2c1.c: 116: SSP1CON3bits.DHEN = 1;
+"116
 [e = . . _SSP1CON3bits 0 0 -> -> 1 `i `uc ]
-[; ;i2c1.c: 117: SSP1MSK = (0x7F << 1);
-"117
+[; ;i2c1.c: 118: SSP1MSK = (0x7F << 1);
+"118
 [e = _SSP1MSK -> << -> 127 `i -> 1 `i `uc ]
-[; ;i2c1.c: 119: SSP1ADD = (slave_address << 1);
-"119
+[; ;i2c1.c: 120: SSP1ADD = (slave_address << 1);
+"120
 [e = _SSP1ADD -> << -> _slave_address `i -> 1 `i `uc ]
-[; ;i2c1.c: 123: PIR3bits.SSP1IF = 0;
-"123
+[; ;i2c1.c: 124: PIR3bits.SSP1IF = 0;
+"124
 [e = . . _PIR3bits 0 0 -> -> 0 `i `uc ]
-[; ;i2c1.c: 125: PIE3bits.SSP1IE = 1;
-"125
+[; ;i2c1.c: 126: PIE3bits.SSP1IE = 1;
+"126
 [e = . . _PIE3bits 0 0 -> -> 1 `i `uc ]
-[; ;i2c1.c: 127: txCnt = 0;
-"127
-[e = _txCnt -> -> 0 `i `uc ]
-[; ;i2c1.c: 128: rxLen = 0;
+[; ;i2c1.c: 128: txCnt = 0;
 "128
-[e = _rxLen -> -> 0 `i `uc ]
-[; ;i2c1.c: 129: cmdReceived = 0;
+[e = _txCnt -> -> 0 `i `uc ]
+[; ;i2c1.c: 129: rxLen = 0;
 "129
-[e = _cmdReceived -> -> 0 `i `uc ]
-[; ;i2c1.c: 130: }
+[e = _rxLen -> -> 0 `i `uc ]
+[; ;i2c1.c: 130: cmdReceived = 0;
 "130
-[e :UE 1512 ]
-}
-"132
-[v _I2C1_ISR `(v ~T0 @X0 1 ef ]
-{
-[; ;i2c1.c: 132: void I2C1_ISR(void){
-[e :U _I2C1_ISR ]
-[f ]
-"133
-[v _i2c_data `uc ~T0 @X0 1 a ]
-[; ;i2c1.c: 133: uint8_t i2c_data = 0x00;
-[e = _i2c_data -> -> 0 `i `uc ]
-[; ;i2c1.c: 138: PIE3bits.SSP1IE = 0;
-"138
-[e = . . _PIE3bits 0 0 -> -> 0 `i `uc ]
-[; ;i2c1.c: 139: PIR3bits.SSP1IF = 0;
-"139
-[e = . . _PIR3bits 0 0 -> -> 0 `i `uc ]
-[; ;i2c1.c: 140: i2c_data = SSP1BUF;
-"140
-[e = _i2c_data _SSP1BUF ]
-[; ;i2c1.c: 141: if(1 == SSP1STATbits.R_nW){
-"141
-[e $ ! == -> 1 `i -> . . _SSP1STATbits 0 2 `i 1514  ]
-{
-[; ;i2c1.c: 142: if((1 == SSP1STATbits.D_nA) && (1 == SSP1CON2bits.ACKSTAT)){
-"142
-[e $ ! && == -> 1 `i -> . . _SSP1STATbits 0 5 `i == -> 1 `i -> . . _SSP1CON2bits 0 6 `i 1515  ]
-{
-[; ;i2c1.c: 144: I2C1_StatusCallback(I2C1_SLAVE_READ_COMPLETED);
-"144
-[e ( _I2C1_StatusCallback (1 . `E10841 3 ]
-"145
-}
-[; ;i2c1.c: 145: }
-[e $U 1516  ]
-"146
-[e :U 1515 ]
-[; ;i2c1.c: 146: else{
-{
-[; ;i2c1.c: 148: I2C1_StatusCallback(I2C1_SLAVE_READ_REQUEST);
-"148
-[e ( _I2C1_StatusCallback (1 . `E10841 1 ]
-[; ;i2c1.c: 149: SSP1CON1bits.CKP = 1;
-"149
-[e = . . _SSP1CON1bits 0 1 -> -> 1 `i `uc ]
-"151
-}
-[e :U 1516 ]
-"152
-}
-[; ;i2c1.c: 151: }
-[; ;i2c1.c: 152: }
-[e $U 1517  ]
-"153
-[e :U 1514 ]
-[; ;i2c1.c: 153: else if(0 == SSP1STATbits.D_nA){
-[e $ ! == -> 0 `i -> . . _SSP1STATbits 0 5 `i 1518  ]
-{
-[; ;i2c1.c: 157: I2C1_StatusCallback(I2C1_SLAVE_WRITE_REQUEST);
-"157
-[e ( _I2C1_StatusCallback (1 . `E10841 0 ]
-"158
-}
-[; ;i2c1.c: 158: }
-[e $U 1519  ]
-"159
-[e :U 1518 ]
-[; ;i2c1.c: 159: else{
-{
-[; ;i2c1.c: 160: I2C1_slaveWriteData = i2c_data;
-"160
-[e = _I2C1_slaveWriteData _i2c_data ]
-[; ;i2c1.c: 163: I2C1_StatusCallback(I2C1_SLAVE_WRITE_COMPLETED);
-"163
-[e ( _I2C1_StatusCallback (1 . `E10841 2 ]
-[; ;i2c1.c: 164: SSP1CON1bits.CKP = 1;
-"164
-[e = . . _SSP1CON1bits 0 1 -> -> 1 `i `uc ]
-[; ;i2c1.c: 165: while(!PIR3bits.SSP1IF);
-"165
-[e $U 1520  ]
-[e :U 1521 ]
-[e :U 1520 ]
-[e $ ! != -> . . _PIR3bits 0 0 `i -> -> -> 0 `i `Vuc `i 1521  ]
-[e :U 1522 ]
-"166
-}
-[e :U 1519 ]
-[e :U 1517 ]
-[; ;i2c1.c: 166: }
-[; ;i2c1.c: 169: PIR3bits.SSP1IF = 0;
-"169
-[e = . . _PIR3bits 0 0 -> -> 0 `i `uc ]
-[; ;i2c1.c: 170: SSP1CON1bits.CKP = 1;
-"170
-[e = . . _SSP1CON1bits 0 1 -> -> 1 `i `uc ]
-[; ;i2c1.c: 172: PIE3bits.SSP1IE = 1;
-"172
-[e = . . _PIE3bits 0 0 -> -> 1 `i `uc ]
-[; ;i2c1.c: 173: }
-"173
+[e = _cmdReceived -> -> 0 `i `uc ]
+[; ;i2c1.c: 131: }
+"131
 [e :UE 1513 ]
 }
-"175
-[v _I2C1_CommandReceived `(uc ~T0 @X0 1 ef ]
+"133
+[v _I2C1_ISR `(v ~T0 @X0 1 ef ]
 {
-[; ;i2c1.c: 175: bool I2C1_CommandReceived(void){
-[e :U _I2C1_CommandReceived ]
+[; ;i2c1.c: 133: void I2C1_ISR(void){
+[e :U _I2C1_ISR ]
 [f ]
-[; ;i2c1.c: 176: return cmdReceived;
+"134
+[v _i2c_data `uc ~T0 @X0 1 a ]
+[; ;i2c1.c: 134: uint8_t i2c_data = 0x00;
+[e = _i2c_data -> -> 0 `i `uc ]
+[; ;i2c1.c: 139: PIE3bits.SSP1IE = 0;
+"139
+[e = . . _PIE3bits 0 0 -> -> 0 `i `uc ]
+[; ;i2c1.c: 140: PIR3bits.SSP1IF = 0;
+"140
+[e = . . _PIR3bits 0 0 -> -> 0 `i `uc ]
+[; ;i2c1.c: 141: i2c_data = SSP1BUF;
+"141
+[e = _i2c_data _SSP1BUF ]
+[; ;i2c1.c: 142: if(1 == SSP1STATbits.R_nW){
+"142
+[e $ ! == -> 1 `i -> . . _SSP1STATbits 0 2 `i 1515  ]
+{
+[; ;i2c1.c: 143: if((1 == SSP1STATbits.D_nA) && (1 == SSP1CON2bits.ACKSTAT)){
+"143
+[e $ ! && == -> 1 `i -> . . _SSP1STATbits 0 5 `i == -> 1 `i -> . . _SSP1CON2bits 0 6 `i 1516  ]
+{
+[; ;i2c1.c: 145: I2C1_StatusCallback(I2C1_SLAVE_READ_COMPLETED);
+"145
+[e ( _I2C1_StatusCallback (1 . `E10841 3 ]
+"146
+}
+[; ;i2c1.c: 146: }
+[e $U 1517  ]
+"147
+[e :U 1516 ]
+[; ;i2c1.c: 147: else{
+{
+[; ;i2c1.c: 149: I2C1_StatusCallback(I2C1_SLAVE_READ_REQUEST);
+"149
+[e ( _I2C1_StatusCallback (1 . `E10841 1 ]
+[; ;i2c1.c: 150: SSP1CON1bits.CKP = 1;
+"150
+[e = . . _SSP1CON1bits 0 1 -> -> 1 `i `uc ]
+"152
+}
+[e :U 1517 ]
+"153
+}
+[; ;i2c1.c: 152: }
+[; ;i2c1.c: 153: }
+[e $U 1518  ]
+"154
+[e :U 1515 ]
+[; ;i2c1.c: 154: else if(0 == SSP1STATbits.D_nA){
+[e $ ! == -> 0 `i -> . . _SSP1STATbits 0 5 `i 1519  ]
+{
+[; ;i2c1.c: 158: I2C1_StatusCallback(I2C1_SLAVE_WRITE_REQUEST);
+"158
+[e ( _I2C1_StatusCallback (1 . `E10841 0 ]
+"159
+}
+[; ;i2c1.c: 159: }
+[e $U 1520  ]
+"160
+[e :U 1519 ]
+[; ;i2c1.c: 160: else{
+{
+[; ;i2c1.c: 161: I2C1_slaveWriteData = i2c_data;
+"161
+[e = _I2C1_slaveWriteData _i2c_data ]
+[; ;i2c1.c: 164: I2C1_StatusCallback(I2C1_SLAVE_WRITE_COMPLETED);
+"164
+[e ( _I2C1_StatusCallback (1 . `E10841 2 ]
+[; ;i2c1.c: 165: SSP1CON1bits.CKP = 1;
+"165
+[e = . . _SSP1CON1bits 0 1 -> -> 1 `i `uc ]
+"166
+[v _ctr `uc ~T0 @X0 1 a ]
+[; ;i2c1.c: 166: uint8_t ctr=0xff;
+[e = _ctr -> -> 255 `i `uc ]
+[; ;i2c1.c: 167: while(!PIR3bits.SSP1IF && ctr--){
+"167
+[e $U 1521  ]
+[e :U 1522 ]
+{
+[; ;i2c1.c: 168: _delay((unsigned long)((1)*(32000000/4000000.0)));
+"168
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 32000000 `l `d .4000000.0 `ul ]
+"169
+}
+[e :U 1521 ]
+"167
+[e $ && ! != -> . . _PIR3bits 0 0 `i -> -> -> 0 `i `Vuc `i != -> -- _ctr -> -> 1 `i `uc `i -> -> -> 0 `i `uc `i 1522  ]
+[e :U 1523 ]
+"170
+}
+[e :U 1520 ]
+[e :U 1518 ]
+[; ;i2c1.c: 169: }
+[; ;i2c1.c: 170: }
+[; ;i2c1.c: 173: PIR3bits.SSP1IF = 0;
+"173
+[e = . . _PIR3bits 0 0 -> -> 0 `i `uc ]
+[; ;i2c1.c: 174: SSP1CON1bits.CKP = 1;
+"174
+[e = . . _SSP1CON1bits 0 1 -> -> 1 `i `uc ]
+[; ;i2c1.c: 176: PIE3bits.SSP1IE = 1;
 "176
-[e ) _cmdReceived ]
-[e $UE 1523  ]
+[e = . . _PIE3bits 0 0 -> -> 1 `i `uc ]
 [; ;i2c1.c: 177: }
 "177
-[e :UE 1523 ]
+[e :UE 1514 ]
 }
 "179
-[v _I2C1_TxBufferEmpty `(uc ~T0 @X0 1 ef ]
+[v _I2C1_CommandReceived `(uc ~T0 @X0 1 ef ]
 {
-[; ;i2c1.c: 179: bool I2C1_TxBufferEmpty(void){
-[e :U _I2C1_TxBufferEmpty ]
+[; ;i2c1.c: 179: bool I2C1_CommandReceived(void){
+[e :U _I2C1_CommandReceived ]
 [f ]
-[; ;i2c1.c: 180: return (txCnt != 0);
+[; ;i2c1.c: 180: return cmdReceived;
 "180
-[e ) -> -> != -> _txCnt `i -> 0 `i `i `uc ]
+[e ) _cmdReceived ]
 [e $UE 1524  ]
 [; ;i2c1.c: 181: }
 "181
 [e :UE 1524 ]
 }
 "183
+[v _I2C1_TxBufferEmpty `(uc ~T0 @X0 1 ef ]
+{
+[; ;i2c1.c: 183: bool I2C1_TxBufferEmpty(void){
+[e :U _I2C1_TxBufferEmpty ]
+[f ]
+[; ;i2c1.c: 184: return (txCnt != 0);
+"184
+[e ) -> -> != -> _txCnt `i -> 0 `i `i `uc ]
+[e $UE 1525  ]
+[; ;i2c1.c: 185: }
+"185
+[e :UE 1525 ]
+}
+"187
 [v _I2C1_GetCommand `(v ~T0 @X0 1 ef1`*uc ]
 {
-[; ;i2c1.c: 183: void I2C1_GetCommand(uint8_t * cmd){
+[; ;i2c1.c: 187: void I2C1_GetCommand(uint8_t * cmd){
 [e :U _I2C1_GetCommand ]
 [v _cmd `*uc ~T0 @X0 1 r1 ]
 [f ]
-[; ;i2c1.c: 184: *cmd = cmdByte;
-"184
-[e = *U _cmd _cmdByte ]
-[; ;i2c1.c: 185: cmdReceived = 0;
-"185
-[e = _cmdReceived -> -> 0 `i `uc ]
-[; ;i2c1.c: 186: }
-"186
-[e :UE 1525 ]
-}
+[; ;i2c1.c: 188: *cmd = cmdByte;
 "188
+[e = *U _cmd _cmdByte ]
+[; ;i2c1.c: 189: cmdReceived = 0;
+"189
+[e = _cmdReceived -> -> 0 `i `uc ]
+[; ;i2c1.c: 190: }
+"190
+[e :UE 1526 ]
+}
+"192
 [v _I2C1_GetCommandData `(v ~T0 @X0 1 ef2`*uc`*uc ]
 {
-[; ;i2c1.c: 188: void I2C1_GetCommandData(uint8_t * data, uint8_t * len){
+[; ;i2c1.c: 192: void I2C1_GetCommandData(uint8_t * data, uint8_t * len){
 [e :U _I2C1_GetCommandData ]
 [v _data `*uc ~T0 @X0 1 r1 ]
 [v _len `*uc ~T0 @X0 1 r2 ]
 [f ]
-[; ;i2c1.c: 189: __builtin_memcpy(data,i2c1_rx_buffer,rxLen);
-"189
-[e ( ___builtin_memcpy (3 , , -> _data `*v -> &U _i2c1_rx_buffer `*Cv -> _rxLen `ui ]
-[; ;i2c1.c: 190: *len = rxLen;
-"190
-[e = *U _len _rxLen ]
-[; ;i2c1.c: 191: }
-"191
-[e :UE 1526 ]
-}
+[; ;i2c1.c: 193: __builtin_memcpy(data,i2c1_rx_buffer,rxLen);
 "193
+[e ( ___builtin_memcpy (3 , , -> _data `*v -> &U _i2c1_rx_buffer `*Cv -> _rxLen `ui ]
+[; ;i2c1.c: 194: *len = rxLen;
+"194
+[e = *U _len _rxLen ]
+[; ;i2c1.c: 195: }
+"195
+[e :UE 1527 ]
+}
+"197
 [v _I2C1_SetTransmitData `(v ~T0 @X0 1 ef2`*uc`uc ]
 {
-[; ;i2c1.c: 193: void I2C1_SetTransmitData(uint8_t * data, uint8_t len){
+[; ;i2c1.c: 197: void I2C1_SetTransmitData(uint8_t * data, uint8_t len){
 [e :U _I2C1_SetTransmitData ]
 [v _data `*uc ~T0 @X0 1 r1 ]
 [v _len `uc ~T0 @X0 1 r2 ]
 [f ]
-[; ;i2c1.c: 195: while((txCnt < len) && (txCnt < 32)){
-"195
-[e $U 1528  ]
-[e :U 1529 ]
-{
-[; ;i2c1.c: 196: i2c1_tx_buffer[txCnt] = data[txCnt];
-"196
-[e = *U + &U _i2c1_tx_buffer * -> _txCnt `ux -> -> # *U &U _i2c1_tx_buffer `ui `ux *U + _data * -> _txCnt `ux -> -> # *U _data `ui `ux ]
-[; ;i2c1.c: 197: txCnt++;
-"197
-[e ++ _txCnt -> -> 1 `i `uc ]
-"198
-}
-[e :U 1528 ]
-"195
-[e $ && < -> _txCnt `i -> _len `i < -> _txCnt `i -> 32 `i 1529  ]
-[e :U 1530 ]
-[; ;i2c1.c: 198: }
-[; ;i2c1.c: 199: txLen = txCnt;
+[; ;i2c1.c: 199: while((txCnt < len) && (txCnt < 32)){
 "199
-[e = _txLen _txCnt ]
-[; ;i2c1.c: 200: txCnt = 0;
-"200
-[e = _txCnt -> -> 0 `i `uc ]
-[; ;i2c1.c: 201: }
-"201
-[e :UE 1527 ]
-}
-"203
-[v _I2C1_ClearTxBuffer `(v ~T0 @X0 1 ef ]
+[e $U 1529  ]
+[e :U 1530 ]
 {
-[; ;i2c1.c: 203: void I2C1_ClearTxBuffer(void){
-[e :U _I2C1_ClearTxBuffer ]
-[f ]
+[; ;i2c1.c: 200: i2c1_tx_buffer[txCnt] = data[txCnt];
+"200
+[e = *U + &U _i2c1_tx_buffer * -> _txCnt `ux -> -> # *U &U _i2c1_tx_buffer `ui `ux *U + _data * -> _txCnt `ux -> -> # *U _data `ui `ux ]
+[; ;i2c1.c: 201: txCnt++;
+"201
+[e ++ _txCnt -> -> 1 `i `uc ]
+"202
+}
+[e :U 1529 ]
+"199
+[e $ && < -> _txCnt `i -> _len `i < -> _txCnt `i -> 32 `i 1530  ]
+[e :U 1531 ]
+[; ;i2c1.c: 202: }
+[; ;i2c1.c: 203: txLen = txCnt;
+"203
+[e = _txLen _txCnt ]
 [; ;i2c1.c: 204: txCnt = 0;
 "204
 [e = _txCnt -> -> 0 `i `uc ]
 [; ;i2c1.c: 205: }
 "205
-[e :UE 1531 ]
+[e :UE 1528 ]
 }
+"207
+[v _I2C1_ClearTxBuffer `(v ~T0 @X0 1 ef ]
+{
+[; ;i2c1.c: 207: void I2C1_ClearTxBuffer(void){
+[e :U _I2C1_ClearTxBuffer ]
+[f ]
+[; ;i2c1.c: 208: txCnt = 0;
+"208
+[e = _txCnt -> -> 0 `i `uc ]
+[; ;i2c1.c: 209: }
 "209
+[e :UE 1532 ]
+}
+"213
 [v _I2C1_StatusCallback `(v ~T0 @X0 1 ef1`E10841 ]
 {
-[; ;i2c1.c: 209: void I2C1_StatusCallback(I2C1_SLAVE_DRIVER_STATUS i2c_bus_state){
+[; ;i2c1.c: 213: void I2C1_StatusCallback(I2C1_SLAVE_DRIVER_STATUS i2c_bus_state){
 [e :U _I2C1_StatusCallback ]
 [v _i2c_bus_state `E10841 ~T0 @X0 1 r1 ]
 [f ]
-"211
-[v F10891 `uc ~T0 @X0 1 s slaveWriteType ]
-[i F10891
--> . `E10866 0 `uc
+"215
+[v F10912 `uc ~T0 @X0 1 s slaveWriteType ]
+[i F10912
+-> . `E10885 0 `uc
 ]
-[; ;i2c1.c: 211: static uint8_t slaveWriteType = SLAVE_COMMAND_DATA;
-[; ;i2c1.c: 214: switch (i2c_bus_state){
-"214
-[e $U 1534  ]
-{
-[; ;i2c1.c: 216: case I2C1_SLAVE_WRITE_REQUEST:
-"216
-[e :U 1535 ]
-[; ;i2c1.c: 218: slaveWriteType = SLAVE_COMMAND;
+[; ;i2c1.c: 215: static uint8_t slaveWriteType = SLAVE_COMMAND_DATA;
+[; ;i2c1.c: 218: switch (i2c_bus_state){
 "218
-[e = F10891 -> . `E10866 1 `uc ]
-[; ;i2c1.c: 219: break;
-"219
-[e $U 1533  ]
-[; ;i2c1.c: 221: case I2C1_SLAVE_WRITE_COMPLETED:
-"221
+[e $U 1535  ]
+{
+[; ;i2c1.c: 220: case I2C1_SLAVE_WRITE_REQUEST:
+"220
 [e :U 1536 ]
-[; ;i2c1.c: 223: switch(slaveWriteType)
+[; ;i2c1.c: 222: slaveWriteType = SLAVE_COMMAND;
+"222
+[e = F10912 -> . `E10885 1 `uc ]
+[; ;i2c1.c: 223: break;
 "223
-[e $U 1538  ]
-[; ;i2c1.c: 224: {
-"224
-{
-[; ;i2c1.c: 225: case SLAVE_COMMAND:
+[e $U 1534  ]
+[; ;i2c1.c: 225: case I2C1_SLAVE_WRITE_COMPLETED:
 "225
-[e :U 1539 ]
-[; ;i2c1.c: 226: cmdByte = I2C1_slaveWriteData;
-"226
-[e = _cmdByte _I2C1_slaveWriteData ]
-[; ;i2c1.c: 227: rxLen = 0;
-"227
-[e = _rxLen -> -> 0 `i `uc ]
-[; ;i2c1.c: 228: cmdReceived = 1;
-"228
-[e = _cmdReceived -> -> 1 `i `uc ]
-[; ;i2c1.c: 229: break;
-"229
-[e $U 1537  ]
-[; ;i2c1.c: 231: case SLAVE_COMMAND_DATA:
-"231
-[e :U 1540 ]
-[; ;i2c1.c: 232: default:
-"232
-[e :U 1541 ]
-[; ;i2c1.c: 234: if(rxLen <= 32)
-"234
-[e $ ! <= -> _rxLen `i -> 32 `i 1542  ]
-[; ;i2c1.c: 235: {
-"235
-{
-[; ;i2c1.c: 236: i2c1_rx_buffer[rxLen++] = I2C1_slaveWriteData;
-"236
-[e = *U + &U _i2c1_rx_buffer * -> ++ _rxLen -> -> 1 `i `uc `ux -> -> # *U &U _i2c1_rx_buffer `ui `ux _I2C1_slaveWriteData ]
-"237
-}
-[e :U 1542 ]
-[; ;i2c1.c: 237: }
-[; ;i2c1.c: 238: break;
-"238
-[e $U 1537  ]
-"240
-}
-[; ;i2c1.c: 240: }
-[e $U 1537  ]
-"223
-[e :U 1538 ]
-[e [\ F10891 , $ -> . `E10866 1 `uc 1539
- , $ -> . `E10866 0 `uc 1540
- 1541 ]
-"240
 [e :U 1537 ]
-[; ;i2c1.c: 242: slaveWriteType = SLAVE_COMMAND_DATA;
-"242
-[e = F10891 -> . `E10866 0 `uc ]
-[; ;i2c1.c: 243: break;
-"243
-[e $U 1533  ]
-[; ;i2c1.c: 245: case I2C1_SLAVE_READ_REQUEST:
-"245
-[e :U 1543 ]
-[; ;i2c1.c: 246: if(txCnt<txLen){
-"246
-[e $ ! < -> _txCnt `i -> _txLen `i 1544  ]
+[; ;i2c1.c: 227: switch(slaveWriteType)
+"227
+[e $U 1539  ]
+[; ;i2c1.c: 228: {
+"228
 {
-[; ;i2c1.c: 247: SSP1BUF = i2c1_tx_buffer[txCnt++];
-"247
-[e = _SSP1BUF *U + &U _i2c1_tx_buffer * -> ++ _txCnt -> -> 1 `i `uc `ux -> -> # *U &U _i2c1_tx_buffer `ui `ux ]
-"248
+[; ;i2c1.c: 229: case SLAVE_COMMAND:
+"229
+[e :U 1540 ]
+[; ;i2c1.c: 230: cmdByte = I2C1_slaveWriteData;
+"230
+[e = _cmdByte _I2C1_slaveWriteData ]
+[; ;i2c1.c: 231: rxLen = 0;
+"231
+[e = _rxLen -> -> 0 `i `uc ]
+[; ;i2c1.c: 232: cmdReceived = 1;
+"232
+[e = _cmdReceived -> -> 1 `i `uc ]
+[; ;i2c1.c: 233: break;
+"233
+[e $U 1538  ]
+[; ;i2c1.c: 235: case SLAVE_COMMAND_DATA:
+"235
+[e :U 1541 ]
+[; ;i2c1.c: 236: default:
+"236
+[e :U 1542 ]
+[; ;i2c1.c: 238: if(rxLen <= 32)
+"238
+[e $ ! <= -> _rxLen `i -> 32 `i 1543  ]
+[; ;i2c1.c: 239: {
+"239
+{
+[; ;i2c1.c: 240: i2c1_rx_buffer[rxLen++] = I2C1_slaveWriteData;
+"240
+[e = *U + &U _i2c1_rx_buffer * -> ++ _rxLen -> -> 1 `i `uc `ux -> -> # *U &U _i2c1_rx_buffer `ui `ux _I2C1_slaveWriteData ]
+"241
 }
-[; ;i2c1.c: 248: }
-[e $U 1545  ]
+[e :U 1543 ]
+[; ;i2c1.c: 241: }
+[; ;i2c1.c: 242: break;
+"242
+[e $U 1538  ]
+"244
+}
+[; ;i2c1.c: 244: }
+[e $U 1538  ]
+"227
+[e :U 1539 ]
+[e [\ F10912 , $ -> . `E10885 1 `uc 1540
+ , $ -> . `E10885 0 `uc 1541
+ 1542 ]
+"244
+[e :U 1538 ]
+[; ;i2c1.c: 246: slaveWriteType = SLAVE_COMMAND_DATA;
+"246
+[e = F10912 -> . `E10885 0 `uc ]
+[; ;i2c1.c: 247: break;
+"247
+[e $U 1534  ]
+[; ;i2c1.c: 249: case I2C1_SLAVE_READ_REQUEST:
 "249
 [e :U 1544 ]
-[; ;i2c1.c: 249: else{
-{
-[; ;i2c1.c: 250: SSP1BUF = 0x00;
+[; ;i2c1.c: 250: if(txCnt<txLen){
 "250
-[e = _SSP1BUF -> -> 0 `i `uc ]
+[e $ ! < -> _txCnt `i -> _txLen `i 1545  ]
+{
+[; ;i2c1.c: 251: SSP1BUF = i2c1_tx_buffer[txCnt++];
 "251
+[e = _SSP1BUF *U + &U _i2c1_tx_buffer * -> ++ _txCnt -> -> 1 `i `uc `ux -> -> # *U &U _i2c1_tx_buffer `ui `ux ]
+"252
 }
-[e :U 1545 ]
-[; ;i2c1.c: 251: }
-[; ;i2c1.c: 253: break;
+[; ;i2c1.c: 252: }
+[e $U 1546  ]
 "253
-[e $U 1533  ]
-[; ;i2c1.c: 255: case I2C1_SLAVE_READ_COMPLETED:
+[e :U 1545 ]
+[; ;i2c1.c: 253: else{
+{
+[; ;i2c1.c: 254: SSP1BUF = 0x00;
+"254
+[e = _SSP1BUF -> -> 0 `i `uc ]
 "255
-[e :U 1546 ]
-[; ;i2c1.c: 256: default:;
-"256
-[e :U 1547 ]
-"258
 }
-[; ;i2c1.c: 258: }
-[e $U 1533  ]
-"214
-[e :U 1534 ]
-[e [\ _i2c_bus_state , $ . `E10841 0 1535
- , $ . `E10841 2 1536
- , $ . `E10841 1 1543
- , $ . `E10841 3 1546
- 1547 ]
-"258
-[e :U 1533 ]
-[; ;i2c1.c: 259: }
+[e :U 1546 ]
+[; ;i2c1.c: 255: }
+[; ;i2c1.c: 257: break;
+"257
+[e $U 1534  ]
+[; ;i2c1.c: 259: case I2C1_SLAVE_READ_COMPLETED:
 "259
-[e :UE 1532 ]
+[e :U 1547 ]
+[; ;i2c1.c: 260: default:;
+"260
+[e :U 1548 ]
+"262
+}
+[; ;i2c1.c: 262: }
+[e $U 1534  ]
+"218
+[e :U 1535 ]
+[e [\ _i2c_bus_state , $ . `E10841 0 1536
+ , $ . `E10841 2 1537
+ , $ . `E10841 1 1544
+ , $ . `E10841 3 1547
+ 1548 ]
+"262
+[e :U 1534 ]
+[; ;i2c1.c: 263: }
+"263
+[e :UE 1533 ]
 }

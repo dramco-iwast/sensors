@@ -21,15 +21,15 @@ channel_DAC1_Output 61
 channel_FVR_Buffer1 62
 channel_FVR_Buffer2 63
 ]
-"144 C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\system/i2c1.c
+"145 C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\system/i2c1.c
 [e E10841 . `uc
 I2C1_SLAVE_WRITE_REQUEST 0
 I2C1_SLAVE_READ_REQUEST 1
 I2C1_SLAVE_WRITE_COMPLETED 2
 I2C1_SLAVE_READ_COMPLETED 3
 ]
-"211
-[e E10866 . `uc
+"215
+[e E10885 . `uc
 SLAVE_COMMAND_DATA 0
 SLAVE_COMMAND 1
 ]
@@ -145,21 +145,21 @@ SLAVE_COMMAND 1
 [v _ADCC_SetADIInterruptHandler ADCC_SetADIInterruptHandler `(v  1 e 1 0 ]
 "296
 [v _ADCC_DefaultInterruptHandler ADCC_DefaultInterruptHandler `(v  1 e 1 0 ]
-"91 C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\system/i2c1.c
+"92 C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\system/i2c1.c
 [v _I2C1_Initialize I2C1_Initialize `(v  1 e 1 0 ]
-"132
+"133
 [v _I2C1_ISR I2C1_ISR `(v  1 e 1 0 ]
-"175
-[v _I2C1_CommandReceived I2C1_CommandReceived `(uc  1 e 1 0 ]
 "179
-[v _I2C1_TxBufferEmpty I2C1_TxBufferEmpty `(uc  1 e 1 0 ]
+[v _I2C1_CommandReceived I2C1_CommandReceived `(uc  1 e 1 0 ]
 "183
+[v _I2C1_TxBufferEmpty I2C1_TxBufferEmpty `(uc  1 e 1 0 ]
+"187
 [v _I2C1_GetCommand I2C1_GetCommand `(v  1 e 1 0 ]
-"188
+"192
 [v _I2C1_GetCommandData I2C1_GetCommandData `(v  1 e 1 0 ]
-"193
+"197
 [v _I2C1_SetTransmitData I2C1_SetTransmitData `(v  1 e 1 0 ]
-"209
+"213
 [v _I2C1_StatusCallback I2C1_StatusCallback `(v  1 e 1 0 ]
 "25 C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\system/interrupt.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
@@ -194,14 +194,14 @@ SLAVE_COMMAND 1
 ]
 [u S444 . 1 `S434 1 . 1 0 `S440 1 . 1 0 ]
 [v _STATUSbits STATUSbits `VES444  1 e 1 @3 ]
-[s S1759 . 1 `uc 1 INTEDG 1 0 :1:0 
+[s S1762 . 1 `uc 1 INTEDG 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 PEIE 1 0 :1:6 
 `uc 1 GIE 1 0 :1:7 
 ]
 "427
-[u S1764 . 1 `S1759 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES1764  1 e 1 @11 ]
+[u S1767 . 1 `S1762 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES1767  1 e 1 @11 ]
 "598
 [v _TRISA TRISA `VEuc  1 e 1 @18 ]
 "648
@@ -646,14 +646,14 @@ SLAVE_COMMAND 1
 "6786
 [u S1219 . 1 `S1210 1 . 1 0 ]
 [v _SSP1CON3bits SSP1CON3bits `VES1219  1 e 1 @402 ]
-[s S1745 . 1 `uc 1 INTF 1 0 :1:0 
+[s S1748 . 1 `uc 1 INTF 1 0 :1:0 
 `uc 1 . 1 0 :3:1 
 `uc 1 IOCIF 1 0 :1:4 
 `uc 1 TMR0IF 1 0 :1:5 
 ]
 "19021
-[u S1750 . 1 `S1745 1 . 1 0 ]
-[v _PIR0bits PIR0bits `VES1750  1 e 1 @1804 ]
+[u S1753 . 1 `S1748 1 . 1 0 ]
+[v _PIR0bits PIR0bits `VES1753  1 e 1 @1804 ]
 [s S718 . 1 `uc 1 ADIF 1 0 :1:0 
 `uc 1 ADTIF 1 0 :1:1 
 `uc 1 . 1 0 :4:2 
@@ -765,12 +765,12 @@ SLAVE_COMMAND 1
 [v _WDTCON0bits WDTCON0bits `VES406  1 e 1 @2060 ]
 "20162
 [v _WDTCON1 WDTCON1 `VEuc  1 e 1 @2061 ]
-[s S1836 . 1 `uc 1 . 1 0 :1:0 
+[s S1839 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 VREGPM 1 0 :1:1 
 ]
 "20632
-[u S1839 . 1 `S1836 1 . 1 0 ]
-[v _VREGCONbits VREGCONbits `VES1839  1 e 1 @2066 ]
+[u S1842 . 1 `S1839 1 . 1 0 ]
+[v _VREGCONbits VREGCONbits `VES1842  1 e 1 @2066 ]
 [s S462 . 1 `uc 1 DOZE 1 0 :3:0 
 `uc 1 . 1 0 :1:3 
 `uc 1 DOE 1 0 :1:4 
@@ -895,21 +895,21 @@ SLAVE_COMMAND 1
 [v _sampleArray sampleArray `[400]ui  1 e 800 @9424 ]
 "30 C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\system/adcc.c
 [v _ADCC_ADI_InterruptHandler ADCC_ADI_InterruptHandler `*.37(v  1 e 2 0 ]
-"62 C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\system/i2c1.c
+"63 C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\system/i2c1.c
 [v _I2C1_slaveWriteData I2C1_slaveWriteData `VEuc  1 e 1 0 ]
-"66
-[v _i2c1_rx_buffer i2c1_rx_buffer `[32]uc  1 s 32 i2c1_rx_buffer ]
 "67
+[v _i2c1_rx_buffer i2c1_rx_buffer `[32]uc  1 s 32 i2c1_rx_buffer ]
+"68
 [v _i2c1_tx_buffer i2c1_tx_buffer `[32]uc  1 s 32 i2c1_tx_buffer ]
-"69
-[v _cmdByte cmdByte `uc  1 s 1 cmdByte ]
 "70
-[v _cmdReceived cmdReceived `uc  1 s 1 cmdReceived ]
+[v _cmdByte cmdByte `uc  1 s 1 cmdByte ]
 "71
-[v _rxLen rxLen `uc  1 s 1 rxLen ]
+[v _cmdReceived cmdReceived `uc  1 s 1 cmdReceived ]
 "72
-[v _txLen txLen `uc  1 s 1 txLen ]
+[v _rxLen rxLen `uc  1 s 1 rxLen ]
 "73
+[v _txLen txLen `uc  1 s 1 txLen ]
+"74
 [v _txCnt txCnt `uc  1 s 1 txCnt ]
 "24 C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\system/pin_manager.c
 [v _IOCCF0_InterruptHandler IOCCF0_InterruptHandler `*.37(v  1 e 2 0 ]
@@ -1296,48 +1296,48 @@ SLAVE_COMMAND 1
 {
 "66
 } 0
-"91 C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\system/i2c1.c
+"92 C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\system/i2c1.c
 [v _I2C1_Initialize I2C1_Initialize `(v  1 e 1 0 ]
 {
 [v I2C1_Initialize@slave_address slave_address `uc  1 a 1 wreg ]
 [v I2C1_Initialize@slave_address slave_address `uc  1 a 1 wreg ]
-"93
+"94
 [v I2C1_Initialize@slave_address slave_address `uc  1 a 1 0 ]
-"130
+"131
 } 0
-"179
+"183
 [v _I2C1_TxBufferEmpty I2C1_TxBufferEmpty `(uc  1 e 1 0 ]
 {
-"181
+"185
 } 0
-"193
+"197
 [v _I2C1_SetTransmitData I2C1_SetTransmitData `(v  1 e 1 0 ]
 {
 [v I2C1_SetTransmitData@data data `*.39uc  1 p 2 0 ]
 [v I2C1_SetTransmitData@len len `uc  1 p 1 2 ]
-"201
+"205
 } 0
-"188
+"192
 [v _I2C1_GetCommandData I2C1_GetCommandData `(v  1 e 1 0 ]
 {
 [v I2C1_GetCommandData@data data `*.5uc  1 a 1 wreg ]
 [v I2C1_GetCommandData@data data `*.5uc  1 a 1 wreg ]
 [v I2C1_GetCommandData@len len `*.5uc  1 p 1 0 ]
 [v I2C1_GetCommandData@data data `*.5uc  1 a 1 2 ]
-"191
+"195
 } 0
-"183
+"187
 [v _I2C1_GetCommand I2C1_GetCommand `(v  1 e 1 0 ]
 {
 [v I2C1_GetCommand@cmd cmd `*.5uc  1 a 1 wreg ]
 [v I2C1_GetCommand@cmd cmd `*.5uc  1 a 1 wreg ]
 [v I2C1_GetCommand@cmd cmd `*.5uc  1 a 1 1 ]
-"186
+"190
 } 0
-"175
+"179
 [v _I2C1_CommandReceived I2C1_CommandReceived `(uc  1 e 1 0 ]
 {
-"177
+"181
 } 0
 "25 C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\system/interrupt.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
@@ -1374,23 +1374,25 @@ SLAVE_COMMAND 1
 {
 "67
 } 0
-"132 C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\system/i2c1.c
+"133 C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\system/i2c1.c
 [v _I2C1_ISR I2C1_ISR `(v  1 e 1 0 ]
 {
-"133
-[v I2C1_ISR@i2c_data i2c_data `uc  1 a 1 3 ]
-"173
+"166
+[v I2C1_ISR@ctr ctr `uc  1 a 1 3 ]
+"134
+[v I2C1_ISR@i2c_data i2c_data `uc  1 a 1 4 ]
+"177
 } 0
-"209
+"213
 [v _I2C1_StatusCallback I2C1_StatusCallback `(v  1 e 1 0 ]
 {
 [v I2C1_StatusCallback@i2c_bus_state i2c_bus_state `E10841  1 a 1 wreg ]
 [v I2C1_StatusCallback@i2c_bus_state i2c_bus_state `E10841  1 a 1 wreg ]
-"211
+"215
 [v I2C1_StatusCallback@slaveWriteType slaveWriteType `uc  1 s 1 slaveWriteType ]
-"209
+"213
 [v I2C1_StatusCallback@i2c_bus_state i2c_bus_state `E10841  1 a 1 1 ]
-"259
+"263
 } 0
 "283 C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Sound_Level\system/adcc.c
 [v _ADCC_ISR ADCC_ISR `(v  1 e 1 0 ]

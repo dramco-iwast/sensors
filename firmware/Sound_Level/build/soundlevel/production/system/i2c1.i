@@ -18492,13 +18492,62 @@ void I2C1_SetTransmitData(uint8_t * data, uint8_t len);
 bool I2C1_TxBufferEmpty(void);
 void I2C1_ClearTxBuffer(void);
 
-# 53 "system/i2c1.c"
+# 63 "system/../global.h"
+typedef struct devApi{
+void (* Init)(void);
+void (* Measure)(void);
+void (* Loop)(void);
+void (* GetData)(uint8_t *, uint8_t *);
+void (* UpdateThreshold)(uint8_t, uint8_t *);
+} Device_API_t;
+
+
+# 77
+#pragma config FEXTOSC = OFF
+#pragma config RSTOSC = HFINT1
+#pragma config CLKOUTEN = OFF
+#pragma config CSWEN = ON
+#pragma config FCMEN = ON
+
+
+#pragma config MCLRE = ON
+#pragma config PWRTS = OFF
+#pragma config LPBOREN = OFF
+#pragma config BOREN = OFF
+#pragma config BORV = LO
+#pragma config ZCDDIS = OFF
+#pragma config PPS1WAY = ON
+#pragma config STVREN = ON
+
+
+
+#pragma config WDTCPS = WDTCPS_31
+#pragma config WDTE = SWDTEN
+
+#pragma config WDTCWS = WDTCWS_7
+#pragma config WDTCCS = SC
+
+
+#pragma config BBSIZE = BB512
+#pragma config BBEN = OFF
+#pragma config SAFEN = OFF
+#pragma config WRTAPP = OFF
+#pragma config WRTB = OFF
+#pragma config WRTC = OFF
+#pragma config WRTD = OFF
+#pragma config WRTSAF = OFF
+#pragma config LVP = ON
+
+
+#pragma config CP = OFF
+
+# 54 "system/i2c1.c"
 typedef enum {
 SLAVE_COMMAND_DATA,
 SLAVE_COMMAND,
 } SLAVE_WRITE_DATA_TYPE;
 
-# 62
+# 63
 volatile uint8_t I2C1_slaveWriteData = 0x55;
 
 
@@ -18512,10 +18561,10 @@ static uint8_t rxLen;
 static uint8_t txLen;
 static uint8_t txCnt;
 
-# 78
+# 79
 void I2C1_StatusCallback(I2C1_SLAVE_DRIVER_STATUS i2c_bus_state);
 
-# 91
+# 92
 void I2C1_Initialize(uint8_t slave_address){
 
 PMD6bits.MSSP1MD = 0;
@@ -18590,7 +18639,10 @@ I2C1_slaveWriteData = i2c_data;
 
 I2C1_StatusCallback(I2C1_SLAVE_WRITE_COMPLETED);
 SSP1CON1bits.CKP = 1;
-while(!PIR3bits.SSP1IF);
+uint8_t ctr=0xff;
+while(!PIR3bits.SSP1IF && ctr--){
+_delay((unsigned long)((1)*(32000000/4000000.0)));
+}
 }
 
 
@@ -18632,7 +18684,7 @@ void I2C1_ClearTxBuffer(void){
 txCnt = 0;
 }
 
-# 209
+# 213
 void I2C1_StatusCallback(I2C1_SLAVE_DRIVER_STATUS i2c_bus_state){
 
 static uint8_t slaveWriteType = SLAVE_COMMAND_DATA;
