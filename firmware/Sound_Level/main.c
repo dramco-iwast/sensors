@@ -47,6 +47,10 @@
  *      BOTTOM:   |  SDA  |   SCL  |   NC  |
  *                 ------------------------
  * 
+ * Final current measurements
+ * Sleep: +-5µA
+ * In WoS: +-28µA
+ * 
  */
 
 #include <xc.h>
