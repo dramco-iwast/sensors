@@ -18777,7 +18777,7 @@ void PMD_Initialize(void);
 # 15 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\stdbool.h"
 typedef unsigned char bool;
 
-# 224 "Sensors/sound_level.h"
+# 266 "Sensors/sound_level.h"
 void SoundLevel_Init(void);
 void SoundLevel_Measure(void);
 void SoundLevel_Loop(void);
@@ -18796,7 +18796,7 @@ void toggleInt(void);
 void main(void)
 {
 
-SYSTEM_Initialize(0x54);
+SYSTEM_Initialize(0x56);
 
 sensorAPI.Init();
 

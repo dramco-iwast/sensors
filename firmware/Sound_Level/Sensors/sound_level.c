@@ -43,6 +43,11 @@
 #define DISABLE 0
 #define WOS     2
 
+#define DB_65            65*SCALE_FACTOR
+#define DB_77            77*SCALE_FACTOR
+#define DB_89            89*SCALE_FACTOR
+
+
 //#define DEBUG_THRESHOLD
 
 /* 'local' function prototypes ************************************************/
@@ -111,6 +116,9 @@ void VDDBIAS_Init();
 void AMPS_enable(bool enable);
 
 void MIC_Mode(uint8_t mode);
+
+
+void THRESHOLD_Init();
 
 /* local variables ************************************************************/
 
@@ -262,6 +270,17 @@ void AMPS_enable(bool enable)
     }
 }
 
+void THRESHOLD_Init()
+{
+    THRESHOLD1_SetDigitalMode();
+    THRESHOLD1_SetDigitalOutput();
+    THRESHOLD1_SetLow();
+    
+    THRESHOLD2_SetDigitalMode();
+    THRESHOLD2_SetDigitalOutput();
+    THRESHOLD2_SetLow();
+}
+
 
 void WDT_Init(void)
 {
@@ -277,6 +296,9 @@ void SoundLevel_Init(void){
     LED_Init(); // Initialize LED
     
     PMD0bits.IOCMD = 0; // Enable gpio clock
+    
+    THRESHOLD_Init();
+    __delay_ms(1);
     
     powerMic_Init();    
     __delay_ms(1);
@@ -449,6 +471,32 @@ void SoundLevel_SetThreshold(uint8_t metric, uint8_t * thresholdData){
             powerMic_SetHigh(); // enable MIC
             __delay_ms(1);
             MIC_Mode(WOS); // MIC in WOS mode
+            
+            // TODO code to enable resistor circuit
+            // TH1  TH2     TOT R   WoS Threshold
+            // LOW  LOW     331k    89dBSPL
+            // HIGH LOW     69k     77dBSPL
+            // LOW  HIGH    17k     65dBSPL
+            
+            if(thresholdLevel < DB_77)
+            {
+                // set WoS to 65dB
+                THRESHOLD1_SetHigh();
+                THRESHOLD2_SetHigh();
+            }
+            else if(thresholdLevel < DB_89)
+            {
+                // set WoS to 77dB
+                THRESHOLD1_SetLow();
+                THRESHOLD2_SetHigh();
+            }
+            else
+            {
+                // set WoS to 89dB
+                THRESHOLD1_SetLow();
+                THRESHOLD2_SetLow();
+            }
+            
         }
     }
 }

@@ -201,6 +201,48 @@
 
 
 
+// get/set THRESHOLD1 aliases
+#define THRESHOLD1_TRIS                 TRISAbits.TRISA2
+#define THRESHOLD1_LAT                  LATAbits.LATA2
+#define THRESHOLD1_PORT                 PORTAbits.RA2
+#define THRESHOLD1_WPU                  WPUAbits.WPUA2
+#define THRESHOLD1_OD                   ODCONAbits.ODCA2
+#define THRESHOLD1_ANS                  ANSELAbits.ANSA2
+#define THRESHOLD1_SetHigh()            do { LATAbits.LATA2 = 1; } while(0)
+#define THRESHOLD1_SetLow()             do { LATAbits.LATA2 = 0; } while(0)
+#define THRESHOLD1_Toggle()             do { LATAbits.LATA2 = ~LATAbits.LATA2; } while(0)
+#define THRESHOLD1_GetValue()           PORTAbits.RA2
+#define THRESHOLD1_SetDigitalInput()    do { TRISAbits.TRISA2 = 1; } while(0)
+#define THRESHOLD1_SetDigitalOutput()   do { TRISAbits.TRISA2 = 0; } while(0)
+#define THRESHOLD1_SetPullup()          do { WPUAbits.WPUA2 = 1; } while(0)
+#define THRESHOLD1_ResetPullup()        do { WPUAbits.WPUA2 = 0; } while(0)
+#define THRESHOLD1_SetPushPull()        do { ODCONAbits.ODCA2 = 0; } while(0)
+#define THRESHOLD1_SetOpenDrain()       do { ODCONAbits.ODCA2 = 1; } while(0)
+#define THRESHOLD1_SetAnalogMode()      do { ANSELAbits.ANSA2 = 1; } while(0)
+#define THRESHOLD1_SetDigitalMode()     do { ANSELAbits.ANSA2 = 0; } while(0)
+
+
+// get/set THRESHOLD2 aliases
+#define THRESHOLD2_TRIS                 TRISCbits.TRISC5
+#define THRESHOLD2_LAT                  LATCbits.LATC5
+#define THRESHOLD2_PORT                 PORTCbits.RC5
+#define THRESHOLD2_WPU                  WPUCbits.WPUC5
+#define THRESHOLD2_OD                   ODCONCbits.ODCC5
+#define THRESHOLD2_ANS                  ANSELCbits.ANSC5
+#define THRESHOLD2_SetHigh()            do { LATCbits.LATC5 = 1; } while(0)
+#define THRESHOLD2_SetLow()             do { LATCbits.LATC5 = 0; } while(0)
+#define THRESHOLD2_Toggle()             do { LATCbits.LATC5 = ~LATCbits.LATC5; } while(0)
+#define THRESHOLD2_GetValue()           PORTCbits.RC5
+#define THRESHOLD2_SetDigitalInput()    do { TRISCbits.TRISC5 = 1; } while(0)
+#define THRESHOLD2_SetDigitalOutput()   do { TRISCbits.TRISC5 = 0; } while(0)
+#define THRESHOLD2_SetPullup()          do { WPUCbits.WPUC5 = 1; } while(0)
+#define THRESHOLD2_ResetPullup()        do { WPUCbits.WPUC5 = 0; } while(0)
+#define THRESHOLD2_SetPushPull()        do { ODCONCbits.ODCC5 = 0; } while(0)
+#define THRESHOLD2_SetOpenDrain()       do { ODCONCbits.ODCC5 = 1; } while(0)
+#define THRESHOLD2_SetAnalogMode()      do { ANSELCbits.ANSC5 = 1; } while(0)
+#define THRESHOLD2_SetDigitalMode()     do { ANSELCbits.ANSC5 = 0; } while(0)
+
+
 
 /* Initializer for:
 typedef struct devApi{

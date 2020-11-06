@@ -18500,7 +18500,7 @@ void (* UpdateThreshold)(uint8_t, uint8_t *);
 
 #pragma config CP = OFF
 
-# 224 "Sensors/sound_level.h"
+# 266 "Sensors/sound_level.h"
 void SoundLevel_Init(void);
 void SoundLevel_Measure(void);
 void SoundLevel_Loop(void);
@@ -18711,7 +18711,7 @@ void OSCILLATOR_Initialize(void);
 # 70
 void PMD_Initialize(void);
 
-# 51 "Sensors/sound_level.c"
+# 56 "Sensors/sound_level.c"
 void SoundLevel_PrepareData(void);
 
 
@@ -18775,6 +18775,9 @@ void VDDBIAS_Init();
 void AMPS_enable(bool enable);
 
 void MIC_Mode(uint8_t mode);
+
+
+void THRESHOLD_Init();
 
 
 
@@ -18926,6 +18929,17 @@ do { LATCbits.LATC4 = 0; } while(0);
 }
 }
 
+void THRESHOLD_Init()
+{
+do { ANSELAbits.ANSA2 = 0; } while(0);
+do { TRISAbits.TRISA2 = 0; } while(0);
+do { LATAbits.LATA2 = 0; } while(0);
+
+do { ANSELCbits.ANSC5 = 0; } while(0);
+do { TRISCbits.TRISC5 = 0; } while(0);
+do { LATCbits.LATC5 = 0; } while(0);
+}
+
 
 void WDT_Init(void)
 {
@@ -18942,6 +18956,9 @@ LED_Init();
 
 PMD0bits.IOCMD = 0;
 
+THRESHOLD_Init();
+_delay((unsigned long)((1)*(32000000/4000.0)));
+
 powerMic_Init();
 _delay((unsigned long)((1)*(32000000/4000.0)));
 nWakeMic_Init();
@@ -18953,7 +18970,7 @@ VDDAMP_Init();
 VDDBIAS_Init();
 _delay((unsigned long)((1)*(32000000/4000.0)));
 
-# 301
+# 323
 PIE0bits.IOCIE = 1;
 
 IOCCFbits.IOCCF6 = 0;
@@ -18973,15 +18990,15 @@ ADCC_SetADIInterruptHandler(SoundLevel_GetSample);
 
 WDT_Init();
 
-# 324
+# 346
 }
 
-# 328
+# 350
 void SoundLevel_Measure(){
 polledMeasurement = 1;
 }
 
-# 334
+# 356
 void SoundLevel_Loop(void){
 
 if(polledMeasurement && (WDTCON0bits.SEN == 0))
@@ -19100,6 +19117,27 @@ if(thresholdEnabled)
 do { LATCbits.LATC0 = 1; } while(0);
 _delay((unsigned long)((1)*(32000000/4000.0)));
 MIC_Mode(2);
+
+# 481
+if(thresholdLevel < 77*600)
+{
+
+do { LATAbits.LATA2 = 1; } while(0);
+do { LATCbits.LATC5 = 1; } while(0);
+}
+else if(thresholdLevel < 89*600)
+{
+
+do { LATAbits.LATA2 = 0; } while(0);
+do { LATCbits.LATC5 = 1; } while(0);
+}
+else
+{
+
+do { LATAbits.LATA2 = 0; } while(0);
+do { LATCbits.LATC5 = 0; } while(0);
+}
+
 }
 }
 }
