@@ -19,26 +19,18 @@
  *                  "IoT with a SOFT touch"
  *               (DRAMCO / KU Leuven TCG project)
  * 
- *  Current measurments:
- *      - approx. 370µA sleep
- *      - approx. 288µA sleep between measurements of 1 minute, 954.51µW (50sec)
- *      - approx. 34.64µA sleep without MIC on, 114.97µW (50sec)
- * 
- *      - approx. 69µA extra by disabling VREGCONbits.VREGPM = 1;
- * 
- *      - approx. 25.7µA threshold based -> improved to 19µA (incorrect LED initialisation)
- *                                       -> improved to 10.4µA (PIN_MANAGER_Initialize() bad initialisation)
  * -------------------------------------------
- *      - approx. 1 µA in SLEEP
- *      - approx. 260µA MIC ON -> Improved to 23 µA in WOS mode      
+ * | Current measurments:                     |
+ * -------------------------------------------
+ * |     SOUND MODULE ONLY:                   |
+ * |             Sleep: +-4.5µA               |
+ * |             In WoS: +-25µA               |
+ * -------------------------------------------
+ * |     SOUND MODULE + MOTHERBOARD:          |
+ * |             Sleep: +-30µA                |
+ * |             In WoS: +-50µA               |
  * -------------------------------------------
  * 
- *      - 868.68µA -> MIC voltage duty cycle
- *      - 449.36µA -> MIC always ON without delay
- *      - 1.09mA -> MIC always ON + 100ms delay
- *      --> Best option:
- *          - Threshold mode: MIC always ON
- *          - Polling mode: MIC voltage duty cycle
  * 
  *  - Added external pullup to minimize sleep currents for DOUT pin (pullup)
  * 
@@ -46,10 +38,6 @@
  *      TOP:      |  INT  |   GND  |   3V3 |
  *      BOTTOM:   |  SDA  |   SCL  |   NC  |
  *                 ------------------------
- * 
- * Final current measurements
- * Sleep: +-5µA
- * In WoS: +-28µA
  * 
  */
 
