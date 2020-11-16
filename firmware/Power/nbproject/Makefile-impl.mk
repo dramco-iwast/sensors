@@ -24,14 +24,14 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=iwast01.X
+PROJECTNAME=Power_Module
 
 # Active Configuration
 DEFAULTCONF=soundlevel
 CONF=${DEFAULTCONF}
 
 # All Configurations
-ALLCONFS=default soundlevel 
+ALLCONFS=soundlevel 
 
 
 # build
@@ -45,14 +45,12 @@ ALLCONFS=default soundlevel
 
 # clobber
 .clobber-impl: .clobber-pre .depcheck-impl
-	    ${MAKE} SUBPROJECTS=${SUBPROJECTS} CONF=default clean
 	    ${MAKE} SUBPROJECTS=${SUBPROJECTS} CONF=soundlevel clean
 
 
 
 # all
 .all-impl: .all-pre .depcheck-impl
-	    ${MAKE} SUBPROJECTS=${SUBPROJECTS} CONF=default build
 	    ${MAKE} SUBPROJECTS=${SUBPROJECTS} CONF=soundlevel build
 
 

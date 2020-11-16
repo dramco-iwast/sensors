@@ -18,62 +18,30 @@
  *  Description: Generic I2C sensor interface for 
  *                  "IoT with a SOFT touch"
  *               (DRAMCO / KU Leuven TCG project)
- *
+ *               ------------------------
+ * 
  */
 
-#include "mcc_generated_files/mcc.h"
-#include "global.h"
-
+#include <xc.h>
 #include <stdio.h>
 #include <stdint.h>
 #include <string.h>
+#include <stdbool.h>
+
+#include "global.h"
 #include "mcc_generated_files/pin_manager.h"
+#include "mcc_generated_files/mcc.h"
 
 // include sensor
-#ifdef SENSOR_TYPE
-    #if (SENSOR_TYPE == BUTTONS)
-        #include "Sensors/buttons.h"
-    #elif (SENSOR_TYPE == SOUND_LEVEL)
-        #include "Sensors/sound_level.h"      // veranderen naar soundlevel.h
-    #elif (SENSOR_TYPE == BME680)
-        #include "Sensors/bme680_air_quality.h"
-    #elif (SENSOR_TYPE == POWER)
-        #include "Sensors/power.h"
-    #else
-        #warning "Make sure your build settings in global.h are correct."
-        #error "Unsupported sensor type."
-    #endif
-#else
-    #warning "Make sure your build settings in global.h are correct."
-    #error "Sensor type is undefined."
-#endif
+#include "sensor/power.h"
 
-Device_API_t sensorAPI = SENSOR_API;
 
-#ifndef TYPE_BYTE
-    #error "TYPE_BYTE is not defined"
-#elif (~(~TYPE_BYTE + 0) == 0 && ~(~TYPE_BYTE + 1) == 1)
-    #error "TYPE_BYTE is defined, but has no value"
-#endif
-
-#ifndef M_NR
-    #error "M_NR is not defined"
-#elif (~(~M_NR + 0) == 0 && ~(~M_NR + 1) == 1)
-    #error "M_NR is defined, but has no value"
-#endif
-
-#ifndef SLAVE_ADDRESS
-    #error "SLAVE_ADDRESS is not defined"
-#elif (~(~SLAVE_ADDRESS + 0) == 0 && ~(~SLAVE_ADDRESS + 1) == 1)
-    #error "SLAVE_ADDRESS is defined, but has no value"
-#endif
+Device_API_t sensorAPI = POWER_API;
 
 uint8_t mData[2 * M_NR];
-//uint8_t * mData;
 uint8_t mDataLength;
 
 void toggleInt(void);
-void goSleep(void);
 
 /* Main application
  */
@@ -81,34 +49,16 @@ void main(void)
 {
     // initialize the device
     SYSTEM_Initialize(SLAVE_ADDRESS);
-
-    // When using interrupts, you need to set the Global and Peripheral Interrupt Enable bits
-    // Use the following macros to:
-
-    // Enable the Global Interrupts
-    INTERRUPT_GlobalInterruptEnable();
-
-    // Enable the Peripheral Interrupts
-    INTERRUPT_PeripheralInterruptEnable();
-
-    // Disable the Global Interrupts
-    //INTERRUPT_GlobalInterruptDisable();
-
-    // Disable the Peripheral Interrupts
-    //INTERRUPT_PeripheralInterruptDisable();
-     READY_SetHigh();
-    //READY_SetLow();
     
     sensorAPI.Init();
     
     while(1){
         sensorAPI.Loop();
         sensorAPI.GetData(mData, &mDataLength);
-        //I2C1_SetTransmitData(mData, mDataLength);
-        
+        I2C1_SetTransmitData(mData, mDataLength);
         
         // I2C Slave operation (respond to commands)
-        /*if(I2C1_CommandReceived()){
+        if(I2C1_CommandReceived()){
             uint8_t cmd;
             I2C1_GetCommand(&cmd);
             
@@ -143,7 +93,8 @@ void main(void)
                 // GET DATA
                 case CMD_GET_M_DATA:{ // master requests measurement data -> send data
                     // wait until data are sent
-                    while(!I2C1_TxBufferEmpty()){
+                    uint8_t retries = 20;
+                    while(!I2C1_TxBufferEmpty() && retries--){
                         __delay_ms(1);
                     }
                 } break;
@@ -168,20 +119,8 @@ void main(void)
                 default:{
                 } break;
             }
-        }*/
-        
-        goSleep();
+        }
     }
-}
-
-
-
-void goSleep(void){
-
-    SLEEP();
-    NOP();
-
-
 }
 
 void toggleInt(void){
