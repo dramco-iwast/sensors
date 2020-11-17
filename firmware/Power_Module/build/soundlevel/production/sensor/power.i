@@ -18853,7 +18853,6 @@ startMeasurement = 1;
 
 void Measure(){
 
-
 ADC_Fixed_Voltage_Ref(1);
 
 do { LATCbits.LATC0 = 1; } while(0);
@@ -18862,24 +18861,23 @@ do { LATCbits.LATC6 = 1; } while(0);
 do { LATCbits.LATC1 = 1; } while(0);
 do { LATBbits.LATB6 = 1; } while(0);
 
-_delay((unsigned long)((50)*(32000000/4000.0)));
+_delay((unsigned long)((10)*(32000000/4000.0)));
 
 
 ADCC_GetSingleConversion(0x13);
 solvoltage = ADCC_GetSingleConversion(0x13);
-_delay((unsigned long)((2000)*(32000000/4000.0)));
+
 
 tempValue = ADCC_GetSingleConversion(0x13);
 if(tempValue < solvoltage){
 solvoltage = tempValue;
 }
-floatsolvoltage = ((float)solvoltage /4096) * 2.048 * ((10+8.2)/8.2);
+floatsolvoltage = ((float)solvoltage /4096) * 2.048 * ((10+2.2)/2.2);
 
 
 ADCC_GetSingleConversion(0x14);
 batvoltage = ADCC_GetSingleConversion(0x14);
 floatbatvoltage = ((float)batvoltage /4096) * 2.048 * ((10+8.2)/8.2);
-
 
 do { LATCbits.LATC0 = 0; } while(0);
 do { LATCbits.LATC6 = 0; } while(0);

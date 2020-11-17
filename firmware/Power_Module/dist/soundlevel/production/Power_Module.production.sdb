@@ -63,7 +63,7 @@ TMR4_CLC3_OUT 15
 TMR4_CLC4_OUT 16
 TMR4_RESERVED_2 17
 ]
-"212 C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+"211 C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
 [e E10920 . `uc
 channel_ANC1 17
 channel_Vss 59
@@ -218,13 +218,13 @@ channel_FVR_Buffer2 63
 [v _Power_Measure Power_Measure `(v  1 e 1 0 ]
 "198
 [v _Measure Measure `(v  1 e 1 0 ]
-"268
+"266
 [v _Power_Loop Power_Loop `(v  1 e 1 0 ]
-"285
+"283
 [v _Power_GetData Power_GetData `(v  1 e 1 0 ]
-"292
+"290
 [v _Power_SetThreshold Power_SetThreshold `(v  1 e 1 0 ]
-"301
+"299
 [v _generateIntPower generateIntPower `(v  1 e 1 0 ]
 [s S1232 . 1 `uc 1 INTEDG 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
@@ -1258,36 +1258,36 @@ channel_FVR_Buffer2 63
 [v I2C1_Initialize@slave_address slave_address `uc  1 a 1 0 ]
 "131
 } 0
-"292 C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+"290 C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
 [v _Power_SetThreshold Power_SetThreshold `(v  1 e 1 0 ]
 {
 [v Power_SetThreshold@metric metric `uc  1 p 1 0 ]
 [v Power_SetThreshold@thresholdData thresholdData `*.6uc  1 p 1 1 ]
-"296
+"294
 } 0
 "193
 [v _Power_Measure Power_Measure `(v  1 e 1 0 ]
 {
 "195
 } 0
-"268
+"266
 [v _Power_Loop Power_Loop `(v  1 e 1 0 ]
 {
-"283
+"281
 } 0
-"301
+"299
 [v _generateIntPower generateIntPower `(v  1 e 1 0 ]
 {
-"305
+"303
 } 0
 "198
 [v _Measure Measure `(v  1 e 1 0 ]
 {
-"248
+"246
 [v Measure@datasolvoltage datasolvoltage `ui  1 a 2 11 ]
-"247
+"245
 [v Measure@databatvoltage databatvoltage `ui  1 a 2 9 ]
-"265
+"263
 } 0
 "6 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\round.c
 [v _round round `(d  1 e 3 0 ]
@@ -1443,12 +1443,12 @@ channel_FVR_Buffer2 63
 {
 "124
 } 0
-"285
+"283
 [v _Power_GetData Power_GetData `(v  1 e 1 0 ]
 {
 [v Power_GetData@data data `*.5uc  1 p 1 0 ]
 [v Power_GetData@length length `*.4uc  1 p 1 1 ]
-"289
+"287
 } 0
 "183 C:\Users\Jona Cappelle\Documents\Github\sensors\firmware\Power_Module\mcc_generated_files/i2c1.c
 [v _I2C1_TxBufferEmpty I2C1_TxBufferEmpty `(uc  1 e 1 0 ]

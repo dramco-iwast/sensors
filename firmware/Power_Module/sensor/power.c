@@ -197,7 +197,6 @@ void Power_Measure(){
 
 void Measure(){
 
-    
     ADC_Fixed_Voltage_Ref(ENABLE);
     
     SOL_MEAS_EN_SetHigh();                              // Enable loadswitch to measure voltage
@@ -206,24 +205,23 @@ void Measure(){
     LED1_SetHigh();
     LED0_SetHigh();
 
-    __delay_ms(50);                                     // Delay for settling voltages
+    __delay_ms(10);                                     // Delay for settling voltages
 
 
     ADCC_GetSingleConversion(SOL_VOLT);                 // first measurement afte rreset seems to be fixed and need to be rejected
     solvoltage = ADCC_GetSingleConversion(SOL_VOLT);
-    __delay_ms(2000);
+//    __delay_ms(2000);
 
     tempValue = ADCC_GetSingleConversion(SOL_VOLT);
     if(tempValue < solvoltage){                         // To make sure it is the lowest/ stable voltage that is captured
         solvoltage = tempValue;
     }
-    floatsolvoltage = ((float)solvoltage /4096) * 2.048 * ((10+8.2)/8.2);   // Convert ADC value to voltage (Resistor divider)
+    floatsolvoltage = ((float)solvoltage /4096) * 2.048 * ((10+2.2)/2.2);   // Convert ADC value to voltage (Resistor divider)
 
 
     ADCC_GetSingleConversion(BAT_VOLT); 
     batvoltage = ADCC_GetSingleConversion(BAT_VOLT);
     floatbatvoltage = ((float)batvoltage /4096) * 2.048 * ((10+8.2)/8.2);   // Convert ADC value to voltage (Resistor divider)
-
 
     SOL_MEAS_EN_SetLow();                               // Disable loadswitch to measure voltage
     BAT_MEAS_EN_SetLow();                               // Disable loadswitch to measure voltage
