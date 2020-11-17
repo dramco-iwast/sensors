@@ -1,25 +1,24 @@
-/**
-  MSSP1 Generated Driver API Header File
-  
-  @Company
-    Microchip Technology Inc.
-
-  @File Name
-    i2c1.h
-	
-  @Summary
-    This is the generated header file for the MSSP1 driver using PIC10 / PIC12 / PIC16 / PIC18 MCUs
-
-  @Description
-    This header file provides APIs for driver for I2C1.
-    Generation Information :
-        Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.77
-        Device            :  PIC16F18446
-        Driver Version    :  2.01
-    The generated drivers are tested against the following:
-        Compiler          :  XC8 2.05 and above
-        MPLAB 	          :  MPLAB X 5.20
-*/
+/*  ____  ____      _    __  __  ____ ___
+ * |  _ \|  _ \    / \  |  \/  |/ ___/ _ \
+ * | | | | |_) |  / _ \ | |\/| | |  | | | |
+ * | |_| |  _ <  / ___ \| |  | | |__| |_| |
+ * |____/|_| \_\/_/   \_\_|  |_|\____\___/
+ *                           research group
+ *                             dramco.be/
+ *
+ *  KU Leuven - Technology Campus Gent,
+ *  Gebroeders De Smetstraat 1,
+ *  B-9000 Gent, Belgium
+ *
+ *         File: i2c1.c
+ *      Created: 2020-08-26
+ *       Author: Geoffrey Ottoy
+ *      Version: 1.0
+ *
+ *  Description: Header file for the modified version of the Microchip 
+ *               MSSP1 Driver (see License)
+ *
+ */
 
 /*
     (c) 2018 Microchip Technology Inc. and its subsidiaries. 
@@ -44,8 +43,8 @@
     SOFTWARE.
 */
 
-#ifndef _I2C1_H
-#define _I2C1_H
+#ifndef __I2C1_H__
+#define __I2C1_H__
 
 #include <stdint.h>
 #include <stdbool.h>
@@ -78,8 +77,7 @@
 
  */
 
-typedef enum
-{
+typedef enum{
     I2C1_SLAVE_WRITE_REQUEST,
     I2C1_SLAVE_READ_REQUEST,
     I2C1_SLAVE_WRITE_COMPLETED,
@@ -133,7 +131,7 @@ void I2C1_Initialize(uint8_t slave_address); //MODIFIED (was void))
         A basic EEPROM emulator is provided as an example.
  */
 
-void I2C1_ISR ( void );
+void I2C1_ISR(void);
 
 /**
    @Summary
@@ -152,6 +150,7 @@ void I2C1_GetCommand(uint8_t * cmd);
 void I2C1_GetCommandData(uint8_t * data, uint8_t * len);
 void I2C1_SetTransmitData(uint8_t * data, uint8_t len);
 bool I2C1_TxBufferEmpty(void);
+void I2C1_ClearTxBuffer(void);
 
 #ifdef __cplusplus  // Provide C++ Compatibility
 
@@ -159,4 +158,4 @@ bool I2C1_TxBufferEmpty(void);
 
 #endif
 
-#endif  // _I2C1_H
+#endif  /* __I2C1_H__ */

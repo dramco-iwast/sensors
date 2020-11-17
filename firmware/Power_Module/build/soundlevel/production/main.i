@@ -18524,7 +18524,7 @@ extern char * strrichr(const char *, int);
 # 15 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\stdbool.h"
 typedef unsigned char bool;
 
-# 66 "global.h"
+# 69 "global.h"
 typedef struct devApi{
 void (* Init)(void);
 void (* Measure)(void);
@@ -18596,30 +18596,30 @@ typedef unsigned char bool;
 # 6 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\stddef.h"
 typedef int ptrdiff_t;
 
-# 81 "mcc_generated_files/i2c1.h"
-typedef enum
-{
+# 80 "mcc_generated_files/i2c1.h"
+typedef enum{
 I2C1_SLAVE_WRITE_REQUEST,
 I2C1_SLAVE_READ_REQUEST,
 I2C1_SLAVE_WRITE_COMPLETED,
 I2C1_SLAVE_READ_COMPLETED,
 } I2C1_SLAVE_DRIVER_STATUS;
 
-# 116
+# 114
 void I2C1_Initialize(uint8_t slave_address);
 
-# 136
-void I2C1_ISR ( void );
+# 134
+void I2C1_ISR(void);
 
-# 143
+# 141
 extern volatile uint8_t I2C1_slaveWriteData;
 
-# 150
+# 148
 bool I2C1_CommandReceived(void);
 void I2C1_GetCommand(uint8_t * cmd);
 void I2C1_GetCommandData(uint8_t * data, uint8_t * len);
 void I2C1_SetTransmitData(uint8_t * data, uint8_t len);
 bool I2C1_TxBufferEmpty(void);
+void I2C1_ClearTxBuffer(void);
 
 # 15 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\stdbool.h"
 typedef unsigned char bool;
@@ -18763,7 +18763,7 @@ void toggleInt(void);
 void main(void)
 {
 
-SYSTEM_Initialize(0x90);
+SYSTEM_Initialize(0x45);
 
 sensorAPI.Init();
 
@@ -18788,7 +18788,7 @@ I2C1_SetTransmitData(&ack, 1);
 
 case 0x11:{
 
-uint8_t type = 0x04;
+uint8_t type = 0x01;
 I2C1_SetTransmitData(&type, 1);
 } break;
 

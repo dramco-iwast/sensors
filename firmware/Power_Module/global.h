@@ -32,8 +32,11 @@ extern "C" {
 
 //#define I2C_ADDRESS                 0x67
 //#define I2C_ADDRESS                 0x48
-#define I2C_ADDRESS                   0x90
+//#define I2C_ADDRESS                   0x90
+
+#define I2C_ADDRESS                   0x45
     
+
 #define SENSOR_TYPE                 POWER
 
 /******************************************************************************
@@ -54,7 +57,7 @@ extern "C" {
 #define SOUND_LEVEL                 0x01
 #define BUTTONS                     0x02
 #define BME680                      0x03
-#define POWER                       0x04 // terug wijzigen naar 4!!!
+#define POWER                       0x01 // TODO: Change back to 4
     
 /* general sensor API providing methods for
  *  - initializing sensor operation

@@ -54,6 +54,12 @@ void SYSTEM_Initialize(uint8_t slave_address) //MODIFIED (was void))
     OSCILLATOR_Initialize();
     I2C1_Initialize(slave_address);
     //EUSART1_Initialize();
+    
+    // Enable the Global Interrupts
+    INTERRUPT_GlobalInterruptEnable();
+    // Enable the Peripheral Interrupts
+    INTERRUPT_PeripheralInterruptEnable();
+    
 }
 
 void OSCILLATOR_Initialize(void)

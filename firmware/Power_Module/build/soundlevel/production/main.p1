@@ -4,7 +4,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v F10909 `(v ~T0 @X0 0 tf ]
 [v F10912 `(v ~T0 @X0 0 tf2`*uc`*uc ]
 [v F10916 `(v ~T0 @X0 0 tf2`uc`*uc ]
-"66 global.h
+"69 global.h
 [s S1513 `*F10903 1 `*F10906 1 `*F10909 1 `*F10912 1 `*F10916 1 ]
 [n S1513 devApi Init Measure Loop GetData UpdateThreshold ]
 "183 sensor/power.h
@@ -20,21 +20,21 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p mainexit ]
 "72 mcc_generated_files/mcc.h
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef1`uc ]
-"153 mcc_generated_files/i2c1.h
+"151 mcc_generated_files/i2c1.h
 [v _I2C1_SetTransmitData `(v ~T0 @X0 0 ef2`*uc`uc ]
-"150
+"148
 [v _I2C1_CommandReceived `(uc ~T0 @X0 0 ef ]
-"151
+"149
 [v _I2C1_GetCommand `(v ~T0 @X0 0 ef1`*uc ]
 [v F38 `(v ~T0 @X0 1 tf1`ul ]
 "12 C:/Users/Jona Cappelle/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\builtins.h
 [v __delay `JF38 ~T0 @X0 0 e ]
 [p i __delay ]
-"154 mcc_generated_files/i2c1.h
+"152 mcc_generated_files/i2c1.h
 [v _I2C1_TxBufferEmpty `(uc ~T0 @X0 0 ef ]
 "44 main.c
 [v _toggleInt `(v ~T0 @X0 0 ef ]
-"152 mcc_generated_files/i2c1.h
+"150 mcc_generated_files/i2c1.h
 [v _I2C1_GetCommandData `(v ~T0 @X0 0 ef2`*uc`*uc ]
 "844 C:/Users/Jona Cappelle/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18446.h
 [s S44 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -12197,13 +12197,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;string.h: 59: extern char * strrchr(const char *, int);
 [; ;string.h: 60: extern char * strrichr(const char *, int);
 [; ;stdbool.h: 15: typedef unsigned char bool;
-[; ;global.h: 66: typedef struct devApi{
-[; ;global.h: 67: void (* Init)(void);
-[; ;global.h: 68: void (* Measure)(void);
-[; ;global.h: 69: void (* Loop)(void);
-[; ;global.h: 70: void (* GetData)(uint8_t *, uint8_t *);
-[; ;global.h: 71: void (* UpdateThreshold)(uint8_t, uint8_t *);
-[; ;global.h: 72: } Device_API_t;
+[; ;global.h: 69: typedef struct devApi{
+[; ;global.h: 70: void (* Init)(void);
+[; ;global.h: 71: void (* Measure)(void);
+[; ;global.h: 72: void (* Loop)(void);
+[; ;global.h: 73: void (* GetData)(uint8_t *, uint8_t *);
+[; ;global.h: 74: void (* UpdateThreshold)(uint8_t, uint8_t *);
+[; ;global.h: 75: } Device_API_t;
 [; ;pin_manager.h: 118: void PIN_MANAGER_Initialize (void);
 [; ;pin_manager.h: 130: void PIN_MANAGER_IOC(void);
 [; ;pin_manager.h: 143: void IOCCF0_ISR(void);
@@ -12225,21 +12225,21 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdbool.h: 15: typedef unsigned char bool;
 [; ;stdbool.h: 15: typedef unsigned char bool;
 [; ;stddef.h: 6: typedef int ptrdiff_t;
-[; ;i2c1.h: 81: typedef enum
-[; ;i2c1.h: 82: {
-[; ;i2c1.h: 83: I2C1_SLAVE_WRITE_REQUEST,
-[; ;i2c1.h: 84: I2C1_SLAVE_READ_REQUEST,
-[; ;i2c1.h: 85: I2C1_SLAVE_WRITE_COMPLETED,
-[; ;i2c1.h: 86: I2C1_SLAVE_READ_COMPLETED,
-[; ;i2c1.h: 87: } I2C1_SLAVE_DRIVER_STATUS;
-[; ;i2c1.h: 116: void I2C1_Initialize(uint8_t slave_address);
-[; ;i2c1.h: 136: void I2C1_ISR ( void );
-[; ;i2c1.h: 143: extern volatile uint8_t I2C1_slaveWriteData;
-[; ;i2c1.h: 150: bool I2C1_CommandReceived(void);
-[; ;i2c1.h: 151: void I2C1_GetCommand(uint8_t * cmd);
-[; ;i2c1.h: 152: void I2C1_GetCommandData(uint8_t * data, uint8_t * len);
-[; ;i2c1.h: 153: void I2C1_SetTransmitData(uint8_t * data, uint8_t len);
-[; ;i2c1.h: 154: bool I2C1_TxBufferEmpty(void);
+[; ;i2c1.h: 80: typedef enum{
+[; ;i2c1.h: 81: I2C1_SLAVE_WRITE_REQUEST,
+[; ;i2c1.h: 82: I2C1_SLAVE_READ_REQUEST,
+[; ;i2c1.h: 83: I2C1_SLAVE_WRITE_COMPLETED,
+[; ;i2c1.h: 84: I2C1_SLAVE_READ_COMPLETED,
+[; ;i2c1.h: 85: } I2C1_SLAVE_DRIVER_STATUS;
+[; ;i2c1.h: 114: void I2C1_Initialize(uint8_t slave_address);
+[; ;i2c1.h: 134: void I2C1_ISR(void);
+[; ;i2c1.h: 141: extern volatile uint8_t I2C1_slaveWriteData;
+[; ;i2c1.h: 148: bool I2C1_CommandReceived(void);
+[; ;i2c1.h: 149: void I2C1_GetCommand(uint8_t * cmd);
+[; ;i2c1.h: 150: void I2C1_GetCommandData(uint8_t * data, uint8_t * len);
+[; ;i2c1.h: 151: void I2C1_SetTransmitData(uint8_t * data, uint8_t len);
+[; ;i2c1.h: 152: bool I2C1_TxBufferEmpty(void);
+[; ;i2c1.h: 153: void I2C1_ClearTxBuffer(void);
 [; ;stdbool.h: 15: typedef unsigned char bool;
 [; ;adcc.h: 72: typedef uint16_t adc_result_t;
 [; ;adcc.h: 89: typedef enum
@@ -12321,9 +12321,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 49: {
 [e :U _main ]
 [f ]
-[; ;main.c: 51: SYSTEM_Initialize(0x90);
+[; ;main.c: 51: SYSTEM_Initialize(0x45);
 "51
-[e ( _SYSTEM_Initialize (1 -> -> 144 `i `uc ]
+[e ( _SYSTEM_Initialize (1 -> -> 69 `i `uc ]
 [; ;main.c: 53: sensorAPI.Init();
 "53
 [e ( *U . _sensorAPI 0 ..  ]
@@ -12375,8 +12375,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 {
 "76
 [v _type `uc ~T0 @X0 1 a ]
-[; ;main.c: 76: uint8_t type = 0x04;
-[e = _type -> -> 4 `i `uc ]
+[; ;main.c: 76: uint8_t type = 0x01;
+[e = _type -> -> 1 `i `uc ]
 [; ;main.c: 77: I2C1_SetTransmitData(&type, 1);
 "77
 [e ( _I2C1_SetTransmitData (2 , &U _type -> -> 1 `i `uc ]

@@ -43,7 +43,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S885 . . ]
 "19128
 [v _PIR3bits `VS885 ~T0 @X0 0 e@1807 ]
-"136 mcc_generated_files/i2c1.h
+"134 mcc_generated_files/i2c1.h
 [v _I2C1_ISR `(v ~T0 @X0 0 ef ]
 "19418 C:/Users/Jona Cappelle/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18446.h
 [s S900 :1 `uc 1 :1 `uc 1 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -12180,21 +12180,21 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdbool.h: 15: typedef unsigned char bool;
 [; ;xc8\pic\include\__size_t.h: 4: typedef unsigned size_t;
 [; ;stddef.h: 6: typedef int ptrdiff_t;
-[; ;i2c1.h: 81: typedef enum
-[; ;i2c1.h: 82: {
-[; ;i2c1.h: 83: I2C1_SLAVE_WRITE_REQUEST,
-[; ;i2c1.h: 84: I2C1_SLAVE_READ_REQUEST,
-[; ;i2c1.h: 85: I2C1_SLAVE_WRITE_COMPLETED,
-[; ;i2c1.h: 86: I2C1_SLAVE_READ_COMPLETED,
-[; ;i2c1.h: 87: } I2C1_SLAVE_DRIVER_STATUS;
-[; ;i2c1.h: 116: void I2C1_Initialize(uint8_t slave_address);
-[; ;i2c1.h: 136: void I2C1_ISR ( void );
-[; ;i2c1.h: 143: extern volatile uint8_t I2C1_slaveWriteData;
-[; ;i2c1.h: 150: bool I2C1_CommandReceived(void);
-[; ;i2c1.h: 151: void I2C1_GetCommand(uint8_t * cmd);
-[; ;i2c1.h: 152: void I2C1_GetCommandData(uint8_t * data, uint8_t * len);
-[; ;i2c1.h: 153: void I2C1_SetTransmitData(uint8_t * data, uint8_t len);
-[; ;i2c1.h: 154: bool I2C1_TxBufferEmpty(void);
+[; ;i2c1.h: 80: typedef enum{
+[; ;i2c1.h: 81: I2C1_SLAVE_WRITE_REQUEST,
+[; ;i2c1.h: 82: I2C1_SLAVE_READ_REQUEST,
+[; ;i2c1.h: 83: I2C1_SLAVE_WRITE_COMPLETED,
+[; ;i2c1.h: 84: I2C1_SLAVE_READ_COMPLETED,
+[; ;i2c1.h: 85: } I2C1_SLAVE_DRIVER_STATUS;
+[; ;i2c1.h: 114: void I2C1_Initialize(uint8_t slave_address);
+[; ;i2c1.h: 134: void I2C1_ISR(void);
+[; ;i2c1.h: 141: extern volatile uint8_t I2C1_slaveWriteData;
+[; ;i2c1.h: 148: bool I2C1_CommandReceived(void);
+[; ;i2c1.h: 149: void I2C1_GetCommand(uint8_t * cmd);
+[; ;i2c1.h: 150: void I2C1_GetCommandData(uint8_t * data, uint8_t * len);
+[; ;i2c1.h: 151: void I2C1_SetTransmitData(uint8_t * data, uint8_t len);
+[; ;i2c1.h: 152: bool I2C1_TxBufferEmpty(void);
+[; ;i2c1.h: 153: void I2C1_ClearTxBuffer(void);
 [; ;stdbool.h: 15: typedef unsigned char bool;
 [; ;adcc.h: 72: typedef uint16_t adc_result_t;
 [; ;adcc.h: 89: typedef enum

@@ -1,5 +1,5 @@
 Version 3.2 HI-TECH Software Intermediate Code
-[v F10901 `(v ~T0 @X0 0 tf ]
+[v F10903 `(v ~T0 @X0 0 tf ]
 "907 C:/Users/Jona Cappelle/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18446.h
 [v _ADLTHL `Vuc ~T0 @X0 0 e@140 ]
 "1035
@@ -12342,26 +12342,26 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdbool.h: 15: typedef unsigned char bool;
 [; ;xc8\pic\include\__size_t.h: 4: typedef unsigned size_t;
 [; ;stddef.h: 6: typedef int ptrdiff_t;
-[; ;i2c1.h: 81: typedef enum
-[; ;i2c1.h: 82: {
-[; ;i2c1.h: 83: I2C1_SLAVE_WRITE_REQUEST,
-[; ;i2c1.h: 84: I2C1_SLAVE_READ_REQUEST,
-[; ;i2c1.h: 85: I2C1_SLAVE_WRITE_COMPLETED,
-[; ;i2c1.h: 86: I2C1_SLAVE_READ_COMPLETED,
-[; ;i2c1.h: 87: } I2C1_SLAVE_DRIVER_STATUS;
-[; ;i2c1.h: 116: void I2C1_Initialize(uint8_t slave_address);
-[; ;i2c1.h: 136: void I2C1_ISR ( void );
-[; ;i2c1.h: 143: extern volatile uint8_t I2C1_slaveWriteData;
-[; ;i2c1.h: 150: bool I2C1_CommandReceived(void);
-[; ;i2c1.h: 151: void I2C1_GetCommand(uint8_t * cmd);
-[; ;i2c1.h: 152: void I2C1_GetCommandData(uint8_t * data, uint8_t * len);
-[; ;i2c1.h: 153: void I2C1_SetTransmitData(uint8_t * data, uint8_t len);
-[; ;i2c1.h: 154: bool I2C1_TxBufferEmpty(void);
+[; ;i2c1.h: 80: typedef enum{
+[; ;i2c1.h: 81: I2C1_SLAVE_WRITE_REQUEST,
+[; ;i2c1.h: 82: I2C1_SLAVE_READ_REQUEST,
+[; ;i2c1.h: 83: I2C1_SLAVE_WRITE_COMPLETED,
+[; ;i2c1.h: 84: I2C1_SLAVE_READ_COMPLETED,
+[; ;i2c1.h: 85: } I2C1_SLAVE_DRIVER_STATUS;
+[; ;i2c1.h: 114: void I2C1_Initialize(uint8_t slave_address);
+[; ;i2c1.h: 134: void I2C1_ISR(void);
+[; ;i2c1.h: 141: extern volatile uint8_t I2C1_slaveWriteData;
+[; ;i2c1.h: 148: bool I2C1_CommandReceived(void);
+[; ;i2c1.h: 149: void I2C1_GetCommand(uint8_t * cmd);
+[; ;i2c1.h: 150: void I2C1_GetCommandData(uint8_t * data, uint8_t * len);
+[; ;i2c1.h: 151: void I2C1_SetTransmitData(uint8_t * data, uint8_t len);
+[; ;i2c1.h: 152: bool I2C1_TxBufferEmpty(void);
+[; ;i2c1.h: 153: void I2C1_ClearTxBuffer(void);
 [; ;mcc.h: 72: void SYSTEM_Initialize(uint8_t slave_address);
 [; ;mcc.h: 85: void OSCILLATOR_Initialize(void);
 [; ;mcc.h: 98: void PMD_Initialize(void);
 "60 mcc_generated_files/adcc.c
-[v _ADCC_ADI_InterruptHandler `*F10901 ~T0 @X0 1 e ]
+[v _ADCC_ADI_InterruptHandler `*F10903 ~T0 @X0 1 e ]
 [; ;adcc.c: 60: void (*ADCC_ADI_InterruptHandler)(void);
 "66
 [v _ADCC_Initialize `(v ~T0 @X0 1 ef ]
@@ -12934,7 +12934,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
 [; ;adcc.c: 314: if (ADCC_ADI_InterruptHandler)
 "314
-[e $ ! != _ADCC_ADI_InterruptHandler -> -> 0 `i `*F10901 1543  ]
+[e $ ! != _ADCC_ADI_InterruptHandler -> -> 0 `i `*F10903 1543  ]
 [; ;adcc.c: 315: ADCC_ADI_InterruptHandler();
 "315
 [e ( *U _ADCC_ADI_InterruptHandler ..  ]
@@ -12948,8 +12948,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 {
 [; ;adcc.c: 318: void ADCC_SetADIInterruptHandler(void (* InterruptHandler)(void)){
 [e :U _ADCC_SetADIInterruptHandler ]
-[v F10940 `(v ~T0 @X0 0 tf ]
-[v _InterruptHandler `*F10940 ~T0 @X0 1 r1 ]
+[v F10942 `(v ~T0 @X0 0 tf ]
+[v _InterruptHandler `*F10942 ~T0 @X0 1 r1 ]
 [f ]
 [; ;adcc.c: 319: ADCC_ADI_InterruptHandler = InterruptHandler;
 "319

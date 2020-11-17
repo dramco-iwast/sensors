@@ -5,9 +5,17 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _PIN_MANAGER_Initialize `(v ~T0 @X0 0 ef ]
 "85 mcc_generated_files/mcc.h
 [v _OSCILLATOR_Initialize `(v ~T0 @X0 0 ef ]
-"116 mcc_generated_files/i2c1.h
+"114 mcc_generated_files/i2c1.h
 [v _I2C1_Initialize `(v ~T0 @X0 0 ef1`uc ]
-"21110 C:/Users/Jona Cappelle/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18446.h
+"420 C:/Users/Jona Cappelle/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18446.h
+[s S26 :1 `uc 1 :5 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S26 . INTEDG . PEIE GIE ]
+"419
+[u S25 `S26 1 ]
+[n S25 . . ]
+"427
+[v _INTCONbits `VS25 ~T0 @X0 0 e@11 ]
+"21110
 [v _OSCCON1 `Vuc ~T0 @X0 0 e@2189 ]
 "21250
 [v _OSCCON3 `Vuc ~T0 @X0 0 e@2191 ]
@@ -12150,21 +12158,21 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdbool.h: 15: typedef unsigned char bool;
 [; ;xc8\pic\include\__size_t.h: 4: typedef unsigned size_t;
 [; ;stddef.h: 6: typedef int ptrdiff_t;
-[; ;i2c1.h: 81: typedef enum
-[; ;i2c1.h: 82: {
-[; ;i2c1.h: 83: I2C1_SLAVE_WRITE_REQUEST,
-[; ;i2c1.h: 84: I2C1_SLAVE_READ_REQUEST,
-[; ;i2c1.h: 85: I2C1_SLAVE_WRITE_COMPLETED,
-[; ;i2c1.h: 86: I2C1_SLAVE_READ_COMPLETED,
-[; ;i2c1.h: 87: } I2C1_SLAVE_DRIVER_STATUS;
-[; ;i2c1.h: 116: void I2C1_Initialize(uint8_t slave_address);
-[; ;i2c1.h: 136: void I2C1_ISR ( void );
-[; ;i2c1.h: 143: extern volatile uint8_t I2C1_slaveWriteData;
-[; ;i2c1.h: 150: bool I2C1_CommandReceived(void);
-[; ;i2c1.h: 151: void I2C1_GetCommand(uint8_t * cmd);
-[; ;i2c1.h: 152: void I2C1_GetCommandData(uint8_t * data, uint8_t * len);
-[; ;i2c1.h: 153: void I2C1_SetTransmitData(uint8_t * data, uint8_t len);
-[; ;i2c1.h: 154: bool I2C1_TxBufferEmpty(void);
+[; ;i2c1.h: 80: typedef enum{
+[; ;i2c1.h: 81: I2C1_SLAVE_WRITE_REQUEST,
+[; ;i2c1.h: 82: I2C1_SLAVE_READ_REQUEST,
+[; ;i2c1.h: 83: I2C1_SLAVE_WRITE_COMPLETED,
+[; ;i2c1.h: 84: I2C1_SLAVE_READ_COMPLETED,
+[; ;i2c1.h: 85: } I2C1_SLAVE_DRIVER_STATUS;
+[; ;i2c1.h: 114: void I2C1_Initialize(uint8_t slave_address);
+[; ;i2c1.h: 134: void I2C1_ISR(void);
+[; ;i2c1.h: 141: extern volatile uint8_t I2C1_slaveWriteData;
+[; ;i2c1.h: 148: bool I2C1_CommandReceived(void);
+[; ;i2c1.h: 149: void I2C1_GetCommand(uint8_t * cmd);
+[; ;i2c1.h: 150: void I2C1_GetCommandData(uint8_t * data, uint8_t * len);
+[; ;i2c1.h: 151: void I2C1_SetTransmitData(uint8_t * data, uint8_t len);
+[; ;i2c1.h: 152: bool I2C1_TxBufferEmpty(void);
+[; ;i2c1.h: 153: void I2C1_ClearTxBuffer(void);
 [; ;stdbool.h: 15: typedef unsigned char bool;
 [; ;adcc.h: 72: typedef uint16_t adc_result_t;
 [; ;adcc.h: 89: typedef enum
@@ -12232,70 +12240,76 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;mcc.c: 55: I2C1_Initialize(slave_address);
 "55
 [e ( _I2C1_Initialize (1 _slave_address ]
-[; ;mcc.c: 57: }
-"57
+[; ;mcc.c: 59: (INTCONbits.GIE = 1);
+"59
+[e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
+[; ;mcc.c: 61: (INTCONbits.PEIE = 1);
+"61
+[e = . . _INTCONbits 0 2 -> -> 1 `i `uc ]
+[; ;mcc.c: 63: }
+"63
 [e :UE 1512 ]
 }
-"59
+"65
 [v _OSCILLATOR_Initialize `(v ~T0 @X0 1 ef ]
-"60
+"66
 {
-[; ;mcc.c: 59: void OSCILLATOR_Initialize(void)
-[; ;mcc.c: 60: {
+[; ;mcc.c: 65: void OSCILLATOR_Initialize(void)
+[; ;mcc.c: 66: {
 [e :U _OSCILLATOR_Initialize ]
 [f ]
-[; ;mcc.c: 62: OSCCON1 = 0x60;
-"62
-[e = _OSCCON1 -> -> 96 `i `uc ]
-[; ;mcc.c: 64: OSCCON3 = 0x00;
-"64
-[e = _OSCCON3 -> -> 0 `i `uc ]
-[; ;mcc.c: 66: OSCEN = 0x00;
-"66
-[e = _OSCEN -> -> 0 `i `uc ]
-[; ;mcc.c: 68: OSCFRQ = 0x06;
+[; ;mcc.c: 68: OSCCON1 = 0x60;
 "68
-[e = _OSCFRQ -> -> 6 `i `uc ]
-[; ;mcc.c: 72: OSCTUNE = 0x00;
+[e = _OSCCON1 -> -> 96 `i `uc ]
+[; ;mcc.c: 70: OSCCON3 = 0x00;
+"70
+[e = _OSCCON3 -> -> 0 `i `uc ]
+[; ;mcc.c: 72: OSCEN = 0x00;
 "72
+[e = _OSCEN -> -> 0 `i `uc ]
+[; ;mcc.c: 74: OSCFRQ = 0x06;
+"74
+[e = _OSCFRQ -> -> 6 `i `uc ]
+[; ;mcc.c: 78: OSCTUNE = 0x00;
+"78
 [e = _OSCTUNE -> -> 0 `i `uc ]
-[; ;mcc.c: 73: }
-"73
+[; ;mcc.c: 79: }
+"79
 [e :UE 1513 ]
 }
-"75
+"81
 [v _PMD_Initialize `(v ~T0 @X0 1 ef ]
-"76
+"82
 {
-[; ;mcc.c: 75: void PMD_Initialize(void)
-[; ;mcc.c: 76: {
+[; ;mcc.c: 81: void PMD_Initialize(void)
+[; ;mcc.c: 82: {
 [e :U _PMD_Initialize ]
 [f ]
-[; ;mcc.c: 78: PMD0 = 0x00;
-"78
-[e = _PMD0 -> -> 0 `i `uc ]
-[; ;mcc.c: 80: PMD1 = 0x00;
-"80
-[e = _PMD1 -> -> 0 `i `uc ]
-[; ;mcc.c: 82: PMD2 = 0x00;
-"82
-[e = _PMD2 -> -> 0 `i `uc ]
-[; ;mcc.c: 84: PMD3 = 0x00;
+[; ;mcc.c: 84: PMD0 = 0x00;
 "84
-[e = _PMD3 -> -> 0 `i `uc ]
-[; ;mcc.c: 86: PMD4 = 0x00;
+[e = _PMD0 -> -> 0 `i `uc ]
+[; ;mcc.c: 86: PMD1 = 0x00;
 "86
-[e = _PMD4 -> -> 0 `i `uc ]
-[; ;mcc.c: 88: PMD5 = 0x00;
+[e = _PMD1 -> -> 0 `i `uc ]
+[; ;mcc.c: 88: PMD2 = 0x00;
 "88
-[e = _PMD5 -> -> 0 `i `uc ]
-[; ;mcc.c: 90: PMD6 = 0x00;
+[e = _PMD2 -> -> 0 `i `uc ]
+[; ;mcc.c: 90: PMD3 = 0x00;
 "90
-[e = _PMD6 -> -> 0 `i `uc ]
-[; ;mcc.c: 92: PMD7 = 0x00;
+[e = _PMD3 -> -> 0 `i `uc ]
+[; ;mcc.c: 92: PMD4 = 0x00;
 "92
+[e = _PMD4 -> -> 0 `i `uc ]
+[; ;mcc.c: 94: PMD5 = 0x00;
+"94
+[e = _PMD5 -> -> 0 `i `uc ]
+[; ;mcc.c: 96: PMD6 = 0x00;
+"96
+[e = _PMD6 -> -> 0 `i `uc ]
+[; ;mcc.c: 98: PMD7 = 0x00;
+"98
 [e = _PMD7 -> -> 0 `i `uc ]
-[; ;mcc.c: 93: }
-"93
+[; ;mcc.c: 99: }
+"99
 [e :UE 1514 ]
 }

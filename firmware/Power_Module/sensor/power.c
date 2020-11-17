@@ -13,7 +13,7 @@
 #define SOL_VOLT   0x13
 #define BAT_VOLT   0x14
 
-#define DEBUGGING
+//#define DEBUGGING
 
 void measureVolt(void);
 void initializePowerModule(void);
@@ -67,6 +67,12 @@ void LED_Blink(void)
 
 
 void Power_Init(){
+    
+    READY_SetDigitalOutput();
+    READY_SetHigh();
+    
+    PMD0bits.IOCMD = 0; // Enable gpio clock
+    
     // Enable Fixed voltage reference with voltage of 2.048 V
     FVRCON = 0x82;
     // set the ADCC to the options selected in the User Interface
@@ -223,6 +229,14 @@ void Power_Loop(){
     }
     
     FVRCON = 0x00;                                          // Disable the Fixed voltage reference
+
+    /* Go to sleep */
+    CPUDOZEbits.IDLEN = 0; // make sure PIC is not in doze mode before going to sleep   
+    NOP();
+    SLEEP(); // enter sleep
+    NOP();
+    NOP();
+
 }
 void Power_GetData(uint8_t * data, uint8_t  * length){
     *length = 2; // this is fixed (M_NR = 2)

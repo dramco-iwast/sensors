@@ -5,12 +5,12 @@
                    displayName="Header Files"
                    projectFiles="true">
       <itemPath>global.h</itemPath>
-      <itemPath>Sensors/sound_level.h</itemPath>
       <itemPath>system/adcc.h</itemPath>
       <itemPath>system/i2c1.h</itemPath>
       <itemPath>system/pin_manager.h</itemPath>
       <itemPath>system/interrupt.h</itemPath>
       <itemPath>system/system.h</itemPath>
+      <itemPath>Sensors/power.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -20,12 +20,12 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>main.c</itemPath>
-      <itemPath>Sensors/sound_level.c</itemPath>
       <itemPath>system/adcc.c</itemPath>
       <itemPath>system/i2c1.c</itemPath>
       <itemPath>system/pin_manager.c</itemPath>
       <itemPath>system/interrupt.c</itemPath>
       <itemPath>system/system.c</itemPath>
+      <itemPath>Sensors/power.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -37,6 +37,7 @@
   <sourceRootList>
     <Elem>Sensors</Elem>
     <Elem>system</Elem>
+    <Elem>mcc_generated_files</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
