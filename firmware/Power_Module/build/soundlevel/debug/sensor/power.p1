@@ -12885,18 +12885,18 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 [e :U 1618 ]
 [; ;power.c: 219: }
-[; ;power.c: 220: floatsolvoltage = ((float)solvoltage /4096) * 2.048 * ((10+8.2)/8.2);
+[; ;power.c: 220: floatsolvoltage = ((float)solvoltage /4096) * 2 * 2.048;
 "220
-[e = _floatsolvoltage -> * * -> / -> _solvoltage `f -> -> 4096 `i `f `d .2.048 / + -> -> 10 `i `d .8.2 .8.2 `f ]
+[e = _floatsolvoltage -> * -> * / -> _solvoltage `f -> -> 4096 `i `f -> -> 2 `i `f `d .2.048 `f ]
 [; ;power.c: 223: ADCC_GetSingleConversion(0x14);
 "223
 [e ( _ADCC_GetSingleConversion (1 -> -> 20 `i `E10920 ]
 [; ;power.c: 224: batvoltage = ADCC_GetSingleConversion(0x14);
 "224
 [e = _batvoltage ( _ADCC_GetSingleConversion (1 -> -> 20 `i `E10920 ]
-[; ;power.c: 225: floatbatvoltage = ((float)batvoltage /4096) * 2.048 * ((10+8.2)/8.2);
+[; ;power.c: 225: floatbatvoltage = ((float)batvoltage /4096) * 2 * 2.048;
 "225
-[e = _floatbatvoltage -> * * -> / -> _batvoltage `f -> -> 4096 `i `f `d .2.048 / + -> -> 10 `i `d .8.2 .8.2 `f ]
+[e = _floatbatvoltage -> * -> * / -> _batvoltage `f -> -> 4096 `i `f -> -> 2 `i `f `d .2.048 `f ]
 [; ;power.c: 228: do { LATCbits.LATC0 = 0; } while(0);
 "228
 [e :U 1621 ]

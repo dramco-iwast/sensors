@@ -1,5 +1,5 @@
 
-# 1 "sensor/power.c"
+# 1 "main.c"
 
 # 18 "C:/Users/Jona Cappelle/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\xc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -18420,10 +18420,111 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 
+# 4 "C:/Users/Jona Cappelle/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\__size_t.h"
+typedef unsigned size_t;
+
+# 7 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\stdarg.h"
+typedef void * va_list[1];
+
+#pragma intrinsic(__va_start)
+extern void * __va_start(void);
+
+#pragma intrinsic(__va_arg)
+extern void * __va_arg(void *, ...);
+
+# 43 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\stdio.h"
+struct __prbuf
+{
+char * ptr;
+void (* func)(char);
+};
+
+# 29 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\errno.h"
+extern int errno;
+
+# 12 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\conio.h"
+extern void init_uart(void);
+
+extern char getch(void);
+extern char getche(void);
+extern void putch(char);
+extern void ungetch(char);
+
+extern __bit kbhit(void);
+
+# 23
+extern char * cgets(char *);
+extern void cputs(const char *);
+
+# 88 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\stdio.h"
+extern int cprintf(char *, ...);
+#pragma printf_check(cprintf)
+
+
+
+extern int _doprnt(struct __prbuf *, const register char *, register va_list);
+
+
+# 180
+#pragma printf_check(vprintf) const
+#pragma printf_check(vsprintf) const
+
+extern char * gets(char *);
+extern int puts(const char *);
+extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
+extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
+extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
+extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
+extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
+extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
+
+#pragma printf_check(printf) const
+#pragma printf_check(sprintf) const
+extern int sprintf(char *, const char *, ...);
+extern int printf(const char *, ...);
+
+# 14 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\string.h"
+extern void * memcpy(void *, const void *, size_t);
+extern void * memmove(void *, const void *, size_t);
+extern void * memset(void *, int, size_t);
+
+
+
+
+extern void * __builtin_memcpy(void *, const void *, size_t);
+#pragma intrinsic(__builtin_memcpy)
+
+# 36
+extern char * strcat(char *, const char *);
+extern char * strcpy(char *, const char *);
+extern char * strncat(char *, const char *, size_t);
+extern char * strncpy(char *, const char *, size_t);
+extern char * strdup(const char *);
+extern char * strtok(char *, const char *);
+
+
+extern int memcmp(const void *, const void *, size_t);
+extern int strcmp(const char *, const char *);
+extern int stricmp(const char *, const char *);
+extern int strncmp(const char *, const char *, size_t);
+extern int strnicmp(const char *, const char *, size_t);
+extern void * memchr(const void *, int, size_t);
+extern size_t strcspn(const char *, const char *);
+extern char * strpbrk(const char *, const char *);
+extern size_t strspn(const char *, const char *);
+extern char * strstr(const char *, const char *);
+extern char * stristr(const char *, const char *);
+extern char * strerror(int);
+extern size_t strlen(const char *);
+extern char * strchr(const char *, int);
+extern char * strichr(const char *, int);
+extern char * strrchr(const char *, int);
+extern char * strrichr(const char *, int);
+
 # 15 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\stdbool.h"
 typedef unsigned char bool;
 
-# 69 "sensor/../global.h"
+# 69 "global.h"
 typedef struct devApi{
 void (* Init)(void);
 void (* Measure)(void);
@@ -18432,46 +18533,7 @@ void (* GetData)(uint8_t *, uint8_t *);
 void (* UpdateThreshold)(uint8_t, uint8_t *);
 } Device_API_t;
 
-# 183 "sensor/power.h"
-void Power_Init(void);
-void Power_Measure(void);
-void Power_Loop(void);
-void Power_GetData(uint8_t * data, uint8_t * length);
-void Power_SetThreshold(uint8_t metric, uint8_t * thresholdData);
-
-
-
-void generateIntPower(void);
-
-# 30 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\math.h"
-extern double fabs(double);
-extern double floor(double);
-extern double ceil(double);
-extern double modf(double, double *);
-extern double sqrt(double);
-extern double atof(const char *);
-extern double sin(double) ;
-extern double cos(double) ;
-extern double tan(double) ;
-extern double asin(double) ;
-extern double acos(double) ;
-extern double atan(double);
-extern double atan2(double, double) ;
-extern double log(double);
-extern double log10(double);
-extern double pow(double, double) ;
-extern double exp(double) ;
-extern double sinh(double) ;
-extern double cosh(double) ;
-extern double tanh(double);
-extern double eval_poly(double, const double *, int);
-extern double frexp(double, int *);
-extern double ldexp(double, int);
-extern double fmod(double, double);
-extern double trunc(double);
-extern double round(double);
-
-# 118 "sensor/../mcc_generated_files/pin_manager.h"
+# 118 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
 
 # 130
@@ -18531,13 +18593,10 @@ typedef unsigned char bool;
 # 15
 typedef unsigned char bool;
 
-# 4 "C:/Users/Jona Cappelle/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\__size_t.h"
-typedef unsigned size_t;
-
 # 6 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\stddef.h"
 typedef int ptrdiff_t;
 
-# 80 "sensor/../mcc_generated_files/i2c1.h"
+# 80 "mcc_generated_files/i2c1.h"
 typedef enum{
 I2C1_SLAVE_WRITE_REQUEST,
 I2C1_SLAVE_READ_REQUEST,
@@ -18565,7 +18624,7 @@ void I2C1_ClearTxBuffer(void);
 # 15 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\stdbool.h"
 typedef unsigned char bool;
 
-# 72 "sensor/../mcc_generated_files/adcc.h"
+# 72 "mcc_generated_files/adcc.h"
 typedef uint16_t adc_result_t;
 
 # 89
@@ -18669,7 +18728,7 @@ void ADCC_ISR(void);
 # 880
 void ADCC_DefaultInterruptHandler(void);
 
-# 72 "sensor/../mcc_generated_files/mcc.h"
+# 72 "mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(uint8_t slave_address);
 
 # 85
@@ -18678,285 +18737,108 @@ void OSCILLATOR_Initialize(void);
 # 98
 void PMD_Initialize(void);
 
-# 19 "sensor/power.c"
-void measureVolt(void);
-void initializePowerModule(void);
-uint16_t GetSingleConversion(uint8_t channel);
+# 15 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\stdbool.h"
+typedef unsigned char bool;
+
+# 183 "sensor/power.h"
+void Power_Init(void);
+void Power_Measure(void);
+void Power_Loop(void);
+void Power_GetData(uint8_t * data, uint8_t * length);
+void Power_SetThreshold(uint8_t metric, uint8_t * thresholdData);
+
+
+
 void generateIntPower(void);
-void LED_Blink(void);
-void ADC_Init(void);
-void ADC_Fixed_Voltage_Ref(uint8_t mode);
-void Enter_sleep(void);
 
+# 39 "main.c"
+Device_API_t sensorAPI = { Power_Init, Power_Measure, Power_Loop, Power_GetData, Power_SetThreshold };
 
+uint8_t mData[2 * 0x03];
+uint8_t mDataLength;
 
-bool startMeasurement = 0;
-bool measurementRunning = 0;
-volatile uint8_t measurementData[2* 0x03];
-float floatsolvoltage;
-float floatbatvoltage;
-uint16_t solvoltage = 0;
-uint16_t tempValue = 0;
-uint16_t batvoltage = 0;
-uint8_t batteryundervoltage = 0;
+void toggleInt(void);
 
-# 45
-void LED_Blink(void)
+# 48
+void main(void)
 {
 
-do { LATBbits.LATB6 = 1; } while(0);
-_delay((unsigned long)((100)*(32000000/4000.0)));
-do { LATBbits.LATB6 = 0; } while(0);
-_delay((unsigned long)((100)*(32000000/4000.0)));
-do { LATBbits.LATB6 = 1; } while(0);
-_delay((unsigned long)((100)*(32000000/4000.0)));
-do { LATBbits.LATB6 = 0; } while(0);
-_delay((unsigned long)((100)*(32000000/4000.0)));
-do { LATBbits.LATB6 = 1; } while(0);
-_delay((unsigned long)((100)*(32000000/4000.0)));
-do { LATBbits.LATB6 = 0; } while(0);
-_delay((unsigned long)((500)*(32000000/4000.0)));
+SYSTEM_Initialize(0x45);
 
-do { LATCbits.LATC1 = 1; } while(0);
-_delay((unsigned long)((100)*(32000000/4000.0)));
-do { LATCbits.LATC1 = 0; } while(0);
-_delay((unsigned long)((100)*(32000000/4000.0)));
-do { LATCbits.LATC1 = 1; } while(0);
-_delay((unsigned long)((100)*(32000000/4000.0)));
-do { LATCbits.LATC1 = 0; } while(0);
-_delay((unsigned long)((100)*(32000000/4000.0)));
-do { LATCbits.LATC1 = 1; } while(0);
-_delay((unsigned long)((100)*(32000000/4000.0)));
-do { LATCbits.LATC1 = 0; } while(0);
+sensorAPI.Init();
+
+while(1){
+sensorAPI.Loop();
+sensorAPI.GetData(mData, &mDataLength);
+I2C1_SetTransmitData(mData, mDataLength);
+
+
+if(I2C1_CommandReceived()){
+uint8_t cmd;
+I2C1_GetCommand(&cmd);
+
+switch(cmd){
+
+case 0x10:{
+
+uint8_t ack = 0xAA;
+I2C1_SetTransmitData(&ack, 1);
+} break;
+
+
+case 0x11:{
+
+uint8_t type = 0x01;
+I2C1_SetTransmitData(&type, 1);
+} break;
+
+
+case 0x23:{
+
+uint8_t mnr = 0x03;
+I2C1_SetTransmitData(&mnr, 1);
+} break;
+
+
+case 0x13:{
+
+sensorAPI.Measure();
+} break;
+
+
+case 0x14:{
+
+uint8_t retries = 20;
+while(!I2C1_TxBufferEmpty() && retries--){
+_delay((unsigned long)((1)*(32000000/4000.0)));
 }
-
-void ADC_Init(){
-
-FVRCON = 0x82;
+} break;
 
 
-ADLTHL = 0x00;
+case 0x15:{
+toggleInt();
+} break;
 
-ADLTHH = 0x00;
 
-ADUTHL = 0x00;
-
-ADUTHH = 0x00;
-
-ADSTPTL = 0x00;
-
-ADSTPTH = 0x00;
-
-ADACCU = 0x00;
-
-ADRPT = 0x00;
-
-ADPCH = 0x00;
-
-ADACQL = 0x00;
-
-ADACQH = 0x00;
-
-ADCAP = 0x00;
-
-ADPREL = 0x00;
-
-ADPREH = 0x00;
-
-ADCON1 = 0x00;
-
-ADCON2 = 0x00;
-
-ADCON3 = 0x00;
-
-ADSTAT = 0x00;
-
-ADREF = 0x03;
-
-ADACT = 0x00;
-
-ADCLK = 0x00;
-
-ADCON0 = 0x84;
-
-FVRCON = 0x00;
+case 0x24:{
+_delay((unsigned long)((2)*(32000000/4000.0)));
+uint8_t len;
+uint8_t data[20];
+I2C1_GetCommandData(data, &len);
+if(len == 6){
+sensorAPI.UpdateThreshold(data[0], data+1);
 }
+} break;
 
-void ADC_Fixed_Voltage_Ref(uint8_t mode){
-switch(mode)
-{
-case 1:
-FVRCON = 0x82;
-break;
 
-case 0:
-FVRCON = 0x00;
-break;
-
-default:
-FVRCON = 0x00;
+default:{
+} break;
+}
+}
 }
 }
 
-void Enter_sleep(){
-
-CPUDOZEbits.IDLEN = 0;
-__nop();
-asm("sleep");
-__nop();
-__nop();
-}
-
-
-void Power_Init(){
-
-do { TRISCbits.TRISC7 = 0; } while(0);
-do { LATCbits.LATC7 = 1; } while(0);
-
-PMD0bits.IOCMD = 0;
-
-ADC_Init();
-
-
-do { TRISCbits.TRISC0 = 0; } while(0);
-do { TRISCbits.TRISC6 = 0; } while(0);
-
-do { ANSELBbits.ANSB6 = 0; } while(0);
-
-do { TRISBbits.TRISB6 = 0; } while(0);
-do { TRISCbits.TRISC1 = 0; } while(0);
-
-
-do { LATBbits.LATB6 = 0; } while(0);
-do { LATCbits.LATC1 = 0; } while(0);
-
-
-LED_Blink();
-
-do { LATCbits.LATC0 = 0; } while(0);
-do { LATCbits.LATC6 = 0; } while(0);
-
-
-do { TRISCbits.TRISC3 = 1; } while(0);
-do { ANSELCbits.ANSC3 = 1; } while(0);
-
-do { TRISCbits.TRISC4 = 1; } while(0);
-do { ANSELCbits.ANSC4 = 1; } while(0);
-
-# 191
-}
-
-void Power_Measure(){
-startMeasurement = 1;
-}
-
-
-void Measure(){
-
-
-ADC_Fixed_Voltage_Ref(1);
-
-do { LATCbits.LATC0 = 1; } while(0);
-do { LATCbits.LATC6 = 1; } while(0);
-
-do { LATCbits.LATC1 = 1; } while(0);
-do { LATBbits.LATB6 = 1; } while(0);
-
-_delay((unsigned long)((50)*(32000000/4000.0)));
-
-
-ADCC_GetSingleConversion(0x13);
-solvoltage = ADCC_GetSingleConversion(0x13);
-_delay((unsigned long)((2000)*(32000000/4000.0)));
-
-tempValue = ADCC_GetSingleConversion(0x13);
-if(tempValue < solvoltage){
-solvoltage = tempValue;
-}
-floatsolvoltage = ((float)solvoltage /4096) * 2.048 * ((10+8.2)/8.2);
-
-
-ADCC_GetSingleConversion(0x14);
-batvoltage = ADCC_GetSingleConversion(0x14);
-floatbatvoltage = ((float)batvoltage /4096) * 2.048 * ((10+8.2)/8.2);
-
-
-do { LATCbits.LATC0 = 0; } while(0);
-do { LATCbits.LATC6 = 0; } while(0);
-
-do { LATBbits.LATB6 = 0; } while(0);
-do { LATCbits.LATC1 = 0; } while(0);
-
-
-if(floatbatvoltage < 3.3){
-batteryundervoltage = 1;
-}
-
-
-if(batteryundervoltage == 1){
-if(floatbatvoltage>3.5){
-batteryundervoltage = 0;
-}
-}
-
-
-uint16_t databatvoltage = (uint16_t)(round(floatbatvoltage * 600));
-uint16_t datasolvoltage = (uint16_t)(round(floatsolvoltage * 600));
-
-
-
-
-measurementData[0] = (uint8_t)(databatvoltage>>8);
-measurementData[1] = (uint8_t)(databatvoltage);
-
-measurementData[2] = (uint8_t)(datasolvoltage>>8);
-measurementData[3] = (uint8_t)(datasolvoltage);
-
-measurementData[4] = (uint8_t)(batteryundervoltage);
-measurementData[5] = 0x00;
-
-
-ADC_Fixed_Voltage_Ref(0);
-
-}
-
-
-void Power_Loop(){
-
-
-if(startMeasurement && !measurementRunning){
-startMeasurement = 0;
-measurementRunning = 1;
-
-Measure();
-
-generateIntPower();
-measurementRunning = 0;
-}
-
-Enter_sleep();
-
-}
-
-void Power_GetData(uint8_t * data, uint8_t * length){
-*length = 2;
-data[0] = measurementData[0];
-data[1] = measurementData[1];
-}
-
-
-void Power_SetThreshold(uint8_t metric, uint8_t * thresholdData){
-
-
-
-}
-
-
-
-
-void generateIntPower(void){
-do { LATCbits.LATC7 = 0; } while(0);
-_delay((unsigned long)((5)*(32000000/4000.0)));
-do { LATCbits.LATC7 = 1; } while(0);
+void toggleInt(void){
+do { LATCbits.LATC7 = ~LATCbits.LATC7; } while(0);
 }
 

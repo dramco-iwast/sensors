@@ -901,8 +901,8 @@ text47 1830 1831 CODE 1830 0
 text49 182E 182F CODE 182E 0
 text53 182C 182D CODE 182C 0
 %locals
-dist/soundlevel/production\Power_Module.production.o
-C:\Users\JONACA~1\AppData\Local\Temp\sefsx.s
+dist/soundlevel/debug\Power_Module.debug.o
+C:\Users\JONACA~1\AppData\Local\Temp\s7j0x.s
 11464 33 0 CODE 0
 11467 33 0 CODE 0
 11607 33 0 CODE 0

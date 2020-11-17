@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.30 build 20200825195618 
-                                                                                               Tue Nov 17 10:56:29 2020
+                                                                                               Tue Nov 17 10:12:17 2020
 
 Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1 
      1                           	processor	16F18446
@@ -8199,12 +8199,11 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
   8104  00AE  00C5               	movwf	_solvoltage^(0+128)
   8105  00AF                     l4519:
   8106                           
-  8107                           ;power.c: 219: };power.c: 220: floatsolvoltage = ((float)solvoltage /4096) * 2.048 * ((1
-      +                          0+8.2)/8.2);
-  8108  00AF  3075               	movlw	117
+  8107                           ;power.c: 219: };power.c: 220: floatsolvoltage = ((float)solvoltage /4096) * 2 * 2.048;
+  8108  00AF  3012               	movlw	18
   8109  00B0  0140               	movlb	0	; select bank0
   8110  00B1  00BC               	movwf	___ftmul@f1
-  8111  00B2  3091               	movlw	145
+  8111  00B2  3083               	movlw	131
   8112  00B3  00BD               	movwf	___ftmul@f1+1
   8113  00B4  3040               	movlw	64
   8114  00B5  00BE               	movwf	___ftmul@f1+2
@@ -8271,11 +8270,11 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
   8175  00F6  00C3               	movwf	_batvoltage^(0+128)
   8176  00F7                     l4525:
   8177                           
-  8178                           ;power.c: 225: floatbatvoltage = ((float)batvoltage /4096) * 2.048 * ((10+8.2)/8.2);
-  8179  00F7  3075               	movlw	117
+  8178                           ;power.c: 225: floatbatvoltage = ((float)batvoltage /4096) * 2 * 2.048;
+  8179  00F7  3012               	movlw	18
   8180  00F8  0140               	movlb	0	; select bank0
   8181  00F9  00BC               	movwf	___ftmul@f1
-  8182  00FA  3091               	movlw	145
+  8182  00FA  3083               	movlw	131
   8183  00FB  00BD               	movwf	___ftmul@f1+1
   8184  00FC  3040               	movlw	64
   8185  00FD  00BE               	movwf	___ftmul@f1+2
@@ -14236,7 +14235,7 @@ SFR63                0      0       0      64        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.30 build 20200825195618 
-Symbol Table                                                                                   Tue Nov 17 10:56:29 2020
+Symbol Table                                                                                   Tue Nov 17 10:12:17 2020
 
                               ___altoft@exp 0060                    _eusart1TxBufferRemaining 0076  
     __end_of_IOCCF4_DefaultInterruptHandler 0C1A     __size_of_IOCCF4_DefaultInterruptHandler 0001  

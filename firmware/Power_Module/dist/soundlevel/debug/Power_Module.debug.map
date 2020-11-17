@@ -3,12 +3,11 @@ Microchip MPLAB XC8 Compiler V2.30
 Linker command line:
 
 -W-3 --edf=C:\Program Files\Microchip\xc8\v2.30\pic\dat\en_msgs.txt -cn \
-  -h+dist/soundlevel/production\Power_Module.production.sym \
-  --cmf=dist/soundlevel/production\Power_Module.production.cmf -z \
-  -Q16F18446 -oC:\Users\JONACA~1\AppData\Local\Temp\sefsx2 \
-  --defsym=__MPLAB_BUILD=1 \
-  -Mdist/soundlevel/production/Power_Module.production.map -E1 \
-  -ver=XC8 Compiler -ASTACK=0215Ah-027EFh -pstack=STACK -ACODE=00h-07FFhx8 \
+  -h+dist/soundlevel/debug\Power_Module.debug.sym \
+  --cmf=dist/soundlevel/debug\Power_Module.debug.cmf -z -Q16F18446 \
+  -oC:\Users\JONACA~1\AppData\Local\Temp\s7j0x2 --defsym=__MPLAB_BUILD=1 \
+  -Mdist/soundlevel/debug/Power_Module.debug.map -E1 -ver=XC8 Compiler \
+  -ASTACK=0215Ah-027EFh -pstack=STACK -ACODE=00h-07FFhx8 \
   -ASTRCODE=00h-03FFFh -ASTRING=00h-0FFhx64 -ACONST=00h-0FFhx64 \
   -AENTRY=00h-0FFhx64 -ACOMMON=070h-07Fh -ABANK0=020h-06Fh \
   -ABANK1=0A0h-0EFh -ABANK2=0120h-016Fh -ABANK3=01A0h-01EFh \
@@ -47,8 +46,8 @@ Linker command line:
   -AEEDATA=00h-0FFh/0F000h -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 \
   -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 \
   -preset_vec=00h,intentry=04h,init,end_init -ppowerup=CODE -pcinit=CODE \
-  -pfunctab=ENTRY -k C:\Users\JONACA~1\AppData\Local\Temp\sefsxg.o \
-  dist/soundlevel/production\Power_Module.production.o 
+  -pfunctab=ENTRY -k C:\Users\JONACA~1\AppData\Local\Temp\s7j0xg.o \
+  dist/soundlevel/debug\Power_Module.debug.o 
 
 Object code version is 3.11
 
@@ -57,11 +56,11 @@ Machine type is 16F18446
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\JONACA~1\AppData\Local\Temp\sefsxg.o
+C:\Users\JONACA~1\AppData\Local\Temp\s7j0xg.o
                 end_init                             31       31        2        8       0
                 reset_vec                             0        0        2        0       0
                 config                             8007     8007        5        0       4
-dist/soundlevel/production\Power_Module.production.o
+dist/soundlevel/debug\Power_Module.debug.o
                 cinit                                33       33       30        8       0
                 intentry                              4        4       2D        8       0
                 config                             8007     8007        5        0       4

@@ -18873,12 +18873,12 @@ tempValue = ADCC_GetSingleConversion(0x13);
 if(tempValue < solvoltage){
 solvoltage = tempValue;
 }
-floatsolvoltage = ((float)solvoltage /4096) * 2.048 * ((10+8.2)/8.2);
+floatsolvoltage = ((float)solvoltage /4096) * 2 * 2.048;
 
 
 ADCC_GetSingleConversion(0x14);
 batvoltage = ADCC_GetSingleConversion(0x14);
-floatbatvoltage = ((float)batvoltage /4096) * 2.048 * ((10+8.2)/8.2);
+floatbatvoltage = ((float)batvoltage /4096) * 2 * 2.048;
 
 
 do { LATCbits.LATC0 = 0; } while(0);

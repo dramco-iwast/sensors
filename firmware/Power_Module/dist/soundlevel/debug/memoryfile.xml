@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
-  <executable name="dist/soundlevel/production\Power_Module.production.hex">
+  <executable name="dist/soundlevel/debug\Power_Module.debug.hex">
     <memory name="program">
       <units>words</units>
       <length>16384</length>

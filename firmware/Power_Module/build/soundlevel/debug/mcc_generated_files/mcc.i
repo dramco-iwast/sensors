@@ -1,5 +1,5 @@
 
-# 1 "sensor/power.c"
+# 1 "mcc_generated_files/mcc.c"
 
 # 18 "C:/Users/Jona Cappelle/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\xc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -18420,58 +18420,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 
-# 15 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\stdbool.h"
-typedef unsigned char bool;
-
-# 69 "sensor/../global.h"
-typedef struct devApi{
-void (* Init)(void);
-void (* Measure)(void);
-void (* Loop)(void);
-void (* GetData)(uint8_t *, uint8_t *);
-void (* UpdateThreshold)(uint8_t, uint8_t *);
-} Device_API_t;
-
-# 183 "sensor/power.h"
-void Power_Init(void);
-void Power_Measure(void);
-void Power_Loop(void);
-void Power_GetData(uint8_t * data, uint8_t * length);
-void Power_SetThreshold(uint8_t metric, uint8_t * thresholdData);
-
-
-
-void generateIntPower(void);
-
-# 30 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\math.h"
-extern double fabs(double);
-extern double floor(double);
-extern double ceil(double);
-extern double modf(double, double *);
-extern double sqrt(double);
-extern double atof(const char *);
-extern double sin(double) ;
-extern double cos(double) ;
-extern double tan(double) ;
-extern double asin(double) ;
-extern double acos(double) ;
-extern double atan(double);
-extern double atan2(double, double) ;
-extern double log(double);
-extern double log10(double);
-extern double pow(double, double) ;
-extern double exp(double) ;
-extern double sinh(double) ;
-extern double cosh(double) ;
-extern double tanh(double);
-extern double eval_poly(double, const double *, int);
-extern double frexp(double, int *);
-extern double ldexp(double, int);
-extern double fmod(double, double);
-extern double trunc(double);
-extern double round(double);
-
-# 118 "sensor/../mcc_generated_files/pin_manager.h"
+# 118 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
 
 # 130
@@ -18537,7 +18486,7 @@ typedef unsigned size_t;
 # 6 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\stddef.h"
 typedef int ptrdiff_t;
 
-# 80 "sensor/../mcc_generated_files/i2c1.h"
+# 80 "mcc_generated_files/i2c1.h"
 typedef enum{
 I2C1_SLAVE_WRITE_REQUEST,
 I2C1_SLAVE_READ_REQUEST,
@@ -18565,7 +18514,7 @@ void I2C1_ClearTxBuffer(void);
 # 15 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\stdbool.h"
 typedef unsigned char bool;
 
-# 72 "sensor/../mcc_generated_files/adcc.h"
+# 72 "mcc_generated_files/adcc.h"
 typedef uint16_t adc_result_t;
 
 # 89
@@ -18669,7 +18618,7 @@ void ADCC_ISR(void);
 # 880
 void ADCC_DefaultInterruptHandler(void);
 
-# 72 "sensor/../mcc_generated_files/mcc.h"
+# 72 "mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(uint8_t slave_address);
 
 # 85
@@ -18678,285 +18627,55 @@ void OSCILLATOR_Initialize(void);
 # 98
 void PMD_Initialize(void);
 
-# 19 "sensor/power.c"
-void measureVolt(void);
-void initializePowerModule(void);
-uint16_t GetSingleConversion(uint8_t channel);
-void generateIntPower(void);
-void LED_Blink(void);
-void ADC_Init(void);
-void ADC_Fixed_Voltage_Ref(uint8_t mode);
-void Enter_sleep(void);
+# 50 "mcc_generated_files/mcc.c"
+void SYSTEM_Initialize(uint8_t slave_address)
+{
+PMD_Initialize();
+PIN_MANAGER_Initialize();
+OSCILLATOR_Initialize();
+I2C1_Initialize(slave_address);
 
 
 
-bool startMeasurement = 0;
-bool measurementRunning = 0;
-volatile uint8_t measurementData[2* 0x03];
-float floatsolvoltage;
-float floatbatvoltage;
-uint16_t solvoltage = 0;
-uint16_t tempValue = 0;
-uint16_t batvoltage = 0;
-uint8_t batteryundervoltage = 0;
+(INTCONbits.GIE = 1);
 
-# 45
-void LED_Blink(void)
+(INTCONbits.PEIE = 1);
+
+}
+
+void OSCILLATOR_Initialize(void)
 {
 
-do { LATBbits.LATB6 = 1; } while(0);
-_delay((unsigned long)((100)*(32000000/4000.0)));
-do { LATBbits.LATB6 = 0; } while(0);
-_delay((unsigned long)((100)*(32000000/4000.0)));
-do { LATBbits.LATB6 = 1; } while(0);
-_delay((unsigned long)((100)*(32000000/4000.0)));
-do { LATBbits.LATB6 = 0; } while(0);
-_delay((unsigned long)((100)*(32000000/4000.0)));
-do { LATBbits.LATB6 = 1; } while(0);
-_delay((unsigned long)((100)*(32000000/4000.0)));
-do { LATBbits.LATB6 = 0; } while(0);
-_delay((unsigned long)((500)*(32000000/4000.0)));
+OSCCON1 = 0x60;
 
-do { LATCbits.LATC1 = 1; } while(0);
-_delay((unsigned long)((100)*(32000000/4000.0)));
-do { LATCbits.LATC1 = 0; } while(0);
-_delay((unsigned long)((100)*(32000000/4000.0)));
-do { LATCbits.LATC1 = 1; } while(0);
-_delay((unsigned long)((100)*(32000000/4000.0)));
-do { LATCbits.LATC1 = 0; } while(0);
-_delay((unsigned long)((100)*(32000000/4000.0)));
-do { LATCbits.LATC1 = 1; } while(0);
-_delay((unsigned long)((100)*(32000000/4000.0)));
-do { LATCbits.LATC1 = 0; } while(0);
+OSCCON3 = 0x00;
+
+OSCEN = 0x00;
+
+OSCFRQ = 0x06;
+
+
+
+OSCTUNE = 0x00;
 }
 
-void ADC_Init(){
-
-FVRCON = 0x82;
-
-
-ADLTHL = 0x00;
-
-ADLTHH = 0x00;
-
-ADUTHL = 0x00;
-
-ADUTHH = 0x00;
-
-ADSTPTL = 0x00;
-
-ADSTPTH = 0x00;
-
-ADACCU = 0x00;
-
-ADRPT = 0x00;
-
-ADPCH = 0x00;
-
-ADACQL = 0x00;
-
-ADACQH = 0x00;
-
-ADCAP = 0x00;
-
-ADPREL = 0x00;
-
-ADPREH = 0x00;
-
-ADCON1 = 0x00;
-
-ADCON2 = 0x00;
-
-ADCON3 = 0x00;
-
-ADSTAT = 0x00;
-
-ADREF = 0x03;
-
-ADACT = 0x00;
-
-ADCLK = 0x00;
-
-ADCON0 = 0x84;
-
-FVRCON = 0x00;
-}
-
-void ADC_Fixed_Voltage_Ref(uint8_t mode){
-switch(mode)
+void PMD_Initialize(void)
 {
-case 1:
-FVRCON = 0x82;
-break;
 
-case 0:
-FVRCON = 0x00;
-break;
+PMD0 = 0x00;
 
-default:
-FVRCON = 0x00;
-}
-}
+PMD1 = 0x00;
 
-void Enter_sleep(){
+PMD2 = 0x00;
 
-CPUDOZEbits.IDLEN = 0;
-__nop();
-asm("sleep");
-__nop();
-__nop();
-}
+PMD3 = 0x00;
 
+PMD4 = 0x00;
 
-void Power_Init(){
+PMD5 = 0x00;
 
-do { TRISCbits.TRISC7 = 0; } while(0);
-do { LATCbits.LATC7 = 1; } while(0);
+PMD6 = 0x00;
 
-PMD0bits.IOCMD = 0;
-
-ADC_Init();
-
-
-do { TRISCbits.TRISC0 = 0; } while(0);
-do { TRISCbits.TRISC6 = 0; } while(0);
-
-do { ANSELBbits.ANSB6 = 0; } while(0);
-
-do { TRISBbits.TRISB6 = 0; } while(0);
-do { TRISCbits.TRISC1 = 0; } while(0);
-
-
-do { LATBbits.LATB6 = 0; } while(0);
-do { LATCbits.LATC1 = 0; } while(0);
-
-
-LED_Blink();
-
-do { LATCbits.LATC0 = 0; } while(0);
-do { LATCbits.LATC6 = 0; } while(0);
-
-
-do { TRISCbits.TRISC3 = 1; } while(0);
-do { ANSELCbits.ANSC3 = 1; } while(0);
-
-do { TRISCbits.TRISC4 = 1; } while(0);
-do { ANSELCbits.ANSC4 = 1; } while(0);
-
-# 191
-}
-
-void Power_Measure(){
-startMeasurement = 1;
-}
-
-
-void Measure(){
-
-
-ADC_Fixed_Voltage_Ref(1);
-
-do { LATCbits.LATC0 = 1; } while(0);
-do { LATCbits.LATC6 = 1; } while(0);
-
-do { LATCbits.LATC1 = 1; } while(0);
-do { LATBbits.LATB6 = 1; } while(0);
-
-_delay((unsigned long)((50)*(32000000/4000.0)));
-
-
-ADCC_GetSingleConversion(0x13);
-solvoltage = ADCC_GetSingleConversion(0x13);
-_delay((unsigned long)((2000)*(32000000/4000.0)));
-
-tempValue = ADCC_GetSingleConversion(0x13);
-if(tempValue < solvoltage){
-solvoltage = tempValue;
-}
-floatsolvoltage = ((float)solvoltage /4096) * 2.048 * ((10+8.2)/8.2);
-
-
-ADCC_GetSingleConversion(0x14);
-batvoltage = ADCC_GetSingleConversion(0x14);
-floatbatvoltage = ((float)batvoltage /4096) * 2.048 * ((10+8.2)/8.2);
-
-
-do { LATCbits.LATC0 = 0; } while(0);
-do { LATCbits.LATC6 = 0; } while(0);
-
-do { LATBbits.LATB6 = 0; } while(0);
-do { LATCbits.LATC1 = 0; } while(0);
-
-
-if(floatbatvoltage < 3.3){
-batteryundervoltage = 1;
-}
-
-
-if(batteryundervoltage == 1){
-if(floatbatvoltage>3.5){
-batteryundervoltage = 0;
-}
-}
-
-
-uint16_t databatvoltage = (uint16_t)(round(floatbatvoltage * 600));
-uint16_t datasolvoltage = (uint16_t)(round(floatsolvoltage * 600));
-
-
-
-
-measurementData[0] = (uint8_t)(databatvoltage>>8);
-measurementData[1] = (uint8_t)(databatvoltage);
-
-measurementData[2] = (uint8_t)(datasolvoltage>>8);
-measurementData[3] = (uint8_t)(datasolvoltage);
-
-measurementData[4] = (uint8_t)(batteryundervoltage);
-measurementData[5] = 0x00;
-
-
-ADC_Fixed_Voltage_Ref(0);
-
-}
-
-
-void Power_Loop(){
-
-
-if(startMeasurement && !measurementRunning){
-startMeasurement = 0;
-measurementRunning = 1;
-
-Measure();
-
-generateIntPower();
-measurementRunning = 0;
-}
-
-Enter_sleep();
-
-}
-
-void Power_GetData(uint8_t * data, uint8_t * length){
-*length = 2;
-data[0] = measurementData[0];
-data[1] = measurementData[1];
-}
-
-
-void Power_SetThreshold(uint8_t metric, uint8_t * thresholdData){
-
-
-
-}
-
-
-
-
-void generateIntPower(void){
-do { LATCbits.LATC7 = 0; } while(0);
-_delay((unsigned long)((5)*(32000000/4000.0)));
-do { LATCbits.LATC7 = 1; } while(0);
+PMD7 = 0x00;
 }
 

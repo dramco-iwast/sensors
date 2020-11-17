@@ -15,15 +15,18 @@
 
 //#define DEBUGGING
 
+/* Forward declaration */
 void measureVolt(void);
 void initializePowerModule(void);
 uint16_t GetSingleConversion(uint8_t channel);
 void generateIntPower(void);
 void LED_Blink(void);
+void ADC_Init(void);
+void ADC_Fixed_Voltage_Ref(uint8_t mode);
+void Enter_sleep(void);
 
 
-
-
+/* Variables */
 bool startMeasurement = false;
 bool measurementRunning = false;
 volatile uint8_t measurementData[2* M_NR];
@@ -33,6 +36,9 @@ uint16_t solvoltage = 0;
 uint16_t tempValue = 0;
 uint16_t batvoltage = 0;
 uint8_t batteryundervoltage = 0;
+
+#define ENABLE  1
+#define DISABLE 0
 
 
 /* Animation when Sound Module is plugged in */
@@ -65,14 +71,7 @@ void LED_Blink(void)
     LED1_SetLow();
 }
 
-
-void Power_Init(){
-    
-    READY_SetDigitalOutput();
-    READY_SetHigh();
-    
-    PMD0bits.IOCMD = 0; // Enable gpio clock
-    
+void ADC_Init(){
     // Enable Fixed voltage reference with voltage of 2.048 V
     FVRCON = 0x82;
     // set the ADCC to the options selected in the User Interface
@@ -122,6 +121,42 @@ void Power_Init(){
     ADCON0 = 0x84;
     
     FVRCON = 0x00; // Disable fixed voltage reference
+}
+
+void ADC_Fixed_Voltage_Ref(uint8_t mode){
+    switch(mode)
+    {
+        case ENABLE:
+            FVRCON = 0x82; // Enable Fixed voltage reference
+            break;
+
+        case DISABLE:
+            FVRCON = 0x00; // Disable the Fixed voltage reference
+            break;
+            
+        default:
+            FVRCON = 0x00; // Disable the Fixed voltage reference
+    }
+}
+
+void Enter_sleep(){
+    /* Go to sleep */
+    CPUDOZEbits.IDLEN = 0; // make sure PIC is not in doze mode before going to sleep   
+    NOP();
+    SLEEP(); // enter sleep
+    NOP();
+    NOP();
+}
+
+
+void Power_Init(){
+    
+    READY_SetDigitalOutput();
+    READY_SetHigh();
+    
+    PMD0bits.IOCMD = 0; // Enable gpio clock
+    
+    ADC_Init();
     
     
     SOL_MEAS_EN_SetDigitalOutput();
@@ -160,84 +195,93 @@ void Power_Measure(){
 }
 
 
+void Measure(){
+
+    
+    ADC_Fixed_Voltage_Ref(ENABLE);
+    
+    SOL_MEAS_EN_SetHigh();                              // Enable loadswitch to measure voltage
+    BAT_MEAS_EN_SetHigh();                              // Enable loadswitch to measure voltage
+
+    LED1_SetHigh();
+    LED0_SetHigh();
+
+    __delay_ms(50);                                     // Delay for settling voltages
+
+
+    ADCC_GetSingleConversion(SOL_VOLT);                 // first measurement afte rreset seems to be fixed and need to be rejected
+    solvoltage = ADCC_GetSingleConversion(SOL_VOLT);
+    __delay_ms(2000);
+
+    tempValue = ADCC_GetSingleConversion(SOL_VOLT);
+    if(tempValue < solvoltage){                         // To make sure it is the lowest/ stable voltage that is captured
+        solvoltage = tempValue;
+    }
+    floatsolvoltage = ((float)solvoltage /4096) * 2.048 * ((10+8.2)/8.2);   // Convert ADC value to voltage (Resistor divider)
+
+
+    ADCC_GetSingleConversion(BAT_VOLT); 
+    batvoltage = ADCC_GetSingleConversion(BAT_VOLT);
+    floatbatvoltage = ((float)batvoltage /4096) * 2.048 * ((10+8.2)/8.2);   // Convert ADC value to voltage (Resistor divider)
+
+
+    SOL_MEAS_EN_SetLow();                               // Disable loadswitch to measure voltage
+    BAT_MEAS_EN_SetLow();                               // Disable loadswitch to measure voltage
+
+    LED0_SetLow();
+    LED1_SetLow();
+
+    /* Check for battery empty */
+    if(floatbatvoltage < 3.3){
+        batteryundervoltage = 1;
+    }
+
+    /* If battery is charging again, unset the batteryundervoltage parameter */
+    if(batteryundervoltage == 1){
+        if(floatbatvoltage>3.5){
+            batteryundervoltage = 0;
+        }
+    }
+
+    // prepare data for I2C transmission: multiply by 600
+    uint16_t databatvoltage = (uint16_t)(round(floatbatvoltage * 600));
+    uint16_t datasolvoltage = (uint16_t)(round(floatsolvoltage * 600));
+       
+    
+    
+    
+    measurementData[0] = (uint8_t)(databatvoltage>>8);
+    measurementData[1] = (uint8_t)(databatvoltage);
+
+    measurementData[2] = (uint8_t)(datasolvoltage>>8);
+    measurementData[3] = (uint8_t)(datasolvoltage);
+
+    measurementData[4] = (uint8_t)(batteryundervoltage);
+    measurementData[5] = 0x00;
+    
+    
+    ADC_Fixed_Voltage_Ref(DISABLE);
+
+}
+
 
 void Power_Loop(){
-    FVRCON = 0x82;                                          // Enable Fixed voltage reference
-    //startMeasurement = true;
+    
+    /* Main Loop */
     if(startMeasurement && !measurementRunning){
         startMeasurement = false;
         measurementRunning = true;
 
-        SOL_MEAS_EN_SetHigh();                              // Enable loadswitch to measure voltage
-        BAT_MEAS_EN_SetHigh();                              // Enable loadswitch to measure voltage
-
-        LED1_SetHigh();
-        LED0_SetHigh();
-
-        __delay_ms(50);                                     // Delay for settling voltages
-
-    
-        ADCC_GetSingleConversion(SOL_VOLT);                 // first measurement afte rreset seems to be fixed and need to be rejected
-        solvoltage = ADCC_GetSingleConversion(SOL_VOLT);
-        __delay_ms(2000);
-        
-        tempValue = ADCC_GetSingleConversion(SOL_VOLT);
-        if(tempValue < solvoltage){                         // To make sure it is the lowest/ stable voltage that is captured
-            solvoltage = tempValue;
-        }
-        floatsolvoltage = ((float)solvoltage /4096) * 2 * 2.048;
-        
-        
-        ADCC_GetSingleConversion(BAT_VOLT); 
-        batvoltage = ADCC_GetSingleConversion(BAT_VOLT);
-        floatbatvoltage = ((float)batvoltage /4096) * 2 * 2.048;
-        
-        
-        SOL_MEAS_EN_SetLow();                               // Disable loadswitch to measure voltage
-        BAT_MEAS_EN_SetLow();                               // Disable loadswitch to measure voltage
-        
-        LED0_SetLow();
-        LED1_SetLow();
-        
-        if(floatbatvoltage < 3.3){
-            batteryundervoltage = 1;
-        }
-        
-        if(batteryundervoltage == 1){
-            if(floatbatvoltage>3.5){
-                batteryundervoltage = 0;
-            }
-        }
-        
-        // prepare data for I2C transmission
-        uint16_t databatvoltage = (uint16_t)(round(floatbatvoltage * 600));
-        uint16_t datasolvoltage = (uint16_t)(round(floatsolvoltage * 600));
-        
-        
-    
-        measurementData[0] = (uint8_t)(databatvoltage>>8);
-        measurementData[1] = (uint8_t)(databatvoltage);
-        
-        measurementData[2] = (uint8_t)(datasolvoltage>>8);
-        measurementData[3] = (uint8_t)(datasolvoltage);
-        
-        measurementData[4] = (uint8_t)(batteryundervoltage);
-        measurementData[5] = 0x00;
+        Measure();      // Get battery voltage - solar panel voltage - calculate undervoltage param
         
         generateIntPower();
         measurementRunning = false;
     }
     
-    FVRCON = 0x00;                                          // Disable the Fixed voltage reference
-
-    /* Go to sleep */
-    CPUDOZEbits.IDLEN = 0; // make sure PIC is not in doze mode before going to sleep   
-    NOP();
-    SLEEP(); // enter sleep
-    NOP();
-    NOP();
+    Enter_sleep();
 
 }
+
 void Power_GetData(uint8_t * data, uint8_t  * length){
     *length = 2; // this is fixed (M_NR = 2)
     data[0] = measurementData[0];
@@ -246,7 +290,8 @@ void Power_GetData(uint8_t * data, uint8_t  * length){
 
 
 void Power_SetThreshold(uint8_t metric, uint8_t * thresholdData){
-
+    
+    /* TODO */
 
 }
 

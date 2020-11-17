@@ -1,5 +1,5 @@
 
-# 1 "sensor/power.c"
+# 1 "mcc_generated_files/spi2.c"
 
 # 18 "C:/Users/Jona Cappelle/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\xc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -18423,540 +18423,110 @@ extern __bank0 __bit __timeout;
 # 15 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\stdbool.h"
 typedef unsigned char bool;
 
-# 69 "sensor/../global.h"
-typedef struct devApi{
-void (* Init)(void);
-void (* Measure)(void);
-void (* Loop)(void);
-void (* GetData)(uint8_t *, uint8_t *);
-void (* UpdateThreshold)(uint8_t, uint8_t *);
-} Device_API_t;
-
-# 183 "sensor/power.h"
-void Power_Init(void);
-void Power_Measure(void);
-void Power_Loop(void);
-void Power_GetData(uint8_t * data, uint8_t * length);
-void Power_SetThreshold(uint8_t metric, uint8_t * thresholdData);
-
-
-
-void generateIntPower(void);
-
-# 30 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\math.h"
-extern double fabs(double);
-extern double floor(double);
-extern double ceil(double);
-extern double modf(double, double *);
-extern double sqrt(double);
-extern double atof(const char *);
-extern double sin(double) ;
-extern double cos(double) ;
-extern double tan(double) ;
-extern double asin(double) ;
-extern double acos(double) ;
-extern double atan(double);
-extern double atan2(double, double) ;
-extern double log(double);
-extern double log10(double);
-extern double pow(double, double) ;
-extern double exp(double) ;
-extern double sinh(double) ;
-extern double cosh(double) ;
-extern double tanh(double);
-extern double eval_poly(double, const double *, int);
-extern double frexp(double, int *);
-extern double ldexp(double, int);
-extern double fmod(double, double);
-extern double trunc(double);
-extern double round(double);
-
-# 118 "sensor/../mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_Initialize (void);
-
-# 130
-void PIN_MANAGER_IOC(void);
-
-# 143
-void IOCCF0_ISR(void);
-
-# 166
-void IOCCF0_SetInterruptHandler(void (* InterruptHandler)(void));
-
-# 190
-extern void (*IOCCF0_InterruptHandler)(void);
-
-# 214
-void IOCCF0_DefaultInterruptHandler(void);
-
-# 227
-void IOCCF2_ISR(void);
-
-# 250
-void IOCCF2_SetInterruptHandler(void (* InterruptHandler)(void));
-
-# 274
-extern void (*IOCCF2_InterruptHandler)(void);
-
-# 298
-void IOCCF2_DefaultInterruptHandler(void);
-
-# 311
-void IOCCF4_ISR(void);
-
-# 334
-void IOCCF4_SetInterruptHandler(void (* InterruptHandler)(void));
-
-# 358
-extern void (*IOCCF4_InterruptHandler)(void);
-
-# 382
-void IOCCF4_DefaultInterruptHandler(void);
-
-# 395
-void IOCCF6_ISR(void);
-
-# 418
-void IOCCF6_SetInterruptHandler(void (* InterruptHandler)(void));
-
-# 442
-extern void (*IOCCF6_InterruptHandler)(void);
-
-# 466
-void IOCCF6_DefaultInterruptHandler(void);
-
-# 15 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\stdbool.h"
-typedef unsigned char bool;
-
-# 15
-typedef unsigned char bool;
-
 # 4 "C:/Users/Jona Cappelle/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\__size_t.h"
 typedef unsigned size_t;
 
 # 6 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\stddef.h"
 typedef int ptrdiff_t;
 
-# 80 "sensor/../mcc_generated_files/i2c1.h"
-typedef enum{
-I2C1_SLAVE_WRITE_REQUEST,
-I2C1_SLAVE_READ_REQUEST,
-I2C1_SLAVE_WRITE_COMPLETED,
-I2C1_SLAVE_READ_COMPLETED,
-} I2C1_SLAVE_DRIVER_STATUS;
+# 117 "mcc_generated_files/spi2.h"
+void SPI2_Initialize(void);
 
-# 114
-void I2C1_Initialize(uint8_t slave_address);
+# 152
+uint8_t SPI2_Exchange8bit(uint8_t data);
 
-# 134
-void I2C1_ISR(void);
+# 192
+uint8_t SPI2_Exchange8bitBuffer(uint8_t *dataIn, uint8_t bufLen, uint8_t *dataOut);
 
-# 141
-extern volatile uint8_t I2C1_slaveWriteData;
+# 215
+bool SPI2_IsBufferFull(void);
 
-# 148
-bool I2C1_CommandReceived(void);
-void I2C1_GetCommand(uint8_t * cmd);
-void I2C1_GetCommandData(uint8_t * data, uint8_t * len);
-void I2C1_SetTransmitData(uint8_t * data, uint8_t len);
-bool I2C1_TxBufferEmpty(void);
-void I2C1_ClearTxBuffer(void);
+# 240
+bool SPI2_HasWriteCollisionOccured(void);
 
-# 15 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\stdbool.h"
-typedef unsigned char bool;
+# 264
+void SPI2_ClearWriteCollisionStatus(void);
 
-# 72 "sensor/../mcc_generated_files/adcc.h"
-typedef uint16_t adc_result_t;
-
-# 89
-typedef enum
-{
-channel_ANC1 = 0x11,
-channel_Vss = 0x3B,
-channel_Temp_Sensor = 0x3C,
-channel_DAC1_Output = 0x3D,
-channel_FVR_Buffer1 = 0x3E,
-channel_FVR_Buffer2 = 0x3F
-} adcc_channel_t;
-
-# 131
-void ADCC_Initialize(void);
-
-# 160
-void ADCC_StartConversion(adcc_channel_t channel);
-
-# 190
-bool ADCC_IsConversionDone();
-
-# 222
-adc_result_t ADCC_GetConversionResult(void);
-
-# 253
-adc_result_t ADCC_GetSingleConversion(adcc_channel_t channel);
-
-# 278
-void ADCC_StopConversion(void);
-
-# 305
-void ADCC_SetStopOnInterrupt(void);
-
-# 330
-void ADCC_DischargeSampleCapacitor(void);
-
-# 356
-void ADCC_LoadAcquisitionRegister(uint16_t);
-
-# 382
-void ADCC_SetPrechargeTime(uint16_t);
-
-# 407
-void ADCC_SetRepeatCount(uint8_t);
-
-# 435
-uint8_t ADCC_GetCurrentCountofConversions(void);
-
-# 459
-void ADCC_ClearAccumulator(void);
-
-# 484
-uint24_t ADCC_GetAccumulatorValue(void);
-
-# 512
-bool ADCC_HasAccumulatorOverflowed(void);
-
-# 537
-uint16_t ADCC_GetFilterValue(void);
-
-# 565
-uint16_t ADCC_GetPreviousResult(void);
-
-# 591
-void ADCC_DefineSetPoint(uint16_t);
-
-# 617
-void ADCC_SetUpperThreshold(uint16_t);
-
-# 643
-void ADCC_SetLowerThreshold(uint16_t);
-
-# 670
-uint16_t ADCC_GetErrorCalculation(void);
-
-# 697
-void ADCC_EnableDoubleSampling(void);
-
-# 721
-void ADCC_EnableContinuousConversion(void);
-
-# 745
-void ADCC_DisableContinuousConversion(void);
-
-# 773
-bool ADCC_HasErrorCrossedUpperThreshold(void);
-
-# 801
-bool ADCC_HasErrorCrossedLowerThreshold(void);
-
-# 828
-uint8_t ADCC_GetConversionStageStatus(void);
-
-# 845
-void ADCC_SetADIInterruptHandler(void (* InterruptHandler)(void));
-
-# 861
-void ADCC_ISR(void);
-
-# 880
-void ADCC_DefaultInterruptHandler(void);
-
-# 72 "sensor/../mcc_generated_files/mcc.h"
-void SYSTEM_Initialize(uint8_t slave_address);
-
-# 85
-void OSCILLATOR_Initialize(void);
-
-# 98
-void PMD_Initialize(void);
-
-# 19 "sensor/power.c"
-void measureVolt(void);
-void initializePowerModule(void);
-uint16_t GetSingleConversion(uint8_t channel);
-void generateIntPower(void);
-void LED_Blink(void);
-void ADC_Init(void);
-void ADC_Fixed_Voltage_Ref(uint8_t mode);
-void Enter_sleep(void);
-
-
-
-bool startMeasurement = 0;
-bool measurementRunning = 0;
-volatile uint8_t measurementData[2* 0x03];
-float floatsolvoltage;
-float floatbatvoltage;
-uint16_t solvoltage = 0;
-uint16_t tempValue = 0;
-uint16_t batvoltage = 0;
-uint8_t batteryundervoltage = 0;
-
-# 45
-void LED_Blink(void)
+# 65 "mcc_generated_files/spi2.c"
+void SPI2_Initialize(void)
 {
 
-do { LATBbits.LATB6 = 1; } while(0);
-_delay((unsigned long)((100)*(32000000/4000.0)));
-do { LATBbits.LATB6 = 0; } while(0);
-_delay((unsigned long)((100)*(32000000/4000.0)));
-do { LATBbits.LATB6 = 1; } while(0);
-_delay((unsigned long)((100)*(32000000/4000.0)));
-do { LATBbits.LATB6 = 0; } while(0);
-_delay((unsigned long)((100)*(32000000/4000.0)));
-do { LATBbits.LATB6 = 1; } while(0);
-_delay((unsigned long)((100)*(32000000/4000.0)));
-do { LATBbits.LATB6 = 0; } while(0);
-_delay((unsigned long)((500)*(32000000/4000.0)));
 
-do { LATCbits.LATC1 = 1; } while(0);
-_delay((unsigned long)((100)*(32000000/4000.0)));
-do { LATCbits.LATC1 = 0; } while(0);
-_delay((unsigned long)((100)*(32000000/4000.0)));
-do { LATCbits.LATC1 = 1; } while(0);
-_delay((unsigned long)((100)*(32000000/4000.0)));
-do { LATCbits.LATC1 = 0; } while(0);
-_delay((unsigned long)((100)*(32000000/4000.0)));
-do { LATCbits.LATC1 = 1; } while(0);
-_delay((unsigned long)((100)*(32000000/4000.0)));
-do { LATCbits.LATC1 = 0; } while(0);
+
+SSP2STAT = 0x40;
+
+
+SSP2CON1 = 0x20;
+
+
+SSP2ADD = 0x00;
 }
 
-void ADC_Init(){
-
-FVRCON = 0x82;
-
-
-ADLTHL = 0x00;
-
-ADLTHH = 0x00;
-
-ADUTHL = 0x00;
-
-ADUTHH = 0x00;
-
-ADSTPTL = 0x00;
-
-ADSTPTH = 0x00;
-
-ADACCU = 0x00;
-
-ADRPT = 0x00;
-
-ADPCH = 0x00;
-
-ADACQL = 0x00;
-
-ADACQH = 0x00;
-
-ADCAP = 0x00;
-
-ADPREL = 0x00;
-
-ADPREH = 0x00;
-
-ADCON1 = 0x00;
-
-ADCON2 = 0x00;
-
-ADCON3 = 0x00;
-
-ADSTAT = 0x00;
-
-ADREF = 0x03;
-
-ADACT = 0x00;
-
-ADCLK = 0x00;
-
-ADCON0 = 0x84;
-
-FVRCON = 0x00;
-}
-
-void ADC_Fixed_Voltage_Ref(uint8_t mode){
-switch(mode)
+uint8_t SPI2_Exchange8bit(uint8_t data)
 {
-case 1:
-FVRCON = 0x82;
-break;
 
-case 0:
-FVRCON = 0x00;
-break;
+SSP2CON1bits.WCOL = 0;
 
-default:
-FVRCON = 0x00;
+SSP2BUF = data;
+
+while(SSP2STATbits.BF == 0x0)
+{
+}
+
+return (SSP2BUF);
+}
+
+uint8_t SPI2_Exchange8bitBuffer(uint8_t *dataIn, uint8_t bufLen, uint8_t *dataOut)
+{
+uint8_t bytesWritten = 0;
+
+if(bufLen != 0)
+{
+if(dataIn != (0))
+{
+while(bytesWritten < bufLen)
+{
+if(dataOut == (0))
+{
+SPI2_Exchange8bit(dataIn[bytesWritten]);
+}
+else
+{
+dataOut[bytesWritten] = SPI2_Exchange8bit(dataIn[bytesWritten]);
+}
+
+bytesWritten++;
+}
+}
+else
+{
+if(dataOut != (0))
+{
+while(bytesWritten < bufLen )
+{
+dataOut[bytesWritten] = SPI2_Exchange8bit(0x0);
+
+bytesWritten++;
+}
+}
 }
 }
 
-void Enter_sleep(){
-
-CPUDOZEbits.IDLEN = 0;
-__nop();
-asm("sleep");
-__nop();
-__nop();
+return bytesWritten;
 }
 
-
-void Power_Init(){
-
-do { TRISCbits.TRISC7 = 0; } while(0);
-do { LATCbits.LATC7 = 1; } while(0);
-
-PMD0bits.IOCMD = 0;
-
-ADC_Init();
-
-
-do { TRISCbits.TRISC0 = 0; } while(0);
-do { TRISCbits.TRISC6 = 0; } while(0);
-
-do { ANSELBbits.ANSB6 = 0; } while(0);
-
-do { TRISBbits.TRISB6 = 0; } while(0);
-do { TRISCbits.TRISC1 = 0; } while(0);
-
-
-do { LATBbits.LATB6 = 0; } while(0);
-do { LATCbits.LATC1 = 0; } while(0);
-
-
-LED_Blink();
-
-do { LATCbits.LATC0 = 0; } while(0);
-do { LATCbits.LATC6 = 0; } while(0);
-
-
-do { TRISCbits.TRISC3 = 1; } while(0);
-do { ANSELCbits.ANSC3 = 1; } while(0);
-
-do { TRISCbits.TRISC4 = 1; } while(0);
-do { ANSELCbits.ANSC4 = 1; } while(0);
-
-# 191
+bool SPI2_IsBufferFull(void)
+{
+return (SSP2STATbits.BF);
 }
 
-void Power_Measure(){
-startMeasurement = 1;
+bool SPI2_HasWriteCollisionOccured(void)
+{
+return (SSP2CON1bits.WCOL);
 }
 
-
-void Measure(){
-
-
-ADC_Fixed_Voltage_Ref(1);
-
-do { LATCbits.LATC0 = 1; } while(0);
-do { LATCbits.LATC6 = 1; } while(0);
-
-do { LATCbits.LATC1 = 1; } while(0);
-do { LATBbits.LATB6 = 1; } while(0);
-
-_delay((unsigned long)((50)*(32000000/4000.0)));
-
-
-ADCC_GetSingleConversion(0x13);
-solvoltage = ADCC_GetSingleConversion(0x13);
-_delay((unsigned long)((2000)*(32000000/4000.0)));
-
-tempValue = ADCC_GetSingleConversion(0x13);
-if(tempValue < solvoltage){
-solvoltage = tempValue;
-}
-floatsolvoltage = ((float)solvoltage /4096) * 2.048 * ((10+8.2)/8.2);
-
-
-ADCC_GetSingleConversion(0x14);
-batvoltage = ADCC_GetSingleConversion(0x14);
-floatbatvoltage = ((float)batvoltage /4096) * 2.048 * ((10+8.2)/8.2);
-
-
-do { LATCbits.LATC0 = 0; } while(0);
-do { LATCbits.LATC6 = 0; } while(0);
-
-do { LATBbits.LATB6 = 0; } while(0);
-do { LATCbits.LATC1 = 0; } while(0);
-
-
-if(floatbatvoltage < 3.3){
-batteryundervoltage = 1;
-}
-
-
-if(batteryundervoltage == 1){
-if(floatbatvoltage>3.5){
-batteryundervoltage = 0;
-}
-}
-
-
-uint16_t databatvoltage = (uint16_t)(round(floatbatvoltage * 600));
-uint16_t datasolvoltage = (uint16_t)(round(floatsolvoltage * 600));
-
-
-
-
-measurementData[0] = (uint8_t)(databatvoltage>>8);
-measurementData[1] = (uint8_t)(databatvoltage);
-
-measurementData[2] = (uint8_t)(datasolvoltage>>8);
-measurementData[3] = (uint8_t)(datasolvoltage);
-
-measurementData[4] = (uint8_t)(batteryundervoltage);
-measurementData[5] = 0x00;
-
-
-ADC_Fixed_Voltage_Ref(0);
-
-}
-
-
-void Power_Loop(){
-
-
-if(startMeasurement && !measurementRunning){
-startMeasurement = 0;
-measurementRunning = 1;
-
-Measure();
-
-generateIntPower();
-measurementRunning = 0;
-}
-
-Enter_sleep();
-
-}
-
-void Power_GetData(uint8_t * data, uint8_t * length){
-*length = 2;
-data[0] = measurementData[0];
-data[1] = measurementData[1];
-}
-
-
-void Power_SetThreshold(uint8_t metric, uint8_t * thresholdData){
-
-
-
-}
-
-
-
-
-void generateIntPower(void){
-do { LATCbits.LATC7 = 0; } while(0);
-_delay((unsigned long)((5)*(32000000/4000.0)));
-do { LATCbits.LATC7 = 1; } while(0);
+void SPI2_ClearWriteCollisionStatus(void)
+{
+SSP2CON1bits.WCOL = 0;
 }
 
