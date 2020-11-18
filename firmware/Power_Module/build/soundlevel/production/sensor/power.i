@@ -18833,6 +18833,7 @@ do { LATCbits.LATC1 = 0; } while(0);
 
 LED_Blink();
 
+
 do { LATCbits.LATC0 = 0; } while(0);
 do { LATCbits.LATC6 = 0; } while(0);
 
@@ -18843,7 +18844,7 @@ do { ANSELCbits.ANSC3 = 1; } while(0);
 do { TRISCbits.TRISC4 = 1; } while(0);
 do { ANSELCbits.ANSC4 = 1; } while(0);
 
-# 191
+# 192
 }
 
 void Power_Measure(){

@@ -173,6 +173,7 @@ void Power_Init(){
     
     /* Test blink LED */
     LED_Blink();
+    
 
     SOL_MEAS_EN_SetLow();
     BAT_MEAS_EN_SetLow();

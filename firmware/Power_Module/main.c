@@ -20,6 +20,11 @@
  *               (DRAMCO / KU Leuven TCG project)
  *               ------------------------
  * 
+ * Power Consumption:
+ *  26uA --> 10.1uA --> 1.5uA
+ * 
+ * 
+ * 
  */
 
 #include <xc.h>

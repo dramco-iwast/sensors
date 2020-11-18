@@ -5,6 +5,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _PIN_MANAGER_Initialize `(v ~T0 @X0 0 ef ]
 "85 mcc_generated_files/mcc.h
 [v _OSCILLATOR_Initialize `(v ~T0 @X0 0 ef ]
+"20627 C:/Users/Jona Cappelle/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18446.h
+[s S958 :1 `uc 1 :1 `uc 1 ]
+[n S958 . . VREGPM ]
+"20626
+[u S957 `S958 1 ]
+[n S957 . . ]
+"20632
+[v _VREGCONbits `VS957 ~T0 @X0 0 e@2066 ]
 "114 mcc_generated_files/i2c1.h
 [v _I2C1_Initialize `(v ~T0 @X0 0 ef1`uc ]
 "420 C:/Users/Jona Cappelle/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18446.h
@@ -12237,79 +12245,82 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;mcc.c: 54: OSCILLATOR_Initialize();
 "54
 [e ( _OSCILLATOR_Initialize ..  ]
-[; ;mcc.c: 55: I2C1_Initialize(slave_address);
-"55
+[; ;mcc.c: 56: VREGCONbits.VREGPM = 1;
+"56
+[e = . . _VREGCONbits 0 1 -> -> 1 `i `uc ]
+[; ;mcc.c: 62: I2C1_Initialize(slave_address);
+"62
 [e ( _I2C1_Initialize (1 _slave_address ]
-[; ;mcc.c: 59: (INTCONbits.GIE = 1);
-"59
+[; ;mcc.c: 66: (INTCONbits.GIE = 1);
+"66
 [e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
-[; ;mcc.c: 61: (INTCONbits.PEIE = 1);
-"61
+[; ;mcc.c: 68: (INTCONbits.PEIE = 1);
+"68
 [e = . . _INTCONbits 0 2 -> -> 1 `i `uc ]
-[; ;mcc.c: 63: }
-"63
+[; ;mcc.c: 70: }
+"70
 [e :UE 1512 ]
 }
-"65
+"72
 [v _OSCILLATOR_Initialize `(v ~T0 @X0 1 ef ]
-"66
+"73
 {
-[; ;mcc.c: 65: void OSCILLATOR_Initialize(void)
-[; ;mcc.c: 66: {
+[; ;mcc.c: 72: void OSCILLATOR_Initialize(void)
+[; ;mcc.c: 73: {
 [e :U _OSCILLATOR_Initialize ]
 [f ]
-[; ;mcc.c: 68: OSCCON1 = 0x60;
-"68
+[; ;mcc.c: 75: OSCCON1 = 0x60;
+"75
 [e = _OSCCON1 -> -> 96 `i `uc ]
-[; ;mcc.c: 70: OSCCON3 = 0x00;
-"70
+[; ;mcc.c: 77: OSCCON3 = 0x00;
+"77
 [e = _OSCCON3 -> -> 0 `i `uc ]
-[; ;mcc.c: 72: OSCEN = 0x00;
-"72
-[e = _OSCEN -> -> 0 `i `uc ]
-[; ;mcc.c: 74: OSCFRQ = 0x06;
-"74
-[e = _OSCFRQ -> -> 6 `i `uc ]
-[; ;mcc.c: 78: OSCTUNE = 0x00;
-"78
-[e = _OSCTUNE -> -> 0 `i `uc ]
-[; ;mcc.c: 79: }
+[; ;mcc.c: 79: OSCEN = 0x00;
 "79
+[e = _OSCEN -> -> 0 `i `uc ]
+[; ;mcc.c: 81: OSCFRQ = 0x06;
+"81
+[e = _OSCFRQ -> -> 6 `i `uc ]
+[; ;mcc.c: 85: OSCTUNE = 0x00;
+"85
+[e = _OSCTUNE -> -> 0 `i `uc ]
+[; ;mcc.c: 86: }
+"86
 [e :UE 1513 ]
 }
-"81
+"88
 [v _PMD_Initialize `(v ~T0 @X0 1 ef ]
-"82
+"89
 {
-[; ;mcc.c: 81: void PMD_Initialize(void)
-[; ;mcc.c: 82: {
+[; ;mcc.c: 88: void PMD_Initialize(void)
+[; ;mcc.c: 89: {
 [e :U _PMD_Initialize ]
 [f ]
-[; ;mcc.c: 84: PMD0 = 0x00;
-"84
+[; ;mcc.c: 91: PMD0 = 0x00;
+"91
 [e = _PMD0 -> -> 0 `i `uc ]
-[; ;mcc.c: 86: PMD1 = 0x00;
-"86
+[; ;mcc.c: 93: PMD1 = 0x00;
+"93
 [e = _PMD1 -> -> 0 `i `uc ]
-[; ;mcc.c: 88: PMD2 = 0x00;
-"88
+[; ;mcc.c: 95: PMD2 = 0x00;
+"95
 [e = _PMD2 -> -> 0 `i `uc ]
-[; ;mcc.c: 90: PMD3 = 0x00;
-"90
+[; ;mcc.c: 97: PMD3 = 0x00;
+"97
 [e = _PMD3 -> -> 0 `i `uc ]
-[; ;mcc.c: 92: PMD4 = 0x00;
-"92
-[e = _PMD4 -> -> 0 `i `uc ]
-[; ;mcc.c: 94: PMD5 = 0x00;
-"94
-[e = _PMD5 -> -> 0 `i `uc ]
-[; ;mcc.c: 96: PMD6 = 0x00;
-"96
-[e = _PMD6 -> -> 0 `i `uc ]
-[; ;mcc.c: 98: PMD7 = 0x00;
-"98
-[e = _PMD7 -> -> 0 `i `uc ]
-[; ;mcc.c: 99: }
+[; ;mcc.c: 99: PMD4 = 0x00;
 "99
+[e = _PMD4 -> -> 0 `i `uc ]
+[; ;mcc.c: 101: PMD5 = 0x00;
+"101
+[e = _PMD5 -> -> 0 `i `uc ]
+[; ;mcc.c: 103: PMD6 = 0x00;
+"103
+[e = _PMD6 -> -> 0 `i `uc ]
+[; ;mcc.c: 105: PMD7 = 0x00;
+"105
+[e = _PMD7 -> -> 0 `i `uc ]
+[; ;mcc.c: 106: }
+"106
 [e :UE 1514 ]
 }

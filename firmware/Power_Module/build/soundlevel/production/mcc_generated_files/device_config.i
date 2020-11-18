@@ -13,7 +13,7 @@
 #pragma config MCLRE = ON
 #pragma config PWRTS = OFF
 #pragma config LPBOREN = OFF
-#pragma config BOREN = ON
+#pragma config BOREN = OFF
 #pragma config BORV = LO
 #pragma config ZCDDIS = OFF
 #pragma config PPS1WAY = ON

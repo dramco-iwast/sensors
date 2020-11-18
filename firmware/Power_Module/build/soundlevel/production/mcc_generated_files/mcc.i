@@ -18633,6 +18633,10 @@ void SYSTEM_Initialize(uint8_t slave_address)
 PMD_Initialize();
 PIN_MANAGER_Initialize();
 OSCILLATOR_Initialize();
+
+VREGCONbits.VREGPM = 1;
+
+# 62
 I2C1_Initialize(slave_address);
 
 

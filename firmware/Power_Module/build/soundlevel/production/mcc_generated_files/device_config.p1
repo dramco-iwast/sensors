@@ -16,7 +16,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "59
 [p x LPBOREN=OFF ]
 "60
-[p x BOREN=ON ]
+[p x BOREN=OFF ]
 "61
 [p x BORV=LO ]
 "62

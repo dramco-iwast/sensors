@@ -52,6 +52,13 @@ void SYSTEM_Initialize(uint8_t slave_address) //MODIFIED (was void))
     PMD_Initialize();
     PIN_MANAGER_Initialize();
     OSCILLATOR_Initialize();
+    
+    VREGCONbits.VREGPM = 1; // Low-Power Sleep mode enabled in Sleep
+    //Unused I/O pins should be configured as outputs and driven to a logic
+    //low state. Alternatively, connect a1k? to 10 k? resistor to VSS on unused
+    // pins to drive the output to logic low
+    
+    
     I2C1_Initialize(slave_address);
     //EUSART1_Initialize();
     

@@ -18751,7 +18751,7 @@ void Power_SetThreshold(uint8_t metric, uint8_t * thresholdData);
 
 void generateIntPower(void);
 
-# 39 "main.c"
+# 44 "main.c"
 Device_API_t sensorAPI = { Power_Init, Power_Measure, Power_Loop, Power_GetData, Power_SetThreshold };
 
 uint8_t mData[2 * 0x03];
@@ -18759,7 +18759,7 @@ uint8_t mDataLength;
 
 void toggleInt(void);
 
-# 48
+# 53
 void main(void)
 {
 

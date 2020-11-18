@@ -119,7 +119,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S1472 . . ]
 "31364
 [v _ANSELCbits `VS1472 ~T0 @X0 0 e@8014 ]
-"211 sensor/power.c
+"212 sensor/power.c
 [c E10920 17 59 60 61 62 63 .. ]
 [n E10920 . channel_ANC1 channel_Vss channel_Temp_Sensor channel_DAC1_Output channel_FVR_Buffer1 channel_FVR_Buffer2  ]
 "253 sensor/../mcc_generated_files/adcc.h
@@ -12763,321 +12763,321 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;power.c: 175: LED_Blink();
 "175
 [e ( _LED_Blink ..  ]
-[; ;power.c: 177: do { LATCbits.LATC0 = 0; } while(0);
-"177
+[; ;power.c: 178: do { LATCbits.LATC0 = 0; } while(0);
+"178
 [e :U 1588 ]
 {
 [e = . . _LATCbits 0 0 -> -> 0 `i `uc ]
 }
 [e :U 1587 ]
-[; ;power.c: 178: do { LATCbits.LATC6 = 0; } while(0);
-"178
+[; ;power.c: 179: do { LATCbits.LATC6 = 0; } while(0);
+"179
 [e :U 1591 ]
 {
 [e = . . _LATCbits 0 6 -> -> 0 `i `uc ]
 }
 [e :U 1590 ]
-[; ;power.c: 181: do { TRISCbits.TRISC3 = 1; } while(0);
-"181
+[; ;power.c: 182: do { TRISCbits.TRISC3 = 1; } while(0);
+"182
 [e :U 1594 ]
 {
 [e = . . _TRISCbits 0 3 -> -> 1 `i `uc ]
 }
 [e :U 1593 ]
-[; ;power.c: 182: do { ANSELCbits.ANSC3 = 1; } while(0);
-"182
+[; ;power.c: 183: do { ANSELCbits.ANSC3 = 1; } while(0);
+"183
 [e :U 1597 ]
 {
 [e = . . _ANSELCbits 0 3 -> -> 1 `i `uc ]
 }
 [e :U 1596 ]
-[; ;power.c: 184: do { TRISCbits.TRISC4 = 1; } while(0);
-"184
+[; ;power.c: 185: do { TRISCbits.TRISC4 = 1; } while(0);
+"185
 [e :U 1600 ]
 {
 [e = . . _TRISCbits 0 4 -> -> 1 `i `uc ]
 }
 [e :U 1599 ]
-[; ;power.c: 185: do { ANSELCbits.ANSC4 = 1; } while(0);
-"185
+[; ;power.c: 186: do { ANSELCbits.ANSC4 = 1; } while(0);
+"186
 [e :U 1603 ]
 {
 [e = . . _ANSELCbits 0 4 -> -> 1 `i `uc ]
 }
 [e :U 1602 ]
-[; ;power.c: 191: }
-"191
+[; ;power.c: 192: }
+"192
 [e :UE 1558 ]
 }
-"193
+"194
 [v _Power_Measure `(v ~T0 @X0 1 ef ]
 {
-[; ;power.c: 193: void Power_Measure(){
+[; ;power.c: 194: void Power_Measure(){
 [e :U _Power_Measure ]
 [f ]
-[; ;power.c: 194: startMeasurement = 1;
-"194
-[e = _startMeasurement -> -> 1 `i `uc ]
-[; ;power.c: 195: }
+[; ;power.c: 195: startMeasurement = 1;
 "195
+[e = _startMeasurement -> -> 1 `i `uc ]
+[; ;power.c: 196: }
+"196
 [e :UE 1604 ]
 }
-"198
+"199
 [v _Measure `(v ~T0 @X0 1 ef ]
 {
-[; ;power.c: 198: void Measure(){
+[; ;power.c: 199: void Measure(){
 [e :U _Measure ]
 [f ]
-[; ;power.c: 200: ADC_Fixed_Voltage_Ref(1);
-"200
+[; ;power.c: 201: ADC_Fixed_Voltage_Ref(1);
+"201
 [e ( _ADC_Fixed_Voltage_Ref (1 -> -> 1 `i `uc ]
-[; ;power.c: 202: do { LATCbits.LATC0 = 1; } while(0);
-"202
+[; ;power.c: 203: do { LATCbits.LATC0 = 1; } while(0);
+"203
 [e :U 1608 ]
 {
 [e = . . _LATCbits 0 0 -> -> 1 `i `uc ]
 }
 [e :U 1607 ]
-[; ;power.c: 203: do { LATCbits.LATC6 = 1; } while(0);
-"203
+[; ;power.c: 204: do { LATCbits.LATC6 = 1; } while(0);
+"204
 [e :U 1611 ]
 {
 [e = . . _LATCbits 0 6 -> -> 1 `i `uc ]
 }
 [e :U 1610 ]
-[; ;power.c: 205: do { LATCbits.LATC1 = 1; } while(0);
-"205
+[; ;power.c: 206: do { LATCbits.LATC1 = 1; } while(0);
+"206
 [e :U 1614 ]
 {
 [e = . . _LATCbits 0 1 -> -> 1 `i `uc ]
 }
 [e :U 1613 ]
-[; ;power.c: 206: do { LATBbits.LATB6 = 1; } while(0);
-"206
+[; ;power.c: 207: do { LATBbits.LATB6 = 1; } while(0);
+"207
 [e :U 1617 ]
 {
 [e = . . _LATBbits 0 3 -> -> 1 `i `uc ]
 }
 [e :U 1616 ]
-[; ;power.c: 208: _delay((unsigned long)((10)*(32000000/4000.0)));
-"208
+[; ;power.c: 209: _delay((unsigned long)((10)*(32000000/4000.0)));
+"209
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-[; ;power.c: 211: ADCC_GetSingleConversion(0x13);
-"211
-[e ( _ADCC_GetSingleConversion (1 -> -> 19 `i `E10920 ]
-[; ;power.c: 212: solvoltage = ADCC_GetSingleConversion(0x13);
+[; ;power.c: 212: ADCC_GetSingleConversion(0x13);
 "212
+[e ( _ADCC_GetSingleConversion (1 -> -> 19 `i `E10920 ]
+[; ;power.c: 213: solvoltage = ADCC_GetSingleConversion(0x13);
+"213
 [e = _solvoltage ( _ADCC_GetSingleConversion (1 -> -> 19 `i `E10920 ]
-[; ;power.c: 215: tempValue = ADCC_GetSingleConversion(0x13);
-"215
-[e = _tempValue ( _ADCC_GetSingleConversion (1 -> -> 19 `i `E10920 ]
-[; ;power.c: 216: if(tempValue < solvoltage){
+[; ;power.c: 216: tempValue = ADCC_GetSingleConversion(0x13);
 "216
+[e = _tempValue ( _ADCC_GetSingleConversion (1 -> -> 19 `i `E10920 ]
+[; ;power.c: 217: if(tempValue < solvoltage){
+"217
 [e $ ! < _tempValue _solvoltage 1618  ]
 {
-[; ;power.c: 217: solvoltage = tempValue;
-"217
-[e = _solvoltage _tempValue ]
+[; ;power.c: 218: solvoltage = tempValue;
 "218
+[e = _solvoltage _tempValue ]
+"219
 }
 [e :U 1618 ]
-[; ;power.c: 218: }
-[; ;power.c: 219: floatsolvoltage = ((float)solvoltage /4096) * 2.048 * ((10+2.2)/2.2);
-"219
+[; ;power.c: 219: }
+[; ;power.c: 220: floatsolvoltage = ((float)solvoltage /4096) * 2.048 * ((10+2.2)/2.2);
+"220
 [e = _floatsolvoltage -> * * -> / -> _solvoltage `f -> -> 4096 `i `f `d .2.048 / + -> -> 10 `i `d .2.2 .2.2 `f ]
-[; ;power.c: 222: ADCC_GetSingleConversion(0x14);
-"222
-[e ( _ADCC_GetSingleConversion (1 -> -> 20 `i `E10920 ]
-[; ;power.c: 223: batvoltage = ADCC_GetSingleConversion(0x14);
+[; ;power.c: 223: ADCC_GetSingleConversion(0x14);
 "223
-[e = _batvoltage ( _ADCC_GetSingleConversion (1 -> -> 20 `i `E10920 ]
-[; ;power.c: 224: floatbatvoltage = ((float)batvoltage /4096) * 2.048 * ((10+8.2)/8.2);
+[e ( _ADCC_GetSingleConversion (1 -> -> 20 `i `E10920 ]
+[; ;power.c: 224: batvoltage = ADCC_GetSingleConversion(0x14);
 "224
+[e = _batvoltage ( _ADCC_GetSingleConversion (1 -> -> 20 `i `E10920 ]
+[; ;power.c: 225: floatbatvoltage = ((float)batvoltage /4096) * 2.048 * ((10+8.2)/8.2);
+"225
 [e = _floatbatvoltage -> * * -> / -> _batvoltage `f -> -> 4096 `i `f `d .2.048 / + -> -> 10 `i `d .8.2 .8.2 `f ]
-[; ;power.c: 226: do { LATCbits.LATC0 = 0; } while(0);
-"226
+[; ;power.c: 227: do { LATCbits.LATC0 = 0; } while(0);
+"227
 [e :U 1621 ]
 {
 [e = . . _LATCbits 0 0 -> -> 0 `i `uc ]
 }
 [e :U 1620 ]
-[; ;power.c: 227: do { LATCbits.LATC6 = 0; } while(0);
-"227
+[; ;power.c: 228: do { LATCbits.LATC6 = 0; } while(0);
+"228
 [e :U 1624 ]
 {
 [e = . . _LATCbits 0 6 -> -> 0 `i `uc ]
 }
 [e :U 1623 ]
-[; ;power.c: 229: do { LATBbits.LATB6 = 0; } while(0);
-"229
+[; ;power.c: 230: do { LATBbits.LATB6 = 0; } while(0);
+"230
 [e :U 1627 ]
 {
 [e = . . _LATBbits 0 3 -> -> 0 `i `uc ]
 }
 [e :U 1626 ]
-[; ;power.c: 230: do { LATCbits.LATC1 = 0; } while(0);
-"230
+[; ;power.c: 231: do { LATCbits.LATC1 = 0; } while(0);
+"231
 [e :U 1630 ]
 {
 [e = . . _LATCbits 0 1 -> -> 0 `i `uc ]
 }
 [e :U 1629 ]
-[; ;power.c: 233: if(floatbatvoltage < 3.3){
-"233
+[; ;power.c: 234: if(floatbatvoltage < 3.3){
+"234
 [e $ ! < -> _floatbatvoltage `d .3.3 1631  ]
 {
-[; ;power.c: 234: batteryundervoltage = 1;
-"234
-[e = _batteryundervoltage -> -> 1 `i `uc ]
+[; ;power.c: 235: batteryundervoltage = 1;
 "235
+[e = _batteryundervoltage -> -> 1 `i `uc ]
+"236
 }
 [e :U 1631 ]
-[; ;power.c: 235: }
-[; ;power.c: 238: if(batteryundervoltage == 1){
-"238
+[; ;power.c: 236: }
+[; ;power.c: 239: if(batteryundervoltage == 1){
+"239
 [e $ ! == -> _batteryundervoltage `i -> 1 `i 1632  ]
 {
-[; ;power.c: 239: if(floatbatvoltage>3.5){
-"239
+[; ;power.c: 240: if(floatbatvoltage>3.5){
+"240
 [e $ ! > -> _floatbatvoltage `d .3.5 1633  ]
 {
-[; ;power.c: 240: batteryundervoltage = 0;
-"240
-[e = _batteryundervoltage -> -> 0 `i `uc ]
+[; ;power.c: 241: batteryundervoltage = 0;
 "241
-}
-[e :U 1633 ]
+[e = _batteryundervoltage -> -> 0 `i `uc ]
 "242
 }
+[e :U 1633 ]
+"243
+}
 [e :U 1632 ]
-"245
-[v _databatvoltage `ui ~T0 @X0 1 a ]
-[; ;power.c: 241: }
-[; ;power.c: 242: }
-[; ;power.c: 245: uint16_t databatvoltage = (uint16_t)(round(floatbatvoltage * 600));
-[e = _databatvoltage -> ( _round (1 -> * _floatbatvoltage -> -> 600 `i `f `d `ui ]
 "246
+[v _databatvoltage `ui ~T0 @X0 1 a ]
+[; ;power.c: 242: }
+[; ;power.c: 243: }
+[; ;power.c: 246: uint16_t databatvoltage = (uint16_t)(round(floatbatvoltage * 600));
+[e = _databatvoltage -> ( _round (1 -> * _floatbatvoltage -> -> 600 `i `f `d `ui ]
+"247
 [v _datasolvoltage `ui ~T0 @X0 1 a ]
-[; ;power.c: 246: uint16_t datasolvoltage = (uint16_t)(round(floatsolvoltage * 600));
+[; ;power.c: 247: uint16_t datasolvoltage = (uint16_t)(round(floatsolvoltage * 600));
 [e = _datasolvoltage -> ( _round (1 -> * _floatsolvoltage -> -> 600 `i `f `d `ui ]
-[; ;power.c: 251: measurementData[0] = (uint8_t)(databatvoltage>>8);
-"251
-[e = *U + &U _measurementData * -> -> -> 0 `i `ui `ux -> -> # *U &U _measurementData `ui `ux -> >> _databatvoltage -> 8 `i `uc ]
-[; ;power.c: 252: measurementData[1] = (uint8_t)(databatvoltage);
+[; ;power.c: 252: measurementData[0] = (uint8_t)(databatvoltage>>8);
 "252
+[e = *U + &U _measurementData * -> -> -> 0 `i `ui `ux -> -> # *U &U _measurementData `ui `ux -> >> _databatvoltage -> 8 `i `uc ]
+[; ;power.c: 253: measurementData[1] = (uint8_t)(databatvoltage);
+"253
 [e = *U + &U _measurementData * -> -> -> 1 `i `ui `ux -> -> # *U &U _measurementData `ui `ux -> _databatvoltage `uc ]
-[; ;power.c: 254: measurementData[2] = (uint8_t)(datasolvoltage>>8);
-"254
-[e = *U + &U _measurementData * -> -> -> 2 `i `ui `ux -> -> # *U &U _measurementData `ui `ux -> >> _datasolvoltage -> 8 `i `uc ]
-[; ;power.c: 255: measurementData[3] = (uint8_t)(datasolvoltage);
+[; ;power.c: 255: measurementData[2] = (uint8_t)(datasolvoltage>>8);
 "255
+[e = *U + &U _measurementData * -> -> -> 2 `i `ui `ux -> -> # *U &U _measurementData `ui `ux -> >> _datasolvoltage -> 8 `i `uc ]
+[; ;power.c: 256: measurementData[3] = (uint8_t)(datasolvoltage);
+"256
 [e = *U + &U _measurementData * -> -> -> 3 `i `ui `ux -> -> # *U &U _measurementData `ui `ux -> _datasolvoltage `uc ]
-[; ;power.c: 257: measurementData[4] = (uint8_t)(batteryundervoltage);
-"257
-[e = *U + &U _measurementData * -> -> -> 4 `i `ui `ux -> -> # *U &U _measurementData `ui `ux _batteryundervoltage ]
-[; ;power.c: 258: measurementData[5] = 0x00;
+[; ;power.c: 258: measurementData[4] = (uint8_t)(batteryundervoltage);
 "258
+[e = *U + &U _measurementData * -> -> -> 4 `i `ui `ux -> -> # *U &U _measurementData `ui `ux _batteryundervoltage ]
+[; ;power.c: 259: measurementData[5] = 0x00;
+"259
 [e = *U + &U _measurementData * -> -> -> 5 `i `ui `ux -> -> # *U &U _measurementData `ui `ux -> -> 0 `i `uc ]
-[; ;power.c: 261: ADC_Fixed_Voltage_Ref(0);
-"261
+[; ;power.c: 262: ADC_Fixed_Voltage_Ref(0);
+"262
 [e ( _ADC_Fixed_Voltage_Ref (1 -> -> 0 `i `uc ]
-[; ;power.c: 263: }
-"263
+[; ;power.c: 264: }
+"264
 [e :UE 1605 ]
 }
-"266
+"267
 [v _Power_Loop `(v ~T0 @X0 1 ef ]
 {
-[; ;power.c: 266: void Power_Loop(){
+[; ;power.c: 267: void Power_Loop(){
 [e :U _Power_Loop ]
 [f ]
-[; ;power.c: 269: if(startMeasurement && !measurementRunning){
-"269
+[; ;power.c: 270: if(startMeasurement && !measurementRunning){
+"270
 [e $ ! && != -> _startMeasurement `i -> -> -> 0 `i `uc `i ! != -> _measurementRunning `i -> -> -> 0 `i `uc `i 1635  ]
 {
-[; ;power.c: 270: startMeasurement = 0;
-"270
-[e = _startMeasurement -> -> 0 `i `uc ]
-[; ;power.c: 271: measurementRunning = 1;
+[; ;power.c: 271: startMeasurement = 0;
 "271
+[e = _startMeasurement -> -> 0 `i `uc ]
+[; ;power.c: 272: measurementRunning = 1;
+"272
 [e = _measurementRunning -> -> 1 `i `uc ]
-[; ;power.c: 273: Measure();
-"273
+[; ;power.c: 274: Measure();
+"274
 [e ( _Measure ..  ]
-[; ;power.c: 275: generateIntPower();
-"275
-[e ( _generateIntPower ..  ]
-[; ;power.c: 276: measurementRunning = 0;
+[; ;power.c: 276: generateIntPower();
 "276
-[e = _measurementRunning -> -> 0 `i `uc ]
+[e ( _generateIntPower ..  ]
+[; ;power.c: 277: measurementRunning = 0;
 "277
+[e = _measurementRunning -> -> 0 `i `uc ]
+"278
 }
 [e :U 1635 ]
-[; ;power.c: 277: }
-[; ;power.c: 279: Enter_sleep();
-"279
+[; ;power.c: 278: }
+[; ;power.c: 280: Enter_sleep();
+"280
 [e ( _Enter_sleep ..  ]
-[; ;power.c: 281: }
-"281
+[; ;power.c: 282: }
+"282
 [e :UE 1634 ]
 }
-"283
+"284
 [v _Power_GetData `(v ~T0 @X0 1 ef2`*uc`*uc ]
 {
-[; ;power.c: 283: void Power_GetData(uint8_t * data, uint8_t * length){
+[; ;power.c: 284: void Power_GetData(uint8_t * data, uint8_t * length){
 [e :U _Power_GetData ]
 [v _data `*uc ~T0 @X0 1 r1 ]
 [v _length `*uc ~T0 @X0 1 r2 ]
 [f ]
-[; ;power.c: 284: *length = 2;
-"284
-[e = *U _length -> -> 2 `i `uc ]
-[; ;power.c: 285: data[0] = measurementData[0];
+[; ;power.c: 285: *length = 2;
 "285
-[e = *U + _data * -> -> 0 `i `x -> -> # *U _data `i `x *U + &U _measurementData * -> -> -> 0 `i `ui `ux -> -> # *U &U _measurementData `ui `ux ]
-[; ;power.c: 286: data[1] = measurementData[1];
+[e = *U _length -> -> 2 `i `uc ]
+[; ;power.c: 286: data[0] = measurementData[0];
 "286
-[e = *U + _data * -> -> 1 `i `x -> -> # *U _data `i `x *U + &U _measurementData * -> -> -> 1 `i `ui `ux -> -> # *U &U _measurementData `ui `ux ]
-[; ;power.c: 287: }
+[e = *U + _data * -> -> 0 `i `x -> -> # *U _data `i `x *U + &U _measurementData * -> -> -> 0 `i `ui `ux -> -> # *U &U _measurementData `ui `ux ]
+[; ;power.c: 287: data[1] = measurementData[1];
 "287
+[e = *U + _data * -> -> 1 `i `x -> -> # *U _data `i `x *U + &U _measurementData * -> -> -> 1 `i `ui `ux -> -> # *U &U _measurementData `ui `ux ]
+[; ;power.c: 288: }
+"288
 [e :UE 1636 ]
 }
-"290
+"291
 [v _Power_SetThreshold `(v ~T0 @X0 1 ef2`uc`*uc ]
 {
-[; ;power.c: 290: void Power_SetThreshold(uint8_t metric, uint8_t * thresholdData){
+[; ;power.c: 291: void Power_SetThreshold(uint8_t metric, uint8_t * thresholdData){
 [e :U _Power_SetThreshold ]
 [v _metric `uc ~T0 @X0 1 r1 ]
 [v _thresholdData `*uc ~T0 @X0 1 r2 ]
 [f ]
-[; ;power.c: 294: }
-"294
+[; ;power.c: 295: }
+"295
 [e :UE 1637 ]
 }
-"299
+"300
 [v _generateIntPower `(v ~T0 @X0 1 ef ]
 {
-[; ;power.c: 299: void generateIntPower(void){
+[; ;power.c: 300: void generateIntPower(void){
 [e :U _generateIntPower ]
 [f ]
-[; ;power.c: 300: do { LATCbits.LATC7 = 0; } while(0);
-"300
+[; ;power.c: 301: do { LATCbits.LATC7 = 0; } while(0);
+"301
 [e :U 1641 ]
 {
 [e = . . _LATCbits 0 7 -> -> 0 `i `uc ]
 }
 [e :U 1640 ]
-[; ;power.c: 301: _delay((unsigned long)((5)*(32000000/4000.0)));
-"301
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-[; ;power.c: 302: do { LATCbits.LATC7 = 1; } while(0);
+[; ;power.c: 302: _delay((unsigned long)((5)*(32000000/4000.0)));
 "302
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
+[; ;power.c: 303: do { LATCbits.LATC7 = 1; } while(0);
+"303
 [e :U 1644 ]
 {
 [e = . . _LATCbits 0 7 -> -> 1 `i `uc ]
 }
 [e :U 1643 ]
-[; ;power.c: 303: }
-"303
+[; ;power.c: 304: }
+"304
 [e :UE 1638 ]
 }
