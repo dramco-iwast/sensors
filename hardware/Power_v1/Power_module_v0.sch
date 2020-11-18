@@ -156,10 +156,10 @@ VUSB
 Text GLabel 1700 2100 0    50   Input ~ 0
 VSTOR
 $Comp
-L Device:R ROV1
+L Device:R ROV2
 U 1 1 5EDF021A
 P 3500 2450
-F 0 "ROV1" H 3570 2496 50  0000 L CNN
+F 0 "ROV2" H 3570 2496 50  0000 L CNN
 F 1 "7.32 M" H 3570 2405 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 3430 2450 50  0001 C CNN
 F 3 "~" H 3500 2450 50  0001 C CNN
@@ -167,10 +167,10 @@ F 3 "~" H 3500 2450 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:R ROK1
+L Device:R ROK3
 U 1 1 5EDF088F
 P 3950 2450
-F 0 "ROK1" H 4020 2496 50  0000 L CNN
+F 0 "ROK3" H 4020 2496 50  0000 L CNN
 F 1 "1.9 M" H 4020 2405 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 3880 2450 50  0001 C CNN
 F 3 "~" H 3950 2450 50  0001 C CNN
@@ -178,10 +178,10 @@ F 3 "~" H 3950 2450 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:R ROV2
+L Device:R ROV1
 U 1 1 5EDF0B8E
 P 3500 2850
-F 0 "ROV2" H 3570 2896 50  0000 L CNN
+F 0 "ROV1" H 3570 2896 50  0000 L CNN
 F 1 "5.61 M" H 3570 2805 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 3430 2850 50  0001 C CNN
 F 3 "~" H 3500 2850 50  0001 C CNN
@@ -206,10 +206,10 @@ Wire Wire Line
 Text GLabel 3500 3000 3    50   Input ~ 0
 GND
 $Comp
-L Device:R ROK3
+L Device:R ROK1
 U 1 1 5EDF2C3E
 P 3950 3250
-F 0 "ROK3" H 4020 3296 50  0000 L CNN
+F 0 "ROK1" H 4020 3296 50  0000 L CNN
 F 1 "5.62M" H 4020 3205 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 3880 3250 50  0001 C CNN
 F 3 "~" H 3950 3250 50  0001 C CNN
@@ -226,10 +226,10 @@ Wire Wire Line
 	3950 2300 4600 2300
 Connection ~ 3950 2300
 $Comp
-L Device:R ROUT1
+L Device:R ROUT2
 U 1 1 5EDF4059
 P 4600 2450
-F 0 "ROUT1" H 4670 2496 50  0000 L CNN
+F 0 "ROUT2" H 4670 2496 50  0000 L CNN
 F 1 "8.25 M" H 4670 2405 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 4530 2450 50  0001 C CNN
 F 3 "~" H 4600 2450 50  0001 C CNN
@@ -237,10 +237,10 @@ F 3 "~" H 4600 2450 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:R ROUT2
+L Device:R ROUT1
 U 1 1 5EDF4212
 P 4600 2850
-F 0 "ROUT2" H 4670 2896 50  0000 L CNN
+F 0 "ROUT1" H 4670 2896 50  0000 L CNN
 F 1 "4.75 M" H 4670 2805 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 4530 2850 50  0001 C CNN
 F 3 "~" H 4600 2850 50  0001 C CNN
@@ -284,7 +284,7 @@ Wire Wire Line
 Wire Wire Line
 	2900 1600 4150 1600
 $Comp
-L PIC16F18446SSOP20pin:PIC16F18446 U4
+L Power_module_v0-rescue:PIC16F18446-PIC16F18446SSOP20pin U4
 U 1 1 5EDFC64B
 P 8350 2600
 F 0 "U4" H 8350 3165 50  0000 C CNN
@@ -601,7 +601,7 @@ SCL
 Text GLabel 4150 1500 2    50   Input ~ 0
 3V3
 $Comp
-L TPS22860:TPS22860 S2
+L Power_module_v0-rescue:TPS22860-TPS22860 S2
 U 1 1 5EE49BD8
 P 5950 4000
 F 0 "S2" H 6200 4475 50  0000 C CNN
@@ -612,7 +612,7 @@ F 3 "" H 5950 4000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L TPS22860:TPS22860 S1
+L Power_module_v0-rescue:TPS22860-TPS22860 S1
 U 1 1 5EE4AA8C
 P 5900 5850
 F 0 "S1" H 6150 6325 50  0000 C CNN
@@ -942,7 +942,7 @@ F 3 "~" H 9200 2700 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L tps7a05:TPS705 U3
+L Power_module_v0-rescue:TPS705-tps7a05 U3
 U 1 1 5EEB36FB
 P 2550 6450
 F 0 "U3" H 2775 6915 50  0000 C CNN
@@ -1029,7 +1029,7 @@ Wire Wire Line
 Text GLabel 2400 4000 1    50   Input ~ 0
 GND
 $Comp
-L BQ24040:BQ24040 U1
+L Power_module_v0-rescue:BQ24040-BQ24040 U1
 U 1 1 5EDFFF7A
 P 2050 4550
 F 0 "U1" H 2700 5150 50  0000 C CNN
@@ -1049,4 +1049,30 @@ Text Notes 4650 1450 0    50   ~ 0
 Cap van 470 µF aan de 3v3 hangen
 Text Notes 4950 4750 0    50   ~ 0
 8.2 k veranderen, zodat uw sampling ook tot aan 4.2V geraakt
+Text Notes 2200 6850 0    50   ~ 0
+BATT -> LDO -> 3V3
+Text Notes 4200 3450 0    50   ~ 0
+OK
+Text Notes 4250 3000 0    50   ~ 0
+OK
+Text Notes 4250 2600 0    50   ~ 0
+OK
+Text Notes 4950 2550 0    50   ~ 0
+OK
+Text Notes 4950 3000 0    50   ~ 0
+OK
+Text Notes 3300 3000 0    50   ~ 0
+OK
+Text Notes 3200 2500 0    50   ~ 0
+OK
+Text Notes 4600 1850 0    50   ~ 0
+OK
+Text Notes 3950 1150 0    50   ~ 0
+OK
+Text Notes 1400 1250 0    50   ~ 0
+OK
+Text Notes 1550 2750 0    50   ~ 0
+OK
+Text Notes 950  950  0    50   ~ 0
+MPPT OK 80%
 $EndSCHEMATC
