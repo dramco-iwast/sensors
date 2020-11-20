@@ -1,3 +1,12 @@
+////////////////////////////////////
+//
+//  Potential fix for the voltage drop problem: ADC can operate when device is in sleep.
+//  Periodically sample and store ADC value (example: every 64 sec), when motherboard requests it -> send stored ADC value
+//  This eliminates the voltage drop, experienced when the motherboard and power module is ON and are pulling about 50 mA
+//
+///////////////////////////////////
+
+
 
 #include "power.h"
 #include <math.h>
@@ -14,7 +23,7 @@
 #define SOL_VOLT   0x13
 #define BAT_VOLT   0x14
 
-//#define DEBUGGING
+#define DEBUGGING_THRESHOLD
 
 /* Forward declaration */
 void measureVolt(void);
@@ -26,6 +35,20 @@ void ADC_Init(void);
 void ADC_Fixed_Voltage_Ref(uint8_t mode);
 void Enter_sleep(void);
 
+/*======= Modification Pierre =======*/
+
+// Initialize watchdog timer
+void WDT_Init(void);
+
+// Variables
+
+// TODO: change to boolean?
+__persistent uint8_t batThresholdEnabled;
+__persistent uint16_t batThresholdLevel;
+bool underThreshold = false;
+float floatBatThresholdLevel = 0.0;
+
+/*===================================*/
 
 /* Variables */
 bool startMeasurement = false;
@@ -70,6 +93,16 @@ void LED_Blink(void)
     LED1_SetHigh();
     __delay_ms(100);
     LED1_SetLow();
+}
+
+void WDT_Init(void)
+{
+    // initialize timer for periodic measurements   
+    WDTCON0 = 0x1C; // 16 second period
+    //WDTCON0 = 0x20; // 64 second period
+    //  TODO: Change back to 64 sec
+    
+    WDTCON1 = 0x07; // LFINTOSC, window 100%
 }
 
 void ADC_Init(){
@@ -118,6 +151,11 @@ void ADC_Init(){
     ADACT = 0x00;
     // ADCS FOSC/2; 
     ADCLK = 0x00;
+    //  ADCLK = 0x07;
+    //  Doesnt matter, since we're just doing a single conversion
+    //  I've changed it back to the default value
+    //  TODO
+    
     // ADGO stop; ADFM right; ADON enabled; ADCS FOSC/ADCLK; ADCONT disabled; 
     ADCON0 = 0x84;
     
@@ -155,7 +193,8 @@ void Power_Init(){
     READY_SetDigitalOutput();
     READY_SetHigh();
     
-    // PMD0bits.IOCMD = 0; // Enable gpio clock
+    //  TODO: Don't think this is necessary: needs to be tested!
+//    PMD0bits.IOCMD = 0; // Enable gpio clock
     
     ADC_Init();
     
@@ -174,7 +213,6 @@ void Power_Init(){
     
     /* Test blink LED */
     LED_Blink();
-    
 
     SOL_MEAS_EN_SetLow();
     BAT_MEAS_EN_SetLow();
@@ -186,15 +224,24 @@ void Power_Init(){
     BAT_VOLT_SetDigitalInput(); 
     BAT_VOLT_SetAnalogMode();
     
-    /* Debugging */
-#ifdef DEBUGGING
+    WDT_Init();
+    
+#ifdef  DEBUGGING
     startMeasurement = true;
 #endif
+    
+    
+#ifdef  DEBUGGING_THRESHOLD
+    floatBatThresholdLevel = 3.3;
+    batThresholdEnabled = 1;
+#endif
+    
 }
 
 void Power_Measure(){
     startMeasurement = true;
 }
+
 
 
 void Measure(){
@@ -212,7 +259,8 @@ void Measure(){
 
     ADCC_GetSingleConversion(SOL_VOLT);                 // first measurement afte rreset seems to be fixed and need to be rejected
     solvoltage = ADCC_GetSingleConversion(SOL_VOLT);
-//    __delay_ms(2000);
+    //__delay_ms(2000);
+    //  TODO delay not necessary
 
     tempValue = ADCC_GetSingleConversion(SOL_VOLT);
     if(tempValue < solvoltage){                         // To make sure it is the lowest/ stable voltage that is captured
@@ -242,14 +290,18 @@ void Measure(){
             batteryundervoltage = 0;
         }
     }
+    
+    /* Threshold operation */
+    if(floatbatvoltage < floatBatThresholdLevel){
+        underThreshold = true;
+    }else{
+        underThreshold = false;
+    }
 
     // prepare data for I2C transmission: multiply by 600
     uint16_t databatvoltage = (uint16_t)(round(floatbatvoltage * 600));
     uint16_t datasolvoltage = (uint16_t)(round(floatsolvoltage * 600));
-       
-    
-    
-    
+      
     measurementData[0] = (uint8_t)(databatvoltage>>8);
     measurementData[1] = (uint8_t)(databatvoltage);
 
@@ -258,28 +310,68 @@ void Measure(){
 
     measurementData[4] = (uint8_t)(batteryundervoltage);
     measurementData[5] = 0x00;
-    
-    
+       
+    //  TODO: check if it's necessary to enable and disable fixed voltage ref every time
     ADC_Fixed_Voltage_Ref(DISABLE);
-
 }
 
-
+//  TODO needs changes
 void Power_Loop(){
     
-    /* Main Loop */
-    if(startMeasurement && !measurementRunning){
+    // TODO: Here I would do something like:
+    
+//    if(!measurementRunning)  // do not measure when a measurement is already running
+//        if(polled measurement) // wakeup from poll
+//           if(watchdog on)
+//               measure();
+//               generateInterrupt();
+//               enable watchdog
+//        else if(watchdog off)
+//            measure();
+//            generateInterrupt();
+//    else if(watchdog timeout) // wakeup from watchdog
+//        measure();
+//        check undervoltage
+//            generateInterrupt();
+//        enable watchdog
+//    else
+//        EnterSleep();
+        
+    if(startMeasurement && WDTCON0bits.SEN == 0) //WDT OFF (after WDT time-out)
+    {
         startMeasurement = false;
+        
         measurementRunning = true;
-
         Measure();      // Get battery voltage - solar panel voltage - calculate undervoltage param
+        measurementRunning = false;
+        
+        if(batThresholdEnabled && underThreshold)
+        {
+            generateIntPower();
+        }
+        
+        CLRWDT();
+        WDTCON0bits.SEN = 1; // enable WDT
+    }
+    else if(startMeasurement && WDTCON0bits.SEN == 1) //WDT ON (polling classic)
+    {
+        startMeasurement = false;
+        
+        measurementRunning = true;
+        Measure();      // Get battery voltage - solar panel voltage - calculate undervoltage param
+        measurementRunning = false;
         
         generateIntPower();
-        measurementRunning = false;
     }
-    
-    Enter_sleep();
-
+    else if(STATUSbits.nTO == 0)    //Watchdog time-out
+    {
+        WDTCON0bits.SEN = 0; // disable WDT
+        startMeasurement = true;
+    }
+    else
+    {
+        Enter_sleep();
+    }
 }
 
 void Power_GetData(uint8_t * data, uint8_t  * length){
@@ -288,19 +380,24 @@ void Power_GetData(uint8_t * data, uint8_t  * length){
     data[1] = measurementData[1];
 }
 
-
 void Power_SetThreshold(uint8_t metric, uint8_t * thresholdData){
     
-    /* TODO */
-    thresholdData[0] = 0;
-    thresholdData[1] = 0;
-    thresholdData[2] = 0;
-    thresholdData[3] = 0;
-    thresholdData[4] = 0;
+    if(metric==0)
+    {
+#ifdef DEBUGGING_THRESHOLD
+        LED1_SetHigh();
+        LED0_SetHigh();
+#endif
+        batThresholdEnabled = thresholdData[0];
+        batThresholdLevel = (uint16_t)((thresholdData[1]<<8) | thresholdData[2]);
+        floatBatThresholdLevel = (float) batThresholdLevel /600;
+#ifdef DEBUGGING_THRESHOLD
+        __delay_ms(1000);
+        LED1_SetLow();
+        LED0_SetLow();
+#endif
+    }
 }
-
-
-
 
 void generateIntPower(void){
     READY_SetLow();
