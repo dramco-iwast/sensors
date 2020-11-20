@@ -299,7 +299,7 @@ VBAT_OK_TO_MCU
 Text Notes 2000 3700 0    50   ~ 0
 USB charger IC
 $Comp
-L Connector:USB_B_Micro J3
+L Power_module_v0-rescue:USB_B_Micro-Connector J3
 U 1 1 5EE0210B
 P 10100 3050
 F 0 "J3" H 10157 3517 50  0000 C CNN
