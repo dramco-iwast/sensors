@@ -1,5 +1,5 @@
 
-# 1 "main.c"
+# 1 "system/interrupt.c"
 
 # 18 "C:/Users/Jona Cappelle/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\xc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -18420,164 +18420,14 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 
+# 12 "system/interrupt.h"
+void SetSensorInterruptHandler(void (* InterruptHandler)(void));
+
+# 15 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\stdbool.h"
+typedef unsigned char bool;
+
 # 4 "C:/Users/Jona Cappelle/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\__size_t.h"
 typedef unsigned size_t;
-
-# 7 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\stdarg.h"
-typedef void * va_list[1];
-
-#pragma intrinsic(__va_start)
-extern void * __va_start(void);
-
-#pragma intrinsic(__va_arg)
-extern void * __va_arg(void *, ...);
-
-# 43 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\stdio.h"
-struct __prbuf
-{
-char * ptr;
-void (* func)(char);
-};
-
-# 29 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\errno.h"
-extern int errno;
-
-# 12 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\conio.h"
-extern void init_uart(void);
-
-extern char getch(void);
-extern char getche(void);
-extern void putch(char);
-extern void ungetch(char);
-
-extern __bit kbhit(void);
-
-# 23
-extern char * cgets(char *);
-extern void cputs(const char *);
-
-# 88 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\stdio.h"
-extern int cprintf(char *, ...);
-#pragma printf_check(cprintf)
-
-
-
-extern int _doprnt(struct __prbuf *, const register char *, register va_list);
-
-
-# 180
-#pragma printf_check(vprintf) const
-#pragma printf_check(vsprintf) const
-
-extern char * gets(char *);
-extern int puts(const char *);
-extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
-extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
-extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
-extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
-extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
-extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
-
-#pragma printf_check(printf) const
-#pragma printf_check(sprintf) const
-extern int sprintf(char *, const char *, ...);
-extern int printf(const char *, ...);
-
-# 14 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\string.h"
-extern void * memcpy(void *, const void *, size_t);
-extern void * memmove(void *, const void *, size_t);
-extern void * memset(void *, int, size_t);
-
-
-
-
-extern void * __builtin_memcpy(void *, const void *, size_t);
-#pragma intrinsic(__builtin_memcpy)
-
-# 36
-extern char * strcat(char *, const char *);
-extern char * strcpy(char *, const char *);
-extern char * strncat(char *, const char *, size_t);
-extern char * strncpy(char *, const char *, size_t);
-extern char * strdup(const char *);
-extern char * strtok(char *, const char *);
-
-
-extern int memcmp(const void *, const void *, size_t);
-extern int strcmp(const char *, const char *);
-extern int stricmp(const char *, const char *);
-extern int strncmp(const char *, const char *, size_t);
-extern int strnicmp(const char *, const char *, size_t);
-extern void * memchr(const void *, int, size_t);
-extern size_t strcspn(const char *, const char *);
-extern char * strpbrk(const char *, const char *);
-extern size_t strspn(const char *, const char *);
-extern char * strstr(const char *, const char *);
-extern char * stristr(const char *, const char *);
-extern char * strerror(int);
-extern size_t strlen(const char *);
-extern char * strchr(const char *, int);
-extern char * strichr(const char *, int);
-extern char * strrchr(const char *, int);
-extern char * strrichr(const char *, int);
-
-# 15 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\stdbool.h"
-typedef unsigned char bool;
-
-# 66 "global.h"
-typedef struct sensorApi{
-void (* Init)(void);
-void (* Measure)(void);
-void (* Loop)(void);
-void (* GetData)(uint8_t *, uint8_t *);
-void (* UpdateThreshold)(uint8_t, uint8_t *);
-} Sensor_API_t;
-
-
-# 82
-#pragma config FEXTOSC = OFF
-#pragma config RSTOSC = HFINT1
-#pragma config CLKOUTEN = OFF
-#pragma config CSWEN = ON
-#pragma config FCMEN = OFF
-
-
-#pragma config MCLRE = ON
-#pragma config PWRTS = OFF
-#pragma config LPBOREN = OFF
-#pragma config BOREN = OFF
-#pragma config BORV = LO
-#pragma config ZCDDIS = OFF
-#pragma config PPS1WAY = OFF
-#pragma config STVREN = OFF
-
-
-#pragma config WDTCPS = WDTCPS_10
-
-#pragma config WDTE = OFF
-#pragma config WDTCWS = WDTCWS_7
-#pragma config WDTCCS = SC
-
-
-#pragma config BBSIZE = BB512
-#pragma config BBEN = OFF
-#pragma config SAFEN = OFF
-#pragma config WRTAPP = OFF
-#pragma config WRTB = OFF
-#pragma config WRTC = OFF
-#pragma config WRTD = OFF
-#pragma config WRTSAF = OFF
-#pragma config LVP = ON
-
-
-#pragma config CP = OFF
-
-# 34 "system/system.h"
-void SYSTEM_Initialize(uint8_t slave_address);
-void SYSTEM_SetSensorISR(void (* SensorInterruptHandler)(void));
-
-# 15 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\stdbool.h"
-typedef unsigned char bool;
 
 # 6 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\stddef.h"
 typedef int ptrdiff_t;
@@ -18610,105 +18460,147 @@ void I2C1_ClearTxBuffer(void);
 # 15 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\stdbool.h"
 typedef unsigned char bool;
 
-# 183 "sensor/power.h"
-void Power_Init(void);
-void Power_Measure(void);
-void Power_Loop(void);
-void Power_GetData(uint8_t * data, uint8_t * length);
-void Power_SetThreshold(uint8_t metric, uint8_t * thresholdData);
+# 72 "system/adcc.h"
+typedef uint16_t adc_result_t;
+
+# 89
+typedef enum
+{
+channel_ANC1 = 0x11,
+channel_Vss = 0x3B,
+channel_Temp_Sensor = 0x3C,
+channel_DAC1_Output = 0x3D,
+channel_FVR_Buffer1 = 0x3E,
+channel_FVR_Buffer2 = 0x3F
+} adcc_channel_t;
+
+# 131
+void ADCC_Initialize(void);
+
+# 160
+void ADCC_StartConversion(adcc_channel_t channel);
+
+# 190
+bool ADCC_IsConversionDone();
+
+# 222
+adc_result_t ADCC_GetConversionResult(void);
+
+# 253
+adc_result_t ADCC_GetSingleConversion(adcc_channel_t channel);
+
+# 278
+void ADCC_StopConversion(void);
+
+# 305
+void ADCC_SetStopOnInterrupt(void);
+
+# 330
+void ADCC_DischargeSampleCapacitor(void);
+
+# 356
+void ADCC_LoadAcquisitionRegister(uint16_t);
+
+# 382
+void ADCC_SetPrechargeTime(uint16_t);
+
+# 407
+void ADCC_SetRepeatCount(uint8_t);
+
+# 435
+uint8_t ADCC_GetCurrentCountofConversions(void);
+
+# 459
+void ADCC_ClearAccumulator(void);
+
+# 484
+uint24_t ADCC_GetAccumulatorValue(void);
+
+# 512
+bool ADCC_HasAccumulatorOverflowed(void);
+
+# 537
+uint16_t ADCC_GetFilterValue(void);
+
+# 565
+uint16_t ADCC_GetPreviousResult(void);
+
+# 591
+void ADCC_DefineSetPoint(uint16_t);
+
+# 617
+void ADCC_SetUpperThreshold(uint16_t);
+
+# 643
+void ADCC_SetLowerThreshold(uint16_t);
+
+# 670
+uint16_t ADCC_GetErrorCalculation(void);
+
+# 697
+void ADCC_EnableDoubleSampling(void);
+
+# 721
+void ADCC_EnableContinuousConversion(void);
+
+# 745
+void ADCC_DisableContinuousConversion(void);
+
+# 773
+bool ADCC_HasErrorCrossedUpperThreshold(void);
+
+# 801
+bool ADCC_HasErrorCrossedLowerThreshold(void);
+
+# 828
+uint8_t ADCC_GetConversionStageStatus(void);
+
+# 845
+void ADCC_SetADIInterruptHandler(void (* InterruptHandler)(void));
+
+# 861
+void ADCC_ISR(void);
+
+# 880
+void ADCC_DefaultInterruptHandler(void);
+
+# 6 "system/interrupt.c"
+void DefaultSensorInterruptHandler(void);
+void (* SensorInterruptHandler)(void) = &DefaultSensorInterruptHandler;
 
 
-
-void generateIntPower(void);
-
-# 44 "main.c"
-Sensor_API_t sensorAPI = { Power_Init, Power_Measure, Power_Loop, Power_GetData, Power_SetThreshold };
-
-uint8_t mData[2 * 0x03];
-uint8_t mDataLength;
-
-void toggleInt(void);
-
-# 53
-void main(void)
+void __interrupt() Interrupt_Handler (void)
 {
 
-SYSTEM_Initialize(0x45);
 
-sensorAPI.Init();
+SensorInterruptHandler();
 
-while(1){
-sensorAPI.Loop();
-sensorAPI.GetData(mData, &mDataLength);
-I2C1_SetTransmitData(mData, mDataLength);
-
-
-if(I2C1_CommandReceived()){
-uint8_t cmd;
-I2C1_GetCommand(&cmd);
-
-switch(cmd){
-
-case 0x10:{
-
-uint8_t ack = 0xAA;
-I2C1_SetTransmitData(&ack, 1);
-} break;
-
-
-case 0x11:{
-
-uint8_t type = 0x01;
-I2C1_SetTransmitData(&type, 1);
-} break;
-
-
-case 0x23:{
-
-uint8_t mnr = 0x03;
-I2C1_SetTransmitData(&mnr, 1);
-} break;
-
-
-case 0x13:{
-
-sensorAPI.Measure();
-} break;
-
-
-case 0x14:{
-
-uint8_t retries = 20;
-while(!I2C1_TxBufferEmpty() && retries--){
-_delay((unsigned long)((1)*(32000000/4000.0)));
+# 22
+if(INTCONbits.PEIE == 1)
+{
+if(PIE3bits.SSP1IE == 1 && PIR3bits.SSP1IF == 1)
+{
+I2C1_ISR();
 }
-} break;
-
-
-case 0x15:{
-toggleInt();
-} break;
-
-
-case 0x24:{
-_delay((unsigned long)((2)*(32000000/4000.0)));
-uint8_t len;
-uint8_t data[20];
-I2C1_GetCommandData(data, &len);
-if(len == 6){
-sensorAPI.UpdateThreshold(data[0], data+1);
+else if(PIE1bits.ADIE == 1 && PIR1bits.ADIF == 1)
+{
+ADCC_ISR();
 }
-} break;
+else
+{
 
-
-default:{
-} break;
 }
 }
+else
+{
+
 }
 }
 
-void toggleInt(void){
-do { LATCbits.LATC7 = ~LATCbits.LATC7; } while(0);
+void SetSensorInterruptHandler(void (* InterruptHandler)(void)){
+SensorInterruptHandler = InterruptHandler;
 }
 
+void DefaultSensorInterruptHandler(void){
+return;
+}

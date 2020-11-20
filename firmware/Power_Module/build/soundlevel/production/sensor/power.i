@@ -18423,14 +18423,53 @@ extern __bank0 __bit __timeout;
 # 15 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\stdbool.h"
 typedef unsigned char bool;
 
-# 69 "sensor/../global.h"
-typedef struct devApi{
+# 66 "sensor/../global.h"
+typedef struct sensorApi{
 void (* Init)(void);
 void (* Measure)(void);
 void (* Loop)(void);
 void (* GetData)(uint8_t *, uint8_t *);
 void (* UpdateThreshold)(uint8_t, uint8_t *);
-} Device_API_t;
+} Sensor_API_t;
+
+
+# 82
+#pragma config FEXTOSC = OFF
+#pragma config RSTOSC = HFINT1
+#pragma config CLKOUTEN = OFF
+#pragma config CSWEN = ON
+#pragma config FCMEN = OFF
+
+
+#pragma config MCLRE = ON
+#pragma config PWRTS = OFF
+#pragma config LPBOREN = OFF
+#pragma config BOREN = OFF
+#pragma config BORV = LO
+#pragma config ZCDDIS = OFF
+#pragma config PPS1WAY = OFF
+#pragma config STVREN = OFF
+
+
+#pragma config WDTCPS = WDTCPS_10
+
+#pragma config WDTE = OFF
+#pragma config WDTCWS = WDTCWS_7
+#pragma config WDTCCS = SC
+
+
+#pragma config BBSIZE = BB512
+#pragma config BBEN = OFF
+#pragma config SAFEN = OFF
+#pragma config WRTAPP = OFF
+#pragma config WRTB = OFF
+#pragma config WRTC = OFF
+#pragma config WRTD = OFF
+#pragma config WRTSAF = OFF
+#pragma config LVP = ON
+
+
+#pragma config CP = OFF
 
 # 183 "sensor/power.h"
 void Power_Init(void);
@@ -18471,101 +18510,10 @@ extern double fmod(double, double);
 extern double trunc(double);
 extern double round(double);
 
-# 118 "sensor/../mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_Initialize (void);
-
-# 130
-void PIN_MANAGER_IOC(void);
-
-# 143
-void IOCCF0_ISR(void);
-
-# 166
-void IOCCF0_SetInterruptHandler(void (* InterruptHandler)(void));
-
-# 190
-extern void (*IOCCF0_InterruptHandler)(void);
-
-# 214
-void IOCCF0_DefaultInterruptHandler(void);
-
-# 227
-void IOCCF2_ISR(void);
-
-# 250
-void IOCCF2_SetInterruptHandler(void (* InterruptHandler)(void));
-
-# 274
-extern void (*IOCCF2_InterruptHandler)(void);
-
-# 298
-void IOCCF2_DefaultInterruptHandler(void);
-
-# 311
-void IOCCF4_ISR(void);
-
-# 334
-void IOCCF4_SetInterruptHandler(void (* InterruptHandler)(void));
-
-# 358
-extern void (*IOCCF4_InterruptHandler)(void);
-
-# 382
-void IOCCF4_DefaultInterruptHandler(void);
-
-# 395
-void IOCCF6_ISR(void);
-
-# 418
-void IOCCF6_SetInterruptHandler(void (* InterruptHandler)(void));
-
-# 442
-extern void (*IOCCF6_InterruptHandler)(void);
-
-# 466
-void IOCCF6_DefaultInterruptHandler(void);
-
 # 15 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\stdbool.h"
 typedef unsigned char bool;
 
-# 15
-typedef unsigned char bool;
-
-# 4 "C:/Users/Jona Cappelle/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\__size_t.h"
-typedef unsigned size_t;
-
-# 6 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\stddef.h"
-typedef int ptrdiff_t;
-
-# 80 "sensor/../mcc_generated_files/i2c1.h"
-typedef enum{
-I2C1_SLAVE_WRITE_REQUEST,
-I2C1_SLAVE_READ_REQUEST,
-I2C1_SLAVE_WRITE_COMPLETED,
-I2C1_SLAVE_READ_COMPLETED,
-} I2C1_SLAVE_DRIVER_STATUS;
-
-# 114
-void I2C1_Initialize(uint8_t slave_address);
-
-# 134
-void I2C1_ISR(void);
-
-# 141
-extern volatile uint8_t I2C1_slaveWriteData;
-
-# 148
-bool I2C1_CommandReceived(void);
-void I2C1_GetCommand(uint8_t * cmd);
-void I2C1_GetCommandData(uint8_t * data, uint8_t * len);
-void I2C1_SetTransmitData(uint8_t * data, uint8_t len);
-bool I2C1_TxBufferEmpty(void);
-void I2C1_ClearTxBuffer(void);
-
-# 15 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\stdbool.h"
-typedef unsigned char bool;
-
-# 72 "sensor/../mcc_generated_files/adcc.h"
+# 72 "sensor/../system/adcc.h"
 typedef uint16_t adc_result_t;
 
 # 89
@@ -18669,16 +18617,7 @@ void ADCC_ISR(void);
 # 880
 void ADCC_DefaultInterruptHandler(void);
 
-# 72 "sensor/../mcc_generated_files/mcc.h"
-void SYSTEM_Initialize(uint8_t slave_address);
-
-# 85
-void OSCILLATOR_Initialize(void);
-
-# 98
-void PMD_Initialize(void);
-
-# 19 "sensor/power.c"
+# 20 "sensor/power.c"
 void measureVolt(void);
 void initializePowerModule(void);
 uint16_t GetSingleConversion(uint8_t channel);
@@ -18700,7 +18639,7 @@ uint16_t tempValue = 0;
 uint16_t batvoltage = 0;
 uint8_t batteryundervoltage = 0;
 
-# 45
+# 46
 void LED_Blink(void)
 {
 
@@ -18813,11 +18752,7 @@ void Power_Init(){
 do { TRISCbits.TRISC7 = 0; } while(0);
 do { LATCbits.LATC7 = 1; } while(0);
 
-PMD0bits.IOCMD = 0;
-
-ADC_Init();
-
-
+# 163
 do { TRISCbits.TRISC0 = 0; } while(0);
 do { TRISCbits.TRISC6 = 0; } while(0);
 
@@ -18844,7 +18779,7 @@ do { ANSELCbits.ANSC3 = 1; } while(0);
 do { TRISCbits.TRISC4 = 1; } while(0);
 do { ANSELCbits.ANSC4 = 1; } while(0);
 
-# 192
+# 193
 }
 
 void Power_Measure(){
@@ -18927,7 +18862,7 @@ if(startMeasurement && !measurementRunning){
 startMeasurement = 0;
 measurementRunning = 1;
 
-Measure();
+
 
 generateIntPower();
 measurementRunning = 0;
@@ -18947,7 +18882,11 @@ data[1] = measurementData[1];
 void Power_SetThreshold(uint8_t metric, uint8_t * thresholdData){
 
 
-
+thresholdData[0] = 0;
+thresholdData[1] = 0;
+thresholdData[2] = 0;
+thresholdData[3] = 0;
+thresholdData[4] = 0;
 }
 
 

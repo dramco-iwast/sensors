@@ -34,14 +34,14 @@
 #include <stdbool.h>
 
 #include "global.h"
-#include "mcc_generated_files/pin_manager.h"
-#include "mcc_generated_files/mcc.h"
+#include "system/system.h"
+#include "system/i2c1.h"
 
 // include sensor
 #include "sensor/power.h"
 
 
-Device_API_t sensorAPI = POWER_API;
+Sensor_API_t sensorAPI = POWER_API;
 
 uint8_t mData[2 * M_NR];
 uint8_t mDataLength;

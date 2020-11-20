@@ -1,9 +1,10 @@
 
 #include "power.h"
 #include <math.h>
-#include "../mcc_generated_files/mcc.h"
-#include "../mcc_generated_files/adcc.h"
-#include"../mcc_generated_files/i2c1.h"
+#include "../system/adcc.h"
+//#include "../mcc_generated_files/mcc.h"
+//#include "../system/adcc.h"
+//#include"../mcc_generated_files/i2c1.h"
 
 
 #ifdef SENSOR_TYPE
@@ -154,7 +155,7 @@ void Power_Init(){
     READY_SetDigitalOutput();
     READY_SetHigh();
     
-    PMD0bits.IOCMD = 0; // Enable gpio clock
+    // PMD0bits.IOCMD = 0; // Enable gpio clock
     
     ADC_Init();
     
@@ -291,7 +292,11 @@ void Power_GetData(uint8_t * data, uint8_t  * length){
 void Power_SetThreshold(uint8_t metric, uint8_t * thresholdData){
     
     /* TODO */
-
+    thresholdData[0] = 0;
+    thresholdData[1] = 0;
+    thresholdData[2] = 0;
+    thresholdData[3] = 0;
+    thresholdData[4] = 0;
 }
 
 

@@ -1,125 +1,54 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"805 C:/Users/Jona Cappelle/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18446.h
-[s S42 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S42 . . LATB4 LATB5 LATB6 LATB7 ]
-"804
-[u S41 `S42 1 ]
-[n S41 . . ]
-"813
-[v _LATBbits `VS41 ~T0 @X0 0 e@25 ]
-[v F38 `(v ~T0 @X0 1 tf1`ul ]
-"12 C:/Users/Jona Cappelle/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\builtins.h
-[v __delay `JF38 ~T0 @X0 0 e ]
-[p i __delay ]
-"844 C:/Users/Jona Cappelle/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18446.h
-[s S44 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S44 . LATC0 LATC1 LATC2 LATC3 LATC4 LATC5 LATC6 LATC7 ]
-"843
-[u S43 `S44 1 ]
-[n S43 . . ]
-"855
-[v _LATCbits `VS43 ~T0 @X0 0 e@26 ]
-"21993
-[v _FVRCON `Vuc ~T0 @X0 0 e@2316 ]
-"907
-[v _ADLTHL `Vuc ~T0 @X0 0 e@140 ]
-"1035
-[v _ADLTHH `Vuc ~T0 @X0 0 e@141 ]
-"1170
-[v _ADUTHL `Vuc ~T0 @X0 0 e@142 ]
-"1298
-[v _ADUTHH `Vuc ~T0 @X0 0 e@143 ]
-"1696
-[v _ADSTPTL `Vuc ~T0 @X0 0 e@146 ]
-"1824
-[v _ADSTPTH `Vuc ~T0 @X0 0 e@147 ]
-"2480
-[v _ADACCU `Vuc ~T0 @X0 0 e@152 ]
-"2736
-[v _ADRPT `Vuc ~T0 @X0 0 e@154 ]
-"3382
-[v _ADPCH `Vuc ~T0 @X0 0 e@159 ]
-"3493
-[v _ADACQL `Vuc ~T0 @X0 0 e@268 ]
-"3621
-[v _ADACQH `Vuc ~T0 @X0 0 e@269 ]
-"3713
-[v _ADCAP `Vuc ~T0 @X0 0 e@270 ]
-"3812
-[v _ADPREL `Vuc ~T0 @X0 0 e@271 ]
-"3940
-[v _ADPREH `Vuc ~T0 @X0 0 e@272 ]
-"4163
-[v _ADCON1 `Vuc ~T0 @X0 0 e@274 ]
-"4274
-[v _ADCON2 `Vuc ~T0 @X0 0 e@275 ]
-"4452
-[v _ADCON3 `Vuc ~T0 @X0 0 e@276 ]
-"4582
-[v _ADSTAT `Vuc ~T0 @X0 0 e@277 ]
-"4707
-[v _ADREF `Vuc ~T0 @X0 0 e@278 ]
-"4847
-[v _ADACT `Vuc ~T0 @X0 0 e@279 ]
-"4939
-[v _ADCLK `Vuc ~T0 @X0 0 e@280 ]
-"4032
-[v _ADCON0 `Vuc ~T0 @X0 0 e@273 ]
-"21051
-[s S976 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S976 . DOZE . DOE ROI DOZEN IDLEN ]
-"21059
-[s S977 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S977 . DOZE0 DOZE1 DOZE2 ]
-"21050
-[u S975 `S976 1 `S977 1 ]
-[n S975 . . . ]
-"21065
-[v _CPUDOZEbits `VS975 ~T0 @X0 0 e@2188 ]
-"8 C:/Users/Jona Cappelle/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\builtins.h
-[v ___nop `(v ~T0 @X0 0 ef ]
-[p i ___nop ]
-"693 C:/Users/Jona Cappelle/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18446.h
-[s S38 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S38 . TRISC0 TRISC1 TRISC2 TRISC3 TRISC4 TRISC5 TRISC6 TRISC7 ]
-"692
-[u S37 `S38 1 ]
-[n S37 . . ]
-"704
-[v _TRISCbits `VS37 ~T0 @X0 0 e@20 ]
-"31041
-[s S1457 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1457 . . ANSB4 ANSB5 ANSB6 ANSB7 ]
-"31040
-[u S1456 `S1457 1 ]
-[n S1456 . . ]
-"31049
-[v _ANSELBbits `VS1456 ~T0 @X0 0 e@8003 ]
-"654
-[s S36 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S36 . . TRISB4 TRISB5 TRISB6 TRISB7 ]
-"653
-[u S35 `S36 1 ]
-[n S35 . . ]
-"662
-[v _TRISBbits `VS35 ~T0 @X0 0 e@19 ]
-"31353
-[s S1473 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1473 . ANSC0 ANSC1 ANSC2 ANSC3 ANSC4 ANSC5 ANSC6 ANSC7 ]
-"31352
-[u S1472 `S1473 1 ]
-[n S1472 . . ]
-"31364
-[v _ANSELCbits `VS1472 ~T0 @X0 0 e@8014 ]
-"213 sensor/power.c
-[c E10845 17 59 60 61 62 63 .. ]
-[n E10845 . channel_ANC1 channel_Vss channel_Temp_Sensor channel_DAC1_Output channel_FVR_Buffer1 channel_FVR_Buffer2  ]
-"253 sensor/../system/adcc.h
-[v _ADCC_GetSingleConversion `(ui ~T0 @X0 0 ef1`E10845 ]
-"55 C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\math.h
-[v _round `(d ~T0 @X0 0 ef1`d ]
-"191 sensor/power.h
-[v _generateIntPower `(v ~T0 @X0 0 ef ]
+[v F10855 `(v ~T0 @X0 0 tf ]
+"6 system/interrupt.c
+[v _DefaultSensorInterruptHandler `(v ~T0 @X0 0 ef ]
+[t ~ __interrupt . k ]
+[t T4 __interrupt  ]
+"420 C:/Users/Jona Cappelle/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18446.h
+[s S26 :1 `uc 1 :5 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S26 . INTEDG . PEIE GIE ]
+"419
+[u S25 `S26 1 ]
+[n S25 . . ]
+"427
+[v _INTCONbits `VS25 ~T0 @X0 0 e@11 ]
+"19490
+[s S904 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S904 . SSP1IE BCL1IE SSP2IE BCL2IE TX1IE RC1IE ]
+"19489
+[u S903 `S904 1 ]
+[n S903 . . ]
+"19499
+[v _PIE3bits `VS903 ~T0 @X0 0 e@1817 ]
+"19119
+[s S886 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S886 . SSP1IF BCL1IF SSP2IF BCL2IF TX1IF RC1IF ]
+"19118
+[u S885 `S886 1 ]
+[n S885 . . ]
+"19128
+[v _PIR3bits `VS885 ~T0 @X0 0 e@1807 ]
+"134 system/i2c1.h
+[v _I2C1_ISR `(v ~T0 @X0 0 ef ]
+"19418 C:/Users/Jona Cappelle/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18446.h
+[s S900 :1 `uc 1 :1 `uc 1 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S900 . ADIE ADTIE . CSWIE OSFIE ]
+"19417
+[u S899 `S900 1 ]
+[n S899 . . ]
+"19426
+[v _PIE1bits `VS899 ~T0 @X0 0 e@1815 ]
+"19047
+[s S882 :1 `uc 1 :1 `uc 1 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S882 . ADIF ADTIF . CSWIF OSFIF ]
+"19046
+[u S881 `S882 1 ]
+[n S881 . . ]
+"19055
+[v _PIR1bits `VS881 ~T0 @X0 0 e@1805 ]
+"861 system/adcc.h
+[v _ADCC_ISR `(v ~T0 @X0 0 ef ]
+[v F10752 `(v ~T0 @X0 0 tf ]
 [; ;xc8\pic\include\xc.h: 18: extern const char __xc8_OPTIM_SPEED;
 [; ;xc8\pic\include\xc.h: 20: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -12215,100 +12144,25 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;xc8\pic\include\pic.h: 127: extern __bank0 unsigned char __resetbits;
 [; ;xc8\pic\include\pic.h: 128: extern __bank0 __bit __powerdown;
 [; ;xc8\pic\include\pic.h: 129: extern __bank0 __bit __timeout;
+[; ;interrupt.h: 12: void SetSensorInterruptHandler(void (* InterruptHandler)(void));
 [; ;stdbool.h: 15: typedef unsigned char bool;
-[; ;global.h: 66: typedef struct sensorApi{
-[; ;global.h: 67: void (* Init)(void);
-[; ;global.h: 68: void (* Measure)(void);
-[; ;global.h: 69: void (* Loop)(void);
-[; ;global.h: 70: void (* GetData)(uint8_t *, uint8_t *);
-[; ;global.h: 71: void (* UpdateThreshold)(uint8_t, uint8_t *);
-[; ;global.h: 72: } Sensor_API_t;
-"82 sensor/../global.h
-[p x FEXTOSC=OFF ]
-"83
-[p x RSTOSC=HFINT1 ]
-"84
-[p x CLKOUTEN=OFF ]
-"85
-[p x CSWEN=ON ]
-"86
-[p x FCMEN=OFF ]
-"89
-[p x MCLRE=ON ]
-"90
-[p x PWRTS=OFF ]
-"91
-[p x LPBOREN=OFF ]
-"92
-[p x BOREN=OFF ]
-"93
-[p x BORV=LO ]
-"94
-[p x ZCDDIS=OFF ]
-"95
-[p x PPS1WAY=OFF ]
-"96
-[p x STVREN=OFF ]
-"99
-[p x WDTCPS=WDTCPS_10 ]
-"101
-[p x WDTE=OFF ]
-"102
-[p x WDTCWS=WDTCWS_7 ]
-"103
-[p x WDTCCS=SC ]
-"106
-[p x BBSIZE=BB512 ]
-"107
-[p x BBEN=OFF ]
-"108
-[p x SAFEN=OFF ]
-"109
-[p x WRTAPP=OFF ]
-"110
-[p x WRTB=OFF ]
-"111
-[p x WRTC=OFF ]
-"112
-[p x WRTD=OFF ]
-"113
-[p x WRTSAF=OFF ]
-"114
-[p x LVP=ON ]
-"117
-[p x CP=OFF ]
-[; ;power.h: 183: void Power_Init(void);
-[; ;power.h: 184: void Power_Measure(void);
-[; ;power.h: 185: void Power_Loop(void);
-[; ;power.h: 186: void Power_GetData(uint8_t * data, uint8_t * length);
-[; ;power.h: 187: void Power_SetThreshold(uint8_t metric, uint8_t * thresholdData);
-[; ;power.h: 191: void generateIntPower(void);
-[; ;math.h: 30: extern double fabs(double);
-[; ;math.h: 31: extern double floor(double);
-[; ;math.h: 32: extern double ceil(double);
-[; ;math.h: 33: extern double modf(double, double *);
-[; ;math.h: 34: extern double sqrt(double);
-[; ;math.h: 35: extern double atof(const char *);
-[; ;math.h: 36: extern double sin(double) ;
-[; ;math.h: 37: extern double cos(double) ;
-[; ;math.h: 38: extern double tan(double) ;
-[; ;math.h: 39: extern double asin(double) ;
-[; ;math.h: 40: extern double acos(double) ;
-[; ;math.h: 41: extern double atan(double);
-[; ;math.h: 42: extern double atan2(double, double) ;
-[; ;math.h: 43: extern double log(double);
-[; ;math.h: 44: extern double log10(double);
-[; ;math.h: 45: extern double pow(double, double) ;
-[; ;math.h: 46: extern double exp(double) ;
-[; ;math.h: 47: extern double sinh(double) ;
-[; ;math.h: 48: extern double cosh(double) ;
-[; ;math.h: 49: extern double tanh(double);
-[; ;math.h: 50: extern double eval_poly(double, const double *, int);
-[; ;math.h: 51: extern double frexp(double, int *);
-[; ;math.h: 52: extern double ldexp(double, int);
-[; ;math.h: 53: extern double fmod(double, double);
-[; ;math.h: 54: extern double trunc(double);
-[; ;math.h: 55: extern double round(double);
+[; ;xc8\pic\include\__size_t.h: 4: typedef unsigned size_t;
+[; ;stddef.h: 6: typedef int ptrdiff_t;
+[; ;i2c1.h: 80: typedef enum{
+[; ;i2c1.h: 81: I2C1_SLAVE_WRITE_REQUEST,
+[; ;i2c1.h: 82: I2C1_SLAVE_READ_REQUEST,
+[; ;i2c1.h: 83: I2C1_SLAVE_WRITE_COMPLETED,
+[; ;i2c1.h: 84: I2C1_SLAVE_READ_COMPLETED,
+[; ;i2c1.h: 85: } I2C1_SLAVE_DRIVER_STATUS;
+[; ;i2c1.h: 114: void I2C1_Initialize(uint8_t slave_address);
+[; ;i2c1.h: 134: void I2C1_ISR(void);
+[; ;i2c1.h: 141: extern volatile uint8_t I2C1_slaveWriteData;
+[; ;i2c1.h: 148: bool I2C1_CommandReceived(void);
+[; ;i2c1.h: 149: void I2C1_GetCommand(uint8_t * cmd);
+[; ;i2c1.h: 150: void I2C1_GetCommandData(uint8_t * data, uint8_t * len);
+[; ;i2c1.h: 151: void I2C1_SetTransmitData(uint8_t * data, uint8_t len);
+[; ;i2c1.h: 152: bool I2C1_TxBufferEmpty(void);
+[; ;i2c1.h: 153: void I2C1_ClearTxBuffer(void);
 [; ;stdbool.h: 15: typedef unsigned char bool;
 [; ;adcc.h: 72: typedef uint16_t adc_result_t;
 [; ;adcc.h: 89: typedef enum
@@ -12350,746 +12204,112 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;adcc.h: 845: void ADCC_SetADIInterruptHandler(void (* InterruptHandler)(void));
 [; ;adcc.h: 861: void ADCC_ISR(void);
 [; ;adcc.h: 880: void ADCC_DefaultInterruptHandler(void);
-[; ;power.c: 20: void measureVolt(void);
-[; ;power.c: 21: void initializePowerModule(void);
-[; ;power.c: 22: uint16_t GetSingleConversion(uint8_t channel);
-[; ;power.c: 23: void generateIntPower(void);
-[; ;power.c: 24: void LED_Blink(void);
-[; ;power.c: 25: void ADC_Init(void);
-[; ;power.c: 26: void ADC_Fixed_Voltage_Ref(uint8_t mode);
-[; ;power.c: 27: void Enter_sleep(void);
-"31 sensor/power.c
-[v _startMeasurement `uc ~T0 @X0 1 e ]
-[i _startMeasurement
--> -> 0 `i `uc
+[; ;interrupt.c: 6: void DefaultSensorInterruptHandler(void);
+"7 system/interrupt.c
+[v _SensorInterruptHandler `*F10855 ~T0 @X0 1 e ]
+[i _SensorInterruptHandler
+&U _DefaultSensorInterruptHandler
 ]
-[; ;power.c: 31: bool startMeasurement = 0;
-"32
-[v _measurementRunning `uc ~T0 @X0 1 e ]
-[i _measurementRunning
--> -> 0 `i `uc
-]
-[; ;power.c: 32: bool measurementRunning = 0;
-"33
-[v _measurementData `Vuc ~T0 @X0 * -> 2 `i -> 3 `i e ]
-[; ;power.c: 33: volatile uint8_t measurementData[2* 0x03];
-"34
-[v _floatsolvoltage `f ~T0 @X0 1 e ]
-[; ;power.c: 34: float floatsolvoltage;
-"35
-[v _floatbatvoltage `f ~T0 @X0 1 e ]
-[; ;power.c: 35: float floatbatvoltage;
-"36
-[v _solvoltage `ui ~T0 @X0 1 e ]
-[i _solvoltage
--> -> 0 `i `ui
-]
-[; ;power.c: 36: uint16_t solvoltage = 0;
-"37
-[v _tempValue `ui ~T0 @X0 1 e ]
-[i _tempValue
--> -> 0 `i `ui
-]
-[; ;power.c: 37: uint16_t tempValue = 0;
-"38
-[v _batvoltage `ui ~T0 @X0 1 e ]
-[i _batvoltage
--> -> 0 `i `ui
-]
-[; ;power.c: 38: uint16_t batvoltage = 0;
-"39
-[v _batteryundervoltage `uc ~T0 @X0 1 e ]
-[i _batteryundervoltage
--> -> 0 `i `uc
-]
-[; ;power.c: 39: uint8_t batteryundervoltage = 0;
-"46
-[v _LED_Blink `(v ~T0 @X0 1 ef ]
-"47
+[; ;interrupt.c: 7: void (* SensorInterruptHandler)(void) = &DefaultSensorInterruptHandler;
+[v $root$_Interrupt_Handler `(v ~T0 @X0 0 e ]
+"10
+[v _Interrupt_Handler `(v ~T4 @X0 1 ef ]
+"11
 {
-[; ;power.c: 46: void LED_Blink(void)
-[; ;power.c: 47: {
-[e :U _LED_Blink ]
+[; ;interrupt.c: 10: void __interrupt() Interrupt_Handler (void)
+[; ;interrupt.c: 11: {
+[e :U _Interrupt_Handler ]
 [f ]
-[; ;power.c: 49: do { LATBbits.LATB6 = 1; } while(0);
-"49
-[e :U 1516 ]
+[; ;interrupt.c: 14: SensorInterruptHandler();
+"14
+[e ( *U _SensorInterruptHandler ..  ]
+[; ;interrupt.c: 22: if(INTCONbits.PEIE == 1)
+"22
+[e $ ! == -> . . _INTCONbits 0 2 `i -> 1 `i 1513  ]
+[; ;interrupt.c: 23: {
+"23
 {
-[e = . . _LATBbits 0 3 -> -> 1 `i `uc ]
+[; ;interrupt.c: 24: if(PIE3bits.SSP1IE == 1 && PIR3bits.SSP1IF == 1)
+"24
+[e $ ! && == -> . . _PIE3bits 0 0 `i -> 1 `i == -> . . _PIR3bits 0 0 `i -> 1 `i 1514  ]
+[; ;interrupt.c: 25: {
+"25
+{
+[; ;interrupt.c: 26: I2C1_ISR();
+"26
+[e ( _I2C1_ISR ..  ]
+"27
 }
-[e :U 1515 ]
-[; ;power.c: 50: _delay((unsigned long)((100)*(32000000/4000.0)));
-"50
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-[; ;power.c: 51: do { LATBbits.LATB6 = 0; } while(0);
-"51
-[e :U 1519 ]
+[; ;interrupt.c: 27: }
+[e $U 1515  ]
+"28
+[e :U 1514 ]
+[; ;interrupt.c: 28: else if(PIE1bits.ADIE == 1 && PIR1bits.ADIF == 1)
+[e $ ! && == -> . . _PIE1bits 0 0 `i -> 1 `i == -> . . _PIR1bits 0 0 `i -> 1 `i 1516  ]
+[; ;interrupt.c: 29: {
+"29
 {
-[e = . . _LATBbits 0 3 -> -> 0 `i `uc ]
+[; ;interrupt.c: 30: ADCC_ISR();
+"30
+[e ( _ADCC_ISR ..  ]
+"31
+}
+[; ;interrupt.c: 31: }
+[e $U 1517  ]
+"32
+[e :U 1516 ]
+[; ;interrupt.c: 32: else
+[; ;interrupt.c: 33: {
+"33
+{
+"35
+}
+[e :U 1517 ]
+[e :U 1515 ]
+"36
+}
+[; ;interrupt.c: 35: }
+[; ;interrupt.c: 36: }
+[e $U 1518  ]
+"37
+[e :U 1513 ]
+[; ;interrupt.c: 37: else
+[; ;interrupt.c: 38: {
+"38
+{
+"40
 }
 [e :U 1518 ]
-[; ;power.c: 52: _delay((unsigned long)((100)*(32000000/4000.0)));
-"52
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-[; ;power.c: 53: do { LATBbits.LATB6 = 1; } while(0);
-"53
-[e :U 1522 ]
-{
-[e = . . _LATBbits 0 3 -> -> 1 `i `uc ]
+[; ;interrupt.c: 40: }
+[; ;interrupt.c: 41: }
+"41
+[e :UE 1512 ]
 }
-[e :U 1521 ]
-[; ;power.c: 54: _delay((unsigned long)((100)*(32000000/4000.0)));
-"54
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-[; ;power.c: 55: do { LATBbits.LATB6 = 0; } while(0);
-"55
-[e :U 1525 ]
+"43
+[v _SetSensorInterruptHandler `(v ~T0 @X0 1 ef1`*F10752 ]
 {
-[e = . . _LATBbits 0 3 -> -> 0 `i `uc ]
-}
-[e :U 1524 ]
-[; ;power.c: 56: _delay((unsigned long)((100)*(32000000/4000.0)));
-"56
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-[; ;power.c: 57: do { LATBbits.LATB6 = 1; } while(0);
-"57
-[e :U 1528 ]
-{
-[e = . . _LATBbits 0 3 -> -> 1 `i `uc ]
-}
-[e :U 1527 ]
-[; ;power.c: 58: _delay((unsigned long)((100)*(32000000/4000.0)));
-"58
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-[; ;power.c: 59: do { LATBbits.LATB6 = 0; } while(0);
-"59
-[e :U 1531 ]
-{
-[e = . . _LATBbits 0 3 -> -> 0 `i `uc ]
-}
-[e :U 1530 ]
-[; ;power.c: 60: _delay((unsigned long)((500)*(32000000/4000.0)));
-"60
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-[; ;power.c: 62: do { LATCbits.LATC1 = 1; } while(0);
-"62
-[e :U 1534 ]
-{
-[e = . . _LATCbits 0 1 -> -> 1 `i `uc ]
-}
-[e :U 1533 ]
-[; ;power.c: 63: _delay((unsigned long)((100)*(32000000/4000.0)));
-"63
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-[; ;power.c: 64: do { LATCbits.LATC1 = 0; } while(0);
-"64
-[e :U 1537 ]
-{
-[e = . . _LATCbits 0 1 -> -> 0 `i `uc ]
-}
-[e :U 1536 ]
-[; ;power.c: 65: _delay((unsigned long)((100)*(32000000/4000.0)));
-"65
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-[; ;power.c: 66: do { LATCbits.LATC1 = 1; } while(0);
-"66
-[e :U 1540 ]
-{
-[e = . . _LATCbits 0 1 -> -> 1 `i `uc ]
-}
-[e :U 1539 ]
-[; ;power.c: 67: _delay((unsigned long)((100)*(32000000/4000.0)));
-"67
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-[; ;power.c: 68: do { LATCbits.LATC1 = 0; } while(0);
-"68
-[e :U 1543 ]
-{
-[e = . . _LATCbits 0 1 -> -> 0 `i `uc ]
-}
-[e :U 1542 ]
-[; ;power.c: 69: _delay((unsigned long)((100)*(32000000/4000.0)));
-"69
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-[; ;power.c: 70: do { LATCbits.LATC1 = 1; } while(0);
-"70
-[e :U 1546 ]
-{
-[e = . . _LATCbits 0 1 -> -> 1 `i `uc ]
-}
-[e :U 1545 ]
-[; ;power.c: 71: _delay((unsigned long)((100)*(32000000/4000.0)));
-"71
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-[; ;power.c: 72: do { LATCbits.LATC1 = 0; } while(0);
-"72
-[e :U 1549 ]
-{
-[e = . . _LATCbits 0 1 -> -> 0 `i `uc ]
-}
-[e :U 1548 ]
-[; ;power.c: 73: }
-"73
-[e :UE 1513 ]
-}
-"75
-[v _ADC_Init `(v ~T0 @X0 1 ef ]
-{
-[; ;power.c: 75: void ADC_Init(){
-[e :U _ADC_Init ]
+[; ;interrupt.c: 43: void SetSensorInterruptHandler(void (* InterruptHandler)(void)){
+[e :U _SetSensorInterruptHandler ]
+[v F10861 `(v ~T0 @X0 0 tf ]
+[v _InterruptHandler `*F10861 ~T0 @X0 1 r1 ]
 [f ]
-[; ;power.c: 77: FVRCON = 0x82;
-"77
-[e = _FVRCON -> -> 130 `i `uc ]
-[; ;power.c: 80: ADLTHL = 0x00;
-"80
-[e = _ADLTHL -> -> 0 `i `uc ]
-[; ;power.c: 82: ADLTHH = 0x00;
-"82
-[e = _ADLTHH -> -> 0 `i `uc ]
-[; ;power.c: 84: ADUTHL = 0x00;
-"84
-[e = _ADUTHL -> -> 0 `i `uc ]
-[; ;power.c: 86: ADUTHH = 0x00;
-"86
-[e = _ADUTHH -> -> 0 `i `uc ]
-[; ;power.c: 88: ADSTPTL = 0x00;
-"88
-[e = _ADSTPTL -> -> 0 `i `uc ]
-[; ;power.c: 90: ADSTPTH = 0x00;
-"90
-[e = _ADSTPTH -> -> 0 `i `uc ]
-[; ;power.c: 92: ADACCU = 0x00;
-"92
-[e = _ADACCU -> -> 0 `i `uc ]
-[; ;power.c: 94: ADRPT = 0x00;
-"94
-[e = _ADRPT -> -> 0 `i `uc ]
-[; ;power.c: 96: ADPCH = 0x00;
-"96
-[e = _ADPCH -> -> 0 `i `uc ]
-[; ;power.c: 98: ADACQL = 0x00;
-"98
-[e = _ADACQL -> -> 0 `i `uc ]
-[; ;power.c: 100: ADACQH = 0x00;
-"100
-[e = _ADACQH -> -> 0 `i `uc ]
-[; ;power.c: 102: ADCAP = 0x00;
-"102
-[e = _ADCAP -> -> 0 `i `uc ]
-[; ;power.c: 104: ADPREL = 0x00;
-"104
-[e = _ADPREL -> -> 0 `i `uc ]
-[; ;power.c: 106: ADPREH = 0x00;
-"106
-[e = _ADPREH -> -> 0 `i `uc ]
-[; ;power.c: 108: ADCON1 = 0x00;
-"108
-[e = _ADCON1 -> -> 0 `i `uc ]
-[; ;power.c: 110: ADCON2 = 0x00;
-"110
-[e = _ADCON2 -> -> 0 `i `uc ]
-[; ;power.c: 112: ADCON3 = 0x00;
-"112
-[e = _ADCON3 -> -> 0 `i `uc ]
-[; ;power.c: 114: ADSTAT = 0x00;
-"114
-[e = _ADSTAT -> -> 0 `i `uc ]
-[; ;power.c: 116: ADREF = 0x03;
-"116
-[e = _ADREF -> -> 3 `i `uc ]
-[; ;power.c: 118: ADACT = 0x00;
-"118
-[e = _ADACT -> -> 0 `i `uc ]
-[; ;power.c: 120: ADCLK = 0x00;
-"120
-[e = _ADCLK -> -> 0 `i `uc ]
-[; ;power.c: 122: ADCON0 = 0x84;
-"122
-[e = _ADCON0 -> -> 132 `i `uc ]
-[; ;power.c: 124: FVRCON = 0x00;
-"124
-[e = _FVRCON -> -> 0 `i `uc ]
-[; ;power.c: 125: }
-"125
-[e :UE 1550 ]
+[; ;interrupt.c: 44: SensorInterruptHandler = InterruptHandler;
+"44
+[e = _SensorInterruptHandler _InterruptHandler ]
+[; ;interrupt.c: 45: }
+"45
+[e :UE 1519 ]
 }
-"127
-[v _ADC_Fixed_Voltage_Ref `(v ~T0 @X0 1 ef1`uc ]
+"47
+[v _DefaultSensorInterruptHandler `(v ~T0 @X0 1 ef ]
 {
-[; ;power.c: 127: void ADC_Fixed_Voltage_Ref(uint8_t mode){
-[e :U _ADC_Fixed_Voltage_Ref ]
-[v _mode `uc ~T0 @X0 1 r1 ]
+[; ;interrupt.c: 47: void DefaultSensorInterruptHandler(void){
+[e :U _DefaultSensorInterruptHandler ]
 [f ]
-[; ;power.c: 128: switch(mode)
-"128
-[e $U 1553  ]
-[; ;power.c: 129: {
-"129
-{
-[; ;power.c: 130: case 1:
-"130
-[e :U 1554 ]
-[; ;power.c: 131: FVRCON = 0x82;
-"131
-[e = _FVRCON -> -> 130 `i `uc ]
-[; ;power.c: 132: break;
-"132
-[e $U 1552  ]
-[; ;power.c: 134: case 0:
-"134
-[e :U 1555 ]
-[; ;power.c: 135: FVRCON = 0x00;
-"135
-[e = _FVRCON -> -> 0 `i `uc ]
-[; ;power.c: 136: break;
-"136
-[e $U 1552  ]
-[; ;power.c: 138: default:
-"138
-[e :U 1556 ]
-[; ;power.c: 139: FVRCON = 0x00;
-"139
-[e = _FVRCON -> -> 0 `i `uc ]
-"140
-}
-[; ;power.c: 140: }
-[e $U 1552  ]
-"128
-[e :U 1553 ]
-[e [\ _mode , $ -> -> 1 `i `uc 1554
- , $ -> -> 0 `i `uc 1555
- 1556 ]
-"140
-[e :U 1552 ]
-[; ;power.c: 141: }
-"141
-[e :UE 1551 ]
-}
-"143
-[v _Enter_sleep `(v ~T0 @X0 1 ef ]
-{
-[; ;power.c: 143: void Enter_sleep(){
-[e :U _Enter_sleep ]
-[f ]
-[; ;power.c: 145: CPUDOZEbits.IDLEN = 0;
-"145
-[e = . . _CPUDOZEbits 0 5 -> -> 0 `i `uc ]
-[; ;power.c: 146: __nop();
-"146
-[e ( ___nop ..  ]
-[; ;power.c: 147: asm("sleep");
-"147
-[; <" sleep ;# ">
-[; ;power.c: 148: __nop();
-"148
-[e ( ___nop ..  ]
-[; ;power.c: 149: __nop();
-"149
-[e ( ___nop ..  ]
-[; ;power.c: 150: }
-"150
-[e :UE 1557 ]
-}
-"153
-[v _Power_Init `(v ~T0 @X0 1 ef ]
-{
-[; ;power.c: 153: void Power_Init(){
-[e :U _Power_Init ]
-[f ]
-[; ;power.c: 155: do { TRISCbits.TRISC7 = 0; } while(0);
-"155
-[e :U 1561 ]
-{
-[e = . . _TRISCbits 0 7 -> -> 0 `i `uc ]
-}
-[e :U 1560 ]
-[; ;power.c: 156: do { LATCbits.LATC7 = 1; } while(0);
-"156
-[e :U 1564 ]
-{
-[e = . . _LATCbits 0 7 -> -> 1 `i `uc ]
-}
-[e :U 1563 ]
-[; ;power.c: 163: do { TRISCbits.TRISC0 = 0; } while(0);
-"163
-[e :U 1567 ]
-{
-[e = . . _TRISCbits 0 0 -> -> 0 `i `uc ]
-}
-[e :U 1566 ]
-[; ;power.c: 164: do { TRISCbits.TRISC6 = 0; } while(0);
-"164
-[e :U 1570 ]
-{
-[e = . . _TRISCbits 0 6 -> -> 0 `i `uc ]
-}
-[e :U 1569 ]
-[; ;power.c: 166: do { ANSELBbits.ANSB6 = 0; } while(0);
-"166
-[e :U 1573 ]
-{
-[e = . . _ANSELBbits 0 3 -> -> 0 `i `uc ]
-}
-[e :U 1572 ]
-[; ;power.c: 168: do { TRISBbits.TRISB6 = 0; } while(0);
-"168
-[e :U 1576 ]
-{
-[e = . . _TRISBbits 0 3 -> -> 0 `i `uc ]
-}
-[e :U 1575 ]
-[; ;power.c: 169: do { TRISCbits.TRISC1 = 0; } while(0);
-"169
-[e :U 1579 ]
-{
-[e = . . _TRISCbits 0 1 -> -> 0 `i `uc ]
-}
-[e :U 1578 ]
-[; ;power.c: 172: do { LATBbits.LATB6 = 0; } while(0);
-"172
-[e :U 1582 ]
-{
-[e = . . _LATBbits 0 3 -> -> 0 `i `uc ]
-}
-[e :U 1581 ]
-[; ;power.c: 173: do { LATCbits.LATC1 = 0; } while(0);
-"173
-[e :U 1585 ]
-{
-[e = . . _LATCbits 0 1 -> -> 0 `i `uc ]
-}
-[e :U 1584 ]
-[; ;power.c: 176: LED_Blink();
-"176
-[e ( _LED_Blink ..  ]
-[; ;power.c: 179: do { LATCbits.LATC0 = 0; } while(0);
-"179
-[e :U 1588 ]
-{
-[e = . . _LATCbits 0 0 -> -> 0 `i `uc ]
-}
-[e :U 1587 ]
-[; ;power.c: 180: do { LATCbits.LATC6 = 0; } while(0);
-"180
-[e :U 1591 ]
-{
-[e = . . _LATCbits 0 6 -> -> 0 `i `uc ]
-}
-[e :U 1590 ]
-[; ;power.c: 183: do { TRISCbits.TRISC3 = 1; } while(0);
-"183
-[e :U 1594 ]
-{
-[e = . . _TRISCbits 0 3 -> -> 1 `i `uc ]
-}
-[e :U 1593 ]
-[; ;power.c: 184: do { ANSELCbits.ANSC3 = 1; } while(0);
-"184
-[e :U 1597 ]
-{
-[e = . . _ANSELCbits 0 3 -> -> 1 `i `uc ]
-}
-[e :U 1596 ]
-[; ;power.c: 186: do { TRISCbits.TRISC4 = 1; } while(0);
-"186
-[e :U 1600 ]
-{
-[e = . . _TRISCbits 0 4 -> -> 1 `i `uc ]
-}
-[e :U 1599 ]
-[; ;power.c: 187: do { ANSELCbits.ANSC4 = 1; } while(0);
-"187
-[e :U 1603 ]
-{
-[e = . . _ANSELCbits 0 4 -> -> 1 `i `uc ]
-}
-[e :U 1602 ]
-[; ;power.c: 193: }
-"193
-[e :UE 1558 ]
-}
-"195
-[v _Power_Measure `(v ~T0 @X0 1 ef ]
-{
-[; ;power.c: 195: void Power_Measure(){
-[e :U _Power_Measure ]
-[f ]
-[; ;power.c: 196: startMeasurement = 1;
-"196
-[e = _startMeasurement -> -> 1 `i `uc ]
-[; ;power.c: 197: }
-"197
-[e :UE 1604 ]
-}
-"200
-[v _Measure `(v ~T0 @X0 1 ef ]
-{
-[; ;power.c: 200: void Measure(){
-[e :U _Measure ]
-[f ]
-[; ;power.c: 202: ADC_Fixed_Voltage_Ref(1);
-"202
-[e ( _ADC_Fixed_Voltage_Ref (1 -> -> 1 `i `uc ]
-[; ;power.c: 204: do { LATCbits.LATC0 = 1; } while(0);
-"204
-[e :U 1608 ]
-{
-[e = . . _LATCbits 0 0 -> -> 1 `i `uc ]
-}
-[e :U 1607 ]
-[; ;power.c: 205: do { LATCbits.LATC6 = 1; } while(0);
-"205
-[e :U 1611 ]
-{
-[e = . . _LATCbits 0 6 -> -> 1 `i `uc ]
-}
-[e :U 1610 ]
-[; ;power.c: 207: do { LATCbits.LATC1 = 1; } while(0);
-"207
-[e :U 1614 ]
-{
-[e = . . _LATCbits 0 1 -> -> 1 `i `uc ]
-}
-[e :U 1613 ]
-[; ;power.c: 208: do { LATBbits.LATB6 = 1; } while(0);
-"208
-[e :U 1617 ]
-{
-[e = . . _LATBbits 0 3 -> -> 1 `i `uc ]
-}
-[e :U 1616 ]
-[; ;power.c: 210: _delay((unsigned long)((10)*(32000000/4000.0)));
-"210
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-[; ;power.c: 213: ADCC_GetSingleConversion(0x13);
-"213
-[e ( _ADCC_GetSingleConversion (1 -> -> 19 `i `E10845 ]
-[; ;power.c: 214: solvoltage = ADCC_GetSingleConversion(0x13);
-"214
-[e = _solvoltage ( _ADCC_GetSingleConversion (1 -> -> 19 `i `E10845 ]
-[; ;power.c: 217: tempValue = ADCC_GetSingleConversion(0x13);
-"217
-[e = _tempValue ( _ADCC_GetSingleConversion (1 -> -> 19 `i `E10845 ]
-[; ;power.c: 218: if(tempValue < solvoltage){
-"218
-[e $ ! < _tempValue _solvoltage 1618  ]
-{
-[; ;power.c: 219: solvoltage = tempValue;
-"219
-[e = _solvoltage _tempValue ]
-"220
-}
-[e :U 1618 ]
-[; ;power.c: 220: }
-[; ;power.c: 221: floatsolvoltage = ((float)solvoltage /4096) * 2.048 * ((10+2.2)/2.2);
-"221
-[e = _floatsolvoltage -> * * -> / -> _solvoltage `f -> -> 4096 `i `f `d .2.048 / + -> -> 10 `i `d .2.2 .2.2 `f ]
-[; ;power.c: 224: ADCC_GetSingleConversion(0x14);
-"224
-[e ( _ADCC_GetSingleConversion (1 -> -> 20 `i `E10845 ]
-[; ;power.c: 225: batvoltage = ADCC_GetSingleConversion(0x14);
-"225
-[e = _batvoltage ( _ADCC_GetSingleConversion (1 -> -> 20 `i `E10845 ]
-[; ;power.c: 226: floatbatvoltage = ((float)batvoltage /4096) * 2.048 * ((10+8.2)/8.2);
-"226
-[e = _floatbatvoltage -> * * -> / -> _batvoltage `f -> -> 4096 `i `f `d .2.048 / + -> -> 10 `i `d .8.2 .8.2 `f ]
-[; ;power.c: 228: do { LATCbits.LATC0 = 0; } while(0);
-"228
-[e :U 1621 ]
-{
-[e = . . _LATCbits 0 0 -> -> 0 `i `uc ]
-}
-[e :U 1620 ]
-[; ;power.c: 229: do { LATCbits.LATC6 = 0; } while(0);
-"229
-[e :U 1624 ]
-{
-[e = . . _LATCbits 0 6 -> -> 0 `i `uc ]
-}
-[e :U 1623 ]
-[; ;power.c: 231: do { LATBbits.LATB6 = 0; } while(0);
-"231
-[e :U 1627 ]
-{
-[e = . . _LATBbits 0 3 -> -> 0 `i `uc ]
-}
-[e :U 1626 ]
-[; ;power.c: 232: do { LATCbits.LATC1 = 0; } while(0);
-"232
-[e :U 1630 ]
-{
-[e = . . _LATCbits 0 1 -> -> 0 `i `uc ]
-}
-[e :U 1629 ]
-[; ;power.c: 235: if(floatbatvoltage < 3.3){
-"235
-[e $ ! < -> _floatbatvoltage `d .3.3 1631  ]
-{
-[; ;power.c: 236: batteryundervoltage = 1;
-"236
-[e = _batteryundervoltage -> -> 1 `i `uc ]
-"237
-}
-[e :U 1631 ]
-[; ;power.c: 237: }
-[; ;power.c: 240: if(batteryundervoltage == 1){
-"240
-[e $ ! == -> _batteryundervoltage `i -> 1 `i 1632  ]
-{
-[; ;power.c: 241: if(floatbatvoltage>3.5){
-"241
-[e $ ! > -> _floatbatvoltage `d .3.5 1633  ]
-{
-[; ;power.c: 242: batteryundervoltage = 0;
-"242
-[e = _batteryundervoltage -> -> 0 `i `uc ]
-"243
-}
-[e :U 1633 ]
-"244
-}
-[e :U 1632 ]
-"247
-[v _databatvoltage `ui ~T0 @X0 1 a ]
-[; ;power.c: 243: }
-[; ;power.c: 244: }
-[; ;power.c: 247: uint16_t databatvoltage = (uint16_t)(round(floatbatvoltage * 600));
-[e = _databatvoltage -> ( _round (1 -> * _floatbatvoltage -> -> 600 `i `f `d `ui ]
-"248
-[v _datasolvoltage `ui ~T0 @X0 1 a ]
-[; ;power.c: 248: uint16_t datasolvoltage = (uint16_t)(round(floatsolvoltage * 600));
-[e = _datasolvoltage -> ( _round (1 -> * _floatsolvoltage -> -> 600 `i `f `d `ui ]
-[; ;power.c: 253: measurementData[0] = (uint8_t)(databatvoltage>>8);
-"253
-[e = *U + &U _measurementData * -> -> -> 0 `i `ui `ux -> -> # *U &U _measurementData `ui `ux -> >> _databatvoltage -> 8 `i `uc ]
-[; ;power.c: 254: measurementData[1] = (uint8_t)(databatvoltage);
-"254
-[e = *U + &U _measurementData * -> -> -> 1 `i `ui `ux -> -> # *U &U _measurementData `ui `ux -> _databatvoltage `uc ]
-[; ;power.c: 256: measurementData[2] = (uint8_t)(datasolvoltage>>8);
-"256
-[e = *U + &U _measurementData * -> -> -> 2 `i `ui `ux -> -> # *U &U _measurementData `ui `ux -> >> _datasolvoltage -> 8 `i `uc ]
-[; ;power.c: 257: measurementData[3] = (uint8_t)(datasolvoltage);
-"257
-[e = *U + &U _measurementData * -> -> -> 3 `i `ui `ux -> -> # *U &U _measurementData `ui `ux -> _datasolvoltage `uc ]
-[; ;power.c: 259: measurementData[4] = (uint8_t)(batteryundervoltage);
-"259
-[e = *U + &U _measurementData * -> -> -> 4 `i `ui `ux -> -> # *U &U _measurementData `ui `ux _batteryundervoltage ]
-[; ;power.c: 260: measurementData[5] = 0x00;
-"260
-[e = *U + &U _measurementData * -> -> -> 5 `i `ui `ux -> -> # *U &U _measurementData `ui `ux -> -> 0 `i `uc ]
-[; ;power.c: 263: ADC_Fixed_Voltage_Ref(0);
-"263
-[e ( _ADC_Fixed_Voltage_Ref (1 -> -> 0 `i `uc ]
-[; ;power.c: 265: }
-"265
-[e :UE 1605 ]
-}
-"268
-[v _Power_Loop `(v ~T0 @X0 1 ef ]
-{
-[; ;power.c: 268: void Power_Loop(){
-[e :U _Power_Loop ]
-[f ]
-[; ;power.c: 271: if(startMeasurement && !measurementRunning){
-"271
-[e $ ! && != -> _startMeasurement `i -> -> -> 0 `i `uc `i ! != -> _measurementRunning `i -> -> -> 0 `i `uc `i 1635  ]
-{
-[; ;power.c: 272: startMeasurement = 0;
-"272
-[e = _startMeasurement -> -> 0 `i `uc ]
-[; ;power.c: 273: measurementRunning = 1;
-"273
-[e = _measurementRunning -> -> 1 `i `uc ]
-[; ;power.c: 277: generateIntPower();
-"277
-[e ( _generateIntPower ..  ]
-[; ;power.c: 278: measurementRunning = 0;
-"278
-[e = _measurementRunning -> -> 0 `i `uc ]
-"279
-}
-[e :U 1635 ]
-[; ;power.c: 279: }
-[; ;power.c: 281: Enter_sleep();
-"281
-[e ( _Enter_sleep ..  ]
-[; ;power.c: 283: }
-"283
-[e :UE 1634 ]
-}
-"285
-[v _Power_GetData `(v ~T0 @X0 1 ef2`*uc`*uc ]
-{
-[; ;power.c: 285: void Power_GetData(uint8_t * data, uint8_t * length){
-[e :U _Power_GetData ]
-[v _data `*uc ~T0 @X0 1 r1 ]
-[v _length `*uc ~T0 @X0 1 r2 ]
-[f ]
-[; ;power.c: 286: *length = 2;
-"286
-[e = *U _length -> -> 2 `i `uc ]
-[; ;power.c: 287: data[0] = measurementData[0];
-"287
-[e = *U + _data * -> -> 0 `i `x -> -> # *U _data `i `x *U + &U _measurementData * -> -> -> 0 `i `ui `ux -> -> # *U &U _measurementData `ui `ux ]
-[; ;power.c: 288: data[1] = measurementData[1];
-"288
-[e = *U + _data * -> -> 1 `i `x -> -> # *U _data `i `x *U + &U _measurementData * -> -> -> 1 `i `ui `ux -> -> # *U &U _measurementData `ui `ux ]
-[; ;power.c: 289: }
-"289
-[e :UE 1636 ]
-}
-"292
-[v _Power_SetThreshold `(v ~T0 @X0 1 ef2`uc`*uc ]
-{
-[; ;power.c: 292: void Power_SetThreshold(uint8_t metric, uint8_t * thresholdData){
-[e :U _Power_SetThreshold ]
-[v _metric `uc ~T0 @X0 1 r1 ]
-[v _thresholdData `*uc ~T0 @X0 1 r2 ]
-[f ]
-[; ;power.c: 295: thresholdData[0] = 0;
-"295
-[e = *U + _thresholdData * -> -> 0 `i `x -> -> # *U _thresholdData `i `x -> -> 0 `i `uc ]
-[; ;power.c: 296: thresholdData[1] = 0;
-"296
-[e = *U + _thresholdData * -> -> 1 `i `x -> -> # *U _thresholdData `i `x -> -> 0 `i `uc ]
-[; ;power.c: 297: thresholdData[2] = 0;
-"297
-[e = *U + _thresholdData * -> -> 2 `i `x -> -> # *U _thresholdData `i `x -> -> 0 `i `uc ]
-[; ;power.c: 298: thresholdData[3] = 0;
-"298
-[e = *U + _thresholdData * -> -> 3 `i `x -> -> # *U _thresholdData `i `x -> -> 0 `i `uc ]
-[; ;power.c: 299: thresholdData[4] = 0;
-"299
-[e = *U + _thresholdData * -> -> 4 `i `x -> -> # *U _thresholdData `i `x -> -> 0 `i `uc ]
-[; ;power.c: 300: }
-"300
-[e :UE 1637 ]
-}
-"305
-[v _generateIntPower `(v ~T0 @X0 1 ef ]
-{
-[; ;power.c: 305: void generateIntPower(void){
-[e :U _generateIntPower ]
-[f ]
-[; ;power.c: 306: do { LATCbits.LATC7 = 0; } while(0);
-"306
-[e :U 1641 ]
-{
-[e = . . _LATCbits 0 7 -> -> 0 `i `uc ]
-}
-[e :U 1640 ]
-[; ;power.c: 307: _delay((unsigned long)((5)*(32000000/4000.0)));
-"307
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-[; ;power.c: 308: do { LATCbits.LATC7 = 1; } while(0);
-"308
-[e :U 1644 ]
-{
-[e = . . _LATCbits 0 7 -> -> 1 `i `uc ]
-}
-[e :U 1643 ]
-[; ;power.c: 309: }
-"309
-[e :UE 1638 ]
+[; ;interrupt.c: 48: return;
+"48
+[e $UE 1520  ]
+[; ;interrupt.c: 49: }
+"49
+[e :UE 1520 ]
 }

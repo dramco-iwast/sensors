@@ -1,115 +1,5 @@
 
-# 1 "main.c"
-
-# 18 "C:/Users/Jona Cappelle/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\xc.h"
-extern const char __xc8_OPTIM_SPEED;
-
-extern double __fpnormalize(double);
-
-
-# 13 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\xc8debug.h"
-#pragma intrinsic(__builtin_software_breakpoint)
-extern void __builtin_software_breakpoint(void);
-
-# 13 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\stdint.h"
-typedef signed char int8_t;
-
-# 20
-typedef signed int int16_t;
-
-# 28
-typedef __int24 int24_t;
-
-# 36
-typedef signed long int int32_t;
-
-# 52
-typedef unsigned char uint8_t;
-
-# 58
-typedef unsigned int uint16_t;
-
-# 65
-typedef __uint24 uint24_t;
-
-# 72
-typedef unsigned long int uint32_t;
-
-# 88
-typedef signed char int_least8_t;
-
-# 96
-typedef signed int int_least16_t;
-
-# 109
-typedef __int24 int_least24_t;
-
-# 118
-typedef signed long int int_least32_t;
-
-# 136
-typedef unsigned char uint_least8_t;
-
-# 143
-typedef unsigned int uint_least16_t;
-
-# 154
-typedef __uint24 uint_least24_t;
-
-# 162
-typedef unsigned long int uint_least32_t;
-
-# 181
-typedef signed char int_fast8_t;
-
-# 188
-typedef signed int int_fast16_t;
-
-# 200
-typedef __int24 int_fast24_t;
-
-# 208
-typedef signed long int int_fast32_t;
-
-# 224
-typedef unsigned char uint_fast8_t;
-
-# 230
-typedef unsigned int uint_fast16_t;
-
-# 240
-typedef __uint24 uint_fast24_t;
-
-# 247
-typedef unsigned long int uint_fast32_t;
-
-# 268
-typedef int32_t intmax_t;
-
-# 282
-typedef uint32_t uintmax_t;
-
-# 289
-typedef int16_t intptr_t;
-
-
-
-
-typedef uint16_t uintptr_t;
-
-
-# 7 "C:/Users/Jona Cappelle/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\builtins.h"
-#pragma intrinsic(__nop)
-extern void __nop(void);
-
-
-#pragma intrinsic(_delay)
-extern __nonreentrant void _delay(uint32_t);
-#pragma intrinsic(_delaywdt)
-extern __nonreentrant void _delaywdt(uint32_t);
-
-#pragma intrinsic(_delay3)
-extern __nonreentrant void _delay3(uint8_t);
+# 1 "system/system.c"
 
 # 109 "C:/Users/Jona Cappelle/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18446.h"
 extern volatile unsigned char INDF0 __at(0x000);
@@ -18404,6 +18294,116 @@ extern volatile __bit nWRITE1 __at(0xC7A);
 
 extern volatile __bit nWRITE2 __at(0xCCA);
 
+# 18 "C:/Users/Jona Cappelle/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\xc.h"
+extern const char __xc8_OPTIM_SPEED;
+
+extern double __fpnormalize(double);
+
+
+# 13 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\xc8debug.h"
+#pragma intrinsic(__builtin_software_breakpoint)
+extern void __builtin_software_breakpoint(void);
+
+# 13 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\stdint.h"
+typedef signed char int8_t;
+
+# 20
+typedef signed int int16_t;
+
+# 28
+typedef __int24 int24_t;
+
+# 36
+typedef signed long int int32_t;
+
+# 52
+typedef unsigned char uint8_t;
+
+# 58
+typedef unsigned int uint16_t;
+
+# 65
+typedef __uint24 uint24_t;
+
+# 72
+typedef unsigned long int uint32_t;
+
+# 88
+typedef signed char int_least8_t;
+
+# 96
+typedef signed int int_least16_t;
+
+# 109
+typedef __int24 int_least24_t;
+
+# 118
+typedef signed long int int_least32_t;
+
+# 136
+typedef unsigned char uint_least8_t;
+
+# 143
+typedef unsigned int uint_least16_t;
+
+# 154
+typedef __uint24 uint_least24_t;
+
+# 162
+typedef unsigned long int uint_least32_t;
+
+# 181
+typedef signed char int_fast8_t;
+
+# 188
+typedef signed int int_fast16_t;
+
+# 200
+typedef __int24 int_fast24_t;
+
+# 208
+typedef signed long int int_fast32_t;
+
+# 224
+typedef unsigned char uint_fast8_t;
+
+# 230
+typedef unsigned int uint_fast16_t;
+
+# 240
+typedef __uint24 uint_fast24_t;
+
+# 247
+typedef unsigned long int uint_fast32_t;
+
+# 268
+typedef int32_t intmax_t;
+
+# 282
+typedef uint32_t uintmax_t;
+
+# 289
+typedef int16_t intptr_t;
+
+
+
+
+typedef uint16_t uintptr_t;
+
+
+# 7 "C:/Users/Jona Cappelle/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\builtins.h"
+#pragma intrinsic(__nop)
+extern void __nop(void);
+
+
+#pragma intrinsic(_delay)
+extern __nonreentrant void _delay(uint32_t);
+#pragma intrinsic(_delaywdt)
+extern __nonreentrant void _delaywdt(uint32_t);
+
+#pragma intrinsic(_delay3)
+extern __nonreentrant void _delay3(uint8_t);
+
 # 76 "C:/Users/Jona Cappelle/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\pic.h"
 __attribute__((__unsupported__("The " "FLASH_READ" " macro function is no longer supported. Please use the MPLAB X MCC."))) unsigned char __flash_read(unsigned short addr);
 
@@ -18420,164 +18420,15 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 
-# 4 "C:/Users/Jona Cappelle/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\__size_t.h"
-typedef unsigned size_t;
-
-# 7 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\stdarg.h"
-typedef void * va_list[1];
-
-#pragma intrinsic(__va_start)
-extern void * __va_start(void);
-
-#pragma intrinsic(__va_arg)
-extern void * __va_arg(void *, ...);
-
-# 43 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\stdio.h"
-struct __prbuf
-{
-char * ptr;
-void (* func)(char);
-};
-
-# 29 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\errno.h"
-extern int errno;
-
-# 12 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\conio.h"
-extern void init_uart(void);
-
-extern char getch(void);
-extern char getche(void);
-extern void putch(char);
-extern void ungetch(char);
-
-extern __bit kbhit(void);
-
-# 23
-extern char * cgets(char *);
-extern void cputs(const char *);
-
-# 88 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\stdio.h"
-extern int cprintf(char *, ...);
-#pragma printf_check(cprintf)
-
-
-
-extern int _doprnt(struct __prbuf *, const register char *, register va_list);
-
-
-# 180
-#pragma printf_check(vprintf) const
-#pragma printf_check(vsprintf) const
-
-extern char * gets(char *);
-extern int puts(const char *);
-extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
-extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
-extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
-extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
-extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
-extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
-
-#pragma printf_check(printf) const
-#pragma printf_check(sprintf) const
-extern int sprintf(char *, const char *, ...);
-extern int printf(const char *, ...);
-
-# 14 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\string.h"
-extern void * memcpy(void *, const void *, size_t);
-extern void * memmove(void *, const void *, size_t);
-extern void * memset(void *, int, size_t);
-
-
-
-
-extern void * __builtin_memcpy(void *, const void *, size_t);
-#pragma intrinsic(__builtin_memcpy)
-
-# 36
-extern char * strcat(char *, const char *);
-extern char * strcpy(char *, const char *);
-extern char * strncat(char *, const char *, size_t);
-extern char * strncpy(char *, const char *, size_t);
-extern char * strdup(const char *);
-extern char * strtok(char *, const char *);
-
-
-extern int memcmp(const void *, const void *, size_t);
-extern int strcmp(const char *, const char *);
-extern int stricmp(const char *, const char *);
-extern int strncmp(const char *, const char *, size_t);
-extern int strnicmp(const char *, const char *, size_t);
-extern void * memchr(const void *, int, size_t);
-extern size_t strcspn(const char *, const char *);
-extern char * strpbrk(const char *, const char *);
-extern size_t strspn(const char *, const char *);
-extern char * strstr(const char *, const char *);
-extern char * stristr(const char *, const char *);
-extern char * strerror(int);
-extern size_t strlen(const char *);
-extern char * strchr(const char *, int);
-extern char * strichr(const char *, int);
-extern char * strrchr(const char *, int);
-extern char * strrichr(const char *, int);
-
-# 15 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\stdbool.h"
-typedef unsigned char bool;
-
-# 66 "global.h"
-typedef struct sensorApi{
-void (* Init)(void);
-void (* Measure)(void);
-void (* Loop)(void);
-void (* GetData)(uint8_t *, uint8_t *);
-void (* UpdateThreshold)(uint8_t, uint8_t *);
-} Sensor_API_t;
-
-
-# 82
-#pragma config FEXTOSC = OFF
-#pragma config RSTOSC = HFINT1
-#pragma config CLKOUTEN = OFF
-#pragma config CSWEN = ON
-#pragma config FCMEN = OFF
-
-
-#pragma config MCLRE = ON
-#pragma config PWRTS = OFF
-#pragma config LPBOREN = OFF
-#pragma config BOREN = OFF
-#pragma config BORV = LO
-#pragma config ZCDDIS = OFF
-#pragma config PPS1WAY = OFF
-#pragma config STVREN = OFF
-
-
-#pragma config WDTCPS = WDTCPS_10
-
-#pragma config WDTE = OFF
-#pragma config WDTCWS = WDTCWS_7
-#pragma config WDTCCS = SC
-
-
-#pragma config BBSIZE = BB512
-#pragma config BBEN = OFF
-#pragma config SAFEN = OFF
-#pragma config WRTAPP = OFF
-#pragma config WRTB = OFF
-#pragma config WRTC = OFF
-#pragma config WRTD = OFF
-#pragma config WRTSAF = OFF
-#pragma config LVP = ON
-
-
-#pragma config CP = OFF
-
 # 34 "system/system.h"
 void SYSTEM_Initialize(uint8_t slave_address);
 void SYSTEM_SetSensorISR(void (* SensorInterruptHandler)(void));
 
 # 15 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\stdbool.h"
 typedef unsigned char bool;
+
+# 4 "C:/Users/Jona Cappelle/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\__size_t.h"
+typedef unsigned size_t;
 
 # 6 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\stddef.h"
 typedef int ptrdiff_t;
@@ -18607,108 +18458,70 @@ void I2C1_SetTransmitData(uint8_t * data, uint8_t len);
 bool I2C1_TxBufferEmpty(void);
 void I2C1_ClearTxBuffer(void);
 
-# 15 "C:\Program Files\Microchip\xc8\v2.30\pic\include\c90\stdbool.h"
-typedef unsigned char bool;
+# 12 "system/interrupt.h"
+void SetSensorInterruptHandler(void (* InterruptHandler)(void));
 
-# 183 "sensor/power.h"
-void Power_Init(void);
-void Power_Measure(void);
-void Power_Loop(void);
-void Power_GetData(uint8_t * data, uint8_t * length);
-void Power_SetThreshold(uint8_t metric, uint8_t * thresholdData);
+# 29 "system/system.c"
+void OSCILLATOR_Initialize(void);
+void PMD_Initialize(void);
 
+void SYSTEM_Initialize(uint8_t slave_address){
 
+PMD_Initialize();
+OSCILLATOR_Initialize();
 
-void generateIntPower(void);
-
-# 44 "main.c"
-Sensor_API_t sensorAPI = { Power_Init, Power_Measure, Power_Loop, Power_GetData, Power_SetThreshold };
-
-uint8_t mData[2 * 0x03];
-uint8_t mDataLength;
-
-void toggleInt(void);
-
-# 53
-void main(void)
-{
-
-SYSTEM_Initialize(0x45);
-
-sensorAPI.Init();
-
-while(1){
-sensorAPI.Loop();
-sensorAPI.GetData(mData, &mDataLength);
-I2C1_SetTransmitData(mData, mDataLength);
+VREGCONbits.VREGPM = 1;
 
 
-if(I2C1_CommandReceived()){
-uint8_t cmd;
-I2C1_GetCommand(&cmd);
-
-switch(cmd){
-
-case 0x10:{
-
-uint8_t ack = 0xAA;
-I2C1_SetTransmitData(&ack, 1);
-} break;
 
 
-case 0x11:{
+ANSELA = 0x00;
+ANSELB = 0x00;
+ANSELC = 0x00;
+ANSELCbits.ANSC1 = 1;
 
-uint8_t type = 0x01;
-I2C1_SetTransmitData(&type, 1);
-} break;
+TRISA = 0x00;
+TRISB = 0x00;
+TRISC = 0x00;
+TRISCbits.TRISC1 = 1;
 
+LATA = 0xFF;
+LATB = 0xFF;
+LATC = 0xFF;
+LATCbits.LATC1 = 0;
 
-case 0x23:{
+I2C1_Initialize(slave_address);
 
-uint8_t mnr = 0x03;
-I2C1_SetTransmitData(&mnr, 1);
-} break;
-
-
-case 0x13:{
-
-sensorAPI.Measure();
-} break;
-
-
-case 0x14:{
-
-uint8_t retries = 20;
-while(!I2C1_TxBufferEmpty() && retries--){
-_delay((unsigned long)((1)*(32000000/4000.0)));
-}
-} break;
-
-
-case 0x15:{
-toggleInt();
-} break;
-
-
-case 0x24:{
-_delay((unsigned long)((2)*(32000000/4000.0)));
-uint8_t len;
-uint8_t data[20];
-I2C1_GetCommandData(data, &len);
-if(len == 6){
-sensorAPI.UpdateThreshold(data[0], data+1);
-}
-} break;
-
-
-default:{
-} break;
-}
-}
-}
+(INTCONbits.GIE = 1);
+(INTCONbits.PEIE = 1);
 }
 
-void toggleInt(void){
-do { LATCbits.LATC7 = ~LATCbits.LATC7; } while(0);
+
+
+void SYSTEM_SetSensorISR(void (* SensorInterruptHandler)(void)){
+SetSensorInterruptHandler(SensorInterruptHandler);
 }
 
+
+void OSCILLATOR_Initialize(void){
+
+OSCCON1 = 0x60;
+
+OSCFRQ = 0x06;
+}
+
+
+void PMD_Initialize(void){
+
+PMD0 = 0xFF;
+
+PMD0bits.SYSCMD = 0;
+
+PMD1 = 0xFF;
+PMD2 = 0xFF;
+PMD3 = 0xFF;
+PMD4 = 0xFF;
+PMD5 = 0xFF;
+PMD6 = 0xFF;
+PMD7 = 0xFF;
+}

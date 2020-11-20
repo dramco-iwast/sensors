@@ -4,21 +4,11 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
-      <logicalFolder name="mcc_generated_files"
-                     displayName="mcc_generated_files"
-                     projectFiles="true">
-        <itemPath>mcc_generated_files/adcc.h</itemPath>
-        <itemPath>mcc_generated_files/device_config.h</itemPath>
-        <itemPath>mcc_generated_files/eusart1.h</itemPath>
-        <itemPath>mcc_generated_files/i2c1.h</itemPath>
-        <itemPath>mcc_generated_files/i2c1v1.h</itemPath>
-        <itemPath>mcc_generated_files/interrupt_manager.h</itemPath>
-        <itemPath>mcc_generated_files/mcc.h</itemPath>
-        <itemPath>mcc_generated_files/memory.h</itemPath>
-        <itemPath>mcc_generated_files/pin_manager.h</itemPath>
-        <itemPath>mcc_generated_files/pin_managerv1.h</itemPath>
-        <itemPath>mcc_generated_files/spi2.h</itemPath>
-        <itemPath>mcc_generated_files/tmr4.h</itemPath>
+      <logicalFolder name="system" displayName="system" projectFiles="true">
+        <itemPath>system/i2c1.h</itemPath>
+        <itemPath>system/interrupt.h</itemPath>
+        <itemPath>system/system.h</itemPath>
+        <itemPath>system/adcc.h</itemPath>
       </logicalFolder>
       <itemPath>global.h</itemPath>
       <itemPath>sensor/power.h</itemPath>
@@ -30,20 +20,11 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <logicalFolder name="mcc_generated_files"
-                     displayName="mcc_generated_files"
-                     projectFiles="true">
-        <itemPath>mcc_generated_files/adcc.c</itemPath>
-        <itemPath>mcc_generated_files/device_config.c</itemPath>
-        <itemPath>mcc_generated_files/eusart1.c</itemPath>
-        <itemPath>mcc_generated_files/i2c1.c</itemPath>
-        <itemPath>mcc_generated_files/i2c1v1.c</itemPath>
-        <itemPath>mcc_generated_files/interrupt_manager.c</itemPath>
-        <itemPath>mcc_generated_files/mcc.c</itemPath>
-        <itemPath>mcc_generated_files/memory.c</itemPath>
-        <itemPath>mcc_generated_files/pin_manager.c</itemPath>
-        <itemPath>mcc_generated_files/spi2.c</itemPath>
-        <itemPath>mcc_generated_files/tmr4.c</itemPath>
+      <logicalFolder name="system" displayName="system" projectFiles="true">
+        <itemPath>system/i2c1.c</itemPath>
+        <itemPath>system/interrupt.c</itemPath>
+        <itemPath>system/system.c</itemPath>
+        <itemPath>system/adcc.c</itemPath>
       </logicalFolder>
       <itemPath>sensor/power.c</itemPath>
       <itemPath>main.c</itemPath>
@@ -58,7 +39,7 @@
   <sourceRootList>
     <Elem>.</Elem>
     <Elem>sensor</Elem>
-    <Elem>mcc_generated_files</Elem>
+    <Elem>system</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -270,16 +251,6 @@
         <property key="stack-type" value="compiled"/>
         <property key="user-pack-device-support" value=""/>
       </XC8-config-global>
-      <item path="mcc_generated_files/i2c1v1.c" ex="true" overriding="false">
-        <HI-TECH-COMP>
-        </HI-TECH-COMP>
-        <HI-TECH-LINK>
-        </HI-TECH-LINK>
-        <XC8-CO>
-        </XC8-CO>
-        <XC8-config-global>
-        </XC8-config-global>
-      </item>
     </conf>
   </confs>
 </configurationDescriptor>

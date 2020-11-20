@@ -15,7 +15,7 @@
             <sourceRootList>
                 <sourceRootElem>.</sourceRootElem>
                 <sourceRootElem>sensor</sourceRootElem>
-                <sourceRootElem>mcc_generated_files</sourceRootElem>
+                <sourceRootElem>system</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>
