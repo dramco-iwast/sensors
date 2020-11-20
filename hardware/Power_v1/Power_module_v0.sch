@@ -1075,4 +1075,6 @@ Text Notes 1550 2750 0    50   ~ 0
 OK
 Text Notes 950  950  0    50   ~ 0
 MPPT OK 80%
+Text Notes 1150 2650 0    50   ~ 0
+X7R
 $EndSCHEMATC

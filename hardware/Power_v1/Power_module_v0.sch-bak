@@ -1075,6 +1075,4 @@ Text Notes 1550 2750 0    50   ~ 0
 OK
 Text Notes 950  950  0    50   ~ 0
 MPPT OK 80%
-Text Notes -750 2300 0    50   ~ 0
-extra cap voor spanningsval te overbruggen
 $EndSCHEMATC
