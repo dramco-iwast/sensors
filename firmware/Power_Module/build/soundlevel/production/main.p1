@@ -12230,33 +12230,33 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p x PPS1WAY=OFF ]
 "96
 [p x STVREN=OFF ]
-"99
-[p x WDTCPS=WDTCPS_10 ]
+"100
+[p x WDTCPS=WDTCPS_31 ]
 "101
-[p x WDTE=OFF ]
-"102
-[p x WDTCWS=WDTCWS_7 ]
+[p x WDTE=SWDTEN ]
 "103
+[p x WDTCWS=WDTCWS_7 ]
+"104
 [p x WDTCCS=SC ]
-"106
-[p x BBSIZE=BB512 ]
 "107
-[p x BBEN=OFF ]
+[p x BBSIZE=BB512 ]
 "108
-[p x SAFEN=OFF ]
+[p x BBEN=OFF ]
 "109
-[p x WRTAPP=OFF ]
+[p x SAFEN=OFF ]
 "110
-[p x WRTB=OFF ]
+[p x WRTAPP=OFF ]
 "111
-[p x WRTC=OFF ]
+[p x WRTB=OFF ]
 "112
-[p x WRTD=OFF ]
+[p x WRTC=OFF ]
 "113
-[p x WRTSAF=OFF ]
+[p x WRTD=OFF ]
 "114
+[p x WRTSAF=OFF ]
+"115
 [p x LVP=ON ]
-"117
+"118
 [p x CP=OFF ]
 [; ;system.h: 34: void SYSTEM_Initialize(uint8_t slave_address);
 [; ;system.h: 35: void SYSTEM_SetSensorISR(void (* SensorInterruptHandler)(void));

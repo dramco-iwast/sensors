@@ -18451,9 +18451,10 @@ void (* UpdateThreshold)(uint8_t, uint8_t *);
 #pragma config STVREN = OFF
 
 
-#pragma config WDTCPS = WDTCPS_10
 
-#pragma config WDTE = OFF
+#pragma config WDTCPS = WDTCPS_31
+#pragma config WDTE = SWDTEN
+
 #pragma config WDTCWS = WDTCWS_7
 #pragma config WDTCCS = SC
 
@@ -18619,6 +18620,7 @@ void ADCC_DefaultInterruptHandler(void);
 
 # 23 "sensor/power.c"
 void ADC_Init(void);
+void WDT_Init(void);
 void generateIntPower(void);
 void measure(void);
 void ledBlink(void);
@@ -18697,7 +18699,15 @@ ADCON0 = 0x84;
 FVRCON = 0x00;
 }
 
-static void generateIntPower(void){
+void WDT_Init(void){
+
+
+WDTCON0 = 0x1C;
+WDTCON1 = 0x07;
+WDTCON0bits.SEN = 1;
+}
+
+void generateIntPower(void){
 do { LATCbits.LATC7 = 0; } while(0);
 _delay((unsigned long)((1)*(32000000/4000.0)));
 do { LATCbits.LATC7 = 1; } while(0);
@@ -18711,11 +18721,7 @@ MeasurementRunning = 1;
 do { LATCbits.LATC0 = 1; } while(0);
 do { LATCbits.LATC6 = 1; } while(0);
 
-do { LATCbits.LATC1 = 1; } while(0);
-do { LATBbits.LATB6 = 1; } while(0);
-
 _delay((unsigned long)((10)*(32000000/4000.0)));
-
 
 ADCC_GetSingleConversion(0x13);
 voltageLDRMeasured = ADCC_GetSingleConversion(0x13);
@@ -18735,8 +18741,6 @@ floatVoltageBatMeasured = ((float)voltageBatMeasured /4096) * 2.048 * ((10+8.2)/
 do { LATCbits.LATC0 = 0; } while(0);
 do { LATCbits.LATC6 = 0; } while(0);
 
-do { LATBbits.LATB6 = 0; } while(0);
-do { LATCbits.LATC1 = 0; } while(0);
 
 if(floatVoltageBatMeasured < floatBatThresholdLevel){
 alertThreshold = 1;
@@ -18833,13 +18837,9 @@ do { ANSELCbits.ANSC3 = 1; } while(0);
 do { ANSELCbits.ANSC4 = 1; } while(0);
 
 
-WDTCON0 = 0x1C;
-WDTCON1 = 0x07;
-
-
 ledBlink();
 
-# 247
+# 246
 }
 
 void Power_Measure(void){
@@ -18852,15 +18852,20 @@ if(PollingMeasurement && !MeasurementRunning){
 PollingMeasurement = 0;
 
 if(WDTCON0bits.SEN == 0){
+do { LATBbits.LATB6 = 1; } while(0);
 measure();
 generateIntPower();
+do { LATBbits.LATB6 = 0; } while(0);
 }
 
 else if(WDTCON0bits.SEN == 1){
 WDTCON0bits.SEN = 0;
-
+do { LATBbits.LATB6 = 1; } while(0);
+do { LATCbits.LATC1 = 1; } while(0);
 measure();
 generateIntPower();
+do { LATBbits.LATB6 = 0; } while(0);
+do { LATCbits.LATC1 = 0; } while(0);
 
 asm("clrwdt");
 WDTCON0bits.SEN = 1;
@@ -18869,11 +18874,16 @@ WDTCON0bits.SEN = 1;
 
 else if(STATUSbits.nTO == 0){
 WDTCON0bits.SEN = 0;
+do { LATCbits.LATC1 = 1; } while(0);
 
 if(batThresholdEnabled && alertThreshold){
 measure();
+ledBlink();
 generateIntPower();
 }
+
+_delay((unsigned long)((2000)*(32000000/4000.0)));
+do { LATCbits.LATC1 = 0; } while(0);
 
 asm("clrwdt");
 WDTCON0bits.SEN = 1;
@@ -18896,7 +18906,14 @@ data[5] = measurementData[5];
 }
 
 void Power_SetThreshold(uint8_t metric, uint8_t * thresholdData){
+if(metric == 0){
+batThresholdEnabled = thresholdData[0];
+batThresholdLevel = (uint16_t)((thresholdData[3]<<8) | thresholdData[4]);
+floatBatThresholdLevel = (float) batThresholdLevel/600;
 
-# 316
+if(batThresholdEnabled){
+WDT_Init();
+}
+}
 }
 

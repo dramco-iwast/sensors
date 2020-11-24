@@ -21,6 +21,7 @@
 /* == FUNCTIONS PROTOTYPES == */
 
 void ADC_Init(void);
+void WDT_Init(void);
 void generateIntPower(void);
 void measure(void);
 void ledBlink(void);
@@ -99,7 +100,15 @@ void ADC_Init(void){
     FVRCON = 0x00; // Disable fixed voltage reference
 }
 
-static void generateIntPower(void){
+void WDT_Init(void){
+    // Config WatchDog Timer
+
+	WDTCON0 = 0x1C; // 16 second period (set to 0x20 for 64 s)
+	WDTCON1 = 0x07; // LFINTOSC, window 100%
+    WDTCON0bits.SEN = 1; // enable WDT
+}
+
+void generateIntPower(void){
 	READY_SetLow();
 	__delay_ms(1);
 	READY_SetHigh();
@@ -113,11 +122,7 @@ void measure(void){
 	SOL_MEAS_EN_SetHigh();                              // Enable loadswitch to measure voltage
     BAT_MEAS_EN_SetHigh();                              // Enable loadswitch to measure voltage
 
-    LED1_SetHigh();
-    LED0_SetHigh();
-
     __delay_ms(10);                                     // Delay for settling voltages
-
 
     ADCC_GetSingleConversion(SOL_VOLT);                 // first measurement afte rreset seems to be fixed and need to be rejected
     voltageLDRMeasured = ADCC_GetSingleConversion(SOL_VOLT);
@@ -137,8 +142,6 @@ void measure(void){
     SOL_MEAS_EN_SetLow();                               // Disable loadswitch to measure voltage
     BAT_MEAS_EN_SetLow();                               // Disable loadswitch to measure voltage
 
-    LED0_SetLow();
-    LED1_SetLow();
 	
 	if(floatVoltageBatMeasured < floatBatThresholdLevel){
 		alertThreshold = true;
@@ -234,10 +237,6 @@ void Power_Init(void){
     SOL_VOLT_SetAnalogMode();
 	BAT_VOLT_SetAnalogMode();
 	
-	// Config WatchDog Timer
-	WDTCON0 = 0x1C; // 16 second period (set to 0x20 for 64 s)
-	WDTCON1 = 0x07; // LFINTOSC, window 100%
-	
 	// Confirm Init
 	ledBlink();
 	
@@ -256,15 +255,20 @@ void Power_Loop(void){
 		PollingMeasurement = false;
 		// WDT is turned OFF -> Threshold disabled
 		if(WDTCON0bits.SEN == 0){
+            LED0_SetHigh();
 			measure();
 			generateIntPower();
+            LED0_SetLow();
 		}  
 		// WDT is turned ON  -> Threshold enabled
 		else if(WDTCON0bits.SEN == 1){
 			WDTCON0bits.SEN = 0; // disable WDT
-			
+            LED0_SetHigh();
+			LED1_SetHigh();
 			measure();
 			generateIntPower();
+            LED0_SetLow();
+			LED1_SetLow();
 			
 			CLRWDT();
 			WDTCON0bits.SEN = 1; // enable WDT
@@ -273,11 +277,16 @@ void Power_Loop(void){
 	// WatchDog Time-Out
 	else if(STATUSbits.nTO == 0){
 		WDTCON0bits.SEN = 0; // disable WDT
+		LED1_SetHigh();
 		
-		if(batThresholdEnabled && alertThreshold){
+        if(batThresholdEnabled && alertThreshold){
 			measure();
+            ledBlink();
 			generateIntPower();
 		}
+        
+        __delay_ms(2000);
+        LED1_SetLow();
 			
 		CLRWDT();
 		WDTCON0bits.SEN = 1; // enable WDT
@@ -300,19 +309,15 @@ void Power_GetData(uint8_t * data, uint8_t * length){
 }
 
 void Power_SetThreshold(uint8_t metric, uint8_t * thresholdData){
-//	if(metric == 1){
-//		
-//		batThresholdEnabled = thresholdData[0];
-//        batThresholdLevel = (uint16_t)((thresholdData[3]<<8) | thresholdData[4]);
-//        floatBatThresholdLevel = (float) batThresholdLevel/600;
-//		
-//		if(batThresholdEnabled){
-//			CLRWDT();
-//			WDTCON0bits.SEN = 1; // enable WDT
-//		}
-//	}
-//	
-//	ledBlink();
+	if(metric == 0){
+		batThresholdEnabled = thresholdData[0];
+        batThresholdLevel = (uint16_t)((thresholdData[3]<<8) | thresholdData[4]);
+        floatBatThresholdLevel = (float) batThresholdLevel/600;
+        
+        if(batThresholdEnabled){
+            WDT_Init();
+        }
+	}
 }
 
 #endif
