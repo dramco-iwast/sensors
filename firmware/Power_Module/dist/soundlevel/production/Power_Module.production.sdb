@@ -850,7 +850,7 @@ channel_FVR_Buffer2 63
 {
 [v Power_SetThreshold@metric metric `uc  1 p 1 27 ]
 [v Power_SetThreshold@thresholdData thresholdData `*.5uc  1 p 1 28 ]
-"321
+"330
 } 0
 "103
 [v _WDT_Init WDT_Init `(v  1 e 1 0 ]

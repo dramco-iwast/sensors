@@ -313,11 +313,20 @@ void Power_SetThreshold(uint8_t metric, uint8_t * thresholdData){
 		batThresholdEnabled = thresholdData[0];
         batThresholdLevel = (uint16_t)((thresholdData[3]<<8) | thresholdData[4]);
         floatBatThresholdLevel = (float) batThresholdLevel/600;
-        
-        if(batThresholdEnabled){
-            WDT_Init();
-        }
 	}
+    
+    if(batThresholdEnabled && WDTCON0bits.SEN == 0){
+        WDT_Init();
+    }
+    else if(batThresholdEnabled && WDTCON0bits.SEN == 1){
+        WDTCON0bits.SEN = 0;
+        CLRWDT();
+        WDTCON0bits.SEN = 1;
+    }
+    else{
+        WDTCON0bits.SEN = 0;
+        CLRWDT();
+    }
 }
 
 #endif

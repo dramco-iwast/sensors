@@ -18910,10 +18910,19 @@ if(metric == 0){
 batThresholdEnabled = thresholdData[0];
 batThresholdLevel = (uint16_t)((thresholdData[3]<<8) | thresholdData[4]);
 floatBatThresholdLevel = (float) batThresholdLevel/600;
+}
 
-if(batThresholdEnabled){
+if(batThresholdEnabled && WDTCON0bits.SEN == 0){
 WDT_Init();
 }
+else if(batThresholdEnabled && WDTCON0bits.SEN == 1){
+WDTCON0bits.SEN = 0;
+asm("clrwdt");
+WDTCON0bits.SEN = 1;
+}
+else{
+WDTCON0bits.SEN = 0;
+asm("clrwdt");
 }
 }
 

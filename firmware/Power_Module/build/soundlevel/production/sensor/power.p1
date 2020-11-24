@@ -13259,22 +13259,55 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;power.c: 315: floatBatThresholdLevel = (float) batThresholdLevel/600;
 "315
 [e = _floatBatThresholdLevel / -> _batThresholdLevel `f -> -> 600 `i `f ]
-[; ;power.c: 317: if(batThresholdEnabled){
-"317
-[e $ ! != -> _batThresholdEnabled `i -> -> -> 0 `i `uc `i 1670  ]
-{
-[; ;power.c: 318: WDT_Init();
-"318
-[e ( _WDT_Init ..  ]
-"319
-}
-[e :U 1670 ]
-"320
+"316
 }
 [e :U 1669 ]
-[; ;power.c: 319: }
+[; ;power.c: 316: }
+[; ;power.c: 318: if(batThresholdEnabled && WDTCON0bits.SEN == 0){
+"318
+[e $ ! && != -> _batThresholdEnabled `i -> -> -> 0 `i `uc `i == -> . . _WDTCON0bits 0 0 `i -> 0 `i 1670  ]
+{
+[; ;power.c: 319: WDT_Init();
+"319
+[e ( _WDT_Init ..  ]
+"320
+}
 [; ;power.c: 320: }
-[; ;power.c: 321: }
+[e $U 1671  ]
 "321
+[e :U 1670 ]
+[; ;power.c: 321: else if(batThresholdEnabled && WDTCON0bits.SEN == 1){
+[e $ ! && != -> _batThresholdEnabled `i -> -> -> 0 `i `uc `i == -> . . _WDTCON0bits 0 0 `i -> 1 `i 1672  ]
+{
+[; ;power.c: 322: WDTCON0bits.SEN = 0;
+"322
+[e = . . _WDTCON0bits 0 0 -> -> 0 `i `uc ]
+[; ;power.c: 323: asm("clrwdt");
+"323
+[; <" clrwdt ;# ">
+[; ;power.c: 324: WDTCON0bits.SEN = 1;
+"324
+[e = . . _WDTCON0bits 0 0 -> -> 1 `i `uc ]
+"325
+}
+[; ;power.c: 325: }
+[e $U 1673  ]
+"326
+[e :U 1672 ]
+[; ;power.c: 326: else{
+{
+[; ;power.c: 327: WDTCON0bits.SEN = 0;
+"327
+[e = . . _WDTCON0bits 0 0 -> -> 0 `i `uc ]
+[; ;power.c: 328: asm("clrwdt");
+"328
+[; <" clrwdt ;# ">
+"329
+}
+[e :U 1673 ]
+[e :U 1671 ]
+[; ;power.c: 329: }
+[; ;power.c: 330: }
+"330
 [e :UE 1668 ]
 }
