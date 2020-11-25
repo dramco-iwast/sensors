@@ -1,5 +1,5 @@
 
-# 1 "sensor/power.c"
+# 1 "C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\pic\__eeprom.c"
 
 # 18 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\xc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -18420,520 +18420,181 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 
-# 15 "C:\Program Files\Microchip\xc8\v2.31\pic\include\c90\stdbool.h"
-typedef unsigned char bool;
-
-# 66 "sensor/../global.h"
-typedef struct sensorApi{
-void (* Init)(void);
-void (* Measure)(void);
-void (* Loop)(void);
-void (* GetData)(uint8_t *, uint8_t *);
-void (* UpdateThreshold)(uint8_t, uint8_t *);
-} Sensor_API_t;
-
-
-# 82
-#pragma config FEXTOSC = OFF
-#pragma config RSTOSC = HFINT1
-#pragma config CLKOUTEN = OFF
-#pragma config CSWEN = ON
-#pragma config FCMEN = OFF
-
-
-#pragma config MCLRE = ON
-#pragma config PWRTS = OFF
-#pragma config LPBOREN = OFF
-#pragma config BOREN = OFF
-#pragma config BORV = LO
-#pragma config ZCDDIS = OFF
-#pragma config PPS1WAY = OFF
-#pragma config STVREN = OFF
-
-
-
-#pragma config WDTCPS = WDTCPS_31
-#pragma config WDTE = SWDTEN
-
-#pragma config WDTCWS = WDTCWS_7
-#pragma config WDTCCS = SC
-
-
-#pragma config BBSIZE = BB512
-#pragma config BBEN = OFF
-#pragma config SAFEN = OFF
-#pragma config WRTAPP = OFF
-#pragma config WRTB = OFF
-#pragma config WRTC = OFF
-#pragma config WRTD = OFF
-#pragma config WRTSAF = OFF
-#pragma config LVP = ON
-
-
-#pragma config CP = OFF
-
-# 183 "sensor/power.h"
-void Power_Init(void);
-void Power_Measure(void);
-void Power_Loop(void);
-void Power_GetData(uint8_t * data, uint8_t * length);
-void Power_SetThreshold(uint8_t metric, uint8_t * thresholdData);
-
-
-
-void generateIntPower(void);
-
-# 30 "C:\Program Files\Microchip\xc8\v2.31\pic\include\c90\math.h"
-extern double fabs(double);
-extern double floor(double);
-extern double ceil(double);
-extern double modf(double, double *);
-extern double sqrt(double);
-extern double atof(const char *);
-extern double sin(double) ;
-extern double cos(double) ;
-extern double tan(double) ;
-extern double asin(double) ;
-extern double acos(double) ;
-extern double atan(double);
-extern double atan2(double, double) ;
-extern double log(double);
-extern double log10(double);
-extern double pow(double, double) ;
-extern double exp(double) ;
-extern double sinh(double) ;
-extern double cosh(double) ;
-extern double tanh(double);
-extern double eval_poly(double, const double *, int);
-extern double frexp(double, int *);
-extern double ldexp(double, int);
-extern double fmod(double, double);
-extern double trunc(double);
-extern double round(double);
-
-# 15 "C:\Program Files\Microchip\xc8\v2.31\pic\include\c90\stdbool.h"
-typedef unsigned char bool;
-
-# 72 "sensor/../system/adcc.h"
-typedef uint16_t adc_result_t;
-
-# 89
-typedef enum
+# 5 "C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\pic\__eeprom.c"
+void
+__eecpymem(volatile unsigned char *to, __eeprom unsigned char * from, unsigned char size)
 {
-channel_ANC1 = 0x11,
-channel_Vss = 0x3B,
-channel_Temp_Sensor = 0x3C,
-channel_DAC1_Output = 0x3D,
-channel_FVR_Buffer1 = 0x3E,
-channel_FVR_Buffer2 = 0x3F
-} adcc_channel_t;
-
-# 131
-void ADCC_Initialize(void);
-
-# 160
-void ADCC_StartConversion(adcc_channel_t channel);
-
-# 190
-bool ADCC_IsConversionDone();
-
-# 222
-adc_result_t ADCC_GetConversionResult(void);
-
-# 253
-adc_result_t ADCC_GetSingleConversion(adcc_channel_t channel);
-
-# 278
-void ADCC_StopConversion(void);
-
-# 305
-void ADCC_SetStopOnInterrupt(void);
-
-# 330
-void ADCC_DischargeSampleCapacitor(void);
-
-# 356
-void ADCC_LoadAcquisitionRegister(uint16_t);
-
-# 382
-void ADCC_SetPrechargeTime(uint16_t);
-
-# 407
-void ADCC_SetRepeatCount(uint8_t);
-
-# 435
-uint8_t ADCC_GetCurrentCountofConversions(void);
-
-# 459
-void ADCC_ClearAccumulator(void);
-
-# 484
-uint24_t ADCC_GetAccumulatorValue(void);
-
-# 512
-bool ADCC_HasAccumulatorOverflowed(void);
-
-# 537
-uint16_t ADCC_GetFilterValue(void);
-
-# 565
-uint16_t ADCC_GetPreviousResult(void);
-
-# 591
-void ADCC_DefineSetPoint(uint16_t);
-
-# 617
-void ADCC_SetUpperThreshold(uint16_t);
-
-# 643
-void ADCC_SetLowerThreshold(uint16_t);
-
-# 670
-uint16_t ADCC_GetErrorCalculation(void);
-
-# 697
-void ADCC_EnableDoubleSampling(void);
-
-# 721
-void ADCC_EnableContinuousConversion(void);
-
-# 745
-void ADCC_DisableContinuousConversion(void);
-
-# 773
-bool ADCC_HasErrorCrossedUpperThreshold(void);
-
-# 801
-bool ADCC_HasErrorCrossedLowerThreshold(void);
-
-# 828
-uint8_t ADCC_GetConversionStageStatus(void);
-
-# 845
-void ADCC_SetADIInterruptHandler(void (* InterruptHandler)(void));
-
-# 861
-void ADCC_ISR(void);
-
-# 880
-void ADCC_DefaultInterruptHandler(void);
-
-# 23 "sensor/power.c"
-void ADC_Init(void);
-void WDT_Init(void);
-void generateIntPower(void);
-void measure(void);
-void ledBlink(void);
-void enterSleep(void);
-
-
-
-bool PollingMeasurement = 0;
-bool MeasurementRunning = 0;
-volatile uint8_t measurementData[2* 0x03];
-float AfterMeasure = 0.0;
-
-uint16_t voltageBatMeasured = 0;
-uint16_t voltageLDRMeasured = 0;
-uint16_t tempValue = 0;
-float floatVoltageBatMeasured = 0.0;
-float floatVoltageLDRMeasured = 0.0;
-
-bool batThresholdEnabled = 0;
-bool alertThreshold = 0;
-uint16_t batThresholdLevel = 0;
-float floatBatThresholdLevel = 0.0;
-
-
-
-
-void ADC_Init(void){
-
-FVRCON = 0x82;
-
-PMD3bits.ADCMD = 0;
-
-
-ADLTHL = 0x00;
-
-ADLTHH = 0x00;
-
-ADUTHL = 0x00;
-
-ADUTHH = 0x00;
-
-ADSTPTL = 0x00;
-
-ADSTPTH = 0x00;
-
-ADACCU = 0x00;
-
-ADRPT = 0x00;
-
-ADPCH = 0x00;
-
-ADACQL = 0x00;
-
-ADACQH = 0x00;
-
-ADCAP = 0x00;
-
-ADPREL = 0x00;
-
-ADPREH = 0x00;
-
-ADCON1 = 0x00;
-
-ADCON2 = 0x00;
-
-ADCON3 = 0x00;
-
-ADSTAT = 0x00;
-
-ADREF = 0x03;
-
-ADACT = 0x00;
-
-ADCLK = 0x00;
-
-ADCON0 = 0x84;
-
-FVRCON = 0x00;
+volatile unsigned char *cp = to;
+
+# 22
+while (NVMCON1bits.WR) {
+continue;
+}
+NVMCON1bits.NVMREGS = 1;
+NVMADRL = (unsigned char) from;
+NVMADRH = 0x70;
+while (size--) {
+NVMCON1bits.RD = 1;
+*cp++ = NVMDATL;
+NVMADRL++;
 }
 
-void WDT_Init(void){
-
-
-WDTCON0 = 0x1C;
-WDTCON1 = 0x07;
-WDTCON0bits.SEN = 1;
+# 36
 }
 
-void generateIntPower(void){
-do { LATCbits.LATC7 = 0; } while(0);
-_delay((unsigned long)((1)*(32000000/4000.0)));
-do { LATCbits.LATC7 = 1; } while(0);
+void
+__memcpyee(__eeprom unsigned char * to, const unsigned char *from, unsigned char size)
+{
+const unsigned char *ptr =from;
+
+# 69
+while (NVMCON1bits.WR) {
+continue;
 }
-
-void measure(void){
-
-FVRCON = 0x82;
-MeasurementRunning = 1;
-
-do { LATCbits.LATC0 = 1; } while(0);
-
-_delay((unsigned long)((10)*(32000000/4000.0)));
-
-ADCC_GetSingleConversion(0x13);
-voltageLDRMeasured = ADCC_GetSingleConversion(0x13);
-
-_delay((unsigned long)((200)*(32000000/4000.0)));
-
-tempValue = ADCC_GetSingleConversion(0x13);
-if(tempValue < voltageLDRMeasured){
-voltageLDRMeasured = tempValue;
+NVMCON1bits.NVMREGS = 1;
+NVMADRL = (unsigned char) to - 1U;
+NVMADRH = 0x70;
+NVMDATH = 0;
+while (size--) {
+while (NVMCON1bits.WR) {
+continue;
 }
-floatVoltageLDRMeasured = ((float)voltageLDRMeasured /4096) * 2.048 * ((10+10)/10);
-
-do { LATCbits.LATC0 = 0; } while(0);
-do { LATCbits.LATC6 = 1; } while(0);
-
-_delay((unsigned long)((10)*(32000000/4000.0)));
-
-ADCC_GetSingleConversion(0x14);
-voltageBatMeasured = ADCC_GetSingleConversion(0x14);
-
-floatVoltageBatMeasured = ((float)voltageBatMeasured /4096) * 2.048 * ((10+4.5)/4.5);
-
-do { LATCbits.LATC6 = 0; } while(0);
-
-
-if(floatVoltageBatMeasured < floatBatThresholdLevel){
-alertThreshold = 1;
+NVMDATL = *ptr++;
+NVMADRL++;
+STATUSbits.CARRY = 0;
+if (INTCONbits.GIE) {
+STATUSbits.CARRY = 1;
 }
-
-
-uint16_t databatvoltage = (uint16_t)(round(floatVoltageBatMeasured * 600));
-uint16_t datasolvoltage = (uint16_t)(round(floatVoltageLDRMeasured * 600));
-
-measurementData[0] = (uint8_t)(databatvoltage>>8);
-measurementData[1] = (uint8_t)(databatvoltage);
-
-measurementData[2] = (uint8_t)(datasolvoltage>>8);
-measurementData[3] = (uint8_t)(datasolvoltage);
-
-measurementData[4] = 0x00;
-measurementData[5] = 0x00;
-
-MeasurementRunning = 0;
-FVRCON = 0x00;
+NVMCON1bits.WREN = 1;
+NVMCON2 = 0x55;
+NVMCON2 = 0xAA;
+NVMCON1bits.WR = 1;
+while (NVMCON1bits.WR) {
+continue;
 }
-
-void ledBlink(void){
-
-do { LATBbits.LATB6 = 1; } while(0);
-_delay((unsigned long)((100)*(32000000/4000.0)));
-do { LATBbits.LATB6 = 0; } while(0);
-_delay((unsigned long)((100)*(32000000/4000.0)));
-do { LATBbits.LATB6 = 1; } while(0);
-_delay((unsigned long)((100)*(32000000/4000.0)));
-do { LATBbits.LATB6 = 0; } while(0);
-_delay((unsigned long)((100)*(32000000/4000.0)));
-do { LATBbits.LATB6 = 1; } while(0);
-_delay((unsigned long)((100)*(32000000/4000.0)));
-do { LATBbits.LATB6 = 0; } while(0);
-_delay((unsigned long)((500)*(32000000/4000.0)));
-
-do { LATCbits.LATC1 = 1; } while(0);
-_delay((unsigned long)((100)*(32000000/4000.0)));
-do { LATCbits.LATC1 = 0; } while(0);
-_delay((unsigned long)((100)*(32000000/4000.0)));
-do { LATCbits.LATC1 = 1; } while(0);
-_delay((unsigned long)((100)*(32000000/4000.0)));
-do { LATCbits.LATC1 = 0; } while(0);
-_delay((unsigned long)((100)*(32000000/4000.0)));
-do { LATCbits.LATC1 = 1; } while(0);
-_delay((unsigned long)((100)*(32000000/4000.0)));
-do { LATCbits.LATC1 = 0; } while(0);
-}
-
-void enterSleep(void){
-CPUDOZEbits.IDLEN = 0;
-__nop();
-asm("sleep");
-__nop();
-__nop();
-}
-
-
-
-void Power_Init(void){
-
-
-PMD0bits.IOCMD = 0;
-
-
-PMD0bits.FVRMD = 0;
-
-
-ADC_Init();
-
-
-do { ANSELCbits.ANSC7 = 0; } while(0);
-do { TRISCbits.TRISC7 = 0; } while(0);
-do { LATCbits.LATC7 = 1; } while(0);
-
-
-do { ANSELBbits.ANSB6 = 0; } while(0);
-do { ANSELCbits.ANSC1 = 0; } while(0);
-do { TRISBbits.TRISB6 = 0; } while(0);
-do { TRISCbits.TRISC1 = 0; } while(0);
-do { LATBbits.LATB6 = 0; } while(0);
-do { LATCbits.LATC1 = 0; } while(0);
-
-
-
-do { ANSELCbits.ANSC0 = 0; } while(0);
-do { ANSELCbits.ANSC6 = 0; } while(0);
-do { TRISCbits.TRISC0 = 0; } while(0);
-do { TRISCbits.TRISC6 = 0; } while(0);
-do { LATCbits.LATC0 = 0; } while(0);
-do { LATCbits.LATC6 = 0; } while(0);
-
-do { TRISCbits.TRISC3 = 1; } while(0);
-do { TRISCbits.TRISC4 = 1; } while(0);
-do { ANSELCbits.ANSC3 = 1; } while(0);
-do { ANSELCbits.ANSC4 = 1; } while(0);
-
-
-ledBlink();
-
-
-PollingMeasurement = 1;
-
-}
-
-void Power_Measure(void){
-PollingMeasurement = 1;
-}
-
-void Power_Loop(void){
-
-if(PollingMeasurement && !MeasurementRunning){
-PollingMeasurement = 0;
-
-if(WDTCON0bits.SEN == 0){
-do { LATBbits.LATB6 = 1; } while(0);
-measure();
-generateIntPower();
-do { LATBbits.LATB6 = 0; } while(0);
-}
-
-else if(WDTCON0bits.SEN == 1){
-WDTCON0bits.SEN = 0;
-do { LATBbits.LATB6 = 1; } while(0);
-do { LATCbits.LATC1 = 1; } while(0);
-measure();
-generateIntPower();
-do { LATBbits.LATB6 = 0; } while(0);
-do { LATCbits.LATC1 = 0; } while(0);
-
-asm("clrwdt");
-WDTCON0bits.SEN = 1;
+NVMCON1bits.WREN = 0;
+if (STATUSbits.CARRY) {
+INTCONbits.GIE = 1;
 }
 }
 
-else if(STATUSbits.nTO == 0){
-WDTCON0bits.SEN = 0;
-do { LATCbits.LATC1 = 1; } while(0);
-
-if(batThresholdEnabled && alertThreshold){
-measure();
-ledBlink();
-generateIntPower();
+# 101
 }
 
-_delay((unsigned long)((2000)*(32000000/4000.0)));
-do { LATCbits.LATC1 = 0; } while(0);
-
-asm("clrwdt");
-WDTCON0bits.SEN = 1;
-}
-else{
-enterSleep();
-}
+unsigned char
+__eetoc(__eeprom void *addr)
+{
+unsigned char data;
+__eecpymem((unsigned char *) &data,addr,1);
+return data;
 }
 
-void Power_GetData(uint8_t * data, uint8_t * length){
-*length = 6;
-data[0] = measurementData[0];
-data[1] = measurementData[1];
-
-data[2] = measurementData[2];
-data[3] = measurementData[3];
-
-data[4] = measurementData[4];
-data[5] = measurementData[5];
+unsigned int
+__eetoi(__eeprom void *addr)
+{
+unsigned int data;
+__eecpymem((unsigned char *) &data,addr,2);
+return data;
 }
 
-void Power_SetThreshold(uint8_t metric, uint8_t * thresholdData){
-if(metric == 0){
-batThresholdEnabled = thresholdData[0];
-batThresholdLevel = (uint16_t)((thresholdData[3]<<8) | thresholdData[4]);
-floatBatThresholdLevel = (float) batThresholdLevel/600;
+#pragma warning push
+#pragma warning disable 2040
+__uint24
+__eetom(__eeprom void *addr)
+{
+__uint24 data;
+__eecpymem((unsigned char *) &data,addr,3);
+return data;
+}
+#pragma warning pop
+
+unsigned long
+__eetol(__eeprom void *addr)
+{
+unsigned long data;
+__eecpymem((unsigned char *) &data,addr,4);
+return data;
 }
 
-if(batThresholdEnabled && WDTCON0bits.SEN == 0){
-WDT_Init();
+#pragma warning push
+#pragma warning disable 1516
+unsigned long long
+__eetoo(__eeprom void *addr)
+{
+unsigned long long data;
+__eecpymem((unsigned char *) &data,addr,8);
+return data;
 }
-else if(batThresholdEnabled && WDTCON0bits.SEN == 1){
-WDTCON0bits.SEN = 0;
-asm("clrwdt");
-WDTCON0bits.SEN = 1;
+#pragma warning pop
+
+unsigned char
+__ctoee(__eeprom void *addr, unsigned char data)
+{
+__memcpyee(addr,(unsigned char *) &data,1);
+return data;
 }
-else{
-WDTCON0bits.SEN = 0;
-asm("clrwdt");
+
+unsigned int
+__itoee(__eeprom void *addr, unsigned int data)
+{
+__memcpyee(addr,(unsigned char *) &data,2);
+return data;
 }
+
+#pragma warning push
+#pragma warning disable 2040
+__uint24
+__mtoee(__eeprom void *addr, __uint24 data)
+{
+__memcpyee(addr,(unsigned char *) &data,3);
+return data;
+}
+#pragma warning pop
+
+unsigned long
+__ltoee(__eeprom void *addr, unsigned long data)
+{
+__memcpyee(addr,(unsigned char *) &data,4);
+return data;
+}
+
+#pragma warning push
+#pragma warning disable 1516
+unsigned long long
+__otoee(__eeprom void *addr, unsigned long long data)
+{
+__memcpyee(addr,(unsigned char *) &data,8);
+return data;
+}
+#pragma warning pop
+
+float
+__eetoft(__eeprom void *addr)
+{
+float data;
+__eecpymem((unsigned char *) &data,addr,3);
+return data;
+}
+
+double
+__eetofl(__eeprom void *addr)
+{
+double data;
+__eecpymem((unsigned char *) &data,addr,4);
+return data;
+}
+
+float
+__fttoee(__eeprom void *addr, float data)
+{
+__memcpyee(addr,(unsigned char *) &data,3);
+return data;
+}
+
+double
+__fltoee(__eeprom void *addr, double data)
+{
+__memcpyee(addr,(unsigned char *) &data,4);
+return data;
 }
 

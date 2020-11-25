@@ -1,15 +1,6 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"21993 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18446.h
-[v _FVRCON `Vuc ~T0 @X0 0 e@2316 ]
-"19887
-[s S923 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S923 . ZCDMD CMP1MD CMP2MD . ADCMD DAC1MD ]
-"19886
-[u S922 `S923 1 ]
-[n S922 . . ]
-"19896
-[v _PMD3bits `VS922 ~T0 @X0 0 e@1945 ]
-"907
+[v F10822 `(v ~T0 @X0 0 tf ]
+"907 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18446.h
 [v _ADLTHL `Vuc ~T0 @X0 0 e@140 ]
 "1035
 [v _ADLTHH `Vuc ~T0 @X0 0 e@141 ]
@@ -53,119 +44,146 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _ADCLK `Vuc ~T0 @X0 0 e@280 ]
 "4032
 [v _ADCON0 `Vuc ~T0 @X0 0 e@273 ]
-"20087
-[v _WDTCON0 `Vuc ~T0 @X0 0 e@2060 ]
-"20162
-[v _WDTCON1 `Vuc ~T0 @X0 0 e@2061 ]
-"20093
-[s S933 :1 `uc 1 :5 `uc 1 ]
-[n S933 . SEN WDTPS ]
-"20097
-[s S934 :1 `uc 1 ]
-[n S934 . SWDTEN ]
-"20100
-[s S935 :1 `uc 1 ]
-[n S935 . WDTSEN ]
-"20103
-[s S936 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S936 . . WDTPS0 WDTPS1 WDTPS2 WDTPS3 WDTPS4 ]
-"20092
-[u S932 `S933 1 `S934 1 `S935 1 `S936 1 ]
-[n S932 . . . . . ]
-"20112
-[v _WDTCON0bits `VS932 ~T0 @X0 0 e@2060 ]
-"844
-[s S44 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S44 . LATC0 LATC1 LATC2 LATC3 LATC4 LATC5 LATC6 LATC7 ]
-"843
-[u S43 `S44 1 ]
-[n S43 . . ]
-"855
-[v _LATCbits `VS43 ~T0 @X0 0 e@26 ]
-[v F38 `(v ~T0 @X0 1 tf1`ul ]
-"12 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\builtins.h
-[v __delay `JF38 ~T0 @X0 0 e ]
-[p i __delay ]
-"128 sensor/power.c
-[c E10845 17 59 60 61 62 63 .. ]
-[n E10845 . channel_ANC1 channel_Vss channel_Temp_Sensor channel_DAC1_Output channel_FVR_Buffer1 channel_FVR_Buffer2  ]
-"253 sensor/../system/adcc.h
-[v _ADCC_GetSingleConversion `(ui ~T0 @X0 0 ef1`E10845 ]
-"55 C:\Program Files\Microchip\xc8\v2.31\pic\include\c90\math.h
-[v _round `(d ~T0 @X0 0 ef1`d ]
-"805 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18446.h
-[s S42 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S42 . . LATB4 LATB5 LATB6 LATB7 ]
-"804
-[u S41 `S42 1 ]
-[n S41 . . ]
-"813
-[v _LATBbits `VS41 ~T0 @X0 0 e@25 ]
-"21051
-[s S976 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S976 . DOZE . DOE ROI DOZEN IDLEN ]
-"21059
-[s S977 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S977 . DOZE0 DOZE1 DOZE2 ]
-"21050
-[u S975 `S976 1 `S977 1 ]
-[n S975 . . . ]
-"21065
-[v _CPUDOZEbits `VS975 ~T0 @X0 0 e@2188 ]
-"8 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\builtins.h
-[v ___nop `(v ~T0 @X0 0 ef ]
-[p i ___nop ]
-"19765 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18446.h
-[s S917 :1 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S917 . IOCMD CLKRMD NVMMD . FVRMD SYSCMD ]
-"19764
-[u S916 `S917 1 ]
-[n S916 . . ]
-"19774
-[v _PMD0bits `VS916 ~T0 @X0 0 e@1942 ]
-"31353
-[s S1473 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1473 . ANSC0 ANSC1 ANSC2 ANSC3 ANSC4 ANSC5 ANSC6 ANSC7 ]
-"31352
-[u S1472 `S1473 1 ]
-[n S1472 . . ]
-"31364
-[v _ANSELCbits `VS1472 ~T0 @X0 0 e@8014 ]
-"693
-[s S38 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S38 . TRISC0 TRISC1 TRISC2 TRISC3 TRISC4 TRISC5 TRISC6 TRISC7 ]
-"692
-[u S37 `S38 1 ]
-[n S37 . . ]
-"704
-[v _TRISCbits `VS37 ~T0 @X0 0 e@20 ]
-"31041
-[s S1457 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1457 . . ANSB4 ANSB5 ANSB6 ANSB7 ]
-"31040
-[u S1456 `S1457 1 ]
-[n S1456 . . ]
-"31049
-[v _ANSELBbits `VS1456 ~T0 @X0 0 e@8003 ]
-"654
-[s S36 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S36 . . TRISB4 TRISB5 TRISB6 TRISB7 ]
-"653
-[u S35 `S36 1 ]
-[n S35 . . ]
-"662
-[v _TRISBbits `VS35 ~T0 @X0 0 e@19 ]
-"175
-[s S8 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S8 . C DC Z nPD nTO ]
-"182
-[s S9 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S9 . CARRY . ZERO ]
-"174
-[u S7 `S8 1 `S9 1 ]
-[n S7 . . . ]
-"188
-[v _STATUSbits `VS7 ~T0 @X0 0 e@3 ]
+"19047
+[s S882 :1 `uc 1 :1 `uc 1 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S882 . ADIF ADTIF . CSWIF OSFIF ]
+"19046
+[u S881 `S882 1 ]
+[n S881 . . ]
+"19055
+[v _PIR1bits `VS881 ~T0 @X0 0 e@1805 ]
+"19418
+[s S900 :1 `uc 1 :1 `uc 1 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S900 . ADIE ADTIE . CSWIE OSFIE ]
+"19417
+[u S899 `S900 1 ]
+[n S899 . . ]
+"19426
+[v _PIE1bits `VS899 ~T0 @X0 0 e@1815 ]
+[v F10815 `(v ~T0 @X0 0 tf ]
+"845 system/adcc.h
+[v _ADCC_SetADIInterruptHandler `(v ~T0 @X0 0 ef1`*F10815 ]
+"880
+[v _ADCC_DefaultInterruptHandler `(v ~T0 @X0 0 ef ]
+"124 system/adcc.c
+[c E10752 17 59 60 61 62 63 .. ]
+[n E10752 . channel_ANC1 channel_Vss channel_Temp_Sensor channel_DAC1_Output channel_FVR_Buffer1 channel_FVR_Buffer2  ]
+"4038 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18446.h
+[s S170 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S170 . GO . FM CS . CONT ON ]
+"4047
+[s S171 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S171 . ADGO . ADFM ADCS . ADCONT ADON ]
+"4056
+[s S172 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S172 . DONE . FM0 FM1 ]
+"4062
+[s S173 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S173 . GO_nDONE . ADFM0 ADFM1 ]
+"4068
+[s S174 :7 `uc 1 :1 `uc 1 ]
+[n S174 . . ADCAL ]
+"4037
+[u S169 `S170 1 `S171 1 `S172 1 `S173 1 `S174 1 ]
+[n S169 . . . . . . ]
+"4073
+[v _ADCON0bits `VS169 ~T0 @X0 0 e@273 ]
+"3262
+[v _ADRESH `Vuc ~T0 @X0 0 e@158 ]
+"3134
+[v _ADRESL `Vuc ~T0 @X0 0 e@157 ]
+"4458
+[s S188 :3 `uc 1 :1 `uc 1 :3 `uc 1 ]
+[n S188 . TMD SOI CALC ]
+"4463
+[s S189 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S189 . ADTMD0 ADTMD1 ADTMD2 ADSOI ADCALC0 ADCALC1 ADCALC2 ]
+"4472
+[s S190 :3 `uc 1 :1 `uc 1 :3 `uc 1 ]
+[n S190 . ADTMD . ADCALC ]
+"4477
+[s S191 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S191 . TMD0 TMD1 TMD2 . CALC0 CALC1 CALC2 ]
+"4457
+[u S187 `S188 1 `S189 1 `S190 1 `S191 1 ]
+[n S187 . . . . . ]
+"4487
+[v _ADCON3bits `VS187 ~T0 @X0 0 e@276 ]
+"2608
+[v _ADCNT `Vuc ~T0 @X0 0 e@153 ]
+"4280
+[s S180 :3 `uc 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 ]
+[n S180 . MODE ACLR CRS PSIS ]
+"4286
+[s S181 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S181 . ADMD0 ADMD1 ADMD2 ADACLR ADCRS0 ADCRS1 ADCRS2 ADPSIS ]
+"4296
+[s S182 :3 `uc 1 :1 `uc 1 :3 `uc 1 ]
+[n S182 . ADMD . ADCRS ]
+"4301
+[s S183 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S183 . MODE0 MODE1 MODE2 . CRS0 CRS1 CRS2 ]
+"4310
+[s S184 :3 `uc 1 ]
+[n S184 . MD ]
+"4313
+[s S185 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S185 . MD0 MD1 MD2 ]
+"4318
+[s S186 :3 `uc 1 ]
+[n S186 . ADMODE ]
+"4279
+[u S179 `S180 1 `S181 1 `S182 1 `S183 1 `S184 1 `S185 1 `S186 1 ]
+[n S179 . . . . . . . . ]
+"4322
+[v _ADCON2bits `VS179 ~T0 @X0 0 e@275 ]
+"2352
+[v _ADACCH `Vuc ~T0 @X0 0 e@151 ]
+"2224
+[v _ADACCL `Vuc ~T0 @X0 0 e@150 ]
+"4588
+[s S193 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S193 . STAT . MATH LTHR UTHR OV ]
+"4596
+[s S194 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S194 . ADSTAT0 ADSTAT1 ADSTAT2 . ADMATH ADLTHR ADUTHR ADAOV ]
+"4606
+[s S195 :3 `uc 1 :4 `uc 1 :1 `uc 1 ]
+[n S195 . ADSTAT . ADOV ]
+"4611
+[s S196 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S196 . STAT0 STAT1 STAT2 ]
+"4587
+[u S192 `S193 1 `S194 1 `S195 1 `S196 1 ]
+[n S192 . . . . . ]
+"4617
+[v _ADSTATbits `VS192 ~T0 @X0 0 e@277 ]
+"2087
+[v _ADFLTRH `Vuc ~T0 @X0 0 e@149 ]
+"1959
+[v _ADFLTRL `Vuc ~T0 @X0 0 e@148 ]
+"2999
+[v _ADPREVH `Vuc ~T0 @X0 0 e@156 ]
+"2871
+[v _ADPREVL `Vuc ~T0 @X0 0 e@155 ]
+"1561
+[v _ADERRH `Vuc ~T0 @X0 0 e@145 ]
+"1433
+[v _ADERRL `Vuc ~T0 @X0 0 e@144 ]
+"4169
+[s S176 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S176 . DSEN . GBOE GAOE GPOL IPEN PPOL ]
+"4178
+[s S177 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S177 . ADDSEN . ADGBOE ADGAOE ADGPOL ADIPEN ADPPOL ]
+"4187
+[s S178 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S178 . . CHSN3 VCFG01 VCFG11 ]
+"4168
+[u S175 `S176 1 `S177 1 `S178 1 ]
+[n S175 . . . . ]
+"4194
+[v _ADCON1bits `VS175 ~T0 @X0 0 e@274 ]
 [; ;xc8\pic\include\xc.h: 18: extern const char __xc8_OPTIM_SPEED;
 [; ;xc8\pic\include\xc.h: 20: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -12262,100 +12280,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;xc8\pic\include\pic.h: 128: extern __bank0 __bit __powerdown;
 [; ;xc8\pic\include\pic.h: 129: extern __bank0 __bit __timeout;
 [; ;stdbool.h: 15: typedef unsigned char bool;
-[; ;global.h: 66: typedef struct sensorApi{
-[; ;global.h: 67: void (* Init)(void);
-[; ;global.h: 68: void (* Measure)(void);
-[; ;global.h: 69: void (* Loop)(void);
-[; ;global.h: 70: void (* GetData)(uint8_t *, uint8_t *);
-[; ;global.h: 71: void (* UpdateThreshold)(uint8_t, uint8_t *);
-[; ;global.h: 72: } Sensor_API_t;
-"82 sensor/../global.h
-[p x FEXTOSC=OFF ]
-"83
-[p x RSTOSC=HFINT1 ]
-"84
-[p x CLKOUTEN=OFF ]
-"85
-[p x CSWEN=ON ]
-"86
-[p x FCMEN=OFF ]
-"89
-[p x MCLRE=ON ]
-"90
-[p x PWRTS=OFF ]
-"91
-[p x LPBOREN=OFF ]
-"92
-[p x BOREN=OFF ]
-"93
-[p x BORV=LO ]
-"94
-[p x ZCDDIS=OFF ]
-"95
-[p x PPS1WAY=OFF ]
-"96
-[p x STVREN=OFF ]
-"100
-[p x WDTCPS=WDTCPS_31 ]
-"101
-[p x WDTE=SWDTEN ]
-"103
-[p x WDTCWS=WDTCWS_7 ]
-"104
-[p x WDTCCS=SC ]
-"107
-[p x BBSIZE=BB512 ]
-"108
-[p x BBEN=OFF ]
-"109
-[p x SAFEN=OFF ]
-"110
-[p x WRTAPP=OFF ]
-"111
-[p x WRTB=OFF ]
-"112
-[p x WRTC=OFF ]
-"113
-[p x WRTD=OFF ]
-"114
-[p x WRTSAF=OFF ]
-"115
-[p x LVP=ON ]
-"118
-[p x CP=OFF ]
-[; ;power.h: 183: void Power_Init(void);
-[; ;power.h: 184: void Power_Measure(void);
-[; ;power.h: 185: void Power_Loop(void);
-[; ;power.h: 186: void Power_GetData(uint8_t * data, uint8_t * length);
-[; ;power.h: 187: void Power_SetThreshold(uint8_t metric, uint8_t * thresholdData);
-[; ;power.h: 191: void generateIntPower(void);
-[; ;math.h: 30: extern double fabs(double);
-[; ;math.h: 31: extern double floor(double);
-[; ;math.h: 32: extern double ceil(double);
-[; ;math.h: 33: extern double modf(double, double *);
-[; ;math.h: 34: extern double sqrt(double);
-[; ;math.h: 35: extern double atof(const char *);
-[; ;math.h: 36: extern double sin(double) ;
-[; ;math.h: 37: extern double cos(double) ;
-[; ;math.h: 38: extern double tan(double) ;
-[; ;math.h: 39: extern double asin(double) ;
-[; ;math.h: 40: extern double acos(double) ;
-[; ;math.h: 41: extern double atan(double);
-[; ;math.h: 42: extern double atan2(double, double) ;
-[; ;math.h: 43: extern double log(double);
-[; ;math.h: 44: extern double log10(double);
-[; ;math.h: 45: extern double pow(double, double) ;
-[; ;math.h: 46: extern double exp(double) ;
-[; ;math.h: 47: extern double sinh(double) ;
-[; ;math.h: 48: extern double cosh(double) ;
-[; ;math.h: 49: extern double tanh(double);
-[; ;math.h: 50: extern double eval_poly(double, const double *, int);
-[; ;math.h: 51: extern double frexp(double, int *);
-[; ;math.h: 52: extern double ldexp(double, int);
-[; ;math.h: 53: extern double fmod(double, double);
-[; ;math.h: 54: extern double trunc(double);
-[; ;math.h: 55: extern double round(double);
-[; ;stdbool.h: 15: typedef unsigned char bool;
 [; ;adcc.h: 72: typedef uint16_t adc_result_t;
 [; ;adcc.h: 89: typedef enum
 [; ;adcc.h: 90: {
@@ -12396,938 +12320,611 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;adcc.h: 845: void ADCC_SetADIInterruptHandler(void (* InterruptHandler)(void));
 [; ;adcc.h: 861: void ADCC_ISR(void);
 [; ;adcc.h: 880: void ADCC_DefaultInterruptHandler(void);
-[; ;power.c: 23: void ADC_Init(void);
-[; ;power.c: 24: void WDT_Init(void);
-[; ;power.c: 25: void generateIntPower(void);
-[; ;power.c: 26: void measure(void);
-[; ;power.c: 27: void ledBlink(void);
-[; ;power.c: 28: void enterSleep(void);
-"32 sensor/power.c
-[v _PollingMeasurement `uc ~T0 @X0 1 e ]
-[i _PollingMeasurement
--> -> 0 `i `uc
-]
-[; ;power.c: 32: bool PollingMeasurement = 0;
-"33
-[v _MeasurementRunning `uc ~T0 @X0 1 e ]
-[i _MeasurementRunning
--> -> 0 `i `uc
-]
-[; ;power.c: 33: bool MeasurementRunning = 0;
-"34
-[v _measurementData `Vuc ~T0 @X0 * -> 2 `i -> 3 `i e ]
-[; ;power.c: 34: volatile uint8_t measurementData[2* 0x03];
-"35
-[v _AfterMeasure `f ~T0 @X0 1 e ]
-[i _AfterMeasure
--> .0.0 `f
-]
-[; ;power.c: 35: float AfterMeasure = 0.0;
-"37
-[v _voltageBatMeasured `ui ~T0 @X0 1 e ]
-[i _voltageBatMeasured
--> -> 0 `i `ui
-]
-[; ;power.c: 37: uint16_t voltageBatMeasured = 0;
-"38
-[v _voltageLDRMeasured `ui ~T0 @X0 1 e ]
-[i _voltageLDRMeasured
--> -> 0 `i `ui
-]
-[; ;power.c: 38: uint16_t voltageLDRMeasured = 0;
-"39
-[v _tempValue `ui ~T0 @X0 1 e ]
-[i _tempValue
--> -> 0 `i `ui
-]
-[; ;power.c: 39: uint16_t tempValue = 0;
-"40
-[v _floatVoltageBatMeasured `f ~T0 @X0 1 e ]
-[i _floatVoltageBatMeasured
--> .0.0 `f
-]
-[; ;power.c: 40: float floatVoltageBatMeasured = 0.0;
-"41
-[v _floatVoltageLDRMeasured `f ~T0 @X0 1 e ]
-[i _floatVoltageLDRMeasured
--> .0.0 `f
-]
-[; ;power.c: 41: float floatVoltageLDRMeasured = 0.0;
-"43
-[v _batThresholdEnabled `uc ~T0 @X0 1 e ]
-[i _batThresholdEnabled
--> -> 0 `i `uc
-]
-[; ;power.c: 43: bool batThresholdEnabled = 0;
-"44
-[v _alertThreshold `uc ~T0 @X0 1 e ]
-[i _alertThreshold
--> -> 0 `i `uc
-]
-[; ;power.c: 44: bool alertThreshold = 0;
-"45
-[v _batThresholdLevel `ui ~T0 @X0 1 e ]
-[i _batThresholdLevel
--> -> 0 `i `ui
-]
-[; ;power.c: 45: uint16_t batThresholdLevel = 0;
-"46
-[v _floatBatThresholdLevel `f ~T0 @X0 1 e ]
-[i _floatBatThresholdLevel
--> .0.0 `f
-]
-[; ;power.c: 46: float floatBatThresholdLevel = 0.0;
-"51
-[v _ADC_Init `(v ~T0 @X0 1 ef ]
-{
-[; ;power.c: 51: void ADC_Init(void){
-[e :U _ADC_Init ]
-[f ]
-[; ;power.c: 53: FVRCON = 0x82;
-"53
-[e = _FVRCON -> -> 130 `i `uc ]
-[; ;power.c: 55: PMD3bits.ADCMD = 0;
-"55
-[e = . . _PMD3bits 0 4 -> -> 0 `i `uc ]
-[; ;power.c: 58: ADLTHL = 0x00;
-"58
-[e = _ADLTHL -> -> 0 `i `uc ]
-[; ;power.c: 60: ADLTHH = 0x00;
-"60
-[e = _ADLTHH -> -> 0 `i `uc ]
-[; ;power.c: 62: ADUTHL = 0x00;
-"62
-[e = _ADUTHL -> -> 0 `i `uc ]
-[; ;power.c: 64: ADUTHH = 0x00;
-"64
-[e = _ADUTHH -> -> 0 `i `uc ]
-[; ;power.c: 66: ADSTPTL = 0x00;
+"60 system/adcc.c
+[v _ADCC_ADI_InterruptHandler `*F10822 ~T0 @X0 1 e ]
+[; ;adcc.c: 60: void (*ADCC_ADI_InterruptHandler)(void);
 "66
-[e = _ADSTPTL -> -> 0 `i `uc ]
-[; ;power.c: 68: ADSTPTH = 0x00;
-"68
-[e = _ADSTPTH -> -> 0 `i `uc ]
-[; ;power.c: 70: ADACCU = 0x00;
+[v _ADCC_Initialize `(v ~T0 @X0 1 ef ]
+"67
+{
+[; ;adcc.c: 66: void ADCC_Initialize(void)
+[; ;adcc.c: 67: {
+[e :U _ADCC_Initialize ]
+[f ]
+[; ;adcc.c: 70: ADLTHL = 0x00;
 "70
-[e = _ADACCU -> -> 0 `i `uc ]
-[; ;power.c: 72: ADRPT = 0x00;
+[e = _ADLTHL -> -> 0 `i `uc ]
+[; ;adcc.c: 72: ADLTHH = 0x00;
 "72
-[e = _ADRPT -> -> 0 `i `uc ]
-[; ;power.c: 74: ADPCH = 0x00;
+[e = _ADLTHH -> -> 0 `i `uc ]
+[; ;adcc.c: 74: ADUTHL = 0x00;
 "74
-[e = _ADPCH -> -> 0 `i `uc ]
-[; ;power.c: 76: ADACQL = 0x00;
+[e = _ADUTHL -> -> 0 `i `uc ]
+[; ;adcc.c: 76: ADUTHH = 0x00;
 "76
-[e = _ADACQL -> -> 0 `i `uc ]
-[; ;power.c: 78: ADACQH = 0x00;
+[e = _ADUTHH -> -> 0 `i `uc ]
+[; ;adcc.c: 78: ADSTPTL = 0x00;
 "78
-[e = _ADACQH -> -> 0 `i `uc ]
-[; ;power.c: 80: ADCAP = 0x00;
+[e = _ADSTPTL -> -> 0 `i `uc ]
+[; ;adcc.c: 80: ADSTPTH = 0x00;
 "80
-[e = _ADCAP -> -> 0 `i `uc ]
-[; ;power.c: 82: ADPREL = 0x00;
+[e = _ADSTPTH -> -> 0 `i `uc ]
+[; ;adcc.c: 82: ADACCU = 0x00;
 "82
-[e = _ADPREL -> -> 0 `i `uc ]
-[; ;power.c: 84: ADPREH = 0x00;
+[e = _ADACCU -> -> 0 `i `uc ]
+[; ;adcc.c: 84: ADRPT = 0x00;
 "84
-[e = _ADPREH -> -> 0 `i `uc ]
-[; ;power.c: 86: ADCON1 = 0x00;
+[e = _ADRPT -> -> 0 `i `uc ]
+[; ;adcc.c: 86: ADPCH = 0x00;
 "86
-[e = _ADCON1 -> -> 0 `i `uc ]
-[; ;power.c: 88: ADCON2 = 0x00;
+[e = _ADPCH -> -> 0 `i `uc ]
+[; ;adcc.c: 88: ADACQL = 0x00;
 "88
-[e = _ADCON2 -> -> 0 `i `uc ]
-[; ;power.c: 90: ADCON3 = 0x00;
+[e = _ADACQL -> -> 0 `i `uc ]
+[; ;adcc.c: 90: ADACQH = 0x00;
 "90
-[e = _ADCON3 -> -> 0 `i `uc ]
-[; ;power.c: 92: ADSTAT = 0x00;
+[e = _ADACQH -> -> 0 `i `uc ]
+[; ;adcc.c: 92: ADCAP = 0x00;
 "92
-[e = _ADSTAT -> -> 0 `i `uc ]
-[; ;power.c: 94: ADREF = 0x03;
+[e = _ADCAP -> -> 0 `i `uc ]
+[; ;adcc.c: 94: ADPREL = 0x00;
 "94
-[e = _ADREF -> -> 3 `i `uc ]
-[; ;power.c: 96: ADACT = 0x00;
+[e = _ADPREL -> -> 0 `i `uc ]
+[; ;adcc.c: 96: ADPREH = 0x00;
 "96
-[e = _ADACT -> -> 0 `i `uc ]
-[; ;power.c: 98: ADCLK = 0x00;
+[e = _ADPREH -> -> 0 `i `uc ]
+[; ;adcc.c: 98: ADCON1 = 0x00;
 "98
-[e = _ADCLK -> -> 0 `i `uc ]
-[; ;power.c: 100: ADCON0 = 0x84;
+[e = _ADCON1 -> -> 0 `i `uc ]
+[; ;adcc.c: 100: ADCON2 = 0x00;
 "100
-[e = _ADCON0 -> -> 132 `i `uc ]
-[; ;power.c: 102: FVRCON = 0x00;
+[e = _ADCON2 -> -> 0 `i `uc ]
+[; ;adcc.c: 102: ADCON3 = 0x00;
 "102
-[e = _FVRCON -> -> 0 `i `uc ]
-[; ;power.c: 103: }
-"103
+[e = _ADCON3 -> -> 0 `i `uc ]
+[; ;adcc.c: 104: ADSTAT = 0x00;
+"104
+[e = _ADSTAT -> -> 0 `i `uc ]
+[; ;adcc.c: 106: ADREF = 0x00;
+"106
+[e = _ADREF -> -> 0 `i `uc ]
+[; ;adcc.c: 108: ADACT = 0x00;
+"108
+[e = _ADACT -> -> 0 `i `uc ]
+[; ;adcc.c: 110: ADCLK = 0x3F;
+"110
+[e = _ADCLK -> -> 63 `i `uc ]
+[; ;adcc.c: 112: ADCON0 = 0x84;
+"112
+[e = _ADCON0 -> -> 132 `i `uc ]
+[; ;adcc.c: 115: PIR1bits.ADIF = 0;
+"115
+[e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
+[; ;adcc.c: 117: PIE1bits.ADIE = 1;
+"117
+[e = . . _PIE1bits 0 0 -> -> 1 `i `uc ]
+[; ;adcc.c: 119: ADCC_SetADIInterruptHandler(ADCC_DefaultInterruptHandler);
+"119
+[e ( _ADCC_SetADIInterruptHandler (1 &U _ADCC_DefaultInterruptHandler ]
+[; ;adcc.c: 121: }
+"121
+[e :UE 1512 ]
+}
+"123
+[v _ADCC_StartConversion `(v ~T0 @X0 1 ef1`E10752 ]
+"124
+{
+[; ;adcc.c: 123: void ADCC_StartConversion(adcc_channel_t channel)
+[; ;adcc.c: 124: {
+[e :U _ADCC_StartConversion ]
+"123
+[v _channel `E10752 ~T0 @X0 1 r1 ]
+"124
+[f ]
+[; ;adcc.c: 126: ADPCH = channel;
+"126
+[e = _ADPCH -> _channel `uc ]
+[; ;adcc.c: 129: ADCON0bits.ADON = 1;
+"129
+[e = . . _ADCON0bits 1 6 -> -> 1 `i `uc ]
+[; ;adcc.c: 132: ADCON0bits.ADGO = 1;
+"132
+[e = . . _ADCON0bits 1 0 -> -> 1 `i `uc ]
+[; ;adcc.c: 133: }
+"133
 [e :UE 1513 ]
 }
-"105
-[v _WDT_Init `(v ~T0 @X0 1 ef ]
+"135
+[v _ADCC_IsConversionDone `(uc ~T0 @X0 1 ef ]
+"136
 {
-[; ;power.c: 105: void WDT_Init(void){
-[e :U _WDT_Init ]
+[; ;adcc.c: 135: bool ADCC_IsConversionDone()
+[; ;adcc.c: 136: {
+[e :U _ADCC_IsConversionDone ]
 [f ]
-[; ;power.c: 108: WDTCON0 = 0x1C;
-"108
-[e = _WDTCON0 -> -> 28 `i `uc ]
-[; ;power.c: 109: WDTCON1 = 0x07;
-"109
-[e = _WDTCON1 -> -> 7 `i `uc ]
-[; ;power.c: 110: WDTCON0bits.SEN = 1;
-"110
-[e = . . _WDTCON0bits 0 0 -> -> 1 `i `uc ]
-[; ;power.c: 111: }
-"111
+[; ;adcc.c: 138: return ((unsigned char)(!ADCON0bits.ADGO));
+"138
+[e ) -> -> ! != -> . . _ADCON0bits 1 0 `i -> -> -> 0 `i `Vuc `i `i `uc ]
+[e $UE 1514  ]
+[; ;adcc.c: 139: }
+"139
 [e :UE 1514 ]
 }
-"113
-[v _generateIntPower `(v ~T0 @X0 1 ef ]
+"141
+[v _ADCC_GetConversionResult `(ui ~T0 @X0 1 ef ]
+"142
 {
-[; ;power.c: 113: void generateIntPower(void){
-[e :U _generateIntPower ]
+[; ;adcc.c: 141: adc_result_t ADCC_GetConversionResult(void)
+[; ;adcc.c: 142: {
+[e :U _ADCC_GetConversionResult ]
 [f ]
-[; ;power.c: 114: do { LATCbits.LATC7 = 0; } while(0);
-"114
-[e :U 1518 ]
-{
-[e = . . _LATCbits 0 7 -> -> 0 `i `uc ]
-}
-[e :U 1517 ]
-[; ;power.c: 115: _delay((unsigned long)((1)*(32000000/4000.0)));
-"115
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-[; ;power.c: 116: do { LATCbits.LATC7 = 1; } while(0);
-"116
-[e :U 1521 ]
-{
-[e = . . _LATCbits 0 7 -> -> 1 `i `uc ]
-}
-[e :U 1520 ]
-[; ;power.c: 117: }
-"117
+[; ;adcc.c: 144: return ((adc_result_t)((ADRESH << 8) + ADRESL));
+"144
+[e ) -> + << -> _ADRESH `i -> 8 `i -> _ADRESL `i `ui ]
+[e $UE 1515  ]
+[; ;adcc.c: 145: }
+"145
 [e :UE 1515 ]
 }
-"119
-[v _measure `(v ~T0 @X0 1 ef ]
-{
-[; ;power.c: 119: void measure(void){
-[e :U _measure ]
-[f ]
-[; ;power.c: 121: FVRCON = 0x82;
-"121
-[e = _FVRCON -> -> 130 `i `uc ]
-[; ;power.c: 122: MeasurementRunning = 1;
-"122
-[e = _MeasurementRunning -> -> 1 `i `uc ]
-[; ;power.c: 124: do { LATCbits.LATC0 = 1; } while(0);
-"124
-[e :U 1525 ]
-{
-[e = . . _LATCbits 0 0 -> -> 1 `i `uc ]
-}
-[e :U 1524 ]
-[; ;power.c: 126: _delay((unsigned long)((10)*(32000000/4000.0)));
-"126
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-[; ;power.c: 128: ADCC_GetSingleConversion(0x13);
-"128
-[e ( _ADCC_GetSingleConversion (1 -> -> 19 `i `E10845 ]
-[; ;power.c: 129: voltageLDRMeasured = ADCC_GetSingleConversion(0x13);
-"129
-[e = _voltageLDRMeasured ( _ADCC_GetSingleConversion (1 -> -> 19 `i `E10845 ]
-[; ;power.c: 131: _delay((unsigned long)((200)*(32000000/4000.0)));
-"131
-[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-[; ;power.c: 133: tempValue = ADCC_GetSingleConversion(0x13);
-"133
-[e = _tempValue ( _ADCC_GetSingleConversion (1 -> -> 19 `i `E10845 ]
-[; ;power.c: 134: if(tempValue < voltageLDRMeasured){
-"134
-[e $ ! < _tempValue _voltageLDRMeasured 1526  ]
-{
-[; ;power.c: 135: voltageLDRMeasured = tempValue;
-"135
-[e = _voltageLDRMeasured _tempValue ]
-"136
-}
-[e :U 1526 ]
-[; ;power.c: 136: }
-[; ;power.c: 137: floatVoltageLDRMeasured = ((float)voltageLDRMeasured /4096) * 2.048 * ((10+10)/10);
-"137
-[e = _floatVoltageLDRMeasured -> * * -> / -> _voltageLDRMeasured `f -> -> 4096 `i `f `d .2.048 -> / + -> 10 `i -> 10 `i -> 10 `i `d `f ]
-[; ;power.c: 139: do { LATCbits.LATC0 = 0; } while(0);
-"139
-[e :U 1529 ]
-{
-[e = . . _LATCbits 0 0 -> -> 0 `i `uc ]
-}
-[e :U 1528 ]
-[; ;power.c: 140: do { LATCbits.LATC6 = 1; } while(0);
-"140
-[e :U 1532 ]
-{
-[e = . . _LATCbits 0 6 -> -> 1 `i `uc ]
-}
-[e :U 1531 ]
-[; ;power.c: 142: _delay((unsigned long)((10)*(32000000/4000.0)));
-"142
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-[; ;power.c: 144: ADCC_GetSingleConversion(0x14);
-"144
-[e ( _ADCC_GetSingleConversion (1 -> -> 20 `i `E10845 ]
-[; ;power.c: 145: voltageBatMeasured = ADCC_GetSingleConversion(0x14);
-"145
-[e = _voltageBatMeasured ( _ADCC_GetSingleConversion (1 -> -> 20 `i `E10845 ]
-[; ;power.c: 147: floatVoltageBatMeasured = ((float)voltageBatMeasured /4096) * 2.048 * ((10+4.5)/4.5);
 "147
-[e = _floatVoltageBatMeasured -> * * -> / -> _voltageBatMeasured `f -> -> 4096 `i `f `d .2.048 / + -> -> 10 `i `d .4.5 .4.5 `f ]
-[; ;power.c: 149: do { LATCbits.LATC6 = 0; } while(0);
-"149
-[e :U 1535 ]
+[v _ADCC_GetSingleConversion `(ui ~T0 @X0 1 ef1`E10752 ]
+"148
 {
-[e = . . _LATCbits 0 6 -> -> 0 `i `uc ]
-}
-[e :U 1534 ]
-[; ;power.c: 152: if(floatVoltageBatMeasured < floatBatThresholdLevel){
-"152
-[e $ ! < _floatVoltageBatMeasured _floatBatThresholdLevel 1536  ]
-{
-[; ;power.c: 153: alertThreshold = 1;
+[; ;adcc.c: 147: adc_result_t ADCC_GetSingleConversion(adcc_channel_t channel)
+[; ;adcc.c: 148: {
+[e :U _ADCC_GetSingleConversion ]
+"147
+[v _channel `E10752 ~T0 @X0 1 r1 ]
+"148
+[f ]
+[; ;adcc.c: 150: ADPCH = channel;
+"150
+[e = _ADPCH -> _channel `uc ]
+[; ;adcc.c: 153: ADCON0bits.ADON = 1;
 "153
-[e = _alertThreshold -> -> 1 `i `uc ]
-"154
-}
-[e :U 1536 ]
-"157
-[v _databatvoltage `ui ~T0 @X0 1 a ]
-[; ;power.c: 154: }
-[; ;power.c: 157: uint16_t databatvoltage = (uint16_t)(round(floatVoltageBatMeasured * 600));
-[e = _databatvoltage -> ( _round (1 -> * _floatVoltageBatMeasured -> -> 600 `i `f `d `ui ]
-"158
-[v _datasolvoltage `ui ~T0 @X0 1 a ]
-[; ;power.c: 158: uint16_t datasolvoltage = (uint16_t)(round(floatVoltageLDRMeasured * 600));
-[e = _datasolvoltage -> ( _round (1 -> * _floatVoltageLDRMeasured -> -> 600 `i `f `d `ui ]
-[; ;power.c: 160: measurementData[0] = (uint8_t)(databatvoltage>>8);
-"160
-[e = *U + &U _measurementData * -> -> -> 0 `i `ui `ux -> -> # *U &U _measurementData `ui `ux -> >> _databatvoltage -> 8 `i `uc ]
-[; ;power.c: 161: measurementData[1] = (uint8_t)(databatvoltage);
-"161
-[e = *U + &U _measurementData * -> -> -> 1 `i `ui `ux -> -> # *U &U _measurementData `ui `ux -> _databatvoltage `uc ]
-[; ;power.c: 163: measurementData[2] = (uint8_t)(datasolvoltage>>8);
+[e = . . _ADCON0bits 1 6 -> -> 1 `i `uc ]
+[; ;adcc.c: 156: ADCON0bits.ADCONT = 0;
+"156
+[e = . . _ADCON0bits 1 5 -> -> 0 `i `uc ]
+[; ;adcc.c: 159: ADCON0bits.ADGO = 1;
+"159
+[e = . . _ADCON0bits 1 0 -> -> 1 `i `uc ]
+[; ;adcc.c: 163: while (ADCON0bits.ADGO)
 "163
-[e = *U + &U _measurementData * -> -> -> 2 `i `ui `ux -> -> # *U &U _measurementData `ui `ux -> >> _datasolvoltage -> 8 `i `uc ]
-[; ;power.c: 164: measurementData[3] = (uint8_t)(datasolvoltage);
+[e $U 1517  ]
+[e :U 1518 ]
+[; ;adcc.c: 164: {
 "164
-[e = *U + &U _measurementData * -> -> -> 3 `i `ui `ux -> -> # *U &U _measurementData `ui `ux -> _datasolvoltage `uc ]
-[; ;power.c: 166: measurementData[4] = 0x00;
-"166
-[e = *U + &U _measurementData * -> -> -> 4 `i `ui `ux -> -> # *U &U _measurementData `ui `ux -> -> 0 `i `uc ]
-[; ;power.c: 167: measurementData[5] = 0x00;
-"167
-[e = *U + &U _measurementData * -> -> -> 5 `i `ui `ux -> -> # *U &U _measurementData `ui `ux -> -> 0 `i `uc ]
-[; ;power.c: 169: MeasurementRunning = 0;
+{
+"165
+}
+[e :U 1517 ]
+"163
+[e $ != -> . . _ADCON0bits 1 0 `i -> -> -> 0 `i `Vuc `i 1518  ]
+[e :U 1519 ]
+[; ;adcc.c: 165: }
+[; ;adcc.c: 169: return ((adc_result_t)((ADRESH << 8) + ADRESL));
 "169
-[e = _MeasurementRunning -> -> 0 `i `uc ]
-[; ;power.c: 170: FVRCON = 0x00;
+[e ) -> + << -> _ADRESH `i -> 8 `i -> _ADRESL `i `ui ]
+[e $UE 1516  ]
+[; ;adcc.c: 170: }
 "170
-[e = _FVRCON -> -> 0 `i `uc ]
-[; ;power.c: 171: }
-"171
+[e :UE 1516 ]
+}
+"172
+[v _ADCC_StopConversion `(v ~T0 @X0 1 ef ]
+"173
+{
+[; ;adcc.c: 172: void ADCC_StopConversion(void)
+[; ;adcc.c: 173: {
+[e :U _ADCC_StopConversion ]
+[f ]
+[; ;adcc.c: 175: ADCON0bits.ADGO = 0;
+"175
+[e = . . _ADCON0bits 1 0 -> -> 0 `i `uc ]
+[; ;adcc.c: 176: }
+"176
+[e :UE 1520 ]
+}
+"178
+[v _ADCC_SetStopOnInterrupt `(v ~T0 @X0 1 ef ]
+"179
+{
+[; ;adcc.c: 178: void ADCC_SetStopOnInterrupt(void)
+[; ;adcc.c: 179: {
+[e :U _ADCC_SetStopOnInterrupt ]
+[f ]
+[; ;adcc.c: 181: ADCON3bits.ADSOI = 1;
+"181
+[e = . . _ADCON3bits 1 3 -> -> 1 `i `uc ]
+[; ;adcc.c: 182: }
+"182
+[e :UE 1521 ]
+}
+"184
+[v _ADCC_DischargeSampleCapacitor `(v ~T0 @X0 1 ef ]
+"185
+{
+[; ;adcc.c: 184: void ADCC_DischargeSampleCapacitor(void)
+[; ;adcc.c: 185: {
+[e :U _ADCC_DischargeSampleCapacitor ]
+[f ]
+[; ;adcc.c: 187: ADPCH = 0x3b;
+"187
+[e = _ADPCH -> -> 59 `i `uc ]
+[; ;adcc.c: 188: }
+"188
 [e :UE 1522 ]
 }
-"173
-[v _ledBlink `(v ~T0 @X0 1 ef ]
-{
-[; ;power.c: 173: void ledBlink(void){
-[e :U _ledBlink ]
-[f ]
-[; ;power.c: 175: do { LATBbits.LATB6 = 1; } while(0);
-"175
-[e :U 1540 ]
-{
-[e = . . _LATBbits 0 3 -> -> 1 `i `uc ]
-}
-[e :U 1539 ]
-[; ;power.c: 176: _delay((unsigned long)((100)*(32000000/4000.0)));
-"176
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-[; ;power.c: 177: do { LATBbits.LATB6 = 0; } while(0);
-"177
-[e :U 1543 ]
-{
-[e = . . _LATBbits 0 3 -> -> 0 `i `uc ]
-}
-[e :U 1542 ]
-[; ;power.c: 178: _delay((unsigned long)((100)*(32000000/4000.0)));
-"178
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-[; ;power.c: 179: do { LATBbits.LATB6 = 1; } while(0);
-"179
-[e :U 1546 ]
-{
-[e = . . _LATBbits 0 3 -> -> 1 `i `uc ]
-}
-[e :U 1545 ]
-[; ;power.c: 180: _delay((unsigned long)((100)*(32000000/4000.0)));
-"180
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-[; ;power.c: 181: do { LATBbits.LATB6 = 0; } while(0);
-"181
-[e :U 1549 ]
-{
-[e = . . _LATBbits 0 3 -> -> 0 `i `uc ]
-}
-[e :U 1548 ]
-[; ;power.c: 182: _delay((unsigned long)((100)*(32000000/4000.0)));
-"182
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-[; ;power.c: 183: do { LATBbits.LATB6 = 1; } while(0);
-"183
-[e :U 1552 ]
-{
-[e = . . _LATBbits 0 3 -> -> 1 `i `uc ]
-}
-[e :U 1551 ]
-[; ;power.c: 184: _delay((unsigned long)((100)*(32000000/4000.0)));
-"184
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-[; ;power.c: 185: do { LATBbits.LATB6 = 0; } while(0);
-"185
-[e :U 1555 ]
-{
-[e = . . _LATBbits 0 3 -> -> 0 `i `uc ]
-}
-[e :U 1554 ]
-[; ;power.c: 186: _delay((unsigned long)((500)*(32000000/4000.0)));
-"186
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-[; ;power.c: 188: do { LATCbits.LATC1 = 1; } while(0);
-"188
-[e :U 1558 ]
-{
-[e = . . _LATCbits 0 1 -> -> 1 `i `uc ]
-}
-[e :U 1557 ]
-[; ;power.c: 189: _delay((unsigned long)((100)*(32000000/4000.0)));
-"189
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-[; ;power.c: 190: do { LATCbits.LATC1 = 0; } while(0);
 "190
-[e :U 1561 ]
-{
-[e = . . _LATCbits 0 1 -> -> 0 `i `uc ]
-}
-[e :U 1560 ]
-[; ;power.c: 191: _delay((unsigned long)((100)*(32000000/4000.0)));
+[v _ADCC_LoadAcquisitionRegister `(v ~T0 @X0 1 ef1`ui ]
 "191
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-[; ;power.c: 192: do { LATCbits.LATC1 = 1; } while(0);
-"192
-[e :U 1564 ]
 {
-[e = . . _LATCbits 0 1 -> -> 1 `i `uc ]
-}
-[e :U 1563 ]
-[; ;power.c: 193: _delay((unsigned long)((100)*(32000000/4000.0)));
+[; ;adcc.c: 190: void ADCC_LoadAcquisitionRegister(uint16_t acquisitionValue)
+[; ;adcc.c: 191: {
+[e :U _ADCC_LoadAcquisitionRegister ]
+"190
+[v _acquisitionValue `ui ~T0 @X0 1 r1 ]
+"191
+[f ]
+[; ;adcc.c: 193: ADACQH = acquisitionValue >> 8;
 "193
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-[; ;power.c: 194: do { LATCbits.LATC1 = 0; } while(0);
+[e = _ADACQH -> >> _acquisitionValue -> 8 `i `uc ]
+[; ;adcc.c: 194: ADACQL = acquisitionValue;
 "194
-[e :U 1567 ]
-{
-[e = . . _LATCbits 0 1 -> -> 0 `i `uc ]
-}
-[e :U 1566 ]
-[; ;power.c: 195: _delay((unsigned long)((100)*(32000000/4000.0)));
+[e = _ADACQL -> _acquisitionValue `uc ]
+[; ;adcc.c: 195: }
 "195
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-[; ;power.c: 196: do { LATCbits.LATC1 = 1; } while(0);
-"196
-[e :U 1570 ]
-{
-[e = . . _LATCbits 0 1 -> -> 1 `i `uc ]
+[e :UE 1523 ]
 }
-[e :U 1569 ]
-[; ;power.c: 197: _delay((unsigned long)((100)*(32000000/4000.0)));
 "197
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-[; ;power.c: 198: do { LATCbits.LATC1 = 0; } while(0);
+[v _ADCC_SetPrechargeTime `(v ~T0 @X0 1 ef1`ui ]
 "198
-[e :U 1573 ]
 {
-[e = . . _LATCbits 0 1 -> -> 0 `i `uc ]
+[; ;adcc.c: 197: void ADCC_SetPrechargeTime(uint16_t prechargeTime)
+[; ;adcc.c: 198: {
+[e :U _ADCC_SetPrechargeTime ]
+"197
+[v _prechargeTime `ui ~T0 @X0 1 r1 ]
+"198
+[f ]
+[; ;adcc.c: 200: ADPREH = prechargeTime >> 8;
+"200
+[e = _ADPREH -> >> _prechargeTime -> 8 `i `uc ]
+[; ;adcc.c: 201: ADPREL = prechargeTime;
+"201
+[e = _ADPREL -> _prechargeTime `uc ]
+[; ;adcc.c: 202: }
+"202
+[e :UE 1524 ]
 }
-[e :U 1572 ]
-[; ;power.c: 199: }
-"199
+"204
+[v _ADCC_SetRepeatCount `(v ~T0 @X0 1 ef1`uc ]
+"205
+{
+[; ;adcc.c: 204: void ADCC_SetRepeatCount(uint8_t repeatCount)
+[; ;adcc.c: 205: {
+[e :U _ADCC_SetRepeatCount ]
+"204
+[v _repeatCount `uc ~T0 @X0 1 r1 ]
+"205
+[f ]
+[; ;adcc.c: 207: ADRPT = repeatCount;
+"207
+[e = _ADRPT _repeatCount ]
+[; ;adcc.c: 208: }
+"208
+[e :UE 1525 ]
+}
+"210
+[v _ADCC_GetCurrentCountofConversions `(uc ~T0 @X0 1 ef ]
+"211
+{
+[; ;adcc.c: 210: uint8_t ADCC_GetCurrentCountofConversions(void)
+[; ;adcc.c: 211: {
+[e :U _ADCC_GetCurrentCountofConversions ]
+[f ]
+[; ;adcc.c: 213: return ADCNT;
+"213
+[e ) _ADCNT ]
+[e $UE 1526  ]
+[; ;adcc.c: 214: }
+"214
+[e :UE 1526 ]
+}
+"216
+[v _ADCC_ClearAccumulator `(v ~T0 @X0 1 ef ]
+"217
+{
+[; ;adcc.c: 216: void ADCC_ClearAccumulator(void)
+[; ;adcc.c: 217: {
+[e :U _ADCC_ClearAccumulator ]
+[f ]
+[; ;adcc.c: 219: ADCON2bits.ADACLR = 1;
+"219
+[e = . . _ADCON2bits 1 3 -> -> 1 `i `uc ]
+[; ;adcc.c: 220: }
+"220
+[e :UE 1527 ]
+}
+"222
+[v _ADCC_GetAccumulatorValue `(um ~T0 @X0 1 ef ]
+"223
+{
+[; ;adcc.c: 222: uint24_t ADCC_GetAccumulatorValue(void)
+[; ;adcc.c: 223: {
+[e :U _ADCC_GetAccumulatorValue ]
+[f ]
+[; ;adcc.c: 225: return (((uint24_t)ADACCU << 16)+((uint24_t)ADACCH << 8) + ADACCL);
+"225
+[e ) + + << -> _ADACCU `um -> 16 `i << -> _ADACCH `um -> 8 `i -> _ADACCL `um ]
+[e $UE 1528  ]
+[; ;adcc.c: 226: }
+"226
+[e :UE 1528 ]
+}
+"228
+[v _ADCC_HasAccumulatorOverflowed `(uc ~T0 @X0 1 ef ]
+"229
+{
+[; ;adcc.c: 228: bool ADCC_HasAccumulatorOverflowed(void)
+[; ;adcc.c: 229: {
+[e :U _ADCC_HasAccumulatorOverflowed ]
+[f ]
+[; ;adcc.c: 231: return ADSTATbits.ADAOV;
+"231
+[e ) . . _ADSTATbits 1 7 ]
+[e $UE 1529  ]
+[; ;adcc.c: 232: }
+"232
+[e :UE 1529 ]
+}
+"234
+[v _ADCC_GetFilterValue `(ui ~T0 @X0 1 ef ]
+"235
+{
+[; ;adcc.c: 234: uint16_t ADCC_GetFilterValue(void)
+[; ;adcc.c: 235: {
+[e :U _ADCC_GetFilterValue ]
+[f ]
+[; ;adcc.c: 237: return ((uint16_t)((ADFLTRH << 8) + ADFLTRL));
+"237
+[e ) -> + << -> _ADFLTRH `i -> 8 `i -> _ADFLTRL `i `ui ]
+[e $UE 1530  ]
+[; ;adcc.c: 238: }
+"238
+[e :UE 1530 ]
+}
+"240
+[v _ADCC_GetPreviousResult `(ui ~T0 @X0 1 ef ]
+"241
+{
+[; ;adcc.c: 240: uint16_t ADCC_GetPreviousResult(void)
+[; ;adcc.c: 241: {
+[e :U _ADCC_GetPreviousResult ]
+[f ]
+[; ;adcc.c: 243: return ((uint16_t)((ADPREVH << 8) + ADPREVL));
+"243
+[e ) -> + << -> _ADPREVH `i -> 8 `i -> _ADPREVL `i `ui ]
+[e $UE 1531  ]
+[; ;adcc.c: 244: }
+"244
+[e :UE 1531 ]
+}
+"246
+[v _ADCC_DefineSetPoint `(v ~T0 @X0 1 ef1`ui ]
+"247
+{
+[; ;adcc.c: 246: void ADCC_DefineSetPoint(uint16_t setPoint)
+[; ;adcc.c: 247: {
+[e :U _ADCC_DefineSetPoint ]
+"246
+[v _setPoint `ui ~T0 @X0 1 r1 ]
+"247
+[f ]
+[; ;adcc.c: 249: ADSTPTH = setPoint >> 8;
+"249
+[e = _ADSTPTH -> >> _setPoint -> 8 `i `uc ]
+[; ;adcc.c: 250: ADSTPTL = setPoint;
+"250
+[e = _ADSTPTL -> _setPoint `uc ]
+[; ;adcc.c: 251: }
+"251
+[e :UE 1532 ]
+}
+"253
+[v _ADCC_SetUpperThreshold `(v ~T0 @X0 1 ef1`ui ]
+"254
+{
+[; ;adcc.c: 253: void ADCC_SetUpperThreshold(uint16_t upperThreshold)
+[; ;adcc.c: 254: {
+[e :U _ADCC_SetUpperThreshold ]
+"253
+[v _upperThreshold `ui ~T0 @X0 1 r1 ]
+"254
+[f ]
+[; ;adcc.c: 256: ADUTHH = upperThreshold >> 8;
+"256
+[e = _ADUTHH -> >> _upperThreshold -> 8 `i `uc ]
+[; ;adcc.c: 257: ADUTHL = upperThreshold;
+"257
+[e = _ADUTHL -> _upperThreshold `uc ]
+[; ;adcc.c: 258: }
+"258
+[e :UE 1533 ]
+}
+"260
+[v _ADCC_SetLowerThreshold `(v ~T0 @X0 1 ef1`ui ]
+"261
+{
+[; ;adcc.c: 260: void ADCC_SetLowerThreshold(uint16_t lowerThreshold)
+[; ;adcc.c: 261: {
+[e :U _ADCC_SetLowerThreshold ]
+"260
+[v _lowerThreshold `ui ~T0 @X0 1 r1 ]
+"261
+[f ]
+[; ;adcc.c: 263: ADLTHH = lowerThreshold >> 8;
+"263
+[e = _ADLTHH -> >> _lowerThreshold -> 8 `i `uc ]
+[; ;adcc.c: 264: ADLTHL = lowerThreshold;
+"264
+[e = _ADLTHL -> _lowerThreshold `uc ]
+[; ;adcc.c: 265: }
+"265
+[e :UE 1534 ]
+}
+"267
+[v _ADCC_GetErrorCalculation `(ui ~T0 @X0 1 ef ]
+"268
+{
+[; ;adcc.c: 267: uint16_t ADCC_GetErrorCalculation(void)
+[; ;adcc.c: 268: {
+[e :U _ADCC_GetErrorCalculation ]
+[f ]
+[; ;adcc.c: 270: return ((uint16_t)((ADERRH << 8) + ADERRL));
+"270
+[e ) -> + << -> _ADERRH `i -> 8 `i -> _ADERRL `i `ui ]
+[e $UE 1535  ]
+[; ;adcc.c: 271: }
+"271
+[e :UE 1535 ]
+}
+"273
+[v _ADCC_EnableDoubleSampling `(v ~T0 @X0 1 ef ]
+"274
+{
+[; ;adcc.c: 273: void ADCC_EnableDoubleSampling(void)
+[; ;adcc.c: 274: {
+[e :U _ADCC_EnableDoubleSampling ]
+[f ]
+[; ;adcc.c: 276: ADCON1bits.ADDSEN = 1;
+"276
+[e = . . _ADCON1bits 1 0 -> -> 1 `i `uc ]
+[; ;adcc.c: 277: }
+"277
+[e :UE 1536 ]
+}
+"279
+[v _ADCC_EnableContinuousConversion `(v ~T0 @X0 1 ef ]
+"280
+{
+[; ;adcc.c: 279: void ADCC_EnableContinuousConversion(void)
+[; ;adcc.c: 280: {
+[e :U _ADCC_EnableContinuousConversion ]
+[f ]
+[; ;adcc.c: 282: ADCON0bits.ADCONT = 1;
+"282
+[e = . . _ADCON0bits 1 5 -> -> 1 `i `uc ]
+[; ;adcc.c: 283: }
+"283
 [e :UE 1537 ]
 }
-"201
-[v _enterSleep `(v ~T0 @X0 1 ef ]
-{
-[; ;power.c: 201: void enterSleep(void){
-[e :U _enterSleep ]
-[f ]
-[; ;power.c: 202: CPUDOZEbits.IDLEN = 0;
-"202
-[e = . . _CPUDOZEbits 0 5 -> -> 0 `i `uc ]
-[; ;power.c: 203: __nop();
-"203
-[e ( ___nop ..  ]
-[; ;power.c: 204: asm("sleep");
-"204
-[; <" sleep ;# ">
-[; ;power.c: 205: __nop();
-"205
-[e ( ___nop ..  ]
-[; ;power.c: 206: __nop();
-"206
-[e ( ___nop ..  ]
-[; ;power.c: 207: }
-"207
-[e :UE 1574 ]
-}
-"211
-[v _Power_Init `(v ~T0 @X0 1 ef ]
-{
-[; ;power.c: 211: void Power_Init(void){
-[e :U _Power_Init ]
-[f ]
-[; ;power.c: 214: PMD0bits.IOCMD = 0;
-"214
-[e = . . _PMD0bits 0 0 -> -> 0 `i `uc ]
-[; ;power.c: 217: PMD0bits.FVRMD = 0;
-"217
-[e = . . _PMD0bits 0 4 -> -> 0 `i `uc ]
-[; ;power.c: 220: ADC_Init();
-"220
-[e ( _ADC_Init ..  ]
-[; ;power.c: 223: do { ANSELCbits.ANSC7 = 0; } while(0);
-"223
-[e :U 1578 ]
-{
-[e = . . _ANSELCbits 0 7 -> -> 0 `i `uc ]
-}
-[e :U 1577 ]
-[; ;power.c: 224: do { TRISCbits.TRISC7 = 0; } while(0);
-"224
-[e :U 1581 ]
-{
-[e = . . _TRISCbits 0 7 -> -> 0 `i `uc ]
-}
-[e :U 1580 ]
-[; ;power.c: 225: do { LATCbits.LATC7 = 1; } while(0);
-"225
-[e :U 1584 ]
-{
-[e = . . _LATCbits 0 7 -> -> 1 `i `uc ]
-}
-[e :U 1583 ]
-[; ;power.c: 228: do { ANSELBbits.ANSB6 = 0; } while(0);
-"228
-[e :U 1587 ]
-{
-[e = . . _ANSELBbits 0 3 -> -> 0 `i `uc ]
-}
-[e :U 1586 ]
-[; ;power.c: 229: do { ANSELCbits.ANSC1 = 0; } while(0);
-"229
-[e :U 1590 ]
-{
-[e = . . _ANSELCbits 0 1 -> -> 0 `i `uc ]
-}
-[e :U 1589 ]
-[; ;power.c: 230: do { TRISBbits.TRISB6 = 0; } while(0);
-"230
-[e :U 1593 ]
-{
-[e = . . _TRISBbits 0 3 -> -> 0 `i `uc ]
-}
-[e :U 1592 ]
-[; ;power.c: 231: do { TRISCbits.TRISC1 = 0; } while(0);
-"231
-[e :U 1596 ]
-{
-[e = . . _TRISCbits 0 1 -> -> 0 `i `uc ]
-}
-[e :U 1595 ]
-[; ;power.c: 232: do { LATBbits.LATB6 = 0; } while(0);
-"232
-[e :U 1599 ]
-{
-[e = . . _LATBbits 0 3 -> -> 0 `i `uc ]
-}
-[e :U 1598 ]
-[; ;power.c: 233: do { LATCbits.LATC1 = 0; } while(0);
-"233
-[e :U 1602 ]
-{
-[e = . . _LATCbits 0 1 -> -> 0 `i `uc ]
-}
-[e :U 1601 ]
-[; ;power.c: 237: do { ANSELCbits.ANSC0 = 0; } while(0);
-"237
-[e :U 1605 ]
-{
-[e = . . _ANSELCbits 0 0 -> -> 0 `i `uc ]
-}
-[e :U 1604 ]
-[; ;power.c: 238: do { ANSELCbits.ANSC6 = 0; } while(0);
-"238
-[e :U 1608 ]
-{
-[e = . . _ANSELCbits 0 6 -> -> 0 `i `uc ]
-}
-[e :U 1607 ]
-[; ;power.c: 239: do { TRISCbits.TRISC0 = 0; } while(0);
-"239
-[e :U 1611 ]
-{
-[e = . . _TRISCbits 0 0 -> -> 0 `i `uc ]
-}
-[e :U 1610 ]
-[; ;power.c: 240: do { TRISCbits.TRISC6 = 0; } while(0);
-"240
-[e :U 1614 ]
-{
-[e = . . _TRISCbits 0 6 -> -> 0 `i `uc ]
-}
-[e :U 1613 ]
-[; ;power.c: 241: do { LATCbits.LATC0 = 0; } while(0);
-"241
-[e :U 1617 ]
-{
-[e = . . _LATCbits 0 0 -> -> 0 `i `uc ]
-}
-[e :U 1616 ]
-[; ;power.c: 242: do { LATCbits.LATC6 = 0; } while(0);
-"242
-[e :U 1620 ]
-{
-[e = . . _LATCbits 0 6 -> -> 0 `i `uc ]
-}
-[e :U 1619 ]
-[; ;power.c: 244: do { TRISCbits.TRISC3 = 1; } while(0);
-"244
-[e :U 1623 ]
-{
-[e = . . _TRISCbits 0 3 -> -> 1 `i `uc ]
-}
-[e :U 1622 ]
-[; ;power.c: 245: do { TRISCbits.TRISC4 = 1; } while(0);
-"245
-[e :U 1626 ]
-{
-[e = . . _TRISCbits 0 4 -> -> 1 `i `uc ]
-}
-[e :U 1625 ]
-[; ;power.c: 246: do { ANSELCbits.ANSC3 = 1; } while(0);
-"246
-[e :U 1629 ]
-{
-[e = . . _ANSELCbits 0 3 -> -> 1 `i `uc ]
-}
-[e :U 1628 ]
-[; ;power.c: 247: do { ANSELCbits.ANSC4 = 1; } while(0);
-"247
-[e :U 1632 ]
-{
-[e = . . _ANSELCbits 0 4 -> -> 1 `i `uc ]
-}
-[e :U 1631 ]
-[; ;power.c: 250: ledBlink();
-"250
-[e ( _ledBlink ..  ]
-[; ;power.c: 253: PollingMeasurement = 1;
-"253
-[e = _PollingMeasurement -> -> 1 `i `uc ]
-[; ;power.c: 255: }
-"255
-[e :UE 1575 ]
-}
-"257
-[v _Power_Measure `(v ~T0 @X0 1 ef ]
-{
-[; ;power.c: 257: void Power_Measure(void){
-[e :U _Power_Measure ]
-[f ]
-[; ;power.c: 258: PollingMeasurement = 1;
-"258
-[e = _PollingMeasurement -> -> 1 `i `uc ]
-[; ;power.c: 259: }
-"259
-[e :UE 1633 ]
-}
-"261
-[v _Power_Loop `(v ~T0 @X0 1 ef ]
-{
-[; ;power.c: 261: void Power_Loop(void){
-[e :U _Power_Loop ]
-[f ]
-[; ;power.c: 263: if(PollingMeasurement && !MeasurementRunning){
-"263
-[e $ ! && != -> _PollingMeasurement `i -> -> -> 0 `i `uc `i ! != -> _MeasurementRunning `i -> -> -> 0 `i `uc `i 1635  ]
-{
-[; ;power.c: 264: PollingMeasurement = 0;
-"264
-[e = _PollingMeasurement -> -> 0 `i `uc ]
-[; ;power.c: 266: if(WDTCON0bits.SEN == 0){
-"266
-[e $ ! == -> . . _WDTCON0bits 0 0 `i -> 0 `i 1636  ]
-{
-[; ;power.c: 267: do { LATBbits.LATB6 = 1; } while(0);
-"267
-[e :U 1639 ]
-{
-[e = . . _LATBbits 0 3 -> -> 1 `i `uc ]
-}
-[e :U 1638 ]
-[; ;power.c: 268: measure();
-"268
-[e ( _measure ..  ]
-[; ;power.c: 269: generateIntPower();
-"269
-[e ( _generateIntPower ..  ]
-[; ;power.c: 270: do { LATBbits.LATB6 = 0; } while(0);
-"270
-[e :U 1642 ]
-{
-[e = . . _LATBbits 0 3 -> -> 0 `i `uc ]
-}
-[e :U 1641 ]
-"271
-}
-[; ;power.c: 271: }
-[e $U 1643  ]
-"273
-[e :U 1636 ]
-[; ;power.c: 273: else if(WDTCON0bits.SEN == 1){
-[e $ ! == -> . . _WDTCON0bits 0 0 `i -> 1 `i 1644  ]
-{
-[; ;power.c: 274: WDTCON0bits.SEN = 0;
-"274
-[e = . . _WDTCON0bits 0 0 -> -> 0 `i `uc ]
-[; ;power.c: 275: do { LATBbits.LATB6 = 1; } while(0);
-"275
-[e :U 1647 ]
-{
-[e = . . _LATBbits 0 3 -> -> 1 `i `uc ]
-}
-[e :U 1646 ]
-[; ;power.c: 276: do { LATCbits.LATC1 = 1; } while(0);
-"276
-[e :U 1650 ]
-{
-[e = . . _LATCbits 0 1 -> -> 1 `i `uc ]
-}
-[e :U 1649 ]
-[; ;power.c: 277: measure();
-"277
-[e ( _measure ..  ]
-[; ;power.c: 278: generateIntPower();
-"278
-[e ( _generateIntPower ..  ]
-[; ;power.c: 279: do { LATBbits.LATB6 = 0; } while(0);
-"279
-[e :U 1653 ]
-{
-[e = . . _LATBbits 0 3 -> -> 0 `i `uc ]
-}
-[e :U 1652 ]
-[; ;power.c: 280: do { LATCbits.LATC1 = 0; } while(0);
-"280
-[e :U 1656 ]
-{
-[e = . . _LATCbits 0 1 -> -> 0 `i `uc ]
-}
-[e :U 1655 ]
-[; ;power.c: 282: asm("clrwdt");
-"282
-[; <" clrwdt ;# ">
-[; ;power.c: 283: WDTCON0bits.SEN = 1;
-"283
-[e = . . _WDTCON0bits 0 0 -> -> 1 `i `uc ]
-"284
-}
-[e :U 1644 ]
 "285
-[e :U 1643 ]
-}
-[; ;power.c: 284: }
-[; ;power.c: 285: }
-[e $U 1657  ]
-"287
-[e :U 1635 ]
-[; ;power.c: 287: else if(STATUSbits.nTO == 0){
-[e $ ! == -> . . _STATUSbits 0 4 `i -> 0 `i 1658  ]
+[v _ADCC_DisableContinuousConversion `(v ~T0 @X0 1 ef ]
+"286
 {
-[; ;power.c: 288: WDTCON0bits.SEN = 0;
+[; ;adcc.c: 285: void ADCC_DisableContinuousConversion(void)
+[; ;adcc.c: 286: {
+[e :U _ADCC_DisableContinuousConversion ]
+[f ]
+[; ;adcc.c: 288: ADCON0bits.ADCONT = 0;
 "288
-[e = . . _WDTCON0bits 0 0 -> -> 0 `i `uc ]
-[; ;power.c: 289: do { LATCbits.LATC1 = 1; } while(0);
+[e = . . _ADCON0bits 1 5 -> -> 0 `i `uc ]
+[; ;adcc.c: 289: }
 "289
-[e :U 1661 ]
-{
-[e = . . _LATCbits 0 1 -> -> 1 `i `uc ]
+[e :UE 1538 ]
 }
-[e :U 1660 ]
-[; ;power.c: 291: if(batThresholdEnabled && alertThreshold){
 "291
-[e $ ! && != -> _batThresholdEnabled `i -> -> -> 0 `i `uc `i != -> _alertThreshold `i -> -> -> 0 `i `uc `i 1662  ]
-{
-[; ;power.c: 292: measure();
+[v _ADCC_HasErrorCrossedUpperThreshold `(uc ~T0 @X0 1 ef ]
 "292
-[e ( _measure ..  ]
-[; ;power.c: 293: ledBlink();
-"293
-[e ( _ledBlink ..  ]
-[; ;power.c: 294: generateIntPower();
+{
+[; ;adcc.c: 291: bool ADCC_HasErrorCrossedUpperThreshold(void)
+[; ;adcc.c: 292: {
+[e :U _ADCC_HasErrorCrossedUpperThreshold ]
+[f ]
+[; ;adcc.c: 294: return ADSTATbits.ADUTHR;
 "294
-[e ( _generateIntPower ..  ]
+[e ) . . _ADSTATbits 1 6 ]
+[e $UE 1539  ]
+[; ;adcc.c: 295: }
 "295
+[e :UE 1539 ]
 }
-[e :U 1662 ]
-[; ;power.c: 295: }
-[; ;power.c: 297: _delay((unsigned long)((2000)*(32000000/4000.0)));
 "297
-[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-[; ;power.c: 298: do { LATCbits.LATC1 = 0; } while(0);
+[v _ADCC_HasErrorCrossedLowerThreshold `(uc ~T0 @X0 1 ef ]
 "298
-[e :U 1665 ]
 {
-[e = . . _LATCbits 0 1 -> -> 0 `i `uc ]
-}
-[e :U 1664 ]
-[; ;power.c: 300: asm("clrwdt");
+[; ;adcc.c: 297: bool ADCC_HasErrorCrossedLowerThreshold(void)
+[; ;adcc.c: 298: {
+[e :U _ADCC_HasErrorCrossedLowerThreshold ]
+[f ]
+[; ;adcc.c: 300: return ADSTATbits.ADLTHR;
 "300
-[; <" clrwdt ;# ">
-[; ;power.c: 301: WDTCON0bits.SEN = 1;
+[e ) . . _ADSTATbits 1 5 ]
+[e $UE 1540  ]
+[; ;adcc.c: 301: }
 "301
-[e = . . _WDTCON0bits 0 0 -> -> 1 `i `uc ]
-"302
+[e :UE 1540 ]
 }
-[; ;power.c: 302: }
-[e $U 1666  ]
 "303
-[e :U 1658 ]
-[; ;power.c: 303: else{
-{
-[; ;power.c: 304: enterSleep();
+[v _ADCC_GetConversionStageStatus `(uc ~T0 @X0 1 ef ]
 "304
-[e ( _enterSleep ..  ]
-"305
-}
-[e :U 1666 ]
-[e :U 1657 ]
-[; ;power.c: 305: }
-[; ;power.c: 306: }
+{
+[; ;adcc.c: 303: uint8_t ADCC_GetConversionStageStatus(void)
+[; ;adcc.c: 304: {
+[e :U _ADCC_GetConversionStageStatus ]
+[f ]
+[; ;adcc.c: 306: return ADSTATbits.ADSTAT;
 "306
-[e :UE 1634 ]
+[e ) . . _ADSTATbits 2 0 ]
+[e $UE 1541  ]
+[; ;adcc.c: 307: }
+"307
+[e :UE 1541 ]
 }
-"308
-[v _Power_GetData `(v ~T0 @X0 1 ef2`*uc`*uc ]
-{
-[; ;power.c: 308: void Power_GetData(uint8_t * data, uint8_t * length){
-[e :U _Power_GetData ]
-[v _data `*uc ~T0 @X0 1 r1 ]
-[v _length `*uc ~T0 @X0 1 r2 ]
-[f ]
-[; ;power.c: 309: *length = 6;
 "309
-[e = *U _length -> -> 6 `i `uc ]
-[; ;power.c: 310: data[0] = measurementData[0];
-"310
-[e = *U + _data * -> -> 0 `i `x -> -> # *U _data `i `x *U + &U _measurementData * -> -> -> 0 `i `ui `ux -> -> # *U &U _measurementData `ui `ux ]
-[; ;power.c: 311: data[1] = measurementData[1];
-"311
-[e = *U + _data * -> -> 1 `i `x -> -> # *U _data `i `x *U + &U _measurementData * -> -> -> 1 `i `ui `ux -> -> # *U &U _measurementData `ui `ux ]
-[; ;power.c: 313: data[2] = measurementData[2];
-"313
-[e = *U + _data * -> -> 2 `i `x -> -> # *U _data `i `x *U + &U _measurementData * -> -> -> 2 `i `ui `ux -> -> # *U &U _measurementData `ui `ux ]
-[; ;power.c: 314: data[3] = measurementData[3];
-"314
-[e = *U + _data * -> -> 3 `i `x -> -> # *U _data `i `x *U + &U _measurementData * -> -> -> 3 `i `ui `ux -> -> # *U &U _measurementData `ui `ux ]
-[; ;power.c: 316: data[4] = measurementData[4];
-"316
-[e = *U + _data * -> -> 4 `i `x -> -> # *U _data `i `x *U + &U _measurementData * -> -> -> 4 `i `ui `ux -> -> # *U &U _measurementData `ui `ux ]
-[; ;power.c: 317: data[5] = measurementData[5];
-"317
-[e = *U + _data * -> -> 5 `i `x -> -> # *U _data `i `x *U + &U _measurementData * -> -> -> 5 `i `ui `ux -> -> # *U &U _measurementData `ui `ux ]
-[; ;power.c: 318: }
-"318
-[e :UE 1667 ]
-}
-"320
-[v _Power_SetThreshold `(v ~T0 @X0 1 ef2`uc`*uc ]
+[v _ADCC_ISR `(v ~T0 @X0 1 ef ]
 {
-[; ;power.c: 320: void Power_SetThreshold(uint8_t metric, uint8_t * thresholdData){
-[e :U _Power_SetThreshold ]
-[v _metric `uc ~T0 @X0 1 r1 ]
-[v _thresholdData `*uc ~T0 @X0 1 r2 ]
+[; ;adcc.c: 309: void ADCC_ISR(void){
+[e :U _ADCC_ISR ]
 [f ]
-[; ;power.c: 321: if(metric == 0){
-"321
-[e $ ! == -> _metric `i -> 0 `i 1669  ]
+[; ;adcc.c: 312: PIR1bits.ADIF = 0;
+"312
+[e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
+[; ;adcc.c: 314: if (ADCC_ADI_InterruptHandler)
+"314
+[e $ ! != _ADCC_ADI_InterruptHandler -> -> 0 `i `*F10822 1543  ]
+[; ;adcc.c: 315: ADCC_ADI_InterruptHandler();
+"315
+[e ( *U _ADCC_ADI_InterruptHandler ..  ]
+[e :U 1543 ]
+[; ;adcc.c: 316: }
+"316
+[e :UE 1542 ]
+}
+"318
+[v _ADCC_SetADIInterruptHandler `(v ~T0 @X0 1 ef1`*F10815 ]
 {
-[; ;power.c: 322: batThresholdEnabled = thresholdData[0];
+[; ;adcc.c: 318: void ADCC_SetADIInterruptHandler(void (* InterruptHandler)(void)){
+[e :U _ADCC_SetADIInterruptHandler ]
+[v F10861 `(v ~T0 @X0 0 tf ]
+[v _InterruptHandler `*F10861 ~T0 @X0 1 r1 ]
+[f ]
+[; ;adcc.c: 319: ADCC_ADI_InterruptHandler = InterruptHandler;
+"319
+[e = _ADCC_ADI_InterruptHandler _InterruptHandler ]
+[; ;adcc.c: 320: }
+"320
+[e :UE 1544 ]
+}
 "322
-[e = _batThresholdEnabled *U + _thresholdData * -> -> 0 `i `x -> -> # *U _thresholdData `i `x ]
-[; ;power.c: 323: batThresholdLevel = (uint16_t)((thresholdData[3]<<8) | thresholdData[4]);
-"323
-[e = _batThresholdLevel -> | << -> *U + _thresholdData * -> -> 3 `i `x -> -> # *U _thresholdData `i `x `i -> 8 `i -> *U + _thresholdData * -> -> 4 `i `x -> -> # *U _thresholdData `i `x `i `ui ]
-[; ;power.c: 324: floatBatThresholdLevel = (float) batThresholdLevel/600;
-"324
-[e = _floatBatThresholdLevel / -> _batThresholdLevel `f -> -> 600 `i `f ]
+[v _ADCC_DefaultInterruptHandler `(v ~T0 @X0 1 ef ]
+{
+[; ;adcc.c: 322: void ADCC_DefaultInterruptHandler(void){
+[e :U _ADCC_DefaultInterruptHandler ]
+[f ]
+[; ;adcc.c: 325: }
 "325
-}
-[e :U 1669 ]
-[; ;power.c: 325: }
-[; ;power.c: 327: if(batThresholdEnabled && WDTCON0bits.SEN == 0){
-"327
-[e $ ! && != -> _batThresholdEnabled `i -> -> -> 0 `i `uc `i == -> . . _WDTCON0bits 0 0 `i -> 0 `i 1670  ]
-{
-[; ;power.c: 328: WDT_Init();
-"328
-[e ( _WDT_Init ..  ]
-"329
-}
-[; ;power.c: 329: }
-[e $U 1671  ]
-"330
-[e :U 1670 ]
-[; ;power.c: 330: else if(batThresholdEnabled && WDTCON0bits.SEN == 1){
-[e $ ! && != -> _batThresholdEnabled `i -> -> -> 0 `i `uc `i == -> . . _WDTCON0bits 0 0 `i -> 1 `i 1672  ]
-{
-[; ;power.c: 331: WDTCON0bits.SEN = 0;
-"331
-[e = . . _WDTCON0bits 0 0 -> -> 0 `i `uc ]
-[; ;power.c: 332: asm("clrwdt");
-"332
-[; <" clrwdt ;# ">
-[; ;power.c: 333: WDTCON0bits.SEN = 1;
-"333
-[e = . . _WDTCON0bits 0 0 -> -> 1 `i `uc ]
-"334
-}
-[; ;power.c: 334: }
-[e $U 1673  ]
-"335
-[e :U 1672 ]
-[; ;power.c: 335: else{
-{
-[; ;power.c: 336: WDTCON0bits.SEN = 0;
-"336
-[e = . . _WDTCON0bits 0 0 -> -> 0 `i `uc ]
-[; ;power.c: 337: asm("clrwdt");
-"337
-[; <" clrwdt ;# ">
-"338
-}
-[e :U 1673 ]
-[e :U 1671 ]
-[; ;power.c: 338: }
-[; ;power.c: 339: }
-"339
-[e :UE 1668 ]
+[e :UE 1545 ]
 }

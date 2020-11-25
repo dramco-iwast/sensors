@@ -13,7 +13,7 @@
 #define SOL_VOLT   0x13
 #define BAT_VOLT   0x14
 
-//#define DEBUG
+#define DEBUG
 
 #define ENABLE  1
 #define DISABLE 0
@@ -51,6 +51,8 @@ float floatBatThresholdLevel = 0.0;
 void ADC_Init(void){
 	// Enable Fixed voltage reference with voltage of 2.048 V
     FVRCON = 0x82;
+    // Enable ADC peripheral
+    PMD3bits.ADCMD = 0; 		
     // set the ADCC to the options selected in the User Interface
     // ADLTH 0; 
     ADLTHL = 0x00;
@@ -120,26 +122,30 @@ void measure(void){
 	MeasurementRunning = true;
 	
 	SOL_MEAS_EN_SetHigh();                              // Enable loadswitch to measure voltage
-    BAT_MEAS_EN_SetHigh();                              // Enable loadswitch to measure voltage
-
+    
     __delay_ms(10);                                     // Delay for settling voltages
 
     ADCC_GetSingleConversion(SOL_VOLT);                 // first measurement afte rreset seems to be fixed and need to be rejected
     voltageLDRMeasured = ADCC_GetSingleConversion(SOL_VOLT);
-    __delay_ms(2000);
+    
+    __delay_ms(200);
 
     tempValue = ADCC_GetSingleConversion(SOL_VOLT);
     if(tempValue < voltageLDRMeasured){                         // To make sure it is the lowest/ stable voltage that is captured
         voltageLDRMeasured = tempValue;
     }
-    floatVoltageLDRMeasured = ((float)voltageLDRMeasured /4096) * 2.048 * ((10+2.2)/2.2);   // Convert ADC value to voltage (Resistor divider)
-
+    floatVoltageLDRMeasured = ((float)voltageLDRMeasured /4096) * 2.048 * ((10+10)/10);   // Convert ADC value to voltage (Resistor divider)
+    
+    SOL_MEAS_EN_SetLow();                               // Disable loadswitch to measure voltage
+    BAT_MEAS_EN_SetHigh();                              // Enable loadswitch to measure voltage
+    
+    __delay_ms(10);                                     // Delay for settling voltages
+    
     ADCC_GetSingleConversion(BAT_VOLT); 
     voltageBatMeasured = ADCC_GetSingleConversion(BAT_VOLT);
     
-    floatVoltageBatMeasured = ((float)voltageBatMeasured /4096) * 2.048 * ((10+8.2)/8.2);   // Convert ADC value to voltage (Resistor divider)
+    floatVoltageBatMeasured = ((float)voltageBatMeasured /4096) * 2.048 * ((10+4.5)/4.5);   // Convert ADC value to voltage (Resistor divider)
 
-    SOL_MEAS_EN_SetLow();                               // Disable loadswitch to measure voltage
     BAT_MEAS_EN_SetLow();                               // Disable loadswitch to measure voltage
 
 	
@@ -157,8 +163,8 @@ void measure(void){
     measurementData[2] = (uint8_t)(datasolvoltage>>8);
     measurementData[3] = (uint8_t)(datasolvoltage);
 
-    measurementData[4] = 0x44;
-    measurementData[5] = 0x44;
+    measurementData[4] = 0x00;
+    measurementData[5] = 0x00;
    
 	MeasurementRunning = false;
 	FVRCON = 0x00; // Disable fixed voltage reference
@@ -206,6 +212,9 @@ void Power_Init(void){
 	
 	// Enable gpio clock
 	PMD0bits.IOCMD = 0; 		// TO DO : Check if it is necessary
+    
+    // Enable FVR module
+    PMD0bits.FVRMD = 0;         
 	
 	// Config ADC
 	ADC_Init();
@@ -315,15 +324,15 @@ void Power_SetThreshold(uint8_t metric, uint8_t * thresholdData){
         floatBatThresholdLevel = (float) batThresholdLevel/600;
 	}
     
-    if(batThresholdEnabled && WDTCON0bits.SEN == 0){
+    if(batThresholdEnabled && WDTCON0bits.SEN == 0){        //WDT initialy OFF -> INIT WDT      
         WDT_Init();
     }
-    else if(batThresholdEnabled && WDTCON0bits.SEN == 1){
+    else if(batThresholdEnabled && WDTCON0bits.SEN == 1){   //WDT initialy ON  -> RESET and TURN ON
         WDTCON0bits.SEN = 0;
         CLRWDT();
         WDTCON0bits.SEN = 1;
     }
-    else{
+    else{                                                   //WDT initialy OFF or ON -> DISABLE 
         WDTCON0bits.SEN = 0;
         CLRWDT();
     }

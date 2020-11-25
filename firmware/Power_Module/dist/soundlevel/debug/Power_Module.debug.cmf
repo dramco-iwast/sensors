@@ -11,11 +11,11 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\Pierre\AppData\Local\Temp\sd9k.o
+$C:\Users\Pierre\AppData\Local\Temp\s29c.o
 reset_vec CODE 0 0 0 2 2
 end_init CODE 0 2B 2B 2 2
 config CONFIG 4 8007 8007 5 2
-$dist/soundlevel/production\Power_Module.production.o
+$dist/soundlevel/debug\Power_Module.debug.o
 cinit CODE 0 2D 2D 30 2
 text1 CODE 0 C92 C92 D 2
 text2 CODE 0 D2C D2C 21 2
@@ -222,45 +222,45 @@ STRING 1000-3FFF 2
 # are in ascending order of addresses.
 # All other numeric values are in decimal.
 %LINETAB
-$dist/soundlevel/production\Power_Module.production.o
-2D cinit CODE >6791:C:\Users\Pierre\AppData\Local\Temp\sd9k.s
-2D cinit CODE >6794:C:\Users\Pierre\AppData\Local\Temp\sd9k.s
-2D cinit CODE >6918:C:\Users\Pierre\AppData\Local\Temp\sd9k.s
-30 cinit CODE >6919:C:\Users\Pierre\AppData\Local\Temp\sd9k.s
-31 cinit CODE >6923:C:\Users\Pierre\AppData\Local\Temp\sd9k.s
-32 cinit CODE >6924:C:\Users\Pierre\AppData\Local\Temp\sd9k.s
-35 cinit CODE >6925:C:\Users\Pierre\AppData\Local\Temp\sd9k.s
-36 cinit CODE >6926:C:\Users\Pierre\AppData\Local\Temp\sd9k.s
-39 cinit CODE >6927:C:\Users\Pierre\AppData\Local\Temp\sd9k.s
-3A cinit CODE >6931:C:\Users\Pierre\AppData\Local\Temp\sd9k.s
-3B cinit CODE >6932:C:\Users\Pierre\AppData\Local\Temp\sd9k.s
-3C cinit CODE >6933:C:\Users\Pierre\AppData\Local\Temp\sd9k.s
-3D cinit CODE >6934:C:\Users\Pierre\AppData\Local\Temp\sd9k.s
-3E cinit CODE >6935:C:\Users\Pierre\AppData\Local\Temp\sd9k.s
-3F cinit CODE >6936:C:\Users\Pierre\AppData\Local\Temp\sd9k.s
-40 cinit CODE >6937:C:\Users\Pierre\AppData\Local\Temp\sd9k.s
-41 cinit CODE >6938:C:\Users\Pierre\AppData\Local\Temp\sd9k.s
-42 cinit CODE >6939:C:\Users\Pierre\AppData\Local\Temp\sd9k.s
-43 cinit CODE >6940:C:\Users\Pierre\AppData\Local\Temp\sd9k.s
-46 cinit CODE >6957:C:\Users\Pierre\AppData\Local\Temp\sd9k.s
-47 cinit CODE >6958:C:\Users\Pierre\AppData\Local\Temp\sd9k.s
-48 cinit CODE >6959:C:\Users\Pierre\AppData\Local\Temp\sd9k.s
-49 cinit CODE >6963:C:\Users\Pierre\AppData\Local\Temp\sd9k.s
-4A cinit CODE >6964:C:\Users\Pierre\AppData\Local\Temp\sd9k.s
-4B cinit CODE >6965:C:\Users\Pierre\AppData\Local\Temp\sd9k.s
-4C cinit CODE >6966:C:\Users\Pierre\AppData\Local\Temp\sd9k.s
-4D cinit CODE >6967:C:\Users\Pierre\AppData\Local\Temp\sd9k.s
-4E cinit CODE >6968:C:\Users\Pierre\AppData\Local\Temp\sd9k.s
-51 cinit CODE >6972:C:\Users\Pierre\AppData\Local\Temp\sd9k.s
-52 cinit CODE >6973:C:\Users\Pierre\AppData\Local\Temp\sd9k.s
-53 cinit CODE >6974:C:\Users\Pierre\AppData\Local\Temp\sd9k.s
-54 cinit CODE >6975:C:\Users\Pierre\AppData\Local\Temp\sd9k.s
-55 cinit CODE >6976:C:\Users\Pierre\AppData\Local\Temp\sd9k.s
-56 cinit CODE >6977:C:\Users\Pierre\AppData\Local\Temp\sd9k.s
-59 cinit CODE >6983:C:\Users\Pierre\AppData\Local\Temp\sd9k.s
-59 cinit CODE >6985:C:\Users\Pierre\AppData\Local\Temp\sd9k.s
-5A cinit CODE >6986:C:\Users\Pierre\AppData\Local\Temp\sd9k.s
-5B cinit CODE >6987:C:\Users\Pierre\AppData\Local\Temp\sd9k.s
+$dist/soundlevel/debug\Power_Module.debug.o
+2D cinit CODE >6791:C:\Users\Pierre\AppData\Local\Temp\s29c.s
+2D cinit CODE >6794:C:\Users\Pierre\AppData\Local\Temp\s29c.s
+2D cinit CODE >6918:C:\Users\Pierre\AppData\Local\Temp\s29c.s
+30 cinit CODE >6919:C:\Users\Pierre\AppData\Local\Temp\s29c.s
+31 cinit CODE >6923:C:\Users\Pierre\AppData\Local\Temp\s29c.s
+32 cinit CODE >6924:C:\Users\Pierre\AppData\Local\Temp\s29c.s
+35 cinit CODE >6925:C:\Users\Pierre\AppData\Local\Temp\s29c.s
+36 cinit CODE >6926:C:\Users\Pierre\AppData\Local\Temp\s29c.s
+39 cinit CODE >6927:C:\Users\Pierre\AppData\Local\Temp\s29c.s
+3A cinit CODE >6931:C:\Users\Pierre\AppData\Local\Temp\s29c.s
+3B cinit CODE >6932:C:\Users\Pierre\AppData\Local\Temp\s29c.s
+3C cinit CODE >6933:C:\Users\Pierre\AppData\Local\Temp\s29c.s
+3D cinit CODE >6934:C:\Users\Pierre\AppData\Local\Temp\s29c.s
+3E cinit CODE >6935:C:\Users\Pierre\AppData\Local\Temp\s29c.s
+3F cinit CODE >6936:C:\Users\Pierre\AppData\Local\Temp\s29c.s
+40 cinit CODE >6937:C:\Users\Pierre\AppData\Local\Temp\s29c.s
+41 cinit CODE >6938:C:\Users\Pierre\AppData\Local\Temp\s29c.s
+42 cinit CODE >6939:C:\Users\Pierre\AppData\Local\Temp\s29c.s
+43 cinit CODE >6940:C:\Users\Pierre\AppData\Local\Temp\s29c.s
+46 cinit CODE >6957:C:\Users\Pierre\AppData\Local\Temp\s29c.s
+47 cinit CODE >6958:C:\Users\Pierre\AppData\Local\Temp\s29c.s
+48 cinit CODE >6959:C:\Users\Pierre\AppData\Local\Temp\s29c.s
+49 cinit CODE >6963:C:\Users\Pierre\AppData\Local\Temp\s29c.s
+4A cinit CODE >6964:C:\Users\Pierre\AppData\Local\Temp\s29c.s
+4B cinit CODE >6965:C:\Users\Pierre\AppData\Local\Temp\s29c.s
+4C cinit CODE >6966:C:\Users\Pierre\AppData\Local\Temp\s29c.s
+4D cinit CODE >6967:C:\Users\Pierre\AppData\Local\Temp\s29c.s
+4E cinit CODE >6968:C:\Users\Pierre\AppData\Local\Temp\s29c.s
+51 cinit CODE >6972:C:\Users\Pierre\AppData\Local\Temp\s29c.s
+52 cinit CODE >6973:C:\Users\Pierre\AppData\Local\Temp\s29c.s
+53 cinit CODE >6974:C:\Users\Pierre\AppData\Local\Temp\s29c.s
+54 cinit CODE >6975:C:\Users\Pierre\AppData\Local\Temp\s29c.s
+55 cinit CODE >6976:C:\Users\Pierre\AppData\Local\Temp\s29c.s
+56 cinit CODE >6977:C:\Users\Pierre\AppData\Local\Temp\s29c.s
+59 cinit CODE >6983:C:\Users\Pierre\AppData\Local\Temp\s29c.s
+59 cinit CODE >6985:C:\Users\Pierre\AppData\Local\Temp\s29c.s
+5A cinit CODE >6986:C:\Users\Pierre\AppData\Local\Temp\s29c.s
+5B cinit CODE >6987:C:\Users\Pierre\AppData\Local\Temp\s29c.s
 4 intentry CODE >10:C:\Users\Pierre\Documents\GitHub\sensors\firmware\Power_Module\system/interrupt.c
 6 intentry CODE >14:C:\Users\Pierre\Documents\GitHub\sensors\firmware\Power_Module\system/interrupt.c
 C intentry CODE >22:C:\Users\Pierre\Documents\GitHub\sensors\firmware\Power_Module\system/interrupt.c
@@ -825,22 +825,22 @@ C9E text1 CODE >133:C:\Users\Pierre\Documents\GitHub\sensors\firmware\Power_Modu
 3B9 maintext CODE >119:C:\Users\Pierre\Documents\GitHub\sensors\firmware\Power_Module\main.c
 3D0 maintext CODE >70:C:\Users\Pierre\Documents\GitHub\sensors\firmware\Power_Module\main.c
 3E8 maintext CODE >127:C:\Users\Pierre\Documents\GitHub\sensors\firmware\Power_Module\main.c
-C4D clrtext CODE >6946:C:\Users\Pierre\AppData\Local\Temp\sd9k.s
-C4D clrtext CODE >6947:C:\Users\Pierre\AppData\Local\Temp\sd9k.s
-C4E clrtext CODE >6948:C:\Users\Pierre\AppData\Local\Temp\sd9k.s
-C4E clrtext CODE >6949:C:\Users\Pierre\AppData\Local\Temp\sd9k.s
-C4F clrtext CODE >6950:C:\Users\Pierre\AppData\Local\Temp\sd9k.s
-C50 clrtext CODE >6951:C:\Users\Pierre\AppData\Local\Temp\sd9k.s
-C51 clrtext CODE >6952:C:\Users\Pierre\AppData\Local\Temp\sd9k.s
-C52 clrtext CODE >6953:C:\Users\Pierre\AppData\Local\Temp\sd9k.s
-C53 inittext CODE >6907:C:\Users\Pierre\AppData\Local\Temp\sd9k.s
-C53 inittext CODE >6908:C:\Users\Pierre\AppData\Local\Temp\sd9k.s
-C54 inittext CODE >6909:C:\Users\Pierre\AppData\Local\Temp\sd9k.s
-C54 inittext CODE >6910:C:\Users\Pierre\AppData\Local\Temp\sd9k.s
-C55 inittext CODE >6911:C:\Users\Pierre\AppData\Local\Temp\sd9k.s
-C56 inittext CODE >6912:C:\Users\Pierre\AppData\Local\Temp\sd9k.s
-C57 inittext CODE >6913:C:\Users\Pierre\AppData\Local\Temp\sd9k.s
-C58 inittext CODE >6914:C:\Users\Pierre\AppData\Local\Temp\sd9k.s
+C4D clrtext CODE >6946:C:\Users\Pierre\AppData\Local\Temp\s29c.s
+C4D clrtext CODE >6947:C:\Users\Pierre\AppData\Local\Temp\s29c.s
+C4E clrtext CODE >6948:C:\Users\Pierre\AppData\Local\Temp\s29c.s
+C4E clrtext CODE >6949:C:\Users\Pierre\AppData\Local\Temp\s29c.s
+C4F clrtext CODE >6950:C:\Users\Pierre\AppData\Local\Temp\s29c.s
+C50 clrtext CODE >6951:C:\Users\Pierre\AppData\Local\Temp\s29c.s
+C51 clrtext CODE >6952:C:\Users\Pierre\AppData\Local\Temp\s29c.s
+C52 clrtext CODE >6953:C:\Users\Pierre\AppData\Local\Temp\s29c.s
+C53 inittext CODE >6907:C:\Users\Pierre\AppData\Local\Temp\s29c.s
+C53 inittext CODE >6908:C:\Users\Pierre\AppData\Local\Temp\s29c.s
+C54 inittext CODE >6909:C:\Users\Pierre\AppData\Local\Temp\s29c.s
+C54 inittext CODE >6910:C:\Users\Pierre\AppData\Local\Temp\s29c.s
+C55 inittext CODE >6911:C:\Users\Pierre\AppData\Local\Temp\s29c.s
+C56 inittext CODE >6912:C:\Users\Pierre\AppData\Local\Temp\s29c.s
+C57 inittext CODE >6913:C:\Users\Pierre\AppData\Local\Temp\s29c.s
+C58 inittext CODE >6914:C:\Users\Pierre\AppData\Local\Temp\s29c.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -853,10 +853,10 @@ C58 inittext CODE >6914:C:\Users\Pierre\AppData\Local\Temp\sd9k.s
 # was defined in a psect then <psect> will be "-". File-name
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
-___latbits 3 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+___latbits 3 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
 __LdataBANK1 0 0 ABS 0 dataBANK1 -
 __LdataBANK2 0 0 ABS 0 dataBANK2 -
-_I2C1_Initialize 1AE8 0 CODE 0 text5 dist/soundlevel/production\Power_Module.production.o
+_I2C1_Initialize 1AE8 0 CODE 0 text5 dist/soundlevel/debug\Power_Module.debug.o
 __Hspace_0 1000 0 ABS 0 - -
 __Hspace_1 1BA 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
@@ -864,182 +864,182 @@ __Hspace_3 0 0 ABS 0 - -
 __Hspace_4 10013 0 ABS 0 - -
 __HidataBANK1 0 0 ABS 0 idataBANK1 -
 __HidataBANK2 0 0 ABS 0 idataBANK2 -
-_SSP1STATbits 18F 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-__size_of_ledBlink 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-frexp@eptr 23 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
-___ftdiv@exp 36 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
-_batThresholdEnabled BB 0 BANK1 1 bssBANK1 dist/soundlevel/production\Power_Module.production.o
-_I2C1_TxBufferEmpty 18CE 0 CODE 0 text30 dist/soundlevel/production\Power_Module.production.o
+_SSP1STATbits 18F 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+__size_of_ledBlink 0 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+frexp@eptr 23 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Power_Module.debug.o
+___ftdiv@exp 36 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Power_Module.debug.o
+_batThresholdEnabled BB 0 BANK1 1 bssBANK1 dist/soundlevel/debug\Power_Module.debug.o
+_I2C1_TxBufferEmpty 18CE 0 CODE 0 text30 dist/soundlevel/debug\Power_Module.debug.o
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
-_PMD_Initialize 195C 0 CODE 0 text3 dist/soundlevel/production\Power_Module.production.o
-_I2C1_StatusCallback 1E90 0 CODE 0 text37 dist/soundlevel/production\Power_Module.production.o
-I2C1_SetTransmitData@len 20 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
+_PMD_Initialize 195C 0 CODE 0 text3 dist/soundlevel/debug\Power_Module.debug.o
+_I2C1_StatusCallback 1E90 0 CODE 0 text37 dist/soundlevel/debug\Power_Module.debug.o
+I2C1_SetTransmitData@len 20 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Power_Module.debug.o
 __Hstrings 0 0 ABS 0 strings -
-_LATA 18 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_LATB 19 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_LATC 1A 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_PMD0 796 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_PMD1 797 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_PMD2 798 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_PMD3 799 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_PMD4 79A 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_PMD5 79B 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_PMD6 79C 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_PMD7 79D 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-___sp 0 0 STACK 2 stack C:\Users\Pierre\AppData\Local\Temp\sd9k.o
-_main 618 0 CODE 0 maintext dist/soundlevel/production\Power_Module.production.o
-btemp 7E 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_i2c1_rx_buffer 140 0 BANK2 1 bssBANK2 dist/soundlevel/production\Power_Module.production.o
-___ftadd@f1 28 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
-___ftadd@f2 2B 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
-start 56 0 CODE 0 init C:\Users\Pierre\AppData\Local\Temp\sd9k.o
-__size_of___ftadd 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-__size_of___ftdiv 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-__size_of___ftmul 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-__size_of___ftsub 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-__size_of___fttol 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-__size_of_main 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_LATA 18 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_LATB 19 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_LATC 1A 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_PMD0 796 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_PMD1 797 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_PMD2 798 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_PMD3 799 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_PMD4 79A 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_PMD5 79B 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_PMD6 79C 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_PMD7 79D 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+___sp 0 0 STACK 2 stack C:\Users\Pierre\AppData\Local\Temp\s29c.o
+_main 618 0 CODE 0 maintext dist/soundlevel/debug\Power_Module.debug.o
+btemp 7E 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_i2c1_rx_buffer 140 0 BANK2 1 bssBANK2 dist/soundlevel/debug\Power_Module.debug.o
+___ftadd@f1 28 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Power_Module.debug.o
+___ftadd@f2 2B 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Power_Module.debug.o
+start 56 0 CODE 0 init C:\Users\Pierre\AppData\Local\Temp\s29c.o
+__size_of___ftadd 0 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+__size_of___ftdiv 0 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+__size_of___ftmul 0 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+__size_of___ftsub 0 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+__size_of___fttol 0 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+__size_of_main 0 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
-__size_of_I2C1_ISR 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_Interrupt_Handler 8 0 CODE 0 intentry dist/soundlevel/production\Power_Module.production.o
-_alertThreshold BA 0 BANK1 1 bssBANK1 dist/soundlevel/production\Power_Module.production.o
-___ftdiv@f1 2E 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
-___ftdiv@f2 2B 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
-___ftdiv@f3 37 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
+__size_of_I2C1_ISR 0 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_Interrupt_Handler 8 0 CODE 0 intentry dist/soundlevel/debug\Power_Module.debug.o
+_alertThreshold BA 0 BANK1 1 bssBANK1 dist/soundlevel/debug\Power_Module.debug.o
+___ftdiv@f1 2E 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Power_Module.debug.o
+___ftdiv@f2 2B 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Power_Module.debug.o
+___ftdiv@f3 37 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Power_Module.debug.o
 __LidataBANK1 0 0 ABS 0 idataBANK1 -
 __LidataBANK2 0 0 ABS 0 idataBANK2 -
-?_ADCC_GetSingleConversion 20 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
+?_ADCC_GetSingleConversion 20 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Power_Module.debug.o
 __Hpowerup 0 0 CODE 0 powerup -
-__size_of_ADCC_ISR 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-___ftge@ff1 20 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
-___ftge@ff2 23 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
-__size_of_ADC_Init 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-__size_of_ADCC_DefaultInterruptHandler 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-__size_of_SYSTEM_Initialize 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+__size_of_ADCC_ISR 0 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+___ftge@ff1 20 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Power_Module.debug.o
+___ftge@ff2 23 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Power_Module.debug.o
+__size_of_ADC_Init 0 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+__size_of_ADCC_DefaultInterruptHandler 0 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+__size_of_SYSTEM_Initialize 0 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
 __HdataCOMMON 0 0 ABS 0 dataCOMMON -
-_voltageBatMeasured C3 0 BANK1 1 bssBANK1 dist/soundlevel/production\Power_Module.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\Pierre\AppData\Local\Temp\sd9k.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\Pierre\AppData\Local\Temp\sd9k.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\Pierre\AppData\Local\Temp\sd9k.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\Pierre\AppData\Local\Temp\sd9k.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\Pierre\AppData\Local\Temp\sd9k.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\Pierre\AppData\Local\Temp\sd9k.o
+_voltageBatMeasured C3 0 BANK1 1 bssBANK1 dist/soundlevel/debug\Power_Module.debug.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\Pierre\AppData\Local\Temp\s29c.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\Pierre\AppData\Local\Temp\s29c.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\Pierre\AppData\Local\Temp\s29c.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\Pierre\AppData\Local\Temp\s29c.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\Pierre\AppData\Local\Temp\s29c.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\Pierre\AppData\Local\Temp\s29c.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
-_ledBlink ABC 0 CODE 0 text27 dist/soundlevel/production\Power_Module.production.o
-__end_of_ADCC_DefaultInterruptHandler 187C 0 CODE 0 text40 dist/soundlevel/production\Power_Module.production.o
-wtemp0 7E 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_ledBlink ABC 0 CODE 0 text27 dist/soundlevel/debug\Power_Module.debug.o
+__end_of_ADCC_DefaultInterruptHandler 187C 0 CODE 0 text40 dist/soundlevel/debug\Power_Module.debug.o
+wtemp0 7E 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
 __Hfunctab 0 0 ENTRY 0 functab -
-__end_of_PMD_Initialize 1982 0 CODE 0 text3 dist/soundlevel/production\Power_Module.production.o
+__end_of_PMD_Initialize 1982 0 CODE 0 text3 dist/soundlevel/debug\Power_Module.debug.o
 __Hclrtext 0 0 ABS 0 clrtext -
-__end_of_ledBlink BF6 0 CODE 0 text27 dist/soundlevel/production\Power_Module.production.o
-__pidataCOMMON 187E 0 CODE 0 idataCOMMON dist/soundlevel/production\Power_Module.production.o
-___ftmul@f1 3B 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
-___ftmul@f2 3E 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
-_ADACCH 97 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_ADACCL 96 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_ADACCU 98 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_ADACQH 10D 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_ADACQL 10C 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_ADCON0 111 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_ADCON1 112 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_ADCON2 113 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_ADCON3 114 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_ADERRH 91 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_ADERRL 90 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_ADLTHH 8D 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_ADLTHL 8C 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_ADPREH 110 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_ADPREL 10F 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_ADRESH 9E 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_ADRESL 9D 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_ADSTAT 115 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_ADUTHH 8F 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_ADUTHL 8E 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_ANSELA 1F38 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_ANSELB 1F43 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_ANSELC 1F4E 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-__size_of_ADCC_GetSingleConversion 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-__size_of_I2C1_Initialize 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_DefaultSensorInterruptHandler 187C 0 CODE 0 text38 dist/soundlevel/production\Power_Module.production.o
-_I2C1_ISR 1C6E 0 CODE 0 text36 dist/soundlevel/production\Power_Module.production.o
-__size_of___altoft 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-measure@datasolvoltage D0 0 BANK1 1 cstackBANK1 dist/soundlevel/production\Power_Module.production.o
+__end_of_ledBlink BF6 0 CODE 0 text27 dist/soundlevel/debug\Power_Module.debug.o
+__pidataCOMMON 187E 0 CODE 0 idataCOMMON dist/soundlevel/debug\Power_Module.debug.o
+___ftmul@f1 3B 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Power_Module.debug.o
+___ftmul@f2 3E 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Power_Module.debug.o
+_ADACCH 97 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_ADACCL 96 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_ADACCU 98 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_ADACQH 10D 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_ADACQL 10C 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_ADCON0 111 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_ADCON1 112 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_ADCON2 113 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_ADCON3 114 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_ADERRH 91 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_ADERRL 90 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_ADLTHH 8D 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_ADLTHL 8C 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_ADPREH 110 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_ADPREL 10F 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_ADRESH 9E 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_ADRESL 9D 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_ADSTAT 115 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_ADUTHH 8F 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_ADUTHL 8E 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_ANSELA 1F38 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_ANSELB 1F43 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_ANSELC 1F4E 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+__size_of_ADCC_GetSingleConversion 0 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+__size_of_I2C1_Initialize 0 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_DefaultSensorInterruptHandler 187C 0 CODE 0 text38 dist/soundlevel/debug\Power_Module.debug.o
+_I2C1_ISR 1C6E 0 CODE 0 text36 dist/soundlevel/debug\Power_Module.debug.o
+__size_of___altoft 0 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+measure@datasolvoltage D0 0 BANK1 1 cstackBANK1 dist/soundlevel/debug\Power_Module.debug.o
 __LdataCOMMON 0 0 ABS 0 dataCOMMON -
-Power_GetData@length 75 0 COMMON 1 cstackCOMMON dist/soundlevel/production\Power_Module.production.o
-___altoft@c 2E 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
-__end_of___ftge 1C6E 0 CODE 0 text20 dist/soundlevel/production\Power_Module.production.o
-ADCC_GetSingleConversion@channel 74 0 COMMON 1 cstackCOMMON dist/soundlevel/production\Power_Module.production.o
-__end_of_I2C1_ISR 1CEC 0 CODE 0 text36 dist/soundlevel/production\Power_Module.production.o
-___ftsub@f1 42 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
-___ftsub@f2 3F 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
-main@ack 1B5 0 BANK3 1 cstackBANK3 dist/soundlevel/production\Power_Module.production.o
-main@cmd 1B8 0 BANK3 1 cstackBANK3 dist/soundlevel/production\Power_Module.production.o
-main@len 1B9 0 BANK3 1 cstackBANK3 dist/soundlevel/production\Power_Module.production.o
-main@mnr 1B7 0 BANK3 1 cstackBANK3 dist/soundlevel/production\Power_Module.production.o
-_ADCC_ISR 193E 0 CODE 0 text39 dist/soundlevel/production\Power_Module.production.o
-___fttol@f1 20 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
+Power_GetData@length 75 0 COMMON 1 cstackCOMMON dist/soundlevel/debug\Power_Module.debug.o
+___altoft@c 2E 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Power_Module.debug.o
+__end_of___ftge 1C6E 0 CODE 0 text20 dist/soundlevel/debug\Power_Module.debug.o
+ADCC_GetSingleConversion@channel 74 0 COMMON 1 cstackCOMMON dist/soundlevel/debug\Power_Module.debug.o
+__end_of_I2C1_ISR 1CEC 0 CODE 0 text36 dist/soundlevel/debug\Power_Module.debug.o
+___ftsub@f1 42 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Power_Module.debug.o
+___ftsub@f2 3F 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Power_Module.debug.o
+main@ack 1B5 0 BANK3 1 cstackBANK3 dist/soundlevel/debug\Power_Module.debug.o
+main@cmd 1B8 0 BANK3 1 cstackBANK3 dist/soundlevel/debug\Power_Module.debug.o
+main@len 1B9 0 BANK3 1 cstackBANK3 dist/soundlevel/debug\Power_Module.debug.o
+main@mnr 1B7 0 BANK3 1 cstackBANK3 dist/soundlevel/debug\Power_Module.debug.o
+_ADCC_ISR 193E 0 CODE 0 text39 dist/soundlevel/debug\Power_Module.debug.o
+___fttol@f1 20 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Power_Module.debug.o
 __Lmaintext 0 0 ABS 0 maintext -
-__end_of_I2C1_GetCommand 190A 0 CODE 0 text33 dist/soundlevel/production\Power_Module.production.o
-_FVRCON 90C 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-__end_of_I2C1_StatusCallback 1F36 0 CODE 0 text37 dist/soundlevel/production\Power_Module.production.o
-_ADC_Init FBC 0 CODE 0 text28 dist/soundlevel/production\Power_Module.production.o
-__size_of___ftpack 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-__end_of___ftadd 618 0 CODE 0 text17 dist/soundlevel/production\Power_Module.production.o
-__end_of___ftdiv ABC 0 CODE 0 text21 dist/soundlevel/production\Power_Module.production.o
-__end_of___ftmul 958 0 CODE 0 text19 dist/soundlevel/production\Power_Module.production.o
-__end_of___ftsub 1A58 0 CODE 0 text16 dist/soundlevel/production\Power_Module.production.o
-__end_of___fttol D00 0 CODE 0 text14 dist/soundlevel/production\Power_Module.production.o
-__end_of_ADCC_ISR 195C 0 CODE 0 text39 dist/soundlevel/production\Power_Module.production.o
-_PollingMeasurement BD 0 BANK1 1 bssBANK1 dist/soundlevel/production\Power_Module.production.o
-__end_of_ADC_Init 1000 0 CODE 0 text28 dist/soundlevel/production\Power_Module.production.o
-___stackhi 27EF 0 ABS 0 - C:\Users\Pierre\AppData\Local\Temp\sd9k.o
-___stacklo 210A 0 ABS 0 - C:\Users\Pierre\AppData\Local\Temp\sd9k.o
-trunc@expon 3D 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
-_cmdReceived C0 0 BANK1 1 bssBANK1 dist/soundlevel/production\Power_Module.production.o
+__end_of_I2C1_GetCommand 190A 0 CODE 0 text33 dist/soundlevel/debug\Power_Module.debug.o
+_FVRCON 90C 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+__end_of_I2C1_StatusCallback 1F36 0 CODE 0 text37 dist/soundlevel/debug\Power_Module.debug.o
+_ADC_Init FBC 0 CODE 0 text28 dist/soundlevel/debug\Power_Module.debug.o
+__size_of___ftpack 0 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+__end_of___ftadd 618 0 CODE 0 text17 dist/soundlevel/debug\Power_Module.debug.o
+__end_of___ftdiv ABC 0 CODE 0 text21 dist/soundlevel/debug\Power_Module.debug.o
+__end_of___ftmul 958 0 CODE 0 text19 dist/soundlevel/debug\Power_Module.debug.o
+__end_of___ftsub 1A58 0 CODE 0 text16 dist/soundlevel/debug\Power_Module.debug.o
+__end_of___fttol D00 0 CODE 0 text14 dist/soundlevel/debug\Power_Module.debug.o
+__end_of_ADCC_ISR 195C 0 CODE 0 text39 dist/soundlevel/debug\Power_Module.debug.o
+_PollingMeasurement BD 0 BANK1 1 bssBANK1 dist/soundlevel/debug\Power_Module.debug.o
+__end_of_ADC_Init 1000 0 CODE 0 text28 dist/soundlevel/debug\Power_Module.debug.o
+___stackhi 27EF 0 ABS 0 - C:\Users\Pierre\AppData\Local\Temp\s29c.o
+___stacklo 210A 0 ABS 0 - C:\Users\Pierre\AppData\Local\Temp\s29c.o
+trunc@expon 3D 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Power_Module.debug.o
+_cmdReceived C0 0 BANK1 1 bssBANK1 dist/soundlevel/debug\Power_Module.debug.o
 __LidataCOMMON 0 0 ABS 0 idataCOMMON -
-__size_of_frexp 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-__size_of_round 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-__size_of_trunc 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_Power_Measure 1886 0 CODE 0 text8 dist/soundlevel/production\Power_Module.production.o
-__size_of___lwtoft 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-start_initialization 5A 0 CODE 0 cinit dist/soundlevel/production\Power_Module.production.o
-_OSCFRQ 893 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-___altoft 1CEC 0 CODE 0 text15 dist/soundlevel/production\Power_Module.production.o
-_MeasurementRunning BC 0 BANK1 1 bssBANK1 dist/soundlevel/production\Power_Module.production.o
-__size_of_measure 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_TRISBbits 13 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_TRISCbits 14 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-round@f C9 0 BANK1 1 cstackBANK1 dist/soundlevel/production\Power_Module.production.o
-round@x C6 0 BANK1 1 cstackBANK1 dist/soundlevel/production\Power_Module.production.o
-_ADFLTRH 95 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_ADFLTRL 94 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_floatBatThresholdLevel A6 0 BANK1 1 bssBANK1 dist/soundlevel/production\Power_Module.production.o
-_ADPREVH 9C 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_ADPREVL 9B 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_ADSTPTH 93 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_ADSTPTL 92 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_RB5PPS 1F1D 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_RB7PPS 1F1F 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-__end_of_SYSTEM_Initialize 1A9A 0 CODE 0 text2 dist/soundlevel/production\Power_Module.production.o
-__end_of___altoft 1D70 0 CODE 0 text15 dist/soundlevel/production\Power_Module.production.o
-_I2C1_GetCommand 18F2 0 CODE 0 text33 dist/soundlevel/production\Power_Module.production.o
-clear_ram0 189A 0 CODE 0 clrtext dist/soundlevel/production\Power_Module.production.o
-__pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
-__pcstackBANK1 C6 0 BANK1 1 cstackBANK1 dist/soundlevel/production\Power_Module.production.o
-__pcstackBANK3 1A0 0 BANK3 1 cstackBANK3 dist/soundlevel/production\Power_Module.production.o
-___fttol@exp1 2D 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
-___fttol@lval 29 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
-_I2C1_SetTransmitData 1B38 0 CODE 0 text31 dist/soundlevel/production\Power_Module.production.o
-__end_of_ADCC_GetSingleConversion 19AC 0 CODE 0 text23 dist/soundlevel/production\Power_Module.production.o
-___ftpack DEE 0 CODE 0 text22 dist/soundlevel/production\Power_Module.production.o
-_measure$2342 D2 0 BANK1 1 cstackBANK1 dist/soundlevel/production\Power_Module.production.o
-___ftpack@arg 20 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
-___ftpack@exp 23 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
-__size_of_I2C1_TxBufferEmpty 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\Pierre\AppData\Local\Temp\sd9k.o
-__end_of___ftpack ED8 0 CODE 0 text22 dist/soundlevel/production\Power_Module.production.o
-_sensorAPI 166 0 BANK2 1 dataBANK2 dist/soundlevel/production\Power_Module.production.o
-_voltageLDRMeasured C1 0 BANK1 1 bssBANK1 dist/soundlevel/production\Power_Module.production.o
+__size_of_frexp 0 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+__size_of_round 0 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+__size_of_trunc 0 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_Power_Measure 1886 0 CODE 0 text8 dist/soundlevel/debug\Power_Module.debug.o
+__size_of___lwtoft 0 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+start_initialization 5A 0 CODE 0 cinit dist/soundlevel/debug\Power_Module.debug.o
+_OSCFRQ 893 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+___altoft 1CEC 0 CODE 0 text15 dist/soundlevel/debug\Power_Module.debug.o
+_MeasurementRunning BC 0 BANK1 1 bssBANK1 dist/soundlevel/debug\Power_Module.debug.o
+__size_of_measure 0 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_TRISBbits 13 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_TRISCbits 14 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+round@f C9 0 BANK1 1 cstackBANK1 dist/soundlevel/debug\Power_Module.debug.o
+round@x C6 0 BANK1 1 cstackBANK1 dist/soundlevel/debug\Power_Module.debug.o
+_ADFLTRH 95 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_ADFLTRL 94 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_floatBatThresholdLevel A6 0 BANK1 1 bssBANK1 dist/soundlevel/debug\Power_Module.debug.o
+_ADPREVH 9C 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_ADPREVL 9B 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_ADSTPTH 93 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_ADSTPTL 92 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_RB5PPS 1F1D 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_RB7PPS 1F1F 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+__end_of_SYSTEM_Initialize 1A9A 0 CODE 0 text2 dist/soundlevel/debug\Power_Module.debug.o
+__end_of___altoft 1D70 0 CODE 0 text15 dist/soundlevel/debug\Power_Module.debug.o
+_I2C1_GetCommand 18F2 0 CODE 0 text33 dist/soundlevel/debug\Power_Module.debug.o
+clear_ram0 189A 0 CODE 0 clrtext dist/soundlevel/debug\Power_Module.debug.o
+__pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Power_Module.debug.o
+__pcstackBANK1 C6 0 BANK1 1 cstackBANK1 dist/soundlevel/debug\Power_Module.debug.o
+__pcstackBANK3 1A0 0 BANK3 1 cstackBANK3 dist/soundlevel/debug\Power_Module.debug.o
+___fttol@exp1 2D 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Power_Module.debug.o
+___fttol@lval 29 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Power_Module.debug.o
+_I2C1_SetTransmitData 1B38 0 CODE 0 text31 dist/soundlevel/debug\Power_Module.debug.o
+__end_of_ADCC_GetSingleConversion 19AC 0 CODE 0 text23 dist/soundlevel/debug\Power_Module.debug.o
+___ftpack DEE 0 CODE 0 text22 dist/soundlevel/debug\Power_Module.debug.o
+_measure$2342 D2 0 BANK1 1 cstackBANK1 dist/soundlevel/debug\Power_Module.debug.o
+___ftpack@arg 20 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Power_Module.debug.o
+___ftpack@exp 23 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Power_Module.debug.o
+__size_of_I2C1_TxBufferEmpty 0 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+___int_sp 0 0 STACK 2 stack C:\Users\Pierre\AppData\Local\Temp\s29c.o
+__end_of___ftpack ED8 0 CODE 0 text22 dist/soundlevel/debug\Power_Module.debug.o
+_sensorAPI 166 0 BANK2 1 dataBANK2 dist/soundlevel/debug\Power_Module.debug.o
+_voltageLDRMeasured C1 0 BANK1 1 bssBANK1 dist/soundlevel/debug\Power_Module.debug.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -1051,7 +1051,7 @@ __Hbank7 0 0 ABS 0 bank7 -
 __Hbank8 0 0 ABS 0 bank8 -
 __Hbank9 0 0 ABS 0 bank9 -
 __Hcinit BA 0 CODE 0 cinit -
-__size_of_OSCILLATOR_Initialize 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+__size_of_OSCILLATOR_Initialize 0 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
 __Hsfr10 0 0 ABS 0 sfr10 -
 __Hsfr11 0 0 ABS 0 sfr11 -
 __Hsfr12 0 0 ABS 0 sfr12 -
@@ -1107,7 +1107,7 @@ __Hsfr61 0 0 ABS 0 sfr61 -
 __Hsfr62 0 0 ABS 0 sfr62 -
 __Hsfr63 0 0 ABS 0 sfr63 -
 __Hstack 0 0 STACK 2 stack -
-_VREGCONbits 812 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_VREGCONbits 812 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
 __Hbank10 0 0 ABS 0 bank10 -
 __Hbank11 0 0 ABS 0 bank11 -
 __Hbank12 0 0 ABS 0 bank12 -
@@ -1166,10 +1166,10 @@ __Hbigram 0 0 ABS 0 bigram -
 __Hmaintext 0 0 ABS 0 maintext -
 __Hcommon 0 0 ABS 0 common -
 __Hconfig 10018 0 CONFIG 4 config -
-___lwtoft 19AC 0 CODE 0 text18 dist/soundlevel/production\Power_Module.production.o
-_Power_Init 1A9A 0 CODE 0 text26 dist/soundlevel/production\Power_Module.production.o
-_Power_Loop 1F36 0 CODE 0 text9 dist/soundlevel/production\Power_Module.production.o
-_WDTCON0bits 80C 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+___lwtoft 19AC 0 CODE 0 text18 dist/soundlevel/debug\Power_Module.debug.o
+_Power_Init 1A9A 0 CODE 0 text26 dist/soundlevel/debug\Power_Module.debug.o
+_Power_Loop 1F36 0 CODE 0 text9 dist/soundlevel/debug\Power_Module.debug.o
+_WDTCON0bits 80C 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
 __Lbank0 0 0 ABS 0 bank0 -
 __Lbank1 0 0 ABS 0 bank1 -
 __Lbank2 0 0 ABS 0 bank2 -
@@ -1181,9 +1181,9 @@ __Lbank7 0 0 ABS 0 bank7 -
 __Lbank8 0 0 ABS 0 bank8 -
 __Lbank9 0 0 ABS 0 bank9 -
 __Lcinit 5A 0 CODE 0 cinit -
-___ftadd@exp1 34 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
-___ftadd@exp2 33 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
-___ftadd@sign 32 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
+___ftadd@exp1 34 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Power_Module.debug.o
+___ftadd@exp2 33 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Power_Module.debug.o
+___ftadd@sign 32 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Power_Module.debug.o
 __Lsfr10 0 0 ABS 0 sfr10 -
 __Lsfr11 0 0 ABS 0 sfr11 -
 __Lsfr12 0 0 ABS 0 sfr12 -
@@ -1239,12 +1239,12 @@ __Lsfr61 0 0 ABS 0 sfr61 -
 __Lsfr62 0 0 ABS 0 sfr62 -
 __Lsfr63 0 0 ABS 0 sfr63 -
 __Lstack 0 0 STACK 2 stack -
-_mDataLength C5 0 BANK1 1 bssBANK1 dist/soundlevel/production\Power_Module.production.o
-init_ram 18A6 0 CODE 0 inittext dist/soundlevel/production\Power_Module.production.o
-_floatVoltageBatMeasured AC 0 BANK1 1 bssBANK1 dist/soundlevel/production\Power_Module.production.o
-__end_of___lwtoft 19D8 0 CODE 0 text18 dist/soundlevel/production\Power_Module.production.o
+_mDataLength C5 0 BANK1 1 bssBANK1 dist/soundlevel/debug\Power_Module.debug.o
+init_ram 18A6 0 CODE 0 inittext dist/soundlevel/debug\Power_Module.debug.o
+_floatVoltageBatMeasured AC 0 BANK1 1 bssBANK1 dist/soundlevel/debug\Power_Module.debug.o
+__end_of___lwtoft 19D8 0 CODE 0 text18 dist/soundlevel/debug\Power_Module.debug.o
 __Linittext 0 0 ABS 0 inittext -
-_INTCONbits B 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_INTCONbits B 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
 __Habs1 0 0 ABS 0 abs1 -
 __Hcode 0 0 ABS 0 code -
 __Hinit 56 0 CODE 0 init -
@@ -1273,88 +1273,88 @@ __Lsfr7 0 0 ABS 0 sfr7 -
 __Lsfr8 0 0 ABS 0 sfr8 -
 __Lsfr9 0 0 ABS 0 sfr9 -
 __Ltext 0 0 ABS 0 text -
-I2C1_GetCommand@cmd 75 0 COMMON 1 cstackCOMMON dist/soundlevel/production\Power_Module.production.o
-_SSP1CON1 190 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_SSP1CON2 191 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_SSP1CON3 192 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_SSP1STAT 18F 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-___ftge 1BFC 0 CODE 0 text20 dist/soundlevel/production\Power_Module.production.o
+I2C1_GetCommand@cmd 75 0 COMMON 1 cstackCOMMON dist/soundlevel/debug\Power_Module.debug.o
+_SSP1CON1 190 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_SSP1CON2 191 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_SSP1CON3 192 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_SSP1STAT 18F 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+___ftge 1BFC 0 CODE 0 text20 dist/soundlevel/debug\Power_Module.debug.o
 __LcstackBANK0 0 0 ABS 0 cstackBANK0 -
 __LcstackBANK1 0 0 ABS 0 cstackBANK1 -
 __LcstackBANK3 0 0 ABS 0 cstackBANK3 -
-int$flags 7E 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+int$flags 7E 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 __S0 1000 0 ABS 0 - -
 __S1 1BA 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
-__size_of_I2C1_CommandReceived 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-__size_of_Power_Measure 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_Power_GetData 1DFE 0 CODE 0 text29 dist/soundlevel/production\Power_Module.production.o
-__end_of_Power_SetThreshold DEE 0 CODE 0 text6 dist/soundlevel/production\Power_Module.production.o
-__end_of_measure 3D8 0 CODE 0 text10 dist/soundlevel/production\Power_Module.production.o
-_tempValue B6 0 BANK1 1 bssBANK1 dist/soundlevel/production\Power_Module.production.o
+__size_of_I2C1_CommandReceived 0 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+__size_of_Power_Measure 0 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_Power_GetData 1DFE 0 CODE 0 text29 dist/soundlevel/debug\Power_Module.debug.o
+__end_of_Power_SetThreshold DEE 0 CODE 0 text6 dist/soundlevel/debug\Power_Module.debug.o
+__end_of_measure 3D8 0 CODE 0 text10 dist/soundlevel/debug\Power_Module.debug.o
+_tempValue B6 0 BANK1 1 bssBANK1 dist/soundlevel/debug\Power_Module.debug.o
 __HidataCOMMON 0 0 ABS 0 idataCOMMON -
-_SYSTEM_Initialize 1A58 0 CODE 0 text2 dist/soundlevel/production\Power_Module.production.o
-__end_of_I2C1_CommandReceived 1886 0 CODE 0 text34 dist/soundlevel/production\Power_Module.production.o
-_enterSleep 18B2 0 CODE 0 text25 dist/soundlevel/production\Power_Module.production.o
-__size_of_I2C1_GetCommand 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-__end_of_DefaultSensorInterruptHandler 187E 0 CODE 0 text38 dist/soundlevel/production\Power_Module.production.o
+_SYSTEM_Initialize 1A58 0 CODE 0 text2 dist/soundlevel/debug\Power_Module.debug.o
+__end_of_I2C1_CommandReceived 1886 0 CODE 0 text34 dist/soundlevel/debug\Power_Module.debug.o
+_enterSleep 18B2 0 CODE 0 text25 dist/soundlevel/debug\Power_Module.debug.o
+__size_of_I2C1_GetCommand 0 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+__end_of_DefaultSensorInterruptHandler 187E 0 CODE 0 text38 dist/soundlevel/debug\Power_Module.debug.o
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\Pierre\AppData\Local\Temp\sd9k.o
-_ADCC_ADI_InterruptHandler B8 0 BANK1 1 bssBANK1 dist/soundlevel/production\Power_Module.production.o
-__size_of_I2C1_GetCommandData 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-__end_of_Power_Init 1AE8 0 CODE 0 text26 dist/soundlevel/production\Power_Module.production.o
-__end_of_Power_Loop 2000 0 CODE 0 text9 dist/soundlevel/production\Power_Module.production.o
-__pdataBANK1 D9 0 BANK1 1 dataBANK1 dist/soundlevel/production\Power_Module.production.o
-__pdataBANK2 166 0 BANK2 1 dataBANK2 dist/soundlevel/production\Power_Module.production.o
-__end_of_Power_Measure 188E 0 CODE 0 text8 dist/soundlevel/production\Power_Module.production.o
-__size_of___ftge 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\Pierre\AppData\Local\Temp\s29c.o
+_ADCC_ADI_InterruptHandler B8 0 BANK1 1 bssBANK1 dist/soundlevel/debug\Power_Module.debug.o
+__size_of_I2C1_GetCommandData 0 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+__end_of_Power_Init 1AE8 0 CODE 0 text26 dist/soundlevel/debug\Power_Module.debug.o
+__end_of_Power_Loop 2000 0 CODE 0 text9 dist/soundlevel/debug\Power_Module.debug.o
+__pdataBANK1 D9 0 BANK1 1 dataBANK1 dist/soundlevel/debug\Power_Module.debug.o
+__pdataBANK2 166 0 BANK2 1 dataBANK2 dist/soundlevel/debug\Power_Module.debug.o
+__end_of_Power_Measure 188E 0 CODE 0 text8 dist/soundlevel/debug\Power_Module.debug.o
+__size_of___ftge 0 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
 __LbssBANK1 0 0 ABS 0 bssBANK1 -
 __LbssBANK2 0 0 ABS 0 bssBANK2 -
-__size_of_WDT_Init 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-?___altoft 2E 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
-_Power_SetThreshold D00 0 CODE 0 text6 dist/soundlevel/production\Power_Module.production.o
-__size_of_PMD_Initialize 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_PIE1bits 717 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_PIE3bits 719 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-___altoft@exp 34 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
-Power_SetThreshold@thresholdData 3C 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
-__ptext10 BA 0 CODE 0 text10 dist/soundlevel/production\Power_Module.production.o
-__ptext11 ED8 0 CODE 0 text11 dist/soundlevel/production\Power_Module.production.o
-__ptext12 1D70 0 CODE 0 text12 dist/soundlevel/production\Power_Module.production.o
-__ptext13 1B8C 0 CODE 0 text13 dist/soundlevel/production\Power_Module.production.o
-__ptext14 BF6 0 CODE 0 text14 dist/soundlevel/production\Power_Module.production.o
-__ptext15 1CEC 0 CODE 0 text15 dist/soundlevel/production\Power_Module.production.o
-__ptext16 1A16 0 CODE 0 text16 dist/soundlevel/production\Power_Module.production.o
-__ptext17 3D8 0 CODE 0 text17 dist/soundlevel/production\Power_Module.production.o
-__ptext18 19AC 0 CODE 0 text18 dist/soundlevel/production\Power_Module.production.o
-__ptext19 7D6 0 CODE 0 text19 dist/soundlevel/production\Power_Module.production.o
-__ptext20 1BFC 0 CODE 0 text20 dist/soundlevel/production\Power_Module.production.o
-__ptext21 958 0 CODE 0 text21 dist/soundlevel/production\Power_Module.production.o
-__ptext22 DEE 0 CODE 0 text22 dist/soundlevel/production\Power_Module.production.o
-__ptext23 1982 0 CODE 0 text23 dist/soundlevel/production\Power_Module.production.o
-__ptext24 190A 0 CODE 0 text24 dist/soundlevel/production\Power_Module.production.o
-__ptext25 18B2 0 CODE 0 text25 dist/soundlevel/production\Power_Module.production.o
-__ptext26 1A9A 0 CODE 0 text26 dist/soundlevel/production\Power_Module.production.o
-__ptext27 ABC 0 CODE 0 text27 dist/soundlevel/production\Power_Module.production.o
-__ptext28 FBC 0 CODE 0 text28 dist/soundlevel/production\Power_Module.production.o
-__ptext29 1DFE 0 CODE 0 text29 dist/soundlevel/production\Power_Module.production.o
-__ptext30 18CE 0 CODE 0 text30 dist/soundlevel/production\Power_Module.production.o
-__ptext31 1B38 0 CODE 0 text31 dist/soundlevel/production\Power_Module.production.o
-__ptext32 19D8 0 CODE 0 text32 dist/soundlevel/production\Power_Module.production.o
-__ptext33 18F2 0 CODE 0 text33 dist/soundlevel/production\Power_Module.production.o
-__ptext34 1880 0 CODE 0 text34 dist/soundlevel/production\Power_Module.production.o
-__ptext36 1C6E 0 CODE 0 text36 dist/soundlevel/production\Power_Module.production.o
-__ptext37 1E90 0 CODE 0 text37 dist/soundlevel/production\Power_Module.production.o
-__ptext38 187C 0 CODE 0 text38 dist/soundlevel/production\Power_Module.production.o
-__ptext39 193E 0 CODE 0 text39 dist/soundlevel/production\Power_Module.production.o
-__ptext40 187A 0 CODE 0 text40 dist/soundlevel/production\Power_Module.production.o
-___ftadd 3D8 0 CODE 0 text17 dist/soundlevel/production\Power_Module.production.o
-___ftdiv 958 0 CODE 0 text21 dist/soundlevel/production\Power_Module.production.o
-___ftmul 7D6 0 CODE 0 text19 dist/soundlevel/production\Power_Module.production.o
-___ftsub 1A16 0 CODE 0 text16 dist/soundlevel/production\Power_Module.production.o
-___fttol BF6 0 CODE 0 text14 dist/soundlevel/production\Power_Module.production.o
+__size_of_WDT_Init 0 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+?___altoft 2E 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Power_Module.debug.o
+_Power_SetThreshold D00 0 CODE 0 text6 dist/soundlevel/debug\Power_Module.debug.o
+__size_of_PMD_Initialize 0 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_PIE1bits 717 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_PIE3bits 719 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+___altoft@exp 34 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Power_Module.debug.o
+Power_SetThreshold@thresholdData 3C 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Power_Module.debug.o
+__ptext10 BA 0 CODE 0 text10 dist/soundlevel/debug\Power_Module.debug.o
+__ptext11 ED8 0 CODE 0 text11 dist/soundlevel/debug\Power_Module.debug.o
+__ptext12 1D70 0 CODE 0 text12 dist/soundlevel/debug\Power_Module.debug.o
+__ptext13 1B8C 0 CODE 0 text13 dist/soundlevel/debug\Power_Module.debug.o
+__ptext14 BF6 0 CODE 0 text14 dist/soundlevel/debug\Power_Module.debug.o
+__ptext15 1CEC 0 CODE 0 text15 dist/soundlevel/debug\Power_Module.debug.o
+__ptext16 1A16 0 CODE 0 text16 dist/soundlevel/debug\Power_Module.debug.o
+__ptext17 3D8 0 CODE 0 text17 dist/soundlevel/debug\Power_Module.debug.o
+__ptext18 19AC 0 CODE 0 text18 dist/soundlevel/debug\Power_Module.debug.o
+__ptext19 7D6 0 CODE 0 text19 dist/soundlevel/debug\Power_Module.debug.o
+__ptext20 1BFC 0 CODE 0 text20 dist/soundlevel/debug\Power_Module.debug.o
+__ptext21 958 0 CODE 0 text21 dist/soundlevel/debug\Power_Module.debug.o
+__ptext22 DEE 0 CODE 0 text22 dist/soundlevel/debug\Power_Module.debug.o
+__ptext23 1982 0 CODE 0 text23 dist/soundlevel/debug\Power_Module.debug.o
+__ptext24 190A 0 CODE 0 text24 dist/soundlevel/debug\Power_Module.debug.o
+__ptext25 18B2 0 CODE 0 text25 dist/soundlevel/debug\Power_Module.debug.o
+__ptext26 1A9A 0 CODE 0 text26 dist/soundlevel/debug\Power_Module.debug.o
+__ptext27 ABC 0 CODE 0 text27 dist/soundlevel/debug\Power_Module.debug.o
+__ptext28 FBC 0 CODE 0 text28 dist/soundlevel/debug\Power_Module.debug.o
+__ptext29 1DFE 0 CODE 0 text29 dist/soundlevel/debug\Power_Module.debug.o
+__ptext30 18CE 0 CODE 0 text30 dist/soundlevel/debug\Power_Module.debug.o
+__ptext31 1B38 0 CODE 0 text31 dist/soundlevel/debug\Power_Module.debug.o
+__ptext32 19D8 0 CODE 0 text32 dist/soundlevel/debug\Power_Module.debug.o
+__ptext33 18F2 0 CODE 0 text33 dist/soundlevel/debug\Power_Module.debug.o
+__ptext34 1880 0 CODE 0 text34 dist/soundlevel/debug\Power_Module.debug.o
+__ptext36 1C6E 0 CODE 0 text36 dist/soundlevel/debug\Power_Module.debug.o
+__ptext37 1E90 0 CODE 0 text37 dist/soundlevel/debug\Power_Module.debug.o
+__ptext38 187C 0 CODE 0 text38 dist/soundlevel/debug\Power_Module.debug.o
+__ptext39 193E 0 CODE 0 text39 dist/soundlevel/debug\Power_Module.debug.o
+__ptext40 187A 0 CODE 0 text40 dist/soundlevel/debug\Power_Module.debug.o
+___ftadd 3D8 0 CODE 0 text17 dist/soundlevel/debug\Power_Module.debug.o
+___ftdiv 958 0 CODE 0 text21 dist/soundlevel/debug\Power_Module.debug.o
+___ftmul 7D6 0 CODE 0 text19 dist/soundlevel/debug\Power_Module.debug.o
+___ftsub 1A16 0 CODE 0 text16 dist/soundlevel/debug\Power_Module.debug.o
+___fttol BF6 0 CODE 0 text14 dist/soundlevel/debug\Power_Module.debug.o
 __Lbank10 0 0 ABS 0 bank10 -
 __Lbank11 0 0 ABS 0 bank11 -
 __Lbank12 0 0 ABS 0 bank12 -
@@ -1409,178 +1409,178 @@ __Lbank60 0 0 BANK60 1 bank60 -
 __Lbank61 0 0 BANK61 1 bank61 -
 __Lbank62 0 0 BANK62 1 bank62 -
 __Lbank63 0 0 BANK63 1 bank63 -
-__pmaintext 618 0 CODE 0 maintext dist/soundlevel/production\Power_Module.production.o
+__pmaintext 618 0 CODE 0 maintext dist/soundlevel/debug\Power_Module.debug.o
 __Lbigram 0 0 ABS 0 bigram -
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 0 0 CONFIG 4 config -
-?___ftpack 20 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
-_batThresholdLevel B4 0 BANK1 1 bssBANK1 dist/soundlevel/production\Power_Module.production.o
+?___ftpack 20 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Power_Module.debug.o
+_batThresholdLevel B4 0 BANK1 1 bssBANK1 dist/soundlevel/debug\Power_Module.debug.o
 __Hinittext 0 0 ABS 0 inittext -
-_LATBbits 19 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_LATCbits 1A 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-Power_GetData@data 74 0 COMMON 1 cstackCOMMON dist/soundlevel/production\Power_Module.production.o
-main@data 1A0 0 BANK3 1 cstackBANK3 dist/soundlevel/production\Power_Module.production.o
-main@type 1B6 0 BANK3 1 cstackBANK3 dist/soundlevel/production\Power_Module.production.o
-_I2C1_GetCommandData 19D8 0 CODE 0 text32 dist/soundlevel/production\Power_Module.production.o
-__size_of_Interrupt_Handler 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-__end_of_enterSleep 18C0 0 CODE 0 text25 dist/soundlevel/production\Power_Module.production.o
-___lwtoft@c 28 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
-_SSP1CLKPPS 1EC5 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_OSCCON1 88D 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-?___lwtoft 28 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
-_SSP1DATPPS 1EC6 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_ADCON0bits 111 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_ADCON1bits 112 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_ADCON2bits 113 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_ADCON3bits 114 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-__size_of_Power_GetData 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_WDT_Init 18C0 0 CODE 0 text7 dist/soundlevel/production\Power_Module.production.o
+_LATBbits 19 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_LATCbits 1A 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+Power_GetData@data 74 0 COMMON 1 cstackCOMMON dist/soundlevel/debug\Power_Module.debug.o
+main@data 1A0 0 BANK3 1 cstackBANK3 dist/soundlevel/debug\Power_Module.debug.o
+main@type 1B6 0 BANK3 1 cstackBANK3 dist/soundlevel/debug\Power_Module.debug.o
+_I2C1_GetCommandData 19D8 0 CODE 0 text32 dist/soundlevel/debug\Power_Module.debug.o
+__size_of_Interrupt_Handler 0 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+__end_of_enterSleep 18C0 0 CODE 0 text25 dist/soundlevel/debug\Power_Module.debug.o
+___lwtoft@c 28 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Power_Module.debug.o
+_SSP1CLKPPS 1EC5 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_OSCCON1 88D 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+?___lwtoft 28 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Power_Module.debug.o
+_SSP1DATPPS 1EC6 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_ADCON0bits 111 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_ADCON1bits 112 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_ADCON2bits 113 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_ADCON3bits 114 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+__size_of_Power_GetData 0 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_WDT_Init 18C0 0 CODE 0 text7 dist/soundlevel/debug\Power_Module.debug.o
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
 __Lspace_3 0 0 ABS 0 - -
 __Lspace_4 0 0 ABS 0 - -
-_CPUDOZEbits 88C 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-___ftmul@cntr 49 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
-__pbssCOMMON 76 0 COMMON 1 bssCOMMON dist/soundlevel/production\Power_Module.production.o
-___ftmul@sign 4A 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
-_generateIntPower 190A 0 CODE 0 text24 dist/soundlevel/production\Power_Module.production.o
+_CPUDOZEbits 88C 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+___ftmul@cntr 49 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Power_Module.debug.o
+__pbssCOMMON 76 0 COMMON 1 bssCOMMON dist/soundlevel/debug\Power_Module.debug.o
+___ftmul@sign 4A 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Power_Module.debug.o
+_generateIntPower 190A 0 CODE 0 text24 dist/soundlevel/debug\Power_Module.debug.o
 __HcstackBANK0 0 0 ABS 0 cstackBANK0 -
 __HcstackBANK1 0 0 ABS 0 cstackBANK1 -
 __HcstackBANK3 0 0 ABS 0 cstackBANK3 -
-_PIR1bits 70D 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_PIR3bits 70F 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_PIR1bits 70D 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_PIR3bits 70F 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
 __Lend_init 56 0 CODE 0 end_init -
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
-main@retries 1B4 0 BANK3 1 cstackBANK3 dist/soundlevel/production\Power_Module.production.o
-end_of_initialization B2 0 CODE 0 cinit dist/soundlevel/production\Power_Module.production.o
-__end_of_WDT_Init 18CE 0 CODE 0 text7 dist/soundlevel/production\Power_Module.production.o
-I2C1_ISR@i2c_data 73 0 COMMON 1 cstackCOMMON dist/soundlevel/production\Power_Module.production.o
+main@retries 1B4 0 BANK3 1 cstackBANK3 dist/soundlevel/debug\Power_Module.debug.o
+end_of_initialization B2 0 CODE 0 cinit dist/soundlevel/debug\Power_Module.debug.o
+__end_of_WDT_Init 18CE 0 CODE 0 text7 dist/soundlevel/debug\Power_Module.debug.o
+I2C1_ISR@i2c_data 73 0 COMMON 1 cstackCOMMON dist/soundlevel/debug\Power_Module.debug.o
 __Hintentry 56 0 CODE 0 intentry -
-_floatVoltageLDRMeasured A9 0 BANK1 1 bssBANK1 dist/soundlevel/production\Power_Module.production.o
+_floatVoltageLDRMeasured A9 0 BANK1 1 bssBANK1 dist/soundlevel/debug\Power_Module.debug.o
 __Lstrings 0 0 ABS 0 strings -
-I2C1_SetTransmitData@data 23 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
-?___ftadd 28 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
-?___ftdiv 2B 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
-?___ftmul 3B 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
-?___ftsub 3F 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
-?___fttol 20 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
+I2C1_SetTransmitData@data 23 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Power_Module.debug.o
+?___ftadd 28 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Power_Module.debug.o
+?___ftdiv 2B 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Power_Module.debug.o
+?___ftmul 3B 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Power_Module.debug.o
+?___ftsub 3F 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Power_Module.debug.o
+?___fttol 20 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Power_Module.debug.o
 __Hreset_vec 4 0 CODE 0 reset_vec -
 __HbssBANK1 0 0 ABS 0 bssBANK1 -
 __HbssBANK2 0 0 ABS 0 bssBANK2 -
-__end_of_Power_GetData 1E90 0 CODE 0 text29 dist/soundlevel/production\Power_Module.production.o
-__ptext1 1924 0 CODE 0 text1 dist/soundlevel/production\Power_Module.production.o
-__ptext2 1A58 0 CODE 0 text2 dist/soundlevel/production\Power_Module.production.o
-__ptext3 195C 0 CODE 0 text3 dist/soundlevel/production\Power_Module.production.o
-__ptext4 188E 0 CODE 0 text4 dist/soundlevel/production\Power_Module.production.o
-__ptext5 1AE8 0 CODE 0 text5 dist/soundlevel/production\Power_Module.production.o
-__ptext6 D00 0 CODE 0 text6 dist/soundlevel/production\Power_Module.production.o
-__ptext7 18C0 0 CODE 0 text7 dist/soundlevel/production\Power_Module.production.o
-__ptext8 1886 0 CODE 0 text8 dist/soundlevel/production\Power_Module.production.o
-__ptext9 1F36 0 CODE 0 text9 dist/soundlevel/production\Power_Module.production.o
-_PMD0bits 796 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_PMD3bits 799 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_PMD6bits 79C 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+__end_of_Power_GetData 1E90 0 CODE 0 text29 dist/soundlevel/debug\Power_Module.debug.o
+__ptext1 1924 0 CODE 0 text1 dist/soundlevel/debug\Power_Module.debug.o
+__ptext2 1A58 0 CODE 0 text2 dist/soundlevel/debug\Power_Module.debug.o
+__ptext3 195C 0 CODE 0 text3 dist/soundlevel/debug\Power_Module.debug.o
+__ptext4 188E 0 CODE 0 text4 dist/soundlevel/debug\Power_Module.debug.o
+__ptext5 1AE8 0 CODE 0 text5 dist/soundlevel/debug\Power_Module.debug.o
+__ptext6 D00 0 CODE 0 text6 dist/soundlevel/debug\Power_Module.debug.o
+__ptext7 18C0 0 CODE 0 text7 dist/soundlevel/debug\Power_Module.debug.o
+__ptext8 1886 0 CODE 0 text8 dist/soundlevel/debug\Power_Module.debug.o
+__ptext9 1F36 0 CODE 0 text9 dist/soundlevel/debug\Power_Module.debug.o
+_PMD0bits 796 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_PMD3bits 799 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_PMD6bits 79C 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
-SYSTEM_Initialize@slave_address 75 0 COMMON 1 cstackCOMMON dist/soundlevel/production\Power_Module.production.o
-__end_of_toggleInt 193E 0 CODE 0 text1 dist/soundlevel/production\Power_Module.production.o
+SYSTEM_Initialize@slave_address 75 0 COMMON 1 cstackCOMMON dist/soundlevel/debug\Power_Module.debug.o
+__end_of_toggleInt 193E 0 CODE 0 text1 dist/soundlevel/debug\Power_Module.debug.o
 __Lreset_vec 0 0 CODE 0 reset_vec -
-__size_of_DefaultSensorInterruptHandler 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-I2C1_Initialize@slave_address 74 0 COMMON 1 cstackCOMMON dist/soundlevel/production\Power_Module.production.o
-__size_of_toggleInt 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_ADCC_DefaultInterruptHandler 187A 0 CODE 0 text40 dist/soundlevel/production\Power_Module.production.o
-___ftmul@exp 45 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
-__end_of__initialization B2 0 CODE 0 cinit dist/soundlevel/production\Power_Module.production.o
+__size_of_DefaultSensorInterruptHandler 0 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+I2C1_Initialize@slave_address 74 0 COMMON 1 cstackCOMMON dist/soundlevel/debug\Power_Module.debug.o
+__size_of_toggleInt 0 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_ADCC_DefaultInterruptHandler 187A 0 CODE 0 text40 dist/soundlevel/debug\Power_Module.debug.o
+___ftmul@exp 45 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Power_Module.debug.o
+__end_of__initialization B2 0 CODE 0 cinit dist/soundlevel/debug\Power_Module.debug.o
 __Lfunctab 0 0 ENTRY 0 functab -
-_ADSTATbits 115 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-frexp@value 20 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
-__pidataBANK1 4 0 CODE 0 idataBANK1 dist/soundlevel/production\Power_Module.production.o
-__pidataBANK2 18DE 0 CODE 0 idataBANK2 dist/soundlevel/production\Power_Module.production.o
-?_round C6 0 BANK1 1 cstackBANK1 dist/soundlevel/production\Power_Module.production.o
-?_trunc 36 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
-_SensorInterruptHandler D9 0 BANK1 1 dataBANK1 dist/soundlevel/production\Power_Module.production.o
+_ADSTATbits 115 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+frexp@value 20 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Power_Module.debug.o
+__pidataBANK1 4 0 CODE 0 idataBANK1 dist/soundlevel/debug\Power_Module.debug.o
+__pidataBANK2 18DE 0 CODE 0 idataBANK2 dist/soundlevel/debug\Power_Module.debug.o
+?_round C6 0 BANK1 1 cstackBANK1 dist/soundlevel/debug\Power_Module.debug.o
+?_trunc 36 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Power_Module.debug.o
+_SensorInterruptHandler D9 0 BANK1 1 dataBANK1 dist/soundlevel/debug\Power_Module.debug.o
 __Lclrtext 0 0 ABS 0 clrtext -
-___altoft@sign 35 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
-_SSP1CON1bits 190 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_SSP1CON2bits 191 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_SSP1CON3bits 192 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-___ftpack@sign 24 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
-_I2C1_slaveWriteData 79 0 COMMON 1 dataCOMMON dist/soundlevel/production\Power_Module.production.o
-_toggleInt 1924 0 CODE 0 text1 dist/soundlevel/production\Power_Module.production.o
-__end_of_I2C1_GetCommandData 1A16 0 CODE 0 text32 dist/soundlevel/production\Power_Module.production.o
-_measure BA 0 CODE 0 text10 dist/soundlevel/production\Power_Module.production.o
-__pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/soundlevel/production\Power_Module.production.o
-___ftdiv@cntr 35 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
-___ftdiv@sign 3A 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
-__size_of_Power_Init 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-__size_of_Power_Loop 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-I2C1_StatusCallback@slaveWriteType BE 0 BANK1 1 bssBANK1 dist/soundlevel/production\Power_Module.production.o
-__end_of_generateIntPower 1924 0 CODE 0 text24 dist/soundlevel/production\Power_Module.production.o
-Power_SetThreshold@metric 3B 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
-__end_of_I2C1_Initialize 1B38 0 CODE 0 text5 dist/soundlevel/production\Power_Module.production.o
-_SSP1ADD 18D 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_SSP1BUF 18C 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_SSP1MSK 18E 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-__size_of_I2C1_SetTransmitData 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+___altoft@sign 35 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Power_Module.debug.o
+_SSP1CON1bits 190 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_SSP1CON2bits 191 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_SSP1CON3bits 192 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+___ftpack@sign 24 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Power_Module.debug.o
+_I2C1_slaveWriteData 79 0 COMMON 1 dataCOMMON dist/soundlevel/debug\Power_Module.debug.o
+_toggleInt 1924 0 CODE 0 text1 dist/soundlevel/debug\Power_Module.debug.o
+__end_of_I2C1_GetCommandData 1A16 0 CODE 0 text32 dist/soundlevel/debug\Power_Module.debug.o
+_measure BA 0 CODE 0 text10 dist/soundlevel/debug\Power_Module.debug.o
+__pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/soundlevel/debug\Power_Module.debug.o
+___ftdiv@cntr 35 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Power_Module.debug.o
+___ftdiv@sign 3A 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Power_Module.debug.o
+__size_of_Power_Init 0 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+__size_of_Power_Loop 0 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+I2C1_StatusCallback@slaveWriteType BE 0 BANK1 1 bssBANK1 dist/soundlevel/debug\Power_Module.debug.o
+__end_of_generateIntPower 1924 0 CODE 0 text24 dist/soundlevel/debug\Power_Module.debug.o
+Power_SetThreshold@metric 3B 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Power_Module.debug.o
+__end_of_I2C1_Initialize 1B38 0 CODE 0 text5 dist/soundlevel/debug\Power_Module.debug.o
+_SSP1ADD 18D 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_SSP1BUF 18C 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_SSP1MSK 18E 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+__size_of_I2C1_SetTransmitData 0 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
 __Hend_init 5A 0 CODE 0 end_init -
-__end_of_Interrupt_Handler 56 0 CODE 0 intentry dist/soundlevel/production\Power_Module.production.o
-__end_of_main 7D6 0 CODE 0 maintext dist/soundlevel/production\Power_Module.production.o
-__size_of_generateIntPower 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_ADACT 117 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_ADCAP 10E 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_ADCLK 118 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_ADCNT 99 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_ADPCH 9F 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_ADREF 116 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_ADRPT 9A 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-__end_of_frexp 1BFC 0 CODE 0 text13 dist/soundlevel/production\Power_Module.production.o
-_TRISA 12 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_TRISB 13 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_TRISC 14 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-__end_of_round FBC 0 CODE 0 text11 dist/soundlevel/production\Power_Module.production.o
-__end_of_trunc 1DFE 0 CODE 0 text12 dist/soundlevel/production\Power_Module.production.o
+__end_of_Interrupt_Handler 56 0 CODE 0 intentry dist/soundlevel/debug\Power_Module.debug.o
+__end_of_main 7D6 0 CODE 0 maintext dist/soundlevel/debug\Power_Module.debug.o
+__size_of_generateIntPower 0 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_ADACT 117 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_ADCAP 10E 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_ADCLK 118 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_ADCNT 99 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_ADPCH 9F 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_ADREF 116 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_ADRPT 9A 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+__end_of_frexp 1BFC 0 CODE 0 text13 dist/soundlevel/debug\Power_Module.debug.o
+_TRISA 12 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_TRISB 13 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_TRISC 14 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+__end_of_round FBC 0 CODE 0 text11 dist/soundlevel/debug\Power_Module.debug.o
+__end_of_trunc 1DFE 0 CODE 0 text12 dist/soundlevel/debug\Power_Module.debug.o
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
-_frexp 1B8C 0 CODE 0 text13 dist/soundlevel/production\Power_Module.production.o
-_mData 160 0 BANK2 1 bssBANK2 dist/soundlevel/production\Power_Module.production.o
-_round ED8 0 CODE 0 text11 dist/soundlevel/production\Power_Module.production.o
-_rxLen 77 0 COMMON 1 bssCOMMON dist/soundlevel/production\Power_Module.production.o
-_trunc 1D70 0 CODE 0 text12 dist/soundlevel/production\Power_Module.production.o
-_txCnt 76 0 COMMON 1 bssCOMMON dist/soundlevel/production\Power_Module.production.o
-_txLen BF 0 BANK1 1 bssBANK1 dist/soundlevel/production\Power_Module.production.o
-__pintentry 8 0 CODE 0 intentry dist/soundlevel/production\Power_Module.production.o
-___fttol@sign1 28 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
-I2C1_GetCommandData@len 74 0 COMMON 1 cstackCOMMON dist/soundlevel/production\Power_Module.production.o
-__size_of_I2C1_StatusCallback 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_measurementData A0 0 BANK1 1 bssBANK1 dist/soundlevel/production\Power_Module.production.o
-__end_of_I2C1_SetTransmitData 1B8C 0 CODE 0 text31 dist/soundlevel/production\Power_Module.production.o
+_frexp 1B8C 0 CODE 0 text13 dist/soundlevel/debug\Power_Module.debug.o
+_mData 160 0 BANK2 1 bssBANK2 dist/soundlevel/debug\Power_Module.debug.o
+_round ED8 0 CODE 0 text11 dist/soundlevel/debug\Power_Module.debug.o
+_rxLen 77 0 COMMON 1 bssCOMMON dist/soundlevel/debug\Power_Module.debug.o
+_trunc 1D70 0 CODE 0 text12 dist/soundlevel/debug\Power_Module.debug.o
+_txCnt 76 0 COMMON 1 bssCOMMON dist/soundlevel/debug\Power_Module.debug.o
+_txLen BF 0 BANK1 1 bssBANK1 dist/soundlevel/debug\Power_Module.debug.o
+__pintentry 8 0 CODE 0 intentry dist/soundlevel/debug\Power_Module.debug.o
+___fttol@sign1 28 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Power_Module.debug.o
+I2C1_GetCommandData@len 74 0 COMMON 1 cstackCOMMON dist/soundlevel/debug\Power_Module.debug.o
+__size_of_I2C1_StatusCallback 0 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_measurementData A0 0 BANK1 1 bssBANK1 dist/soundlevel/debug\Power_Module.debug.o
+__end_of_I2C1_SetTransmitData 1B8C 0 CODE 0 text31 dist/soundlevel/debug\Power_Module.debug.o
 __HdataBANK1 0 0 ABS 0 dataBANK1 -
 __HdataBANK2 0 0 ABS 0 dataBANK2 -
-__end_of_OSCILLATOR_Initialize 189A 0 CODE 0 text4 dist/soundlevel/production\Power_Module.production.o
-_cmdByte 78 0 COMMON 1 bssCOMMON dist/soundlevel/production\Power_Module.production.o
-__end_of_I2C1_TxBufferEmpty 18DE 0 CODE 0 text30 dist/soundlevel/production\Power_Module.production.o
-measure@databatvoltage CE 0 BANK1 1 cstackBANK1 dist/soundlevel/production\Power_Module.production.o
-__size_of_Power_SetThreshold 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-__initialization 5A 0 CODE 0 cinit dist/soundlevel/production\Power_Module.production.o
-I2C1_GetCommandData@data 20 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
-_ADCC_GetSingleConversion 1982 0 CODE 0 text23 dist/soundlevel/production\Power_Module.production.o
-__pbssBANK1 A0 0 BANK1 1 bssBANK1 dist/soundlevel/production\Power_Module.production.o
-__pbssBANK2 120 0 BANK2 1 bssBANK2 dist/soundlevel/production\Power_Module.production.o
-_WDTCON0 80C 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_WDTCON1 80D 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-__pdataCOMMON 79 0 COMMON 1 dataCOMMON dist/soundlevel/production\Power_Module.production.o
-_I2C1_CommandReceived 1880 0 CODE 0 text34 dist/soundlevel/production\Power_Module.production.o
-trunc@i 3A 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
-trunc@x 36 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
-_i2c1_tx_buffer 120 0 BANK2 1 bssBANK2 dist/soundlevel/production\Power_Module.production.o
-I2C1_StatusCallback@i2c_bus_state 71 0 COMMON 1 cstackCOMMON dist/soundlevel/production\Power_Module.production.o
-_STATUSbits 3 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_ANSELBbits 1F43 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-_ANSELCbits 1F4E 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-__size_of_enterSleep 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
-___ftmul@f3_as_product 46 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
-_OSCILLATOR_Initialize 188E 0 CODE 0 text4 dist/soundlevel/production\Power_Module.production.o
+__end_of_OSCILLATOR_Initialize 189A 0 CODE 0 text4 dist/soundlevel/debug\Power_Module.debug.o
+_cmdByte 78 0 COMMON 1 bssCOMMON dist/soundlevel/debug\Power_Module.debug.o
+__end_of_I2C1_TxBufferEmpty 18DE 0 CODE 0 text30 dist/soundlevel/debug\Power_Module.debug.o
+measure@databatvoltage CE 0 BANK1 1 cstackBANK1 dist/soundlevel/debug\Power_Module.debug.o
+__size_of_Power_SetThreshold 0 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+__initialization 5A 0 CODE 0 cinit dist/soundlevel/debug\Power_Module.debug.o
+I2C1_GetCommandData@data 20 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Power_Module.debug.o
+_ADCC_GetSingleConversion 1982 0 CODE 0 text23 dist/soundlevel/debug\Power_Module.debug.o
+__pbssBANK1 A0 0 BANK1 1 bssBANK1 dist/soundlevel/debug\Power_Module.debug.o
+__pbssBANK2 120 0 BANK2 1 bssBANK2 dist/soundlevel/debug\Power_Module.debug.o
+_WDTCON0 80C 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_WDTCON1 80D 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+__pdataCOMMON 79 0 COMMON 1 dataCOMMON dist/soundlevel/debug\Power_Module.debug.o
+_I2C1_CommandReceived 1880 0 CODE 0 text34 dist/soundlevel/debug\Power_Module.debug.o
+trunc@i 3A 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Power_Module.debug.o
+trunc@x 36 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Power_Module.debug.o
+_i2c1_tx_buffer 120 0 BANK2 1 bssBANK2 dist/soundlevel/debug\Power_Module.debug.o
+I2C1_StatusCallback@i2c_bus_state 71 0 COMMON 1 cstackCOMMON dist/soundlevel/debug\Power_Module.debug.o
+_STATUSbits 3 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_ANSELBbits 1F43 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+_ANSELCbits 1F4E 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+__size_of_enterSleep 0 0 ABS 0 - dist/soundlevel/debug\Power_Module.debug.o
+___ftmul@f3_as_product 46 0 BANK0 1 cstackBANK0 dist/soundlevel/debug\Power_Module.debug.o
+_OSCILLATOR_Initialize 188E 0 CODE 0 text4 dist/soundlevel/debug\Power_Module.debug.o
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
 # The beginning of the section is indicated by %SPLITSTAB.

@@ -1,115 +1,5 @@
 
-# 1 "sensor/power.c"
-
-# 18 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\xc.h"
-extern const char __xc8_OPTIM_SPEED;
-
-extern double __fpnormalize(double);
-
-
-# 13 "C:\Program Files\Microchip\xc8\v2.31\pic\include\c90\xc8debug.h"
-#pragma intrinsic(__builtin_software_breakpoint)
-extern void __builtin_software_breakpoint(void);
-
-# 13 "C:\Program Files\Microchip\xc8\v2.31\pic\include\c90\stdint.h"
-typedef signed char int8_t;
-
-# 20
-typedef signed int int16_t;
-
-# 28
-typedef __int24 int24_t;
-
-# 36
-typedef signed long int int32_t;
-
-# 52
-typedef unsigned char uint8_t;
-
-# 58
-typedef unsigned int uint16_t;
-
-# 65
-typedef __uint24 uint24_t;
-
-# 72
-typedef unsigned long int uint32_t;
-
-# 88
-typedef signed char int_least8_t;
-
-# 96
-typedef signed int int_least16_t;
-
-# 109
-typedef __int24 int_least24_t;
-
-# 118
-typedef signed long int int_least32_t;
-
-# 136
-typedef unsigned char uint_least8_t;
-
-# 143
-typedef unsigned int uint_least16_t;
-
-# 154
-typedef __uint24 uint_least24_t;
-
-# 162
-typedef unsigned long int uint_least32_t;
-
-# 181
-typedef signed char int_fast8_t;
-
-# 188
-typedef signed int int_fast16_t;
-
-# 200
-typedef __int24 int_fast24_t;
-
-# 208
-typedef signed long int int_fast32_t;
-
-# 224
-typedef unsigned char uint_fast8_t;
-
-# 230
-typedef unsigned int uint_fast16_t;
-
-# 240
-typedef __uint24 uint_fast24_t;
-
-# 247
-typedef unsigned long int uint_fast32_t;
-
-# 268
-typedef int32_t intmax_t;
-
-# 282
-typedef uint32_t uintmax_t;
-
-# 289
-typedef int16_t intptr_t;
-
-
-
-
-typedef uint16_t uintptr_t;
-
-
-# 7 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\builtins.h"
-#pragma intrinsic(__nop)
-extern void __nop(void);
-
-
-#pragma intrinsic(_delay)
-extern __nonreentrant void _delay(uint32_t);
-#pragma intrinsic(_delaywdt)
-extern __nonreentrant void _delaywdt(uint32_t);
-
-#pragma intrinsic(_delay3)
-extern __nonreentrant void _delay3(uint8_t);
+# 1 "system/system.c"
 
 # 109 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18446.h"
 extern volatile unsigned char INDF0 __at(0x000);
@@ -18404,6 +18294,116 @@ extern volatile __bit nWRITE1 __at(0xC7A);
 
 extern volatile __bit nWRITE2 __at(0xCCA);
 
+# 18 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\xc.h"
+extern const char __xc8_OPTIM_SPEED;
+
+extern double __fpnormalize(double);
+
+
+# 13 "C:\Program Files\Microchip\xc8\v2.31\pic\include\c90\xc8debug.h"
+#pragma intrinsic(__builtin_software_breakpoint)
+extern void __builtin_software_breakpoint(void);
+
+# 13 "C:\Program Files\Microchip\xc8\v2.31\pic\include\c90\stdint.h"
+typedef signed char int8_t;
+
+# 20
+typedef signed int int16_t;
+
+# 28
+typedef __int24 int24_t;
+
+# 36
+typedef signed long int int32_t;
+
+# 52
+typedef unsigned char uint8_t;
+
+# 58
+typedef unsigned int uint16_t;
+
+# 65
+typedef __uint24 uint24_t;
+
+# 72
+typedef unsigned long int uint32_t;
+
+# 88
+typedef signed char int_least8_t;
+
+# 96
+typedef signed int int_least16_t;
+
+# 109
+typedef __int24 int_least24_t;
+
+# 118
+typedef signed long int int_least32_t;
+
+# 136
+typedef unsigned char uint_least8_t;
+
+# 143
+typedef unsigned int uint_least16_t;
+
+# 154
+typedef __uint24 uint_least24_t;
+
+# 162
+typedef unsigned long int uint_least32_t;
+
+# 181
+typedef signed char int_fast8_t;
+
+# 188
+typedef signed int int_fast16_t;
+
+# 200
+typedef __int24 int_fast24_t;
+
+# 208
+typedef signed long int int_fast32_t;
+
+# 224
+typedef unsigned char uint_fast8_t;
+
+# 230
+typedef unsigned int uint_fast16_t;
+
+# 240
+typedef __uint24 uint_fast24_t;
+
+# 247
+typedef unsigned long int uint_fast32_t;
+
+# 268
+typedef int32_t intmax_t;
+
+# 282
+typedef uint32_t uintmax_t;
+
+# 289
+typedef int16_t intptr_t;
+
+
+
+
+typedef uint16_t uintptr_t;
+
+
+# 7 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\builtins.h"
+#pragma intrinsic(__nop)
+extern void __nop(void);
+
+
+#pragma intrinsic(_delay)
+extern __nonreentrant void _delay(uint32_t);
+#pragma intrinsic(_delaywdt)
+extern __nonreentrant void _delaywdt(uint32_t);
+
+#pragma intrinsic(_delay3)
+extern __nonreentrant void _delay3(uint8_t);
+
 # 76 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\pic.h"
 __attribute__((__unsupported__("The " "FLASH_READ" " macro function is no longer supported. Please use the MPLAB X MCC."))) unsigned char __flash_read(unsigned short addr);
 
@@ -18420,520 +18420,108 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 
-# 15 "C:\Program Files\Microchip\xc8\v2.31\pic\include\c90\stdbool.h"
-typedef unsigned char bool;
-
-# 66 "sensor/../global.h"
-typedef struct sensorApi{
-void (* Init)(void);
-void (* Measure)(void);
-void (* Loop)(void);
-void (* GetData)(uint8_t *, uint8_t *);
-void (* UpdateThreshold)(uint8_t, uint8_t *);
-} Sensor_API_t;
-
-
-# 82
-#pragma config FEXTOSC = OFF
-#pragma config RSTOSC = HFINT1
-#pragma config CLKOUTEN = OFF
-#pragma config CSWEN = ON
-#pragma config FCMEN = OFF
-
-
-#pragma config MCLRE = ON
-#pragma config PWRTS = OFF
-#pragma config LPBOREN = OFF
-#pragma config BOREN = OFF
-#pragma config BORV = LO
-#pragma config ZCDDIS = OFF
-#pragma config PPS1WAY = OFF
-#pragma config STVREN = OFF
-
-
-
-#pragma config WDTCPS = WDTCPS_31
-#pragma config WDTE = SWDTEN
-
-#pragma config WDTCWS = WDTCWS_7
-#pragma config WDTCCS = SC
-
-
-#pragma config BBSIZE = BB512
-#pragma config BBEN = OFF
-#pragma config SAFEN = OFF
-#pragma config WRTAPP = OFF
-#pragma config WRTB = OFF
-#pragma config WRTC = OFF
-#pragma config WRTD = OFF
-#pragma config WRTSAF = OFF
-#pragma config LVP = ON
-
-
-#pragma config CP = OFF
-
-# 183 "sensor/power.h"
-void Power_Init(void);
-void Power_Measure(void);
-void Power_Loop(void);
-void Power_GetData(uint8_t * data, uint8_t * length);
-void Power_SetThreshold(uint8_t metric, uint8_t * thresholdData);
-
-
-
-void generateIntPower(void);
-
-# 30 "C:\Program Files\Microchip\xc8\v2.31\pic\include\c90\math.h"
-extern double fabs(double);
-extern double floor(double);
-extern double ceil(double);
-extern double modf(double, double *);
-extern double sqrt(double);
-extern double atof(const char *);
-extern double sin(double) ;
-extern double cos(double) ;
-extern double tan(double) ;
-extern double asin(double) ;
-extern double acos(double) ;
-extern double atan(double);
-extern double atan2(double, double) ;
-extern double log(double);
-extern double log10(double);
-extern double pow(double, double) ;
-extern double exp(double) ;
-extern double sinh(double) ;
-extern double cosh(double) ;
-extern double tanh(double);
-extern double eval_poly(double, const double *, int);
-extern double frexp(double, int *);
-extern double ldexp(double, int);
-extern double fmod(double, double);
-extern double trunc(double);
-extern double round(double);
+# 34 "system/system.h"
+void SYSTEM_Initialize(uint8_t slave_address);
+void SYSTEM_SetSensorISR(void (* SensorInterruptHandler)(void));
 
 # 15 "C:\Program Files\Microchip\xc8\v2.31\pic\include\c90\stdbool.h"
 typedef unsigned char bool;
 
-# 72 "sensor/../system/adcc.h"
-typedef uint16_t adc_result_t;
+# 4 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\__size_t.h"
+typedef unsigned size_t;
 
-# 89
-typedef enum
-{
-channel_ANC1 = 0x11,
-channel_Vss = 0x3B,
-channel_Temp_Sensor = 0x3C,
-channel_DAC1_Output = 0x3D,
-channel_FVR_Buffer1 = 0x3E,
-channel_FVR_Buffer2 = 0x3F
-} adcc_channel_t;
+# 6 "C:\Program Files\Microchip\xc8\v2.31\pic\include\c90\stddef.h"
+typedef int ptrdiff_t;
 
-# 131
-void ADCC_Initialize(void);
+# 80 "system/i2c1.h"
+typedef enum{
+I2C1_SLAVE_WRITE_REQUEST,
+I2C1_SLAVE_READ_REQUEST,
+I2C1_SLAVE_WRITE_COMPLETED,
+I2C1_SLAVE_READ_COMPLETED,
+} I2C1_SLAVE_DRIVER_STATUS;
 
-# 160
-void ADCC_StartConversion(adcc_channel_t channel);
+# 114
+void I2C1_Initialize(uint8_t slave_address);
 
-# 190
-bool ADCC_IsConversionDone();
+# 134
+void I2C1_ISR(void);
 
-# 222
-adc_result_t ADCC_GetConversionResult(void);
+# 141
+extern volatile uint8_t I2C1_slaveWriteData;
 
-# 253
-adc_result_t ADCC_GetSingleConversion(adcc_channel_t channel);
+# 148
+bool I2C1_CommandReceived(void);
+void I2C1_GetCommand(uint8_t * cmd);
+void I2C1_GetCommandData(uint8_t * data, uint8_t * len);
+void I2C1_SetTransmitData(uint8_t * data, uint8_t len);
+bool I2C1_TxBufferEmpty(void);
+void I2C1_ClearTxBuffer(void);
 
-# 278
-void ADCC_StopConversion(void);
+# 12 "system/interrupt.h"
+void SetSensorInterruptHandler(void (* InterruptHandler)(void));
 
-# 305
-void ADCC_SetStopOnInterrupt(void);
+# 29 "system/system.c"
+void OSCILLATOR_Initialize(void);
+void PMD_Initialize(void);
 
-# 330
-void ADCC_DischargeSampleCapacitor(void);
+void SYSTEM_Initialize(uint8_t slave_address){
 
-# 356
-void ADCC_LoadAcquisitionRegister(uint16_t);
+PMD_Initialize();
+OSCILLATOR_Initialize();
 
-# 382
-void ADCC_SetPrechargeTime(uint16_t);
+VREGCONbits.VREGPM = 1;
 
-# 407
-void ADCC_SetRepeatCount(uint8_t);
 
-# 435
-uint8_t ADCC_GetCurrentCountofConversions(void);
 
-# 459
-void ADCC_ClearAccumulator(void);
 
-# 484
-uint24_t ADCC_GetAccumulatorValue(void);
+ANSELA = 0x00;
+ANSELB = 0x00;
+ANSELC = 0x00;
+ANSELCbits.ANSC1 = 1;
 
-# 512
-bool ADCC_HasAccumulatorOverflowed(void);
+TRISA = 0x00;
+TRISB = 0x00;
+TRISC = 0x00;
+TRISCbits.TRISC1 = 1;
 
-# 537
-uint16_t ADCC_GetFilterValue(void);
+LATA = 0xFF;
+LATB = 0xFF;
+LATC = 0xFF;
+LATCbits.LATC1 = 0;
 
-# 565
-uint16_t ADCC_GetPreviousResult(void);
+I2C1_Initialize(slave_address);
 
-# 591
-void ADCC_DefineSetPoint(uint16_t);
-
-# 617
-void ADCC_SetUpperThreshold(uint16_t);
-
-# 643
-void ADCC_SetLowerThreshold(uint16_t);
-
-# 670
-uint16_t ADCC_GetErrorCalculation(void);
-
-# 697
-void ADCC_EnableDoubleSampling(void);
-
-# 721
-void ADCC_EnableContinuousConversion(void);
-
-# 745
-void ADCC_DisableContinuousConversion(void);
-
-# 773
-bool ADCC_HasErrorCrossedUpperThreshold(void);
-
-# 801
-bool ADCC_HasErrorCrossedLowerThreshold(void);
-
-# 828
-uint8_t ADCC_GetConversionStageStatus(void);
-
-# 845
-void ADCC_SetADIInterruptHandler(void (* InterruptHandler)(void));
-
-# 861
-void ADCC_ISR(void);
-
-# 880
-void ADCC_DefaultInterruptHandler(void);
-
-# 23 "sensor/power.c"
-void ADC_Init(void);
-void WDT_Init(void);
-void generateIntPower(void);
-void measure(void);
-void ledBlink(void);
-void enterSleep(void);
-
-
-
-bool PollingMeasurement = 0;
-bool MeasurementRunning = 0;
-volatile uint8_t measurementData[2* 0x03];
-float AfterMeasure = 0.0;
-
-uint16_t voltageBatMeasured = 0;
-uint16_t voltageLDRMeasured = 0;
-uint16_t tempValue = 0;
-float floatVoltageBatMeasured = 0.0;
-float floatVoltageLDRMeasured = 0.0;
-
-bool batThresholdEnabled = 0;
-bool alertThreshold = 0;
-uint16_t batThresholdLevel = 0;
-float floatBatThresholdLevel = 0.0;
-
-
-
-
-void ADC_Init(void){
-
-FVRCON = 0x82;
-
-PMD3bits.ADCMD = 0;
-
-
-ADLTHL = 0x00;
-
-ADLTHH = 0x00;
-
-ADUTHL = 0x00;
-
-ADUTHH = 0x00;
-
-ADSTPTL = 0x00;
-
-ADSTPTH = 0x00;
-
-ADACCU = 0x00;
-
-ADRPT = 0x00;
-
-ADPCH = 0x00;
-
-ADACQL = 0x00;
-
-ADACQH = 0x00;
-
-ADCAP = 0x00;
-
-ADPREL = 0x00;
-
-ADPREH = 0x00;
-
-ADCON1 = 0x00;
-
-ADCON2 = 0x00;
-
-ADCON3 = 0x00;
-
-ADSTAT = 0x00;
-
-ADREF = 0x03;
-
-ADACT = 0x00;
-
-ADCLK = 0x00;
-
-ADCON0 = 0x84;
-
-FVRCON = 0x00;
-}
-
-void WDT_Init(void){
-
-
-WDTCON0 = 0x1C;
-WDTCON1 = 0x07;
-WDTCON0bits.SEN = 1;
-}
-
-void generateIntPower(void){
-do { LATCbits.LATC7 = 0; } while(0);
-_delay((unsigned long)((1)*(32000000/4000.0)));
-do { LATCbits.LATC7 = 1; } while(0);
-}
-
-void measure(void){
-
-FVRCON = 0x82;
-MeasurementRunning = 1;
-
-do { LATCbits.LATC0 = 1; } while(0);
-
-_delay((unsigned long)((10)*(32000000/4000.0)));
-
-ADCC_GetSingleConversion(0x13);
-voltageLDRMeasured = ADCC_GetSingleConversion(0x13);
-
-_delay((unsigned long)((200)*(32000000/4000.0)));
-
-tempValue = ADCC_GetSingleConversion(0x13);
-if(tempValue < voltageLDRMeasured){
-voltageLDRMeasured = tempValue;
-}
-floatVoltageLDRMeasured = ((float)voltageLDRMeasured /4096) * 2.048 * ((10+10)/10);
-
-do { LATCbits.LATC0 = 0; } while(0);
-do { LATCbits.LATC6 = 1; } while(0);
-
-_delay((unsigned long)((10)*(32000000/4000.0)));
-
-ADCC_GetSingleConversion(0x14);
-voltageBatMeasured = ADCC_GetSingleConversion(0x14);
-
-floatVoltageBatMeasured = ((float)voltageBatMeasured /4096) * 2.048 * ((10+4.5)/4.5);
-
-do { LATCbits.LATC6 = 0; } while(0);
-
-
-if(floatVoltageBatMeasured < floatBatThresholdLevel){
-alertThreshold = 1;
-}
-
-
-uint16_t databatvoltage = (uint16_t)(round(floatVoltageBatMeasured * 600));
-uint16_t datasolvoltage = (uint16_t)(round(floatVoltageLDRMeasured * 600));
-
-measurementData[0] = (uint8_t)(databatvoltage>>8);
-measurementData[1] = (uint8_t)(databatvoltage);
-
-measurementData[2] = (uint8_t)(datasolvoltage>>8);
-measurementData[3] = (uint8_t)(datasolvoltage);
-
-measurementData[4] = 0x00;
-measurementData[5] = 0x00;
-
-MeasurementRunning = 0;
-FVRCON = 0x00;
-}
-
-void ledBlink(void){
-
-do { LATBbits.LATB6 = 1; } while(0);
-_delay((unsigned long)((100)*(32000000/4000.0)));
-do { LATBbits.LATB6 = 0; } while(0);
-_delay((unsigned long)((100)*(32000000/4000.0)));
-do { LATBbits.LATB6 = 1; } while(0);
-_delay((unsigned long)((100)*(32000000/4000.0)));
-do { LATBbits.LATB6 = 0; } while(0);
-_delay((unsigned long)((100)*(32000000/4000.0)));
-do { LATBbits.LATB6 = 1; } while(0);
-_delay((unsigned long)((100)*(32000000/4000.0)));
-do { LATBbits.LATB6 = 0; } while(0);
-_delay((unsigned long)((500)*(32000000/4000.0)));
-
-do { LATCbits.LATC1 = 1; } while(0);
-_delay((unsigned long)((100)*(32000000/4000.0)));
-do { LATCbits.LATC1 = 0; } while(0);
-_delay((unsigned long)((100)*(32000000/4000.0)));
-do { LATCbits.LATC1 = 1; } while(0);
-_delay((unsigned long)((100)*(32000000/4000.0)));
-do { LATCbits.LATC1 = 0; } while(0);
-_delay((unsigned long)((100)*(32000000/4000.0)));
-do { LATCbits.LATC1 = 1; } while(0);
-_delay((unsigned long)((100)*(32000000/4000.0)));
-do { LATCbits.LATC1 = 0; } while(0);
-}
-
-void enterSleep(void){
-CPUDOZEbits.IDLEN = 0;
-__nop();
-asm("sleep");
-__nop();
-__nop();
+(INTCONbits.GIE = 1);
+(INTCONbits.PEIE = 1);
 }
 
 
 
-void Power_Init(void){
-
-
-PMD0bits.IOCMD = 0;
-
-
-PMD0bits.FVRMD = 0;
-
-
-ADC_Init();
-
-
-do { ANSELCbits.ANSC7 = 0; } while(0);
-do { TRISCbits.TRISC7 = 0; } while(0);
-do { LATCbits.LATC7 = 1; } while(0);
-
-
-do { ANSELBbits.ANSB6 = 0; } while(0);
-do { ANSELCbits.ANSC1 = 0; } while(0);
-do { TRISBbits.TRISB6 = 0; } while(0);
-do { TRISCbits.TRISC1 = 0; } while(0);
-do { LATBbits.LATB6 = 0; } while(0);
-do { LATCbits.LATC1 = 0; } while(0);
-
-
-
-do { ANSELCbits.ANSC0 = 0; } while(0);
-do { ANSELCbits.ANSC6 = 0; } while(0);
-do { TRISCbits.TRISC0 = 0; } while(0);
-do { TRISCbits.TRISC6 = 0; } while(0);
-do { LATCbits.LATC0 = 0; } while(0);
-do { LATCbits.LATC6 = 0; } while(0);
-
-do { TRISCbits.TRISC3 = 1; } while(0);
-do { TRISCbits.TRISC4 = 1; } while(0);
-do { ANSELCbits.ANSC3 = 1; } while(0);
-do { ANSELCbits.ANSC4 = 1; } while(0);
-
-
-ledBlink();
-
-
-PollingMeasurement = 1;
-
+void SYSTEM_SetSensorISR(void (* SensorInterruptHandler)(void)){
+SetSensorInterruptHandler(SensorInterruptHandler);
 }
 
-void Power_Measure(void){
-PollingMeasurement = 1;
+
+void OSCILLATOR_Initialize(void){
+
+OSCCON1 = 0x60;
+
+OSCFRQ = 0x06;
 }
 
-void Power_Loop(void){
 
-if(PollingMeasurement && !MeasurementRunning){
-PollingMeasurement = 0;
+void PMD_Initialize(void){
 
-if(WDTCON0bits.SEN == 0){
-do { LATBbits.LATB6 = 1; } while(0);
-measure();
-generateIntPower();
-do { LATBbits.LATB6 = 0; } while(0);
+PMD0 = 0xFF;
+
+PMD0bits.SYSCMD = 0;
+
+PMD1 = 0xFF;
+PMD2 = 0xFF;
+PMD3 = 0xFF;
+PMD4 = 0xFF;
+PMD5 = 0xFF;
+PMD6 = 0xFF;
+PMD7 = 0xFF;
 }
-
-else if(WDTCON0bits.SEN == 1){
-WDTCON0bits.SEN = 0;
-do { LATBbits.LATB6 = 1; } while(0);
-do { LATCbits.LATC1 = 1; } while(0);
-measure();
-generateIntPower();
-do { LATBbits.LATB6 = 0; } while(0);
-do { LATCbits.LATC1 = 0; } while(0);
-
-asm("clrwdt");
-WDTCON0bits.SEN = 1;
-}
-}
-
-else if(STATUSbits.nTO == 0){
-WDTCON0bits.SEN = 0;
-do { LATCbits.LATC1 = 1; } while(0);
-
-if(batThresholdEnabled && alertThreshold){
-measure();
-ledBlink();
-generateIntPower();
-}
-
-_delay((unsigned long)((2000)*(32000000/4000.0)));
-do { LATCbits.LATC1 = 0; } while(0);
-
-asm("clrwdt");
-WDTCON0bits.SEN = 1;
-}
-else{
-enterSleep();
-}
-}
-
-void Power_GetData(uint8_t * data, uint8_t * length){
-*length = 6;
-data[0] = measurementData[0];
-data[1] = measurementData[1];
-
-data[2] = measurementData[2];
-data[3] = measurementData[3];
-
-data[4] = measurementData[4];
-data[5] = measurementData[5];
-}
-
-void Power_SetThreshold(uint8_t metric, uint8_t * thresholdData){
-if(metric == 0){
-batThresholdEnabled = thresholdData[0];
-batThresholdLevel = (uint16_t)((thresholdData[3]<<8) | thresholdData[4]);
-floatBatThresholdLevel = (float) batThresholdLevel/600;
-}
-
-if(batThresholdEnabled && WDTCON0bits.SEN == 0){
-WDT_Init();
-}
-else if(batThresholdEnabled && WDTCON0bits.SEN == 1){
-WDTCON0bits.SEN = 0;
-asm("clrwdt");
-WDTCON0bits.SEN = 1;
-}
-else{
-WDTCON0bits.SEN = 0;
-asm("clrwdt");
-}
-}
-

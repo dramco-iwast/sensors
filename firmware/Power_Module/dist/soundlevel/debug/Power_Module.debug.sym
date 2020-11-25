@@ -768,8 +768,8 @@ idataCOMMON 187E 187F CODE 187E 0
 text38 187C 187D CODE 187C 0
 text40 187A 187B CODE 187A 0
 %locals
-dist/soundlevel/production\Power_Module.production.o
-C:\Users\Pierre\AppData\Local\Temp\sd9k.s
+dist/soundlevel/debug\Power_Module.debug.o
+C:\Users\Pierre\AppData\Local\Temp\s29c.s
 6791 2D 0 CODE 0
 6794 2D 0 CODE 0
 6918 2D 0 CODE 0
