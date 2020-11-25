@@ -73,19 +73,19 @@ channel_FVR_Buffer2 63
 [v _generateIntPower generateIntPower `(v  1 e 1 0 ]
 "119
 [v _measure measure `(v  1 e 1 0 ]
-"173
+"168
 [v _ledBlink ledBlink `(v  1 e 1 0 ]
-"201
+"196
 [v _enterSleep enterSleep `(v  1 e 1 0 ]
-"211
+"206
 [v _Power_Init Power_Init `(v  1 e 1 0 ]
-"257
+"252
 [v _Power_Measure Power_Measure `(v  1 e 1 0 ]
-"261
+"256
 [v _Power_Loop Power_Loop `(v  1 e 1 0 ]
-"308
+"316
 [v _Power_GetData Power_GetData `(v  1 e 1 0 ]
-"320
+"328
 [v _Power_SetThreshold Power_SetThreshold `(v  1 e 1 0 ]
 "147 C:\Users\Pierre\Documents\GitHub\sensors\firmware\Power_Module\system/adcc.c
 [v _ADCC_GetSingleConversion ADCC_GetSingleConversion `(ui  1 e 2 0 ]
@@ -855,36 +855,36 @@ channel_FVR_Buffer2 63
 [v I2C1_Initialize@slave_address slave_address `uc  1 a 1 4 ]
 "130
 } 0
-"320 C:\Users\Pierre\Documents\GitHub\sensors\firmware\Power_Module\sensor/power.c
+"328 C:\Users\Pierre\Documents\GitHub\sensors\firmware\Power_Module\sensor/power.c
 [v _Power_SetThreshold Power_SetThreshold `(v  1 e 1 0 ]
 {
 [v Power_SetThreshold@metric metric `uc  1 p 1 27 ]
 [v Power_SetThreshold@thresholdData thresholdData `*.5uc  1 p 1 28 ]
-"339
+"347
 } 0
 "105
 [v _WDT_Init WDT_Init `(v  1 e 1 0 ]
 {
 "111
 } 0
-"257
+"252
 [v _Power_Measure Power_Measure `(v  1 e 1 0 ]
 {
-"259
+"254
 } 0
-"261
+"256
 [v _Power_Loop Power_Loop `(v  1 e 1 0 ]
 {
-"306
+"314
 } 0
 "119
 [v _measure measure `(v  1 e 1 0 ]
 {
-"158
-[v measure@datasolvoltage datasolvoltage `ui  1 a 2 10 ]
-"157
-[v measure@databatvoltage databatvoltage `ui  1 a 2 8 ]
-"171
+"156
+[v measure@datasolvoltage datasolvoltage `ui  1 a 2 9 ]
+"155
+[v measure@databatvoltage databatvoltage `ui  1 a 2 7 ]
+"166
 } 0
 "6 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\round.c
 [v _round round `(d  1 e 3 0 ]
@@ -1017,32 +1017,32 @@ channel_FVR_Buffer2 63
 {
 "117
 } 0
-"201
+"196
 [v _enterSleep enterSleep `(v  1 e 1 0 ]
 {
-"207
+"202
 } 0
-"211
+"206
 [v _Power_Init Power_Init `(v  1 e 1 0 ]
 {
-"255
+"250
 } 0
-"173
+"168
 [v _ledBlink ledBlink `(v  1 e 1 0 ]
 {
-"199
+"194
 } 0
 "51
 [v _ADC_Init ADC_Init `(v  1 e 1 0 ]
 {
 "103
 } 0
-"308
+"316
 [v _Power_GetData Power_GetData `(v  1 e 1 0 ]
 {
 [v Power_GetData@data data `*.5uc  1 p 1 4 ]
 [v Power_GetData@length length `*.4uc  1 p 1 5 ]
-"318
+"326
 } 0
 "179 C:\Users\Pierre\Documents\GitHub\sensors\firmware\Power_Module\system/i2c1.c
 [v _I2C1_TxBufferEmpty I2C1_TxBufferEmpty `(uc  1 e 1 0 ]

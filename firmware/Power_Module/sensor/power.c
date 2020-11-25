@@ -13,7 +13,7 @@
 #define SOL_VOLT   0x13
 #define BAT_VOLT   0x14
 
-#define DEBUG
+//#define DEBUG
 
 #define ENABLE  1
 #define DISABLE 0
@@ -105,7 +105,7 @@ void ADC_Init(void){
 void WDT_Init(void){
     // Config WatchDog Timer
 
-	WDTCON0 = 0x1C; // 16 second period (set to 0x20 for 64 s)
+	WDTCON0 = 0x20; // 64 second period (set to 0x1C for 16 s)
 	WDTCON1 = 0x07; // LFINTOSC, window 100%
     WDTCON0bits.SEN = 1; // enable WDT
 }
@@ -127,9 +127,7 @@ void measure(void){
 
     ADCC_GetSingleConversion(SOL_VOLT);                 // first measurement afte rreset seems to be fixed and need to be rejected
     voltageLDRMeasured = ADCC_GetSingleConversion(SOL_VOLT);
-    
-    __delay_ms(200);
-
+   
     tempValue = ADCC_GetSingleConversion(SOL_VOLT);
     if(tempValue < voltageLDRMeasured){                         // To make sure it is the lowest/ stable voltage that is captured
         voltageLDRMeasured = tempValue;
@@ -162,9 +160,6 @@ void measure(void){
 
     measurementData[2] = (uint8_t)(datasolvoltage>>8);
     measurementData[3] = (uint8_t)(datasolvoltage);
-
-    measurementData[4] = 0x00;
-    measurementData[5] = 0x00;
    
 	MeasurementRunning = false;
 	FVRCON = 0x00; // Disable fixed voltage reference
@@ -267,6 +262,10 @@ void Power_Loop(void){
             LED0_SetHigh();
 			measure();
 			generateIntPower();
+            
+            measurementData[4] = 0x00;
+            measurementData[5] = 0x02;
+            
             LED0_SetLow();
 		}  
 		// WDT is turned ON  -> Threshold enabled
@@ -274,10 +273,16 @@ void Power_Loop(void){
 			WDTCON0bits.SEN = 0; // disable WDT
             LED0_SetHigh();
 			LED1_SetHigh();
-			measure();
+			
+            measure();
 			generateIntPower();
+            
+            measurementData[4] = 0x00;
+            measurementData[5] = 0x04;
+            
             LED0_SetLow();
 			LED1_SetLow();
+            
 			
 			CLRWDT();
 			WDTCON0bits.SEN = 1; // enable WDT
@@ -286,15 +291,18 @@ void Power_Loop(void){
 	// WatchDog Time-Out
 	else if(STATUSbits.nTO == 0){
 		WDTCON0bits.SEN = 0; // disable WDT
-		LED1_SetHigh();
 		
+        LED1_SetHigh();
+        
         if(batThresholdEnabled && alertThreshold){
-			measure();
-            ledBlink();
+			alertThreshold = false;
+            measure();
 			generateIntPower();
 		}
         
-        __delay_ms(2000);
+        measurementData[4] = 0x00;
+        measurementData[5] = 0x06;
+        
         LED1_SetLow();
 			
 		CLRWDT();
