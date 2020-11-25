@@ -13094,243 +13094,240 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 [; ;power.c: 270: }
 [e $U 1643  ]
-"272
+"271
 [e :U 1636 ]
-[; ;power.c: 272: else if(WDTCON0bits.SEN == 1){
+[; ;power.c: 271: else if(WDTCON0bits.SEN == 1){
 [e $ ! == -> . . _WDTCON0bits 0 0 `i -> 1 `i 1644  ]
 {
-[; ;power.c: 273: WDTCON0bits.SEN = 0;
-"273
+[; ;power.c: 272: WDTCON0bits.SEN = 0;
+"272
 [e = . . _WDTCON0bits 0 0 -> -> 0 `i `uc ]
-[; ;power.c: 274: do { LATBbits.LATB6 = 1; } while(0);
-"274
+[; ;power.c: 273: do { LATBbits.LATB6 = 1; } while(0);
+"273
 [e :U 1647 ]
 {
 [e = . . _LATBbits 0 3 -> -> 1 `i `uc ]
 }
 [e :U 1646 ]
-[; ;power.c: 275: do { LATCbits.LATC1 = 1; } while(0);
-"275
+[; ;power.c: 274: do { LATCbits.LATC1 = 1; } while(0);
+"274
 [e :U 1650 ]
 {
 [e = . . _LATCbits 0 1 -> -> 1 `i `uc ]
 }
 [e :U 1649 ]
-[; ;power.c: 277: measure();
-"277
+[; ;power.c: 276: measure();
+"276
 [e ( _measure ..  ]
-[; ;power.c: 278: generateIntPower();
-"278
+[; ;power.c: 277: generateIntPower();
+"277
 [e ( _generateIntPower ..  ]
-[; ;power.c: 280: measurementData[4] = 0x00;
-"280
+[; ;power.c: 279: measurementData[4] = 0x00;
+"279
 [e = *U + &U _measurementData * -> -> -> 4 `i `ui `ux -> -> # *U &U _measurementData `ui `ux -> -> 0 `i `uc ]
-[; ;power.c: 281: measurementData[5] = 0x04;
-"281
+[; ;power.c: 280: measurementData[5] = 0x04;
+"280
 [e = *U + &U _measurementData * -> -> -> 5 `i `ui `ux -> -> # *U &U _measurementData `ui `ux -> -> 4 `i `uc ]
-[; ;power.c: 283: do { LATBbits.LATB6 = 0; } while(0);
-"283
+[; ;power.c: 282: do { LATBbits.LATB6 = 0; } while(0);
+"282
 [e :U 1653 ]
 {
 [e = . . _LATBbits 0 3 -> -> 0 `i `uc ]
 }
 [e :U 1652 ]
-[; ;power.c: 284: do { LATCbits.LATC1 = 0; } while(0);
-"284
+[; ;power.c: 283: do { LATCbits.LATC1 = 0; } while(0);
+"283
 [e :U 1656 ]
 {
 [e = . . _LATCbits 0 1 -> -> 0 `i `uc ]
 }
 [e :U 1655 ]
-[; ;power.c: 287: asm("clrwdt");
-"287
+[; ;power.c: 286: asm("clrwdt");
+"286
 [; <" clrwdt ;# ">
-[; ;power.c: 288: WDTCON0bits.SEN = 1;
-"288
+[; ;power.c: 287: WDTCON0bits.SEN = 1;
+"287
 [e = . . _WDTCON0bits 0 0 -> -> 1 `i `uc ]
-"289
+"288
 }
 [e :U 1644 ]
-"290
+"289
 [e :U 1643 ]
 }
+[; ;power.c: 288: }
 [; ;power.c: 289: }
-[; ;power.c: 290: }
 [e $U 1657  ]
-"292
+"290
 [e :U 1635 ]
-[; ;power.c: 292: else if(STATUSbits.nTO == 0){
+[; ;power.c: 290: else if(STATUSbits.nTO == 0){
 [e $ ! == -> . . _STATUSbits 0 4 `i -> 0 `i 1658  ]
 {
-[; ;power.c: 293: WDTCON0bits.SEN = 0;
-"293
+[; ;power.c: 291: WDTCON0bits.SEN = 0;
+"291
 [e = . . _WDTCON0bits 0 0 -> -> 0 `i `uc ]
-[; ;power.c: 295: do { LATCbits.LATC1 = 1; } while(0);
-"295
+[; ;power.c: 293: do { LATCbits.LATC1 = 1; } while(0);
+"293
 [e :U 1661 ]
 {
 [e = . . _LATCbits 0 1 -> -> 1 `i `uc ]
 }
 [e :U 1660 ]
-[; ;power.c: 297: if(batThresholdEnabled && alertThreshold){
-"297
+[; ;power.c: 295: if(batThresholdEnabled && alertThreshold){
+"295
 [e $ ! && != -> _batThresholdEnabled `i -> -> -> 0 `i `uc `i != -> _alertThreshold `i -> -> -> 0 `i `uc `i 1662  ]
 {
-[; ;power.c: 298: alertThreshold = 0;
-"298
+[; ;power.c: 296: alertThreshold = 0;
+"296
 [e = _alertThreshold -> -> 0 `i `uc ]
-[; ;power.c: 299: measure();
-"299
+[; ;power.c: 297: measure();
+"297
 [e ( _measure ..  ]
-[; ;power.c: 300: generateIntPower();
-"300
+[; ;power.c: 298: generateIntPower();
+"298
 [e ( _generateIntPower ..  ]
-"301
+"299
 }
 [e :U 1662 ]
-[; ;power.c: 301: }
-[; ;power.c: 303: measurementData[4] = 0x00;
-"303
+[; ;power.c: 299: }
+[; ;power.c: 301: measurementData[4] = 0x00;
+"301
 [e = *U + &U _measurementData * -> -> -> 4 `i `ui `ux -> -> # *U &U _measurementData `ui `ux -> -> 0 `i `uc ]
-[; ;power.c: 304: measurementData[5] = 0x06;
-"304
+[; ;power.c: 302: measurementData[5] = 0x06;
+"302
 [e = *U + &U _measurementData * -> -> -> 5 `i `ui `ux -> -> # *U &U _measurementData `ui `ux -> -> 6 `i `uc ]
-[; ;power.c: 306: do { LATCbits.LATC1 = 0; } while(0);
-"306
+[; ;power.c: 304: do { LATCbits.LATC1 = 0; } while(0);
+"304
 [e :U 1665 ]
 {
 [e = . . _LATCbits 0 1 -> -> 0 `i `uc ]
 }
 [e :U 1664 ]
-[; ;power.c: 308: asm("clrwdt");
-"308
+[; ;power.c: 306: asm("clrwdt");
+"306
 [; <" clrwdt ;# ">
-[; ;power.c: 309: WDTCON0bits.SEN = 1;
-"309
+[; ;power.c: 307: WDTCON0bits.SEN = 1;
+"307
 [e = . . _WDTCON0bits 0 0 -> -> 1 `i `uc ]
-"310
+"308
 }
-[; ;power.c: 310: }
+[; ;power.c: 308: }
 [e $U 1666  ]
-"311
+"309
 [e :U 1658 ]
-[; ;power.c: 311: else{
+[; ;power.c: 309: else{
 {
-[; ;power.c: 312: enterSleep();
-"312
+[; ;power.c: 310: enterSleep();
+"310
 [e ( _enterSleep ..  ]
-"313
+"311
 }
 [e :U 1666 ]
 [e :U 1657 ]
-[; ;power.c: 313: }
-[; ;power.c: 314: }
-"314
+[; ;power.c: 311: }
+[; ;power.c: 312: }
+"312
 [e :UE 1634 ]
 }
-"316
+"314
 [v _Power_GetData `(v ~T0 @X0 1 ef2`*uc`*uc ]
 {
-[; ;power.c: 316: void Power_GetData(uint8_t * data, uint8_t * length){
+[; ;power.c: 314: void Power_GetData(uint8_t * data, uint8_t * length){
 [e :U _Power_GetData ]
 [v _data `*uc ~T0 @X0 1 r1 ]
 [v _length `*uc ~T0 @X0 1 r2 ]
 [f ]
-[; ;power.c: 317: *length = 6;
-"317
+[; ;power.c: 315: *length = 6;
+"315
 [e = *U _length -> -> 6 `i `uc ]
-[; ;power.c: 318: data[0] = measurementData[0];
-"318
+[; ;power.c: 316: data[0] = measurementData[0];
+"316
 [e = *U + _data * -> -> 0 `i `x -> -> # *U _data `i `x *U + &U _measurementData * -> -> -> 0 `i `ui `ux -> -> # *U &U _measurementData `ui `ux ]
-[; ;power.c: 319: data[1] = measurementData[1];
-"319
+[; ;power.c: 317: data[1] = measurementData[1];
+"317
 [e = *U + _data * -> -> 1 `i `x -> -> # *U _data `i `x *U + &U _measurementData * -> -> -> 1 `i `ui `ux -> -> # *U &U _measurementData `ui `ux ]
-[; ;power.c: 321: data[2] = measurementData[2];
-"321
+[; ;power.c: 319: data[2] = measurementData[2];
+"319
 [e = *U + _data * -> -> 2 `i `x -> -> # *U _data `i `x *U + &U _measurementData * -> -> -> 2 `i `ui `ux -> -> # *U &U _measurementData `ui `ux ]
-[; ;power.c: 322: data[3] = measurementData[3];
-"322
+[; ;power.c: 320: data[3] = measurementData[3];
+"320
 [e = *U + _data * -> -> 3 `i `x -> -> # *U _data `i `x *U + &U _measurementData * -> -> -> 3 `i `ui `ux -> -> # *U &U _measurementData `ui `ux ]
-[; ;power.c: 324: data[4] = measurementData[4];
-"324
+[; ;power.c: 322: data[4] = measurementData[4];
+"322
 [e = *U + _data * -> -> 4 `i `x -> -> # *U _data `i `x *U + &U _measurementData * -> -> -> 4 `i `ui `ux -> -> # *U &U _measurementData `ui `ux ]
-[; ;power.c: 325: data[5] = measurementData[5];
-"325
+[; ;power.c: 323: data[5] = measurementData[5];
+"323
 [e = *U + _data * -> -> 5 `i `x -> -> # *U _data `i `x *U + &U _measurementData * -> -> -> 5 `i `ui `ux -> -> # *U &U _measurementData `ui `ux ]
-[; ;power.c: 326: }
-"326
+[; ;power.c: 324: }
+"324
 [e :UE 1667 ]
 }
-"328
+"326
 [v _Power_SetThreshold `(v ~T0 @X0 1 ef2`uc`*uc ]
 {
-[; ;power.c: 328: void Power_SetThreshold(uint8_t metric, uint8_t * thresholdData){
+[; ;power.c: 326: void Power_SetThreshold(uint8_t metric, uint8_t * thresholdData){
 [e :U _Power_SetThreshold ]
 [v _metric `uc ~T0 @X0 1 r1 ]
 [v _thresholdData `*uc ~T0 @X0 1 r2 ]
 [f ]
-[; ;power.c: 329: if(metric == 0){
-"329
+[; ;power.c: 327: if(metric == 0){
+"327
 [e $ ! == -> _metric `i -> 0 `i 1669  ]
 {
-[; ;power.c: 330: batThresholdEnabled = thresholdData[0];
-"330
+[; ;power.c: 328: batThresholdEnabled = thresholdData[0];
+"328
 [e = _batThresholdEnabled *U + _thresholdData * -> -> 0 `i `x -> -> # *U _thresholdData `i `x ]
-[; ;power.c: 331: batThresholdLevel = (uint16_t)((thresholdData[3]<<8) | thresholdData[4]);
-"331
+[; ;power.c: 329: batThresholdLevel = (uint16_t)((thresholdData[3]<<8) | thresholdData[4]);
+"329
 [e = _batThresholdLevel -> | << -> *U + _thresholdData * -> -> 3 `i `x -> -> # *U _thresholdData `i `x `i -> 8 `i -> *U + _thresholdData * -> -> 4 `i `x -> -> # *U _thresholdData `i `x `i `ui ]
-[; ;power.c: 332: floatBatThresholdLevel = (float) batThresholdLevel/600;
-"332
+[; ;power.c: 330: floatBatThresholdLevel = (float) batThresholdLevel/600;
+"330
 [e = _floatBatThresholdLevel / -> _batThresholdLevel `f -> -> 600 `i `f ]
-"333
+"331
 }
 [e :U 1669 ]
-[; ;power.c: 333: }
-[; ;power.c: 335: if(batThresholdEnabled && WDTCON0bits.SEN == 0){
-"335
+[; ;power.c: 331: }
+[; ;power.c: 333: if(batThresholdEnabled && WDTCON0bits.SEN == 0){
+"333
 [e $ ! && != -> _batThresholdEnabled `i -> -> -> 0 `i `uc `i == -> . . _WDTCON0bits 0 0 `i -> 0 `i 1670  ]
 {
-[; ;power.c: 336: WDT_Init();
-"336
+[; ;power.c: 334: WDT_Init();
+"334
 [e ( _WDT_Init ..  ]
-"337
+"335
 }
-[; ;power.c: 337: }
+[; ;power.c: 335: }
 [e $U 1671  ]
-"338
+"336
 [e :U 1670 ]
-[; ;power.c: 338: else if(batThresholdEnabled && WDTCON0bits.SEN == 1){
+[; ;power.c: 336: else if(batThresholdEnabled && WDTCON0bits.SEN == 1){
 [e $ ! && != -> _batThresholdEnabled `i -> -> -> 0 `i `uc `i == -> . . _WDTCON0bits 0 0 `i -> 1 `i 1672  ]
 {
-[; ;power.c: 339: WDTCON0bits.SEN = 0;
+[; ;power.c: 337: WDTCON0bits.SEN = 0;
+"337
+[e = . . _WDTCON0bits 0 0 -> -> 0 `i `uc ]
+[; ;power.c: 338: asm("clrwdt");
+"338
+[; <" clrwdt ;# ">
+[; ;power.c: 339: WDTCON0bits.SEN = 1;
 "339
-[e = . . _WDTCON0bits 0 0 -> -> 0 `i `uc ]
-[; ;power.c: 340: asm("clrwdt");
-"340
-[; <" clrwdt ;# ">
-[; ;power.c: 341: WDTCON0bits.SEN = 1;
-"341
 [e = . . _WDTCON0bits 0 0 -> -> 1 `i `uc ]
-"342
+"340
 }
-[; ;power.c: 342: }
+[; ;power.c: 340: }
 [e $U 1673  ]
-"343
+"341
 [e :U 1672 ]
-[; ;power.c: 343: else{
+[; ;power.c: 341: else{
 {
-[; ;power.c: 344: WDTCON0bits.SEN = 0;
-"344
+[; ;power.c: 342: WDTCON0bits.SEN = 0;
+"342
 [e = . . _WDTCON0bits 0 0 -> -> 0 `i `uc ]
-[; ;power.c: 345: asm("clrwdt");
-"345
-[; <" clrwdt ;# ">
-"346
+"343
 }
 [e :U 1673 ]
 [e :U 1671 ]
-[; ;power.c: 346: }
-[; ;power.c: 347: }
-"347
+[; ;power.c: 343: }
+[; ;power.c: 344: }
+"344
 [e :UE 1668 ]
 }

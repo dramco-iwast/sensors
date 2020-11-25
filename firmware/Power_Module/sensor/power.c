@@ -268,8 +268,7 @@ void Power_Loop(void){
             
             LED0_SetLow();
 		}  
-		// WDT is turned ON  -> Threshold enabled
-		else if(WDTCON0bits.SEN == 1){
+		else if(WDTCON0bits.SEN == 1){  // WDT is turned ON  -> Threshold enabled
 			WDTCON0bits.SEN = 0; // disable WDT
             LED0_SetHigh();
 			LED1_SetHigh();
@@ -288,8 +287,7 @@ void Power_Loop(void){
 			WDTCON0bits.SEN = 1; // enable WDT
 		}
 	}
-	// WatchDog Time-Out
-	else if(STATUSbits.nTO == 0){
+	else if(STATUSbits.nTO == 0){     // WatchDog Time-Out
 		WDTCON0bits.SEN = 0; // disable WDT
 		
         LED1_SetHigh();
@@ -342,7 +340,6 @@ void Power_SetThreshold(uint8_t metric, uint8_t * thresholdData){
     }
     else{                                                   //WDT initialy OFF or ON -> DISABLE 
         WDTCON0bits.SEN = 0;
-        CLRWDT();
     }
 }
 

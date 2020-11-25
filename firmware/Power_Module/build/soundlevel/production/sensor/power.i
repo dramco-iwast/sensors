@@ -18865,7 +18865,6 @@ measurementData[5] = 0x02;
 
 do { LATBbits.LATB6 = 0; } while(0);
 }
-
 else if(WDTCON0bits.SEN == 1){
 WDTCON0bits.SEN = 0;
 do { LATBbits.LATB6 = 1; } while(0);
@@ -18885,7 +18884,6 @@ asm("clrwdt");
 WDTCON0bits.SEN = 1;
 }
 }
-
 else if(STATUSbits.nTO == 0){
 WDTCON0bits.SEN = 0;
 
@@ -18939,7 +18937,6 @@ WDTCON0bits.SEN = 1;
 }
 else{
 WDTCON0bits.SEN = 0;
-asm("clrwdt");
 }
 }
 

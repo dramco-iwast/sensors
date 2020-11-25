@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files\Microchip\xc8\v2.31\pic\dat\en_msgs.txt -cn \
   -h+dist/soundlevel/production\Power_Module.production.sym \
   --cmf=dist/soundlevel/production\Power_Module.production.cmf -z \
-  -Q16F18446 -oC:\Users\Pierre\AppData\Local\Temp\s788.3 \
+  -Q16F18446 -oC:\Users\Pierre\AppData\Local\Temp\s4vg.2 \
   --defsym=__MPLAB_BUILD=1 \
   -Mdist/soundlevel/production/Power_Module.production.map -E1 \
   -ver=XC8 Compiler -ASTACK=0210Ah-027EFh -pstack=STACK -ACODE=00h-07FFhx8 \
@@ -47,7 +47,7 @@ Linker command line:
   -AEEDATA=00h-0FFh/0F000h -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 \
   -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 \
   -preset_vec=00h,intentry=04h,init,end_init -ppowerup=CODE -pcinit=CODE \
-  -pfunctab=ENTRY -k C:\Users\Pierre\AppData\Local\Temp\s788.o \
+  -pfunctab=ENTRY -k C:\Users\Pierre\AppData\Local\Temp\s4vg.o \
   dist/soundlevel/production\Power_Module.production.o 
 
 Object code version is 3.11
@@ -57,7 +57,7 @@ Machine type is 16F18446
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\Pierre\AppData\Local\Temp\s788.o
+C:\Users\Pierre\AppData\Local\Temp\s4vg.o
                 end_init                             2B       2B        2        8       0
                 reset_vec                             0        0        2        0       0
                 config                             8007     8007        5        0       4
@@ -65,24 +65,24 @@ dist/soundlevel/production\Power_Module.production.o
                 cinit                                2D       2D       30        8       0
                 intentry                              4        4       27        8       0
                 config                             8007     8007        5        0       4
-                text40                              C4C      C4C        1     1898       0
+                text40                              C4D      C4D        1     189A       0
                 text39                              CA7      CA7        F     194E       0
-                text38                              C4D      C4D        1     189A       0
+                text38                              C4E      C4E        1     189C       0
                 text37                              F45      F45       53     1E8A       0
                 text36                              E34      E34       3F     1C68       0
-                text34                              C4F      C4F        3     189E       0
+                text34                              C50      C50        3     18A0       0
                 text33                              C81      C81        C     1902       0
                 text32                              CF4      CF4       1F     19E8       0
-                text31                              7CF      7CF       2A        8       0
-                text30                              C6F      C6F        8     18DE       0
+                text31                              7CE      7CE       2A        8       0
+                text30                              7F8      7F8        8        8       0
                 text29                              EFC      EFC       49     1DF8       0
                 text28                              D55      D55       22     1AAA       0
                 text27                              54F      54F       9D        8       0
                 text26                              D77      D77       24     1AEE       0
-                text25                              C68      C68        7     18D0       0
+                text25                              C69      C69        7     18D2       0
                 text24                              C8D      C8D        D     191A       0
                 text23                              CC9      CC9       15     1992       0
-                text22                              6E8      6E8       75        8       0
+                text22                              6E7      6E7       75        8       0
                 text21                              49D      49D       B2        8       0
                 text20                              DFB      DFB       39     1BF6       0
                 text19                              3DC      3DC       C1        8       0
@@ -93,14 +93,14 @@ dist/soundlevel/production\Power_Module.production.o
                 text14                              5EC      5EC       85        8       0
                 text13                              DC3      DC3       38     1B86       0
                 text12                              EB5      EB5       47     1D6A       0
-                text11                              75D      75D       72        8       0
+                text11                              75C      75C       72        8       0
                 text10                               5D       5D      180        8       0
                 text9                               F98      F98       68     1F30       0
-                text8                               C52      C52        4     18A4       0
-                text7                               7F9      7F9        7        8       0
-                text6                               671      671       77        8       0
+                text8                               C53      C53        4     18A6       0
+                text7                               C70      C70        7     18E0       0
+                text6                               671      671       76        8       0
                 text5                               D9B      D9B       28     1B36       0
-                text4                               C56      C56        6     18AC       0
+                text4                               C57      C57        6     18AE       0
                 text3                               CB6      CB6       13     196C       0
                 text2                               D34      D34       21     1A68       0
                 text1                               C9A      C9A        D     1934       0
@@ -109,8 +109,8 @@ dist/soundlevel/production\Power_Module.production.o
                 cstackCOMMON                         70       70        6       70       1
                 cstackBANK1                          C6       C6       11       A0       1
                 cstackBANK3                         1A0      1A0       1A      1A0       1
-                clrtext                             C5C      C5C        6     18B8       0
-                inittext                            C62      C62        6     18C4       0
+                clrtext                             C5D      C5D        6     18BA       0
+                inittext                            C63      C63        6     18C6       0
                 dataBANK2                           166      166        A      120       1
                 bssBANK2                            120      120       46      120       1
                 dataBANK1                            D7       D7        2       A0       1
@@ -119,7 +119,7 @@ dist/soundlevel/production\Power_Module.production.o
                 bssCOMMON                            76       76        3       70       1
                 idataBANK2                          C77      C77        A     18EE       0
                 idataBANK1                            2        2        2        0       0
-                idataCOMMON                         C4E      C4E        1     189C       0
+                idataCOMMON                         C4F      C4F        1     189E       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
@@ -129,24 +129,24 @@ TOTAL           Name                               Link     Load   Length     Sp
                 cinit                                2D       2D       30         0
                 intentry                              4        4       27         0
                 reset_vec                             0        0        2         0
-                text40                              C4C      C4C        1         0
+                text40                              C4D      C4D        1         0
                 text39                              CA7      CA7        F         0
-                text38                              C4D      C4D        1         0
+                text38                              C4E      C4E        1         0
                 text37                              F45      F45       53         0
                 text36                              E34      E34       3F         0
-                text34                              C4F      C4F        3         0
+                text34                              C50      C50        3         0
                 text33                              C81      C81        C         0
                 text32                              CF4      CF4       1F         0
-                text31                              7CF      7CF       2A         0
-                text30                              C6F      C6F        8         0
+                text31                              7CE      7CE       2A         0
+                text30                              7F8      7F8        8         0
                 text29                              EFC      EFC       49         0
                 text28                              D55      D55       22         0
                 text27                              54F      54F       9D         0
                 text26                              D77      D77       24         0
-                text25                              C68      C68        7         0
+                text25                              C69      C69        7         0
                 text24                              C8D      C8D        D         0
                 text23                              CC9      CC9       15         0
-                text22                              6E8      6E8       75         0
+                text22                              6E7      6E7       75         0
                 text21                              49D      49D       B2         0
                 text20                              DFB      DFB       39         0
                 text19                              3DC      3DC       C1         0
@@ -157,23 +157,23 @@ TOTAL           Name                               Link     Load   Length     Sp
                 text14                              5EC      5EC       85         0
                 text13                              DC3      DC3       38         0
                 text12                              EB5      EB5       47         0
-                text11                              75D      75D       72         0
+                text11                              75C      75C       72         0
                 text10                               5D       5D      180         0
                 text9                               F98      F98       68         0
-                text8                               C52      C52        4         0
-                text7                               7F9      7F9        7         0
-                text6                               671      671       77         0
+                text8                               C53      C53        4         0
+                text7                               C70      C70        7         0
+                text6                               671      671       76         0
                 text5                               D9B      D9B       28         0
-                text4                               C56      C56        6         0
+                text4                               C57      C57        6         0
                 text3                               CB6      CB6       13         0
                 text2                               D34      D34       21         0
                 text1                               C9A      C9A        D         0
                 maintext                            2FD      2FD       DF         0
-                clrtext                             C5C      C5C        6         0
-                inittext                            C62      C62        6         0
+                clrtext                             C5D      C5D        6         0
+                inittext                            C63      C63        6         0
                 idataBANK2                          C77      C77        A         0
                 idataBANK1                            2        2        2         0
-                idataCOMMON                         C4E      C4E        1         0
+                idataCOMMON                         C4F      C4F        1         0
 
         CLASS   STRCODE        
 
@@ -476,16 +476,16 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
                 bssBANK1                       0000A0  000039  0000D9        A0       1  BANK1       1
                 bssBANK2                       000120  000050  000170       120       1  BANK2       1
                 cstackBANK3                    0001A0  00001A  0001BA       1A0       1  BANK3       1
-                text40                         000C4C  000001  000C4D      1898       0  CODE        2
-                text38                         000C4D  000001  000C4E      189A       0  CODE        2
-                idataCOMMON                    000C4E  000001  000C4F      189C       0  CODE        2
-                text34                         000C4F  000003  000C52      189E       0  CODE        2
-                text8                          000C52  000004  000C56      18A4       0  CODE        2
-                text4                          000C56  000006  000C5C      18AC       0  CODE        2
-                clrtext                        000C5C  000006  000C62      18B8       0  CODE        2
-                inittext                       000C62  000006  000C68      18C4       0  CODE        2
-                text25                         000C68  000007  000C6F      18D0       0  CODE        2
-                text30                         000C6F  000008  000C77      18DE       0  CODE        2
+                text40                         000C4D  000001  000C4E      189A       0  CODE        2
+                text38                         000C4E  000001  000C4F      189C       0  CODE        2
+                idataCOMMON                    000C4F  000001  000C50      189E       0  CODE        2
+                text34                         000C50  000003  000C53      18A0       0  CODE        2
+                text8                          000C53  000004  000C57      18A6       0  CODE        2
+                text4                          000C57  000006  000C5D      18AE       0  CODE        2
+                clrtext                        000C5D  000006  000C63      18BA       0  CODE        2
+                inittext                       000C63  000006  000C69      18C6       0  CODE        2
+                text25                         000C69  000007  000C70      18D2       0  CODE        2
+                text7                          000C70  000007  000C77      18E0       0  CODE        2
                 idataBANK2                     000C77  00000A  000C81      18EE       0  CODE        2
                 text33                         000C81  00000C  000C8D      1902       0  CODE        2
                 text24                         000C8D  00000D  000C9A      191A       0  CODE        2
@@ -539,13 +539,13 @@ UNUSED ADDRESS RANGES
         BANK8            00420-0046F              50           1
         BANK9            004A0-004EF              50           1
         BIGRAM           02000-027EF             7F0           1
-        CODE             00800-00C4B             44C           2
+        CODE             00800-00C4C             44D           2
                          01000-03FFF             800
         COMMON           0007A-0007D               4           1
-        CONST            00800-00C4B             100           2
+        CONST            00800-00C4C             100           2
                          01000-03FFF             100
         EEDATA           0F000-0F0FF             100           2
-        ENTRY            00800-00C4B             100           2
+        ENTRY            00800-00C4C             100           2
                          01000-03FFF             100
         IDLOC            08000-08003               4           2
         RAM              0004B-0006F              25           1
@@ -638,9 +638,9 @@ UNUSED ADDRESS RANGES
         SFR8             00400-0041F              20           1
         SFR9             00480-0049F              20           1
         STACK            0210A-027EF             6E6           1
-        STRCODE          00800-00C4B             44C           2
+        STRCODE          00800-00C4C             44D           2
                          01000-03FFF            3000
-        STRING           00800-00C4B             100           2
+        STRING           00800-00C4C             100           2
                          01000-03FFF             100
 
                                   Symbol Table
@@ -679,7 +679,7 @@ _ADACQL                                 (abs)        0010C
 _ADACT                                  (abs)        00117
 _ADCAP                                  (abs)        0010E
 _ADCC_ADI_InterruptHandler              bssBANK1     000B8
-_ADCC_DefaultInterruptHandler           text40       00C4C
+_ADCC_DefaultInterruptHandler           text40       00C4D
 _ADCC_GetSingleConversion               text23       00CC9
 _ADCC_ISR                               text39       00CA7
 _ADCLK                                  (abs)        00118
@@ -720,16 +720,16 @@ _ANSELBbits                             (abs)        01F43
 _ANSELC                                 (abs)        01F4E
 _ANSELCbits                             (abs)        01F4E
 _CPUDOZEbits                            (abs)        0088C
-_DefaultSensorInterruptHandler          text38       00C4D
+_DefaultSensorInterruptHandler          text38       00C4E
 _FVRCON                                 (abs)        0090C
-_I2C1_CommandReceived                   text34       00C4F
+_I2C1_CommandReceived                   text34       00C50
 _I2C1_GetCommand                        text33       00C81
 _I2C1_GetCommandData                    text32       00CF4
 _I2C1_ISR                               text36       00E34
 _I2C1_Initialize                        text5        00D9B
-_I2C1_SetTransmitData                   text31       007CF
+_I2C1_SetTransmitData                   text31       007CE
 _I2C1_StatusCallback                    text37       00F45
-_I2C1_TxBufferEmpty                     text30       00C6F
+_I2C1_TxBufferEmpty                     text30       007F8
 _I2C1_slaveWriteData                    dataCOMMON   00079
 _INTCONbits                             (abs)        0000B
 _Interrupt_Handler                      intentry     00004
@@ -741,7 +741,7 @@ _LATCbits                               (abs)        0001A
 _MeasurementRunning                     bssBANK1     000BC
 _OSCCON1                                (abs)        0088D
 _OSCFRQ                                 (abs)        00893
-_OSCILLATOR_Initialize                  text4        00C56
+_OSCILLATOR_Initialize                  text4        00C57
 _PIE1bits                               (abs)        00717
 _PIE3bits                               (abs)        00719
 _PIR1bits                               (abs)        0070D
@@ -762,7 +762,7 @@ _PollingMeasurement                     bssBANK1     000BD
 _Power_GetData                          text29       00EFC
 _Power_Init                             text26       00D77
 _Power_Loop                             text9        00F98
-_Power_Measure                          text8        00C52
+_Power_Measure                          text8        00C53
 _Power_SetThreshold                     text6        00671
 _RB5PPS                                 (abs)        01F1D
 _RB7PPS                                 (abs)        01F1F
@@ -791,7 +791,7 @@ _VREGCONbits                            (abs)        00812
 _WDTCON0                                (abs)        0080C
 _WDTCON0bits                            (abs)        0080C
 _WDTCON1                                (abs)        0080D
-_WDT_Init                               text7        007F9
+_WDT_Init                               text7        00C70
 __Habs1                                 abs1         00000
 __Hbank0                                bank0        00000
 __Hbank1                                bank1        00000
@@ -1155,7 +1155,7 @@ ___ftmul@f1                             cstackBANK0  0003B
 ___ftmul@f2                             cstackBANK0  0003E
 ___ftmul@f3_as_product                  cstackBANK0  00046
 ___ftmul@sign                           cstackBANK0  0004A
-___ftpack                               text22       006E8
+___ftpack                               text22       006E7
 ___ftpack@arg                           cstackBANK0  00020
 ___ftpack@exp                           cstackBANK0  00023
 ___ftpack@sign                          cstackBANK0  00024
@@ -1174,46 +1174,46 @@ ___lwtoft@c                             cstackBANK0  00028
 ___sp                                   stack        00000
 ___stackhi                              (abs)        027EF
 ___stacklo                              (abs)        0210A
-__end_of_ADCC_DefaultInterruptHandler   text40       00C4D
+__end_of_ADCC_DefaultInterruptHandler   text40       00C4E
 __end_of_ADCC_GetSingleConversion       text23       00CDE
 __end_of_ADCC_ISR                       text39       00CB6
 __end_of_ADC_Init                       text28       00D77
-__end_of_DefaultSensorInterruptHandler  text38       00C4E
-__end_of_I2C1_CommandReceived           text34       00C52
+__end_of_DefaultSensorInterruptHandler  text38       00C4F
+__end_of_I2C1_CommandReceived           text34       00C53
 __end_of_I2C1_GetCommand                text33       00C8D
 __end_of_I2C1_GetCommandData            text32       00D13
 __end_of_I2C1_ISR                       text36       00E73
 __end_of_I2C1_Initialize                text5        00DC3
-__end_of_I2C1_SetTransmitData           text31       007F9
+__end_of_I2C1_SetTransmitData           text31       007F8
 __end_of_I2C1_StatusCallback            text37       00F98
-__end_of_I2C1_TxBufferEmpty             text30       00C77
+__end_of_I2C1_TxBufferEmpty             text30       00800
 __end_of_Interrupt_Handler              intentry     0002B
-__end_of_OSCILLATOR_Initialize          text4        00C5C
+__end_of_OSCILLATOR_Initialize          text4        00C5D
 __end_of_PMD_Initialize                 text3        00CC9
 __end_of_Power_GetData                  text29       00F45
 __end_of_Power_Init                     text26       00D9B
 __end_of_Power_Loop                     text9        01000
-__end_of_Power_Measure                  text8        00C56
-__end_of_Power_SetThreshold             text6        006E8
+__end_of_Power_Measure                  text8        00C57
+__end_of_Power_SetThreshold             text6        006E7
 __end_of_SYSTEM_Initialize              text2        00D55
-__end_of_WDT_Init                       text7        00800
+__end_of_WDT_Init                       text7        00C77
 __end_of___altoft                       text15       00EB5
 __end_of___ftadd                        text17       002FD
 __end_of___ftdiv                        text21       0054F
 __end_of___ftge                         text20       00E34
 __end_of___ftmul                        text19       0049D
-__end_of___ftpack                       text22       0075D
+__end_of___ftpack                       text22       0075C
 __end_of___ftsub                        text16       00D34
 __end_of___fttol                        text14       00671
 __end_of___lwtoft                       text18       00CF4
 __end_of__initialization                cinit        00059
-__end_of_enterSleep                     text25       00C6F
+__end_of_enterSleep                     text25       00C70
 __end_of_frexp                          text13       00DFB
 __end_of_generateIntPower               text24       00C9A
 __end_of_ledBlink                       text27       005EC
 __end_of_main                           maintext     003DC
 __end_of_measure                        text10       001DD
-__end_of_round                          text11       007CF
+__end_of_round                          text11       007CE
 __end_of_toggleInt                      text1        00CA7
 __end_of_trunc                          text12       00EFC
 __initialization                        cinit        0002D
@@ -1229,12 +1229,12 @@ __pdataBANK2                            dataBANK2    00166
 __pdataCOMMON                           dataCOMMON   00079
 __pidataBANK1                           idataBANK1   00002
 __pidataBANK2                           idataBANK2   00C77
-__pidataCOMMON                          idataCOMMON  00C4E
+__pidataCOMMON                          idataCOMMON  00C4F
 __pintentry                             intentry     00004
 __pmaintext                             maintext     002FD
 __ptext1                                text1        00C9A
 __ptext10                               text10       0005D
-__ptext11                               text11       0075D
+__ptext11                               text11       0075C
 __ptext12                               text12       00EB5
 __ptext13                               text13       00DC3
 __ptext14                               text14       005EC
@@ -1246,30 +1246,30 @@ __ptext19                               text19       003DC
 __ptext2                                text2        00D34
 __ptext20                               text20       00DFB
 __ptext21                               text21       0049D
-__ptext22                               text22       006E8
+__ptext22                               text22       006E7
 __ptext23                               text23       00CC9
 __ptext24                               text24       00C8D
-__ptext25                               text25       00C68
+__ptext25                               text25       00C69
 __ptext26                               text26       00D77
 __ptext27                               text27       0054F
 __ptext28                               text28       00D55
 __ptext29                               text29       00EFC
 __ptext3                                text3        00CB6
-__ptext30                               text30       00C6F
-__ptext31                               text31       007CF
+__ptext30                               text30       007F8
+__ptext31                               text31       007CE
 __ptext32                               text32       00CF4
 __ptext33                               text33       00C81
-__ptext34                               text34       00C4F
+__ptext34                               text34       00C50
 __ptext36                               text36       00E34
 __ptext37                               text37       00F45
-__ptext38                               text38       00C4D
+__ptext38                               text38       00C4E
 __ptext39                               text39       00CA7
-__ptext4                                text4        00C56
-__ptext40                               text40       00C4C
+__ptext4                                text4        00C57
+__ptext40                               text40       00C4D
 __ptext5                                text5        00D9B
 __ptext6                                text6        00671
-__ptext7                                text7        007F9
-__ptext8                                text8        00C52
+__ptext7                                text7        00C70
+__ptext8                                text8        00C53
 __ptext9                                text9        00F98
 __size_of_ADCC_DefaultInterruptHandler  (abs)        00000
 __size_of_ADCC_GetSingleConversion      (abs)        00000
@@ -1317,7 +1317,7 @@ _batThresholdEnabled                    bssBANK1     000BB
 _batThresholdLevel                      bssBANK1     000B4
 _cmdByte                                bssCOMMON    00078
 _cmdReceived                            bssBANK1     000C0
-_enterSleep                             text25       00C68
+_enterSleep                             text25       00C69
 _floatBatThresholdLevel                 bssBANK1     000A6
 _floatVoltageBatMeasured                bssBANK1     000AC
 _floatVoltageLDRMeasured                bssBANK1     000A9
@@ -1332,7 +1332,7 @@ _main                                   maintext     002FD
 _measure                                text10       0005D
 _measure$2342                           cstackBANK1  000D1
 _measurementData                        bssBANK1     000A0
-_round                                  text11       0075D
+_round                                  text11       0075C
 _rxLen                                  bssCOMMON    00077
 _sensorAPI                              dataBANK2    00166
 _tempValue                              bssBANK1     000B6
@@ -1343,11 +1343,11 @@ _txLen                                  bssBANK1     000BF
 _voltageBatMeasured                     bssBANK1     000C3
 _voltageLDRMeasured                     bssBANK1     000C1
 btemp                                   (abs)        0007E
-clear_ram0                              clrtext      00C5C
+clear_ram0                              clrtext      00C5D
 end_of_initialization                   cinit        00059
 frexp@eptr                              cstackBANK0  00023
 frexp@value                             cstackBANK0  00020
-init_ram                                inittext     00C62
+init_ram                                inittext     00C63
 int$flags                               (abs)        0007E
 intlevel0                               functab      00000
 intlevel1                               functab      00000
@@ -1577,7 +1577,7 @@ Total ram usage:        1 bytes
 
  *************** function _Power_SetThreshold *****************
  Defined at:
-		line 328 in file "sensor/power.c"
+		line 326 in file "sensor/power.c"
  Parameters:    Size  Location     Type
   metric          1   27[BANK0 ] unsigned char 
   thresholdDat    1   28[BANK0 ] PTR unsigned char 
@@ -2314,7 +2314,7 @@ Total ram usage:        0 bytes
 
  *************** function _Power_GetData *****************
  Defined at:
-		line 316 in file "sensor/power.c"
+		line 314 in file "sensor/power.c"
  Parameters:    Size  Location     Type
   data            1    4[COMMON] PTR unsigned char 
 		 -> mData(6), 
@@ -2690,12 +2690,12 @@ MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\round.c
-		_round         		CODE           	075D	0000	114
+		_round         		CODE           	075C	0000	114
 
 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\round.c estimated size: 114
 
 system/interrupt.c
-		_DefaultSensorInterruptHandler		CODE           	0C4D	0000	1
+		_DefaultSensorInterruptHandler		CODE           	0C4E	0000	1
 		_Interrupt_Handler		CODE           	0004	0000	39
 
 system/interrupt.c estimated size: 40
@@ -2706,7 +2706,7 @@ C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\ftsub.c
 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\ftsub.c estimated size: 33
 
 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\float.c
-		___ftpack      		CODE           	06E8	0000	117
+		___ftpack      		CODE           	06E7	0000	117
 
 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\float.c estimated size: 117
 
@@ -2716,12 +2716,12 @@ C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\ftge.c
 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\ftge.c estimated size: 57
 
 system/i2c1.c
-		_I2C1_CommandReceived		CODE           	0C4F	0000	3
+		_I2C1_CommandReceived		CODE           	0C50	0000	3
 		_I2C1_StatusCallback		CODE           	0F45	0000	83
 		_I2C1_ISR      		CODE           	0E34	0000	63
 		_I2C1_Initialize		CODE           	0D9B	0000	40
-		_I2C1_SetTransmitData		CODE           	07CF	0000	42
-		_I2C1_TxBufferEmpty		CODE           	0C6F	0000	8
+		_I2C1_SetTransmitData		CODE           	07CE	0000	42
+		_I2C1_TxBufferEmpty		CODE           	07F8	0000	8
 		_I2C1_GetCommand		CODE           	0C81	0000	12
 		_I2C1_GetCommandData		CODE           	0CF4	0000	31
 
@@ -2735,17 +2735,17 @@ C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\frexp.c estimated si
 sensor/power.c
 		_measure       		CODE           	005D	0000	384
 		_Power_GetData 		CODE           	0EFC	0000	73
-		_Power_Measure 		CODE           	0C52	0000	4
+		_Power_Measure 		CODE           	0C53	0000	4
 		_Power_Init    		CODE           	0D77	0000	36
-		_enterSleep    		CODE           	0C68	0000	7
+		_enterSleep    		CODE           	0C69	0000	7
 		_Power_Loop    		CODE           	0F98	0000	104
 		_generateIntPower		CODE           	0C8D	0000	13
 		_ledBlink      		CODE           	054F	0000	157
-		_WDT_Init      		CODE           	07F9	0000	7
+		_WDT_Init      		CODE           	0C70	0000	7
 		_ADC_Init      		CODE           	0D55	0000	34
-		_Power_SetThreshold		CODE           	0671	0000	119
+		_Power_SetThreshold		CODE           	0671	0000	118
 
-sensor/power.c estimated size: 938
+sensor/power.c estimated size: 937
 
 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\ftmul.c
 		___ftmul       		CODE           	03DC	0000	193
@@ -2759,7 +2759,7 @@ C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\ftdiv.c estimated si
 
 system/system.c
 		_PMD_Initialize		CODE           	0CB6	0000	19
-		_OSCILLATOR_Initialize		CODE           	0C56	0000	6
+		_OSCILLATOR_Initialize		CODE           	0C57	0000	6
 		_SYSTEM_Initialize		CODE           	0D34	0000	33
 
 system/system.c estimated size: 58
@@ -2796,7 +2796,7 @@ C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\trunc.c
 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\trunc.c estimated size: 71
 
 system/adcc.c
-		_ADCC_DefaultInterruptHandler		CODE           	0C4C	0000	1
+		_ADCC_DefaultInterruptHandler		CODE           	0C4D	0000	1
 		_ADCC_GetSingleConversion		CODE           	0CC9	0000	21
 		_ADCC_ISR      		CODE           	0CA7	0000	15
 
