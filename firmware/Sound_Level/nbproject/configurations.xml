@@ -10,7 +10,7 @@
       <itemPath>system/pin_manager.h</itemPath>
       <itemPath>system/interrupt.h</itemPath>
       <itemPath>system/system.h</itemPath>
-      <itemPath>Sensors/sound_level.h</itemPath>
+      <itemPath>Sensors/power.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -25,7 +25,7 @@
       <itemPath>system/pin_manager.c</itemPath>
       <itemPath>system/interrupt.c</itemPath>
       <itemPath>system/system.c</itemPath>
-      <itemPath>Sensors/sound_level.c</itemPath>
+      <itemPath>Sensors/power.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -49,7 +49,7 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>PICkit3PlatformTool</platformTool>
         <languageToolchain>XC8</languageToolchain>
-        <languageToolchainVersion>2.31</languageToolchainVersion>
+        <languageToolchainVersion>2.30</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>

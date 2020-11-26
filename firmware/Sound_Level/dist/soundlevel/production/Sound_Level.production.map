@@ -1,11 +1,11 @@
-Microchip MPLAB XC8 Compiler V2.31
+Microchip MPLAB XC8 Compiler V2.30
 
 Linker command line:
 
--W-3 --edf=C:\Program Files\Microchip\xc8\v2.31\pic\dat\en_msgs.txt -cn \
+-W-3 --edf=C:\Program Files\Microchip\xc8\v2.30\pic\dat\en_msgs.txt -cn \
   -h+dist/soundlevel/production\Sound_Level.production.sym \
   --cmf=dist/soundlevel/production\Sound_Level.production.cmf -z -Q16F18446 \
-  -oC:\Users\Pierre\AppData\Local\Temp\s7pk.2 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\JONACA~1\AppData\Local\Temp\scmgx2 --defsym=__MPLAB_BUILD=1 \
   -Mdist/soundlevel/production/Sound_Level.production.map -E1 \
   -ver=XC8 Compiler -ASTACK=02110h-024CFh -pstack=STACK -ACODE=00h-07FFhx8 \
   -ASTRCODE=00h-03FFFh -ASTRING=00h-0FFhx64 -ACONST=00h-0FFhx64 \
@@ -46,7 +46,7 @@ Linker command line:
   -AEEDATA=00h-0FFh/0F000h -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 \
   -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 \
   -preset_vec=00h,intentry=04h,init,end_init -ppowerup=CODE -pcinit=CODE \
-  -pfunctab=ENTRY -k C:\Users\Pierre\AppData\Local\Temp\s7pk.o \
+  -pfunctab=ENTRY -k C:\Users\JONACA~1\AppData\Local\Temp\scmgxg.o \
   dist/soundlevel/production\Sound_Level.production.o 
 
 Object code version is 3.11
@@ -56,7 +56,7 @@ Machine type is 16F18446
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\Pierre\AppData\Local\Temp\s7pk.o
+C:\Users\JONACA~1\AppData\Local\Temp\scmgxg.o
                 end_init                             31       31        2        8       0
                 reset_vec                             0        0        2        0       0
                 config                             8007     8007        5        0       4
@@ -770,7 +770,7 @@ I2C1_Initialize@slave_address                cstackBANK0  00020
 I2C1_SetTransmitData@data                    cstackBANK0  00020
 I2C1_SetTransmitData@len                     cstackBANK0  00022
 I2C1_StatusCallback@i2c_bus_state            cstackCOMMON 00071
-I2C1_StatusCallback@slaveWriteType           bssBANK1     000D3
+I2C1_StatusCallback@slaveWriteType           bssBANK1     000CD
 IOCCF6_SetInterruptHandler@InterruptHandler  cstackBANK0  00020
 MIC_Mode@mode                                cstackBANK0  00020
 SYSTEM_Initialize@slave_address              cstackBANK0  00021
@@ -779,7 +779,7 @@ SoundLevel_GetData@length                    cstackBANK0  00021
 SoundLevel_PrepareData@dBZ                   cstackBANK1  000AF
 SoundLevel_PrepareData@dataToSend            cstackBANK1  000AD
 SoundLevel_PrepareData@i                     cstackBANK1  000B5
-SoundLevel_PrepareData@i_1963                cstackBANK1  000B7
+SoundLevel_PrepareData@i_733                 cstackBANK1  000B7
 SoundLevel_PrepareData@mean                  cstackBANK1  000B9
 SoundLevel_PrepareData@presAvgSquared        cstackBANK1  000AA
 SoundLevel_PrepareData@signal                cstackBANK1  000B2
@@ -792,7 +792,7 @@ _ADACQH                                      (abs)        0010D
 _ADACQL                                      (abs)        0010C
 _ADACT                                       (abs)        00117
 _ADCAP                                       (abs)        0010E
-_ADCC_ADI_InterruptHandler                   bssBANK1     000CB
+_ADCC_ADI_InterruptHandler                   bssBANK1     000C7
 _ADCC_DefaultInterruptHandler                text67       00885
 _ADCC_DisableContinuousConversion            text71       00887
 _ADCC_EnableContinuousConversion             text8        0089C
@@ -855,13 +855,13 @@ _I2C1_slaveWriteData                         dataCOMMON   0007B
 _INTCONbits                                  (abs)        0000B
 _INTERRUPT_InterruptManager                  intentry     00004
 _IOCCF0_ISR                                  text63       0088D
-_IOCCF0_InterruptHandler                     bssBANK1     000C9
+_IOCCF0_InterruptHandler                     bssBANK1     000C5
 _IOCCF2_ISR                                  text62       00890
-_IOCCF2_InterruptHandler                     bssBANK1     000C7
+_IOCCF2_InterruptHandler                     bssBANK1     000C3
 _IOCCF4_ISR                                  text61       00893
 _IOCCF4_InterruptHandler                     bssBANK2     00125
 _IOCCF6_ISR                                  text59       00987
-_IOCCF6_InterruptHandler                     bssBANK1     000C5
+_IOCCF6_InterruptHandler                     bssBANK1     000C1
 _IOCCF6_SetInterruptHandler                  text43       008FC
 _IOCCFbits                                   (abs)        01F55
 _IOCCNbits                                   (abs)        01F54
@@ -924,8 +924,8 @@ _SoundLevel_LedOn                            text41       00899
 _SoundLevel_Loop                             text4        004C0
 _SoundLevel_Measure                          text3        007FC
 _SoundLevel_PrepareData                      text9        0007A
-_SoundLevel_PrepareData$2724                 cstackBANK1  000A4
-_SoundLevel_PrepareData$2725                 cstackBANK1  000A7
+_SoundLevel_PrepareData$2726                 cstackBANK1  000A4
+_SoundLevel_PrepareData$2727                 cstackBANK1  000A7
 _SoundLevel_SetThreshold                     text2        00D73
 _SoundLevel_StartADC                         text6        008E2
 _SoundLevel_StopADC                          text69       008CC
@@ -1585,25 +1585,25 @@ _i2c1_rx_buffer                              bssBANK2     00127
 _i2c1_tx_buffer                              bssBANK3     001A0
 _log                                         text16       00643
 _log10                                       text15       00B02
-_log10$2726                                  cstackBANK0  00068
+_log10$2728                                  cstackBANK0  00068
 _mData                                       bssBANK1     000D4
 _mDataLength                                 bssBANK1     000D6
 _main                                        maintext     003D4
 _measure                                     text5        00BA9
-_measurementData                             bssBANK1     000C1
-_measurementRunning                          bssBANK1     000D1
+_measurementData                             bssBANK1     000C9
+_measurementRunning                          bssBANK1     000D2
 _nWakeMic_Init                               text33       008C0
-_overThreshold                               bssBANK1     000CD
-_polledMeasurement                           bssBANK1     000CE
+_overThreshold                               bssBANK1     000CE
+_polledMeasurement                           bssBANK1     000CF
 _powerMic_Init                               text32       008C6
 _presSumSquared                              bssBANK1     000BE
 _round                                       text10       00CDC
 _rxLen                                       bssCOMMON    00078
 _sampleArray                                 (abs)        024D0
-_sampleCounter                               bssBANK1     000C3
-_sampling                                    bssBANK1     000D0
+_sampleCounter                               bssBANK1     000CB
+_sampling                                    bssBANK1     000D1
 _sensorAPI                                   dataBANK2    00161
-_soundinterrupt                              bssBANK1     000D2
+_soundinterrupt                              bssBANK1     000D3
 _thresholdEnabled                            nvBANK1      000D7
 _thresholdLevel                              nvBANK2      0016B
 _toggleInt                                   text1        0095D
@@ -1653,7 +1653,7 @@ FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 67 in file "main.c"
+		line 75 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1699,7 +1699,7 @@ Total ram usage:       28 bytes
 
  *************** function _toggleInt *****************
  Defined at:
-		line 145 in file "main.c"
+		line 153 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1994,7 +1994,7 @@ Total ram usage:       28 bytes
 
  *************** function _round *****************
  Defined at:
-		line 6 in file "C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\round.c"
+		line 6 in file "C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\round.c"
  Parameters:    Size  Location     Type
   x               3   53[BANK0 ] void 
  Auto vars:     Size  Location     Type
@@ -2026,7 +2026,7 @@ Total ram usage:        6 bytes
 
  *************** function _trunc *****************
  Defined at:
-		line 13 in file "C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\trunc.c"
+		line 13 in file "C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\trunc.c"
  Parameters:    Size  Location     Type
   x               3   22[BANK0 ] void 
  Auto vars:     Size  Location     Type
@@ -2059,7 +2059,7 @@ Total ram usage:        9 bytes
 
  *************** function ___fttol *****************
  Defined at:
-		line 44 in file "C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\fttol.c"
+		line 44 in file "C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\fttol.c"
  Parameters:    Size  Location     Type
   f1              3    0[BANK0 ] float 
  Auto vars:     Size  Location     Type
@@ -2092,7 +2092,7 @@ Total ram usage:       14 bytes
 
  *************** function ___altoft *****************
  Defined at:
-		line 42 in file "C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\altoft.c"
+		line 42 in file "C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\altoft.c"
  Parameters:    Size  Location     Type
   c               4   14[BANK0 ] long 
  Auto vars:     Size  Location     Type
@@ -2123,7 +2123,7 @@ Total ram usage:        8 bytes
 
  *************** function ___ftsub *****************
  Defined at:
-		line 17 in file "C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\ftsub.c"
+		line 17 in file "C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\ftsub.c"
  Parameters:    Size  Location     Type
   f2              3   31[BANK0 ] float 
   f1              3   34[BANK0 ] float 
@@ -2155,7 +2155,7 @@ Total ram usage:        6 bytes
 
  *************** function _log10 *****************
  Defined at:
-		line 39 in file "C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\log.c"
+		line 39 in file "C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\log.c"
  Parameters:    Size  Location     Type
   x               3   69[BANK0 ] float 
  Auto vars:     Size  Location     Type
@@ -2186,7 +2186,7 @@ Total ram usage:        6 bytes
 
  *************** function _log *****************
  Defined at:
-		line 5 in file "C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\log.c"
+		line 5 in file "C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\log.c"
  Parameters:    Size  Location     Type
   x               3   63[BANK0 ] float 
  Auto vars:     Size  Location     Type
@@ -2221,7 +2221,7 @@ Total ram usage:        6 bytes
 
  *************** function _frexp *****************
  Defined at:
-		line 254 in file "C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\frexp.c"
+		line 254 in file "C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\frexp.c"
  Parameters:    Size  Location     Type
   value           3    0[BANK0 ] int 
   eptr            1    3[BANK0 ] PTR int 
@@ -2254,7 +2254,7 @@ Total ram usage:        6 bytes
 
  *************** function _eval_poly *****************
  Defined at:
-		line 4 in file "C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\evalpoly.c"
+		line 4 in file "C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\evalpoly.c"
  Parameters:    Size  Location     Type
   x               3   53[BANK0 ] PTR int 
   d               2   56[BANK0 ] PTR const 
@@ -2289,7 +2289,7 @@ Total ram usage:       10 bytes
 
  *************** function ___wmul *****************
  Defined at:
-		line 15 in file "C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul16.c"
+		line 15 in file "C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\Umul16.c"
  Parameters:    Size  Location     Type
   multiplier      2    0[BANK0 ] unsigned int 
   multiplicand    2    2[BANK0 ] unsigned int 
@@ -2320,7 +2320,7 @@ Total ram usage:        6 bytes
 
  *************** function ___ftmul *****************
  Defined at:
-		line 62 in file "C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\ftmul.c"
+		line 62 in file "C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\ftmul.c"
  Parameters:    Size  Location     Type
   f1              3   37[BANK0 ] float 
   f2              3   40[BANK0 ] float 
@@ -2357,7 +2357,7 @@ Total ram usage:       16 bytes
 
  *************** function ___ftadd *****************
  Defined at:
-		line 86 in file "C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\ftadd.c"
+		line 86 in file "C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\ftadd.c"
  Parameters:    Size  Location     Type
   f1              3   14[BANK0 ] float 
   f2              3   17[BANK0 ] float 
@@ -2394,7 +2394,7 @@ Total ram usage:       13 bytes
 
  *************** function ___ftge *****************
  Defined at:
-		line 4 in file "C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\ftge.c"
+		line 4 in file "C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\ftge.c"
  Parameters:    Size  Location     Type
   ff1             3    0[BANK0 ] float 
   ff2             3    3[BANK0 ] float 
@@ -2426,7 +2426,7 @@ Total ram usage:        6 bytes
 
  *************** function ___awtoft *****************
  Defined at:
-		line 32 in file "C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awtoft.c"
+		line 32 in file "C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\awtoft.c"
  Parameters:    Size  Location     Type
   c               2    8[BANK0 ] int 
  Auto vars:     Size  Location     Type
@@ -2456,7 +2456,7 @@ Total ram usage:        6 bytes
 
  *************** function ___lwtoft *****************
  Defined at:
-		line 28 in file "C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwtoft.c"
+		line 28 in file "C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\lwtoft.c"
  Parameters:    Size  Location     Type
   c               2    8[BANK0 ] unsigned int 
  Auto vars:     Size  Location     Type
@@ -2486,7 +2486,7 @@ Total ram usage:        4 bytes
 
  *************** function ___ftdiv *****************
  Defined at:
-		line 56 in file "C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\ftdiv.c"
+		line 56 in file "C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\ftdiv.c"
  Parameters:    Size  Location     Type
   f2              3    8[BANK0 ] float 
   f1              3   11[BANK0 ] float 
@@ -2520,7 +2520,7 @@ Total ram usage:       16 bytes
 
  *************** function ___ftpack *****************
  Defined at:
-		line 62 in file "C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\float.c"
+		line 62 in file "C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\float.c"
  Parameters:    Size  Location     Type
   arg             3    0[BANK0 ] unsigned um
   exp             1    3[BANK0 ] unsigned char 
@@ -3149,7 +3149,7 @@ Total ram usage:        0 bytes
 		line 292 in file "system/adcc.c"
  Parameters:    Size  Location     Type
   InterruptHan    2    0[BANK0 ] PTR FTN()void 
-		 -> SoundLevel_GetSample(1), ADCC_DefaultInterruptHandler(1), 
+		 -> ADCC_DefaultInterruptHandler(1), SoundLevel_GetSample(1), 
  Auto vars:     Size  Location     Type
 		None
  Return value:  Size  Location     Type
@@ -3171,8 +3171,8 @@ Total ram usage:        2 bytes
  This function calls:
 		Nothing
  This function is called by:
-		_ADCC_Initialize
 		_SoundLevel_Init
+		_ADCC_Initialize
  This function uses a non-reentrant model
 
 
@@ -3978,15 +3978,15 @@ Total ram usage:        2 bytes
 MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
-C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\round.c
+C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\round.c
 		_round         		CODE           	0CDC	0000	72
 
-C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\round.c estimated size: 72
+C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\round.c estimated size: 72
 
-C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\evalpoly.c
-		_eval_poly     		CODE           	0E35	0000	99
+C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\ftge.c
+		___ftge        		CODE           	0BDC	0000	57
 
-C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\evalpoly.c estimated size: 99
+C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\ftge.c estimated size: 57
 
 system/pin_manager.c
 		_IOCCF0_ISR    		CODE           	088D	0000	3
@@ -3998,20 +3998,25 @@ system/pin_manager.c
 
 system/pin_manager.c estimated size: 66
 
+C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\frexp.c
+		_frexp         		CODE           	0C15	0000	62
+
+C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\frexp.c estimated size: 62
+
+C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\awtoft.c
+		___awtoft      		CODE           	0AB5	0000	37
+
+C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\awtoft.c estimated size: 37
+
 system/interrupt.c
 		_INTERRUPT_InterruptManager		CODE           	0004	0000	45
 
 system/interrupt.c estimated size: 45
 
-C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\ftsub.c
-		___ftsub       		CODE           	0A4E	0000	33
+C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\altoft.c
+		___altoft      		CODE           	0C53	0000	66
 
-C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\ftsub.c estimated size: 33
-
-C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\float.c
-		___ftpack      		CODE           	0F06	0000	117
-
-C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\float.c estimated size: 117
+C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\altoft.c estimated size: 66
 
 Sensors/sound_level.c
 		_SoundLevel_SetThreshold		CODE           	0D73	0000	96
@@ -4044,15 +4049,20 @@ Sensors/sound_level.c
 
 Sensors/sound_level.c estimated size: 1364
 
-C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\ftge.c
-		___ftge        		CODE           	0BDC	0000	57
+C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\ftmul.c
+		___ftmul       		CODE           	0582	0000	193
 
-C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\ftge.c estimated size: 57
+C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\ftmul.c estimated size: 193
 
-C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul16.c
-		___wmul        		CODE           	09EC	0000	32
+C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\ftdiv.c
+		___ftdiv       		CODE           	06F8	0000	178
 
-C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul16.c estimated size: 32
+C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\ftdiv.c estimated size: 178
+
+C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\lwtoft.c
+		___lwtoft      		CODE           	09BB	0000	22
+
+C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\lwtoft.c estimated size: 22
 
 system/i2c1.c
 		_I2C1_CommandReceived		CODE           	0002	0000	2
@@ -4066,26 +4076,16 @@ system/i2c1.c
 
 system/i2c1.c estimated size: 300
 
-C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\frexp.c
-		_frexp         		CODE           	0C15	0000	62
-
-C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\frexp.c estimated size: 62
-
-C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\ftmul.c
-		___ftmul       		CODE           	0582	0000	193
-
-C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\ftmul.c estimated size: 193
-
-C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\ftdiv.c
-		___ftdiv       		CODE           	06F8	0000	178
-
-C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\ftdiv.c estimated size: 178
-
-C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\log.c
+C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\log.c
 		_log           		CODE           	0643	0000	181
 		_log10         		CODE           	0B02	0000	40
 
-C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\log.c estimated size: 221
+C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\log.c estimated size: 221
+
+C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\fttol.c
+		___fttol       		CODE           	0F7B	0000	133
+
+C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\fttol.c estimated size: 133
 
 system/system.c
 		_PMD_Initialize		CODE           	09A8	0000	19
@@ -4094,31 +4094,31 @@ system/system.c
 
 system/system.c estimated size: 59
 
+C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\ftadd.c
+		___ftadd       		CODE           	02B4	0000	288
+
+C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\ftadd.c estimated size: 288
+
 shared
 		__initialization		CODE           	0033	0000	67
 		log@coeff      		STRCODE        	1000	0000	27
 
 shared estimated size: 94
 
-C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awtoft.c
-		___awtoft      		CODE           	0AB5	0000	37
+C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\Umul16.c
+		___wmul        		CODE           	09EC	0000	32
 
-C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awtoft.c estimated size: 37
+C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\Umul16.c estimated size: 32
 
-C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\fttol.c
-		___fttol       		CODE           	0F7B	0000	133
+C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\trunc.c
+		_trunc         		CODE           	0C95	0000	71
 
-C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\fttol.c estimated size: 133
+C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\trunc.c estimated size: 71
 
-C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\altoft.c
-		___altoft      		CODE           	0C53	0000	66
+C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\evalpoly.c
+		_eval_poly     		CODE           	0E35	0000	99
 
-C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\altoft.c estimated size: 66
-
-C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\ftadd.c
-		___ftadd       		CODE           	02B4	0000	288
-
-C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\ftadd.c estimated size: 288
+C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\evalpoly.c estimated size: 99
 
 main.c
 		_main          		CODE           	03D4	0000	236
@@ -4126,10 +4126,15 @@ main.c
 
 main.c estimated size: 249
 
-C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\trunc.c
-		_trunc         		CODE           	0C95	0000	71
+C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\ftsub.c
+		___ftsub       		CODE           	0A4E	0000	33
 
-C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\trunc.c estimated size: 71
+C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\ftsub.c estimated size: 33
+
+C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\float.c
+		___ftpack      		CODE           	0F06	0000	117
+
+C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\float.c estimated size: 117
 
 system/adcc.c
 		_ADCC_StopConversion		CODE           	088A	0000	3
@@ -4143,9 +4148,4 @@ system/adcc.c
 		_ADCC_Initialize		CODE           	0ADA	0000	40
 
 system/adcc.c estimated size: 89
-
-C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwtoft.c
-		___lwtoft      		CODE           	09BB	0000	22
-
-C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwtoft.c estimated size: 22
 
