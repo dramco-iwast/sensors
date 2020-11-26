@@ -23,7 +23,7 @@
 #define SOL_VOLT   0x13
 #define BAT_VOLT   0x14
 
-#define DEBUGGING_THRESHOLD
+//#define DEBUGGING_THRESHOLD
 
 /* Forward declaration */
 void measureVolt(void);
@@ -106,6 +106,13 @@ void WDT_Init(void)
 }
 
 void ADC_Init(){
+    
+    // Enable ADC peripheral
+    PMD3bits.ADCMD = 0; 
+    
+    // Enable FVR module
+    PMD0bits.FVRMD = 0;
+    
     // Enable Fixed voltage reference with voltage of 2.048 V
     FVRCON = 0x82;
     // set the ADCC to the options selected in the User Interface
@@ -194,7 +201,7 @@ void Power_Init(){
     READY_SetHigh();
     
     //  TODO: Don't think this is necessary: needs to be tested!
-//    PMD0bits.IOCMD = 0; // Enable gpio clock
+    PMD0bits.IOCMD = 0; // Enable gpio clock
     
     ADC_Init();
     
@@ -336,42 +343,51 @@ void Power_Loop(){
 //        enable watchdog
 //    else
 //        EnterSleep();
-        
-    if(startMeasurement && WDTCON0bits.SEN == 0) //WDT OFF (after WDT time-out)
+
+    if(!measurementRunning)
     {
-        startMeasurement = false;
-        
-        measurementRunning = true;
-        Measure();      // Get battery voltage - solar panel voltage - calculate undervoltage param
-        measurementRunning = false;
-        
-        if(batThresholdEnabled && underThreshold)
+        if(startMeasurement)            //  Polled measurement
         {
-            generateIntPower();
+            startMeasurement = false;
+            
+            if(WDTCON0bits.SEN == 1)
+            {
+                measurementRunning = true;
+                Measure();              //  Measure
+                measurementRunning = false;
+                
+                generateIntPower();     //  generate interrupt
+                CLRWDT();               //  Reset wdt timer
+                WDTCON0bits.SEN = 1;    //  enable WDT
+            }else if(WDTCON0bits.SEN == 0)
+            {
+                measurementRunning = true;
+                Measure();              //  Measure
+                measurementRunning = false;
+                
+                generateIntPower();     //  generate interrupt 
+            }
+        }else if(STATUSbits.nTO == 0)   //  WDT Timeout
+        {
+            measurementRunning = true;
+            Measure();              //  Measure
+            measurementRunning = false;
+            
+            LED0_SetHigh();
+            __delay_ms(500);
+            LED0_SetLow();
+            
+            if(underThreshold)
+            {
+                generateIntPower(); //  if battery voltage too low -> interrupt
+            }
+            CLRWDT();               //  Reset wdt timer
+            WDTCON0bits.SEN = 1;    //  enable WDT
+        }else
+        {
+            Enter_sleep();
         }
-        
-        CLRWDT();
-        WDTCON0bits.SEN = 1; // enable WDT
-    }
-    else if(startMeasurement && WDTCON0bits.SEN == 1) //WDT ON (polling classic)
-    {
-        startMeasurement = false;
-        
-        measurementRunning = true;
-        Measure();      // Get battery voltage - solar panel voltage - calculate undervoltage param
-        measurementRunning = false;
-        
-        generateIntPower();
-    }
-    else if(STATUSbits.nTO == 0)    //Watchdog time-out
-    {
-        WDTCON0bits.SEN = 0; // disable WDT
-        startMeasurement = true;
-    }
-    else
-    {
-        Enter_sleep();
-    }
+    }    
 }
 
 void Power_GetData(uint8_t * data, uint8_t  * length){
@@ -384,24 +400,23 @@ void Power_SetThreshold(uint8_t metric, uint8_t * thresholdData){
     
     if(metric==0)
     {
-#ifdef DEBUGGING_THRESHOLD
-        LED1_SetHigh();
-        LED0_SetHigh();
-#endif
         batThresholdEnabled = thresholdData[0];
-        batThresholdLevel = (uint16_t)((thresholdData[1]<<8) | thresholdData[2]);
+        batThresholdLevel = (uint16_t)((thresholdData[3]<<8) | thresholdData[4]);
         floatBatThresholdLevel = (float) batThresholdLevel /600;
-#ifdef DEBUGGING_THRESHOLD
-        __delay_ms(1000);
-        LED1_SetLow();
-        LED0_SetLow();
-#endif
+    }
+    
+    if(batThresholdEnabled)         //  Threshold -> enable WDT   
+    {
+        CLRWDT();
+        WDTCON0bits.SEN = 1;
+    }else{                          //  No thresholds -> WDT off 
+        WDTCON0bits.SEN = 0;
     }
 }
 
 void generateIntPower(void){
     READY_SetLow();
-    __delay_ms(5);                          
+    __delay_ms(1);                          
     READY_SetHigh();
 }
 

@@ -94,7 +94,7 @@ MP_PROCESSOR_OPTION=16F18446
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: compile
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/system/i2c1.p1: system/i2c1.c  nbproject/Makefile-${CND_CONF}.mk 
+${OBJECTDIR}/system/i2c1.p1: system/i2c1.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/system" 
 	@${RM} ${OBJECTDIR}/system/i2c1.p1.d 
 	@${RM} ${OBJECTDIR}/system/i2c1.p1 
@@ -102,7 +102,7 @@ ${OBJECTDIR}/system/i2c1.p1: system/i2c1.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/system/i2c1.d ${OBJECTDIR}/system/i2c1.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/system/i2c1.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/system/interrupt.p1: system/interrupt.c  nbproject/Makefile-${CND_CONF}.mk 
+${OBJECTDIR}/system/interrupt.p1: system/interrupt.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/system" 
 	@${RM} ${OBJECTDIR}/system/interrupt.p1.d 
 	@${RM} ${OBJECTDIR}/system/interrupt.p1 
@@ -110,7 +110,7 @@ ${OBJECTDIR}/system/interrupt.p1: system/interrupt.c  nbproject/Makefile-${CND_C
 	@-${MV} ${OBJECTDIR}/system/interrupt.d ${OBJECTDIR}/system/interrupt.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/system/interrupt.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/system/system.p1: system/system.c  nbproject/Makefile-${CND_CONF}.mk 
+${OBJECTDIR}/system/system.p1: system/system.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/system" 
 	@${RM} ${OBJECTDIR}/system/system.p1.d 
 	@${RM} ${OBJECTDIR}/system/system.p1 
@@ -118,7 +118,7 @@ ${OBJECTDIR}/system/system.p1: system/system.c  nbproject/Makefile-${CND_CONF}.m
 	@-${MV} ${OBJECTDIR}/system/system.d ${OBJECTDIR}/system/system.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/system/system.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/system/adcc.p1: system/adcc.c  nbproject/Makefile-${CND_CONF}.mk 
+${OBJECTDIR}/system/adcc.p1: system/adcc.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/system" 
 	@${RM} ${OBJECTDIR}/system/adcc.p1.d 
 	@${RM} ${OBJECTDIR}/system/adcc.p1 
@@ -126,7 +126,7 @@ ${OBJECTDIR}/system/adcc.p1: system/adcc.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/system/adcc.d ${OBJECTDIR}/system/adcc.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/system/adcc.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/sensor/power.p1: sensor/power.c  nbproject/Makefile-${CND_CONF}.mk 
+${OBJECTDIR}/sensor/power.p1: sensor/power.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/sensor" 
 	@${RM} ${OBJECTDIR}/sensor/power.p1.d 
 	@${RM} ${OBJECTDIR}/sensor/power.p1 
@@ -134,7 +134,7 @@ ${OBJECTDIR}/sensor/power.p1: sensor/power.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/sensor/power.d ${OBJECTDIR}/sensor/power.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/sensor/power.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk 
+${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/main.p1.d 
 	@${RM} ${OBJECTDIR}/main.p1 
@@ -143,7 +143,7 @@ ${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk
 	@${FIXDEPS} ${OBJECTDIR}/main.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 else
-${OBJECTDIR}/system/i2c1.p1: system/i2c1.c  nbproject/Makefile-${CND_CONF}.mk 
+${OBJECTDIR}/system/i2c1.p1: system/i2c1.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/system" 
 	@${RM} ${OBJECTDIR}/system/i2c1.p1.d 
 	@${RM} ${OBJECTDIR}/system/i2c1.p1 
@@ -151,7 +151,7 @@ ${OBJECTDIR}/system/i2c1.p1: system/i2c1.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/system/i2c1.d ${OBJECTDIR}/system/i2c1.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/system/i2c1.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/system/interrupt.p1: system/interrupt.c  nbproject/Makefile-${CND_CONF}.mk 
+${OBJECTDIR}/system/interrupt.p1: system/interrupt.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/system" 
 	@${RM} ${OBJECTDIR}/system/interrupt.p1.d 
 	@${RM} ${OBJECTDIR}/system/interrupt.p1 
@@ -159,7 +159,7 @@ ${OBJECTDIR}/system/interrupt.p1: system/interrupt.c  nbproject/Makefile-${CND_C
 	@-${MV} ${OBJECTDIR}/system/interrupt.d ${OBJECTDIR}/system/interrupt.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/system/interrupt.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/system/system.p1: system/system.c  nbproject/Makefile-${CND_CONF}.mk 
+${OBJECTDIR}/system/system.p1: system/system.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/system" 
 	@${RM} ${OBJECTDIR}/system/system.p1.d 
 	@${RM} ${OBJECTDIR}/system/system.p1 
@@ -167,7 +167,7 @@ ${OBJECTDIR}/system/system.p1: system/system.c  nbproject/Makefile-${CND_CONF}.m
 	@-${MV} ${OBJECTDIR}/system/system.d ${OBJECTDIR}/system/system.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/system/system.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/system/adcc.p1: system/adcc.c  nbproject/Makefile-${CND_CONF}.mk 
+${OBJECTDIR}/system/adcc.p1: system/adcc.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/system" 
 	@${RM} ${OBJECTDIR}/system/adcc.p1.d 
 	@${RM} ${OBJECTDIR}/system/adcc.p1 
@@ -175,7 +175,7 @@ ${OBJECTDIR}/system/adcc.p1: system/adcc.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/system/adcc.d ${OBJECTDIR}/system/adcc.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/system/adcc.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/sensor/power.p1: sensor/power.c  nbproject/Makefile-${CND_CONF}.mk 
+${OBJECTDIR}/sensor/power.p1: sensor/power.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/sensor" 
 	@${RM} ${OBJECTDIR}/sensor/power.p1.d 
 	@${RM} ${OBJECTDIR}/sensor/power.p1 
@@ -183,7 +183,7 @@ ${OBJECTDIR}/sensor/power.p1: sensor/power.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/sensor/power.d ${OBJECTDIR}/sensor/power.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/sensor/power.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk 
+${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/main.p1.d 
 	@${RM} ${OBJECTDIR}/main.p1 
