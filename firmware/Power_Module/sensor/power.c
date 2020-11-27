@@ -104,7 +104,7 @@ void WDT_Init(void)
 {
     // initialize timer for periodic measurements   
     WDTCON0 = 0x1C; // 16 second period
-    //WDTCON0 = 0x20; // 64 second period
+//    WDTCON0 = 0x20; // 64 second period
     //  TODO: Change back to 64 sec
     
     WDTCON1 = 0x07; // LFINTOSC, window 100%
