@@ -1,4 +1,9 @@
-// Power.c  (version 2.0 - Pierre)
+/*
+ *      File: power.c
+ *   Created: 2020-11-27 - 10:00 AM 
+ *    Author: Piere Verhulst
+ *   Version: 0.1
+ */
 
 #include "power.h"
 #include <math.h>
@@ -22,6 +27,7 @@
 
 void ADC_Init(void);
 void WDT_Init(void);
+void FVR_Mode(uint8_t mode);
 void generateIntPower(void);
 void measure(void);
 void ledBlink(void);
@@ -50,7 +56,7 @@ float floatBatThresholdLevel = 0.0;
 
 void ADC_Init(void){
 	// Enable Fixed voltage reference with voltage of 2.048 V
-    FVRCON = 0x82;
+    FVR_Mode(ENABLE);
     // Enable ADC peripheral
     PMD3bits.ADCMD = 0; 		
     // set the ADCC to the options selected in the User Interface
@@ -94,20 +100,36 @@ void ADC_Init(void){
     ADREF = 0x03;
     // ADACT disabled; 
     ADACT = 0x00;
-    // ADCS FOSC/16; 
+    // ADCS FOSC/2; 
     ADCLK = 0x00;
     // ADGO stop; ADFM right; ADON enabled; ADCS FOSC/ADCLK; ADCONT disabled; 
     ADCON0 = 0x84;
     
-    FVRCON = 0x00; // Disable fixed voltage reference
+    FVR_Mode(DISABLE);
 }
 
 void WDT_Init(void){
     // Config WatchDog Timer
 
-	WDTCON0 = 0x20; // 64 second period (set to 0x1C for 16 s)
+	WDTCON0 = 0x20; // 0x20 = 64 second period (set to 0x1C for 16 s)
 	WDTCON1 = 0x07; // LFINTOSC, window 100%
-    WDTCON0bits.SEN = 1; // enable WDT
+}
+
+void FVR_Mode(uint8_t mode){
+    // Enable Fixed voltage reference with voltage of 2.048 V
+    switch(mode)
+    {
+        case ENABLE:
+            FVRCON = 0x82; // Enable Fixed voltage reference
+            break;
+
+        case DISABLE:
+            FVRCON = 0x00; // Disable the Fixed voltage reference
+            break;
+            
+        default:
+            FVRCON = 0x00; // Disable the Fixed voltage reference
+    }
 }
 
 void generateIntPower(void){
@@ -118,7 +140,7 @@ void generateIntPower(void){
 
 void measure(void){
 	// Enable Fixed voltage reference with voltage of 2.048 V
-    FVRCON = 0x82;
+    FVR_Mode(ENABLE);
 	MeasurementRunning = true;
 	
 	SOL_MEAS_EN_SetHigh();                              // Enable loadswitch to measure voltage
@@ -162,7 +184,7 @@ void measure(void){
     measurementData[3] = (uint8_t)(datasolvoltage);
    
 	MeasurementRunning = false;
-	FVRCON = 0x00; // Disable fixed voltage reference
+	FVR_Mode(DISABLE);
 }
 
 void ledBlink(void){
@@ -241,6 +263,9 @@ void Power_Init(void){
     SOL_VOLT_SetAnalogMode();
 	BAT_VOLT_SetAnalogMode();
 	
+    // WDT init
+    WDT_Init();
+    
 	// Confirm Init
 	ledBlink();
 	
@@ -254,71 +279,60 @@ void Power_Measure(void){
 }
 
 void Power_Loop(void){ 
-	// Polling
-	if(PollingMeasurement && !MeasurementRunning){
-		PollingMeasurement = false;
-		// WDT is turned OFF -> Threshold disabled
-		if(WDTCON0bits.SEN == 0){
-            LED0_SetHigh();
-			measure();
-			generateIntPower();
+    
+    if(!MeasurementRunning){
+        if(PollingMeasurement){
+            
+            PollingMeasurement = false;
+            
+            if(WDTCON0bits.SEN == 1){
+                WDTCON0bits.SEN = 0; // disable WDT
+			
+                measure();
+                generateIntPower();
+            
+                measurementData[4] = 0x00;
+                measurementData[5] = 0x04;
+            
+                CLRWDT();
+                WDTCON0bits.SEN = 1; // enable WDT
+            }
+            else if(WDTCON0bits.SEN == 0){
+                measure();
+                generateIntPower();
+            
+                measurementData[4] = 0x00;
+                measurementData[5] = 0x02;
+            }
+        
+        }
+        else if(STATUSbits.nTO == 0){   //  WDT Timeout
+            WDTCON0bits.SEN = 0; // disable WDT
+            measure();
             
             measurementData[4] = 0x00;
-            measurementData[5] = 0x02;
+            measurementData[5] = 0x06;
             
-            LED0_SetLow();
-		}  
-		else if(WDTCON0bits.SEN == 1){  // WDT is turned ON  -> Threshold enabled
-			WDTCON0bits.SEN = 0; // disable WDT
-            LED0_SetHigh();
-			LED1_SetHigh();
-			
-            measure();
-			generateIntPower();
+            if(alertThreshold){
+                alertThreshold = false;
+                generateIntPower();
+            }
             
-            measurementData[4] = 0x00;
-            measurementData[5] = 0x04;
-            
-            LED0_SetLow();
-			LED1_SetLow();
-            
-			
-			CLRWDT();
-			WDTCON0bits.SEN = 1; // enable WDT
-		}
-	}
-	else if(STATUSbits.nTO == 0){     // WatchDog Time-Out
-		WDTCON0bits.SEN = 0; // disable WDT
-		
-        LED1_SetHigh();
-        
-        if(batThresholdEnabled && alertThreshold){
-			alertThreshold = false;
-            measure();
-			generateIntPower();
-		}
-        
-        measurementData[4] = 0x00;
-        measurementData[5] = 0x06;
-        
-        LED1_SetLow();
-			
-		CLRWDT();
-		WDTCON0bits.SEN = 1; // enable WDT
-	}
-	else{
-		enterSleep();
-	} 
+            CLRWDT();
+            WDTCON0bits.SEN = 1; // enable WDT
+        }
+        else{
+            enterSleep();
+        }
+    }
 }
 
 void Power_GetData(uint8_t * data, uint8_t * length){
 	*length = 6; 	// this is fixed (M_NR = 2)
     data[0] = measurementData[0];
     data[1] = measurementData[1];
-	
 	data[2] = measurementData[2];
 	data[3] = measurementData[3];
-    
     data[4] = measurementData[4];
 	data[5] = measurementData[5];
 }
@@ -330,10 +344,7 @@ void Power_SetThreshold(uint8_t metric, uint8_t * thresholdData){
         floatBatThresholdLevel = (float) batThresholdLevel/600;
 	}
     
-    if(batThresholdEnabled && WDTCON0bits.SEN == 0){        //WDT initialy OFF -> INIT WDT      
-        WDT_Init();
-    }
-    else if(batThresholdEnabled && WDTCON0bits.SEN == 1){   //WDT initialy ON  -> RESET and TURN ON
+    if(batThresholdEnabled){   //WDT initialy ON  -> RESET and TURN ON
         WDTCON0bits.SEN = 0;
         CLRWDT();
         WDTCON0bits.SEN = 1;

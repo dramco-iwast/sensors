@@ -9,4 +9,7 @@ firmware/*/iwast01.X/Makefile
 firmware/iwast01.X/build/*
 firmware/iwast01.X/dist/*
 
+firmware/Power_Module/dist/*
+firmware/Power_Module/debug/*
+firmware/Power_Module/build/*
 
