@@ -1,40 +1,40 @@
 Id;Designator;Behuizing;Hoeveelheid;Orientatie;Leverancier en ref
-1;G***;logoDramco2;1;LOGO;
-2;G***;logoKuleuven2;1;LOGO;
-3;R4,R5;R_0805_2012Metric_Pad1.15x1.40mm_HandSolder;2;1.5k;
-4;J1;PinHeader_1x02_P2.54mm_Vertical;1;Conn_01x02;
+1;G***;logoDramco2;1;LOGO;OK
+2;G***;logoKuleuven2;1;LOGO;OK
+3;R4,R5;R_0805_2012Metric_Pad1.15x1.40mm_HandSolder;2;1.5k;OK
+4;J1;PinHeader_1x02_P2.54mm_Vertical;1;Conn_01x02;OK
 5;CSTOR1,CIN1;C_0805_2012Metric_Pad1.18x1.45mm_HandSolder;2;4.7 uF;OK
-6;CREF1,CBYP1;C_0805_2012Metric_Pad1.18x1.45mm_HandSolder;2;10 nF;
-7;COUT1,CIN2;C_0805_2012Metric_Pad1.18x1.45mm_HandSolder;2;100n;
+6;CREF1,CBYP1;C_0805_2012Metric_Pad1.18x1.45mm_HandSolder;2;10 nF;OK
+7;COUT1,CIN2;C_0805_2012Metric_Pad1.18x1.45mm_HandSolder;2;100n;OK
 8;C14;C_0805_2012Metric_Pad1.18x1.45mm_HandSolder;1;100 nF;OK
 9;C13;C_0805_2012Metric_Pad1.18x1.45mm_HandSolder;1;10 uF;OK
 10;C12,C10,C9,C8,C7,C4,C3,C2,C1;C_0805_2012Metric_Pad1.18x1.45mm_HandSolder;9;1 uF;OK
 11;COUT2;C_0805_2012Metric_Pad1.18x1.45mm_HandSolder;1;22 uF;OK
-12;CSTOR2,CBATT1,COUT3;C_0805_2012Metric_Pad1.18x1.45mm_HandSolder;3;DNP;
+12;CSTOR2,CBATT1,COUT3;C_0805_2012Metric_Pad1.18x1.45mm_HandSolder;3;DNP;OK
 13;U1;BQ24040;1;BQ24040;TO BE ORDERED
-14;D1,D2,D3,D4;LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder;4;LED;
+14;D1,D2,D3,D4;LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder;4;LED;OK
 15;J3;USB_Micro;1;USB_B_Micro;OK
-16;J4;PinHeader_1x02_P2.54mm_Vertical;1;Conn_01x02_battery;
-17;J5,J6;PinHeader_1x06_P2.54mm_Vertical;2;Conn_01x06_programmer;
-18;JP1,JP2;SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm;2;SolderJumper_2_Open;
+16;J4;PinHeader_1x02_P2.54mm_Vertical;1;Conn_01x02_battery;OK
+17;J5,J6;PinHeader_1x06_P2.54mm_Vertical;2;Conn_01x06_programmer;OK
+18;JP1,JP2;SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm;2;SolderJumper_2_Open;OK
 19;L1;Inductor_744031220_22uH;1;22 uH;OK
 20;L2;Inductor_744029100_10uH;1;10 uH;TO BE ORDERED
-21;R1,R6,R7,R9,R13,R12;R_0805_2012Metric_Pad1.15x1.40mm_HandSolder;6;10k;
+21;R1,R6,R7,R9,R13,R12;R_0805_2012Metric_Pad1.15x1.40mm_HandSolder;6;10k;OK
 22;R2;R_0805_2012Metric_Pad1.15x1.40mm_HandSolder;1;1k;OK
 23;R3;R_0805_2012Metric_Pad1.15x1.40mm_HandSolder;1;2k;OK
 24;R10;R_0805_2012Metric_Pad1.15x1.40mm_HandSolder;1;8.2k;
-25;R14,R15;R_0805_2012Metric_Pad1.15x1.40mm_HandSolder;2;470;
+25;R14,R15;R_0805_2012Metric_Pad1.15x1.40mm_HandSolder;2;470;OK
 26;ROK3;R_0805_2012Metric_Pad1.15x1.40mm_HandSolder;1;1.9 M;OK
 27;ROK2;R_0805_2012Metric_Pad1.15x1.40mm_HandSolder;1;5.49 M;OK
 28;ROK1;R_0805_2012Metric_Pad1.15x1.40mm_HandSolder;1;5.62M;OK
 29;ROUT2;R_0805_2012Metric_Pad1.15x1.40mm_HandSolder;1;8.25 M;OK
 30;ROUT1;R_0805_2012Metric_Pad1.15x1.40mm_HandSolder;1;4.75 M;OK
 31;ROV2;R_0805_2012Metric_Pad1.15x1.40mm_HandSolder;1;7.32 M;OK
-32;ROV1;R_0805_2012Metric_Pad1.15x1.40mm_HandSolder;1;5.61 M;
-33;S3,S1;SOT-23-6_Handsoldering;2;TPS22860;
+32;ROV1;R_0805_2012Metric_Pad1.15x1.40mm_HandSolder;1;5.61 M;ok
+33;S3,S1;SOT-23-6_Handsoldering;2;TPS22860;OK
 34;U2;QFN-20-1EP_3.5x3.5mm_P0.5mm_EP2x2mm;1;BQ25570;TO BE ORDERED
 35;U3;SOT-23-5_HandSoldering;1;TPS705;OK
 36;U4;PIC16F18446SSOP20PIN;1;PIC16F18446;OK
 37;J2;ConnectorHorizontalPcb;1;Conn_02x03_motherboardconn;OK
-38;COUT4;CP_Radial_D6.3mm_P2.50mm;1;470 uF;
-39;R8;R_LDR_5.1x4.3mm_P3.4mm_Vertical;1;LDR03;
+38;COUT4;CP_Radial_D6.3mm_P2.50mm;1;470 uF;TO BE ORDERED
+39;R8;R_LDR_5.1x4.3mm_P3.4mm_Vertical;1;LDR03;TO BE ORDERED

@@ -43,8 +43,8 @@ void WDT_Init(void);
 // Variables
 
 // TODO: change to boolean?
-__persistent uint8_t batThresholdEnabled;
-__persistent uint16_t batThresholdLevel;
+uint8_t batThresholdEnabled;
+uint16_t batThresholdLevel;
 bool underThreshold = false;
 float floatBatThresholdLevel = 0.0;
 
@@ -197,12 +197,12 @@ void Enter_sleep(){
 
 void Power_Init(){
     
+    //  TODO: Don't think this is necessary: needs to be tested!
+    PMD0bits.IOCMD = 0; // Enable gpio clock
+    
     READY_SetDigitalMode();
     READY_SetDigitalOutput();
     READY_SetHigh();
-    
-    //  TODO: Don't think this is necessary: needs to be tested!
-    PMD0bits.IOCMD = 0; // Enable gpio clock
     
     ADC_Init();
     
@@ -290,23 +290,21 @@ void Measure(){
     LED0_SetLow();
     LED1_SetLow();
 
-    /* Check for battery empty */
-    if(floatbatvoltage < 3.3){
-        batteryundervoltage = 1;
-    }
-
-    /* If battery is charging again, unset the batteryundervoltage parameter */
-    if(batteryundervoltage == 1){
-        if(floatbatvoltage>3.5){
-            batteryundervoltage = 0;
-        }
-    }
+//    /* Check for battery empty */
+//    if(floatbatvoltage < 3.3){
+//        batteryundervoltage = 1;
+//    }
+//
+//    /* If battery is charging again, unset the batteryundervoltage parameter */
+//    if(batteryundervoltage == 1){
+//        if(floatbatvoltage>3.5){
+//            batteryundervoltage = 0;
+//        }
+//    }
     
     /* Threshold operation */
     if(floatbatvoltage < floatBatThresholdLevel){
         underThreshold = true;
-    }else{
-        underThreshold = false;
     }
 
     // prepare data for I2C transmission: multiply by 600
@@ -356,6 +354,8 @@ void Power_Loop(){
             
             if(WDTCON0bits.SEN == 1)
             {
+                WDTCON0bits.SEN = 0;    //  Disable WDT
+                
                 measurementRunning = true;
                 Measure();              //  Measure
                 measurementRunning = false;
@@ -373,16 +373,15 @@ void Power_Loop(){
             }
         }else if(STATUSbits.nTO == 0)   //  WDT Timeout
         {
+            WDTCON0bits.SEN = 0;        //  Disable WDT
+            
             measurementRunning = true;
             Measure();              //  Measure
             measurementRunning = false;
             
-            LED0_SetHigh();
-            __delay_ms(500);
-            LED0_SetLow();
-            
             if(underThreshold)
             {
+                underThreshold = false;
                 generateIntPower(); //  if battery voltage too low -> interrupt
             }
             CLRWDT();               //  Reset wdt timer
@@ -415,6 +414,7 @@ void Power_SetThreshold(uint8_t metric, uint8_t * thresholdData){
     
     if(batThresholdEnabled)         //  Threshold -> enable WDT   
     {
+        WDTCON0bits.SEN = 0;
         CLRWDT();
         WDTCON0bits.SEN = 1;
     }else{                          //  No thresholds -> WDT off 
@@ -424,7 +424,7 @@ void Power_SetThreshold(uint8_t metric, uint8_t * thresholdData){
 
 void generateIntPower(void){
     READY_SetLow();
-    __delay_ms(1);                          
+    __delay_ms(5);                          
     READY_SetHigh();
 }
 
