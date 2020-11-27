@@ -10,14 +10,15 @@
  *  Gebroeders De Smetstraat 1,
  *  B-9000 Gent, Belgium
  *
- *         File: global.h
- *      Created: 2020-10-02
- *       Author: Geoffrey Ottoy
- *      Version: 2.0
+ *         File: power.h
+ *      Created: 2020-11-27
+ *       Author: Jona Cappelle
+ *      Version: 0.2
  *
- *  Description: Global settings, constants and types
+ *  Description: Power Module Implementation Header File
  *
  */
+
 
 #ifndef __GLOBAL_H__
 #define	__GLOBAL_H__

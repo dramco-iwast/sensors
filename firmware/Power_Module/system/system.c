@@ -42,18 +42,15 @@ void SYSTEM_Initialize(uint8_t slave_address){ //MODIFIED (was void))
     ANSELA = 0x00;
     ANSELB = 0x00;
     ANSELC = 0x00;
-//    ANSELCbits.ANSC4 = 1; // set RC1 to analog mode
-    
+
     TRISA = 0x00;
     TRISB = 0x00;
     TRISC = 0x00;
-//    TRISCbits.TRISC4 = 1; // set input for ADC pin
-    
+
     LATA = 0xFF;
     LATB = 0xFF;
     LATC = 0xFF;
-//    LATCbits.LATC4 = 0; // set low input for ADC pin
-    
+
     I2C1_Initialize(slave_address);
 
     GlobalInterruptEnable();

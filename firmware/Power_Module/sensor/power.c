@@ -1,20 +1,27 @@
-////////////////////////////////////
-//
-//  Potential fix for the voltage drop problem: ADC can operate when device is in sleep.
-//  Periodically sample and store ADC value (example: every 64 sec), when motherboard requests it -> send stored ADC value
-//  This eliminates the voltage drop, experienced when the motherboard and power module is ON and are pulling about 50 mA
-//
-///////////////////////////////////
-
-
+/*  ____  ____      _    __  __  ____ ___
+ * |  _ \|  _ \    / \  |  \/  |/ ___/ _ \
+ * | | | | |_) |  / _ \ | |\/| | |  | | | |
+ * | |_| |  _ <  / ___ \| |  | | |__| |_| |
+ * |____/|_| \_\/_/   \_\_|  |_|\____\___/
+ *                           research group
+ *                             dramco.be/
+ *
+ *  KU Leuven - Technology Campus Gent,
+ *  Gebroeders De Smetstraat 1,
+ *  B-9000 Gent, Belgium
+ *
+ *         File: power.c
+ *      Created: 2020-11-27
+ *       Author: Jona Cappelle
+ *      Version: 0.2
+ *
+ *  Description: Power Module Implementation
+ *
+ */
 
 #include "power.h"
 #include <math.h>
 #include "../system/adcc.h"
-//#include "../mcc_generated_files/mcc.h"
-//#include "../system/adcc.h"
-//#include"../mcc_generated_files/i2c1.h"
-
 
 #ifdef SENSOR_TYPE
 #if (SENSOR_TYPE == POWER)
@@ -22,8 +29,6 @@
 
 #define SOL_VOLT   0x13
 #define BAT_VOLT   0x14
-
-//#define DEBUGGING_THRESHOLD
 
 /* Forward declaration */
 void measureVolt(void);
@@ -235,25 +240,12 @@ void Power_Init(){
     WDT_Init();
     
     /* Test blink LED */
-    LED_Blink();
-    
-#ifdef  DEBUGGING
-    startMeasurement = true;
-#endif
-    
-    
-#ifdef  DEBUGGING_THRESHOLD
-    floatBatThresholdLevel = 3.3;
-    batThresholdEnabled = 1;
-#endif
-    
+    LED_Blink();    
 }
 
 void Power_Measure(){
     startMeasurement = true;
 }
-
-
 
 void Measure(){
 
@@ -266,7 +258,6 @@ void Measure(){
     LED0_SetHigh();
 
     __delay_ms(10);                                     // Delay for settling voltages
-
 
     ADCC_GetSingleConversion(SOL_VOLT);                 // first measurement afte rreset seems to be fixed and need to be rejected
     solvoltage = ADCC_GetSingleConversion(SOL_VOLT);
@@ -326,25 +317,6 @@ void Measure(){
 
 //  TODO needs changes
 void Power_Loop(){
-    
-    // TODO: Here I would do something like:
-    
-//    if(!measurementRunning)  // do not measure when a measurement is already running
-//        if(polled measurement) // wakeup from poll
-//           if(watchdog on)
-//               measure();
-//               generateInterrupt();
-//               enable watchdog
-//        else if(watchdog off)
-//            measure();
-//            generateInterrupt();
-//    else if(watchdog timeout) // wakeup from watchdog
-//        measure();
-//        check undervoltage
-//            generateInterrupt();
-//        enable watchdog
-//    else
-//        EnterSleep();
 
     if(!measurementRunning)
     {
@@ -424,10 +396,9 @@ void Power_SetThreshold(uint8_t metric, uint8_t * thresholdData){
 
 void generateIntPower(void){
     READY_SetLow();
-    __delay_ms(5);                          
+    __delay_ms(1);                          
     READY_SetHigh();
 }
-
 
 #endif
 #endif
