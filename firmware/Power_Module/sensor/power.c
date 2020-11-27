@@ -197,6 +197,7 @@ void Enter_sleep(){
 
 void Power_Init(){
     
+    READY_SetDigitalMode();
     READY_SetDigitalOutput();
     READY_SetHigh();
     
@@ -205,11 +206,14 @@ void Power_Init(){
     
     ADC_Init();
     
+    SOL_MEAS_EN_SetDigitalMode();
+    BAT_MEAS_EN_SetDigitalMode();
     
     SOL_MEAS_EN_SetDigitalOutput();
     BAT_MEAS_EN_SetDigitalOutput();
 
     LED0_SetDigitalMode();
+    LED1_SetDigitalMode();
     
     LED0_SetDigitalOutput();
     LED1_SetDigitalOutput();
@@ -217,9 +221,6 @@ void Power_Init(){
     
     LED0_SetLow();
     LED1_SetLow();
-    
-    /* Test blink LED */
-    LED_Blink();
 
     SOL_MEAS_EN_SetLow();
     BAT_MEAS_EN_SetLow();
@@ -232,6 +233,9 @@ void Power_Init(){
     BAT_VOLT_SetAnalogMode();
     
     WDT_Init();
+    
+    /* Test blink LED */
+    LED_Blink();
     
 #ifdef  DEBUGGING
     startMeasurement = true;
@@ -391,9 +395,13 @@ void Power_Loop(){
 }
 
 void Power_GetData(uint8_t * data, uint8_t  * length){
-    *length = 2; // this is fixed (M_NR = 2)
+    *length = 6; // this is fixed (M_NR = 2)
     data[0] = measurementData[0];
     data[1] = measurementData[1];
+    data[2] = measurementData[2];
+    data[3] = measurementData[3];
+    data[4] = measurementData[4];
+    data[5] = measurementData[5];
 }
 
 void Power_SetThreshold(uint8_t metric, uint8_t * thresholdData){
