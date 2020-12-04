@@ -20,15 +20,15 @@
  *               (DRAMCO / KU Leuven TCG project)
  * 
  * -------------------------------------------
- * | Current measurments:                     |
+ * | Current measurments:                      |
  * -------------------------------------------
- * |     SOUND MODULE ONLY:                   |
- * |             Sleep: +-4.5µA               |
- * |             In WoS: +-25µA               |
+ * |     SOUND MODULE ONLY:                    |
+ * |             Sleep: +-4.5ï¿½A               |
+ * |             In WoS: +-25ï¿½A               |
  * -------------------------------------------
- * |     SOUND MODULE + MOTHERBOARD:          |
- * |             Sleep: +-30µA                |
- * |             In WoS: +-50µA               |
+ * |     SOUND MODULE + MOTHERBOARD:           |
+ * |             Sleep: +-30ï¿½A                |
+ * |             In WoS: +-50ï¿½A               |
  * -------------------------------------------
  * 
  * 

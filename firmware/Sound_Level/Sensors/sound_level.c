@@ -254,7 +254,7 @@ void AMPS_enable(bool enable)
             VDDBIASAMP_SetHigh();
             VDDBIAS_SetHigh();
             VDDAMP_SetHigh();
-            __delay_ms(100);
+            //__delay_ms(100);
             break;
 
         case DISABLE:
@@ -562,6 +562,8 @@ void SoundLevel_GetSample(){
         SoundLevel_StopADC(); // stop conversions and power-down analog circuitry
         sampling = false; // reference to while(sampling), continue execution of program
     }   
+
+        
 }
 
 // Prepare ADC for continuous conversion and start the sampling at 20 kHz
@@ -612,6 +614,9 @@ void measure(void){
     __delay_ms(1); // short delay to stabilize microphone
     
     AMPS_enable(ENABLE); // enable amplifier circuits
+    __delay_ms(20);
+    SoundLevel_LedOff();    //  Short LED Blink to indicate measuring -- shortened to concerve battery power
+    __delay_ms(80);
     
     // initialize control variables
     sampling = true;
@@ -626,7 +631,7 @@ void measure(void){
     
     SoundLevel_PrepareData(); // prepare measurement for transmission
     
-    SoundLevel_LedOff();
+//    SoundLevel_LedOff();
 }
 
 
