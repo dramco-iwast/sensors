@@ -34,6 +34,9 @@
  * -------------------------------------------
  * 
  */
+//  TODO: new board
+//  power.h -> change pin initialisation
+//  
 
 #include <xc.h>
 #include <stdio.h>

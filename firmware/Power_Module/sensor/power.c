@@ -27,7 +27,11 @@
 #if (SENSOR_TYPE == POWER)
 #warning "Compiling for Power sensor"
 
-#define SOL_VOLT   0x13
+
+//#define POWERV2
+
+
+#define LDR_VOLT   0x13
 #define BAT_VOLT   0x14
 
 /* Forward declaration */
@@ -59,12 +63,16 @@ float floatBatThresholdLevel = 0.0;
 bool startMeasurement = false;
 bool measurementRunning = false;
 volatile uint8_t measurementData[2* M_NR];
-float floatsolvoltage;
+float floatldrvoltage;
 float floatbatvoltage;
-uint16_t solvoltage = 0;
+uint16_t ldrvoltage = 0;
 uint16_t tempValue = 0;
 uint16_t batvoltage = 0;
 uint8_t batteryundervoltage = 0;
+
+float LDR = 0.0;
+float lux = 0.0;
+
 
 #define ENABLE  1
 #define DISABLE 0
@@ -202,7 +210,6 @@ void Enter_sleep(){
 
 void Power_Init(){
     
-    //  TODO: Don't think this is necessary: needs to be tested!
     PMD0bits.IOCMD = 0; // Enable gpio clock
     
     READY_SetDigitalMode();
@@ -211,10 +218,10 @@ void Power_Init(){
     
     ADC_Init();
     
-    SOL_MEAS_EN_SetDigitalMode();
+    LDR_MEAS_EN_SetDigitalMode();
     BAT_MEAS_EN_SetDigitalMode();
     
-    SOL_MEAS_EN_SetDigitalOutput();
+    LDR_MEAS_EN_SetDigitalOutput();
     BAT_MEAS_EN_SetDigitalOutput();
 
     LED0_SetDigitalMode();
@@ -223,19 +230,22 @@ void Power_Init(){
     LED0_SetDigitalOutput();
     LED1_SetDigitalOutput();
     
-    
     LED0_SetLow();
     LED1_SetLow();
 
-    SOL_MEAS_EN_SetLow();
+    LDR_MEAS_EN_SetLow();
     BAT_MEAS_EN_SetLow();
     
-    
-    SOL_VOLT_SetDigitalInput();
-    SOL_VOLT_SetAnalogMode();
+    LDR_VOLT_SetDigitalInput();
+    LDR_VOLT_SetAnalogMode();
     
     BAT_VOLT_SetDigitalInput(); 
     BAT_VOLT_SetAnalogMode();
+    
+#ifdef POWERV2
+    NCHG_SetDigitalMode();
+    NCHG_SetDigitalInput();
+#endif
     
     WDT_Init();
     
@@ -251,47 +261,60 @@ void Measure(){
 
     ADC_Fixed_Voltage_Ref(ENABLE);
     
-    SOL_MEAS_EN_SetHigh();                              // Enable loadswitch to measure voltage
+    LDR_MEAS_EN_SetHigh();                              // Enable loadswitch to measure voltage
     BAT_MEAS_EN_SetHigh();                              // Enable loadswitch to measure voltage
 
     LED1_SetHigh();
     LED0_SetHigh();
 
-    __delay_ms(10);                                     // Delay for settling voltages
+    __delay_ms(20);                                     // Delay for settling voltages, 10ms is not long enough
 
-    ADCC_GetSingleConversion(SOL_VOLT);                 // first measurement afte rreset seems to be fixed and need to be rejected
-    solvoltage = ADCC_GetSingleConversion(SOL_VOLT);
+    ADREFbits.PREF0 = 0;   //  Reference voltage to VDD (3V3)
+    ADREFbits.PREF1 = 0;
+    
+    ADCC_GetSingleConversion(LDR_VOLT);                 // first measurement afte rreset seems to be fixed and need to be rejected
+    ldrvoltage = ADCC_GetSingleConversion(LDR_VOLT);
     //__delay_ms(2000);
     //  TODO delay not necessary
 
-    tempValue = ADCC_GetSingleConversion(SOL_VOLT);
-    if(tempValue < solvoltage){                         // To make sure it is the lowest/ stable voltage that is captured
-        solvoltage = tempValue;
+    tempValue = ADCC_GetSingleConversion(LDR_VOLT);
+    if(tempValue < ldrvoltage){                         // To make sure it is the lowest/ stable voltage that is captured
+        ldrvoltage = tempValue;
     }
-    floatsolvoltage = ((float)solvoltage /4096) * 2.048 * ((10+2.2)/2.2);   // Convert ADC value to voltage (Resistor divider)
+    ADREFbits.PREF0 = 1;   //  Reference voltage to FVR module (2.048 V)
+    ADREFbits.PREF1 = 1;
+            
+    
+//    floatldrvoltage = ((float)ldrvoltage /4096) * 2.048 * ((10+2.2)/2.2);   // Convert ADC value to voltage (Resistor divider)
 
+    floatldrvoltage = ((float)ldrvoltage /4096) * 3.3;    //  Convert ADC calue to voltage
+    
+    LDR = ( ( 4700 * 3.3 ) / floatldrvoltage ) - 4700;    //  Calculate LDR resistance value (ohm) with R = 4.7k
+    
+    lux = 500 / LDR;    //  Simplification of lux calculation   -> gamma = 0.7 
+   //  TODO measure actual intensity with lux meter
 
     ADCC_GetSingleConversion(BAT_VOLT); 
     batvoltage = ADCC_GetSingleConversion(BAT_VOLT);
     floatbatvoltage = ((float)batvoltage /4096) * 2.048 * ((10+8.2)/8.2);   // Convert ADC value to voltage (Resistor divider)
 
-    SOL_MEAS_EN_SetLow();                               // Disable loadswitch to measure voltage
+    LDR_MEAS_EN_SetLow();                               // Disable loadswitch to measure voltage
     BAT_MEAS_EN_SetLow();                               // Disable loadswitch to measure voltage
 
     LED0_SetLow();
     LED1_SetLow();
 
-//    /* Check for battery empty */
-//    if(floatbatvoltage < 3.3){
-//        batteryundervoltage = 1;
-//    }
-//
-//    /* If battery is charging again, unset the batteryundervoltage parameter */
-//    if(batteryundervoltage == 1){
-//        if(floatbatvoltage>3.5){
-//            batteryundervoltage = 0;
-//        }
-//    }
+    /* Check for battery empty */
+    if(floatbatvoltage < 3.3){
+        batteryundervoltage = 1;
+    }
+
+    /* If battery is charging again, unset the batteryundervoltage parameter */
+    if(batteryundervoltage == 1){
+        if(floatbatvoltage>3.5){
+            batteryundervoltage = 0;
+        }
+    }
     
     /* Threshold operation */
     if(floatbatvoltage < floatBatThresholdLevel){
@@ -300,13 +323,13 @@ void Measure(){
 
     // prepare data for I2C transmission: multiply by 600
     uint16_t databatvoltage = (uint16_t)(round(floatbatvoltage * 600));
-    uint16_t datasolvoltage = (uint16_t)(round(floatsolvoltage * 600));
-      
+    uint16_t datalux = (uint16_t)(round(lux * 600));
+    
     measurementData[0] = (uint8_t)(databatvoltage>>8);
     measurementData[1] = (uint8_t)(databatvoltage);
 
-    measurementData[2] = (uint8_t)(datasolvoltage>>8);
-    measurementData[3] = (uint8_t)(datasolvoltage);
+    measurementData[2] = (uint8_t)(datalux>>8);
+    measurementData[3] = (uint8_t)(datalux);
 
     measurementData[4] = (uint8_t)(batteryundervoltage);
     measurementData[5] = 0x00;
