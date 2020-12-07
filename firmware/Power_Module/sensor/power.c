@@ -51,11 +51,17 @@ void WDT_Init(void);
 
 // Variables
 
-// TODO: change to boolean?
-uint8_t batThresholdEnabled;
-uint16_t batThresholdLevel;
-bool underThreshold = false;
+bool batThresholdEnabled = false;
+uint16_t batThresholdLevel = 0;
+
+bool ldrThresholdEnabled = false;
+uint16_t ldrThresholdLevel = 0;
+
+bool underThresholdBatt = false;
 float floatBatThresholdLevel = 0.0;
+
+bool underThresholdLDR = false;
+float floatLDRThresholdLevel = 0.0;
 
 /*===================================*/
 
@@ -291,9 +297,13 @@ void Measure(){
     
     LDR = ( ( 4700 * 3.3 ) / floatldrvoltage ) - 4700;    //  Calculate LDR resistance value (ohm) with R = 4.7k
     
-    lux = 500 / LDR;    //  Simplification of lux calculation   -> gamma = 0.7 
-   //  TODO measure actual intensity with lux meter
-
+//    lux = 500 / LDR;    //  Simplification of lux calculation   -> gamma = 0.7 
+    
+//  equation calculated from actual measurements with LUX meter - see also excel table in iWAST folder
+    
+    lux = 50000000 * pow( (double) LDR, -1.423 );
+    
+    
     ADCC_GetSingleConversion(BAT_VOLT); 
     batvoltage = ADCC_GetSingleConversion(BAT_VOLT);
     floatbatvoltage = ((float)batvoltage /4096) * 2.048 * ((10+8.2)/8.2);   // Convert ADC value to voltage (Resistor divider)
@@ -318,7 +328,10 @@ void Measure(){
     
     /* Threshold operation */
     if(floatbatvoltage < floatBatThresholdLevel){
-        underThreshold = true;
+        underThresholdBatt = true;
+    }
+    if(lux < floatLDRThresholdLevel){
+        underThresholdLDR = true;
     }
 
     // prepare data for I2C transmission: multiply by 600
@@ -374,9 +387,10 @@ void Power_Loop(){
             Measure();              //  Measure
             measurementRunning = false;
             
-            if(underThreshold)
+            if(underThresholdBatt || underThresholdLDR)
             {
-                underThreshold = false;
+                underThresholdBatt = false;
+                underThresholdLDR = false;
                 generateIntPower(); //  if battery voltage too low -> interrupt
             }
             CLRWDT();               //  Reset wdt timer
@@ -405,6 +419,10 @@ void Power_SetThreshold(uint8_t metric, uint8_t * thresholdData){
         batThresholdEnabled = thresholdData[0];
         batThresholdLevel = (uint16_t)((thresholdData[3]<<8) | thresholdData[4]);
         floatBatThresholdLevel = (float) batThresholdLevel /600;
+    }
+    if(metric==1)
+    {
+        
     }
     
     if(batThresholdEnabled)         //  Threshold -> enable WDT   
