@@ -52,16 +52,24 @@ void WDT_Init(void);
 // Variables
 
 bool batThresholdEnabled = false;
-uint16_t batThresholdLevel = 0;
+uint16_t batThresholdLevelHigh = 0;
+uint16_t batThresholdLevelLow = 0;
 
 bool ldrThresholdEnabled = false;
-uint16_t ldrThresholdLevel = 0;
+uint16_t ldrThresholdLevelHigh = 0;
+uint16_t ldrThresholdLevelLow = 0;
+
+bool overThresholdBatt = false;
+float floatBatThresholdLevelHigh = 0.0;
 
 bool underThresholdBatt = false;
-float floatBatThresholdLevel = 0.0;
+float floatBatThresholdLevelLow = 0.0;
+
+bool overThresholdLDR = false;
+float floatLDRThresholdLevelHigh = 0.0;
 
 bool underThresholdLDR = false;
-float floatLDRThresholdLevel = 0.0;
+float floatLDRThresholdLevelLow = 0.0;
 
 /*===================================*/
 
@@ -326,14 +334,28 @@ void Measure(){
         }
     }
     
-    /* Threshold operation */
-    if(floatbatvoltage < floatBatThresholdLevel){
-        underThresholdBatt = true;
-    }
-    if(lux < floatLDRThresholdLevel){
-        underThresholdLDR = true;
-    }
+    if(batThresholdEnabled)
+    {
+        /* Threshold operation */
+        if(floatbatvoltage < floatBatThresholdLevelLow){
+            underThresholdBatt = true;
+        }
 
+        if(floatbatvoltage > floatBatThresholdLevelHigh){
+            overThresholdBatt = true;
+        }
+    }
+    
+    if(ldrThresholdEnabled)
+    {
+        if(lux < floatLDRThresholdLevelLow){
+            underThresholdLDR = true;
+        }
+        if(lux > floatLDRThresholdLevelHigh){
+            overThresholdLDR = true;
+        }
+    }
+    
     // prepare data for I2C transmission: multiply by 600
     uint16_t databatvoltage = (uint16_t)(round(floatbatvoltage * 600));
     uint16_t datalux = (uint16_t)(round(lux * 600));
@@ -346,7 +368,7 @@ void Measure(){
 
     measurementData[4] = (uint8_t)(batteryundervoltage);
     measurementData[5] = 0x00;
-       
+    
     //  TODO: check if it's necessary to enable and disable fixed voltage ref every time
     ADC_Fixed_Voltage_Ref(DISABLE);
 }
@@ -387,10 +409,13 @@ void Power_Loop(){
             Measure();              //  Measure
             measurementRunning = false;
             
-            if(underThresholdBatt || underThresholdLDR)
+            if(underThresholdBatt || underThresholdLDR || overThresholdBatt || overThresholdLDR)
             {
-                underThresholdBatt = false;
+                underThresholdBatt = false; //  Reset the states
                 underThresholdLDR = false;
+                overThresholdBatt = false;
+                overThresholdLDR = false;
+                
                 generateIntPower(); //  if battery voltage too low -> interrupt
             }
             CLRWDT();               //  Reset wdt timer
@@ -414,18 +439,24 @@ void Power_GetData(uint8_t * data, uint8_t  * length){
 
 void Power_SetThreshold(uint8_t metric, uint8_t * thresholdData){
     
-    if(metric==0)
+    if(metric == 0)
     {
         batThresholdEnabled = thresholdData[0];
-        batThresholdLevel = (uint16_t)((thresholdData[3]<<8) | thresholdData[4]);
-        floatBatThresholdLevel = (float) batThresholdLevel /600;
+        batThresholdLevelLow = (uint16_t)((thresholdData[1]<<8) | thresholdData[2]);
+        floatBatThresholdLevelLow = (float) batThresholdLevelLow / 600;
+        batThresholdLevelHigh = (uint16_t)((thresholdData[3]<<8) | thresholdData[4]);
+        floatBatThresholdLevelHigh = (float) batThresholdLevelHigh / 600;
     }
-    if(metric==1)
+    if(metric == 1)
     {
-        
+        ldrThresholdEnabled = thresholdData[0];
+        ldrThresholdLevelLow = (uint16_t)((thresholdData[1]<<8 | thresholdData[2]));
+        floatLDRThresholdLevelLow = (float) ldrThresholdLevelLow / 600;
+        ldrThresholdLevelHigh = (uint16_t)((thresholdData[3]<<8 | thresholdData[4]));
+        floatLDRThresholdLevelHigh = (float) ldrThresholdLevelHigh / 600;
     }
     
-    if(batThresholdEnabled)         //  Threshold -> enable WDT   
+    if(batThresholdEnabled || ldrThresholdEnabled)         //  Threshold -> enable WDT   
     {
         WDTCON0bits.SEN = 0;
         CLRWDT();
