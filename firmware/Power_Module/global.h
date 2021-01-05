@@ -55,7 +55,7 @@ extern "C" {
 #define SOUND_LEVEL                 0x01
 #define BUTTONS                     0x02
 #define BME680                      0x03
-#define POWER                       0x01 // TODO change to 0x04, for testing purposes, the power module becomes a sound module
+#define POWER                       0x04 // TODO change to 0x04, for testing purposes, the power module becomes a sound module
 
 /* general sensor API providing methods for
  *  - initializing sensor operation

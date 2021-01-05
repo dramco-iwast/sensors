@@ -8,7 +8,7 @@
 #include <stdbool.h>
 #include "../global.h"
 
-//#define POWERV2
+#define POWERV2
 
 
 #define TYPE_BYTE   POWER
@@ -29,6 +29,7 @@
 #define PULL_UP_ENABLED      1
 #define PULL_UP_DISABLED     0
 
+#ifndef POWERV2
 // get/set LED0 aliases
 #define LED0_TRIS                           TRISBbits.TRISB6
 #define LED0_LAT                            LATBbits.LATB6
@@ -48,6 +49,32 @@
 #define LED0_SetOpenDrain()                 do { ODCONBbits.ODCB6 = 1; } while(0)
 #define LED0_SetAnalogMode()                do { ANSELBbits.ANSB6 = 1; } while(0)
 #define LED0_SetDigitalMode()               do { ANSELBbits.ANSB6 = 0; } while(0)
+
+#endif
+
+#ifdef POWERV2
+// get/set LED0 aliases
+#define LED0_TRIS                 TRISCbits.TRISC7
+#define LED0_LAT                  LATCbits.LATC7
+#define LED0_PORT                 PORTCbits.RC7
+#define LED0_WPU                  WPUCbits.WPUC7
+#define LED0_OD                   ODCONCbits.ODCC7
+#define LED0_ANS                  ANSELCbits.ANSC7
+#define LED0_SetHigh()            do { LATCbits.LATC7 = 1; } while(0)
+#define LED0_SetLow()             do { LATCbits.LATC7 = 0; } while(0)
+#define LED0_Toggle()             do { LATCbits.LATC7 = ~LATCbits.LATC7; } while(0)
+#define LED0_GetValue()           PORTCbits.RC7
+#define LED0_SetDigitalInput()    do { TRISCbits.TRISC7 = 1; } while(0)
+#define LED0_SetDigitalOutput()   do { TRISCbits.TRISC7 = 0; } while(0)
+#define LED0_SetPullup()          do { WPUCbits.WPUC7 = 1; } while(0)
+#define LED0_ResetPullup()        do { WPUCbits.WPUC7 = 0; } while(0)
+#define LED0_SetPushPull()        do { ODCONCbits.ODCC7 = 0; } while(0)
+#define LED0_SetOpenDrain()       do { ODCONCbits.ODCC7 = 1; } while(0)
+#define LED0_SetAnalogMode()      do { ANSELCbits.ANSC7 = 1; } while(0)
+#define LED0_SetDigitalMode()     do { ANSELCbits.ANSC7 = 0; } while(0)
+
+#endif
+
 
 // get/set LDR_MEAS_EN aliases
 #define LDR_MEAS_EN_TRIS                    TRISCbits.TRISC0

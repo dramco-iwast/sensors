@@ -1195,12 +1195,16 @@ Text GLabel 6050 5600 2    50   Input ~ 0
 LDR
 Text GLabel 7750 3100 0    50   Input ~ 0
 LED0
+Text GLabel 3800 900  0    50   Input ~ 0
+SOL+
+Text GLabel 4400 900  2    50   Input ~ 0
+GND
 $Comp
 L SamacSys_Parts:BZT52C4V7T-7 Z?
 U 1 1 5FD27DF5
 P 3800 900
-F 0 "Z?" V 4054 1030 50  0000 L CNN
-F 1 "BZT52C4V7T-7" V 4145 1030 50  0000 L CNN
+F 0 "Z?" H 4054 1030 50  0000 L CNN
+F 1 "BZT52C4V7T-7" H 4145 1030 50  0000 L CNN
 F 2 "SODFL1608X65N" H 4200 1050 50  0001 L CNN
 F 3 "" H 4200 950 50  0001 L CNN
 F 4 "Zener Diodes" H 4200 850 50  0001 L CNN "Description"
@@ -1212,8 +1216,6 @@ F 9 "BZT52C4V7T-7" H 4200 350 50  0001 L CNN "Manufacturer_Part_Number"
 	1    3800 900 
 	1    0    0    -1  
 $EndComp
-Text GLabel 3800 900  0    50   Input ~ 0
-SOL+
-Text GLabel 4400 900  2    50   Input ~ 0
-GND
+Text Notes 4100 3700 0    50   ~ 0
+ROK3   1.258M\nROK2   6.668M\nROK1   5.074M
 $EndSCHEMATC

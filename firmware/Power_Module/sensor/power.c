@@ -28,7 +28,7 @@
 #warning "Compiling for Power sensor"
 
 
-//#define POWERV2
+#define POWERV2
 
 
 #define LDR_VOLT   0x13
@@ -286,10 +286,8 @@ void Measure(){
     ADREFbits.PREF0 = 0;   //  Reference voltage to VDD (3V3)
     ADREFbits.PREF1 = 0;
     
-    ADCC_GetSingleConversion(LDR_VOLT);                 // first measurement afte rreset seems to be fixed and need to be rejected
+    ADCC_GetSingleConversion(LDR_VOLT);                 // first measurement afte reset seems to be fixed and need to be rejected
     ldrvoltage = ADCC_GetSingleConversion(LDR_VOLT);
-    //__delay_ms(2000);
-    //  TODO delay not necessary
 
     tempValue = ADCC_GetSingleConversion(LDR_VOLT);
     if(tempValue < ldrvoltage){                         // To make sure it is the lowest/ stable voltage that is captured
@@ -298,19 +296,15 @@ void Measure(){
     ADREFbits.PREF0 = 1;   //  Reference voltage to FVR module (2.048 V)
     ADREFbits.PREF1 = 1;
             
-    
-//    floatldrvoltage = ((float)ldrvoltage /4096) * 2.048 * ((10+2.2)/2.2);   // Convert ADC value to voltage (Resistor divider)
-
     floatldrvoltage = ((float)ldrvoltage /4096) * 3.3;    //  Convert ADC calue to voltage
-    
-    LDR = ( ( 4700 * 3.3 ) / floatldrvoltage ) - 4700;    //  Calculate LDR resistance value (ohm) with R = 4.7k
-    
-//    lux = 500 / LDR;    //  Simplification of lux calculation   -> gamma = 0.7 
-    
-//  equation calculated from actual measurements with LUX meter - see also excel table in iWAST folder
-    
+
+    //  equation calculated from actual measurements with LUX meter - see also excel table in iWAST folder
+    LDR = ( ( 4700 * 3.3 ) / floatldrvoltage ) - 4700;    //  Calculate LDR resistance value (ohm) with R = 4.7k and gamma = 0.7
     lux = 50000000 * pow( (double) LDR, -1.423 );
     
+    if(lux > 65535){    //  Limit of the 2 byte format
+        lux = 65535;
+    }
     
     ADCC_GetSingleConversion(BAT_VOLT); 
     batvoltage = ADCC_GetSingleConversion(BAT_VOLT);
@@ -334,7 +328,7 @@ void Measure(){
         }
     }
     
-    if(batThresholdEnabled)
+    if(batThresholdEnabled) //  Only set Thresholds when in threshold mode
     {
         /* Threshold operation */
         if(floatbatvoltage < floatBatThresholdLevelLow){
@@ -346,7 +340,7 @@ void Measure(){
         }
     }
     
-    if(ldrThresholdEnabled)
+    if(ldrThresholdEnabled) //  Only set Thresholds when in threshold mode
     {
         if(lux < floatLDRThresholdLevelLow){
             underThresholdLDR = true;
@@ -357,8 +351,8 @@ void Measure(){
     }
     
     // prepare data for I2C transmission: multiply by 600
-    uint16_t databatvoltage = (uint16_t)(round(floatbatvoltage * 600));
-    uint16_t datalux = (uint16_t)(round(lux * 600));
+    uint16_t databatvoltage = (uint16_t)(round(floatbatvoltage * 10000)); //  multiply by 10000 as in iWAST configurator
+    uint16_t datalux = (uint16_t)(round(lux));  //  Do not multiply lux value by 600
     
     measurementData[0] = (uint8_t)(databatvoltage>>8);
     measurementData[1] = (uint8_t)(databatvoltage);
@@ -439,21 +433,21 @@ void Power_GetData(uint8_t * data, uint8_t  * length){
 
 void Power_SetThreshold(uint8_t metric, uint8_t * thresholdData){
     
-    if(metric == 0)
+    if(metric == 0)     //  Batt Thresholds
     {
         batThresholdEnabled = thresholdData[0];
         batThresholdLevelLow = (uint16_t)((thresholdData[1]<<8) | thresholdData[2]);
-        floatBatThresholdLevelLow = (float) batThresholdLevelLow / 600;
+        floatBatThresholdLevelLow = (float) batThresholdLevelLow / 10000;
         batThresholdLevelHigh = (uint16_t)((thresholdData[3]<<8) | thresholdData[4]);
-        floatBatThresholdLevelHigh = (float) batThresholdLevelHigh / 600;
+        floatBatThresholdLevelHigh = (float) batThresholdLevelHigh / 10000;   //  Divide thresholds by 100 as in iWAST configurator
     }
-    if(metric == 1)
+    if(metric == 1)     //  LDR Thresholds
     {
         ldrThresholdEnabled = thresholdData[0];
         ldrThresholdLevelLow = (uint16_t)((thresholdData[1]<<8 | thresholdData[2]));
-        floatLDRThresholdLevelLow = (float) ldrThresholdLevelLow / 600;
+        floatLDRThresholdLevelLow = (float) ldrThresholdLevelLow;
         ldrThresholdLevelHigh = (uint16_t)((thresholdData[3]<<8 | thresholdData[4]));
-        floatLDRThresholdLevelHigh = (float) ldrThresholdLevelHigh / 600;
+        floatLDRThresholdLevelHigh = (float) ldrThresholdLevelHigh;
     }
     
     if(batThresholdEnabled || ldrThresholdEnabled)         //  Threshold -> enable WDT   

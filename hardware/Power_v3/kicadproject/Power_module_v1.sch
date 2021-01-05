@@ -1216,4 +1216,6 @@ F 9 "BZT52C4V7T-7" H 4200 350 50  0001 L CNN "Manufacturer_Part_Number"
 	1    3800 900 
 	1    0    0    -1  
 $EndComp
+Text Notes 4100 3700 0    50   ~ 0
+ROK3   1.258M   1.27M\nROK2   6.668M   6.81M\nROK1   5.074M   5.11M
 $EndSCHEMATC
