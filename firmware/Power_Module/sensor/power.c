@@ -34,6 +34,9 @@
 #define LDR_VOLT   0x13
 #define BAT_VOLT   0x14
 
+#define METRIC_BATT     0
+#define METRIC_LIGHT    1
+
 /* Forward declaration */
 void measureVolt(void);
 void initializePowerModule(void);
@@ -125,10 +128,8 @@ void LED_Blink(void)
 void WDT_Init(void)
 {
     // initialize timer for periodic measurements   
-    WDTCON0 = 0x1C; // 16 second period
-//    WDTCON0 = 0x20; // 64 second period
-    //  TODO: Change back to 64 sec
-    
+//    WDTCON0 = 0x1C; // 16 second period
+    WDTCON0 = 0x20; // 64 second period    
     WDTCON1 = 0x07; // LFINTOSC, window 100%
 }
 
@@ -433,7 +434,7 @@ void Power_GetData(uint8_t * data, uint8_t  * length){
 
 void Power_SetThreshold(uint8_t metric, uint8_t * thresholdData){
     
-    if(metric == 0)     //  Batt Thresholds
+    if(metric == METRIC_BATT)     //  Batt Thresholds
     {
         batThresholdEnabled = thresholdData[0];
         batThresholdLevelLow = (uint16_t)((thresholdData[1]<<8) | thresholdData[2]);
@@ -441,7 +442,7 @@ void Power_SetThreshold(uint8_t metric, uint8_t * thresholdData){
         batThresholdLevelHigh = (uint16_t)((thresholdData[3]<<8) | thresholdData[4]);
         floatBatThresholdLevelHigh = (float) batThresholdLevelHigh / 10000;   //  Divide thresholds by 100 as in iWAST configurator
     }
-    if(metric == 1)     //  LDR Thresholds
+    if(metric == METRIC_LIGHT)     //  LDR Thresholds
     {
         ldrThresholdEnabled = thresholdData[0];
         ldrThresholdLevelLow = (uint16_t)((thresholdData[1]<<8 | thresholdData[2]));
