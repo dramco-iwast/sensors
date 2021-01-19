@@ -38,6 +38,12 @@ void ADCC_Initialize(void)
     
     PMD3bits.ADCMD = 0; // enable ADC
     
+    // Enable FVR module
+    PMD0bits.FVRMD = 0;
+    while(!FVRCONbits.FVRRDY); // Wait until voltage is stable
+    
+    // Enable Fixed voltage reference with voltage of 2.048 V
+    FVRCON = 0x82;
     
     // set the ADCC to the options selected in the User Interface
     // ADLTH 0; 
@@ -76,8 +82,10 @@ void ADCC_Initialize(void)
     ADCON3 = 0x00;
     // ADMATH registers not updated; 
     ADSTAT = 0x00;
-    // ADNREF VSS; ADPREF VDD; 
-    ADREF = 0x00;
+//    // ADNREF VSS; ADPREF VDD; 
+//    ADREF = 0x00;
+    // ADNREF VSS; ADPREF FVR; 
+    ADREF = 0x03;
     // ADACT disabled; 
     ADACT = 0x00;
     // ADCS FOSC/128; 
@@ -85,10 +93,15 @@ void ADCC_Initialize(void)
     // ADGO stop; ADFM right; ADON enabled; ADCS FOSC/ADCLK; ADCONT disabled; 
     ADCON0 = 0x84;
     
+    FVRCON = 0x00; // Disable fixed voltage reference
+    
     // Clear the ADC interrupt flag
     PIR1bits.ADIF = 0;
     // Enabling ADCC interrupt.
     PIE1bits.ADIE = 1;
+    
+    // Disable FVR module
+    PMD0bits.FVRMD = 1;
 
     ADCC_SetADIInterruptHandler(ADCC_DefaultInterruptHandler);
 

@@ -33,7 +33,8 @@
 #define SAMPLES         400 // amount of samples
 #define AMP_FACTOR      44
 #define SENSITIVITY     0.01258925
-#define V_SUPPLY        3.3 // measured voltage when sampling
+//#define V_SUPPLY        3.3 // measured voltage when sampling
+#define V_SUPPLY        2.048
 #define ADC_SCALE       4095
 #define REF_PRESSURE    20e-6
 #define DBZ_MAX         106
@@ -116,6 +117,8 @@ void VDDBIAS_Init();
 void AMPS_enable(bool enable);
 
 void MIC_Mode(uint8_t mode);
+
+void ADC_Fixed_Voltage_Ref(uint8_t mode);
 
 
 void THRESHOLD_Init();
@@ -343,6 +346,28 @@ void SoundLevel_Init(void){
     thresholdEnabled = true;
     thresholdLevel = 400*60;
 #endif
+}
+
+
+void ADC_Fixed_Voltage_Ref(uint8_t mode){
+    switch(mode)
+    {
+        case ENABLE:
+            // Enable FVR module
+            PMD0bits.FVRMD = 0;
+            while(!FVRCONbits.FVRRDY); // Wait until voltage is stable
+            FVRCON = 0x82; // Enable Fixed voltage reference
+            break;
+
+        case DISABLE:
+            FVRCON = 0x00; // Disable the Fixed voltage reference
+            // Disable FVR module
+            PMD0bits.FVRMD = 1;
+            break;
+            
+        default:
+            FVRCON = 0x00; // Disable the Fixed voltage reference
+    }
 }
 
 /* Measure the sound level (MCU remains active)
@@ -607,6 +632,8 @@ void generateInt(void){
 }
 
 void measure(void){
+    
+    ADC_Fixed_Voltage_Ref(ENABLE); // More accurate measurements
 
     SoundLevel_LedOn();
 
@@ -616,7 +643,7 @@ void measure(void){
     AMPS_enable(ENABLE); // enable amplifier circuits
     __delay_ms(20);
     SoundLevel_LedOff();    //  Short LED Blink to indicate measuring -- shortened to concerve battery power
-    __delay_ms(80);
+    __delay_ms(180);
     
     // initialize control variables
     sampling = true;
@@ -628,6 +655,8 @@ void measure(void){
     while(sampling);
     
     AMPS_enable(DISABLE); // disable amplifier circuits
+    
+    ADC_Fixed_Voltage_Ref(DISABLE); // More accurate measurements
     
     SoundLevel_PrepareData(); // prepare measurement for transmission
     
