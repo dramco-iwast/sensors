@@ -32,22 +32,18 @@ void SYSTEM_Initialize(uint8_t slave_address) //MODIFIED (was void))
     //low state. Alternatively, connect a1k? to 10 k? resistor to VSS on unused
     // pins to drive the output to logic low
     
-    // added from geoffrey code
     ANSELA = 0x00;
     ANSELB = 0x00;
     ANSELC = 0x00;
-    ANSELCbits.ANSC1 = 1; // set RC1 to analog mode
     
     TRISA = 0x00;
     TRISB = 0x00;
     TRISC = 0x00;
-    TRISCbits.TRISC1 = 1; // set input for ADC pin
     
     LATA = 0xFF;
     LATB = 0xFF;
     LATC = 0xFF;
-    LATCbits.LATC1 = 0; // set low input for ADC pin
-    
+
     I2C1_Initialize(slave_address);
     
     // Enable the Global Interrupts
@@ -69,8 +65,6 @@ void PMD_Initialize(void)
 {
     // disable everything by default -> should be enabled by sensor
     PMD0 = 0xFF;
-    PMD0bits.SYSCMD = 0; // enabled clocks to peripherals
-    
     PMD1 = 0xFF;
     PMD2 = 0xFF;
     PMD3 = 0xFF;

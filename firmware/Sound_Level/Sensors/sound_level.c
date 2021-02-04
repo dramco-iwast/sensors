@@ -299,6 +299,12 @@ void SoundLevel_Init(void){
     LED_Init(); // Initialize LED
     
     PMD0bits.IOCMD = 0; // Enable gpio clock
+    PMD0bits.SYSCMD = 0; // enabled clocks to peripherals
+    
+    // Set pin state for analog input
+    ANSELCbits.ANSC1 = 1; // set RC1 to analog mode
+    TRISCbits.TRISC1 = 1; // set input for ADC pin
+//    LATCbits.LATC1 = 0; // set low input for ADC pin
     
     THRESHOLD_Init();
     __delay_ms(1);
@@ -321,7 +327,7 @@ void SoundLevel_Init(void){
             MIC_Mode(WOS);
             //__delay_ms(1000);
 #endif
-     
+    
     // enable interrupt on change
     PIE0bits.IOCIE = 1;   
     //interrupt on change for group IOCCF - flag
