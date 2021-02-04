@@ -941,4 +941,6 @@ Text GLabel 1350 3750 3    50   Input ~ 0
 VDDsensor
 Text Notes 1100 3200 0    50   ~ 0
 Pullup on DOUT
+Text Notes 6300 5600 0    79   ~ 0
+200ms to charge RC circuit
 $EndSCHEMATC
