@@ -33,7 +33,7 @@ extern "C" {
  * Build settings -> modify to your needs                                     *
  ******************************************************************************/   
 
-#define I2C_ADDRESS                 0x45
+#define I2C_ADDRESS                 0x70
 
 #define SENSOR_TYPE                 POWER    
 

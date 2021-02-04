@@ -12,7 +12,7 @@
 
 
 #define TYPE_BYTE   POWER
-#define M_NR        0x03
+#define M_NR        0x02
 
 #define SLAVE_ADDRESS I2C_ADDRESS
 

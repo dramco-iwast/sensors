@@ -361,8 +361,8 @@ void Measure(){
     measurementData[2] = (uint8_t)(datalux>>8);
     measurementData[3] = (uint8_t)(datalux);
 
-    measurementData[4] = (uint8_t)(batteryundervoltage);
-    measurementData[5] = 0x00;
+//    measurementData[4] = (uint8_t)(batteryundervoltage);
+//    measurementData[5] = 0x00;
     
     //  TODO: check if it's necessary to enable and disable fixed voltage ref every time
     ADC_Fixed_Voltage_Ref(DISABLE);
@@ -423,13 +423,14 @@ void Power_Loop(){
 }
 
 void Power_GetData(uint8_t * data, uint8_t  * length){
-    *length = 6; // this is fixed (M_NR = 2)
+//    *length = 6; // this is fixed (M_NR = 2)
+    *length = 4; // this is fixed (M_NR = 2)
     data[0] = measurementData[0];
     data[1] = measurementData[1];
     data[2] = measurementData[2];
     data[3] = measurementData[3];
-    data[4] = measurementData[4];
-    data[5] = measurementData[5];
+//    data[4] = measurementData[4];
+//    data[5] = measurementData[5];
 }
 
 void Power_SetThreshold(uint8_t metric, uint8_t * thresholdData){

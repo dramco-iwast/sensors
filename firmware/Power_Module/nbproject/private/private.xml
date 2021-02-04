@@ -5,8 +5,8 @@
         <group>
             <file>file:/C:/Users/Jona%20Cappelle/Documents/Github/sensors/firmware/Power_Module/main.c</file>
             <file>file:/C:/Users/Jona%20Cappelle/Documents/Github/sensors/firmware/Power_Module/sensor/power.c</file>
+            <file>file:/C:/Users/Jona%20Cappelle/Documents/Github/sensors/firmware/Power_Module/system/i2c1.c</file>
             <file>file:/C:/Users/Jona%20Cappelle/Documents/Github/sensors/firmware/Power_Module/global.h</file>
-            <file>file:/C:/Users/Jona%20Cappelle/Documents/Github/sensors/firmware/Power_Module/sensor/power.h</file>
         </group>
     </open-files>
 </project-private>
