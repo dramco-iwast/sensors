@@ -87,6 +87,15 @@ void main(void)
                     // master polls address -> respond with ack
                     uint8_t ack = DEFAULT_ACK;
                     I2C1_SetTransmitData(&ack, 1);
+                    /* Reset Thresholds if motherboard resets */
+                    uint8_t th_data[6];
+                    th_data[0] = 0;
+                    th_data[1] = 0;
+                    th_data[2] = 0;
+                    th_data[3] = 0;
+                    th_data[4] = 0;
+                    th_data[5] = 0;
+                    sensorAPI.UpdateThreshold(th_data[0], th_data+1);
                 } break;
                 
                 // TYPE
