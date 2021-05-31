@@ -1,0 +1,33 @@
+Id;Designator;Package;Quantity;Designation;Supplier and ref;;
+1;C1,C2,C3,C4,C5,C6;C_0805_2012Metric_Pad1.15x1.40mm_HandSolder;6;1 uF;;;https://nl.mouser.com/ProductDetail/KEMET/C0805C105M8RACAUTO?qs=sGAEpiMZZMsh%252B1woXyUXj5pr%2Fm5%2FLKZI74TXDpZxCL0%3D
+2;C7;C_0805_2012Metric_Pad1.15x1.40mm_HandSolder;1;10 uF;;;https://nl.mouser.com/ProductDetail/KEMET/C0805C106K9PACTU?qs=sGAEpiMZZMsh%252B1woXyUXj65LqiLJHvVhqjoR3QFlLJE%3D
+3;C8;C_0805_2012Metric_Pad1.15x1.40mm_HandSolder;1;100 nF;;;
+4;CBYP1,CREF1;C_0805_2012Metric_Pad1.15x1.40mm_HandSolder;2;10 nF;;;https://nl.mouser.com/ProductDetail/Wurth-Elektronik/885012207011?qs=0KOYDY2FL28KyHFRGnMzJg%3D%3D
+5;CIN1,CSTOR1;C_0805_2012Metric_Pad1.15x1.40mm_HandSolder;2;4.7 uF;;;https://nl.mouser.com/ProductDetail/Walsin/0805X475M250CT?qs=sGAEpiMZZMsh%252B1woXyUXj8%252BuSINP6VixVEsgb906Yfk%3D
+6;COUT1;C_0805_2012Metric_Pad1.15x1.40mm_HandSolder;1;22 uF;;;https://nl.mouser.com/ProductDetail/KEMET/C0805C226M9PACTU?qs=sGAEpiMZZMsh%252B1woXyUXj3tzE9%2FOV2no0quI5i5qAYo%3D
+7;D1,D2,D3,D4;LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder;4;LED;;;
+8;J1;PinHeader_1x02_P2.54mm_Vertical;1;Conn_01x02;;;
+9;J3;USB_Micro;1;USB_B_Micro;;;https://nl.mouser.com/ProductDetail/Amphenol-FCI/10118194-0001LF?qs=%2Fha2pyFadujDPxnCBbVdv9pBeuBbI0AUs1U3LZt66d03l%2FGqGHhwFfkiuVAa6ee%2F
+10;J4;PinHeader_1x02_P2.54mm_Vertical;1;Conn_01x02_battery;;;
+11;J5,J6;PinHeader_1x06_P2.54mm_Vertical;2;Conn_01x06_programmer;;;
+12;JP1,JP2;SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm;2;SolderJumper_2_Open;;;
+13;L1;Inductor_744031220_22uH;1;22 uH;;;https://nl.mouser.com/ProductDetail/Wurth-Elektronik/744031220?qs=%2Fha2pyFadui6JfBMAdwhRPm1Y5MMOi7jHP2VoLkA%252B7U%3D
+14;L2;Inductor_744029100_10uH;1;10 uH;;;https://nl.mouser.com/ProductDetail/Wurth-Elektronik/744029100?qs=%2Fha2pyFadujWFnyehKcTOtWfUrLtkmmF%2FSo%2Fco7Yrzo%3D
+15;R1,R6,R7,R8,R9,R10,R11;R_0805_2012Metric_Pad1.15x1.40mm_HandSolder;7;10k;;;
+16;R2;R_0805_2012Metric_Pad1.15x1.40mm_HandSolder;1;1k;;;https://nl.mouser.com/ProductDetail/Vishay-Dale/CRCW08051K00FKEAC?qs=sGAEpiMZZMtlubZbdhIBIK1n8%252Bu9gPumA6s2h80VPXs%3D
+17;R3;R_0805_2012Metric_Pad1.15x1.40mm_HandSolder;1;2k;;;https://nl.mouser.com/ProductDetail/Vishay-Dale/CRCW08052K00FKEAC?qs=sGAEpiMZZMtlubZbdhIBIIZe04wfiaJWHmrrfPOHGn8%3D
+18;R4,R5;R_0805_2012Metric_Pad1.15x1.40mm_HandSolder;2;1.5k;;;
+19;R12,R13;R_0805_2012Metric_Pad1.15x1.40mm_HandSolder;2;470;;;
+20;ROK1;R_0805_2012Metric_Pad1.15x1.40mm_HandSolder;1;1.9 M;;;https://nl.mouser.com/ProductDetail/Vishay-Dale/CRCW08051M91FKEA?qs=sGAEpiMZZMtlubZbdhIBIOKuJXvf4ORCCvNCzxFV9UE%3D
+21;ROK2;R_0805_2012Metric_Pad1.15x1.40mm_HandSolder;1;5.49 M;;;https://nl.mouser.com/ProductDetail/Vishay-Dale/CRCW08055M49FKEA?qs=UsT9WWBIYFEBEUkV2T9ZtA%3D%3D
+22;ROK3;R_0805_2012Metric_Pad1.15x1.40mm_HandSolder;1;5.62M;;;https://nl.mouser.com/ProductDetail/Vishay-Dale/CRCW08055M62FKEA?qs=UsT9WWBIYFHnXLnPNcDWmg%3D%3D
+23;ROUT1;R_0805_2012Metric_Pad1.15x1.40mm_HandSolder;1;8.25 M;;;https://nl.mouser.com/ProductDetail/Vishay-Dale/CRCW08058M25FKEA?qs=gFq8Ja42mL6b%2FoLOAnoVfg%3D%3D
+24;ROUT2;R_0805_2012Metric_Pad1.15x1.40mm_HandSolder;1;4.75 M;;;https://nl.mouser.com/ProductDetail/Vishay-Dale/CRCW08054M75FKEA?qs=kkyyugUlSrNy9yUPJwni1w%3D%3D
+25;ROV1;R_0805_2012Metric_Pad1.15x1.40mm_HandSolder;1;7.32 M;;;https://nl.mouser.com/ProductDetail/Vishay-Dale/CRCW08057M32FKEA?qs=8sOQMQdi2kVaH6X9tYVJlA%3D%3D
+26;ROV2;R_0805_2012Metric_Pad1.15x1.40mm_HandSolder;1;5.61 M;;;https://nl.mouser.com/ProductDetail/Vishay-Dale/CRCW08055M60FKEA?qs=UsT9WWBIYFENEFr1CChxGQ%3D%3D
+27;S1,S2;SOT-23-6_Handsoldering;2;TPS22860;;;https://nl.mouser.com/ProductDetail/Texas-Instruments/TPS22860DBVR?qs=%2Fha2pyFaduh4ZLjjSXj7JntbQgEZOimToZQv7wekTOw%3D
+28;U1;BQ24040;1;BQ24040;;;https://nl.mouser.com/ProductDetail/Texas-Instruments/BQ24040DSQR?qs=c7TMWs5treTJYvOlVMq%252B%2Fw%3D%3D
+29;U2;QFN-20-1EP_3.5x3.5mm_P0.5mm_EP2x2mm;1;BQ25570;;;https://nl.mouser.com/ProductDetail/Texas-Instruments/BQ25570RGRR?qs=nHyvTUT5UJ%2FNZoBS3n08YQ%3D%3D
+30;U3;SOT-23-5_HandSoldering;1;TPS705;;;https://nl.mouser.com/ProductDetail/Texas-Instruments/TPS7A0533PDBVR?qs=vdi0iO8H4N0h9F4GOtQJBA%3D%3D
+31;U4;PIC16F18446SSOP20PIN;1;PIC16F18446;;;https://nl.mouser.com/ProductDetail/Microchip-Technology/PIC16F18446-I-SS?qs=%2Fha2pyFaduhP4KuaKjx0gUJcLwuIxNcJ%2FUk1k72a2bXp9WFTHIoM5B9qgOl36xhf
+32;J2;ConnectorHorizontalPcb;1;Conn_02x03_motherboardconn;;;https://nl.mouser.com/ProductDetail/Harwin/M20-9980345?qs=%2Fha2pyFaduhF0xjSTgJg%252BsVBHJi0iWyrjB6hHvYB2dS00izpH3xuA8CIFHQxzaOACBDCp5xxNoKR6G4YtIIGUGA0TrjPutLlA5KHnorj7Xmi6YfI%252B8PNBVHXgAkB2zjO7X%252B3Q4Fx6t31DNyOawxxIA%3D%3D

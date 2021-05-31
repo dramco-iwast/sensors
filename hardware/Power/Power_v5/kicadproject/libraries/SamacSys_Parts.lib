@@ -1,0 +1,131 @@
+EESchema-LIBRARY Version 2.4
+#encoding utf-8
+#
+# NE555DR
+#
+DEF NE555DR IC 0 30 Y Y 1 F N
+F0 "IC" 1050 600 50 H V L CNN
+F1 "NE555DR" 1050 500 50 H V L CNN
+F2 "SOIC127P600X175-8N" 1050 400 50 H I L CNN
+F3 "http://www.ti.com/lit/ds/symlink/ne555.pdf" 1050 300 50 H I L CNN
+F4 "Single Precision Timer" 1050 200 50 H I L CNN "Description"
+F5 "1.75" 1050 100 50 H I L CNN "Height"
+F6 "Texas Instruments" 1050 0 50 H I L CNN "Manufacturer_Name"
+F7 "NE555DR" 1050 -100 50 H I L CNN "Manufacturer_Part_Number"
+F8 "595-NE555DR" 1050 -200 50 H I L CNN "Mouser Part Number"
+F9 "https://www.mouser.com/Search/Refine.aspx?Keyword=595-NE555DR" 1050 -300 50 H I L CNN "Mouser Price/Stock"
+F10 "1218414" 1050 -400 50 H I L CNN "RS Part Number"
+F11 "http//uk.rs-online.com/web/p/products/1218414" 1050 -500 50 H I L CNN "RS Price/Stock"
+DRAW
+P 5 0 1 6 200 400 1000 400 1000 -800 200 -800 200 400 N
+X GND 1 600 -1000 200 U 50 50 0 0 B
+X TRIG 2 0 -400 200 R 50 50 0 0 B
+X OUT 3 1200 -200 200 L 50 50 0 0 B
+X ~RESET 4 0 0 200 R 50 50 0 0 B
+X CONT 5 500 600 200 D 50 50 0 0 B
+X THRES 6 0 -300 200 R 50 50 0 0 B
+X DISCH 7 0 -100 200 R 50 50 0 0 B
+X VCC 8 700 600 200 D 50 50 0 0 B
+ENDDRAW
+ENDDEF
+#
+# TS5A2066DCUR
+#
+DEF TS5A2066DCUR IC 0 30 Y Y 1 F N
+F0 "IC" 1100 150 50 H V L CNN
+F1 "TS5A2066DCUR" 1750 400 50 H V L CNN
+F2 "SOP50P310X90-8N" 1750 300 50 H I L CNN
+F3 "http://www.ti.com/lit/ds/symlink/ts5a2066.pdf" 1750 200 50 H I L CNN
+F4 "TEXAS INSTRUMENTS - TS5A2066DCUR - IC, ANLG SW 10R DUAL SPST 8VSSOP" 1750 100 50 H I L CNN "Description"
+F5 "0.9" 1750 500 50 H I L CNN "Height"
+F6 "595-TS5A2066DCUR" 1750 -100 50 H I L CNN "Mouser Part Number"
+F7 "https://www.mouser.com/Search/Refine.aspx?Keyword=595-TS5A2066DCUR" 1750 -200 50 H I L CNN "Mouser Price/Stock"
+F8 "Texas Instruments" 1750 -350 50 H I L CNN "Manufacturer_Name"
+F9 "TS5A2066DCUR" 1750 -450 50 H I L CNN "Manufacturer_Part_Number"
+DRAW
+S 0 0 950 -550 0 1 0 N
+X NO1 1 700 -750 200 U 50 50 0 0 P
+X COM1 2 700 200 200 D 50 50 0 0 P
+X IN2 3 -200 -200 200 R 50 50 0 0 P
+X GND 4 1150 -400 200 L 50 50 0 0 P
+X NO2 5 300 -750 200 U 50 50 0 0 P
+X COM2 6 300 200 200 D 50 50 0 0 P
+X IN1 7 -200 -350 200 R 50 50 0 0 P
+X VCC 8 1150 -200 200 L 50 50 0 0 P
+ENDDRAW
+ENDDEF
+#
+#SamacSys ECAD Model TS5A2066DCUR
+#/240919/349561/2.47/8/3/Integrated Circuit
+DEF TS5A2066DCUR IC 0 30 Y Y 1 F N
+F0 "IC" 950 300 50 H V L CNN
+F1 "TS5A2066DCUR" 950 200 50 H V L CNN
+F2 "SOP50P310X90-8N" 950 100 50 H I L CNN
+F3 "http://www.ti.com/lit/ds/symlink/ts5a2066.pdf" 950 0 50 H I L CNN
+F4 "TEXAS INSTRUMENTS - TS5A2066DCUR - IC, ANLG SW 10R DUAL SPST 8VSSOP" 950 -100 50 H I L CNN "Description"
+F5 "0.9" 950 -200 50 H I L CNN "Height"
+F6 "595-TS5A2066DCUR" 950 -300 50 H I L CNN "Mouser Part Number"
+F7 "https://www.mouser.com/Search/Refine.aspx?Keyword=595-TS5A2066DCUR" 950 -400 50 H I L CNN "Mouser Price/Stock"
+F8 "Texas Instruments" 950 -500 50 H I L CNN "Manufacturer_Name"
+F9 "TS5A2066DCUR" 950 -600 50 H I L CNN "Manufacturer_Part_Number"
+DRAW
+X NO1 1 0 0 200 R 50 50 0 0 P
+X COM1 2 0 -100 200 R 50 50 0 0 P
+X IN2 3 0 -200 200 R 50 50 0 0 P
+X GND 4 0 -300 200 R 50 50 0 0 P
+X VCC 8 1100 0 200 L 50 50 0 0 P
+X IN1 7 1100 -100 200 L 50 50 0 0 P
+X COM2 6 1100 -200 200 L 50 50 0 0 P
+X NO2 5 1100 -300 200 L 50 50 0 0 P
+P 5 0 1 6 200 100 900 100 900 -400 200 -400 200 100 N
+ENDDRAW
+ENDDEF
+#
+#SamacSys ECAD Model BZT52C4V7T-7
+#/740662/349561/2.47/2/3/Zener Diode
+DEF BZT52C4V7T-7 Z 0 30 Y Y 1 F N
+F0 "Z" 400 350 50 H V L CNN
+F1 "BZT52C4V7T-7" 400 250 50 H V L CNN
+F2 "SODFL1608X65N" 400 150 50 H I L CNN
+F3 "" 400 50 50 H I L CNN
+F4 "Zener Diodes" 400 -50 50 H I L CNN "Description"
+F5 "0.65" 400 -150 50 H I L CNN "Height"
+F6 "621-BZT52C4V7T-7" 400 -250 50 H I L CNN "Mouser Part Number"
+F7 "https://www.mouser.co.uk/ProductDetail/Diodes-Incorporated/BZT52C4V7T-7?qs=zLeapIUCO8SroLebLeUNYA%3D%3D" 400 -350 50 H I L CNN "Mouser Price/Stock"
+F8 "Diodes Inc." 400 -450 50 H I L CNN "Manufacturer_Name"
+F9 "BZT52C4V7T-7" 400 -550 50 H I L CNN "Manufacturer_Part_Number"
+DRAW
+X ~ 1 0 0 100 R 50 50 0 0 P
+X ~ 2 600 0 100 L 50 50 0 0 P
+P 2 0 1 6 200 80 200 -80 N
+P 2 0 1 6 200 80 240 100 N
+P 2 0 1 6 160 -100 200 -80 N
+P 2 0 1 6 100 0 200 0 N
+P 2 0 1 6 500 0 400 0 N
+P 4 0 1 10 200 0 400 100 400 -100 200 0 F
+ENDDRAW
+ENDDEF
+#
+#SamacSys ECAD Model VEML7700-TR
+#/334605/349561/2.49/4/3/Integrated Circuit
+DEF VEML7700-TR IC 0 30 Y Y 1 F N
+F0 "IC" 750 300 50 H V L CNN
+F1 "VEML7700-TR" 750 200 50 H V L CNN
+F2 "VEML7700" 750 100 50 H I L CNN
+F3 "http://www.vishay.com/docs/84286/veml7700.pdf" 750 0 50 H I L CNN
+F4 "High Accuracy Ambient Light Sensor with I2C Interface" 750 -100 50 H I L CNN "Description"
+F5 "" 750 -200 50 H I L CNN "Height"
+F6 "78-VEML7700-TR" 750 -300 50 H I L CNN "Mouser Part Number"
+F7 "https://www.mouser.co.uk/ProductDetail/Vishay-Semiconductors/VEML7700-TR/?qs=BcfjnG7NVaWcZHs8m27pyQ%3D%3D" 750 -400 50 H I L CNN "Mouser Price/Stock"
+F8 "Vishay" 750 -500 50 H I L CNN "Manufacturer_Name"
+F9 "VEML7700-TR" 750 -600 50 H I L CNN "Manufacturer_Part_Number"
+DRAW
+X SCL 1 0 0 200 R 50 50 0 0 P
+X VDD 2 0 -100 200 R 50 50 0 0 W
+X GND 3 0 -200 200 R 50 50 0 0 W
+X SDA 4 0 -300 200 R 50 50 0 0 P
+P 5 0 1 6 200 100 700 100 700 -400 200 -400 200 100 N
+ENDDRAW
+ENDDEF
+#
+#End Library
