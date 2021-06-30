@@ -22,6 +22,7 @@
 #include "power.h"
 #include <math.h>
 #include "../system/adcc.h"
+#include "veml7700.h"
 
 #ifdef SENSOR_TYPE
 #if (SENSOR_TYPE == POWER)
@@ -222,10 +223,42 @@ void Enter_sleep(){
     NOP();
 }
 
+// Struct to keep track of sensor data
+veml7700_data light_data;
+// Set initial sensor settings
+veml7700_settings veml7700_config;
+
 
 void Power_Init(){
     
     PMD0bits.IOCMD = 0; // Enable gpio clock
+
+    // Set settings
+    veml7700_config.threshold_high = 0;
+    veml7700_config.threshold_low = 0;
+    veml7700_config.gain = VEML7700_GAIN_X2;
+    veml7700_config.integration_time = VEML7700_INTEGRATION_TIME_100MS;
+    veml7700_config.persistence = VEML7700_PERSISTENCE_1;
+    veml7700_config.interrupts = VEML7700_INTERRUPT_ENABLE;
+    veml7700_config.powersave_en = VEML7700_PS_ENABLE;
+    veml7700_config.powersave = VEML7700_PS_MODE4;
+    veml7700_config.shutdown = VEML7700_POWER_ON;
+    
+    // Light sensor
+    veml7700_power(1);
+    // Init Light Sensor
+    veml7700_init(&veml7700_config, &light_data);
+    
+    __delay_ms(5000);
+    veml7700_getALSConf();
+    __delay_ms(5000);
+    
+    while(1) 
+    {
+        veml7700_getALS(&light_data);
+        __delay_ms(500);
+    }
+    
     
     READY_SetDigitalMode();
     READY_SetDigitalOutput();
@@ -233,10 +266,10 @@ void Power_Init(){
     
     ADC_Init();
     
-    LDR_MEAS_EN_SetDigitalMode();
+//    LDR_MEAS_EN_SetDigitalMode();
     BAT_MEAS_EN_SetDigitalMode();
     
-    LDR_MEAS_EN_SetDigitalOutput();
+//    LDR_MEAS_EN_SetDigitalOutput();
     BAT_MEAS_EN_SetDigitalOutput();
 
     LED0_SetDigitalMode();
@@ -248,11 +281,11 @@ void Power_Init(){
     LED0_SetLow();
     LED1_SetLow();
 
-    LDR_MEAS_EN_SetLow();
+//    LDR_MEAS_EN_SetLow();
     BAT_MEAS_EN_SetLow();
     
-    LDR_VOLT_SetDigitalInput();
-    LDR_VOLT_SetAnalogMode();
+//    LDR_VOLT_SetDigitalInput();
+//    LDR_VOLT_SetAnalogMode();
     
     BAT_VOLT_SetDigitalInput(); 
     BAT_VOLT_SetAnalogMode();
@@ -276,7 +309,7 @@ void Measure(){
 
     ADC_Fixed_Voltage_Ref(ENABLE);
     
-    LDR_MEAS_EN_SetHigh();                              // Enable loadswitch to measure voltage
+//    LDR_MEAS_EN_SetHigh();                              // Enable loadswitch to measure voltage
     BAT_MEAS_EN_SetHigh();                              // Enable loadswitch to measure voltage
 
     LED1_SetHigh();
@@ -284,34 +317,34 @@ void Measure(){
 
     __delay_ms(20);                                     // Delay for settling voltages, 10ms is not long enough
 
-    ADREFbits.PREF0 = 0;   //  Reference voltage to VDD (3V3)
-    ADREFbits.PREF1 = 0;
-    
-    ADCC_GetSingleConversion(LDR_VOLT);                 // first measurement afte reset seems to be fixed and need to be rejected
-    ldrvoltage = ADCC_GetSingleConversion(LDR_VOLT);
-
-    tempValue = ADCC_GetSingleConversion(LDR_VOLT);
-    if(tempValue < ldrvoltage){                         // To make sure it is the lowest/ stable voltage that is captured
-        ldrvoltage = tempValue;
-    }
-    ADREFbits.PREF0 = 1;   //  Reference voltage to FVR module (2.048 V)
-    ADREFbits.PREF1 = 1;
-            
-    floatldrvoltage = ((float)ldrvoltage /4096) * 3.3;    //  Convert ADC calue to voltage
-
-    //  equation calculated from actual measurements with LUX meter - see also excel table in iWAST folder
-    LDR = ( ( 4700 * 3.3 ) / floatldrvoltage ) - 4700;    //  Calculate LDR resistance value (ohm) with R = 4.7k and gamma = 0.7
-    lux = 50000000 * pow( (double) LDR, -1.423 );
-    
-    if(lux > 65535){    //  Limit of the 2 byte format
-        lux = 65535;
-    }
+//    ADREFbits.PREF0 = 0;   //  Reference voltage to VDD (3V3)
+//    ADREFbits.PREF1 = 0;
+//    
+//    ADCC_GetSingleConversion(LDR_VOLT);                 // first measurement afte reset seems to be fixed and need to be rejected
+//    ldrvoltage = ADCC_GetSingleConversion(LDR_VOLT);
+//
+//    tempValue = ADCC_GetSingleConversion(LDR_VOLT);
+//    if(tempValue < ldrvoltage){                         // To make sure it is the lowest/ stable voltage that is captured
+//        ldrvoltage = tempValue;
+//    }
+//    ADREFbits.PREF0 = 1;   //  Reference voltage to FVR module (2.048 V)
+//    ADREFbits.PREF1 = 1;
+//            
+//    floatldrvoltage = ((float)ldrvoltage /4096) * 3.3;    //  Convert ADC calue to voltage
+//
+//    //  equation calculated from actual measurements with LUX meter - see also excel table in iWAST folder
+//    LDR = ( ( 4700 * 3.3 ) / floatldrvoltage ) - 4700;    //  Calculate LDR resistance value (ohm) with R = 4.7k and gamma = 0.7
+//    lux = 50000000 * pow( (double) LDR, -1.423 );
+//    
+//    if(lux > 65535){    //  Limit of the 2 byte format
+//        lux = 65535;
+//    }
     
     ADCC_GetSingleConversion(BAT_VOLT); 
     batvoltage = ADCC_GetSingleConversion(BAT_VOLT);
     floatbatvoltage = ((float)batvoltage /4096) * 2.048 * ((10+8.2)/8.2);   // Convert ADC value to voltage (Resistor divider)
 
-    LDR_MEAS_EN_SetLow();                               // Disable loadswitch to measure voltage
+//    LDR_MEAS_EN_SetLow();                               // Disable loadswitch to measure voltage
     BAT_MEAS_EN_SetLow();                               // Disable loadswitch to measure voltage
 
     LED0_SetLow();

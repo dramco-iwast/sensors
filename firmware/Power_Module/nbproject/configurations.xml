@@ -9,9 +9,11 @@
         <itemPath>system/interrupt.h</itemPath>
         <itemPath>system/system.h</itemPath>
         <itemPath>system/adcc.h</itemPath>
+        <itemPath>system/i2c2.h</itemPath>
       </logicalFolder>
       <itemPath>global.h</itemPath>
       <itemPath>sensor/power.h</itemPath>
+      <itemPath>sensor/veml7700.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -25,9 +27,11 @@
         <itemPath>system/interrupt.c</itemPath>
         <itemPath>system/system.c</itemPath>
         <itemPath>system/adcc.c</itemPath>
+        <itemPath>system/i2c2.c</itemPath>
       </logicalFolder>
       <itemPath>sensor/power.c</itemPath>
       <itemPath>main.c</itemPath>
+      <itemPath>sensor/veml7700.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -185,7 +189,7 @@
                   value="${memories.instruction.ram.ranges}"/>
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="0-3fff"/>
-        <property key="poweroptions.powerenable" value="false"/>
+        <property key="poweroptions.powerenable" value="true"/>
         <property key="programmertogo.imagename" value=""/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
