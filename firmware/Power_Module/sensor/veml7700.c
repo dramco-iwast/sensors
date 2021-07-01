@@ -24,16 +24,16 @@
 #include <string.h>
 
 
-void veml7700_power(bool enable)
+void veml7700_power(VEML7700_POWER enable)
 {
     switch (enable){
-        case 1:
+        case VEML7700_POWER_ENABLE:
             // Set pin high to power VEML7700
             VEML7700_PWR_SetDigitalMode();
             VEML7700_PWR_SetDigitalOutput();
             VEML7700_PWR_SetHigh();
           break;
-        case 0:
+        case VEML7700_POWER_DISABLE:
             // Set pin low to cut power to VEML7700
             VEML7700_PWR_SetDigitalMode();
             VEML7700_PWR_SetDigitalOutput();
@@ -57,6 +57,9 @@ void veml7700_init(veml7700_settings const * p_config, veml7700_data * p_data)
     
     // Configure sensor
     veml7700_configure(p_config);
+    
+    // Get first set of data from light sensor
+    veml7700_getALS(p_data, p_config);
 }
 
 void veml7700_configure(veml7700_settings const * p_config)
@@ -103,11 +106,6 @@ void veml7700_soft_reset()
     veml7700_write(VEML7700_ALS_CONFIG, data, 2);// Send to config register
 }
 
-
-float veml7700_raw_to_lux(uint16_t raw)
-{
-    
-}
 
 void veml7700_read(uint8_t dataAddress, uint8_t *pData, uint16_t nCount)
 {    
@@ -462,8 +460,55 @@ void veml7700_setPowerSaving(bool enable, VEML7700_POWER_SAVE powermode)
     data[1] = (0x00 & 0xFF); // bit 8-16 of this register are reserved and thus not used
     veml7700_write(VEML7700_ALS_POWER_SAVE, data, 2);
 }
- 
-uint16_t veml7700_getALS(veml7700_data * p_data)
+
+
+float veml7700_gain_to_float(VEML7700_GAIN raw_gain)
+{
+    float float_gain;
+    
+    switch(raw_gain){
+        case VEML7700_GAIN_X1:
+            float_gain = 1.00f;
+          break;
+          
+        case VEML7700_GAIN_X2:
+            float_gain = 2.00f;
+          break;
+          
+        case VEML7700_GAIN_1X8:
+            float_gain = 0.125f;
+          break;    
+          
+        case VEML7700_GAIN_1X4:
+            float_gain = 0.25f;
+          break;
+          
+        default:
+            float_gain = 1.00f;
+          break;
+    }
+    
+    return float_gain;
+}
+
+void veml7700_raw_to_lux(veml7700_data * p_data, veml7700_settings const * p_config)
+{
+    // Light level [lx] is (ALS OUTPUT DATA [dec.] / ALS Gain x responsivity). 
+    // Please study also the application note
+    
+    float lux;
+    
+    float gain = veml7700_gain_to_float(p_config->gain);
+    
+    // Calculation according to datasheet: 0.0576 magic value for IT 100ms - GAIN1
+    // TODO make sure this formula keeps correct for different integration times
+    lux = ( p_data->ALS * 0.0576 ) / gain ;
+    
+    // Copy into buffer
+    memcpy(&p_data->lux, &lux, 4);
+}
+
+void veml7700_getALS(veml7700_data * p_data, veml7700_settings const * p_config)
 {
     uint16_t als = 0;
     uint8_t cmd = VEML7700_ALS_DATA;
@@ -472,8 +517,10 @@ uint16_t veml7700_getALS(veml7700_data * p_data)
     als = (data[1] << 8) | data[0];
     
     // Copy into buffer
-    memcpy(p_data->ALS, als, 2);
-    return( als );
+    memcpy(&p_data->ALS, &als, 2);
+    
+    // Convert raw sensor data into a lux value
+    veml7700_raw_to_lux(p_data, p_config);
 }
  
 uint16_t veml7700_getWHITE(void) 

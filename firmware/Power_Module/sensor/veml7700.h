@@ -20,12 +20,21 @@
  *
  */
 
+#ifndef __VEML7700_H__
+#define __VEML7700_H__
+
 /* Header includes */
 #include <xc.h>
 #include <stdint.h>
 #include <stdbool.h>
 #include "../global.h"
 #include "../system/i2c2.h"
+
+
+typedef enum{
+    VEML7700_POWER_DISABLE,
+    VEML7700_POWER_ENABLE,
+}VEML7700_POWER;
 
 typedef enum{
     VEML7700_PS_DISABLE,
@@ -97,7 +106,7 @@ typedef struct{
 ////////////////////////
 
 // Control power to veml7700
-void veml7700_power(bool enable);
+void veml7700_power(VEML7700_POWER enable);
 // Initialization + de-initialization
 void veml7700_init(veml7700_settings const * p_config, veml7700_data * p_data);
 void veml7700_deinit();
@@ -122,7 +131,9 @@ void veml7700_setALS_WL(uint16_t wl);
 void veml7700_setPowerSaving(bool enable, VEML7700_POWER_SAVE powermode);
 
 // Functions to get the measurement data
-uint16_t veml7700_getALS(veml7700_data * p_data);
+float veml7700_gain_to_float(VEML7700_GAIN gain);
+void veml7700_raw_to_lux(veml7700_data * p_data, veml7700_settings const * p_config);
+void veml7700_getALS(veml7700_data * p_data, veml7700_settings const * p_config);
 uint16_t veml7700_getWHITE(void);
 uint16_t veml7700_getALS_INT(void);
 
@@ -248,27 +259,5 @@ void veml7700_write(uint8_t addr, uint8_t* data, uint8_t len);
 #define VEML7700_SCL_SetAnalogMode()      do { ANSELBbits.ANSB6 = 1; } while(0)
 #define VEML7700_SCL_SetDigitalMode()     do { ANSELBbits.ANSB6 = 0; } while(0)
 
-
-// get/set RB5 procedures
-#define RB5_SetHigh()            do { LATBbits.LATB5 = 1; } while(0)
-#define RB5_SetLow()             do { LATBbits.LATB5 = 0; } while(0)
-#define RB5_Toggle()             do { LATBbits.LATB5 = ~LATBbits.LATB5; } while(0)
-#define RB5_GetValue()              PORTBbits.RB5
-#define RB5_SetDigitalInput()    do { TRISBbits.TRISB5 = 1; } while(0)
-#define RB5_SetDigitalOutput()   do { TRISBbits.TRISB5 = 0; } while(0)
-#define RB5_SetPullup()             do { WPUBbits.WPUB5 = 1; } while(0)
-#define RB5_ResetPullup()           do { WPUBbits.WPUB5 = 0; } while(0)
-#define RB5_SetAnalogMode()         do { ANSELBbits.ANSB5 = 1; } while(0)
-#define RB5_SetDigitalMode()        do { ANSELBbits.ANSB5 = 0; } while(0)
-
-// get/set RB6 procedures
-#define RB6_SetHigh()            do { LATBbits.LATB6 = 1; } while(0)
-#define RB6_SetLow()             do { LATBbits.LATB6 = 0; } while(0)
-#define RB6_Toggle()             do { LATBbits.LATB6 = ~LATBbits.LATB6; } while(0)
-#define RB6_GetValue()              PORTBbits.RB6
-#define RB6_SetDigitalInput()    do { TRISBbits.TRISB6 = 1; } while(0)
-#define RB6_SetDigitalOutput()   do { TRISBbits.TRISB6 = 0; } while(0)
-#define RB6_SetPullup()             do { WPUBbits.WPUB6 = 1; } while(0)
-#define RB6_ResetPullup()           do { WPUBbits.WPUB6 = 0; } while(0)
-#define RB6_SetAnalogMode()         do { ANSELBbits.ANSB6 = 1; } while(0)
-#define RB6_SetDigitalMode()        do { ANSELBbits.ANSB6 = 0; } while(0)
+#endif /* VEML7700_H_ */
+/** @}*/
