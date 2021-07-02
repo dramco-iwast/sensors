@@ -30,7 +30,6 @@
 #include "../global.h"
 #include "../system/i2c2.h"
 
-
 typedef enum{
     VEML7700_POWER_DISABLE,
     VEML7700_POWER_ENABLE,
@@ -83,12 +82,6 @@ typedef enum{
     VEML7700_SHUTDOWN,
 }VEML7700_SD;
 
-
-typedef struct{
-    uint16_t ALS;
-    float lux;
-}veml7700_data;
-
 typedef struct{
     uint16_t threshold_high;
     uint16_t threshold_low;
@@ -101,6 +94,11 @@ typedef struct{
     VEML7700_SD shutdown;
 }veml7700_settings;
 
+typedef struct{
+    uint16_t ALS;
+    float lux;
+}veml7700_data_t;
+
 ////////////////////////
 // FUNCTION DECLARATION
 ////////////////////////
@@ -108,10 +106,10 @@ typedef struct{
 // Control power to veml7700
 void veml7700_power(VEML7700_POWER enable);
 // Initialization + de-initialization
-void veml7700_init(veml7700_settings const * p_config, veml7700_data * p_data);
-void veml7700_deinit();
+void veml7700_init(veml7700_settings const * p_config, veml7700_data_t * p_data);
+void veml7700_deinit(void);
 // Reset by clearing config register
-void veml7700_soft_reset();
+void veml7700_soft_reset(void);
 
 // Global function to configure the sensor
 void veml7700_configure(veml7700_settings const * p_config);
@@ -132,8 +130,8 @@ void veml7700_setPowerSaving(bool enable, VEML7700_POWER_SAVE powermode);
 
 // Functions to get the measurement data
 float veml7700_gain_to_float(VEML7700_GAIN gain);
-void veml7700_raw_to_lux(veml7700_data * p_data, veml7700_settings const * p_config);
-void veml7700_getALS(veml7700_data * p_data, veml7700_settings const * p_config);
+void veml7700_raw_to_lux(veml7700_data_t * p_data, veml7700_settings const * p_config);
+void veml7700_getALS(veml7700_data_t * p_data, veml7700_settings const * p_config);
 uint16_t veml7700_getWHITE(void);
 uint16_t veml7700_getALS_INT(void);
 void veml7700_getIntStatus(bool th_low_exceeded, bool th_high_exceeded);
@@ -141,7 +139,6 @@ void veml7700_getIntStatus(bool th_low_exceeded, bool th_high_exceeded);
 // Low level read / write functions to interface veml7700 over i2c
 void veml7700_read(uint8_t dataAddress, uint8_t *pData, uint16_t nCount);
 void veml7700_write(uint8_t addr, uint8_t* data, uint8_t len);
-
 
 #define CHECK_BIT(var,pos) ((var) & (1<<(pos)))
 

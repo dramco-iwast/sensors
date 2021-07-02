@@ -23,7 +23,6 @@
 #include "veml7700.h"
 #include <string.h>
 
-
 void veml7700_power(VEML7700_POWER enable)
 {
     switch (enable){
@@ -50,7 +49,7 @@ void veml7700_power(VEML7700_POWER enable)
     __delay_ms(100);
 }
 
-void veml7700_init(veml7700_settings const * p_config, veml7700_data * p_data)
+void veml7700_init(veml7700_settings const * p_config, veml7700_data_t * p_data)
 {
     // Init I2C interface
     I2C2_Initialize();
@@ -67,6 +66,9 @@ void veml7700_configure(veml7700_settings const * p_config)
     // Reset settings
     // Start in a known state
     veml7700_soft_reset();
+    
+    // Set Sleep mode: awake
+    veml7700_setConf_ALS_SD(VEML7700_POWER_ON);
     
     // Set Gain
     veml7700_setConf_ALS_GAIN(p_config->gain);
@@ -88,8 +90,10 @@ void veml7700_configure(veml7700_settings const * p_config)
     veml7700_setALS_WL(p_config->threshold_low);
 }
 
-void veml7700_deinit()
+void veml7700_deinit(void)
 {
+    // TODO
+    
     // De-init I2C
     
     // De-init veml7700
@@ -98,7 +102,7 @@ void veml7700_deinit()
 
 }
 
-void veml7700_soft_reset()
+void veml7700_soft_reset(void)
 {
     // Reset value config register
     uint8_t data[2] = { 0x00, 0x00 };
@@ -382,7 +386,7 @@ void veml7700_setConf_ALS_SD(VEML7700_SD shutdown)
     veml7700_setALSConf(data);   
 }
 
-uint16_t veml7700_getALSConf() 
+uint16_t veml7700_getALSConf(void) 
 {
     uint8_t data[2];
     uint16_t temp;
@@ -491,7 +495,7 @@ float veml7700_gain_to_float(VEML7700_GAIN raw_gain)
     return float_gain;
 }
 
-void veml7700_raw_to_lux(veml7700_data * p_data, veml7700_settings const * p_config)
+void veml7700_raw_to_lux(veml7700_data_t * p_data, veml7700_settings const * p_config)
 {
     // Light level [lx] is (ALS OUTPUT DATA [dec.] / ALS Gain x responsivity). 
     // Please study also the application note
@@ -508,7 +512,7 @@ void veml7700_raw_to_lux(veml7700_data * p_data, veml7700_settings const * p_con
     memcpy(&p_data->lux, &lux, 4);
 }
 
-void veml7700_getALS(veml7700_data * p_data, veml7700_settings const * p_config)
+void veml7700_getALS(veml7700_data_t * p_data, veml7700_settings const * p_config)
 {
     uint16_t als = 0;
     uint8_t cmd = VEML7700_ALS_DATA;

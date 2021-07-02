@@ -46,7 +46,7 @@ typedef struct{
 }iwast_power_batt_t;
 
 typedef struct{
-    veml7700_data data;
+    veml7700_data_t data;
 }iwast_power_light_t;
 
 typedef struct{

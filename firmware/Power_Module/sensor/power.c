@@ -86,7 +86,7 @@ void Power_Init(){
     // Light sensor
     veml7700_power(VEML7700_POWER_ENABLE);
     // Init Light Sensor
-    veml7700_init(&veml7700_config, &power.meas.light.data);   
+    veml7700_init(&veml7700_config, &power.meas.light.data);  
     
     // Ready pin to motherboard
     comm_init();
@@ -117,18 +117,17 @@ void check_thresholds_exceeded(void)
             power.batt_threshold.overThreshold = true;
         }
     }
-    
 
     if(power.light_threshold.enabled) //  Only set Thresholds when in threshold mode
     {
         // Check sensor interrupt register for exceeded thresholds
-        veml7700_getIntStatus(power.light_threshold.underThreshold, power.light_threshold.overThreshold);
-    
-//        if(power.meas.light.data.lux < power.light_threshold.thresholdLevelLow){
-//            power.light_threshold.underThreshold = true;
-//        }else if(power.meas.light.data.lux > power.light_threshold.thresholdLevelHigh){
-//            power.light_threshold.overThreshold = true;
-//        }
+//        veml7700_getIntStatus(power.light_threshold.underThreshold, power.light_threshold.overThreshold);
+        
+        if(power.meas.light.data.lux < power.light_threshold.thresholdLevelLow){
+            power.light_threshold.underThreshold = true;
+        }else if(power.meas.light.data.lux > power.light_threshold.thresholdLevelHigh){
+            power.light_threshold.overThreshold = true;
+        }
     }
 }
 
@@ -136,9 +135,6 @@ void Measure()
 {
     // Measure battery voltage
     power.meas.batt.voltage = battery_measure();
-
-    // Check if any thresholds are exceeded - notify loop
-    check_thresholds_exceeded();
     
     // Get data from light sensor
     LED0_SetHigh(); // Led on
@@ -146,13 +142,14 @@ void Measure()
     __delay_ms(20);
     LED0_SetLow();  // Led off
     
+    // Check if any thresholds are exceeded - notify loop
+    check_thresholds_exceeded();
+    
     if(power.meas.light.data.lux > 65535){    //  Limit of the 2 byte format
         power.meas.light.data.lux = 65535;
     }
     
     uint16_t datalux = (uint16_t)(round(power.meas.light.data.lux));  //  Do not multiply lux value by 600
-//    uint16_t datalux = (uint16_t)0;  //  Do not multiply lux value by 600
-    
     
     // prepare data for I2C transmission: multiply by 600
     uint16_t databatvoltage = (uint16_t)(round(power.meas.batt.voltage * 10000)); //  multiply by 10000 as in iWAST configurator
@@ -209,7 +206,7 @@ void Power_Loop(){
                 power.batt_threshold.overThreshold = false;
                 power.light_threshold.overThreshold= false;
                 
-                generateInt();
+                generateInt();                
             }
             CLRWDT();               //  Reset wdt timer
             WDTCON0bits.SEN = 1;    //  enable WDT
@@ -261,11 +258,11 @@ void Power_SetThreshold(uint8_t metric, uint8_t * thresholdData){
     // If enabled - set thresholds to veml7700 registers
     if(power.light_threshold.enabled)
     {
+        // Set thresholds
         veml7700_setALS_WH((uint16_t) power.light_threshold.thresholdLevelHigh);
         veml7700_setALS_WL((uint16_t) power.light_threshold.thresholdLevelLow);
     }
 }
-
 
 #endif
 #endif
