@@ -136,10 +136,14 @@ void veml7700_raw_to_lux(veml7700_data * p_data, veml7700_settings const * p_con
 void veml7700_getALS(veml7700_data * p_data, veml7700_settings const * p_config);
 uint16_t veml7700_getWHITE(void);
 uint16_t veml7700_getALS_INT(void);
+void veml7700_getIntStatus(bool th_low_exceeded, bool th_high_exceeded);
 
 // Low level read / write functions to interface veml7700 over i2c
 void veml7700_read(uint8_t dataAddress, uint8_t *pData, uint16_t nCount);
 void veml7700_write(uint8_t addr, uint8_t* data, uint8_t len);
+
+
+#define CHECK_BIT(var,pos) ((var) & (1<<(pos)))
 
 // Bitmasks for config register
 #define VEML7700_ALS_GAIN_MASK      0b0001100000000000

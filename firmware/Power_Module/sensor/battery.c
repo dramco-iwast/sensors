@@ -19,9 +19,16 @@
  *
  */
 
+#include <xc.h>
+#include "../global.h"
+#include "../system/system.h"
 #include "battery.h"
 #include "../system/adcc.h"
 #include "util.h"
+#include "stdint.h"
+#include "string.h"
+#include "stdbool.h"
+
 
 void ADC_Init()
 {
@@ -127,13 +134,16 @@ float battery_measure(void)
     BAT_MEAS_EN_SetHigh(); // Enable loadswitch to measure voltage
     __delay_ms(20);  // Delay for settling voltages, 10ms is not long enough
 
+    //  Reference voltage to FVR module (2.048 V)
+    ADREFbits.PREF0 = 1;
+    ADREFbits.PREF1 = 1;
+    
     // Get ADC value
     ADCC_GetSingleConversion(BAT_VOLT_ADC_CHN); 
-    uint8_t voltage = ADCC_GetSingleConversion(BAT_VOLT_ADC_CHN);
+    uint16_t voltage = ADCC_GetSingleConversion(BAT_VOLT_ADC_CHN);
     // Convert ADC value to voltage (Resistor divider)
     float batt_voltage = ((float)voltage /4096) * 2.048 * ((10+8.2)/8.2);
 
-    
     BAT_MEAS_EN_SetLow(); // Disable loadswitch to measure voltage
     
     ADC_Fixed_Voltage_Ref(BATTERY_FVR_DISABLE);

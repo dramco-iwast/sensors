@@ -543,3 +543,11 @@ uint16_t veml7700_getALS_INT(void)
     return( als_int ) ;
 }
 
+void veml7700_getIntStatus(bool th_low_exceeded, bool th_high_exceeded)
+{
+    uint16_t data;
+    data = veml7700_getALS_INT();
+    
+    th_low_exceeded = CHECK_BIT(data, 15);
+    th_high_exceeded = CHECK_BIT(data, 14);
+}
