@@ -193,6 +193,9 @@ void Power_Loop(){
         {
             WDTCON0bits.SEN = 0;        //  Disable WDT
             
+            // Set timeout to 16 sec
+            WDTCON0 = 0x1C; // 16 second period
+            
             power.ctrl.measurementRunning = true;
             Measure();              //  Measure
             power.ctrl.measurementRunning = false;
@@ -206,8 +209,12 @@ void Power_Loop(){
                 power.batt_threshold.overThreshold = false;
                 power.light_threshold.overThreshold= false;
                 
-                generateInt();                
+                generateInt();   
+                
+                // If threshold is exceeded - set watchdog period to 64 sec
+                WDTCON0 = 0x20; // 64 second period  
             }
+            
             CLRWDT();               //  Reset wdt timer
             WDTCON0bits.SEN = 1;    //  enable WDT
         }else
