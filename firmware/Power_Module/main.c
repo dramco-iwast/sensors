@@ -20,19 +20,14 @@
  *               (DRAMCO / KU Leuven TCG project)
  *               ------------------------
  * 
- * Power Consumption:
- *  26uA --> 10.1uA --> 1.5uA
- * 
  * -------------------------------------------
- * | Current measurements:                     |
+ * | Current measurements:                    |
  * -------------------------------------------
- * |     POWER MODULE ONLY:                   |
- * |             Sleep: +-1.07 - 1.5 uA       |
+ * |     POWER MODULE ONLY - no solar panel:  |
+ * |             Sleep: +- 2.35 uA            |
+ * |             Polled: +- 2.35 uA           |
+ * |             Thresholds based: +- 17.2 uA |
  * -------------------------------------------
- * |     POWER MODULE + MOTHERBOARD:          |
- * |             Sleep: +-26.7uA              |
- * -------------------------------------------
- * 
  */
 
 #include <xc.h>
