@@ -95,13 +95,7 @@ typedef struct sensorApi{
 #pragma config ZCDDIS = OFF    // Zero-cross detect disable->Zero-cross detect circuit is disabled at POR.
 #pragma config PPS1WAY = ON    // Peripheral Pin Select one-way control->The PPSLOCK bit can be cleared and set only once in software
 //#pragma config PPS1WAY = OFF    // Peripheral Pin Select one-way control->The PPSLOCK bit can be cleared and set only once in software
-<<<<<<< HEAD
 #pragma config STVREN = OFF    // Stack Overflow/Underflow Reset Enable bit->Stack Overflow or Underflow will cause a reset
-=======
-//#pragma config STVREN = OFF    // Stack Overflow/Underflow Reset Enable bit->Stack Overflow or Underflow will cause a reset
-#pragma config STVREN = ON    // Stack Overflow/Underflow Reset Enable bit->Stack Overflow or Underflow will cause a reset
-
->>>>>>> parent of 0c30394 (working)
 
 // CONFIG3
 //#pragma config WDTCPS = WDTCPS_10    // WDT Period Select bits->Divider ratio 1:32768
