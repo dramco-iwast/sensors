@@ -35,10 +35,10 @@ void SYSTEM_Initialize(uint8_t slave_address){ //MODIFIED (was void))
     OSCILLATOR_Initialize();
     
     VREGCONbits.VREGPM = 1; // Low-Power Sleep mode enabled in Sleep
-    //Unused I/O pins should be configured as outputs and driven to a logic
-    //low state. Alternatively, connect a1k? to 10 k? resistor to VSS on unused
-    // pins to drive the output to logic low
-    // added from geoffrey code
+//    Unused I/O pins should be configured as outputs and driven to a logic
+//    low state. Alternatively, connect a1k? to 10 k? resistor to VSS on unused
+//    pins to drive the output to logic low
+    
     ANSELA = 0x00;
     ANSELB = 0x00;
     ANSELC = 0x00;
@@ -50,9 +50,9 @@ void SYSTEM_Initialize(uint8_t slave_address){ //MODIFIED (was void))
     LATA = 0xFF;
     LATB = 0xFF;
     LATC = 0xFF;
-
+    
     I2C1_Initialize(slave_address);
-
+    
     GlobalInterruptEnable();
     PeripheralInterruptEnable();
 }
