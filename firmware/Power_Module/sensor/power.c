@@ -233,10 +233,10 @@ void Power_Init(){
     
     ADC_Init();
     
-//    LDR_MEAS_EN_SetDigitalMode();
+    LDR_MEAS_EN_SetDigitalMode();
     BAT_MEAS_EN_SetDigitalMode();
     
-//    LDR_MEAS_EN_SetDigitalOutput();
+    LDR_MEAS_EN_SetDigitalOutput();
     BAT_MEAS_EN_SetDigitalOutput();
 
     LED0_SetDigitalMode();
@@ -248,18 +248,18 @@ void Power_Init(){
     LED0_SetLow();
     LED1_SetLow();
 
-//    LDR_MEAS_EN_SetLow();
+    LDR_MEAS_EN_SetLow();
     BAT_MEAS_EN_SetLow();
     
-//    LDR_VOLT_SetDigitalInput();
-//    LDR_VOLT_SetAnalogMode();
+    LDR_VOLT_SetDigitalInput();
+    LDR_VOLT_SetAnalogMode();
     
     BAT_VOLT_SetDigitalInput(); 
     BAT_VOLT_SetAnalogMode();
     
 #ifdef POWERV2
-//    NCHG_SetDigitalMode();
-//    NCHG_SetDigitalInput();
+    NCHG_SetDigitalMode();
+    NCHG_SetDigitalInput();
 #endif
     
     WDT_Init();
@@ -273,99 +273,99 @@ void Power_Measure(){
 }
 
 void Measure(){
-//
-//    ADC_Fixed_Voltage_Ref(ENABLE);
-//    
-//    LDR_MEAS_EN_SetHigh();                              // Enable loadswitch to measure voltage
-//    BAT_MEAS_EN_SetHigh();                              // Enable loadswitch to measure voltage
-//
+
+    ADC_Fixed_Voltage_Ref(ENABLE);
+    
+    LDR_MEAS_EN_SetHigh();                              // Enable loadswitch to measure voltage
+    BAT_MEAS_EN_SetHigh();                              // Enable loadswitch to measure voltage
+
     LED1_SetHigh();
     LED0_SetHigh();
 
-    __delay_ms(200);                                     // Delay for settling voltages, 10ms is not long enough
-//
-//    ADREFbits.PREF0 = 0;   //  Reference voltage to VDD (3V3)
-//    ADREFbits.PREF1 = 0;
-//    
-//    ADCC_GetSingleConversion(LDR_VOLT);                 // first measurement afte reset seems to be fixed and need to be rejected
-//    ldrvoltage = ADCC_GetSingleConversion(LDR_VOLT);
-//
-//    tempValue = ADCC_GetSingleConversion(LDR_VOLT);
-//    if(tempValue < ldrvoltage){                         // To make sure it is the lowest/ stable voltage that is captured
-//        ldrvoltage = tempValue;
-//    }
-//    ADREFbits.PREF0 = 1;   //  Reference voltage to FVR module (2.048 V)
-//    ADREFbits.PREF1 = 1;
-//            
-//    floatldrvoltage = ((float)ldrvoltage /4096) * 3.3;    //  Convert ADC calue to voltage
-//
-//    //  equation calculated from actual measurements with LUX meter - see also excel table in iWAST folder
-//    LDR = ( ( 4700 * 3.3 ) / floatldrvoltage ) - 4700;    //  Calculate LDR resistance value (ohm) with R = 4.7k and gamma = 0.7
-//    lux = 50000000 * pow( (double) LDR, -1.423 );
-//    
-//    if(lux > 65535){    //  Limit of the 2 byte format
-//        lux = 65535;
-//    }
-//    
-//    ADCC_GetSingleConversion(BAT_VOLT); 
-//    batvoltage = ADCC_GetSingleConversion(BAT_VOLT);
-//    floatbatvoltage = ((float)batvoltage /4096) * 2.048 * ((10+8.2)/8.2);   // Convert ADC value to voltage (Resistor divider)
-//
-//    LDR_MEAS_EN_SetLow();                               // Disable loadswitch to measure voltage
-//    BAT_MEAS_EN_SetLow();                               // Disable loadswitch to measure voltage
-//
+    __delay_ms(20);                                     // Delay for settling voltages, 10ms is not long enough
+
+    ADREFbits.PREF0 = 0;   //  Reference voltage to VDD (3V3)
+    ADREFbits.PREF1 = 0;
+    
+    ADCC_GetSingleConversion(LDR_VOLT);                 // first measurement afte reset seems to be fixed and need to be rejected
+    ldrvoltage = ADCC_GetSingleConversion(LDR_VOLT);
+
+    tempValue = ADCC_GetSingleConversion(LDR_VOLT);
+    if(tempValue < ldrvoltage){                         // To make sure it is the lowest/ stable voltage that is captured
+        ldrvoltage = tempValue;
+    }
+    ADREFbits.PREF0 = 1;   //  Reference voltage to FVR module (2.048 V)
+    ADREFbits.PREF1 = 1;
+            
+    floatldrvoltage = ((float)ldrvoltage /4096) * 3.3;    //  Convert ADC calue to voltage
+
+    //  equation calculated from actual measurements with LUX meter - see also excel table in iWAST folder
+    LDR = ( ( 4700 * 3.3 ) / floatldrvoltage ) - 4700;    //  Calculate LDR resistance value (ohm) with R = 4.7k and gamma = 0.7
+    lux = 50000000 * pow( (double) LDR, -1.423 );
+    
+    if(lux > 65535){    //  Limit of the 2 byte format
+        lux = 65535;
+    }
+    
+    ADCC_GetSingleConversion(BAT_VOLT); 
+    batvoltage = ADCC_GetSingleConversion(BAT_VOLT);
+    floatbatvoltage = ((float)batvoltage /4096) * 2.048 * ((10+8.2)/8.2);   // Convert ADC value to voltage (Resistor divider)
+
+    LDR_MEAS_EN_SetLow();                               // Disable loadswitch to measure voltage
+    BAT_MEAS_EN_SetLow();                               // Disable loadswitch to measure voltage
+
     LED0_SetLow();
     LED1_SetLow();
-//
-//    /* Check for battery empty */
-//    if(floatbatvoltage < 3.3){
-//        batteryundervoltage = 1;
-//    }
-//
-//    /* If battery is charging again, unset the batteryundervoltage parameter */
-//    if(batteryundervoltage == 1){
-//        if(floatbatvoltage>3.5){
-//            batteryundervoltage = 0;
-//        }
-//    }
-//    
-//    if(batThresholdEnabled) //  Only set Thresholds when in threshold mode
-//    {
-//        /* Threshold operation */
-//        if(floatbatvoltage < floatBatThresholdLevelLow){
-//            underThresholdBatt = true;
-//        }
-//
-//        if(floatbatvoltage > floatBatThresholdLevelHigh){
-//            overThresholdBatt = true;
-//        }
-//    }
-//    
-//    if(ldrThresholdEnabled) //  Only set Thresholds when in threshold mode
-//    {
-//        if(lux < floatLDRThresholdLevelLow){
-//            underThresholdLDR = true;
-//        }
-//        if(lux > floatLDRThresholdLevelHigh){
-//            overThresholdLDR = true;
-//        }
-//    }
-//    
-//    // prepare data for I2C transmission: multiply by 600
-//    uint16_t databatvoltage = (uint16_t)(round(floatbatvoltage * 10000)); //  multiply by 10000 as in iWAST configurator
-//    uint16_t datalux = (uint16_t)(round(lux));  //  Do not multiply lux value by 600
+
+    /* Check for battery empty */
+    if(floatbatvoltage < 3.3){
+        batteryundervoltage = 1;
+    }
+
+    /* If battery is charging again, unset the batteryundervoltage parameter */
+    if(batteryundervoltage == 1){
+        if(floatbatvoltage>3.5){
+            batteryundervoltage = 0;
+        }
+    }
     
-    measurementData[0] = 0x01;//(uint8_t)(databatvoltage>>8);
+    if(batThresholdEnabled) //  Only set Thresholds when in threshold mode
+    {
+        /* Threshold operation */
+        if(floatbatvoltage < floatBatThresholdLevelLow){
+            underThresholdBatt = true;
+        }
+
+        if(floatbatvoltage > floatBatThresholdLevelHigh){
+            overThresholdBatt = true;
+        }
+    }
+    
+    if(ldrThresholdEnabled) //  Only set Thresholds when in threshold mode
+    {
+        if(lux < floatLDRThresholdLevelLow){
+            underThresholdLDR = true;
+        }
+        if(lux > floatLDRThresholdLevelHigh){
+            overThresholdLDR = true;
+        }
+    }
+    
+    // prepare data for I2C transmission: multiply by 600
+    uint16_t databatvoltage = (uint16_t)(round(floatbatvoltage * 10000)); //  multiply by 10000 as in iWAST configurator
+    uint16_t datalux = (uint16_t)(round(lux));  //  Do not multiply lux value by 600
+    
+    measurementData[0] = 0x01; //(uint8_t)(databatvoltage>>8);
     measurementData[1] = 0x02; //(uint8_t)(databatvoltage);
 
     measurementData[2] = 0x03; //(uint8_t)(datalux>>8);
-    measurementData[3] = 0x04;//(uint8_t)(datalux);
+    measurementData[3] = 0x04; //(uint8_t)(datalux);
 
 //    measurementData[4] = (uint8_t)(batteryundervoltage);
 //    measurementData[5] = 0x00;
     
     //  TODO: check if it's necessary to enable and disable fixed voltage ref every time
-//    ADC_Fixed_Voltage_Ref(DISABLE);
+    ADC_Fixed_Voltage_Ref(DISABLE);
 }
 
 //  TODO needs changes
