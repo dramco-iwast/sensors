@@ -93,8 +93,7 @@ typedef struct sensorApi{
 #pragma config BOREN = OFF    // Brown-out reset enable bits->Brown-out Reset Enabled, SBOREN bit is ignored
 #pragma config BORV = LO    // Brown-out Reset Voltage Selection->Brown-out Reset Voltage (VBOR) set to 2.45V
 #pragma config ZCDDIS = OFF    // Zero-cross detect disable->Zero-cross detect circuit is disabled at POR.
-#pragma config PPS1WAY = ON    // Peripheral Pin Select one-way control->The PPSLOCK bit can be cleared and set only once in software
-//#pragma config PPS1WAY = OFF    // Peripheral Pin Select one-way control->The PPSLOCK bit can be cleared and set only once in software
+#pragma config PPS1WAY = OFF    // Peripheral Pin Select one-way control->The PPSLOCK bit can be cleared and set only once in software
 #pragma config STVREN = OFF    // Stack Overflow/Underflow Reset Enable bit->Stack Overflow or Underflow will cause a reset
 
 // CONFIG3
