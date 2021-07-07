@@ -1,7 +1,11 @@
 #include <xc.h>
 #include "interrupt.h"
 #include "i2c1.h"
+<<<<<<< HEAD
 //#include "i2c2.h"
+=======
+#include "i2c2.h"
+>>>>>>> parent of 0c30394 (working)
 #include "adcc.h"
 
 void DefaultSensorInterruptHandler(void);
@@ -30,6 +34,7 @@ void __interrupt() Interrupt_Handler (void)
         {
             ADCC_ISR();
         }
+<<<<<<< HEAD
 //        else if(PIE3bits.BCL2IE == 1 && PIR3bits.BCL2IF == 1)
 //        {
 //            I2C2_BusCollisionISR();
@@ -38,6 +43,16 @@ void __interrupt() Interrupt_Handler (void)
 //        {
 //            I2C2_ISR();
 //        } 
+=======
+        else if(PIE3bits.BCL2IE == 1 && PIR3bits.BCL2IF == 1)
+        {
+            I2C2_BusCollisionISR();
+        }
+        else if(PIE3bits.SSP2IE == 1 && PIR3bits.SSP2IF == 1)
+        {
+            I2C2_ISR();
+        } 
+>>>>>>> parent of 0c30394 (working)
         else
         {
             //Unhandled Interrupt
