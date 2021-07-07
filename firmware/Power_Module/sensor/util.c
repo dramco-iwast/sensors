@@ -37,34 +37,34 @@ void LED_Init(void)
 }
 
 /* Animation when Sound Module is plugged in */
-void LED_Blink(void)
-{
-    // startup animation
-    LED0_SetHigh();
-    __delay_ms(100);
-    LED0_SetLow();
-    __delay_ms(100);
-    LED0_SetHigh();
-    __delay_ms(100);
-    LED0_SetLow();
-    __delay_ms(100);
-    LED0_SetHigh();
-    __delay_ms(100);
-    LED0_SetLow();
-    __delay_ms(500);
-    
-    LED1_SetHigh();
-    __delay_ms(100);
-    LED1_SetLow();
-    __delay_ms(100);
-    LED1_SetHigh();
-    __delay_ms(100);
-    LED1_SetLow();
-    __delay_ms(100);
-    LED1_SetHigh();
-    __delay_ms(100);
-    LED1_SetLow();
-}
+//void LED_Blink(void)
+//{
+//    // startup animation
+//    LED0_SetHigh();
+//    __delay_ms(100);
+//    LED0_SetLow();
+//    __delay_ms(100);
+//    LED0_SetHigh();
+//    __delay_ms(100);
+//    LED0_SetLow();
+//    __delay_ms(100);
+//    LED0_SetHigh();
+//    __delay_ms(100);
+//    LED0_SetLow();
+//    __delay_ms(500);
+//    
+//    LED1_SetHigh();
+//    __delay_ms(100);
+//    LED1_SetLow();
+//    __delay_ms(100);
+//    LED1_SetHigh();
+//    __delay_ms(100);
+//    LED1_SetLow();
+//    __delay_ms(100);
+//    LED1_SetHigh();
+//    __delay_ms(100);
+//    LED1_SetLow();
+//}
 
 void comm_init(void)
 {

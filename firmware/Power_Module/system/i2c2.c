@@ -199,7 +199,7 @@ static volatile I2C_TR_QUEUE_ENTRY         *p_i2c2_current = NULL;
 void I2C2_Initialize(void)
 {
     // Initialize pins
-    PMD6bits.MSSP2MD = 0; // enable MSSP1
+    PMD6bits.MSSP2MD = 0; // enable MSSP2
     
     VEML7700_SCL_SetLow();
     VEML7700_SCL_SetDigitalInput();

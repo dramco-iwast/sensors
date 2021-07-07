@@ -1,0 +1,1546 @@
+%CMF
+# %PSECTS Section
+# For each object file, details of its psects are enumerated here.
+# The begining of the section is indicated by %PSECTS.  The first
+# line indicates the name of the first object file, e.g.
+#    $foo.obj
+# Each line that follows describes a psect in that object file, until
+# the next object file.  The lines that describe a psect have the
+# format:
+#    <psect name> <class name> <space> <link address> <load addresses> <length> <delta>
+# All addresses and the length are given in unqualified hexadecimal
+# in delta units.  Any other numeric values are decimal.
+%PSECTS
+$C:\Users\JONACA~1\AppData\Local\Temp\se14xg.o
+reset_vec CODE 0 0 0 2 2
+end_init CODE 0 43 43 2 2
+config CONFIG 4 8007 8007 5 2
+$dist/soundlevel/production\Power_Module.production.o
+cinit CODE 0 45 45 31 2
+text1 CODE 0 F9A F9A D 2
+text2 CODE 0 7C0 7C0 1F 2
+text3 CODE 0 FD7 FD7 13 2
+text4 CODE 0 F68 F68 6 2
+text5 CODE 0 6DB 6DB 2B 2
+text6 CODE 0 1DE 1DE 11C 2
+text7 CODE 0 FEA FEA 16 2
+text8 CODE 0 3E1 3E1 B2 2
+text9 CODE 0 531 531 75 2
+text10 CODE 0 F5E F5E 4 2
+text11 CODE 0 5A6 5A6 64 2
+text12 CODE 0 FA7 FA7 E 2
+text13 CODE 0 706 706 2B 2
+text14 CODE 0 7F9 7F9 7 2
+text15 CODE 0 77E 77E 21 2
+text16 CODE 0 F62 F62 6 2
+text17 CODE 0 493 493 9E 2
+text18 CODE 0 75B 75B 23 2
+text19 CODE 0 6AC 6AC 2F 2
+text20 CODE 0 F7A F7A 8 2
+text21 CODE 0 731 731 2A 2
+text22 CODE 0 79F 79F 21 2
+text23 CODE 0 F82 F82 C 2
+text24 CODE 0 F5B F5B 3 2
+text26 CODE 0 76 76 168 2
+text27 CODE 0 7DF 7DF 1A 2
+text28 CODE 0 FC4 FC4 13 2
+text29 CODE 0 F58 F58 3 2
+text30 CODE 0 65D 65D 4F 2
+text31 CODE 0 60A 60A 53 2
+text32 CODE 0 2 2 1 2
+text33 CODE 0 FB5 FB5 F 2
+text34 CODE 0 F57 F57 1 2
+idataCOMMON CODE 0 3 3 1 2
+maintext CODE 0 2FA 2FA E7 2
+cstackCOMMON COMMON 1 70 70 6 1
+cstackBANK0 BANK0 1 20 20 25 1
+cstackBANK3 BANK3 1 1A0 1A0 1A 1
+inittext CODE 0 F74 F74 6 2
+intentry CODE 0 4 4 3F 2
+bssBANK0 BANK0 1 45 45 12 1
+bssBANK1 BANK1 1 A0 A0 42 1
+bssBANK2 BANK2 1 120 120 40 1
+idataBANK1 CODE 0 F8E F8E C 2
+dataBANK1 BANK1 1 E2 E2 C 1
+dataCOMMON COMMON 1 7B 7B 1 1
+clrtext CODE 0 F6E F6E 6 2
+bssCOMMON COMMON 1 76 76 5 1
+config CONFIG 4 8007 8007 5 2
+# %UNUSED Section
+# This section enumerates the unused ranges of each CLASS. Each entry
+# is described on a single line as follows:
+#    <class name> <range> <delta>
+# Addresses given in the range are in hexadecimal and units of delta.
+%UNUSED
+RAM 57-6F 1
+RAM EE-EF 1
+RAM 160-16F 1
+RAM 1BA-1EF 1
+RAM 220-26F 1
+RAM 2A0-2EF 1
+RAM 320-36F 1
+RAM 3A0-3EF 1
+RAM 420-46F 1
+RAM 4A0-4EF 1
+RAM 520-56F 1
+RAM 5A0-5EF 1
+RAM 620-66F 1
+RAM 6A0-6EF 1
+RAM 720-76F 1
+RAM 7A0-7EF 1
+RAM 820-86F 1
+RAM 8A0-8EF 1
+RAM 920-96F 1
+RAM 9A0-9EF 1
+RAM A20-A6F 1
+RAM AA0-AEF 1
+RAM B20-B6F 1
+RAM BA0-BEF 1
+RAM C20-C6F 1
+RAM CA0-CBF 1
+BANK0 57-6F 1
+BANK1 EE-EF 1
+BANK2 160-16F 1
+BANK3 1BA-1EF 1
+BANK4 220-26F 1
+BANK5 2A0-2EF 1
+BANK6 320-36F 1
+BANK7 3A0-3EF 1
+BANK8 420-46F 1
+BANK9 4A0-4EF 1
+CONST 800-F56 2
+CONST 1000-3FFF 2
+ENTRY 800-F56 2
+ENTRY 1000-3FFF 2
+IDLOC 8000-8003 2
+SFR10 500-51F 1
+SFR11 580-59F 1
+SFR12 600-61F 1
+SFR13 680-69F 1
+SFR14 700-71F 1
+SFR15 780-79F 1
+SFR16 800-81F 1
+SFR17 880-89F 1
+SFR18 900-91F 1
+SFR19 980-99F 1
+SFR20 A00-A1F 1
+SFR21 A80-A9F 1
+SFR22 B00-B1F 1
+SFR23 B80-B9F 1
+SFR24 C00-C1F 1
+SFR25 C80-C9F 1
+SFR26 D00-D6F 1
+SFR27 D80-DEF 1
+SFR28 E00-E6F 1
+SFR29 E80-EEF 1
+SFR30 F00-F6F 1
+SFR31 F80-FEF 1
+SFR32 1000-106F 1
+SFR33 1080-10EF 1
+SFR34 1100-116F 1
+SFR35 1180-11EF 1
+SFR36 1200-126F 1
+SFR37 1280-12EF 1
+SFR38 1300-136F 1
+SFR39 1380-13EF 1
+SFR40 1400-146F 1
+SFR41 1480-14EF 1
+SFR42 1500-156F 1
+SFR43 1580-15EF 1
+SFR44 1600-166F 1
+SFR45 1680-16EF 1
+SFR46 1700-176F 1
+SFR47 1780-17EF 1
+SFR48 1800-186F 1
+SFR49 1880-18EF 1
+SFR50 1900-196F 1
+SFR51 1980-19EF 1
+SFR52 1A00-1A6F 1
+SFR53 1A80-1AEF 1
+SFR54 1B00-1B6F 1
+SFR55 1B80-1BEF 1
+SFR56 1C00-1C6F 1
+SFR57 1C80-1CEF 1
+SFR58 1D00-1D6F 1
+SFR59 1D80-1DEF 1
+SFR60 1E00-1E6F 1
+SFR61 1E80-1EEF 1
+SFR62 1F00-1F6F 1
+SFR63 1F80-1FEF 1
+STACK 210A-27EF 1
+CODE 800-F56 2
+CODE 1000-3FFF 2
+SFR0 0-1F 1
+SFR1 80-9F 1
+SFR2 100-11F 1
+SFR3 180-19F 1
+SFR4 200-21F 1
+SFR5 280-29F 1
+SFR6 300-31F 1
+SFR7 380-39F 1
+SFR8 400-41F 1
+SFR9 480-49F 1
+BANK10 520-56F 1
+BANK11 5A0-5EF 1
+BANK12 620-66F 1
+BANK13 6A0-6EF 1
+BANK14 720-76F 1
+BANK15 7A0-7EF 1
+BANK16 820-86F 1
+BANK17 8A0-8EF 1
+BANK18 920-96F 1
+BANK19 9A0-9EF 1
+BANK20 A20-A6F 1
+BANK21 AA0-AEF 1
+BANK22 B20-B6F 1
+BANK23 BA0-BEF 1
+BANK24 C20-C6F 1
+BANK25 CA0-CBF 1
+BIGRAM 2000-27EF 1
+COMMON 7C-7D 1
+EEDATA F000-F0FF 2
+STRCODE 800-F56 2
+STRCODE 1000-3FFF 2
+STRING 800-F56 2
+STRING 1000-3FFF 2
+# %LINETAB Section
+# This section enumerates the file/line to address mappings.
+# The beginning of the section is indicated by %LINETAB.
+# The first line indicates the name of the first object file, e.g.
+#   $foo.obj
+# Each line that follows describes a single mapping until the next
+# object file.  Mappings have the following format:
+#    <address> <psect name> <class name> ><line number>:<file name>
+# The address is absolute and given given in unqualified hex 
+# in delta units of the psect. All mappings within an object file
+# are in ascending order of addresses.
+# All other numeric values are in decimal.
+%LINETAB
+$dist/soundlevel/production\Power_Module.production.o
+45 cinit CODE >7729:C:\Users\JONACA~1\AppData\Local\Temp\se14x.s
+45 cinit CODE >7732:C:\Users\JONACA~1\AppData\Local\Temp\se14x.s
+45 cinit CODE >7926:C:\Users\JONACA~1\AppData\Local\Temp\se14x.s
+48 cinit CODE >7927:C:\Users\JONACA~1\AppData\Local\Temp\se14x.s
+49 cinit CODE >7931:C:\Users\JONACA~1\AppData\Local\Temp\se14x.s
+4A cinit CODE >7932:C:\Users\JONACA~1\AppData\Local\Temp\se14x.s
+4B cinit CODE >7933:C:\Users\JONACA~1\AppData\Local\Temp\se14x.s
+4C cinit CODE >7934:C:\Users\JONACA~1\AppData\Local\Temp\se14x.s
+4D cinit CODE >7935:C:\Users\JONACA~1\AppData\Local\Temp\se14x.s
+4E cinit CODE >7936:C:\Users\JONACA~1\AppData\Local\Temp\se14x.s
+4F cinit CODE >7937:C:\Users\JONACA~1\AppData\Local\Temp\se14x.s
+50 cinit CODE >7938:C:\Users\JONACA~1\AppData\Local\Temp\se14x.s
+51 cinit CODE >7939:C:\Users\JONACA~1\AppData\Local\Temp\se14x.s
+52 cinit CODE >7940:C:\Users\JONACA~1\AppData\Local\Temp\se14x.s
+55 cinit CODE >7957:C:\Users\JONACA~1\AppData\Local\Temp\se14x.s
+56 cinit CODE >7958:C:\Users\JONACA~1\AppData\Local\Temp\se14x.s
+57 cinit CODE >7959:C:\Users\JONACA~1\AppData\Local\Temp\se14x.s
+58 cinit CODE >7960:C:\Users\JONACA~1\AppData\Local\Temp\se14x.s
+59 cinit CODE >7961:C:\Users\JONACA~1\AppData\Local\Temp\se14x.s
+5A cinit CODE >7965:C:\Users\JONACA~1\AppData\Local\Temp\se14x.s
+5B cinit CODE >7966:C:\Users\JONACA~1\AppData\Local\Temp\se14x.s
+5C cinit CODE >7967:C:\Users\JONACA~1\AppData\Local\Temp\se14x.s
+5D cinit CODE >7968:C:\Users\JONACA~1\AppData\Local\Temp\se14x.s
+5E cinit CODE >7969:C:\Users\JONACA~1\AppData\Local\Temp\se14x.s
+5F cinit CODE >7970:C:\Users\JONACA~1\AppData\Local\Temp\se14x.s
+62 cinit CODE >7974:C:\Users\JONACA~1\AppData\Local\Temp\se14x.s
+63 cinit CODE >7975:C:\Users\JONACA~1\AppData\Local\Temp\se14x.s
+64 cinit CODE >7976:C:\Users\JONACA~1\AppData\Local\Temp\se14x.s
+65 cinit CODE >7977:C:\Users\JONACA~1\AppData\Local\Temp\se14x.s
+66 cinit CODE >7978:C:\Users\JONACA~1\AppData\Local\Temp\se14x.s
+67 cinit CODE >7979:C:\Users\JONACA~1\AppData\Local\Temp\se14x.s
+6A cinit CODE >7983:C:\Users\JONACA~1\AppData\Local\Temp\se14x.s
+6B cinit CODE >7984:C:\Users\JONACA~1\AppData\Local\Temp\se14x.s
+6C cinit CODE >7985:C:\Users\JONACA~1\AppData\Local\Temp\se14x.s
+6D cinit CODE >7986:C:\Users\JONACA~1\AppData\Local\Temp\se14x.s
+6E cinit CODE >7987:C:\Users\JONACA~1\AppData\Local\Temp\se14x.s
+6F cinit CODE >7988:C:\Users\JONACA~1\AppData\Local\Temp\se14x.s
+72 cinit CODE >7994:C:\Users\JONACA~1\AppData\Local\Temp\se14x.s
+72 cinit CODE >7996:C:\Users\JONACA~1\AppData\Local\Temp\se14x.s
+73 cinit CODE >7997:C:\Users\JONACA~1\AppData\Local\Temp\se14x.s
+74 cinit CODE >7998:C:\Users\JONACA~1\AppData\Local\Temp\se14x.s
+4 intentry CODE >11:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/interrupt.c
+6 intentry CODE >15:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/interrupt.c
+C intentry CODE >23:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/interrupt.c
+10 intentry CODE >25:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/interrupt.c
+19 intentry CODE >27:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/interrupt.c
+1C intentry CODE >28:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/interrupt.c
+1D intentry CODE >29:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/interrupt.c
+25 intentry CODE >31:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/interrupt.c
+28 intentry CODE >32:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/interrupt.c
+29 intentry CODE >33:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/interrupt.c
+31 intentry CODE >35:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/interrupt.c
+34 intentry CODE >36:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/interrupt.c
+35 intentry CODE >37:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/interrupt.c
+3D intentry CODE >39:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/interrupt.c
+40 intentry CODE >40:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/interrupt.c
+41 intentry CODE >44:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/interrupt.c
+41 intentry CODE >50:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/interrupt.c
+F57 text34 CODE >322:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/adcc.c
+F57 text34 CODE >325:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/adcc.c
+FB5 text33 CODE >309:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/adcc.c
+FB5 text33 CODE >312:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/adcc.c
+FB7 text33 CODE >314:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/adcc.c
+FBE text33 CODE >315:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/adcc.c
+FC3 text33 CODE >316:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/adcc.c
+2 text32 CODE >56:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/interrupt.c
+2 text32 CODE >57:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/interrupt.c
+2 text32 CODE >58:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/interrupt.c
+60A text31 CODE >213:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+60B text31 CODE >218:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+60C text31 CODE >220:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+60C text31 CODE >222:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+60F text31 CODE >223:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+610 text31 CODE >230:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+614 text31 CODE >231:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+615 text31 CODE >232:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+617 text31 CODE >233:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+618 text31 CODE >238:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+61E text31 CODE >240:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+62C text31 CODE >227:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+635 text31 CODE >246:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+636 text31 CODE >247:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+637 text31 CODE >250:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+63E text31 CODE >251:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+64A text31 CODE >252:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+64B text31 CODE >254:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+64E text31 CODE >218:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+65C text31 CODE >263:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+65D text30 CODE >133:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+65D text30 CODE >134:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+65D text30 CODE >139:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+65F text30 CODE >140:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+660 text30 CODE >141:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+665 text30 CODE >142:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+669 text30 CODE >143:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+671 text30 CODE >145:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+675 text30 CODE >146:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+676 text30 CODE >149:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+67A text30 CODE >150:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+67D text30 CODE >154:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+681 text30 CODE >158:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+685 text30 CODE >159:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+686 text30 CODE >161:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+68A text30 CODE >164:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+68E text30 CODE >165:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+690 text30 CODE >166:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+694 text30 CODE >167:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+695 text30 CODE >168:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+699 text30 CODE >167:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+699 text30 CODE >169:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+6A5 text30 CODE >170:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+6A5 text30 CODE >173:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+6A7 text30 CODE >174:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+6A9 text30 CODE >176:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+6AB text30 CODE >177:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+F58 text29 CODE >759:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+F58 text29 CODE >762:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+F5A text29 CODE >763:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+FC4 text28 CODE >582:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+FC4 text28 CODE >586:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+FC8 text28 CODE >589:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+FCF text28 CODE >591:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+FD3 text28 CODE >592:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+FD4 text28 CODE >593:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+FD4 text28 CODE >595:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+FD6 text28 CODE >598:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+7DF text27 CODE >600:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+7E0 text27 CODE >603:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+7E2 text27 CODE >606:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+7EC text27 CODE >609:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+7F7 text27 CODE >613:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+7F8 text27 CODE >615:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+76 text26 CODE >252:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+76 text26 CODE >260:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+78 text26 CODE >264:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+7D text26 CODE >267:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+7E text26 CODE >268:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+80 text26 CODE >269:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+89 text26 CODE >272:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+8B text26 CODE >280:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+8B text26 CODE >282:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+8F text26 CODE >285:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+93 text26 CODE >286:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+9A text26 CODE >287:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+9F text26 CODE >289:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+A3 text26 CODE >292:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+A9 text26 CODE >295:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+AD text26 CODE >300:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+AE text26 CODE >303:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+B4 text26 CODE >306:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+B5 text26 CODE >307:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+B5 text26 CODE >310:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+B7 text26 CODE >313:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+BD text26 CODE >318:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+BD text26 CODE >323:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+C0 text26 CODE >330:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+C0 text26 CODE >332:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+C5 text26 CODE >334:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+CA text26 CODE >335:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+CE text26 CODE >336:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+CF text26 CODE >340:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+D7 text26 CODE >343:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+DB text26 CODE >347:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+E0 text26 CODE >348:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+E1 text26 CODE >352:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+E7 text26 CODE >358:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+E7 text26 CODE >360:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+EC text26 CODE >362:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+F1 text26 CODE >363:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+F5 text26 CODE >364:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+F6 text26 CODE >365:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+F6 text26 CODE >369:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+F7 text26 CODE >373:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+10A text26 CODE >376:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+10B text26 CODE >379:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+10F text26 CODE >400:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+114 text26 CODE >403:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+11B text26 CODE >404:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+120 text26 CODE >405:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+125 text26 CODE >431:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+128 text26 CODE >432:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+12C text26 CODE >435:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+131 text26 CODE >436:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+132 text26 CODE >445:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+132 text26 CODE >448:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+137 text26 CODE >451:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+13C text26 CODE >454:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+13E text26 CODE >457:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+142 text26 CODE >459:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+143 text26 CODE >463:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+14B text26 CODE >468:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+14F text26 CODE >471:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+155 text26 CODE >473:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+159 text26 CODE >474:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+15A text26 CODE >475:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+15A text26 CODE >483:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+15D text26 CODE >493:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+169 text26 CODE >498:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+169 text26 CODE >501:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+16E text26 CODE >505:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+173 text26 CODE >508:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+177 text26 CODE >511:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+179 text26 CODE >512:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+17A text26 CODE >513:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+17A text26 CODE >515:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+17B text26 CODE >516:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+181 text26 CODE >525:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+185 text26 CODE >528:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+187 text26 CODE >530:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+188 text26 CODE >535:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+195 text26 CODE >538:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+19B text26 CODE >545:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+19D text26 CODE >548:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+1A2 text26 CODE >549:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+1A3 text26 CODE >550:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+1A3 text26 CODE >555:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+1A5 text26 CODE >557:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+1A8 text26 CODE >561:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+1AA text26 CODE >562:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+1AB text26 CODE >568:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+1AF text26 CODE >569:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+1B0 text26 CODE >575:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+1B4 text26 CODE >576:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+1B8 text26 CODE >577:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+1B9 text26 CODE >278:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+1DD text26 CODE >580:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c2.c
+F5B text24 CODE >179:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+F5B text24 CODE >180:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+F5D text24 CODE >181:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+F82 text23 CODE >187:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+F84 text23 CODE >188:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+F8C text23 CODE >189:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+F8D text23 CODE >190:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+79F text22 CODE >192:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+7A1 text22 CODE >193:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+7B6 text22 CODE >194:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+7BF text22 CODE >195:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+731 text21 CODE >197:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+731 text21 CODE >199:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+732 text21 CODE >200:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+744 text21 CODE >201:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+748 text21 CODE >199:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+755 text21 CODE >203:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+759 text21 CODE >204:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+75A text21 CODE >205:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+F7A text20 CODE >183:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+F7A text20 CODE >184:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+F81 text20 CODE >185:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+6AC text19 CODE >425:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+6AC text19 CODE >427:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+6B4 text19 CODE >428:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+6BD text19 CODE >429:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+6C6 text19 CODE >430:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+6D0 text19 CODE >431:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+6DA text19 CODE >434:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+75B text18 CODE >136:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+75B text18 CODE >139:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+75D text18 CODE >142:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+75E text18 CODE >145:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+761 text18 CODE >148:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+763 text18 CODE >150:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+764 text18 CODE >152:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+765 text18 CODE >154:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+766 text18 CODE >156:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+767 text18 CODE >158:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+768 text18 CODE >160:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+769 text18 CODE >162:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+76A text18 CODE >164:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+76B text18 CODE >166:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+76D text18 CODE >168:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+76E text18 CODE >170:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+76F text18 CODE >172:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+770 text18 CODE >174:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+771 text18 CODE >176:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+772 text18 CODE >178:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+773 text18 CODE >180:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+774 text18 CODE >182:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+775 text18 CODE >184:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+777 text18 CODE >186:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+778 text18 CODE >188:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+779 text18 CODE >195:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+77B text18 CODE >197:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+77D text18 CODE >198:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+493 text17 CODE >99:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+493 text17 CODE >102:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+495 text17 CODE >103:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+4A1 text17 CODE >104:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+4A3 text17 CODE >105:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+4AF text17 CODE >106:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+4B1 text17 CODE >107:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+4BD text17 CODE >108:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+4BF text17 CODE >109:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+4CB text17 CODE >110:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+4CD text17 CODE >111:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+4D9 text17 CODE >112:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+4DB text17 CODE >113:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+4E8 text17 CODE >115:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+4EA text17 CODE >116:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+4F6 text17 CODE >117:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+4F8 text17 CODE >118:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+504 text17 CODE >119:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+506 text17 CODE >120:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+512 text17 CODE >121:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+514 text17 CODE >122:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+520 text17 CODE >123:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+522 text17 CODE >124:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+52E text17 CODE >125:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+530 text17 CODE >126:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+F62 text16 CODE >128:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+F62 text16 CODE >132:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+F65 text16 CODE >133:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+F67 text16 CODE >134:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+77E text15 CODE >226:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+77E text15 CODE >228:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+780 text15 CODE >230:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+782 text15 CODE >231:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+784 text15 CODE >232:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+785 text15 CODE >234:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+788 text15 CODE >237:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+78A text15 CODE >240:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+78C text15 CODE >242:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+78E text15 CODE >243:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+78F text15 CODE >245:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+791 text15 CODE >246:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+792 text15 CODE >248:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+793 text15 CODE >249:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+794 text15 CODE >252:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+795 text15 CODE >257:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+796 text15 CODE >258:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+798 text15 CODE >265:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+79B text15 CODE >268:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+79E text15 CODE >269:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+7F9 text14 CODE >216:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+7F9 text14 CODE >218:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+7FB text14 CODE >219:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+7FC text14 CODE >220:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+7FD text14 CODE >221:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+7FE text14 CODE >222:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+7FF text14 CODE >223:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+706 text13 CODE >275:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+706 text13 CODE >282:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+708 text13 CODE >283:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+709 text13 CODE >285:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+716 text13 CODE >317:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+718 text13 CODE >318:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+719 text13 CODE >358:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+71E text13 CODE >359:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+724 text13 CODE >361:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+72A text13 CODE >362:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+730 text13 CODE >369:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+FA7 text12 CODE >465:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+FA7 text12 CODE >466:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+FA9 text12 CODE >467:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+FB2 text12 CODE >468:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+FB4 text12 CODE >469:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+5A6 text11 CODE >372:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+5A6 text11 CODE >374:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+5AC text11 CODE >376:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+5B1 text11 CODE >378:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+5B2 text11 CODE >380:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+5B7 text11 CODE >382:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+5B8 text11 CODE >384:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+5BB text11 CODE >385:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+5BE text11 CODE >386:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+5C0 text11 CODE >388:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+5C3 text11 CODE >389:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+5C4 text11 CODE >390:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+5C6 text11 CODE >391:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+5CB text11 CODE >393:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+5CE text11 CODE >394:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+5D1 text11 CODE >395:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+5D3 text11 CODE >397:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+5D7 text11 CODE >399:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+5DC text11 CODE >401:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+5DE text11 CODE >403:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+5E1 text11 CODE >404:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+5E4 text11 CODE >405:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+5E6 text11 CODE >407:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+5FA text11 CODE >409:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+5FB text11 CODE >410:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+5FC text11 CODE >411:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+5FD text11 CODE >412:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+5FE text11 CODE >414:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+601 text11 CODE >415:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+601 text11 CODE >416:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+602 text11 CODE >417:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+604 text11 CODE >418:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+605 text11 CODE >420:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+609 text11 CODE >421:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+609 text11 CODE >423:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+F5E text10 CODE >271:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+F5E text10 CODE >272:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+F61 text10 CODE >273:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+531 text9 CODE >62:C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\float.c
+531 text9 CODE >64:C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\float.c
+53E text9 CODE >65:C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\float.c
+545 text9 CODE >67:C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\float.c
+549 text9 CODE >68:C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\float.c
+54F text9 CODE >66:C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\float.c
+556 text9 CODE >71:C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\float.c
+55A text9 CODE >72:C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\float.c
+564 text9 CODE >73:C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\float.c
+56A text9 CODE >70:C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\float.c
+56A text9 CODE >74:C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\float.c
+571 text9 CODE >76:C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\float.c
+573 text9 CODE >77:C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\float.c
+579 text9 CODE >75:C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\float.c
+583 text9 CODE >79:C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\float.c
+587 text9 CODE >80:C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\float.c
+58D text9 CODE >81:C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\float.c
+58F text9 CODE >82:C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\float.c
+59F text9 CODE >83:C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\float.c
+5A4 text9 CODE >84:C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\float.c
+5A5 text9 CODE >86:C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\float.c
+3E1 text8 CODE >56:C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\ftdiv.c
+3E1 text8 CODE >63:C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\ftdiv.c
+3F3 text8 CODE >64:C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\ftdiv.c
+3FA text8 CODE >65:C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\ftdiv.c
+40B text8 CODE >66:C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\ftdiv.c
+412 text8 CODE >67:C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\ftdiv.c
+418 text8 CODE >68:C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\ftdiv.c
+41D text8 CODE >69:C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\ftdiv.c
+42D text8 CODE >70:C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\ftdiv.c
+43D text8 CODE >71:C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\ftdiv.c
+441 text8 CODE >72:C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\ftdiv.c
+442 text8 CODE >73:C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\ftdiv.c
+448 text8 CODE >74:C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\ftdiv.c
+449 text8 CODE >75:C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\ftdiv.c
+44F text8 CODE >76:C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\ftdiv.c
+453 text8 CODE >78:C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\ftdiv.c
+459 text8 CODE >79:C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\ftdiv.c
+467 text8 CODE >80:C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\ftdiv.c
+46D text8 CODE >81:C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\ftdiv.c
+46E text8 CODE >83:C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\ftdiv.c
+474 text8 CODE >84:C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\ftdiv.c
+47A text8 CODE >85:C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\ftdiv.c
+492 text8 CODE >86:C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\ftdiv.c
+FEA text7 CODE >28:C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\lwtoft.c
+FEA text7 CODE >30:C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\lwtoft.c
+FFF text7 CODE >31:C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\lwtoft.c
+1DE text6 CODE >436:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+1DE text6 CODE >438:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+1E4 text6 CODE >440:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+1EC text6 CODE >441:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+207 text6 CODE >442:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+22F text6 CODE >443:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+24C text6 CODE >444:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+274 text6 CODE >446:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+27A text6 CODE >448:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+282 text6 CODE >449:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+29D text6 CODE >450:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+2B3 text6 CODE >451:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+2D0 text6 CODE >452:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+2E6 text6 CODE >455:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+2F1 text6 CODE >457:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+2F3 text6 CODE >458:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+2F4 text6 CODE >459:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+2F6 text6 CODE >460:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+2F7 text6 CODE >461:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+2F9 text6 CODE >463:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\sensor/power.c
+6DB text5 CODE >92:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+6DD text5 CODE >94:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+6DF text5 CODE >96:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+6E1 text5 CODE >97:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+6E2 text5 CODE >99:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+6E4 text5 CODE >100:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+6E5 text5 CODE >102:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+6E8 text5 CODE >103:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+6EB text5 CODE >104:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+6ED text5 CODE >105:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+6F0 text5 CODE >108:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+6F2 text5 CODE >110:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+6F4 text5 CODE >112:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+6F6 text5 CODE >114:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+6F7 text5 CODE >116:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+6F8 text5 CODE >118:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+6FA text5 CODE >120:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+6FE text5 CODE >124:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+700 text5 CODE >126:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+701 text5 CODE >128:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+702 text5 CODE >129:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+703 text5 CODE >130:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+705 text5 CODE >131:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/i2c1.c
+F68 text4 CODE >67:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/system.c
+F68 text4 CODE >69:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/system.c
+F6B text4 CODE >71:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/system.c
+F6D text4 CODE >72:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/system.c
+FD7 text3 CODE >75:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/system.c
+FD7 text3 CODE >77:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/system.c
+FDA text3 CODE >79:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/system.c
+FDB text3 CODE >81:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/system.c
+FDD text3 CODE >82:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/system.c
+FDF text3 CODE >83:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/system.c
+FE1 text3 CODE >84:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/system.c
+FE3 text3 CODE >85:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/system.c
+FE5 text3 CODE >86:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/system.c
+FE7 text3 CODE >87:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/system.c
+FE9 text3 CODE >88:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/system.c
+7C0 text2 CODE >32:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/system.c
+7C2 text2 CODE >34:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/system.c
+7C5 text2 CODE >35:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/system.c
+7C8 text2 CODE >37:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/system.c
+7CA text2 CODE >42:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/system.c
+7CC text2 CODE >43:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/system.c
+7CD text2 CODE >44:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/system.c
+7CE text2 CODE >46:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/system.c
+7D0 text2 CODE >47:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/system.c
+7D1 text2 CODE >48:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/system.c
+7D2 text2 CODE >50:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/system.c
+7D4 text2 CODE >51:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/system.c
+7D6 text2 CODE >52:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/system.c
+7D8 text2 CODE >54:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/system.c
+7DC text2 CODE >56:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/system.c
+7DD text2 CODE >57:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/system.c
+7DE text2 CODE >58:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\system/system.c
+F9A text1 CODE >134:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\main.c
+F9A text1 CODE >135:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\main.c
+FA6 text1 CODE >136:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\main.c
+2FA maintext CODE >56:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\main.c
+2FA maintext CODE >59:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\main.c
+2FE maintext CODE >61:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\main.c
+304 maintext CODE >64:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\main.c
+30D maintext CODE >65:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\main.c
+31F maintext CODE >66:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\main.c
+32B maintext CODE >69:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\main.c
+333 maintext CODE >71:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\main.c
+337 maintext CODE >73:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\main.c
+338 maintext CODE >77:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\main.c
+33E maintext CODE >78:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\main.c
+348 maintext CODE >79:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\main.c
+349 maintext CODE >84:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\main.c
+34F maintext CODE >85:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\main.c
+359 maintext CODE >86:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\main.c
+35A maintext CODE >91:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\main.c
+360 maintext CODE >92:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\main.c
+36A maintext CODE >93:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\main.c
+36B maintext CODE >98:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\main.c
+374 maintext CODE >99:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\main.c
+375 maintext CODE >104:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\main.c
+37B maintext CODE >105:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\main.c
+37C maintext CODE >106:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\main.c
+385 maintext CODE >105:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\main.c
+396 maintext CODE >112:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\main.c
+399 maintext CODE >113:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\main.c
+39A maintext CODE >117:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\main.c
+3A3 maintext CODE >120:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\main.c
+3AC maintext CODE >121:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\main.c
+3B3 maintext CODE >122:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\main.c
+3C6 maintext CODE >73:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\main.c
+3DE maintext CODE >130:C:\Users\JonaCappelle\Documents\Github\sensors\firmware\Power_Module\main.c
+F6E clrtext CODE >7946:C:\Users\JONACA~1\AppData\Local\Temp\se14x.s
+F6E clrtext CODE >7947:C:\Users\JONACA~1\AppData\Local\Temp\se14x.s
+F6F clrtext CODE >7948:C:\Users\JONACA~1\AppData\Local\Temp\se14x.s
+F6F clrtext CODE >7949:C:\Users\JONACA~1\AppData\Local\Temp\se14x.s
+F70 clrtext CODE >7950:C:\Users\JONACA~1\AppData\Local\Temp\se14x.s
+F71 clrtext CODE >7951:C:\Users\JONACA~1\AppData\Local\Temp\se14x.s
+F72 clrtext CODE >7952:C:\Users\JONACA~1\AppData\Local\Temp\se14x.s
+F73 clrtext CODE >7953:C:\Users\JONACA~1\AppData\Local\Temp\se14x.s
+F74 inittext CODE >7915:C:\Users\JONACA~1\AppData\Local\Temp\se14x.s
+F74 inittext CODE >7916:C:\Users\JONACA~1\AppData\Local\Temp\se14x.s
+F75 inittext CODE >7917:C:\Users\JONACA~1\AppData\Local\Temp\se14x.s
+F75 inittext CODE >7918:C:\Users\JONACA~1\AppData\Local\Temp\se14x.s
+F76 inittext CODE >7919:C:\Users\JONACA~1\AppData\Local\Temp\se14x.s
+F77 inittext CODE >7920:C:\Users\JONACA~1\AppData\Local\Temp\se14x.s
+F78 inittext CODE >7921:C:\Users\JONACA~1\AppData\Local\Temp\se14x.s
+F79 inittext CODE >7922:C:\Users\JONACA~1\AppData\Local\Temp\se14x.s
+# %SYMTAB Section
+# An enumeration of all symbols in the program.
+# The beginning of the section is indicated by %SYMTAB.
+# Each line describes a single symbol as follows:
+#    <label> <value> [-]<load-adj> <class> <space> <psect> <file-name>
+# The value and load-adj are both in unqualified hexadecimal.
+# All other numeric values are in decimal.  The load-adj is the
+# quantity one needs to add to the symbol value in order to obtain the load
+# address of the symbol.  This value may be signed. If the symbol
+# was defined in a psect then <psect> will be "-". File-name
+# is the name of the object file in which the symbol was defined.
+%SYMTAB
+___latbits 3 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+__LdataBANK1 0 0 ABS 0 dataBANK1 -
+_I2C1_Initialize DB6 0 CODE 0 text5 dist/soundlevel/production\Power_Module.production.o
+__Hspace_0 1000 0 ABS 0 - -
+__Hspace_1 1BA 0 ABS 0 - -
+__Hspace_2 0 0 ABS 0 - -
+__Hspace_3 0 0 ABS 0 - -
+__Hspace_4 10013 0 ABS 0 - -
+__HidataBANK1 0 0 ABS 0 idataBANK1 -
+_SSP1STATbits 18F 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+___ftdiv@exp 3A 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
+_underThresholdLDR CF 0 BANK1 1 bssBANK1 dist/soundlevel/production\Power_Module.production.o
+_batThresholdEnabled 4B 0 BANK0 1 bssBANK0 dist/soundlevel/production\Power_Module.production.o
+_I2C1_TxBufferEmpty 1EF4 0 CODE 0 text20 dist/soundlevel/production\Power_Module.production.o
+__size_of_Enter_sleep 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+__Heeprom_data 0 0 EEDATA 3 eeprom_data -
+I2C2_MasterWrite@trBlock DB 0 BANK1 1 bssBANK1 dist/soundlevel/production\Power_Module.production.o
+__size_of_I2C2_BusCollisionISR 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_PMD_Initialize 1FAE 0 CODE 0 text3 dist/soundlevel/production\Power_Module.production.o
+_I2C1_StatusCallback C14 0 CODE 0 text31 dist/soundlevel/production\Power_Module.production.o
+I2C1_SetTransmitData@len 22 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
+__Hstrings 0 0 ABS 0 strings -
+_LATA 18 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_LATB 19 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_LATC 1A 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_PMD0 796 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_PMD1 797 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_PMD2 798 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_PMD3 799 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_PMD4 79A 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_PMD5 79B 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_PMD6 79C 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_PMD7 79D 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+___sp 0 0 STACK 2 stack C:\Users\JONACA~1\AppData\Local\Temp\se14xg.o
+_main 5F4 0 CODE 0 maintext dist/soundlevel/production\Power_Module.production.o
+btemp 7E 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_i2c1_rx_buffer 140 0 BANK2 1 bssBANK2 dist/soundlevel/production\Power_Module.production.o
+start 86 0 CODE 0 init C:\Users\JONACA~1\AppData\Local\Temp\se14xg.o
+__size_of___ftdiv 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+__size_of_main 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+I2C2_ISR@pi2c_buf_ptr 4E 0 BANK0 1 bssBANK0 dist/soundlevel/production\Power_Module.production.o
+__HbssCOMMON 0 0 ABS 0 bssCOMMON -
+__size_of_I2C1_ISR 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+__size_of_I2C2_ISR 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_Interrupt_Handler 8 0 CODE 0 intentry dist/soundlevel/production\Power_Module.production.o
+__end_of_I2C2_BusCollisionISR 1EB6 0 CODE 0 text29 dist/soundlevel/production\Power_Module.production.o
+_measurementRunning CD 0 BANK1 1 bssBANK1 dist/soundlevel/production\Power_Module.production.o
+___ftdiv@f1 2F 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
+___ftdiv@f2 2C 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
+___ftdiv@f3 37 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
+__LidataBANK1 0 0 ABS 0 idataBANK1 -
+_ldrThresholdLevelLow C2 0 BANK1 1 bssBANK1 dist/soundlevel/production\Power_Module.production.o
+__Hpowerup 0 0 CODE 0 powerup -
+I2C1_ISR@ctr 73 0 COMMON 1 cstackCOMMON dist/soundlevel/production\Power_Module.production.o
+__size_of_ADCC_ISR 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+__end_of_I2C2_FunctionComplete 1FAE 0 CODE 0 text28 dist/soundlevel/production\Power_Module.production.o
+_i2c2_state 51 0 BANK0 1 bssBANK0 dist/soundlevel/production\Power_Module.production.o
+__size_of_ADC_Init 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+__size_of_ADCC_DefaultInterruptHandler 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+__size_of_SYSTEM_Initialize 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+__HdataCOMMON 0 0 ABS 0 dataCOMMON -
+intlevel0 0 0 ENTRY 0 functab C:\Users\JONACA~1\AppData\Local\Temp\se14xg.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\JONACA~1\AppData\Local\Temp\se14xg.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\JONACA~1\AppData\Local\Temp\se14xg.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\JONACA~1\AppData\Local\Temp\se14xg.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\JONACA~1\AppData\Local\Temp\se14xg.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\JONACA~1\AppData\Local\Temp\se14xg.o
+__LbssCOMMON 0 0 ABS 0 bssCOMMON -
+__end_of_ADCC_DefaultInterruptHandler 1EB0 0 CODE 0 text34 dist/soundlevel/production\Power_Module.production.o
+wtemp0 7E 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+__Hfunctab 0 0 ENTRY 0 functab -
+__end_of_PMD_Initialize 1FD4 0 CODE 0 text3 dist/soundlevel/production\Power_Module.production.o
+_I2C2_FunctionComplete 1F88 0 CODE 0 text28 dist/soundlevel/production\Power_Module.production.o
+_batThresholdLevelHigh C8 0 BANK1 1 bssBANK1 dist/soundlevel/production\Power_Module.production.o
+__Hclrtext 0 0 ABS 0 clrtext -
+I2C2_MasterRead@trBlock D7 0 BANK1 1 bssBANK1 dist/soundlevel/production\Power_Module.production.o
+__pidataCOMMON 6 0 CODE 0 idataCOMMON dist/soundlevel/production\Power_Module.production.o
+_ADACCH 97 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_ADACCL 96 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_ADACCU 98 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_ADACQH 10D 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_ADACQL 10C 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_ADCON0 111 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_ADCON1 112 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_ADCON2 113 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_ADCON3 114 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_ADERRH 91 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_ADERRL 90 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_ADLTHH 8D 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_ADLTHL 8C 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_ADPREH 110 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_ADPREL 10F 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_ADRESH 9E 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_ADRESL 9D 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_ADSTAT 115 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_ADUTHH 8F 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_ADUTHL 8E 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_ANSELA 1F38 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_ANSELB 1F43 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_ANSELC 1F4E 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+__size_of_I2C1_Initialize 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_DefaultSensorInterruptHandler 4 0 CODE 0 text32 dist/soundlevel/production\Power_Module.production.o
+_I2C1_ISR CBA 0 CODE 0 text30 dist/soundlevel/production\Power_Module.production.o
+_I2C2_ISR EC 0 CODE 0 text26 dist/soundlevel/production\Power_Module.production.o
+__LdataCOMMON 0 0 ABS 0 dataCOMMON -
+Power_GetData@length 21 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
+_floatLDRThresholdLevelHigh B3 0 BANK1 1 bssBANK1 dist/soundlevel/production\Power_Module.production.o
+__end_of_I2C1_ISR D58 0 CODE 0 text30 dist/soundlevel/production\Power_Module.production.o
+__end_of_I2C2_ISR 3BC 0 CODE 0 text26 dist/soundlevel/production\Power_Module.production.o
+main@ack 1B5 0 BANK3 1 cstackBANK3 dist/soundlevel/production\Power_Module.production.o
+main@cmd 1B8 0 BANK3 1 cstackBANK3 dist/soundlevel/production\Power_Module.production.o
+main@len 1B9 0 BANK3 1 cstackBANK3 dist/soundlevel/production\Power_Module.production.o
+main@mnr 1B7 0 BANK3 1 cstackBANK3 dist/soundlevel/production\Power_Module.production.o
+_ADCC_ISR 1F6A 0 CODE 0 text33 dist/soundlevel/production\Power_Module.production.o
+__Lmaintext 0 0 ABS 0 maintext -
+__end_of_I2C1_GetCommand 1F1C 0 CODE 0 text23 dist/soundlevel/production\Power_Module.production.o
+_FVRCON 90C 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+__end_of_I2C1_StatusCallback CBA 0 CODE 0 text31 dist/soundlevel/production\Power_Module.production.o
+_ADC_Init EB6 0 CODE 0 text18 dist/soundlevel/production\Power_Module.production.o
+__end_of_LED_Blink A62 0 CODE 0 text17 dist/soundlevel/production\Power_Module.production.o
+__size_of___ftpack 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+__end_of___ftdiv 926 0 CODE 0 text8 dist/soundlevel/production\Power_Module.production.o
+__size_of_LED_Blink 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_Measure E0C 0 CODE 0 text13 dist/soundlevel/production\Power_Module.production.o
+__end_of_ADCC_ISR 1F88 0 CODE 0 text33 dist/soundlevel/production\Power_Module.production.o
+_INLVLB 1F47 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+__end_of_ADC_Init EFC 0 CODE 0 text18 dist/soundlevel/production\Power_Module.production.o
+___stackhi 27EF 0 ABS 0 - C:\Users\JONACA~1\AppData\Local\Temp\se14xg.o
+___stacklo 210A 0 ABS 0 - C:\Users\JONACA~1\AppData\Local\Temp\se14xg.o
+_cmdReceived 54 0 BANK0 1 bssBANK0 dist/soundlevel/production\Power_Module.production.o
+__LidataCOMMON 0 0 ABS 0 idataCOMMON -
+_Power_Measure 1EBC 0 CODE 0 text10 dist/soundlevel/production\Power_Module.production.o
+_LED_Blink 926 0 CODE 0 text17 dist/soundlevel/production\Power_Module.production.o
+__size_of___lwtoft 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_SSP2CON1bits 19A 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+start_initialization 8A 0 CODE 0 cinit dist/soundlevel/production\Power_Module.production.o
+_SSP2CON2bits 19B 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_OSCFRQ 893 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_p_i2c2_trb_current 76 0 COMMON 1 bssCOMMON dist/soundlevel/production\Power_Module.production.o
+_TRISAbits 12 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_TRISBbits 13 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_TRISCbits 14 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_ADFLTRH 95 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_ADFLTRL 94 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_ADPREVH 9C 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_ADPREVL 9B 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_ADSTPTH 93 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_ADSTPTL 92 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_ldrThresholdLevelHigh C4 0 BANK1 1 bssBANK1 dist/soundlevel/production\Power_Module.production.o
+_RB4PPS 1F1C 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_RB5PPS 1F1D 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_RB6PPS 1F1E 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_RB7PPS 1F1F 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+__end_of_SYSTEM_Initialize FBE 0 CODE 0 text2 dist/soundlevel/production\Power_Module.production.o
+_I2C1_GetCommand 1F04 0 CODE 0 text23 dist/soundlevel/production\Power_Module.production.o
+clear_ram0 1EDC 0 CODE 0 clrtext dist/soundlevel/production\Power_Module.production.o
+__pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
+__pcstackBANK3 1A0 0 BANK3 1 cstackBANK3 dist/soundlevel/production\Power_Module.production.o
+_Enter_sleep FF2 0 CODE 0 text14 dist/soundlevel/production\Power_Module.production.o
+_I2C1_SetTransmitData E62 0 CODE 0 text21 dist/soundlevel/production\Power_Module.production.o
+___ftpack A62 0 CODE 0 text9 dist/soundlevel/production\Power_Module.production.o
+___ftpack@arg 20 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
+___ftpack@exp 23 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
+__size_of_I2C1_TxBufferEmpty 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+___int_sp 0 0 STACK 2 stack C:\Users\JONACA~1\AppData\Local\Temp\se14xg.o
+__end_of___ftpack B4C 0 CODE 0 text9 dist/soundlevel/production\Power_Module.production.o
+_sensorAPI E2 0 BANK1 1 dataBANK1 dist/soundlevel/production\Power_Module.production.o
+__Hbank0 0 0 ABS 0 bank0 -
+__Hbank1 0 0 ABS 0 bank1 -
+__Hbank2 0 0 ABS 0 bank2 -
+__Hbank3 0 0 ABS 0 bank3 -
+__Hbank4 0 0 ABS 0 bank4 -
+__Hbank5 0 0 ABS 0 bank5 -
+__Hbank6 0 0 ABS 0 bank6 -
+__Hbank7 0 0 ABS 0 bank7 -
+__Hbank8 0 0 ABS 0 bank8 -
+__Hbank9 0 0 ABS 0 bank9 -
+__Hcinit EC 0 CODE 0 cinit -
+__size_of_OSCILLATOR_Initialize 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+__Hsfr10 0 0 ABS 0 sfr10 -
+__Hsfr11 0 0 ABS 0 sfr11 -
+__Hsfr12 0 0 ABS 0 sfr12 -
+__Hsfr13 0 0 ABS 0 sfr13 -
+__Hsfr14 0 0 ABS 0 sfr14 -
+__Hsfr15 0 0 ABS 0 sfr15 -
+__Hsfr16 0 0 ABS 0 sfr16 -
+__Hsfr17 0 0 ABS 0 sfr17 -
+__Hsfr18 0 0 ABS 0 sfr18 -
+__Hsfr19 0 0 ABS 0 sfr19 -
+__Hsfr20 0 0 ABS 0 sfr20 -
+__Hsfr21 0 0 ABS 0 sfr21 -
+__Hsfr22 0 0 ABS 0 sfr22 -
+__Hsfr23 0 0 ABS 0 sfr23 -
+__Hsfr24 0 0 ABS 0 sfr24 -
+__Hsfr25 0 0 ABS 0 sfr25 -
+__Hsfr26 0 0 ABS 0 sfr26 -
+__Hsfr27 0 0 ABS 0 sfr27 -
+__Hsfr28 0 0 ABS 0 sfr28 -
+__Hsfr29 0 0 ABS 0 sfr29 -
+__Hsfr30 0 0 ABS 0 sfr30 -
+__Hsfr31 0 0 ABS 0 sfr31 -
+__Hsfr32 0 0 ABS 0 sfr32 -
+__Hsfr33 0 0 ABS 0 sfr33 -
+__Hsfr34 0 0 ABS 0 sfr34 -
+__Hsfr35 0 0 ABS 0 sfr35 -
+__Hsfr36 0 0 ABS 0 sfr36 -
+__Hsfr37 0 0 ABS 0 sfr37 -
+__Hsfr38 0 0 ABS 0 sfr38 -
+__Hsfr39 0 0 ABS 0 sfr39 -
+__Hsfr40 0 0 ABS 0 sfr40 -
+__Hsfr41 0 0 ABS 0 sfr41 -
+__Hsfr42 0 0 ABS 0 sfr42 -
+__Hsfr43 0 0 ABS 0 sfr43 -
+__Hsfr44 0 0 ABS 0 sfr44 -
+__Hsfr45 0 0 ABS 0 sfr45 -
+__Hsfr46 0 0 ABS 0 sfr46 -
+__Hsfr47 0 0 ABS 0 sfr47 -
+__Hsfr48 0 0 ABS 0 sfr48 -
+__Hsfr49 0 0 ABS 0 sfr49 -
+__Hsfr50 0 0 ABS 0 sfr50 -
+__Hsfr51 0 0 ABS 0 sfr51 -
+__Hsfr52 0 0 ABS 0 sfr52 -
+__Hsfr53 0 0 ABS 0 sfr53 -
+__Hsfr54 0 0 ABS 0 sfr54 -
+__Hsfr55 0 0 ABS 0 sfr55 -
+__Hsfr56 0 0 ABS 0 sfr56 -
+__Hsfr57 0 0 ABS 0 sfr57 -
+__Hsfr58 0 0 ABS 0 sfr58 -
+__Hsfr59 0 0 ABS 0 sfr59 -
+__Hsfr60 0 0 ABS 0 sfr60 -
+__Hsfr61 0 0 ABS 0 sfr61 -
+__Hsfr62 0 0 ABS 0 sfr62 -
+__Hsfr63 0 0 ABS 0 sfr63 -
+__Hstack 0 0 STACK 2 stack -
+_VREGCONbits 812 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+__Hbank10 0 0 ABS 0 bank10 -
+__Hbank11 0 0 ABS 0 bank11 -
+__Hbank12 0 0 ABS 0 bank12 -
+__Hbank13 0 0 ABS 0 bank13 -
+__Hbank14 0 0 ABS 0 bank14 -
+__Hbank15 0 0 ABS 0 bank15 -
+__Hbank16 0 0 ABS 0 bank16 -
+__Hbank17 0 0 ABS 0 bank17 -
+__Hbank18 0 0 ABS 0 bank18 -
+__Hbank19 0 0 ABS 0 bank19 -
+__Hbank20 0 0 ABS 0 bank20 -
+__Hbank21 0 0 ABS 0 bank21 -
+__Hbank22 0 0 ABS 0 bank22 -
+__Hbank23 0 0 ABS 0 bank23 -
+__Hbank24 0 0 ABS 0 bank24 -
+__Hbank25 0 0 ABS 0 bank25 -
+__Hbank26 0 0 BANK26 1 bank26 -
+__Hbank27 0 0 BANK27 1 bank27 -
+__Hbank28 0 0 BANK28 1 bank28 -
+__Hbank29 0 0 BANK29 1 bank29 -
+__Hbank30 0 0 BANK30 1 bank30 -
+__Hbank31 0 0 BANK31 1 bank31 -
+__Hbank32 0 0 BANK32 1 bank32 -
+__Hbank33 0 0 BANK33 1 bank33 -
+__Hbank34 0 0 BANK34 1 bank34 -
+__Hbank35 0 0 BANK35 1 bank35 -
+__Hbank36 0 0 BANK36 1 bank36 -
+__Hbank37 0 0 BANK37 1 bank37 -
+__Hbank38 0 0 BANK38 1 bank38 -
+__Hbank39 0 0 BANK39 1 bank39 -
+__Hbank40 0 0 BANK40 1 bank40 -
+__Hbank41 0 0 BANK41 1 bank41 -
+__Hbank42 0 0 BANK42 1 bank42 -
+__Hbank43 0 0 BANK43 1 bank43 -
+__Hbank44 0 0 BANK44 1 bank44 -
+__Hbank45 0 0 BANK45 1 bank45 -
+__Hbank46 0 0 BANK46 1 bank46 -
+__Hbank47 0 0 BANK47 1 bank47 -
+__Hbank48 0 0 BANK48 1 bank48 -
+__Hbank49 0 0 BANK49 1 bank49 -
+__Hbank50 0 0 BANK50 1 bank50 -
+__Hbank51 0 0 BANK51 1 bank51 -
+__Hbank52 0 0 BANK52 1 bank52 -
+__Hbank53 0 0 BANK53 1 bank53 -
+__Hbank54 0 0 BANK54 1 bank54 -
+__Hbank55 0 0 BANK55 1 bank55 -
+__Hbank56 0 0 BANK56 1 bank56 -
+__Hbank57 0 0 BANK57 1 bank57 -
+__Hbank58 0 0 BANK58 1 bank58 -
+__Hbank59 0 0 BANK59 1 bank59 -
+__Hbank60 0 0 BANK60 1 bank60 -
+__Hbank61 0 0 BANK61 1 bank61 -
+__Hbank62 0 0 BANK62 1 bank62 -
+__Hbank63 0 0 BANK63 1 bank63 -
+__Hbigram 0 0 ABS 0 bigram -
+__Hmaintext 0 0 ABS 0 maintext -
+__Hcommon 0 0 ABS 0 common -
+__Hconfig 10018 0 CONFIG 4 config -
+___lwtoft 1FD4 0 CODE 0 text7 dist/soundlevel/production\Power_Module.production.o
+_overThresholdBatt D2 0 BANK1 1 bssBANK1 dist/soundlevel/production\Power_Module.production.o
+_Power_Init EFC 0 CODE 0 text15 dist/soundlevel/production\Power_Module.production.o
+_Power_Loop B4C 0 CODE 0 text11 dist/soundlevel/production\Power_Module.production.o
+_WDTCON0bits 80C 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+__Lbank0 0 0 ABS 0 bank0 -
+__Lbank1 0 0 ABS 0 bank1 -
+__Lbank2 0 0 ABS 0 bank2 -
+__Lbank3 0 0 ABS 0 bank3 -
+__Lbank4 0 0 ABS 0 bank4 -
+__Lbank5 0 0 ABS 0 bank5 -
+__Lbank6 0 0 ABS 0 bank6 -
+__Lbank7 0 0 ABS 0 bank7 -
+__Lbank8 0 0 ABS 0 bank8 -
+__Lbank9 0 0 ABS 0 bank9 -
+__Lcinit 8A 0 CODE 0 cinit -
+__Lsfr10 0 0 ABS 0 sfr10 -
+__Lsfr11 0 0 ABS 0 sfr11 -
+__Lsfr12 0 0 ABS 0 sfr12 -
+__Lsfr13 0 0 ABS 0 sfr13 -
+__Lsfr14 0 0 ABS 0 sfr14 -
+__Lsfr15 0 0 ABS 0 sfr15 -
+__Lsfr16 0 0 ABS 0 sfr16 -
+__Lsfr17 0 0 ABS 0 sfr17 -
+__Lsfr18 0 0 ABS 0 sfr18 -
+__Lsfr19 0 0 ABS 0 sfr19 -
+__Lsfr20 0 0 ABS 0 sfr20 -
+__Lsfr21 0 0 ABS 0 sfr21 -
+__Lsfr22 0 0 ABS 0 sfr22 -
+__Lsfr23 0 0 ABS 0 sfr23 -
+__Lsfr24 0 0 ABS 0 sfr24 -
+__Lsfr25 0 0 ABS 0 sfr25 -
+__Lsfr26 0 0 ABS 0 sfr26 -
+__Lsfr27 0 0 ABS 0 sfr27 -
+__Lsfr28 0 0 ABS 0 sfr28 -
+__Lsfr29 0 0 ABS 0 sfr29 -
+__Lsfr30 0 0 ABS 0 sfr30 -
+__Lsfr31 0 0 ABS 0 sfr31 -
+__Lsfr32 0 0 ABS 0 sfr32 -
+__Lsfr33 0 0 ABS 0 sfr33 -
+__Lsfr34 0 0 ABS 0 sfr34 -
+__Lsfr35 0 0 ABS 0 sfr35 -
+__Lsfr36 0 0 ABS 0 sfr36 -
+__Lsfr37 0 0 ABS 0 sfr37 -
+__Lsfr38 0 0 ABS 0 sfr38 -
+__Lsfr39 0 0 ABS 0 sfr39 -
+__Lsfr40 0 0 ABS 0 sfr40 -
+__Lsfr41 0 0 ABS 0 sfr41 -
+__Lsfr42 0 0 ABS 0 sfr42 -
+__Lsfr43 0 0 ABS 0 sfr43 -
+__Lsfr44 0 0 ABS 0 sfr44 -
+__Lsfr45 0 0 ABS 0 sfr45 -
+__Lsfr46 0 0 ABS 0 sfr46 -
+__Lsfr47 0 0 ABS 0 sfr47 -
+__Lsfr48 0 0 ABS 0 sfr48 -
+__Lsfr49 0 0 ABS 0 sfr49 -
+__Lsfr50 0 0 ABS 0 sfr50 -
+__Lsfr51 0 0 ABS 0 sfr51 -
+__Lsfr52 0 0 ABS 0 sfr52 -
+__Lsfr53 0 0 ABS 0 sfr53 -
+__Lsfr54 0 0 ABS 0 sfr54 -
+__Lsfr55 0 0 ABS 0 sfr55 -
+__Lsfr56 0 0 ABS 0 sfr56 -
+__Lsfr57 0 0 ABS 0 sfr57 -
+__Lsfr58 0 0 ABS 0 sfr58 -
+__Lsfr59 0 0 ABS 0 sfr59 -
+__Lsfr60 0 0 ABS 0 sfr60 -
+__Lsfr61 0 0 ABS 0 sfr61 -
+__Lsfr62 0 0 ABS 0 sfr62 -
+__Lsfr63 0 0 ABS 0 sfr63 -
+__Lstack 0 0 STACK 2 stack -
+_mDataLength 56 0 BANK0 1 bssBANK0 dist/soundlevel/production\Power_Module.production.o
+init_ram 1EE8 0 CODE 0 inittext dist/soundlevel/production\Power_Module.production.o
+__end_of___lwtoft 2000 0 CODE 0 text7 dist/soundlevel/production\Power_Module.production.o
+__Linittext 0 0 ABS 0 inittext -
+_INTCONbits B 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+__Habs1 0 0 ABS 0 abs1 -
+__Hcode 0 0 ABS 0 code -
+__Hinit 86 0 CODE 0 init -
+__Hsfr0 0 0 ABS 0 sfr0 -
+__Hsfr1 0 0 ABS 0 sfr1 -
+__Hsfr2 0 0 ABS 0 sfr2 -
+__Hsfr3 0 0 ABS 0 sfr3 -
+__Hsfr4 0 0 ABS 0 sfr4 -
+__Hsfr5 0 0 ABS 0 sfr5 -
+__Hsfr6 0 0 ABS 0 sfr6 -
+__Hsfr7 0 0 ABS 0 sfr7 -
+__Hsfr8 0 0 ABS 0 sfr8 -
+__Hsfr9 0 0 ABS 0 sfr9 -
+__Htext 0 0 ABS 0 text -
+__Labs1 0 0 ABS 0 abs1 -
+__Lcode 0 0 ABS 0 code -
+__Linit 86 0 CODE 0 init -
+__Lsfr0 0 0 ABS 0 sfr0 -
+__Lsfr1 0 0 ABS 0 sfr1 -
+__Lsfr2 0 0 ABS 0 sfr2 -
+__Lsfr3 0 0 ABS 0 sfr3 -
+__Lsfr4 0 0 ABS 0 sfr4 -
+__Lsfr5 0 0 ABS 0 sfr5 -
+__Lsfr6 0 0 ABS 0 sfr6 -
+__Lsfr7 0 0 ABS 0 sfr7 -
+__Lsfr8 0 0 ABS 0 sfr8 -
+__Lsfr9 0 0 ABS 0 sfr9 -
+__Ltext 0 0 ABS 0 text -
+I2C1_GetCommand@cmd 21 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
+_SSP1CON1 190 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_SSP1CON2 191 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_SSP1CON3 192 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_SSP1STAT 18F 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_SSP2CON1 19A 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_SSP2CON3 19C 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_SSP2STAT 199 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+__LcstackBANK0 0 0 ABS 0 cstackBANK0 -
+__LcstackBANK3 0 0 ABS 0 cstackBANK3 -
+int$flags 7E 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+__HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
+__S0 1000 0 ABS 0 - -
+__S1 1BA 0 ABS 0 - -
+__S2 0 0 ABS 0 - -
+__S3 0 0 ABS 0 - -
+__size_of_I2C1_CommandReceived 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+__size_of_Power_Measure 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_Power_GetData D58 0 CODE 0 text19 dist/soundlevel/production\Power_Module.production.o
+__end_of_Power_SetThreshold 5F4 0 CODE 0 text6 dist/soundlevel/production\Power_Module.production.o
+_I2C2_BusCollisionISR 1EB0 0 CODE 0 text29 dist/soundlevel/production\Power_Module.production.o
+__HidataCOMMON 0 0 ABS 0 idataCOMMON -
+_SYSTEM_Initialize F80 0 CODE 0 text2 dist/soundlevel/production\Power_Module.production.o
+__end_of_I2C1_CommandReceived 1EBC 0 CODE 0 text24 dist/soundlevel/production\Power_Module.production.o
+__size_of_I2C1_GetCommand 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_p_i2c2_current 4F 0 BANK0 1 bssBANK0 dist/soundlevel/production\Power_Module.production.o
+__end_of_DefaultSensorInterruptHandler 6 0 CODE 0 text32 dist/soundlevel/production\Power_Module.production.o
+__Lintentry 8 0 CODE 0 intentry -
+reset_vec 0 0 CODE 0 reset_vec C:\Users\JONACA~1\AppData\Local\Temp\se14xg.o
+_ADCC_ADI_InterruptHandler CA 0 BANK1 1 bssBANK1 dist/soundlevel/production\Power_Module.production.o
+__size_of_I2C1_GetCommandData 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+__end_of_Power_Init F3E 0 CODE 0 text15 dist/soundlevel/production\Power_Module.production.o
+__end_of_Power_Loop C14 0 CODE 0 text11 dist/soundlevel/production\Power_Module.production.o
+__pdataBANK1 E2 0 BANK1 1 dataBANK1 dist/soundlevel/production\Power_Module.production.o
+__end_of_Power_Measure 1EC4 0 CODE 0 text10 dist/soundlevel/production\Power_Module.production.o
+__LbssBANK0 0 0 ABS 0 bssBANK0 -
+__LbssBANK1 0 0 ABS 0 bssBANK1 -
+__LbssBANK2 0 0 ABS 0 bssBANK2 -
+__size_of_I2C2_FunctionComplete 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+__size_of_WDT_Init 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_ldrThresholdEnabled 4A 0 BANK0 1 bssBANK0 dist/soundlevel/production\Power_Module.production.o
+_Power_SetThreshold 3BC 0 CODE 0 text6 dist/soundlevel/production\Power_Module.production.o
+__size_of_PMD_Initialize 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_floatBatThresholdLevelLow B6 0 BANK1 1 bssBANK1 dist/soundlevel/production\Power_Module.production.o
+_PIE1bits 717 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_PIE3bits 719 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+Power_SetThreshold@thresholdData 3D 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
+__ptext10 1EBC 0 CODE 0 text10 dist/soundlevel/production\Power_Module.production.o
+__ptext11 B4C 0 CODE 0 text11 dist/soundlevel/production\Power_Module.production.o
+__ptext12 1F4E 0 CODE 0 text12 dist/soundlevel/production\Power_Module.production.o
+__ptext13 E0C 0 CODE 0 text13 dist/soundlevel/production\Power_Module.production.o
+__ptext14 FF2 0 CODE 0 text14 dist/soundlevel/production\Power_Module.production.o
+__ptext15 EFC 0 CODE 0 text15 dist/soundlevel/production\Power_Module.production.o
+__ptext16 1EC4 0 CODE 0 text16 dist/soundlevel/production\Power_Module.production.o
+__ptext17 926 0 CODE 0 text17 dist/soundlevel/production\Power_Module.production.o
+__ptext18 EB6 0 CODE 0 text18 dist/soundlevel/production\Power_Module.production.o
+__ptext19 D58 0 CODE 0 text19 dist/soundlevel/production\Power_Module.production.o
+__ptext20 1EF4 0 CODE 0 text20 dist/soundlevel/production\Power_Module.production.o
+__ptext21 E62 0 CODE 0 text21 dist/soundlevel/production\Power_Module.production.o
+__ptext22 F3E 0 CODE 0 text22 dist/soundlevel/production\Power_Module.production.o
+__ptext23 1F04 0 CODE 0 text23 dist/soundlevel/production\Power_Module.production.o
+__ptext24 1EB6 0 CODE 0 text24 dist/soundlevel/production\Power_Module.production.o
+__ptext26 EC 0 CODE 0 text26 dist/soundlevel/production\Power_Module.production.o
+__ptext27 FBE 0 CODE 0 text27 dist/soundlevel/production\Power_Module.production.o
+__ptext28 1F88 0 CODE 0 text28 dist/soundlevel/production\Power_Module.production.o
+__ptext29 1EB0 0 CODE 0 text29 dist/soundlevel/production\Power_Module.production.o
+__ptext30 CBA 0 CODE 0 text30 dist/soundlevel/production\Power_Module.production.o
+__ptext31 C14 0 CODE 0 text31 dist/soundlevel/production\Power_Module.production.o
+__ptext32 4 0 CODE 0 text32 dist/soundlevel/production\Power_Module.production.o
+__ptext33 1F6A 0 CODE 0 text33 dist/soundlevel/production\Power_Module.production.o
+__ptext34 1EAE 0 CODE 0 text34 dist/soundlevel/production\Power_Module.production.o
+___ftdiv 7C2 0 CODE 0 text8 dist/soundlevel/production\Power_Module.production.o
+__Lbank10 0 0 ABS 0 bank10 -
+__Lbank11 0 0 ABS 0 bank11 -
+__Lbank12 0 0 ABS 0 bank12 -
+__Lbank13 0 0 ABS 0 bank13 -
+__Lbank14 0 0 ABS 0 bank14 -
+__Lbank15 0 0 ABS 0 bank15 -
+__Lbank16 0 0 ABS 0 bank16 -
+__Lbank17 0 0 ABS 0 bank17 -
+__Lbank18 0 0 ABS 0 bank18 -
+__Lbank19 0 0 ABS 0 bank19 -
+__Lbank20 0 0 ABS 0 bank20 -
+__Lbank21 0 0 ABS 0 bank21 -
+__Lbank22 0 0 ABS 0 bank22 -
+__Lbank23 0 0 ABS 0 bank23 -
+__Lbank24 0 0 ABS 0 bank24 -
+__Lbank25 0 0 ABS 0 bank25 -
+__Lbank26 0 0 BANK26 1 bank26 -
+__Lbank27 0 0 BANK27 1 bank27 -
+__Lbank28 0 0 BANK28 1 bank28 -
+__Lbank29 0 0 BANK29 1 bank29 -
+__Lbank30 0 0 BANK30 1 bank30 -
+__Lbank31 0 0 BANK31 1 bank31 -
+__Lbank32 0 0 BANK32 1 bank32 -
+__Lbank33 0 0 BANK33 1 bank33 -
+__Lbank34 0 0 BANK34 1 bank34 -
+__Lbank35 0 0 BANK35 1 bank35 -
+__Lbank36 0 0 BANK36 1 bank36 -
+__Lbank37 0 0 BANK37 1 bank37 -
+__Lbank38 0 0 BANK38 1 bank38 -
+__Lbank39 0 0 BANK39 1 bank39 -
+__Lbank40 0 0 BANK40 1 bank40 -
+__Lbank41 0 0 BANK41 1 bank41 -
+__Lbank42 0 0 BANK42 1 bank42 -
+__Lbank43 0 0 BANK43 1 bank43 -
+__Lbank44 0 0 BANK44 1 bank44 -
+__Lbank45 0 0 BANK45 1 bank45 -
+__Lbank46 0 0 BANK46 1 bank46 -
+__Lbank47 0 0 BANK47 1 bank47 -
+__Lbank48 0 0 BANK48 1 bank48 -
+__Lbank49 0 0 BANK49 1 bank49 -
+__Lbank50 0 0 BANK50 1 bank50 -
+__Lbank51 0 0 BANK51 1 bank51 -
+__Lbank52 0 0 BANK52 1 bank52 -
+__Lbank53 0 0 BANK53 1 bank53 -
+__Lbank54 0 0 BANK54 1 bank54 -
+__Lbank55 0 0 BANK55 1 bank55 -
+__Lbank56 0 0 BANK56 1 bank56 -
+__Lbank57 0 0 BANK57 1 bank57 -
+__Lbank58 0 0 BANK58 1 bank58 -
+__Lbank59 0 0 BANK59 1 bank59 -
+__Lbank60 0 0 BANK60 1 bank60 -
+__Lbank61 0 0 BANK61 1 bank61 -
+__Lbank62 0 0 BANK62 1 bank62 -
+__Lbank63 0 0 BANK63 1 bank63 -
+__pmaintext 5F4 0 CODE 0 maintext dist/soundlevel/production\Power_Module.production.o
+__Lbigram 0 0 ABS 0 bigram -
+_startMeasurement CE 0 BANK1 1 bssBANK1 dist/soundlevel/production\Power_Module.production.o
+__Lcommon 0 0 ABS 0 common -
+__Lconfig 0 0 CONFIG 4 config -
+?___ftpack 20 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
+__Hinittext 0 0 ABS 0 inittext -
+_LATAbits 18 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_LATBbits 19 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_LATCbits 1A 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+__end_of_I2C2_Stop FF2 0 CODE 0 text27 dist/soundlevel/production\Power_Module.production.o
+Power_GetData@data 20 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
+__size_of_I2C2_Stop 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+main@data 1A0 0 BANK3 1 cstackBANK3 dist/soundlevel/production\Power_Module.production.o
+main@type 1B6 0 BANK3 1 cstackBANK3 dist/soundlevel/production\Power_Module.production.o
+_floatBatThresholdLevelHigh B9 0 BANK1 1 bssBANK1 dist/soundlevel/production\Power_Module.production.o
+_I2C1_GetCommandData F3E 0 CODE 0 text22 dist/soundlevel/production\Power_Module.production.o
+__size_of_Interrupt_Handler 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+I2C2_ISR@i2c_address 79 0 COMMON 1 bssCOMMON dist/soundlevel/production\Power_Module.production.o
+___lwtoft@c 28 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
+_overThresholdLDR D0 0 BANK1 1 bssBANK1 dist/soundlevel/production\Power_Module.production.o
+_SSP1CLKPPS 1EC5 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_OSCCON1 88D 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+?___lwtoft 28 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
+_SSP1DATPPS 1EC6 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_ADCON0bits 111 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_ADCON1bits 112 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_ADCON2bits 113 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_ADCON3bits 114 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+__size_of_Power_GetData 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_I2C2_Stop FBE 0 CODE 0 text27 dist/soundlevel/production\Power_Module.production.o
+_WDT_Init 1EC4 0 CODE 0 text16 dist/soundlevel/production\Power_Module.production.o
+__Lspace_0 0 0 ABS 0 - -
+__Lspace_1 0 0 ABS 0 - -
+__Lspace_2 0 0 ABS 0 - -
+__Lspace_3 0 0 ABS 0 - -
+__Lspace_4 0 0 ABS 0 - -
+_CPUDOZEbits 88C 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+__pbssCOMMON 76 0 COMMON 1 bssCOMMON dist/soundlevel/production\Power_Module.production.o
+__size_of_Measure 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_generateIntPower 1F4E 0 CODE 0 text12 dist/soundlevel/production\Power_Module.production.o
+__HcstackBANK0 0 0 ABS 0 cstackBANK0 -
+__HcstackBANK3 0 0 ABS 0 cstackBANK3 -
+_PIR1bits 70D 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_PIR3bits 70F 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+__Lend_init 86 0 CODE 0 end_init -
+__LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
+main@retries 1B4 0 BANK3 1 cstackBANK3 dist/soundlevel/production\Power_Module.production.o
+end_of_initialization E4 0 CODE 0 cinit dist/soundlevel/production\Power_Module.production.o
+__end_of_WDT_Init 1ED0 0 CODE 0 text16 dist/soundlevel/production\Power_Module.production.o
+I2C1_ISR@i2c_data 74 0 COMMON 1 cstackCOMMON dist/soundlevel/production\Power_Module.production.o
+__Hintentry 86 0 CODE 0 intentry -
+__Lstrings 0 0 ABS 0 strings -
+I2C1_SetTransmitData@data 20 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
+?___ftdiv 2C 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
+__Hreset_vec 4 0 CODE 0 reset_vec -
+__HbssBANK0 0 0 ABS 0 bssBANK0 -
+__HbssBANK1 0 0 ABS 0 bssBANK1 -
+__HbssBANK2 0 0 ABS 0 bssBANK2 -
+__end_of_Enter_sleep 1000 0 CODE 0 text14 dist/soundlevel/production\Power_Module.production.o
+__end_of_Power_GetData DB6 0 CODE 0 text19 dist/soundlevel/production\Power_Module.production.o
+__ptext1 1F34 0 CODE 0 text1 dist/soundlevel/production\Power_Module.production.o
+__ptext2 F80 0 CODE 0 text2 dist/soundlevel/production\Power_Module.production.o
+__ptext3 1FAE 0 CODE 0 text3 dist/soundlevel/production\Power_Module.production.o
+__ptext4 1ED0 0 CODE 0 text4 dist/soundlevel/production\Power_Module.production.o
+__ptext5 DB6 0 CODE 0 text5 dist/soundlevel/production\Power_Module.production.o
+__ptext6 3BC 0 CODE 0 text6 dist/soundlevel/production\Power_Module.production.o
+__ptext7 1FD4 0 CODE 0 text7 dist/soundlevel/production\Power_Module.production.o
+__ptext8 7C2 0 CODE 0 text8 dist/soundlevel/production\Power_Module.production.o
+__ptext9 A62 0 CODE 0 text9 dist/soundlevel/production\Power_Module.production.o
+_PMD0bits 796 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_PMD3bits 799 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_PMD6bits 79C 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_i2c2_object 45 0 BANK0 1 bssBANK0 dist/soundlevel/production\Power_Module.production.o
+__Lpowerup 0 0 CODE 0 powerup -
+__Leeprom_data 0 0 EEDATA 3 eeprom_data -
+SYSTEM_Initialize@slave_address 21 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
+__end_of_toggleInt 1F4E 0 CODE 0 text1 dist/soundlevel/production\Power_Module.production.o
+__Lreset_vec 0 0 CODE 0 reset_vec -
+__size_of_DefaultSensorInterruptHandler 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+I2C1_Initialize@slave_address 20 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
+_i2c2_trb_count 50 0 BANK0 1 bssBANK0 dist/soundlevel/production\Power_Module.production.o
+__size_of_toggleInt 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_ADCC_DefaultInterruptHandler 1EAE 0 CODE 0 text34 dist/soundlevel/production\Power_Module.production.o
+__end_of__initialization E4 0 CODE 0 cinit dist/soundlevel/production\Power_Module.production.o
+__Lfunctab 0 0 ENTRY 0 functab -
+_ADSTATbits 115 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+__pidataBANK1 1F1C 0 CODE 0 idataBANK1 dist/soundlevel/production\Power_Module.production.o
+_SensorInterruptHandler EC 0 BANK1 1 dataBANK1 dist/soundlevel/production\Power_Module.production.o
+__Lclrtext 0 0 ABS 0 clrtext -
+_SSP1CON1bits 190 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_SSP1CON2bits 191 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_SSP1CON3bits 192 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+___ftpack@sign 24 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
+_I2C1_slaveWriteData 7B 0 COMMON 1 dataCOMMON dist/soundlevel/production\Power_Module.production.o
+_toggleInt 1F34 0 CODE 0 text1 dist/soundlevel/production\Power_Module.production.o
+__end_of_I2C1_GetCommandData F80 0 CODE 0 text22 dist/soundlevel/production\Power_Module.production.o
+I2C2_ISR@i2c_10bit_address_restart 4C 0 BANK0 1 bssBANK0 dist/soundlevel/production\Power_Module.production.o
+__pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/soundlevel/production\Power_Module.production.o
+___ftdiv@cntr 36 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
+___ftdiv@sign 3B 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
+__size_of_Power_Init 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+__size_of_Power_Loop 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+I2C1_StatusCallback@slaveWriteType 52 0 BANK0 1 bssBANK0 dist/soundlevel/production\Power_Module.production.o
+__end_of_generateIntPower 1F6A 0 CODE 0 text12 dist/soundlevel/production\Power_Module.production.o
+Power_SetThreshold@metric 3C 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
+__end_of_I2C1_Initialize E0C 0 CODE 0 text5 dist/soundlevel/production\Power_Module.production.o
+_SSP1ADD 18D 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_SSP1BUF 18C 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_SSP1MSK 18E 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_SSP2ADD 197 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_SSP2BUF 196 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+__size_of_I2C1_SetTransmitData 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+__end_of_Measure E62 0 CODE 0 text13 dist/soundlevel/production\Power_Module.production.o
+__Hend_init 8A 0 CODE 0 end_init -
+__end_of_Interrupt_Handler 86 0 CODE 0 intentry dist/soundlevel/production\Power_Module.production.o
+__end_of_main 7C2 0 CODE 0 maintext dist/soundlevel/production\Power_Module.production.o
+__size_of_generateIntPower 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_batThresholdLevelLow C6 0 BANK1 1 bssBANK1 dist/soundlevel/production\Power_Module.production.o
+_ADACT 117 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_ADCAP 10E 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_ADCLK 118 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_ADCNT 99 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_ADPCH 9F 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_ADREF 116 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_ADRPT 9A 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_floatLDRThresholdLevelLow B0 0 BANK1 1 bssBANK1 dist/soundlevel/production\Power_Module.production.o
+_TRISA 12 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_TRISB 13 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_TRISC 14 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+__Hram 0 0 ABS 0 ram -
+__Lram 0 0 ABS 0 ram -
+_underThresholdBatt D1 0 BANK1 1 bssBANK1 dist/soundlevel/production\Power_Module.production.o
+_mData D3 0 BANK1 1 bssBANK1 dist/soundlevel/production\Power_Module.production.o
+_rxLen 78 0 COMMON 1 bssCOMMON dist/soundlevel/production\Power_Module.production.o
+_txCnt 77 0 COMMON 1 bssCOMMON dist/soundlevel/production\Power_Module.production.o
+_txLen 53 0 BANK0 1 bssBANK0 dist/soundlevel/production\Power_Module.production.o
+__pintentry 8 0 CODE 0 intentry dist/soundlevel/production\Power_Module.production.o
+I2C1_GetCommandData@len 20 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
+__size_of_I2C1_StatusCallback 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_measurementData A0 0 BANK1 1 bssBANK1 dist/soundlevel/production\Power_Module.production.o
+__end_of_I2C1_SetTransmitData EB6 0 CODE 0 text21 dist/soundlevel/production\Power_Module.production.o
+__HdataBANK1 0 0 ABS 0 dataBANK1 -
+__end_of_OSCILLATOR_Initialize 1EDC 0 CODE 0 text4 dist/soundlevel/production\Power_Module.production.o
+_cmdByte 55 0 BANK0 1 bssBANK0 dist/soundlevel/production\Power_Module.production.o
+__end_of_I2C1_TxBufferEmpty 1F04 0 CODE 0 text20 dist/soundlevel/production\Power_Module.production.o
+__size_of_Power_SetThreshold 0 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+__initialization 8A 0 CODE 0 cinit dist/soundlevel/production\Power_Module.production.o
+I2C2_ISR@i2c_bytes_left 4D 0 BANK0 1 bssBANK0 dist/soundlevel/production\Power_Module.production.o
+I2C1_GetCommandData@data 22 0 BANK0 1 cstackBANK0 dist/soundlevel/production\Power_Module.production.o
+__pbssBANK0 45 0 BANK0 1 bssBANK0 dist/soundlevel/production\Power_Module.production.o
+__pbssBANK1 A0 0 BANK1 1 bssBANK1 dist/soundlevel/production\Power_Module.production.o
+__pbssBANK2 120 0 BANK2 1 bssBANK2 dist/soundlevel/production\Power_Module.production.o
+_WDTCON0 80C 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_WDTCON1 80D 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+__pdataCOMMON 7B 0 COMMON 1 dataCOMMON dist/soundlevel/production\Power_Module.production.o
+_I2C1_CommandReceived 1EB6 0 CODE 0 text24 dist/soundlevel/production\Power_Module.production.o
+_i2c1_tx_buffer 120 0 BANK2 1 bssBANK2 dist/soundlevel/production\Power_Module.production.o
+_i2c2_tr_queue DF 0 BANK1 1 bssBANK1 dist/soundlevel/production\Power_Module.production.o
+I2C2_Stop@completion_code 71 0 COMMON 1 cstackCOMMON dist/soundlevel/production\Power_Module.production.o
+_SSP2CLKPPS 1EC8 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+I2C1_StatusCallback@i2c_bus_state 71 0 COMMON 1 cstackCOMMON dist/soundlevel/production\Power_Module.production.o
+_STATUSbits 3 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_ANSELAbits 1F38 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_ANSELBbits 1F43 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_ANSELCbits 1F4E 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_SSP2DATPPS 1EC9 0 ABS 0 - dist/soundlevel/production\Power_Module.production.o
+_OSCILLATOR_Initialize 1ED0 0 CODE 0 text4 dist/soundlevel/production\Power_Module.production.o
+# %SPLITSTAB Section
+# This section enumerates all the psect splits performed by the assembler.
+# The beginning of the section is indicated by %SPLITSTAB.
+# Each line is a record a particular split, where the parent psect is on
+# the left and the child on the right.  Note that a child psect is always
+# split form the top of the parent psect. All splits from a given parent
+# are listed in the order in which they occurred.
+%SPLITSTAB
+# %DABS Section
+# This section contains a table of all usuage of the assember
+# directive DABS in the program. Each line has the following format:
+#   <name> <space> <address> <size>
+# If the DABS was originally labelled then that shall be <name>,
+# otherwise name will be "-".  The <space> number is in decimal.
+# <address> and <size> are in byte units as unqaulified hexadecimal
+%DABS
+- 1 7E 2
+# %SEGMENTS Section
+# This sections enumerates the segments of the program.  Each segment
+# is described on a single line as follows:
+#    <name> <space> <link address> <file address> <size> <delta>
+# Addresses and size are in unqualified hexadecimal.  The link address
+# and size are in units of delta. The file address is in units of bytes.
+# All other numeric quantities are in decimal.
+%SEGMENTS
+text1 0 F9A 1F34 D 2
+text3 0 FD7 1FAE 13 2
+text4 0 F68 1ED0 6 2
+text7 0 FEA 1FD4 16 2
+text10 0 F5E 1EBC 4 2
+text12 0 FA7 1F4E E 2
+text16 0 F62 1EC4 6 2
+text20 0 F7A 1EF4 8 2
+text23 0 F82 1F04 C 2
+text24 0 F5B 1EB6 3 2
+text28 0 FC4 1F88 13 2
+text29 0 F58 1EB0 3 2
+text33 0 FB5 1F6A F 2
+text34 0 F57 1EAE 1 2
+idataCOMMON 0 3 6 1 2
+cstackCOMMON 1 70 70 C 1
+cstackBANK0 1 20 20 37 1
+cstackBANK3 1 1A0 1A0 1A 1
+inittext 0 F74 1EE8 6 2
+intentry 0 4 8 7FC 2
+reset_vec 0 0 0 3 2
+bssBANK1 1 A0 A0 4E 1
+bssBANK2 1 120 120 40 1
+idataBANK1 0 F8E 1F1C C 2
+clrtext 0 F6E 1EDC 6 2
+# %NOTES Section
+# This section contains data of all the note-psects.  The beginning of the section
+# is indicated by %NOTES. The first line indicates the name and decimal
+# byte-length of the first note-psect, e.g.
+#   $codecov_info_hdr 16
+# Each line that follows contains the byte-data of the psect in hexadecimal as a
+# space-separated list. These lines are limited to 16 bytes of data.
+%NOTES
