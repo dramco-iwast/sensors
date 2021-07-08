@@ -176,6 +176,7 @@ void Power_Loop(){
                 
                 power.ctrl.measurementRunning = true;
                 Measure();              //  Measure
+                __delay_ms(180);
                 power.ctrl.measurementRunning = false;
                 
                 generateInt();     //  generate interrupt
@@ -185,6 +186,7 @@ void Power_Loop(){
             {
                 power.ctrl.measurementRunning = true;
                 Measure();              //  Measure
+                __delay_ms(180);
                 power.ctrl.measurementRunning = false;
                 
                 generateInt();     //  generate interrupt 
@@ -198,6 +200,7 @@ void Power_Loop(){
             
             power.ctrl.measurementRunning = true;
             Measure();              //  Measure
+            __delay_ms(180);
             power.ctrl.measurementRunning = false;
             
             // If threshold is exceeded - send interrupt
@@ -262,13 +265,13 @@ void Power_SetThreshold(uint8_t metric, uint8_t * thresholdData){
         WDTCON0bits.SEN = 0;
     }
     
-    // If enabled - set thresholds to veml7700 registers
-    if(power.light_threshold.enabled)
-    {
-        // Set thresholds
-        veml7700_setALS_WH((uint16_t) power.light_threshold.thresholdLevelHigh);
-        veml7700_setALS_WL((uint16_t) power.light_threshold.thresholdLevelLow);
-    }
+//    // If enabled - set thresholds to veml7700 registers
+//    if(power.light_threshold.enabled)
+//    {
+//        // Set thresholds
+//        veml7700_setALS_WH((uint16_t) power.light_threshold.thresholdLevelHigh);
+//        veml7700_setALS_WL((uint16_t) power.light_threshold.thresholdLevelLow);
+//    }
 }
 
 #endif
