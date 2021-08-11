@@ -1,4 +1,4 @@
-update=11/25/19 14:55:30
+update=28/07/2021 09:36:41
 version=1
 last_client=kicad
 [general]
@@ -15,9 +15,9 @@ LibDir=
 [pcbnew]
 version=1
 PageLayoutDescrFile=
-LastNetListRead=BME680.net
+LastNetListRead=design.net
 CopperLayerCount=2
-BoardThickness=1,6
+BoardThickness=1.6
 AllowMicroVias=0
 AllowBlindVias=0
 RequireCourtyardDefinitions=0
@@ -28,14 +28,14 @@ MinViaDrill=0.3
 MinMicroViaDiameter=0.2
 MinMicroViaDrill=0.09999999999999999
 MinHoleToHole=0.25
-TrackWidth1=0,4
-TrackWidth2=0,5
+TrackWidth1=0.4
+TrackWidth2=0.5
 TrackWidth3=1
-ViaDiameter1=0,8
-ViaDrill1=0,4
-dPairWidth1=0,2
-dPairGap1=0,25
-dPairViaGap1=0,25
+ViaDiameter1=0.8
+ViaDrill1=0.4
+dPairWidth1=0.2
+dPairGap1=0.25
+dPairViaGap1=0.25
 SilkLineWidth=0.12
 SilkTextSizeV=1
 SilkTextSizeH=1
@@ -229,15 +229,15 @@ Enabled=0
 [pcbnew/Netclasses]
 [pcbnew/Netclasses/Default]
 Name=Default
-Clearance=0,2
-TrackWidth=0,4
-ViaDiameter=0,8
-ViaDrill=0,4
-uViaDiameter=0,3
-uViaDrill=0,1
-dPairWidth=0,2
-dPairGap=0,25
-dPairViaGap=0,25
+Clearance=0.2
+TrackWidth=0.4
+ViaDiameter=0.8
+ViaDrill=0.4
+uViaDiameter=0.3
+uViaDrill=0.1
+dPairWidth=0.2
+dPairGap=0.25
+dPairViaGap=0.25
 [schematic_editor]
 version=1
 PageLayoutDescrFile=
