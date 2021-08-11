@@ -13,9 +13,10 @@
       </logicalFolder>
       <itemPath>global.h</itemPath>
       <itemPath>sensor/power.h</itemPath>
-      <itemPath>sensor/veml7700.h</itemPath>
       <itemPath>sensor/battery.h</itemPath>
       <itemPath>sensor/util.h</itemPath>
+      <itemPath>sensor/veml7700.h</itemPath>
+      <itemPath>sensor/filter.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -33,9 +34,10 @@
       </logicalFolder>
       <itemPath>sensor/power.c</itemPath>
       <itemPath>main.c</itemPath>
-      <itemPath>sensor/veml7700.c</itemPath>
       <itemPath>sensor/battery.c</itemPath>
       <itemPath>sensor/util.c</itemPath>
+      <itemPath>sensor/veml7700.c</itemPath>
+      <itemPath>sensor/filter.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -179,6 +181,7 @@
                   value="Press to browse for a specific firmware version"/>
         <property key="ToolFirmwareOption.UseLatestFirmware" value="true"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="firmware.download.all" value="false"/>
         <property key="hwtoolclock.frcindebug" value="false"/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>

@@ -127,16 +127,14 @@ void battery_init()
 
 float battery_measure(void)
 {
-    LED1_SetHigh();  // Led on
-    
     ADC_Fixed_Voltage_Ref(BATTERY_FVR_ENABLE);
     
     BAT_MEAS_EN_SetHigh(); // Enable loadswitch to measure voltage
     __delay_ms(20);  // Delay for settling voltages, 10ms is not long enough
 
     //  Reference voltage to FVR module (2.048 V)
-    ADREFbits.PREF0 = 1;
-    ADREFbits.PREF1 = 1;
+//    ADREFbits.PREF0 = 1;
+//    ADREFbits.PREF1 = 1;
     
     // Get ADC value
     ADCC_GetSingleConversion(BAT_VOLT_ADC_CHN); 
@@ -146,9 +144,11 @@ float battery_measure(void)
 
     BAT_MEAS_EN_SetLow(); // Disable loadswitch to measure voltage
     
-    ADC_Fixed_Voltage_Ref(BATTERY_FVR_DISABLE);
+    //  Reference voltage to VDD (3V3)
+//    ADREFbits.PREF0 = 0;   
+//    ADREFbits.PREF1 = 0;
     
-    LED1_SetLow(); // Led off
+    ADC_Fixed_Voltage_Ref(BATTERY_FVR_DISABLE);
     
     return batt_voltage;
 }

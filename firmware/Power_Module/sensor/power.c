@@ -31,6 +31,7 @@
 #include "veml7700.h"
 #include "battery.h"
 #include "util.h"
+#include "filter.h"
 
 /*===================================*/
 // Declaration global power struct
@@ -54,6 +55,11 @@ void WDT_Init(void)
     WDTCON0 = 0x1C; // 16 second period
 //    WDTCON0 = 0x20; // 64 second period    
     WDTCON1 = 0x07; // LFINTOSC, window 100%
+    
+    // Enable watchdog
+    WDTCON0bits.SEN = 0;
+    CLRWDT();
+    WDTCON0bits.SEN = 1;
 }
 
 void Enter_sleep(){
@@ -98,6 +104,25 @@ void Power_Init(){
     battery_init();
     power.meas.batt.voltage = battery_measure(); // Initial measurement
     
+    // Filter for battery measurements
+//    filter_init(FILTER_NUM_AVG);
+    
+    // Fill filter with initial values
+    float temp = 0;
+//    for(int i=0; i<FILTER_NUM_AVG; i++)
+//    {
+//        temp = battery_measure();
+//        power.meas.batt.voltage = filter_process(temp);
+//    }
+    
+    // Highest value out of number of measurements
+    filter_highest_init(FILTER_HIGHEST_LEN);
+    for(int i=0; i<FILTER_HIGHEST_LEN; i++)
+    {
+        temp = battery_measure();
+        power.meas.batt.voltage = filter_highest(temp);
+    }
+    
     // Init Watchdog
     WDT_Init();  
 }
@@ -106,7 +131,7 @@ void Power_Measure(){
     power.ctrl.startMeasurement = true;
 }
 
-void check_thresholds_exceeded(void)
+void check_batt_threshold_exceeded()
 {
     if(power.batt_threshold.enabled) //  Only set Thresholds when in threshold mode
     {
@@ -117,7 +142,10 @@ void check_thresholds_exceeded(void)
             power.batt_threshold.overThreshold = true;
         }
     }
+}
 
+void check_light_threshold_exceeded(void)
+{
     if(power.light_threshold.enabled) //  Only set Thresholds when in threshold mode
     {
         // Check sensor interrupt register for exceeded thresholds
@@ -131,34 +159,64 @@ void check_thresholds_exceeded(void)
     }
 }
 
-void Measure()
+void measureLight()
 {
-    // Measure battery voltage
-    power.meas.batt.voltage = battery_measure();
-    
     // Get data from light sensor
     LED0_SetHigh(); // Led on
     veml7700_getALS(&power.meas.light.data, &veml7700_config);
     __delay_ms(20);
     LED0_SetLow();  // Led off
     
-    // Check if any thresholds are exceeded - notify loop
-    check_thresholds_exceeded();
-    
     if(power.meas.light.data.lux > 65535){    //  Limit of the 2 byte format
         power.meas.light.data.lux = 65535;
     }
     
+    // Check if any of the thresholds is exceeded
+    check_light_threshold_exceeded();
+    
     uint16_t datalux = (uint16_t)(round(power.meas.light.data.lux));  //  Do not multiply lux value by 600
+    
+    measurementData[2] = (uint8_t)(datalux>>8);
+    measurementData[3] = (uint8_t)(datalux);
+}
+
+void measureBatt()
+{
+    // Only blink led if battery threshold is enabled or its a polled measurement
+    if(power.batt_threshold.enabled || power.ctrl.startMeasurement) LED1_SetHigh();  // Led on
+    // Measure battery voltage
+    float temp_batt = battery_measure();
+    if(power.batt_threshold.enabled || power.ctrl.startMeasurement) LED1_SetLow(); // Led off
+    
+    // Moving average filter
+    power.meas.batt.voltage = filter_highest(temp_batt);
+    
+    // Check that the measurement has happened at a state in which motherboard is not sending data
+    // Otherwise we just measure the voltage drop due to high current
+//    if( temp_batt < ( power.meas.batt.voltage - 0.1 ) ) // Smaller than 0.1 V drop per measurement
+//    {
+//        // Do nothing - use latest battery value stored in struct: power.meas.batt.voltage
+//    }else{
+//        power.meas.batt.voltage = temp_batt;
+//    }
+    
+    // Check if any of the thresholds is exceeded
+    check_batt_threshold_exceeded();
     
     // prepare data for I2C transmission: multiply by 600
     uint16_t databatvoltage = (uint16_t)(round(power.meas.batt.voltage * 10000)); //  multiply by 10000 as in iWAST configurator
     
     measurementData[0] = (uint8_t)(databatvoltage>>8);
     measurementData[1] = (uint8_t)(databatvoltage);
+}
 
-    measurementData[2] = (uint8_t)(datalux>>8);
-    measurementData[3] = (uint8_t)(datalux);
+void measureAll()
+{
+    // Measure light intensity
+    measureLight();
+    
+    // Measure battery voltage
+    measureBatt();
 }
 
 
@@ -167,15 +225,13 @@ void Power_Loop(){
     if(!power.ctrl.measurementRunning)
     {
         if(power.ctrl.startMeasurement)            //  Polled measurement
-        {
-            power.ctrl.startMeasurement = false;
-            
+        {            
             if(WDTCON0bits.SEN == 1)
             {
                 WDTCON0bits.SEN = 0;    //  Disable WDT
                 
                 power.ctrl.measurementRunning = true;
-                Measure();              //  Measure
+                measureAll();              //  Measure all metrics
                 __delay_ms(180);
                 power.ctrl.measurementRunning = false;
                 
@@ -185,12 +241,14 @@ void Power_Loop(){
             }else if(WDTCON0bits.SEN == 0)
             {
                 power.ctrl.measurementRunning = true;
-                Measure();              //  Measure
+                measureAll();              //  Measure all metrics
                 __delay_ms(180);
                 power.ctrl.measurementRunning = false;
                 
                 generateInt();     //  generate interrupt 
             }
+            power.ctrl.startMeasurement = false;
+            
         }else if(STATUSbits.nTO == 0)   //  WDT Timeout
         {
             WDTCON0bits.SEN = 0;        //  Disable WDT
@@ -199,8 +257,15 @@ void Power_Loop(){
             WDTCON0 = 0x1C; // 16 second period
             
             power.ctrl.measurementRunning = true;
-            Measure();              //  Measure
-            __delay_ms(180);
+            
+            // Only measure light intensity if thresholds are enabled
+            if(power.light_threshold.enabled) measureLight();
+            
+            // Always continue measuring battery voltage
+            measureBatt();
+
+            // No delay needed in interrupt mode
+//            __delay_ms(180);
             power.ctrl.measurementRunning = false;
             
             // If threshold is exceeded - send interrupt
@@ -256,22 +321,16 @@ void Power_SetThreshold(uint8_t metric, uint8_t * thresholdData){
         power.light_threshold.thresholdLevelHigh = (float) temp;
     }
     
-    if(power.batt_threshold.enabled || power.light_threshold.enabled)         //  Threshold -> enable WDT   
-    {
-        WDTCON0bits.SEN = 0;
-        CLRWDT();
-        WDTCON0bits.SEN = 1;
-    }else{                          //  No thresholds -> WDT off 
-        WDTCON0bits.SEN = 0;
-    }
-    
-//    // If enabled - set thresholds to veml7700 registers
-//    if(power.light_threshold.enabled)
+    // WDT is always on
+//    if(power.batt_threshold.enabled || power.light_threshold.enabled)         //  Threshold -> enable WDT   
 //    {
-//        // Set thresholds
-//        veml7700_setALS_WH((uint16_t) power.light_threshold.thresholdLevelHigh);
-//        veml7700_setALS_WL((uint16_t) power.light_threshold.thresholdLevelLow);
+//        WDTCON0bits.SEN = 0;
+//        CLRWDT();
+//        WDTCON0bits.SEN = 1;
+//    }else{                          //  No thresholds -> WDT off 
+//        WDTCON0bits.SEN = 0;
 //    }
+    
 }
 
 #endif
