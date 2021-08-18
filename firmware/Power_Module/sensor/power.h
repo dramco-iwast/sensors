@@ -57,6 +57,7 @@ typedef struct{
 typedef struct{
     bool startMeasurement;
     bool measurementRunning;
+    uint8_t WDT_count;
 }iwast_power_ctrl_t;
 
 typedef struct{

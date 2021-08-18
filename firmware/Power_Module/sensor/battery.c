@@ -78,7 +78,10 @@ void ADC_Init()
     // ADMATH registers not updated; 
     ADSTAT = 0x00;
     // ADNREF VSS; ADPREF FVR; 
-    ADREF = 0x03;
+//    ADREF = 0x03;
+    //  Reference voltage to VDD (3V3)
+    ADREFbits.PREF0 = 0;   
+    ADREFbits.PREF1 = 0;
     // ADACT disabled; 
     ADACT = 0x00;
     // ADCS FOSC/2; 
@@ -127,7 +130,7 @@ void battery_init()
 
 float battery_measure(void)
 {
-    ADC_Fixed_Voltage_Ref(BATTERY_FVR_ENABLE);
+//    ADC_Fixed_Voltage_Ref(BATTERY_FVR_ENABLE);
     
     BAT_MEAS_EN_SetHigh(); // Enable loadswitch to measure voltage
     __delay_ms(20);  // Delay for settling voltages, 10ms is not long enough
@@ -140,7 +143,11 @@ float battery_measure(void)
     ADCC_GetSingleConversion(BAT_VOLT_ADC_CHN); 
     uint16_t voltage = ADCC_GetSingleConversion(BAT_VOLT_ADC_CHN);
     // Convert ADC value to voltage (Resistor divider)
-    float batt_voltage = ((float)voltage /4096) * 2.048 * ((10+8.2)/8.2);
+    // adc counts: 4096
+    // reference voltage: 2.048V
+    // voltage divider: 
+//    float batt_voltage = ((float)voltage /4096) * 2.048 * ((10+8.2)/8.2);
+    float batt_voltage = ((float)voltage /4096) * 3.3 * ((10+8.2)/8.2);
 
     BAT_MEAS_EN_SetLow(); // Disable loadswitch to measure voltage
     
@@ -148,7 +155,7 @@ float battery_measure(void)
 //    ADREFbits.PREF0 = 0;   
 //    ADREFbits.PREF1 = 0;
     
-    ADC_Fixed_Voltage_Ref(BATTERY_FVR_DISABLE);
+//    ADC_Fixed_Voltage_Ref(BATTERY_FVR_DISABLE);
     
     return batt_voltage;
 }

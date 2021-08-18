@@ -28,12 +28,20 @@
 #include <stdbool.h>
 #include "../global.h"
 
+#define WDT_COUNT_OK_INTERVAL 4
+
+void Enter_sleep();
 
 void LED_Init(void);
 void LED_Blink(void);
 
 void comm_init(void);
 void generateInt(void);
+
+void WDT_Init(void);
+void WDT_set_16sec();
+void WDT_set_64sec();
+
 
 // get/set LED0 aliases
 #define LED0_TRIS                 TRISCbits.TRISC7

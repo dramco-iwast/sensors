@@ -2,12 +2,9 @@
  * Based on: https://github.com/sebnil/Moving-Avarage-Filter--Arduino-Library-
 */
 #include "filter.h"
-#include <math.h>
-#include "string.h"
-#include "stdint.h"
 
 filter_t filter;
-filter_highest_t f;
+volatile filter_highest_t f;
 
 filter_init(unsigned int newDataPointsCount)
 {
@@ -45,6 +42,7 @@ filter_highest_init(unsigned int newDataPointsCount)
     {
         f.values[i] = 0.0;
     }
+    f.i = 0;
 }
 
 float filter_highest(float in)

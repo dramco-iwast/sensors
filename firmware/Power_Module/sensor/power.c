@@ -49,28 +49,6 @@ void POWER_init_params()
     memset(&power, 0, sizeof(power));
 }
 
-void WDT_Init(void)
-{
-    // initialize timer for periodic measurements   
-    WDTCON0 = 0x1C; // 16 second period
-//    WDTCON0 = 0x20; // 64 second period    
-    WDTCON1 = 0x07; // LFINTOSC, window 100%
-    
-    // Enable watchdog
-    WDTCON0bits.SEN = 0;
-    CLRWDT();
-    WDTCON0bits.SEN = 1;
-}
-
-void Enter_sleep(){
-    /* Go to sleep */
-    CPUDOZEbits.IDLEN = 0; // make sure PIC is not in doze mode before going to sleep   
-    NOP();
-    SLEEP(); // enter sleep
-    NOP();
-    NOP();
-}
-
 void Power_Init(){
     
     PMD0bits.IOCMD = 0; // Enable gpio clock
@@ -104,23 +82,21 @@ void Power_Init(){
     battery_init();
     power.meas.batt.voltage = battery_measure(); // Initial measurement
     
-    // Filter for battery measurements
-//    filter_init(FILTER_NUM_AVG);
-    
     // Fill filter with initial values
     float temp = 0;
-//    for(int i=0; i<FILTER_NUM_AVG; i++)
-//    {
-//        temp = battery_measure();
-//        power.meas.batt.voltage = filter_process(temp);
-//    }
-    
     // Highest value out of number of measurements
     filter_highest_init(FILTER_HIGHEST_LEN);
     for(int i=0; i<FILTER_HIGHEST_LEN; i++)
     {
         temp = battery_measure();
         power.meas.batt.voltage = filter_highest(temp);
+    }
+    
+    // Filter for battery measurements
+    filter_init(FILTER_NUM_AVG);
+    for(int i=0; i<FILTER_NUM_AVG; i++)
+    {
+        filter_process(power.meas.batt.voltage); // Fill with initial values
     }
     
     // Init Watchdog
@@ -188,17 +164,9 @@ void measureBatt()
     float temp_batt = battery_measure();
     if(power.batt_threshold.enabled || power.ctrl.startMeasurement) LED1_SetLow(); // Led off
     
-    // Moving average filter
+    // Take highest number + Moving average filter
     power.meas.batt.voltage = filter_highest(temp_batt);
-    
-    // Check that the measurement has happened at a state in which motherboard is not sending data
-    // Otherwise we just measure the voltage drop due to high current
-//    if( temp_batt < ( power.meas.batt.voltage - 0.1 ) ) // Smaller than 0.1 V drop per measurement
-//    {
-//        // Do nothing - use latest battery value stored in struct: power.meas.batt.voltage
-//    }else{
-//        power.meas.batt.voltage = temp_batt;
-//    }
+    power.meas.batt.voltage = filter_process(power.meas.batt.voltage);
     
     // Check if any of the thresholds is exceeded
     check_batt_threshold_exceeded();
@@ -253,17 +221,39 @@ void Power_Loop(){
         {
             WDTCON0bits.SEN = 0;        //  Disable WDT
             
-            // Set timeout to 16 sec
-            WDTCON0 = 0x1C; // 16 second period
-            
             power.ctrl.measurementRunning = true;
             
-            // Only measure light intensity if thresholds are enabled
-            if(power.light_threshold.enabled) measureLight();
+            // Set timeout to 64 sec except when light threshold is enabled
+            if(power.light_threshold.enabled){
+                WDT_set_16sec();
+                
+                // Only measure light intensity if thresholds are enabled
+                measureLight();
+                
+                // Always continue measuring battery voltage every minute
+                // WDT_count to keep track of minutes
+                if(power.ctrl.WDT_count >= WDT_COUNT_OK_INTERVAL){
+                    measureBatt();
+                    power.ctrl.WDT_count = 0;
+                }
+                power.ctrl.WDT_count++;
+                
+                // Make sure battery is measured next time WDT timeout
+                if(power.batt_threshold.underThreshold || 
+                        power.light_threshold.underThreshold || 
+                        power.batt_threshold.overThreshold || 
+                        power.light_threshold.overThreshold){
+                    power.ctrl.WDT_count += WDT_COUNT_OK_INTERVAL;
+                }
+                
+            }else{
+                WDT_set_64sec();
+                
+                // When light thresholds are not enabled,
+                // WDT will be 64sec and we can just measure battery every WDT timeout
+                measureBatt();
+            }
             
-            // Always continue measuring battery voltage
-            measureBatt();
-
             // No delay needed in interrupt mode
 //            __delay_ms(180);
             power.ctrl.measurementRunning = false;
@@ -280,7 +270,7 @@ void Power_Loop(){
                 generateInt();   
                 
                 // If threshold is exceeded - set watchdog period to 64 sec
-                WDTCON0 = 0x20; // 64 second period  
+                WDT_set_64sec();
             }
             
             CLRWDT();               //  Reset wdt timer
@@ -322,15 +312,21 @@ void Power_SetThreshold(uint8_t metric, uint8_t * thresholdData){
     }
     
     // WDT is always on
-//    if(power.batt_threshold.enabled || power.light_threshold.enabled)         //  Threshold -> enable WDT   
-//    {
-//        WDTCON0bits.SEN = 0;
-//        CLRWDT();
-//        WDTCON0bits.SEN = 1;
-//    }else{                          //  No thresholds -> WDT off 
-//        WDTCON0bits.SEN = 0;
-//    }
-    
+    if(power.light_threshold.enabled)         //  Threshold -> enable WDT   
+    {
+        // If light threshold is enabled - set watchdog threshold to 16sec
+        WDT_set_16sec();
+        
+        WDTCON0bits.SEN = 0;
+        CLRWDT();
+        WDTCON0bits.SEN = 1;
+    }else{                          //  No thresholds -> WDT off 
+        WDT_set_64sec();
+        
+        WDTCON0bits.SEN = 0;
+        CLRWDT();
+        WDTCON0bits.SEN = 1;
+    }
 }
 
 #endif

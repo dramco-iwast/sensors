@@ -1,8 +1,12 @@
 #ifndef MovingAverageFilter_h
 #define MovingAverageFilter_h
 
-#define FILTER_NUM_AVG  20
-#define FILTER_HIGHEST_LEN  5
+#include <math.h>
+#include "string.h"
+#include "stdint.h"
+
+#define FILTER_NUM_AVG  5
+#define FILTER_HIGHEST_LEN  3
 
 #define MAX_DATA_POINTS 20
 
@@ -22,7 +26,7 @@ typedef struct{
 
 typedef struct{
     float values[FILTER_HIGHEST_LEN]; // store measurements
-    int i; // just a loop counter
+    uint8_t i; // just a loop counter
 }filter_highest_t;
 
 #endif

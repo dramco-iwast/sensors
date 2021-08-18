@@ -20,14 +20,18 @@
  *               (DRAMCO / KU Leuven TCG project)
  *               ------------------------
  * 
- * -------------------------------------------
- * | Current measurements:                    |
- * -------------------------------------------
- * |     POWER MODULE ONLY - no solar panel:  |
- * |             Sleep: +- 2.35 uA            |
- * |             Polled: +- 2.35 uA           |
- * |             Thresholds based: +- 17.2 uA |
- * -------------------------------------------
+ * -----------------------------------------------------------------------|
+ * | Current measurements:                                                |
+ * -----------------------------------------------------------------------|
+ * |     POWER MODULE ONLY - no solar panel:                              |
+ * |             Sleep: +- 4.5 uA (monitor battery every minute)          |
+ * |             Sleep (+ solar panel covered): +- 0 uA                   |
+ * |             Polled: +- 4.5 uA                                        |
+ * |             Thresholds based: +- 17.2 uA                             |
+ * |                    - Battery: 4.8 uA (LED blink included)            |
+ * |                    - Light: 10 uA (LED blink included)               |
+ * |                    - Battery + Light: 13.1 uA (LED blinks included)  |
+ * -----------------------------------------------------------------------|
  */
 
 #include <xc.h>

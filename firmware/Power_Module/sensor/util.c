@@ -78,3 +78,34 @@ void generateInt(void){
     __delay_ms(1);                          
     READY_SetHigh();
 }
+
+void WDT_set_16sec()
+{
+    WDTCON0 = 0x1C; // 16 second period
+}
+
+void WDT_set_64sec()
+{
+    WDTCON0 = 0x20; // 64 second period
+}
+
+void WDT_Init(void)
+{
+    // initialize timer for periodic measurements   
+    WDT_set_64sec();
+    WDTCON1 = 0x07; // LFINTOSC, window 100%
+    
+    // Enable watchdog
+    WDTCON0bits.SEN = 0;
+    CLRWDT();
+    WDTCON0bits.SEN = 1;
+}
+
+void Enter_sleep(){
+    /* Go to sleep */
+    CPUDOZEbits.IDLEN = 0; // make sure PIC is not in doze mode before going to sleep   
+    NOP();
+    SLEEP(); // enter sleep
+    NOP();
+    NOP();
+}
