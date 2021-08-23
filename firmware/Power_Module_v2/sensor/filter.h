@@ -6,7 +6,7 @@
 #include "stdint.h"
 
 #define FILTER_NUM_AVG  5
-#define FILTER_HIGHEST_LEN  3
+#define FILTER_HIGHEST_LEN  5
 
 #define MAX_DATA_POINTS 20
 

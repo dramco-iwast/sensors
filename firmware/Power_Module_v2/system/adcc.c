@@ -164,9 +164,12 @@ adc_result_t ADCC_GetSingleConversion(adcc_channel_t channel)
     {
     }
     
+    // Extra NOP() instruction required; See rev. A2 errata:  http://ww1.microchip.com/downloads/en/DeviceDoc/80000669C.pdf 
+    NOP();
     
     // Conversion finished, return the result
-    return ((adc_result_t)((ADRESH << 8) + ADRESL));
+//    return ((adc_result_t)((ADRESH << 8) + ADRESL));
+    return (adc_result_t)(((adc_result_t)ADRESH << 8) + ADRESL);
 }
 
 void ADCC_StopConversion(void)

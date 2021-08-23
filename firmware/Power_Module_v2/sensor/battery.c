@@ -36,10 +36,10 @@ void ADC_Init()
     PMD3bits.ADCMD = 0; 
     
     // Enable FVR module
-    PMD0bits.FVRMD = 0;
+//    PMD0bits.FVRMD = 0;
     
     // Enable Fixed voltage reference with voltage of 2.048 V
-    FVRCON = 0x82;
+//    FVRCON = 0x82;
     // set the ADCC to the options selected in the User Interface
     // ADLTH 0; 
     ADLTHL = 0x00;
@@ -60,7 +60,8 @@ void ADC_Init()
     // ADPCH ANA0; 
     ADPCH = 0x00;
     // ADACQ 0; 
-    ADACQL = 0x00;
+//    ADACQL = 0x00;
+    ADACQL = 0x0A; // 10 clock cycles aquisition time
     // ADACQ 0; 
     ADACQH = 0x00;
     // ADCAP Additional uC disabled; 
@@ -79,13 +80,15 @@ void ADC_Init()
     ADSTAT = 0x00;
     // ADNREF VSS; ADPREF FVR; 
 //    ADREF = 0x03;
+    ADREF = 0x00; // Reference to VDD (3V3)
     //  Reference voltage to VDD (3V3)
-    ADREFbits.PREF0 = 0;   
-    ADREFbits.PREF1 = 0;
+//    ADREFbits.PREF0 = 0;   
+//    ADREFbits.PREF1 = 0;
     // ADACT disabled; 
     ADACT = 0x00;
     // ADCS FOSC/2; 
-    ADCLK = 0x00;
+//    ADCLK = 0x00; // ATTENTION: this violates the minimal sampling time
+    ADCLK = 0x3F; // clock divider fosc/128
     //  ADCLK = 0x07;
     //  Doesnt matter, since we're just doing a single conversion
     //  I've changed it back to the default value
@@ -141,7 +144,19 @@ float battery_measure(void)
     
     // Get ADC value
     ADCC_GetSingleConversion(BAT_VOLT_ADC_CHN); 
-    uint16_t voltage = ADCC_GetSingleConversion(BAT_VOLT_ADC_CHN);
+    
+    uint32_t meas = 0;
+    uint16_t temp = 0;
+    for(uint8_t i=0; i<10; i++)
+    {
+        temp = ADCC_GetSingleConversion(BAT_VOLT_ADC_CHN);
+        meas += temp;
+    }
+    meas = (uint16_t)(meas / 10);
+    uint16_t voltage = meas;
+    
+    
+//    uint16_t voltage = ADCC_GetSingleConversion(BAT_VOLT_ADC_CHN);
     // Convert ADC value to voltage (Resistor divider)
     // adc counts: 4096
     // reference voltage: 2.048V

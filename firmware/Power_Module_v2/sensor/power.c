@@ -166,7 +166,7 @@ void measureBatt()
     
     // Take highest number + Moving average filter
     power.meas.batt.voltage = filter_highest(temp_batt);
-    power.meas.batt.voltage = filter_process(power.meas.batt.voltage);
+//    power.meas.batt.voltage = filter_process(power.meas.batt.voltage);
     
     // Check if any of the thresholds is exceeded
     check_batt_threshold_exceeded();
