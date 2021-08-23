@@ -20,23 +20,19 @@
  *               (DRAMCO / KU Leuven TCG project)
  *               ------------------------
  * 
- * Power Consumption:
- *  26uA --> 10.1uA --> 1.5uA
- * 
- * -------------------------------------------
- * | Current measurments:                     |
- * -------------------------------------------
- * |     POWER MODULE ONLY:                   |
- * |             Sleep: +-1.07 - 1.5 uA       |
- * -------------------------------------------
- * |     POWER MODULE + MOTHERBOARD:          |
- * |             Sleep: +-26.7uA              |
- * -------------------------------------------
- * 
+ * -----------------------------------------------------------------------|
+ * | Current measurements:                                                |
+ * -----------------------------------------------------------------------|
+ * |     POWER MODULE ONLY - no solar panel:                              |
+ * |             Sleep: +- 4.5 uA (monitor battery every minute)          |
+ * |             Sleep (+ solar panel covered): +- 0 uA                   |
+ * |             Polled: +- 4.5 uA                                        |
+ * |             Thresholds based: +- 17.2 uA                             |
+ * |                    - Battery: 4.8 uA (LED blink included)            |
+ * |                    - Light: 10 uA (LED blink included)               |
+ * |                    - Battery + Light: 13.1 uA (LED blinks included)  |
+ * -----------------------------------------------------------------------|
  */
-//  TODO: new board
-//  power.h -> change pin initialisation
-//  
 
 #include <xc.h>
 #include <stdio.h>

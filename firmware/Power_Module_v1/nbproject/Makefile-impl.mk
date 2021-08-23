@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=Power_Module
+PROJECTNAME=Power_Module_v1_update
 
 # Active Configuration
 DEFAULTCONF=soundlevel

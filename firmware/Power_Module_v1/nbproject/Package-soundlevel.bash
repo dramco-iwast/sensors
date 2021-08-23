@@ -10,9 +10,9 @@ CND_CONF=soundlevel
 CND_DISTDIR=dist
 TMPDIR=build/${CND_CONF}/${IMAGE_TYPE}/tmp-packaging
 TMPDIRNAME=tmp-packaging
-OUTPUT_PATH=dist/${CND_CONF}/${IMAGE_TYPE}/Power_Module.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
-OUTPUT_BASENAME=Power_Module.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
-PACKAGE_TOP_DIR=powermodule/
+OUTPUT_PATH=dist/${CND_CONF}/${IMAGE_TYPE}/Power_Module_v1_update.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+OUTPUT_BASENAME=Power_Module_v1_update.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+PACKAGE_TOP_DIR=powermodulev1update/
 
 # Functions
 function checkReturnCode
@@ -57,15 +57,15 @@ mkdir -p ${TMPDIR}
 
 # Copy files and create directories and links
 cd "${TOP}"
-makeDirectory ${TMPDIR}/powermodule/bin
+makeDirectory ${TMPDIR}/powermodulev1update/bin
 copyFileToTmpDir "${OUTPUT_PATH}" "${TMPDIR}/${PACKAGE_TOP_DIR}bin/${OUTPUT_BASENAME}" 0755
 
 
 # Generate tar file
 cd "${TOP}"
-rm -f ${CND_DISTDIR}/${CND_CONF}/package/powermodule.tar
+rm -f ${CND_DISTDIR}/${CND_CONF}/package/powermodulev1update.tar
 cd ${TMPDIR}
-tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/package/powermodule.tar *
+tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/package/powermodulev1update.tar *
 checkReturnCode
 
 # Cleanup

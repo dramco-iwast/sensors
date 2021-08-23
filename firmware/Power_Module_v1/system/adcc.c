@@ -106,8 +106,10 @@ void ADCC_Initialize(void)
     ADREF = 0x00;
     // ADACT disabled; 
     ADACT = 0x00;
-    // ADCS FOSC/128; 
-    ADCLK = 0x3F;
+//    // ADCS FOSC/128; 
+//    ADCLK = 0x3F;
+    // ADCCS FOSC/2; 
+    ADCLK = 0x00;
     // ADGO stop; ADFM right; ADON enabled; ADCS FOSC/ADCLK; ADCONT disabled; 
     ADCON0 = 0x84;
     
@@ -148,6 +150,9 @@ adc_result_t ADCC_GetSingleConversion(adcc_channel_t channel)
 {
     // select the A/D channel
     ADPCH = channel;  
+    
+    //Set the Acquisition Delay
+//    ADACQ = 0;
 
     // Turn on the ADC module
     ADCON0bits.ADON = 1;
@@ -166,7 +171,14 @@ adc_result_t ADCC_GetSingleConversion(adcc_channel_t channel)
     
     
     // Conversion finished, return the result
-    return ((adc_result_t)((ADRESH << 8) + ADRESL));
+//    return ((adc_result_t)((ADRESH << 8) + ADRESL));
+    
+    // Extra NOP() instruction required; See rev. A2 errata:  http://ww1.microchip.com/downloads/en/DeviceDoc/80000669C.pdf 
+    NOP();
+
+    // Conversion finished, return the result
+    return (adc_result_t)(((adc_result_t)ADRESH << 8) + ADRESL);
+//    return (adc_result_t)(((adc_result_t)ADRESH << 8) | ADRESL);
 }
 
 void ADCC_StopConversion(void)
