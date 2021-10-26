@@ -30,7 +30,7 @@ extern "C" {
  * Build settings -> modify to your needs                                     *
  ******************************************************************************/   
 
-#define I2C_ADDRESS                 0x50
+#define I2C_ADDRESS                 0x54
     
 #define SENSOR_TYPE                 SOUND_LEVEL
 

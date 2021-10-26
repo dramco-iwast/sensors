@@ -34,7 +34,7 @@ extern "C" {
 
 //#define I2C_ADDRESS                 0x67
 //#define I2C_ADDRESS                 0x48
-#define I2C_ADDRESS                 0x45
+#define I2C_ADDRESS                 0x44
 
 /******************************************************************************
  * Definitions and types                                                      *

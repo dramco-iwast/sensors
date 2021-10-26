@@ -1,0 +1,23 @@
+Id;Designator;Package;Quantity;Designation;Supplier and ref
+1;G***;logoKuleuven2;1;LOGO;
+2;G***;logoDramco2;1;LOGO;
+3;J4;ConnectorHorizontalPcb;1;Conn_02x03_Top_Bottom;
+4;C1,C2,C4,C5,C9;C_0805_2012Metric_Pad1.15x1.40mm_HandSolder;5;100 nF;
+5;C3,C6,C10;C_0805_2012Metric_Pad1.15x1.40mm_HandSolder;3;47n;
+6;C7,C8;C_0805_2012Metric_Pad1.15x1.40mm_HandSolder;2;2.2 nF;
+7;D1;LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder;1;LED;
+8;J1,J3;PinHeader_1x06_P2.54mm_Vertical;2;ProgramPic;
+9;J5;PinHeader_1x01_P2.54mm_Vertical;1;VanalogTestPin;
+10;MK1;VESPER_VM1010;1;VesperVM1010;
+11;R4,R12,R13;R_0805_2012Metric_Pad1.15x1.40mm_HandSolder;3;10k;
+12;R6;R_0805_2012Metric_Pad1.15x1.40mm_HandSolder;1;470;
+13;R5,R11,R16;R_0805_2012Metric_Pad1.15x1.40mm_HandSolder;3;120k;
+14;R7;R_0805_2012Metric_Pad1.15x1.40mm_HandSolder;1;18k;
+15;R8,R9,R2,R3;R_0805_2012Metric_Pad1.15x1.40mm_HandSolder;4;100k;
+16;R10;R_0805_2012Metric_Pad1.15x1.40mm_HandSolder;1;560k;
+17;R14;R_0805_2012Metric_Pad1.15x1.40mm_HandSolder;1;2.7k;
+18;R15;R_0805_2012Metric_Pad1.15x1.40mm_HandSolder;1;1k;
+19;U1;PIC16F18446SSOP20PIN;1;PIC16F18446;
+20;U2,U3,U4;TLV341 SOT-23-6;3;TLV341A;
+21;J2;PinHeader_2x03_P2.54mm_Vertical;1;Conn_02x03;
+22;R1;R_0805_2012Metric_Pad1.15x1.40mm_HandSolder;1;22k;
