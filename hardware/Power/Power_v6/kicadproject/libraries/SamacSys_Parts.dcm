@@ -1,0 +1,26 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP NE555DR
+D Single Precision Timer
+F http://www.ti.com/lit/ds/symlink/ne555.pdf
+$ENDCMP
+#
+$CMP TS5A2066DCUR
+D TEXAS INSTRUMENTS - TS5A2066DCUR - IC, ANLG SW 10R DUAL SPST 8VSSOP
+K
+F http://www.ti.com/lit/ds/symlink/ts5a2066.pdf
+$ENDCMP
+#
+$CMP BZT52C4V7T-7
+D Zener Diodes
+K
+F 
+$ENDCMP
+#
+$CMP VEML7700-TR
+D High Accuracy Ambient Light Sensor with I2C Interface
+K
+F http://www.vishay.com/docs/84286/veml7700.pdf
+$ENDCMP
+#
+#End Doc Library

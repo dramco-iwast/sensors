@@ -1,0 +1,5 @@
+(sym_lib_table
+  (lib (name Power_module_v1-rescue)(type Legacy)(uri ${KIPRJMOD}/Power_module_v1-rescue.lib)(options "")(descr ""))
+  (lib (name VEML7700-TT)(type Legacy)(uri ${KIPRJMOD}/VEML7700-TT/VEML7700-TT.lib)(options "")(descr ""))
+  (lib (name 610106249121)(type Legacy)(uri ${KIPRJMOD}/610106249121/610106249121.lib)(options "")(descr ""))
+)
