@@ -1,0 +1,5 @@
+(sym_lib_table
+  (lib (name STEM-rescue)(type Legacy)(uri ${KIPRJMOD}/STEM-rescue.lib)(options "")(descr ""))
+  (lib (name Button_Ali)(type Legacy)(uri ${KIPRJMOD}/Button_Ali.lib)(options "")(descr ""))
+  (lib (name 610106249121)(type Legacy)(uri ${KIPRJMOD}/610106249121/610106249121.lib)(options "")(descr ""))
+)

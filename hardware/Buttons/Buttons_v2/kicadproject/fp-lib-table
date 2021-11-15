@@ -1,0 +1,4 @@
+(fp_lib_table
+  (lib (name ali-button)(type KiCad)(uri ${KIPRJMOD}/ali-button.pretty)(options "")(descr ""))
+  (lib (name 610106249121)(type KiCad)(uri ${KIPRJMOD}/610106249121)(options "")(descr ""))
+)
